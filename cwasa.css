@@ -9,7 +9,9 @@ html, body {
 }
 
 h3, h4 {
-    color: #00A;  margin: 2px;  margin-top: 2px;
+	font-family: sans-serif;
+    text-align: center;
+    color: #000080;  margin: 20px;  margin-top: 20px;
     /*-webkit-margin-before: 0.4em;*/
     /*-webkit-margin-after:  0.04em;*/
 }
@@ -46,9 +48,13 @@ h3, h4 {
 }
 
 .CWASAAvatar {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-bottom: 20px;
 	position: relative; background: #A3B8D2;
-	width: 100%; height: 100%;
-	margin: 0px; border: 0px; padding: 0px;
+	width: 70%; height: 60%;
+	border: 0px; padding: 0px;
 }
 
 .CWASAGUI {
@@ -58,7 +64,7 @@ h3, h4 {
 }
 
 .txtaSiGMLText, .statusLog {
-    font-family: monospace;  font-size: 0.9em; width: 306px;
+    font-family: monospace;  font-size: 0.9em; width: 500px;
 }
 
 .txtSiGMLURL {

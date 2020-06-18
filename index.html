@@ -58,35 +58,20 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 <body onload="CWASA.init();">
 
 <!--================================================================-->
-<h3>NGT Thesis test website</h3>
-<h4>Werkt het al?</h4>
-<hr/>
+<h3>Prototype avatar for Sign Language of the Netherlands (NGT)</h3>
+
+
 
 <!-- CWA signing avatar panel 0 -->
 <!--================================================================-->
-<div class="CWASAPanel av0" align="center" ></div>
+<!-- <div class="CWASAPanel av0" align="center" ></div> -->
+<div class="CWASAAvatar av0" align="center" ></div>
 <!--================================================================-->
-<hr/>
-<p align="center">
-<span class="CWASAProgress av0"></span>
-<hr/>
-<p align="center">
-<span style="font-size: 90%;" >
-Sign/Frame:
-<input id="mySF" class="txtSF" value="0/0" type="text" />
-&nbsp;
-Gloss:
-<input id="myGloss" class="txtGloss" value="[none]" type="text" />
-&nbsp;
-FPS:
-<input id="myFPS" class="txtFPS" value="00.00" type="text" />
-</span>
-<hr/>
 
 
 <div align="center">
-New Text: <input type="button" value="doText" onclick='playText(document.getElementById("mySiGML").value);' /><br>
-<textarea id="mySiGML" class="txtaSiGMLText" rows="6" >
+Enter SiGML:<br>
+<textarea id="mySiGML" class="txtaSiGMLText" rows="16" >
 <?xml version="1.0" encoding="utf-8"?>
 <sigml>
 
@@ -131,16 +116,39 @@ New Text: <input type="button" value="doText" onclick='playText(document.getElem
 </textarea>
 
 <br>
-New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
+<input type="button" value="Play" onclick='playText(document.getElementById("mySiGML").value);' />
+<input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+</div>
+
+<!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
 <input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
 
 <br>
-<input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+ -->
+<!-- <hr/> -->
+<!-- <p align="center">
+<span class="CWASAProgress av0"></span>
+ -->
 
-<hr/>
-<textarea id="myStatusLog"  class="statusLog" rows="6" >
+<!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+<div align="center" class="undisplayed">
+<span style="font-size: 90%;" >
+Sign/Frame:
+<input id="mySF" class="txtSF" value="0/0" type="text" />
+&nbsp;
+Gloss:
+<input id="myGloss" class="txtGloss" value="[none]" type="text" />
+&nbsp;
+FPS:
+<input id="myFPS" class="txtFPS" value="00.00" type="text" />
+</span>
+</div>
+
+
+<div align="center">
+  <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+<textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
 </textarea>
-
 </div>
 
 
