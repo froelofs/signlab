@@ -9,8 +9,7 @@
 <meta http-equiv="Access-Control-Allow-Methods" content="GET">
 
 <!-- CWA @ vhg.cmp.uea.ac.uk/jrwg/ -->
-<link rel="stylesheet" type="text/css"
-    href="cwasa.css" />
+<link rel="stylesheet" href="http://vhg.cmp.uea.ac.uk/tech/jas/vhg2020/cwa/cwasa.css">
 <script type="text/javascript"
     src="http://vhg.cmp.uea.ac.uk/tech/jas/vhg2020/cwa/allcsa.js"></script>
 
@@ -53,9 +52,36 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 
 </script>
 
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script>
+let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
+function goPython(text){
+    $.ajax({
+      url: "main.py",
+      data: {param: text},
+     context: document.body
+     alert('trying')
+    }).done(function() {
+     alert('finished python script');;
+    });
+    playText(document.getElementById("mySiGML").value);
+}
+
+  // $.get(scrapeJSON, function(data) {
+  //    // Get JSON data from Python script
+  //    if (data){
+  //       console.log("Data returned:", data)
+  //    }
+  //    jobDataJSON = JSON.parse(data)
+  // }
+
+  </script>
+
 </head>
 
 <body onload="CWASA.init();">
+
 
 <!--================================================================-->
 <h3>Prototype avatar for Sign Language of the Netherlands (NGT)</h3>
@@ -70,53 +96,13 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 
 
 <div align="center">
-Enter SiGML:<br>
+Enter Sentence:<br>
 <textarea id="mySiGML" class="txtaSiGMLText" rows="6" >
-<?xml version="1.0" encoding="utf-8"?>
-<sigml>
-
-<hns_sign gloss="mug">
-  <hamnosys_nonmanual>
-    <hnm_mouthpicture picture="mVg"/>
-  </hamnosys_nonmanual>
-  <hamnosys_manual>
-    <hamfist/> <hamthumbacrossmod/>
-        <hamextfingerol/> <hampalml/>
-    <hamshoulders/>
-    <hamparbegin/> <hammoveu/> <hamarcu/>
-        <hamreplace/> <hamextfingerul/> <hampalmdl/>
-    <hamparend/>
-  </hamnosys_manual>
-</hns_sign>
-
-<hns_sign gloss="take">
-  <hamnosys_nonmanual>
-    <hnm_mouthpicture picture="te_Ik"/>
-  </hamnosys_nonmanual>
-  <hamnosys_manual>
-    <hamceeall/> <hamextfingerol/> <hampalml/>
-    <hamlrbeside/> <hamshoulders/> <hamarmextended/>
-    <hamreplace/> <hamextfingerl/> <hampalml/>
-    <hamchest/> <hamclose/>
-  </hamnosys_manual>
-</hns_sign>
-
-<hns_sign gloss="i">
-  <hamnosys_nonmanual>
-    <hnm_mouthpicture picture="a_I"/>
-  </hamnosys_nonmanual>
-  <hamnosys_manual>
-    <hamfinger2/> <hamthumbacrossmod/>
-    <hamextfingeril/> <hampalmr/>
-    <hamchest/> <hamtouch/>
-  </hamnosys_manual>
-</hns_sign>
-
-</sigml>
+  werk
 </textarea>
 
 <br>
-<input type="button" value="Play" onclick='playText(document.getElementById("mySiGML").value);' />
+<input type="button" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' />
 <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 <br>
 <br>
