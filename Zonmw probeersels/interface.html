@@ -67,7 +67,7 @@ function goPython(text){
       url: "pythonCall.py",
       data: {param: text},
       beforeSend: function() {
-        alert(param);
+        alert(text);
       },
       error: function() {
         alert('Error');
