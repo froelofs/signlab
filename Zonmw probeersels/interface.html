@@ -66,10 +66,8 @@ function goPython(text){
       type: "POST",
       url: "pythonCall.py",
       data: {param: text},
-      success: function(data) {
-        // to make sure that it gets the data
-        console.log(data);
-      }
+      // to make sure that it gets the data
+      console.log(data)
    });
 }
 
