@@ -66,10 +66,13 @@ function goPython(text){
       type: "POST",
       url: "pythonCall.py",
       data: {param: text},
-      // to make sure that it gets the data
-      console.log(data)
-   });
-}
+      beforeSend: function() {
+        alert(1);
+      },
+      error: function() {
+        alert('Error');
+        }
+     });
 
   // $.get(scrapeJSON, function(data) {
   //    // Get JSON data from Python script
