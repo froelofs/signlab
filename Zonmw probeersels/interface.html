@@ -64,7 +64,7 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 function goPython(text){
     $.ajax({
       type: "POST",
-      url: "/main.py",
+      url: "pythonCall.py",
       data: {param: text},
       success: callbackFunc
    });
@@ -104,7 +104,7 @@ Enter Sentence:<br>
 </textarea>
 
 <br>
-<input type="button" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' />
+<input type="button" value="Play" onclick='goPython(document.getElementById("mySiGML").value);'/>
 <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 <br>
 <br>
