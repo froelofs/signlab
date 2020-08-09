@@ -10,141 +10,141 @@ infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 
 #'Main' function
 '''Create the SiGML of the signs
-    input: [(word0, PoS-tag, Syntactic_Dependency), (word1, PoS-tag, Syntactic_Dependency), ...]
-    output: SiGML code without pre- and postamble'''
+	input: [(word0, PoS-tag, Syntactic_Dependency), (word1, PoS-tag, Syntactic_Dependency), ...]
+	output: SiGML code without pre- and postamble'''
 def processSentence(context, flag):
-    abc = ['A', 'AA', 'B', 'BB', 'C', 'CC', 'D', 'DD', 'E', 'EE', 'F', 'FF',
-           'G', 'GG', 'H', 'I', 'II', 'J', 'K', 'KK', 'L', 'LL', 'M', 'MM', 'N',
-           'NN', 'O', 'OO', 'P', 'PP', 'Q', 'QQ', 'R', 'RR', 'S', 'SS', 'T',
-           'TT', 'U', 'UU', 'V', 'W', 'WW', 'X', 'Y', 'YY', 'Z', 'ZZ']
+	abc = ['A', 'AA', 'B', 'BB', 'C', 'CC', 'D', 'DD', 'E', 'EE', 'F', 'FF',
+		   'G', 'GG', 'H', 'I', 'II', 'J', 'K', 'KK', 'L', 'LL', 'M', 'MM', 'N',
+		   'NN', 'O', 'OO', 'P', 'PP', 'Q', 'QQ', 'R', 'RR', 'S', 'SS', 'T',
+		   'TT', 'U', 'UU', 'V', 'W', 'WW', 'X', 'Y', 'YY', 'Z', 'ZZ']
 
-    infoSigns = pickle.load(open("dictFile.p", "rb"))
+	infoSigns = pickle.load(open("dictFile.p", "rb"))
 
-    #Detects WH-questions
-    wh = whDetect(context)
-    #Detects alternative questions
-    alt = altDetect(context)
+	#Detects WH-questions
+	wh = whDetect(context)
+	#Detects alternative questions
+	alt = altDetect(context)
 
-    sigml = ''
-    neg = None
-    left = False
-    end = len(context)
-    #Generates markup for the signs in the sentence
-    for i,item in enumerate(context):
-        word = item[0]
-        pos = item[1]
-        word = word.upper()
-        partly = False
+	sigml = ''
+	neg = None
+	left = False
+	end = len(context)
+	#Generates markup for the signs in the sentence
+	for i,item in enumerate(context):
+		word = item[0]
+		pos = item[1]
+		word = word.upper()
+		partly = False
 
-        #Automatically spells single letters
-        if word in abc:
-            word += '_VINGERSPELLEN'
+		#Automatically spells single letters
+		if word in abc:
+			word += '_VINGERSPELLEN'
 
-        #Handles questionmark
-        if word == '?':
-            #Adds palm up movement when handling WHquestions
-            if wh:
-                word = 'PALM_OMHOOG'
-            #And nothing needs to happen after yes/no questions, so skip the question mark for these
-            else:
-                continue
+		#Handles questionmark
+		if word == '?':
+			#Adds palm up movement when handling WHquestions
+			if wh:
+				word = 'PALM_OMHOOG'
+			#And nothing needs to happen after yes/no questions, so skip the question mark for these
+			else:
+				continue
 
-        # or alternative questiones
-        if word == ',':
-            word = 'Q_PART_ALT'
+		# or alternative questiones
+		if word == ',':
+			word = 'Q_PART_ALT'
 
-        #Starts negation
-        if word == 'N(':
-            neg = True
-            continue
+		#Starts negation
+		if word == 'N(':
+			neg = True
+			continue
 
-        #Starts affirmation
-        if word == 'A(':
-            neg = False
-            continue
+		#Starts affirmation
+		if word == 'A(':
+			neg = False
+			continue
 
-        #Stops negation and affirmation
-        if word == ')N' or word == ')A':
-            neg = None
-            continue
+		#Stops negation and affirmation
+		if word == ')N' or word == ')A':
+			neg = None
+			continue
 
-        #Stores the index
-        if "3B" in word:
-            left = True
+		#Stores the index
+		if "3B" in word:
+			left = True
 
-        if word.isnumeric():
-            sigml, neg = sign_number(word, neg, wh, sigml, context, infoSigns)
-        else:
-            #Adds word to matches if partly in dict
-            partly, matches = find_matches(word, context, infoSigns)
+		if word.isnumeric():
+			sigml, neg = sign_number(word, neg, wh, sigml, context, infoSigns)
+		else:
+			#Adds word to matches if partly in dict
+			partly, matches = find_matches(word, context, infoSigns)
 
-        #Fingerspell word if not in dict at all, it is not a number, or spell-flag is encountered
-        if (not partly and not word.isnumeric()) or flag == 'spell':
-            sigml, neg = fingerspell(word, neg, wh, sigml)
-        #Finds the sign if a word is partly in the dict
-        elif partly:
-            currentSign = sign.Sign(word, pos, neg, wh, context, matches)
-            #Alternative questions: turn body right
-            if alt == True:
-                checkL, altNew = leftsideOr(alt, i, word, pos, context)
-                #Rotate body left
-                if checkL:
-                    currentSign.nonmanual.append('<hnm_body tag = "RL"/>')
-                #Updates alternative question status
-                else:
-                    alt = altNew
-            #Alternative questions: turn body left
-            elif alt == False:
-                checkR, altNew = rightsideOr(alt, i, word, pos, context)
-                #Rotate body right
-                if checkR:
-                    currentSign.nonmanual.append('<hnm_body tag = "RR"/>')
-                #Updates alternative question status
-                else:
-                    alt = altNew
+		#Fingerspell word if not in dict at all, it is not a number, or spell-flag is encountered
+		if (not partly and not word.isnumeric()) or flag == 'spell':
+			sigml, neg = fingerspell(word, neg, wh, sigml)
+		#Finds the sign if a word is partly in the dict
+		elif partly:
+			currentSign = sign.Sign(word, pos, neg, wh, context, matches)
+			#Alternative questions: turn body right
+			if alt == True:
+				checkL, altNew = leftsideOr(alt, i, word, pos, context)
+				#Rotate body left
+				if checkL:
+					currentSign.nonmanual.append('<hnm_body tag = "RL"/>')
+				#Updates alternative question status
+				else:
+					alt = altNew
+			#Alternative questions: turn body left
+			elif alt == False:
+				checkR, altNew = rightsideOr(alt, i, word, pos, context)
+				#Rotate body right
+				if checkR:
+					currentSign.nonmanual.append('<hnm_body tag = "RR"/>')
+				#Updates alternative question status
+				else:
+					alt = altNew
 
-            #Performs the sign on the left side with the left hand if the index is 3B
-            elif left and (pos == "NOUN" or pos == "ADJ"):
-                currentSign = currentSign.mirror()
-                left = False
-            elif pos == "VERB" and len(item) > 2:
-                currentSign.directional(item[2:])
-            #Turns the body and head towards INDEX_3A and INDEX_3B
-            elif pos != "ADJ":
-                if (pos == "NOUN" and i+1 != end) and (i != 0 and end != 1):
-                    if context[i+1][0] == "INDEX_3A":
-                        currentSign.nonmanual.append('<hnm_body tag = "RR"/>')
-                        #the head turn is repeated this often to make it look more natural
-                        currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                        currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                        currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                        currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                    elif context[i+1][0] == "INDEX_3B":
-                        currentSign.nonmanual.append('<hnm_body tag = "RL"/>')
-                        #the head turn is repeated this often to make it look more natural
-                        currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                        currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                        currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                        currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                elif word == "INDEX_3A":
-                    currentSign.nonmanual.append('<hnm_body tag = "RR"/>')
-                    #the head turn is repeated this often to make it look more natural
-                    currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                    currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                    currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                    currentSign.nonmanual.append('<hnm_head tag="SR"/>')
-                elif word == "INDEX_3B":
-                    currentSign.nonmanual.append('<hnm_body tag = "RL"/>')
-                    #the head turn is repeated this often to make it look more natural
-                    currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                    currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                    currentSign.nonmanual.append('<hnm_head tag="SL"/>')
-                    currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+			#Performs the sign on the left side with the left hand if the index is 3B
+			elif left and (pos == "NOUN" or pos == "ADJ"):
+				currentSign = currentSign.mirror()
+				left = False
+			elif pos == "VERB" and len(item) > 2:
+				currentSign.directional(item[2:])
+			#Turns the body and head towards INDEX_3A and INDEX_3B
+			elif pos != "ADJ":
+				if (pos == "NOUN" and i+1 != end) and (i != 0 and end != 1):
+					if context[i+1][0] == "INDEX_3A":
+						currentSign.nonmanual.append('<hnm_body tag = "RR"/>')
+						#the head turn is repeated this often to make it look more natural
+						currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+						currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+						currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+						currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+					elif context[i+1][0] == "INDEX_3B":
+						currentSign.nonmanual.append('<hnm_body tag = "RL"/>')
+						#the head turn is repeated this often to make it look more natural
+						currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+						currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+						currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+						currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+				elif word == "INDEX_3A":
+					currentSign.nonmanual.append('<hnm_body tag = "RR"/>')
+					#the head turn is repeated this often to make it look more natural
+					currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+					currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+					currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+					currentSign.nonmanual.append('<hnm_head tag="SR"/>')
+				elif word == "INDEX_3B":
+					currentSign.nonmanual.append('<hnm_body tag = "RL"/>')
+					#the head turn is repeated this often to make it look more natural
+					currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+					currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+					currentSign.nonmanual.append('<hnm_head tag="SL"/>')
+					currentSign.nonmanual.append('<hnm_head tag="SL"/>')
 
-            currentSigml = currentSign.get_full_sigml()
-            sigml += currentSigml + '\n'
+			currentSigml = currentSign.get_full_sigml()
+			sigml += currentSigml + '\n'
 
-    return sigml
+	return sigml
 
 #Helper Functions
 '''Detects WH-questions'''
@@ -248,11 +248,11 @@ def written_num(num):
 
 '''Gets SiGML, as well as negation state'''
 def get_sigml_neg(word, pos, neg, WH, context, matches, sigml):
-    #Fetches SiGML of word
+	#Fetches SiGML of word
 	currentSign = sign.Sign(word, pos, neg, WH, context, matches)
 	currentSigml = currentSign.get_full_sigml()
 	sigml += currentSigml + '\n'
-    #Fetches negation state
+	#Fetches negation state
 	neg = currentSign.neg
 	return sigml, neg
 
@@ -282,21 +282,21 @@ def find_matches(word, context, dict = infoSigns):
 					word3 = '(' + contextword + ')'
 					#Word1 in key:
 					if re.search(r"\b" + re.escape(word1), key):
-                        #Adds 1.5 to score
+						#Adds 1.5 to score
 						if key in matches:
 							matches[key] = matches[key]+1.5
 						else:
 							matches[key] = 1.5
-                    #Word2 in key:
+					#Word2 in key:
 					if re.search(re.escape(word2) + r"\b", key):
-                        #Adds 1.25 to score
+						#Adds 1.25 to score
 						if key in matches:
 							matches[key] = matches[key]+1.25
 						else:
 							matches[key] = 1.25
-                    #Word3 in key:
+					#Word3 in key:
 					if re.search(re.escape(word3) + r"\b", key):
-                        #Adds 1.25 to score
+						#Adds 1.25 to score
 						if key in matches:
 							matches[key] = matches[key]+1.25
 						else:
@@ -358,7 +358,7 @@ def leftsideOr(alt, i, word, pos, context):
 	return (False, alt)
 
 '''Only puts out true when at the right side of the OR
-    alt = True: means left side of OR
+	alt = True: means left side of OR
 	alt = False: means right side of OR
 	alt = None: means it isn't an alternative question at all'''
 def rightsideOr(alt, i, word, pos, context):
