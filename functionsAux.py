@@ -146,3 +146,11 @@ def opposite(direction):
 		else:
 			o += opposites[p - 1]
 	return o
+
+'''Accepts a word and returns all dictionary entries containing that word as a list'''
+def searchDict(word):
+	suggestions = []
+	for key in infoSigns:
+		if word.upper() in key:
+			suggestions.append(key)
+	return suggestions
