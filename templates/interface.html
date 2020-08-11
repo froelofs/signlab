@@ -76,20 +76,28 @@ function goPython(text){
 }
 
 function suggestions(text){
-  $.ajax({
+  var options = $.ajax({
       type: "POST",
       url: "/suggestions",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
+      async: false,
       beforeSend: function() {
         alert(text);
       },
       success: function(response) { 
-        alert("It worked " + response);
+        alert("suggestions: " + response);
       }
-  });
+  }).responseText;
+  options = options.split(",");
 }
 
+  
+
+/*execute a function when someone clicks in the document:*/
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
   // $.get(scrapeJSON, function(data) {
   //    // Get JSON data from Python script
   //    if (data){
@@ -119,13 +127,11 @@ function suggestions(text){
 
 <div align="center">
 Enter Sentence:<br>
-<textarea id="mySiGML" class="txtaSiGMLText" rows="6" >
-paard
+<textarea id="mySiGML" class="txtaSiGMLText" rows="6" oninput="suggestions(this.value)">
 </textarea>
 
 <br>
 <input type="button" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' />
-<input type="button" value="Suggest" onclick='suggestions(document.getElementById("mySiGML").value);' />
 <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 <br>
 <br>
