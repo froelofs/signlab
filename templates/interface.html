@@ -56,7 +56,7 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 <script type="text/javascript" src="../static/jquery-3.5.1.min.js"></script>
 
 <script>
-let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
+// let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
 function goPython(text){
     $.ajax({
       type: "POST",
@@ -84,11 +84,14 @@ function suggestions(text){
       contentType: "application/json;charset=UTF-8",
       async: false,
       beforeSend: function() {
-        alert(text);
+        alert("input: " + text);
       },
       success: function(response) { 
         alert("suggestions: " + response);
-      }
+      },
+      error: function() {
+        alert('Something went wrong');
+      },
   }).responseText;
   options = options.split(",");
 }
@@ -96,10 +99,10 @@ function suggestions(text){
   
 
 /*execute a function when someone clicks in the document:*/
-document.addEventListener("click", function (e) {
-    closeAllLists(e.target);
-});
-  // $.get(scrapeJSON, function(data) {
+// document.addEventListener("click", function (e) {
+//     closeAllLists(e.target);
+// });
+//   // $.get(scrapeJSON, function(data) {
   //    // Get JSON data from Python script
   //    if (data){
   //       console.log("Data returned:", data)
