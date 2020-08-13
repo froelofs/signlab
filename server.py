@@ -20,11 +20,7 @@ def worker():
 	result = ''
 
 	for value in data.values():
-		print("item", value, type(value))
-		# loop over every row
-		#result += str(data[item]) + '\n'
 		result = main(value.rstrip("\n"))
-		print("result:", result)
 
 	return result
 
@@ -34,8 +30,7 @@ def suggestions():
 	data = request.get_json()
 	result = ''
 	for value in data.values():
-		word = value.rstrip("\n").split(" ")[-1]
-		print("item:", word)
+		word = value.rstrip("\n").split(" ")[-1]		
 		result = searchDict(word)
 
 	return ','.join(result)

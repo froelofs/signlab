@@ -57,6 +57,7 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 
 <script>
 // let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
+var options = "";
 function goPython(text){
     $.ajax({
       type: "POST",
@@ -77,23 +78,22 @@ function goPython(text){
 }
 
 function suggestions(text){
-  var options = $.ajax({
+  $.ajax({
       type: "POST",
       url: "/suggestions",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
-      async: false,
       beforeSend: function() {
         alert("input: " + text);
       },
       success: function(response) { 
-        alert("suggestions: " + response);
+        options = response.split(",");
+        alert("options: " + options);
       },
-       error: function (request, status, error) {
-            alert(request.statusText + ", " + error);
-        },
-  }).responseText;
-  options = options.split(",");
+      error: function (request, status, error) {
+        alert(request.statusText + ", " + error);
+      },
+  });
 }
 
   
