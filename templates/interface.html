@@ -91,7 +91,8 @@ function suggestions(text){
         alert("options: " + options);
       },
       error: function (qXHR, textStatus, errorThrown ) {
-        alert(textStatus + " , " + errorThrown);
+        alert(textStatus);
+        alert(errorThrown);
       },
   });
 }
