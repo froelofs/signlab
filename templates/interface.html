@@ -89,9 +89,9 @@ function suggestions(text){
       success: function(response) { 
         alert("suggestions: " + response);
       },
-      error: function() {
-        alert('Something went wrong');
-      },
+       error: function (request, status, error) {
+            alert(request.statusText + ", " + error);
+        },
   }).responseText;
   options = options.split(",");
 }

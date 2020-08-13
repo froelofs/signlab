@@ -33,9 +33,9 @@ def suggestions():
 
 	data = request.get_json()
 	result = ''
-
 	for value in data.values():
 		word = value.rstrip("\n").split(" ")[-1]
+		print("item:", word)
 		result = searchDict(word)
 
 	return ','.join(result)
