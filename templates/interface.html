@@ -60,7 +60,7 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 var options = "";
 function goPython(text){
     $.ajax({
-      type: "POST",
+      method: "POST",
       url: "/receiver",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
@@ -79,7 +79,7 @@ function goPython(text){
 
 function suggestions(text){
   $.ajax({
-      type: "POST",
+      method: "POST",
       url: "/suggestions",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
