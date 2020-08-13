@@ -90,8 +90,8 @@ function suggestions(text){
         options = response.split(",");
         alert("options: " + options);
       },
-      error: function (request, status, error) {
-        alert(error);
+      error: function (qXHR, textStatus, errorThrown ) {
+        alert(textStatus + " , " + errorThrown);
       },
   });
 }
