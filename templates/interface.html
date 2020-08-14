@@ -61,7 +61,7 @@ var options = "";
 function goPython(text){
     $.ajax({
       method: "POST",
-      url: "/receiver",
+      url: "../wsgi.py",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
       beforeSend: function() {
@@ -83,16 +83,16 @@ function suggestions(text){
       url: "/suggestions",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
-      beforeSend: function() {
-        alert("input: " + text);
-      },
-      success: function(response) { 
-        options = response.split(",");
-        alert("options: " + options);
-      },
-      error: function (qXHR, error, errorThrown ) {
-        console.log(error);
-      },
+      // beforeSend: function() {
+      //   alert("input: " + text);
+      // },
+      // success: function(response) { 
+      //   options = response.split(",");
+      //   alert("options: " + options);
+      // },
+      // error: function (qXHR, error, errorThrown ) {
+      //   console.log(error);
+      // },
   });
 }
 

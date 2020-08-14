@@ -35,7 +35,7 @@ def suggestions():
 
 		return ','.join(result)
 	except:
-		return "servery.py is not the problem"
+		return "server.py is not the problem"
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(host='0.0.0.0')
