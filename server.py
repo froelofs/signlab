@@ -24,7 +24,7 @@ def worker():
 
 	return result
 
-@app.route('../server.py/suggestions', methods = ['POST','GET'])
+@app.route('../suggestions', methods = ['POST','GET'])
 def suggestions():
 
 	data = request.get_json()
