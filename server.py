@@ -24,16 +24,18 @@ def worker():
 
 	return result
 
-@app.route('../suggestions', methods = ['POST','GET'])
+@app.route('/suggestions', methods = ['POST','GET'])
 def suggestions():
+	try:
+		data = request.get_json()
+		result = ''
+		for value in data.values():
+			word = value.rstrip("\n").split(" ")[-1]		
+			result = searchDict(word)
 
-	data = request.get_json()
-	result = ''
-	for value in data.values():
-		word = value.rstrip("\n").split(" ")[-1]		
-		result = searchDict(word)
-
-	return ','.join(result)
+		return ','.join(result)
+	except:
+		return "servery.py is not the problem"
 
 if __name__ == '__main__':
   app.run(debug=True)

@@ -80,7 +80,7 @@ function goPython(text){
 function suggestions(text){
   $.ajax({
       method: "POST",
-      url: "../suggestions",
+      url: "/suggestions",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
       beforeSend: function() {
