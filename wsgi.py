@@ -1,4 +1,5 @@
-def index(req):
-	postData = req.form
-	json = str(postData['param'].value)
-	print(json)
+import cgi, cgitb
+    def index():
+        data = cgi.FieldStorage()
+        mydata = data['param'].value
+        return "Hello"
