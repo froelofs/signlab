@@ -5,7 +5,7 @@ from browser.widgets.dialog import InfoDialog
 
 def click(ev):
     InfoDialog("Hello", f"Hello, {document['mySiGML'].value} !")
-    alert(type({document['mySiGML'].value}))
+    alert(type(str({document['mySiGML'].value})))
 
 # def translate(ev):
 # 	result = main({document['mySiGML'].value})
