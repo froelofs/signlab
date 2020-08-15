@@ -8,6 +8,7 @@ import pickle
 infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 
 
+
 #'Main' function
 '''Create the SiGML of the signs
 	input: [(word0, PoS-tag, Syntactic_Dependency), (word1, PoS-tag, Syntactic_Dependency), ...]

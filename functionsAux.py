@@ -1,9 +1,9 @@
 ''' Auxiliary functions: functions that are used in sign.py or offer extra functionality'''
-import pickle
-import re
+# import pickle
+# import re
 
 # infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
-from HamNoSysDict import categoriesHamNoSys as cat #categorydict
+# from HamNoSysDict import categoriesHamNoSys as cat #categorydict
 from dictFile import infoSigns
 
 '''Adds a new gloss to the dictionary, accepts complete input and returns the
