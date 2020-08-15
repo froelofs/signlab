@@ -149,7 +149,7 @@ Enter Sentence:<br>
 </textarea>
 
 <br>
-<input type="button" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' />
+<input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' />
 <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 <br>
 <br>
@@ -163,9 +163,8 @@ def click(ev):
     InfoDialog("Hello", f"Hello, {document['mySiGML'].value} !")
 
 # bind event 'click' on button to function echo
-document["echo"].bind("click", click)
+document["play"].bind("click", click)
 </script>
-<input id="zone">
 <button id="echo">click !</button>
 
 <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
