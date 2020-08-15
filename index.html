@@ -62,7 +62,7 @@ var options = "";
 function goPython(text){
     $.ajax({
       method: "POST",
-      url: "../wsgi.py",
+      url: "main.py",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
       beforeSend: function() {
