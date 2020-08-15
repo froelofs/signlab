@@ -12,9 +12,9 @@ def click(ev):
 
 def matches(ev):
 	InfoDialog("This is working fine!")
-	# results = searchDict({document['mySiGML'].value})
+	results = searchDict({document['mySiGML'].value})
 	InfoDialog("Hello there")
 	InfoDialog("Results:",results)
 
 # bind event 'click' on button to function echo
-document["echo"].bind("click", matches)
+document["echo"].bind("click", click)
