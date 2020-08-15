@@ -12,7 +12,7 @@ def click(ev):
 
 def matches(ev):
 	InfoDialog("This is working fine!")
-	results = searchDict({document['mySiGML'].value})
+	# results = searchDict({document['mySiGML'].value})
 	InfoDialog("Hello there")
 	InfoDialog("Results:",results)
 
