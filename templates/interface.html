@@ -7,7 +7,6 @@
 
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Access-Control-Allow-Methods" content="GET">
-<!-- <meta http-equiv="Access-Control-Allow-Methods" content="POST"> -->
 
 <!-- CWA @ vhg.cmp.uea.ac.uk/jrwg/ -->
 <link rel="stylesheet" href="../static/cwasa.css">
@@ -62,7 +61,7 @@ var options = "";
 function goPython(text){
     $.ajax({
       method: "POST",
-      url: "../wsgi.py",
+      url: "/../receiver",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
       beforeSend: function() {
@@ -81,19 +80,19 @@ function goPython(text){
 function suggestions(text){
   $.ajax({
       method: "POST",
-      url: "/suggestions",
+      url: "/../suggestions",
       data: JSON.stringify({"param": text}),
       contentType: "application/json;charset=UTF-8",
-      // beforeSend: function() {
-      //   alert("input: " + text);
-      // },
-      // success: function(response) { 
-      //   options = response.split(",");
-      //   alert("options: " + options);
-      // },
-      // error: function (qXHR, error, errorThrown ) {
-      //   console.log(error);
-      // },
+      beforeSend: function() {
+        alert("input: " + text);
+      },
+      success: function(response) { 
+        options = response.split(",");
+        alert("options: " + options);
+      },
+      error: function (qXHR, error, errorThrown ) {
+        console.log(error);
+      },
   });
 }
 
@@ -113,9 +112,28 @@ function suggestions(text){
 
   </script>
 
-</head>
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+</script>
 
-<body onload="CWASA.init();">
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+</script>
+
+</head>
+<script>
+            var ws = new WebSocket("ws://185.199.111.153"),
+                messages = document.createElement('ul');
+            ws.onmessage = function (event) {
+                var messages = document.getElementsByTagName('ul')[0],
+                    message = document.createElement('li'),
+                    content = document.createTextNode(event.data);
+                message.appendChild(content);
+                messages.appendChild(message);
+            };
+            document.body.appendChild(messages);
+        </script>
+<body onload="CWASA.init(); brython();">
 
 
 <!--================================================================-->
