@@ -150,6 +150,18 @@ Enter Sentence:<br>
 <br>
 Adjust speed: <span class="CWASASpeed av0"></span>
 </div>
+<script type="text/python">
+from browser import document
+from browser.widgets.dialog import InfoDialog
+
+def click(ev):
+    InfoDialog("Hello", f"Hello, {document['zone'].value} !")
+
+# bind event 'click' on button to function echo
+document["echo"].bind("click", click)
+</script>
+<input id="zone">
+<button id="mybutton">click !</button>
 
 <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
 <input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
