@@ -6,17 +6,6 @@
 # from HamNoSysDict import categoriesHamNoSys as cat #categorydict
 from dictFile import infoSigns
 
-'''Adds a new gloss to the dictionary, accepts complete input and returns the
-(new) dict entry'''
-def addSign(gloss, hamnosys, sampa, dictionary = infoSigns):
-	for entry in dictionary:
-		if gloss == entry:
-			print("This word is already in the dictionary")
-			return dictionary
-	dictionary[gloss] = (hamnosys, sampa)
-	print("Success!", gloss, dictionary[gloss])
-	pickle.dump(dictionary, open("dictFile.p", "wb"))
-	return dictionary
 
 '''Accepts a written HamNoSys notation and returns the category it belongs to'''
 def findCategory(hamnosys, dictionary = cat):
