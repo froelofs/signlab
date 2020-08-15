@@ -2,8 +2,9 @@
 import pickle
 import re
 
-infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+# infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 from HamNoSysDict import categoriesHamNoSys as cat #categorydict
+from dictFile import infoSigns
 
 '''Adds a new gloss to the dictionary, accepts complete input and returns the
 (new) dict entry'''
