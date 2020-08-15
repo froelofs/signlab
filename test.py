@@ -1,10 +1,11 @@
 from browser import document, alert
 from browser.widgets.dialog import InfoDialog
 # from main import main
-from functionsAux import searchDict
+#from functionsAux import searchDict
 
 def click(ev):
     InfoDialog("Hello", f"Hello, {document['mySiGML'].value} !")
+    alert(type({document['mySiGML'].value}))
 
 # def translate(ev):
 # 	result = main({document['mySiGML'].value})
