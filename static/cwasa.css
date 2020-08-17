@@ -87,4 +87,10 @@ h3, h4 {
 
 .displayed { }
 .undisplayed { display: none; }
+
+.suggestions{
+	width: auto;
+	height: auto;
+	margin:50px;
+}
 /*--------*/
