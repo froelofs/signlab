@@ -21,7 +21,7 @@ def matches(ev):
 		sel = html.SELECT(size=5, multiple=True)
 		for item in results:
 		    sel <= html.OPTION(item)
-		document["suggestions"] = sel
+		document["suggestions"].value = sel
 	else:
 		alert("No results were found")
 
