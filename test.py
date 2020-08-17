@@ -18,7 +18,8 @@ def matches(ev):
 	results = searchDict(input)
 	alert(len(results))
 	if len(results):
-		alert("These are the results: " + results)
+		alert("These are the results:")
+		alert(results)
 	else:
 		alert("No results were found")
 	
