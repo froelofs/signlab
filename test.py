@@ -18,15 +18,10 @@ def matches(ev):
 		alert("These are the results:")
 		alert(results)
 		# document["mySiGML"].value = results
-		for r in results:
-			# r = r + "\n"
-			document["suggestions"] = r
-			# alert(r)
-
 		sel = html.SELECT(size=5, multiple=True)
 		for item in results:
 		    sel = html.OPTION(item)
-		document["suggestions"] <= sel
+		document["panel"] <= sel
 	else:
 		alert("No results were found")
 
