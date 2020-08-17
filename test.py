@@ -18,6 +18,8 @@ def matches(ev):
 		alert("These are the results:")
 		alert(results)
 		# document["mySiGML"].value = results
+		for r in results:
+			r = r + "\n"
 		document["suggestions"] <= results
 	else:
 		alert("No results were found")
