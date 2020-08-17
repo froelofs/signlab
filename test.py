@@ -26,7 +26,7 @@ def matches(ev):
 		sel = html.SELECT(size=5, multiple=True)
 		for item in results:
 		    sel <= html.OPTION(item)
-		doc["panel"] <= sel
+		document["panel"] <= sel
 	else:
 		alert("No results were found")
 
