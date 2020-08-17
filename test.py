@@ -18,7 +18,7 @@ def matches(ev):
 		alert("These are the results:")
 		alert(results)
 		# document["mySiGML"].value = results
-		document["suggestions"].value <= results
+		document["suggestions"] <= results
 	else:
 		alert("No results were found")
 	
