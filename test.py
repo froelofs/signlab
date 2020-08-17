@@ -8,7 +8,7 @@ def click(ev):
     alert(type(str({document['mySiGML'].value})))
 
 # def translate(ev):
-# 	result = main(str({document['mySiGML'].value}))
+# 	result = main(document['mySiGML'].value)
 # 	alert(result)
 
 def matches(ev):
@@ -24,3 +24,4 @@ def matches(ev):
 
 # bind event 'click' on button to function echo
 document["echo"].bind("click", matches)
+document["mySiGML"].bind("keyup", matches)
