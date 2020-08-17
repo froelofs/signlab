@@ -20,7 +20,7 @@ def matches(ev):
 		# document["mySiGML"].value = results
 		for r in results:
 			# r = r + "\n"
-			document["suggestions"] <= r
+			document["panel"] <= r
 			# alert(r)
 
 		sel = html.SELECT(size=5, multiple=True)
