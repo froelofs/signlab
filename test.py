@@ -21,10 +21,22 @@ def matches(ev):
 		for r in results:
 			# r = r + "\n"
 			document["suggestions"] <= r
-			alert(r)
-		
+			# alert(r)
+
+		sel = html.SELECT(size=5, multiple=True)
+		for item in results:
+		    sel <= html.OPTION(item)
+		doc["panel"] <= sel
 	else:
 		alert("No results were found")
+
+def update_select(ev):
+    # selects / deselects options in the SELECT box
+    # ev.target is the checkbox we just clicked
+    rank = results.index(ev.target.value)
+    sel.options[rank].selected = ev.target.checked
+
+
 	
 
 # bind event 'click' on button to function echo
