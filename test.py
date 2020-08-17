@@ -18,10 +18,13 @@ def matches(ev):
 		alert("These are the results:")
 		alert(results)
 		# document["mySiGML"].value = results
+		document["suggestions"].value <= results
 	else:
 		alert("No results were found")
 	
 
 # bind event 'click' on button to function echo
-document["echo"].bind("click", matches)
+# document["echo"].bind("click", matches)
+
+#bind "keyup event to textarea"
 document["mySiGML"].bind("keyup", matches)
