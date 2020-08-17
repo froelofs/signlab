@@ -28,7 +28,7 @@ def matches(ev):
 
 def update_input(ev):
 	selected = [option.value for option in sel if option.selected]
-	document['mySiGML'].value = selected[0].value
+	document['mySiGML'].value = selected[0]
 
 # def update_select(ev):
 #     # selects / deselects options in the SELECT box
