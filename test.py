@@ -1,4 +1,4 @@
-from browser import document, alert
+from browser import document, alert, html
 from browser.widgets.dialog import InfoDialog
 # from main import main
 from functionsAux import searchDict
