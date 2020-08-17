@@ -12,14 +12,12 @@ def click(ev):
 # 	alert(result)
 
 def matches(ev):
-	alert("This is working fine!")
 	input = document['mySiGML'].value
-	alert(input)
 	results = searchDict(input)
-	alert(len(results))
 	if len(results):
 		alert("These are the results:")
 		alert(results)
+		document["mySiGML"] = results
 	else:
 		alert("No results were found")
 	
