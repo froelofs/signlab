@@ -89,8 +89,6 @@ h3, h4 {
 .undisplayed { display: none; }
 
 .suggestions{
-	width: auto;
-	height: auto;
-	margin:50px;
+	width: 50 px;
 }
 /*--------*/
