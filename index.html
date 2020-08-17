@@ -12,7 +12,7 @@
 <!-- CWA @ vhg.cmp.uea.ac.uk/jrwg/ -->
 <link rel="stylesheet" href="static/cwasa.css">
 <script type="text/javascript"
-    src="http://vhg.cmp.uea.ac.uk/tech/jas/vhg2020/cwa/allcsa.js"></script>
+    src="allcsa.js"></script>
 
 <script language="javascript">
 
@@ -68,7 +68,7 @@ function goPython(text){
       beforeSend: function() {
         alert(text);
       },
-      success: function(response) { 
+      success: function(response) {
         playURL(response);
         alert("It worked " + response);
       },
@@ -87,7 +87,7 @@ function suggestions(text){
       // beforeSend: function() {
       //   alert("input: " + text);
       // },
-      // success: function(response) { 
+      // success: function(response) {
       //   options = response.split(",");
       //   alert("options: " + options);
       // },
@@ -97,7 +97,7 @@ function suggestions(text){
   });
 }
 
-  
+
 
 /*execute a function when someone clicks in the document:*/
 // document.addEventListener("click", function (e) {
