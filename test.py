@@ -20,16 +20,16 @@ def matches(ev):
 		# document["mySiGML"].value = results
 		sel = html.SELECT(size=5, multiple=True)
 		for item in results:
-		    sel = html.OPTION(item)
+		    sel <= html.OPTION(item)
 		document["suggestions"] <= sel
 	else:
 		alert("No results were found")
 
-def update_select(ev):
-    # selects / deselects options in the SELECT box
-    # ev.target is the checkbox we just clicked
-    rank = results.index(ev.target.value)
-    sel.options[rank].selected = ev.target.checked
+# def update_select(ev):
+#     # selects / deselects options in the SELECT box
+#     # ev.target is the checkbox we just clicked
+#     rank = results.index(ev.target.value)
+#     sel.options[rank].selected = ev.target.checked
 
 
 	
