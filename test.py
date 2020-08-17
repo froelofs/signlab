@@ -13,7 +13,7 @@ def click(ev):
 
 def matches(ev):
 	alert("This is working fine!")
-	input = str({document['mySiGML'].value})
+	input = document['mySiGML'].value
 	alert(input)
 	results = searchDict(input)
 	alert(len(results))
