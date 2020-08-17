@@ -17,7 +17,7 @@ def matches(ev):
 	if len(results):
 		alert("These are the results:")
 		alert(results)
-		document["mySiGML"] = results
+		document["mySiGML"].value = results
 	else:
 		alert("No results were found")
 	
