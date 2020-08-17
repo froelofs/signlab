@@ -11,7 +11,7 @@ def click(ev):
 # 	result = main(document['mySiGML'].value)
 # 	alert(result)
 
-sel = html.SELECT(size=5, multiple=False)
+sel = ""
 def matches(ev):
 	input = document['mySiGML'].value
 	results = searchDict(input)
