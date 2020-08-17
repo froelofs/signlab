@@ -19,6 +19,7 @@ def matches(ev):
 		# alert("These are the results:")
 		# alert(results)
 		# document["mySiGML"].value = results
+		sel = html.SELECT(size=5, multiple=False)
 		for item in results:
 		    sel <= html.OPTION(item)
 		document["suggestions"] <= sel
