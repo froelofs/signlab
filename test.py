@@ -18,13 +18,17 @@ def matches(ev):
 		# alert("These are the results:")
 		# alert(results)
 		# document["mySiGML"].value = results
-		sel = html.SELECT(size=5, multiple=True)
-		document["suggestions"] = ""
+		sel = html.SELECT(size=5, multiple=False)
 		for item in results:
 		    sel <= html.OPTION(item)
 		document["suggestions"] <= sel
+		sel.bind("change", update_input)
 	else:
 		alert("No results were found")
+
+def update_input(ev):
+	selected = [option.value for option in sel if option.selected]
+	document['mySiGML'].value = selected[0].value
 
 # def update_select(ev):
 #     # selects / deselects options in the SELECT box
