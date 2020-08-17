@@ -15,8 +15,8 @@ def matches(ev):
 	input = document['mySiGML'].value
 	results = searchDict(input)
 	if len(results):
-		alert("These are the results:")
-		alert(results)
+		# alert("These are the results:")
+		# alert(results)
 		# document["mySiGML"].value = results
 		sel = html.SELECT(size=5, multiple=True)
 		for item in results:
