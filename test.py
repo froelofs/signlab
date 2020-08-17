@@ -28,6 +28,7 @@ def matches(ev):
 		alert("No results were found")
 
 def update_input(ev):
+	alert("something has changed")
 	selected = [option.value for option in sel if option.selected]
 	document['mySiGML'].value = selected[0].lower()
 
