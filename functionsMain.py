@@ -5,7 +5,8 @@ import sign
 import re
 import pickle
 
-infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+# infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+from dictFile import infoSigns
 
 
 

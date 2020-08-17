@@ -2240,4 +2240,4 @@ infoSigns = {
    'ZWEMMEN':('hamsymmlr,hamflathand,hambetween,hamflathand,hamfingerstraightmod,hamextfingerol,hampalmdr,hamparbegin,hamindexfinger,hamfingertip,hamplus,hamindexfinger,hamfingertip,hamparend,hamtouch,hamparbegin,hammover,hamarcr,hamlargemod,hamreplace,hamextfingero,hampalmdr,hamparend,hamparbegin,hammoveil,hamarcr,hamlargemod,hamreplace,hamextfingerol,hambetween,hamextfingerdo,hampalmd,hamparend,hamplus,hamsymmlr,hamflathand,hambetween,hamflathand,hamfingerstraightmod,hamextfingerol,hampalmdr,hamparbegin,hamindexfinger,hamfingertip,hamplus,hamindexfinger,hamfingertip,hamparend,hamtouch,hamparbegin,hammover,hamarcr,hamlargemod,hamreplace,hamextfingero,hampalmdr,hamparend,hamparbegin,hammoveil,hamarcr,hamlargemod,hamreplace,hamextfingerol,hambetween,hamextfingerdo,hampalmd,hamparend','zvEmm@'),
 }
 
-pickle.dump(infoSigns, open("dictFile.p", "wb"))
+# pickle.dump(infoSigns, open("dictFile.p", "wb"))
