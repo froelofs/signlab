@@ -3,7 +3,7 @@
 # import re
 
 # infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
-# from HamNoSysDict import categoriesHamNoSys as cat #categorydict
+from HamNoSysDict import categoriesHamNoSys as cat #categorydict
 from dictFile import infoSigns
 
 

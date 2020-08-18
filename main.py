@@ -12,7 +12,8 @@ import functionsAux as fa
 import sendsigml as ss
 import sign
 import pickle
-infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+# infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+from dictFile import infoSigns
 
 def main(sentence, flag = False):
 
