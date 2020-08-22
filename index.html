@@ -83,9 +83,11 @@ function suggestions(text){
   var arrayLength = options.length;
   for (var i = 0; i < arrayLength; i++){
     if (options[i].includes(text)) {
+      var newNode = document.createElement('li');
       alert(options[i]);
       var textnode = document.createTextNode(options[i]); 
-      node.appendChild(textnode); 
+      newNode.appendChild(textnode); 
+      node.appendChild(newNode); 
     }
   }
   alert("hey");
@@ -158,11 +160,11 @@ function suggestions(text){
 
 <div align="center">
 Enter Sentence:<br>
-<textarea id="mySiGML" class="txtaSiGMLText" rows="6">
 <!-- <textarea id="mySiGML" class="txtaSiGMLText" rows="6" oninput="suggestions(this.value)"> -->
+<textarea id="mySiGML" class="txtaSiGMLText" rows="6">
 </textarea>
 
-<div id="suggestions" class="suggestions" style="text-align:center;"></div>
+<ul id="suggestions" class="suggestions" style="text-align:center;"></ul>
 
 <br>
 <!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
