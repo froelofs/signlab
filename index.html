@@ -82,6 +82,7 @@ function suggestions(text){
   var node = document.createElement("LI");
   for (o in options){
     if (o.includes(text)) {
+      alert("hello");
       var textnode = document.createTextNode(o); 
       node.appendChild(textnode); 
     }
