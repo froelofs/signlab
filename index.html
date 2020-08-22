@@ -80,16 +80,17 @@ function goPython(text){
 
 function suggestions(text){
   alert(text)
-  var node = document.getElementById("suggestions")
+  document.getElementById(suggestions).innerHTML = "";
+  var node = document.getElementById("suggestions");
   var arrayLength = options.length;
   for (var i = 0; i < arrayLength; i++){
     if (options[i].includes(text) == true) {
       var newNode = document.createElement('div');
       var textnode = document.createTextNode(options[i]); 
-      newNode.appendChild(textnode); 
-      node.appendChild(newNode); 
+      newNode.appendChild(textnode);  
     }
   }
+  node.appendChild(newNode);
 
 
   // document.getElementById("mySiGML").value = 
