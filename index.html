@@ -79,14 +79,14 @@ function goPython(text){
 }
 
 function suggestions(text){
+  alert(text)
   var node = document.getElementById("suggestions")
   var arrayLength = options.length;
   for (var i = 0; i < arrayLength; i++){
     if (options[i].includes(text) == true) {
-      alert(options[i].includes(text));
-      alert(text);
+      // alert(options[i].includes(text));
       var newNode = document.createElement('li');
-      alert(options[i]);
+      // alert(options[i]);
       var textnode = document.createTextNode(options[i]); 
       newNode.appendChild(textnode); 
       node.appendChild(newNode); 
