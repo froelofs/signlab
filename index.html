@@ -82,7 +82,7 @@ function suggestions(text){
   var node = document.getElementById("suggestions")
   var arrayLength = options.length;
   for (var i = 0; i < arrayLength; i++){
-    if (options[i].includes(text)) {
+    if (options[i].includes(text) == true) {
       var newNode = document.createElement('li');
       alert(options[i]);
       var textnode = document.createTextNode(options[i]); 
