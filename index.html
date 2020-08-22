@@ -88,9 +88,9 @@ function suggestions(text){
       var newNode = document.createElement('div');
       var textnode = document.createTextNode(options[i]); 
       newNode.appendChild(textnode);  
+      node.appendChild(newNode);
     }
   }
-  node.appendChild(newNode);
 
 
   // document.getElementById("mySiGML").value = 
