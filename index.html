@@ -93,6 +93,25 @@ function suggestions(text){
   }
 
 
+// function goPython(text){
+//     $.ajax({
+//       method: "POST",
+//       url: "main.py",
+//       data: JSON.stringify({"param": text}),
+//       contentType: "application/json;charset=UTF-8",
+//       beforeSend: function() {
+//         alert(text);
+//       },
+//       success: function(response) {
+//         playURL(response);
+//         alert("It worked " + response);
+//       },
+//       error: function() {
+//         alert('Something went wrong');
+//         },
+//      });
+// }
+
   // document.getElementById("mySiGML").value = 
   // $.ajax({
   //     method: "POST",
@@ -111,21 +130,6 @@ function suggestions(text){
   //     // },
   // });
 }
-
-
-
-/*execute a function when someone clicks in the document:*/
-// document.addEventListener("click", function (e) {
-//     closeAllLists(e.target);
-// });
-//   // $.get(scrapeJSON, function(data) {
-  //    // Get JSON data from Python script
-  //    if (data){
-  //       console.log("Data returned:", data)
-  //    }
-  //    jobDataJSON = JSON.parse(data)
-  // }
-
   </script>
 
 <!-- <script type="text/javascript"
@@ -174,18 +178,9 @@ Enter Sentence:<br>
 <br>
 Adjust speed: <span class="CWASASpeed av0"></span>
 </div>
-<!-- <script type="text/python">
-from browser import document
-from browser.widgets.dialog import InfoDialog
 
-def click(ev):
-    InfoDialog("Hello, Hey", f"Hello, {document['mySiGML'].value} !")
-
-# bind event 'click' on button to function echo
-document["play"].bind("click", click)
-</script> -->
-<script type="text/python" src="test.py"></script>
-<button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button>
+<!-- <script type="text/python" src="test.py"></script>
+<button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
 
 <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
 <input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
