@@ -81,6 +81,7 @@ function goPython(text){
 function suggestions(text){
   var node = document.getElementById("suggestions")
   for (o in options){
+    alert(o)
     if (o.includes(text)) {
       alert("hello");
       var textnode = document.createTextNode(o); 
