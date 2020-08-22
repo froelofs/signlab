@@ -79,7 +79,7 @@ function goPython(text){
 }
 
 function suggestions(text){
-  var node = document.createElement("LI");
+  var node = document.getElementById("suggestions")
   for (o in options){
     if (o.includes(text)) {
       alert("hello");
@@ -88,7 +88,7 @@ function suggestions(text){
     }
   }
   alert("hey");
-  document.getElementById("suggestions").appendChild(node);
+
 
   // document.getElementById("mySiGML").value = 
   // $.ajax({
