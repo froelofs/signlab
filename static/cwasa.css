@@ -99,7 +99,7 @@ h3, h4 {
   margin: 0;
 }
 
-#suggestionsdiv a {
+#suggestions div a {
   border: 1px solid #ddd; /* Add a border to all links */
   margin-top: -1px; /* Prevent double borders */
   background-color: #f6f6f6; /* Grey background color */
