@@ -86,7 +86,7 @@ function suggestions(text){
   node.setAttribute("suggestionsList","");
   for (var i = 0; i < arrayLength; i++){
     if (options[i].includes(text) == true) {
-      var newNode = document.createElement('div');
+      var newNode = document.createElement('li');
       newNode.setAttribute("suggestion","");
       var textnode = document.createTextNode(options[i]); 
       newNode.appendChild(textnode);  
