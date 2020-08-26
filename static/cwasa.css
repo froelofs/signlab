@@ -92,7 +92,7 @@ h3, h4 {
 	width: 50 px;
 }
 
-#suggestionsList {
+#mySiGML {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -103,14 +103,14 @@ h3, h4 {
   margin-bottom: 12px; /* Add some space below the input */
 }
 
-#suggestion {
+#suggestions {
   /* Remove default list styling */
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#suggestion div a {
+#suggestionsdiv a {
   border: 1px solid #ddd; /* Add a border to all links */
   margin-top: -1px; /* Prevent double borders */
   background-color: #f6f6f6; /* Grey background color */
@@ -121,7 +121,7 @@ h3, h4 {
   display: block; /* Make it into a block element to fill the whole list */
 }
 
-#suggestion div a:hover:not(.header) {
+#suggestions div a:hover:not(.header) {
   background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
 /*--------*/
