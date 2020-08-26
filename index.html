@@ -91,9 +91,10 @@ function suggestions(text){
       var textnode = document.createTextNode(options[i]); 
       newNode.appendChild(textnode);
       // newNode.value = options[i];
+      newNode.setAttribute("class", options[i]);
       newNode.addEventListener("click", function(e){
         /*insert the value for the autocomplete text field:*/
-        document.getElementById("mySiGML").value = newNode.value;
+        document.getElementById("mySiGML").value = newNode.getAttribute("class");
       });
       node.appendChild(newNode);
     }
