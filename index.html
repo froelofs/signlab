@@ -88,8 +88,9 @@ function suggestions(text){
     if (options[i].includes(text) == true) {
       var newNode = document.createElement('li');
       // newNode.setAttribute("suggestion","");
-      var textnode = document.createTextNode(options[i]); 
-      newNode.appendChild(textnode);
+      // var textnode = document.createTextNode(options[i]); 
+      // newNode.appendChild(textnode);
+      newNode.value = options[i];
       newNode.addEventListener("click", function(e){
         /*insert the value for the autocomplete text field:*/
         document.getElementById("mySiGML").value = newNode.value;
