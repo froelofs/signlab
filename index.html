@@ -87,14 +87,12 @@ function suggestions(text){
   for (var i = 0; i < arrayLength; i++){
     if (options[i].includes(text) == true) {
       var newNode = document.createElement('li');
-      newNode.setAttribute("value",options[i]);
+       newNode.setAttribute("id", options[i]);
       var textnode = document.createTextNode(options[i]); 
       newNode.appendChild(textnode);
-      // newNode.value = options[i];
-      newNode.setAttribute("class", options[i]);
       newNode.addEventListener("click", function(e){
         /*insert the value for the autocomplete text field:*/
-        document.getElementById("mySiGML").value = newNode.getAttribute("class");
+        document.getElementById("mySiGML").value = newNode.getAttribute("id");
       });
       node.appendChild(newNode);
     }
