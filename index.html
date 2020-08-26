@@ -89,7 +89,11 @@ function suggestions(text){
       var newNode = document.createElement('li');
       // newNode.setAttribute("suggestion","");
       var textnode = document.createTextNode(options[i]); 
-      newNode.appendChild(textnode);  
+      newNode.appendChild(textnode);
+      newNode.addEventListener("click", function(e){
+        /*insert the value for the autocomplete text field:*/
+        document.getElementById("mySiGML").value = newNode.value;
+      });
       node.appendChild(newNode);
     }
   }

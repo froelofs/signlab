@@ -115,4 +115,10 @@ h3, h4 {
   /*when hovering an item:*/
   background-color: #A3B8D2;
 }
+
+.suggestions-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
 /*--------*/
