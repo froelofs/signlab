@@ -64,7 +64,7 @@ var options = ["Goedemorgen","Goedemiddag","Goedenavond","Tot ziens","Tot morgen
 $( "#autocomplete" ).autocomplete({
   source: function( request, response ) {
           var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
-          response( $.grep( tags, function( item ){
+          response( $.grep( options, function( item ){
               return matcher.test( item );
           }) );
       }
