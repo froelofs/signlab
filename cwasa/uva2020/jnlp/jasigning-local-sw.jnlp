@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp codebase="https://lykeesselink.github.io/cwasa/uva2020/"
+    href="jnlp/jasigning-local.jnlp">
+
+  <information>
+    <title>JASigning Support</title>
+    <vendor>JASigning uva.2020</vendor>
+    <description>Classes and Native Libraries for JASigning
+		Apps and Applets</description>
+    <offline-allowed />
+  </information>
+
+  <security>  <all-permissions />  </security>
+
+  <update check="always" policy="always" />
+
+  <resources>
+    <jar href="jars/siwiki.jar" />
+    <jar href="jars/hns-convert.jar" />
+    <jar href="jars/use-jarp.jar" />
+    <jar href="jars/jarpb.jar" />
+    <extension name="sigmlinlib"
+		href="https://lykeesselink.github.io/cwasa/uva2020/jnlp/sigmlinlib.jnlp" />
+    <extension name="jaglib"
+		href="https://lykeesselink.github.io/cwasa/uva2020/jnlp/jaglib.jnlp" />
+    <extension name="jogl-local"
+		href="https://lykeesselink.github.io/cwasa/uva2020/jnlp/jogl-local.jnlp" />
+    <extension name="avatar-basic"
+		href="https://lykeesselink.github.io/cwasa/uva2020/jnlp/avatars/avatar-basic.jnlp" />
+  </resources>
+
+  <component-desc />
+</jnlp>

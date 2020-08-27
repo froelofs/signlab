@@ -87,7 +87,7 @@ function suggestions(text){
   for (var i = 0; i < arrayLength; i++){
     if (options[i].includes(text) == true) {
       var newNode = document.createElement('li');
-       newNode.setAttribute("id", options[i]);
+      newNode.setAttribute("id", options[i]);
       var textnode = document.createTextNode(options[i]); 
       newNode.appendChild(textnode);
       newNode.addEventListener("click", function(e){
