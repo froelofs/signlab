@@ -66,13 +66,13 @@ $( function() {
   function customFilter(array, terms) {
     arrayOfTerms = terms.split(" ");
     var term = $.map(arrayOfTerms, function (tm) {
-         return $.ui.autocomplete.escapeRegex(tm);
+      return $.ui.autocomplete.escapeRegex(tm);
     }).join('|');
     var matcher = new RegExp("\\b" + term, "i");
     return $.grep(array, function (value) {
-      alert(value);
-       return matcher.test(value.label || value.value || value);
+      return matcher.test(value.label || value.value || value);
     });
+    alert(matcher);
   };
 
   $( "#mySiGML" ).autocomplete({
@@ -80,8 +80,7 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
-        response(customFilter(
-        options, request.term));
+        response(customFilter(options, request.term));
     },
   });
 });
