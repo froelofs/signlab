@@ -53,7 +53,7 @@ h3, h4 {
   	margin-right: auto;
   	margin-bottom: 20px;
 	position: relative; background: #A3B8D2;
-	width: 70%; height: 60%;
+	width: auto; height: auto;
 	border: 0px; padding: 0px;
 }
 
