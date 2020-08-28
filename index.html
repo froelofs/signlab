@@ -77,7 +77,6 @@ $( function() {
   $( "#mySiGML" ).autocomplete({
     source: options,
     multiple: true,
-    mustMatch: false,
     source: function (request, response) {
         response(customFilter(
         options, request.term));
