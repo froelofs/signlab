@@ -69,11 +69,11 @@ $( function() {
       return $.ui.autocomplete.escapeRegex(tm);
     }).join('|');
     var matcher = new RegExp("\\b" + term, "i");
-    return $.grep(array, function (value) {
-      var m = matcher.test(value.label || value.value || value);
-      alert(m);
-      return m;
+    var m = $.grep(array, function (value) {
+      return matcher.test(value.label || value.value || value);
     });
+    alert(m);
+    return m;
   };
 
   $( "#mySiGML" ).autocomplete({
