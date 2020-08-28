@@ -69,7 +69,8 @@ $( function() {
          return $.ui.autocomplete.escapeRegex(tm);
     }).join('|');
     var matcher = new RegExp("\\b" + term, "i");
-      return $.grep(array, function (value) {
+    return $.grep(array, function (value) {
+      alert(value);
        return matcher.test(value.label || value.value || value);
     });
   };
