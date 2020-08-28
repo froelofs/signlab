@@ -70,9 +70,10 @@ $( function() {
     }).join('|');
     var matcher = new RegExp("\\b" + term, "i");
     return $.grep(array, function (value) {
-      return matcher.test(value.label || value.value || value);
+      var m = matcher.test(value.label || value.value || value);
+      alert(m);
+      return m;
     });
-    alert(matcher);
   };
 
   $( "#mySiGML" ).autocomplete({
