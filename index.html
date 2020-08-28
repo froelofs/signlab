@@ -68,8 +68,8 @@ $( function() {
     var term = $.map(arrayOfTerms, function (tm) {
          return $.ui.autocomplete.escapeRegex(tm);
     }).join('|');
-   var matcher = new RegExp("\\b" + term, "i");
-    return $.grep(array, function (value) {
+    var matcher = new RegExp("\\b" + term, "i");
+      return $.grep(array, function (value) {
        return matcher.test(value.label || value.value || value);
     });
   };
