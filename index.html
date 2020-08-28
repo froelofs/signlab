@@ -80,7 +80,7 @@ $( function() {
     mustMatch: false,
     source: function (request, response) {
         response(customFilter(
-        availableTags, request.term));
+        options, request.term));
     },
   });
 });
