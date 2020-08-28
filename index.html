@@ -76,7 +76,7 @@ $( function() {
 
   $( "#mySiGML" ).autocomplete({
     source: options,
-    appendTo: "#mySiGML",
+    appendTo: "#suggestions",
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
@@ -201,14 +201,12 @@ Enter Sentence:<br>
 <!-- <textarea id="mySiGML" class="txtaSiGMLText" rows="6"> -->
 <!-- <textarea id="mySiGML" class="txtaSiGMLText" rows="6" oninput="suggestions(this.value)">
 </textarea>
-<input id="mySiGML" class="txtaSiGMLText">
+<input id=""
 <ul id="suggestions" class="suggestions" style="text-align:center;"></ul> -->
 
 <!-- <textarea id="mySiGML" class="txtaSiGMLText" rows="6"></textarea> -->
-<div class="ui-widget">
-  <div id ="mySiGML" contenteditable=true class="txtaSiGMLText" rows="6">
-  
-  </div>
+<div class="ui-widget" id="suggestions">
+  <input id="mySiGML" class="txtaSiGMLText">
 </div>
 
 <br>
