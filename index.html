@@ -160,56 +160,60 @@ function goPython(text){
 <!-- CWA signing avatar panel 0 -->
 <!--================================================================-->
 <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-<div class="CWASAAvatar av0" align="right" ></div>
+<span class="CWASAAvatar av0" align="right" ></span>
 <!--================================================================-->
 
 
-<div align="left">
-Enter Sentence:<br>
-<div class="ui-widget" id="suggestions">
-  <input id="mySiGML" class="txtaSiGMLText">
-</div>
+<span align="left">
+  Enter Sentence:<br>
+  <div class="ui-widget" id="suggestions">
+    <input id="mySiGML" class="txtaSiGMLText">
+  </div>
 
-<br>
-<!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
-<input type="button" id = "play" value="Play"/>
-<input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
-<br>
-<br>
-Adjust speed: <span class="CWASASpeed av0"></span>
-</div>
-
-<!-- <script type="text/python" src="test.py"></script>
-<button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
-
-<!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
-<input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
-<br>
- -->
-<!-- <hr/> -->
-<!-- <p align="center">
-<span class="CWASAProgress av0"></span>
- -->
-
-<!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
-<div align="center" class="undisplayed">
-<span style="font-size: 90%;" >
-Sign/Frame:
-<input id="mySF" class="txtSF" value="0/0" type="text" />
-&nbsp;
-Gloss:
-<input id="myGloss" class="txtGloss" value="[none]" type="text" />
-&nbsp;
-FPS:
-<input id="myFPS" class="txtFPS" value="00.00" type="text" />
+  <br>
+  <!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
+  <input type="button" id = "play" value="Play"/>
+  <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+  <br>
+  <br>
+  Adjust speed: <span class="CWASASpeed av0"></span>
+  <br>
+  <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
+  <input id="myURL" class="txtSiGMLURL av0" value="house.sigml" type="text" />
+  <br> -->
 </span>
-</div>
+
+  <!-- <script type="text/python" src="test.py"></script>
+  <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
+
+  <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
+  <input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
+  <br>
+   -->
+  <!-- <hr/> -->
+  <!-- <p align="center">
+  <span class="CWASAProgress av0"></span>
+   -->
+
+  <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+  <div align="center" class="undisplayed">
+    <span style="font-size: 90%;" >
+      Sign/Frame:
+      <input id="mySF" class="txtSF" value="0/0" type="text" />
+      &nbsp;
+      Gloss:
+      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+      &nbsp;
+      FPS:
+      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+    </span>
+  </div>
 
 
 <div align="center">
-  <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
-<textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
-</textarea>
+    <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+    <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+    </textarea>
 </div>
 
 <br>
