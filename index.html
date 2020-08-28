@@ -87,25 +87,25 @@ function goPython(text){
      });
 }
 
-function suggestions(text){
-  alert(text)
-  document.getElementById("suggestions").innerHTML = "";
-  var node = document.getElementById("suggestions");
-  var arrayLength = options.length;
-  // node.setAttribute("suggestionsList","");
-  for (var i = 0; i < arrayLength; i++){
-    if (options[i].includes(text) == true) {
-      var newNode = document.createElement('li');
-      newNode.setAttribute("id", options[i]);
-      var textnode = document.createTextNode(options[i]); 
-      newNode.appendChild(textnode);
-      newNode.addEventListener("click", function(e){
-        /*insert the value for the autocomplete text field:*/
-        document.getElementById("mySiGML").value = newNode.getAttribute("id");
-      });
-      node.appendChild(newNode);
-    }
-  }
+// function suggestions(text){
+//   alert(text)
+//   document.getElementById("suggestions").innerHTML = "";
+//   var node = document.getElementById("suggestions");
+//   var arrayLength = options.length;
+//   // node.setAttribute("suggestionsList","");
+//   for (var i = 0; i < arrayLength; i++){
+//     if (options[i].includes(text) == true) {
+//       var newNode = document.createElement('li');
+//       newNode.setAttribute("id", options[i]);
+//       var textnode = document.createTextNode(options[i]); 
+//       newNode.appendChild(textnode);
+//       newNode.addEventListener("click", function(e){
+//         /*insert the value for the autocomplete text field:*/
+//         document.getElementById("mySiGML").value = newNode.getAttribute("id");
+//       });
+//       node.appendChild(newNode);
+//     }
+//   }
 
 
 // function goPython(text){
@@ -144,7 +144,7 @@ function suggestions(text){
   //     //   console.log(error);
   //     // },
   // });
-}
+
   </script>
 
 <!-- <script type="text/javascript"
@@ -198,9 +198,11 @@ function suggestions(text){
   <label for="form-autocomplete" class="active"></label>
 </div> -->
 <!-- <input class="form-control basicAutoComplete" type="text" autocomplete="off"> -->
-<div class="ui-widget">
-<label for="mySiGML">Enter Sentence:</label>
-<input id="mySiGML">
+<div>
+  <div class="ui-widget">
+    <label for="mySiGML">Enter Sentence:</label>
+    <input id="mySiGML">
+  </div>
 </div>
 
 <br>
