@@ -93,6 +93,7 @@ h3, h4 {
 }*/
 .ui-widget
  {
-    max-width: 500px;
+    /*max-width: 500px;*/
+    width: 500px;
  }
 /*--------*/
