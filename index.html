@@ -65,16 +65,6 @@ $( function() {
 
   function customFilter(array, terms) {
     arrayOfTerms = terms.split(" ");
-    // var term = $.map(arrayOfTerms, function (tm) {
-    //   return $.ui.autocomplete.escapeRegex(tm);
-    // }).join('|');
-    // alert(term);
-    // var matcher = new RegExp("\\b" + term, "i");
-    // var m = $.grep(array, function (value) {
-    //   return matcher.test(value.label || value.value || value);
-    // });
-    // alert(m);
-    // return m;
     arrayOfTerms.forEach(function (term) {
       var matcher = new RegExp("\\b" + term, "i");
       array = $.grep(array, function (value) {
@@ -86,6 +76,7 @@ $( function() {
 
   $( "#mySiGML" ).autocomplete({
     source: options,
+    appendTo: "#mySiGML";
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
