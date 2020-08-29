@@ -48,9 +48,9 @@ h3, h4 {
 }
 
 .CWASAAvatar {
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
+	display: inline-block;
+  	/*margin-left: 10px;
+  	margin-right: 5px;*/
   	margin-bottom: 20px;
 	/*position: relative; */
 	background: #A3B8D2;
