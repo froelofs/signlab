@@ -155,34 +155,32 @@ function goPython(text){
 <!--================================================================-->
 <h3>Interface ZonMW COVID-19 Project</h3>
 
+<div>
+  <!-- CWA signing avatar panel 0 -->
+  <!--================================================================-->
+  <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+  <span class="CWASAAvatar av0" align="right" ></span>
+  <!--================================================================-->
 
+  <span align="left" style="display: inline-block;">
+    Enter Sentence:
+    <br>
+    <span class="ui-widget" id="suggestions">
+      <input id="mySiGML" class="txtaSiGMLText">
+    </span>
 
-<span align="left" style="display: inline-block;">
-  Enter Sentence:
-  <br>
-  <span class="ui-widget" id="suggestions">
-    <input id="mySiGML" class="txtaSiGMLText">
+    <br>
+    <!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
+    <input type="button" id = "play" value="Play"/>
+    <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+    <br>
+    <br>
+    Adjust speed: <span class="CWASASpeed av0"></span>
+    <br>
+    <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
+    <input id="myURL" class="txtSiGMLURL av0" value="house.sigml" type="text" />
+    <br> -->
   </span>
-
-  <br>
-  <!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
-  <input type="button" id = "play" value="Play"/>
-  <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
-  <br>
-  <br>
-  Adjust speed: <span class="CWASASpeed av0"></span>
-  <br>
-  <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
-  <input id="myURL" class="txtSiGMLURL av0" value="house.sigml" type="text" />
-  <br> -->
-</span>
-
-<!-- CWA signing avatar panel 0 -->
-<!--================================================================-->
-<!-- <div class="CWASAPanel av0" align="center" ></div> -->
-<span class="CWASAAvatar av0" align="right" ></span>
-<!--================================================================-->
-
 
   <!-- <script type="text/python" src="test.py"></script>
   <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
@@ -211,19 +209,19 @@ function goPython(text){
   </div>
 
 
-<div align="center">
-    <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
-    <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
-    </textarea>
+  <div align="center">
+      <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+      <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+      </textarea>
+  </div>
+
+  <br>
+
+
+  <!-- SToCA applet element panel -->
+  <!--================================================================-->
+  <div class="SToCA" align="center" ></div>
+  <!--================================================================-->
 </div>
-
-<br>
-
-
-<!-- SToCA applet element panel -->
-<!--================================================================-->
-<div class="SToCA" align="center" ></div>
-<!--================================================================-->
-
 </body>
 </html>
