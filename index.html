@@ -81,6 +81,9 @@ $( function() {
        return matcher.test(value.label || value.value || value);
       });
     });
+    if (array.length == 0) {
+      array = [];
+    }
     return array;
   }
 
