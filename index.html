@@ -135,17 +135,17 @@ function toSiGML(text){
 
   console.log(translation);
   // Checks whether the sign has a mouthpicture
-  // if (translation.length == 2) {
-  //   sampa = translation[1];
-  //   xmlString += '<hamnosys_nonmanual><hnm_mouthpicture="' + sampa + '"/></hamnosys_nonmanual>';
-  // }
+  if (translation.length == 2) {
+    sampa = translation[1];
+    xmlString += '<hamnosys_nonmanual><hnm_mouthpicture="' + sampa + '"/></hamnosys_nonmanual>';
+  }
   
   sigml = translation[0];
   xmlString += '<hamnosys_manual>';
   sigml = sigml.split(",");
 
   for (var i = 0; i < sigml.length; i++) {
-    xmlString += "<" + sigml[i] + ">";
+    xmlString += "<" + sigml[i] + "/>";
   }
 
   xmlString += "</hamnosys_manual></hns_sign></sigml>"
