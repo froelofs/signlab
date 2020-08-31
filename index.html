@@ -76,7 +76,7 @@ $( function() {
       });
     });
     return array;
-  };
+  }
 
   // Activates the jquery autocomplete function when the user gives input
   $( "#mySiGML" ).autocomplete({
@@ -108,11 +108,11 @@ function goPython(text){
         alert('Something went wrong');
         },
      });
-};
+}
 
-function translate(text){
+function translateSiGML(text){
   alert(text);
-};
+}
 // function goPython(text){
 //     $.ajax({
 //       method: "POST",
@@ -173,7 +173,7 @@ function translate(text){
     </span>
 
     <br>
-    <input type="button" id = "play" value="play" onclick='translate(document.getElementById("mySiGML").value);' />
+    <input type="button" id = "play" value="play" onclick='translateSiGML(document.getElementById("mySiGML").value);'/>
    <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
     <br>
