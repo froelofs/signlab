@@ -114,9 +114,11 @@ function toSiGML(text){
   // Create a DOMParser
   var parser = new DOMParser();
 
-  xmlString = "<sigml><hns_sign gloss='house'><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>"
+  xmlString = '<?xml version=1.0 encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>'
+  
   // Use it to turn your xmlString into an XMLDocument
   var xmlDoc = parser.parseFromString(xmlString, "application/xml");
+  alert(xmlDoc)
   playText(xmlDoc);
 }
 // function goPython(text){
