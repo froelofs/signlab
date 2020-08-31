@@ -131,10 +131,9 @@ function toSiGML(text){
 
   xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
 
-  alert(json);
   translation = json[text];
 
-  alert(translation);
+  log(translation);
   // Checks whether the sign has a mouthpicture
   if (translation.length == 2) {
     sampa = translation[1];
@@ -150,7 +149,7 @@ function toSiGML(text){
   }
 
   xmlString += "</hamnosys_manual></hns_sign></sigml>"
-  alert(xmlString);
+  log(xmlString);
   playText(xmlString);
 }
 // function goPython(text){
