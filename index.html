@@ -110,8 +110,15 @@ function goPython(text){
      });
 }
 
-function translateSiGML(text){
-  alert(text);
+function toSiGML(text){
+  // Create a DOMParser
+  var parser = new DOMParser();
+
+  xmlString = "<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>"
+  // Use it to turn your xmlString into an XMLDocument
+  var xmlDoc = parser.parseFromString(xmlString, "application/xml");
+  alert(xmlDoc)
+  // playText(xmlDoc);
 }
 // function goPython(text){
 //     $.ajax({
@@ -173,7 +180,7 @@ function translateSiGML(text){
     </span>
 
     <br>
-    <input type="button" id = "play" value="play" onclick='translateSiGML(document.getElementById("mySiGML").value);'/>
+    <input type="button" id = "play" value="play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
    <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
     <br>
