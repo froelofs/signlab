@@ -191,6 +191,14 @@ function toSiGML(text){
   <!--================================================================-->
 
   <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
+    <form action="/action_page.php">
+      <input type="checkbox" id="video" name="video" value="Video">
+      <label for="vehicle1"> Video of Sentence:</label><br>
+      <input type="checkbox" id="freesyle" name="freesyle" value="Freestyle">
+      <label for="vehicle1"> Freestyle Sentence </label><br>
+    </form>
+    <br>
+    <br>
     Enter Sentence:
     <br>
     <span class="ui-widget" id="suggestions">
@@ -201,12 +209,6 @@ function toSiGML(text){
     <input type="button" id = "play" value="play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
    <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
-    <br>
-    <br>
-    <input type="checkbox" id="video" name="video" value="Video">
-    <label for="vehicle1"> Video of Sentence:</label><br>
-    <input type="checkbox" id="freesyle" name="freesyle" value="Freestyle">
-    <label for="vehicle1"> Freestyle Sentence </label><br>
     <br>
     <br>
     Adjust speed: <span class="CWASASpeed av0"></span>
