@@ -134,7 +134,7 @@ function toSiGML(text){
   translation = json[text];
 
   console.log(translation);
-  Checks whether the sign has a mouthpicture
+  // Checks whether the sign has a mouthpicture
   if (translation.length == 2) {
     sampa = translation[1];
     xmlString += '<hamnosys_nonmanual><hnm_mouthpicture picture="' + sampa + '"/></hamnosys_nonmanual>';
