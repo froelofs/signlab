@@ -110,14 +110,44 @@ function goPython(text){
      });
 }
 
-function toSiGML(text){
-  // Create a DOMParser
-  var parser = new DOMParser();
+var json = (function() {
+  var json = null;
+  $.ajax({
+    'async': false,
+    'global': false,
+    'url': "exampleDict.json",
+    'dataType': "json",
+    'success': function(data) {
+      json = data;
+    }
+  });
+  return json;
+})();
 
-  xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>'
+// Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
+function toSiGML(text){
   
-  // Use it to turn your xmlString into an XMLDocument
-  var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+  // xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>';
+
+  xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
+
+  translation = json[text];
+
+  // Checks whether the sign has a mouthpicture
+  if (translation.length == 2) {
+    sampa = translation[1];
+    xmlString += '<hamnosys_nonmanual><hnm_mouthpicture=' + sampa + '/></hamnosys_nonmanual>';
+  }
+  
+  sigml = translation[0];
+  xmlString += '<hamnosys_manual>';
+  sigml = sigml.split(",");
+
+  for (var i = 0; i < sigml.length; i++) {
+    xmlString += "<" + sigml[i] + ">";
+  }
+
+  xmlString += "</hamnosys_manual></hns_sign></sigml>"
   alert(xmlString);
   playText(xmlString);
 }
