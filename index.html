@@ -127,29 +127,31 @@ var json = (function() {
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
   
-  // xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>';
+  xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_nonmanual><hnm_mouthpicture="hYs"/></hamnosys_nonmanual><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>';
 
-  xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
+  // xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
 
-  translation = json[text];
+  // translation = json[text];
 
-  console.log(translation);
-  // Checks whether the sign has a mouthpicture
-  if (translation.length == 2) {
-    sampa = translation[1];
-    xmlString += '<hamnosys_nonmanual><hnm_mouthpicture="' + sampa + '"/></hamnosys_nonmanual>';
-  }
+  // console.log(translation);
+  // // Checks whether the sign has a mouthpicture
+  // if (translation.length == 2) {
+  //   sampa = translation[1];
+  //   xmlString += '<hamnosys_nonmanual><hnm_mouthpicture="' + sampa + '"/></hamnosys_nonmanual>';
+  // }
   
-  sigml = translation[0];
-  xmlString += '<hamnosys_manual>';
-  sigml = sigml.split(",");
+  // sigml = translation[0];
+  // xmlString += '<hamnosys_manual>';
+  // sigml = sigml.split(",");
 
-  for (var i = 0; i < sigml.length; i++) {
-    xmlString += "<" + sigml[i] + "/>";
-  }
+  // for (var i = 0; i < sigml.length; i++) {
+  //   xmlString += "<" + sigml[i] + "/>";
+  // }
 
-  xmlString += "</hamnosys_manual></hns_sign></sigml>"
-  console.log(xmlString);
+  // xmlString += "</hamnosys_manual></hns_sign></sigml>"
+  // console.log(xmlString);
+
+  
   playText(xmlString);
 }
 // function goPython(text){
