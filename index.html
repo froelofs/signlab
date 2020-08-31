@@ -70,8 +70,15 @@ $( function() {
   function customFilter(array, terms) {
     alert(terms);
     arrayOfTerms = terms.split(" ");
+    punctuation = ["?",",",".",";"];
     arrayOfTerms.forEach(function (term) {
-      var matcher = new RegExp("(\\b" + term + "|\?)", "i");
+      if (punctuation.includes(term);) {
+        alert(term);
+        var matcher = new RegExp(term, "i");
+      }
+      else{
+        var matcher = new RegExp("\\b" + term, "i");
+      }
       array = $.grep(array, function (value) {
        return matcher.test(value.label || value.value || value);
       });
