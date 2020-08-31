@@ -118,7 +118,7 @@ function toSiGML(text){
   
   // Use it to turn your xmlString into an XMLDocument
   var xmlDoc = parser.parseFromString(xmlString, "text/xml");
-  alert(xmlDoc);
+  alert(xmlDoc.childNodes);
   playText(xmlDoc);
 }
 // function goPython(text){
