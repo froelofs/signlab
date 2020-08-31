@@ -137,6 +137,13 @@ function toSiGML(text){
 
   playText(xmlString);
 }
+
+function changeFunc() {
+  var selectBox = document.getElementById("option");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  alert(selectedValue);
+}
+
 // function goPython(text){
 //     $.ajax({
 //       method: "POST",
@@ -192,7 +199,7 @@ function toSiGML(text){
   <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
     <label for="option">Choose a display option:</label>
 
-    <select name="option" id="option">
+    <select name="option" id="option" onchange="changeFunc();">
       <option value="avatar">Avatar</option>
       <option value="video">Video</option>
       <option value="freestyle">Freestyle with avatar</option>
