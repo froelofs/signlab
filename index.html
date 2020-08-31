@@ -73,7 +73,6 @@ $( function() {
     punctuation = ["?",",",".",";"];
     arrayOfTerms.forEach(function (term) {
       if (punctuation.includes(term)) {
-        alert(term);
         var matcher = new RegExp("\\" + term, "i");
       }
       else{
@@ -83,6 +82,7 @@ $( function() {
        return matcher.test(value.label || value.value || value);
       });
     });
+    alert(array);
     return array;
   }
 
