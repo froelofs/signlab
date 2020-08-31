@@ -68,7 +68,6 @@ $( function() {
 
   // Defines the filer that searches the list of options for matches
   function customFilter(array, terms) {
-    alert(terms);
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";"];
     arrayOfTerms.forEach(function (term) {
@@ -82,7 +81,6 @@ $( function() {
        return matcher.test(value.label || value.value || value);
       });
     });
-    alert(array);
     return array;
   }
 
