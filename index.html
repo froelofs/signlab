@@ -117,7 +117,7 @@ function toSiGML(text){
   xmlString = '<?xml version=1.0 encoding="utf-8"?><sigml><hns_sign gloss="house"><hamnosys_manual><hamsymmlr/><hamflathand/><hamextfingerul/><hampalmd/><hamtouch/><hamhead/><hammovedr/><hamsmallmod/><hammoved/></hamnosys_manual></hns_sign></sigml>'
   
   // Use it to turn your xmlString into an XMLDocument
-  var xmlDoc = parser.parseFromString(xmlString, "application/xml");
+  var xmlDoc = parser.parseFromString(xmlString, "text/xml");
   alert(xmlDoc.data());
   playText(xmlDoc);
 }
