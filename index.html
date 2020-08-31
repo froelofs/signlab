@@ -74,7 +74,7 @@ $( function() {
     arrayOfTerms.forEach(function (term) {
       if (punctuation.includes(term)) {
         alert(term);
-        var matcher = new RegExp(term, "i");
+        var matcher = new RegExp(String(\) + term, "i");
       }
       else{
         var matcher = new RegExp("\\b" + term, "i");
