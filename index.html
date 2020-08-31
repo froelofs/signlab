@@ -7,12 +7,15 @@
 
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Access-Control-Allow-Methods" content="GET">
-<!-- <meta http-equiv="Access-Control-Allow-Methods" content="POST"> -->
 
 <!-- CWA @ vhg.cmp.uea.ac.uk/jrwg/ -->
 <link rel="stylesheet" href="static/cwasa.css">
 <script type="text/javascript"
-    src="static/allcsa.js"></script>
+    src="cwa/allcsa.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<script type="text/javascript" src="../static/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 <script language="javascript">
 
@@ -53,65 +56,109 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 
 </script>
 
-<!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
-<script type="text/javascript" src="../static/jquery-3.5.1.min.js"></script>
 
 <script>
 // let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
-var options = "";
-function goPython(text){
-    $.ajax({
-      method: "POST",
-      url: "main.py",
-      data: JSON.stringify({"param": text}),
-      contentType: "application/json;charset=UTF-8",
-      beforeSend: function() {
-        alert(text);
-      },
-      success: function(response) {
-        playURL(response);
-        alert("It worked " + response);
-      },
-      error: function() {
-        alert('Something went wrong');
-        },
-     });
-}
 
-function suggestions(text){
-  $.ajax({
-      method: "POST",
-      url: "/suggestions",
-      data: JSON.stringify({"param": text}),
-      contentType: "application/json;charset=UTF-8",
-      // beforeSend: function() {
-      //   alert("input: " + text);
-      // },
-      // success: function(response) {
-      //   options = response.split(",");
-      //   alert("options: " + options);
-      // },
-      // error: function (qXHR, error, errorThrown ) {
-      //   console.log(error);
-      // },
+// Defines the functions and variable necessary for autcomplete suggestions
+$( function() {
+
+  // Defines all the options for autocomplete suggestions
+  var options = ["Goedemorgen","Goedemiddag","Goedenavond","Tot ziens","Tot morgen","Heeft U goed geslapen?","Welterusten","Eet smakelijk","Ik kom op een later moment terug.","Ik moet even weg.","Sorry, ik heb geen tijd.","Ik ga u een nieuw infuus geven.","De arts gaat u een nieuw infuus geven.","De verpleegkundige gaat u een nieuw infuus geven.","Een laborant komt bloedprikken (Voor Avatar: een laborant komt in de ochtend/ middag bloedprikken).","Een co- assistent (student in opleiding tot arts) komt bloedprikken.","Een collega komt bloedprikken.","Sorry, het lukt mij niet het infuus te prikken. Ik ga een collega vragen.","De bloeduitslagen zijn goed.","De bloeduitslagen zijn niet helemaal goed.","De uitslag van de CT scan is goed.","De uitslag van de CT scan is niet helemaal goed.","De röntgenfoto is verbeterd.","De röntgenfoto is verslechterd.","De röntgenfoto is hetzelfde gebleven.","Heeft u pijn?","Op een schaal van 0-10, waarbij 0 ‘geen pijn’ is en 10 de meeste pijn die u zich kunt voor stellen, hoeveel pijn heeft u?","Waar heeft U pijn?","Wat voor soort pijn heeft U? Drukkend, stekend, krampend of anders omschrijven?","Ik kom het infuus controleren (of het nog goed loopt).","U moet in bed blijven.","Als U op de Intensive care ligt bellen de artsen of verpleegkundigen elke dag met uw contactpersoon om te vertellen hoe het gaat.","Ik ga nu het zuurstof kapje over uw neus en mond doen.","Er gebeuren vandaag geen onderzoeken of gesprekken meer.","De COVID-19 test is negatief, dit betekent dat u waarschijnlijk geen Corona heeft.","Soms heeft de test het fout dus we gaan nog meer onderzoek doen.","De COVID-19 test is positief, dit betekent dat u wel Corona heeft.","We gaan in het bloed testen of U antistoffen tegen Corona heeft. Als U antistoffen heeft betekent dit dat U nu Corona heeft of dat U Corona heeft gehad in het verleden.","De Coronatest in het bloed is negatief: u heeft geen antistoffen tegen Corona.","De Coronatest in het bloed is positief: u heeft wel antistoffen tegen Corona.","Met dit recept kunt U medicijnen ophalen bij apotheek.","Met dit recept kan iemand anders medicijnen voor U ophalen bij de apotheek.","Bent U ergens allergisch voor?","Waar bent u allergisch voor?","Gebruikt u medicijnen?","Welke medicijnen gebruikt u?","Kan iemand (thuis) een foto maken van de medicijnen die u gebruikt?"," Rookt u?","Bent U weleens eerder (voor u zelf) in het ziekenhuis geweest?","Welk ziekenhuis was U toen en waarom?","Wanneer was dat?","Zijn er mensen in Uw omgeving ziek?","Welke apotheek komt u?","Wie is uw huisarts?","Wat is uw geboortedatum?","Heeft u speciale dieetwensen? Zoals vegetarisch, veganistisch of bepaalde producten niet?","Heeft U gehoorapparaten of een CI?","Hoe wilt U het liefst communiceren als er geen tolk is? Met liplezen? Zinnen opschrijven? Via deze computer? Of iets anders?","Wilt u toegang tot uw elektronisch dossier? Daarmee kunt u thuis via de computer uitslagen van onderzoeken in zien.","Ik moet naar de wc.","Moet u naar de wc?","Kan ik U helpen?","Ik ga u wassen.","Ik ga u helpen met douchen.","U moet in de douche op de stoel zitten","Wilt u videobellen?","Zal ik u helpen zodat u kunt videobellen?","Dit is de alarmknop, als u hierop drukt dan komt er iemand naar u toe.","Wilt u een tv met teletekst zodat u de ondertiteling kunt aanzetten?","Wat wilt u eten?","Wat wilt u eten, kunt u het aanwijzen op de kaart?","Wat wilt u drinken?","Wat wilt u drinken, kunt u het aanwijzen op de kaart?","Heeft u het warm?","Heeft u het koud?","Het bed gaat nu omhoog.","Het bed gaat nu omlaag.","Wie komt U ophalen?","Ik help U.","Wij helpen U.","Heeft U in de afgelopen 24 uur een van deze klachten gehad: Hoesten, verkoudsheidsklachten, verhoging of koorts, benauwdheid, reuk en/ of smaak verlies?","Heeft U op dit moment een huisgenoot met koorts en/ of benauwdheidsklachten?","Heeft U de afgelopen 7 dagen een Corontest gehad? Zo ja, was deze positief?","Heeft U een huisgenoot/ gezinslid met klachten van het Coronavirus?","Bent U in quarantaine omdat U direct contact heeft gehad met iemand waarbij het nieuwe Coronavirus is vastgesteld? Of heeft U de afgelopen 14 dagen contact gehad met iemand die het Coronavirus heeft?"];
+
+  // Defines the filer that searches the list of options for matches
+  function customFilter(array, terms) {
+    alert(terms);
+    arrayOfTerms = terms.split(" ");
+    punctuation = ["?",",",".",";"];
+    arrayOfTerms.forEach(function (term) {
+      if (punctuation.includes(term)) {
+        alert(term);
+        var matcher = new RegExp(term, "i");
+      }
+      else{
+        var matcher = new RegExp("\\b" + term, "i");
+      }
+      array = $.grep(array, function (value) {
+       return matcher.test(value.label || value.value || value);
+      });
+    });
+    return array;
+  }
+
+  // Activates the jquery autocomplete function when the user gives input
+  $( "#mySiGML" ).autocomplete({
+    source: options,
+    appendTo: "#suggestions",
+    multiple: true,
+    mustMatch: false,
+    source: function (request, response) {
+        response(customFilter(options, request.term));
+    },
   });
+});
+
+var json = (function() {
+  var json = null;
+  $.ajax({
+    'async': false,
+    'global': false,
+    'url': "exampleDict.json",
+    'dataType': "json",
+    'success': function(data) {
+      json = data;
+    }
+  });
+  return json;
+})();
+
+//Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
+function toSiGML(text){
+
+  xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
+
+  translation = json[text];
+
+  //Checks whether the sign has a mouthpicture
+  if (translation.length == 2) {
+    mouthpicture = translation[1];
+    xmlString += '<hamnosys_nonmanual><hnm_mouthpicture picture="' + mouthpicture + '"/></hamnosys_nonmanual>';
+  }
+
+  sigml = translation[0];
+  xmlString += '<hamnosys_manual>';
+  sigml = sigml.split(",");
+
+  //Adds necessary syntax elements
+  for (var i = 0; i < sigml.length; i++) {
+    xmlString += "<" + sigml[i] + "/>";
+  }
+
+  xmlString += "</hamnosys_manual></hns_sign></sigml>"
+
+  playText(xmlString);
 }
+// function goPython(text){
+//     $.ajax({
+//       method: "POST",
+//       url: "main.py",
+//       data: JSON.stringify({"param": text}),
+//       contentType: "application/json;charset=UTF-8",
+//       beforeSend: function() {
+//         alert(text);
+//       },
+//       success: function(response) {
+//         playURL(response);
+//         alert("It worked " + response);
+//       },
+//       error: function() {
+//         alert('Something went wrong');
+//         },
+//      });
+// }
 
 
-
-/*execute a function when someone clicks in the document:*/
-// document.addEventListener("click", function (e) {
-//     closeAllLists(e.target);
-// });
-//   // $.get(scrapeJSON, function(data) {
-  //    // Get JSON data from Python script
-  //    if (data){
-  //       console.log("Data returned:", data)
-  //    }
-  //    jobDataJSON = JSON.parse(data)
-  // }
-
-  </script>
+</script>
 
 <!-- <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
@@ -121,100 +168,91 @@ function suggestions(text){
     src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
 </script> -->
 
-<script src="static/brython.js"></script>
-<script src="static/brython_stdlib.js"></script>
+<!-- Necessary for translating python into javascript -->
+<!-- <script src="static/brython.js"></script>
+<script src="static/brython_stdlib.js"></script> -->
 
 
 </head>
 
 <!-- <body onload="CWASA.init(); brython(1);"> -->
-<body onload="brython(1);">
+<!-- <body onload="brython(1);"> -->
+<body onload="CWASA.init();">
 
 
 <!--================================================================-->
 <h3>Interface ZonMW COVID-19 Project</h3>
 
-
-
-<!-- CWA signing avatar panel 0 -->
-<!--================================================================-->
-<!-- <div class="CWASAPanel av0" align="center" ></div> -->
-<div class="CWASAAvatar av0" align="center" ></div>
-<!--================================================================-->
-
-
 <div align="center">
-Enter Sentence:<br><!--
-<textarea id="mySiGML" class="txtaSiGMLText" rows="6" oninput="suggestions(this.value)"> -->
-<textarea id="mySiGML" class="txtaSiGMLText" rows="6">
-</textarea>
+  <!-- CWA signing avatar panel 0 -->
+  <!--================================================================-->
+  <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+  <span class="CWASAAvatar av0" align="right" ></span>
+  <!--================================================================-->
 
-<div id="suggestions" class="suggestions" style="text-align:center;"></div>
+  <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
+    Enter Sentence:
+    <br>
+    <span class="ui-widget" id="suggestions">
+      <input id="mySiGML" class="txtaSiGMLText" style="margin-top:10px;margin-bottom:10px;">
+    </span>
 
-<br>
-<!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
-<input type="button" id = "play" value="Play"/>
-<input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
-<br>
-<br>
-<input type="checkbox" id="video" name="video" value="Video">
-<label for="vehicle1"> Video of Sentence:</label><br>
-<input type="checkbox" id="freesyle" name="freesyle" value="Freestyle">
-<label for="vehicle1"> Freestyle Sentence </label><br>
-<br>
-<br>
-Adjust speed: <span class="CWASASpeed av0"></span>
+    <br>
+    <input type="button" id = "play" value="play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+   <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
+    <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+    <br>
+    <br>
+    <input type="checkbox" id="video" name="video" value="Video">
+    <label for="vehicle1"> Video of Sentence:</label><br>
+    <input type="checkbox" id="freesyle" name="freesyle" value="Freestyle">
+    <label for="vehicle1"> Freestyle Sentence </label><br>
+    <br>
+    <br>
+    Adjust speed: <span class="CWASASpeed av0"></span>
+    <br>
+  </span>
+
+  <!-- <script type="text/python" src="test.py"></script>
+  <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
+
+  <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
+  <input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
+  <br>
+   -->
+  <!-- <hr/> -->
+  <!-- <p align="center">
+  <span class="CWASAProgress av0"></span>
+   -->
+
+  <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+  <div align="center" class="undisplayed">
+    <span style="font-size: 90%;" >
+      Sign/Frame:
+      <input id="mySF" class="txtSF" value="0/0" type="text" />
+      &nbsp;
+      Gloss:
+      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+      &nbsp;
+      FPS:
+      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+    </span>
+  </div>
+
+
+  <div align="center">
+      <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+      <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+      </textarea>
+  </div>
+
+  <br>
+
+
+  <!-- SToCA applet element panel -->
+  <!--================================================================-->
+  <div class="SToCA" align="center" ></div>
+  <!--================================================================-->
 </div>
-<!-- <script type="text/python">
-from browser import document
-from browser.widgets.dialog import InfoDialog
-
-def click(ev):
-    InfoDialog("Hello, Hey", f"Hello, {document['mySiGML'].value} !")
-
-# bind event 'click' on button to function echo
-document["play"].bind("click", click)
-</script> -->
-<script type="text/python" src="test.py"></script>
-<button id="echo">click !</button>
-
-<!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
-<input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
-<br>
- -->
-<!-- <hr/> -->
-<!-- <p align="center">
-<span class="CWASAProgress av0"></span>
- -->
-
-<!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
-<div align="center" class="undisplayed">
-<span style="font-size: 90%;" >
-Sign/Frame:
-<input id="mySF" class="txtSF" value="0/0" type="text" />
-&nbsp;
-Gloss:
-<input id="myGloss" class="txtGloss" value="[none]" type="text" />
-&nbsp;
-FPS:
-<input id="myFPS" class="txtFPS" value="00.00" type="text" />
-</span>
-</div>
-
-
-<div align="center">
-  <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
-<textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
-</textarea>
-</div>
-
-<br>
-
-
-<!-- SToCA applet element panel -->
-<!--================================================================-->
-<div class="SToCA" align="center" ></div>
-<!--================================================================-->
-
 </body>
 </html>

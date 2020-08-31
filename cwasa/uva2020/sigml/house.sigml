@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+	<hns_sign gloss="house">
+		<hamnosys_manual>
+			<hamsymmlr/>
+			<hamflathand/>
+			<hamextfingerul/>
+			<hampalmd/>
+			<hamtouch/>
+			<hamhead/>
+			<hammovedr/>
+			<hamsmallmod/>
+			<hammoved/>
+		</hamnosys_manual>
+	</hns_sign>
+</sigml>

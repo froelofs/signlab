@@ -48,12 +48,13 @@ h3, h4 {
 }
 
 .CWASAAvatar {
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-  	margin-bottom: 20px;
-	position: relative; background: #A3B8D2;
-	width: 70%; height: 60%;
+	display: inline-block;
+  	/*margin-left: 10px;
+  	margin-right: 5px;*/
+  	/*margin-bottom: 20px;*/
+	/*position: relative; */
+	background: #A3B8D2;
+	width: 400px; height: 400px;
 	border: 0px; padding: 0px;
 }
 
@@ -88,7 +89,12 @@ h3, h4 {
 .displayed { }
 .undisplayed { display: none; }
 
-.suggestions{
+/*.suggestions{
 	width: 50 px;
-}
+}*/
+.ui-widget
+ {
+    /*max-width: 500px;*/
+    width: 500px;
+ }
 /*--------*/
