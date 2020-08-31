@@ -96,6 +96,7 @@ $( function() {
   });
 });
 
+// Stores the json dictionary of glosses and SiGML code as a variable
 var json = (function() {
   var json = null;
   $.ajax({
@@ -110,7 +111,7 @@ var json = (function() {
   return json;
 })();
 
-//Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
+// Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
 
   xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
@@ -205,7 +206,7 @@ function toSiGML(text){
     </span>
 
     <br>
-    <input type="button" id = "play" value="play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+    <input type="button" id = "play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
    <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
     <br>
@@ -216,15 +217,6 @@ function toSiGML(text){
 
   <!-- <script type="text/python" src="test.py"></script>
   <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
-
-  <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
-  <input id="myURL" class="txtSiGMLURL av0" value="welkom-ngt.sigml" type="text" />
-  <br>
-   -->
-  <!-- <hr/> -->
-  <!-- <p align="center">
-  <span class="CWASAProgress av0"></span>
-   -->
 
   <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
   <div align="center" class="undisplayed">
