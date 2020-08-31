@@ -69,7 +69,7 @@ $( function() {
   // Defines the filer that searches the list of options for matches
   function customFilter(array, terms) {
     arrayOfTerms = terms.split(" ");
-    punctuation = ["?",",",".",";"];
+    punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
       if (punctuation.includes(term)) {
         var matcher = new RegExp("\\" + term, "i");
