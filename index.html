@@ -144,7 +144,7 @@ function suggestions(text){
 
 
 <div align="center">
-Enter Sentence:<br><!-- 
+Enter Sentence:<br><!--
 <textarea id="mySiGML" class="txtaSiGMLText" rows="6" oninput="suggestions(this.value)"> -->
 <textarea id="mySiGML" class="txtaSiGMLText" rows="6">
 </textarea>
@@ -155,6 +155,12 @@ Enter Sentence:<br><!--
 <!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
 <input type="button" id = "play" value="Play"/>
 <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+<br>
+<br>
+<input type="checkbox" id="video" name="video" value="Video">
+<label for="vehicle1"> Video of Sentence:</label><br>
+<input type="checkbox" id="freesyle" name="freesyle" value="Freestyle">
+<label for="vehicle1"> Freestyle Sentence </label><br>
 <br>
 <br>
 Adjust speed: <span class="CWASASpeed av0"></span>
