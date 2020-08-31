@@ -110,6 +110,9 @@ function goPython(text){
      });
 }
 
+function translate(text){
+  alert(text);
+}
 // function goPython(text){
 //     $.ajax({
 //       method: "POST",
@@ -170,14 +173,15 @@ function goPython(text){
     </span>
 
     <br>
-    <!-- <input type="button" id = "play" value="Play" onclick='goPython(document.getElementById("mySiGML").value);' /> -->
-    <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/>
+    <input type="button" id = "play" value="play" onclick='translate(document.getElementById("mySiGML").value);' />
+   <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
     <br>
     <br>
     Adjust speed: <span class="CWASASpeed av0"></span>
     <br>
-    
+    New Text: <input type="button" value="doText" onclick='playText(document.getElementById("mySiGML2").value);' /><br>
+    <textarea id="mySiGML2" class="txtaSiGMLText" rows="6" >
     <!-- New URL:  <input type="button" value="doURL" onclick='playURL(document.getElementById("myURL").value);' /><br>
     <input id="myURL" class="txtSiGMLURL av0" value="house.sigml" type="text" />
     <br> -->
