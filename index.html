@@ -113,29 +113,6 @@ var json = (function() {
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
-
-  // xmlString = '<?xml version="1.0" encoding="utf-8"?><sigml><hns_sign gloss="' + text + '">';
-  //
-  // translation = json[text];
-  //
-  // //Checks whether the sign has a mouthpicture
-  // if (translation.length == 2) {
-  //   mouthpicture = translation[1];
-  //   xmlString += '<hamnosys_nonmanual><hnm_mouthpicture picture="' + mouthpicture + '"/></hamnosys_nonmanual>';
-  // }
-  //
-  // sigml = translation[0];
-  // xmlString += '<hamnosys_manual>';
-  // sigml = sigml.split(",");
-  //
-  // //Adds necessary syntax elements
-  // for (var i = 0; i < sigml.length; i++) {
-  //   xmlString += "<" + sigml[i] + "/>";
-  // }
-  //
-  // xmlString += "</hamnosys_manual></hns_sign></sigml>"
-  //
-  // playText(xmlString);
   playText(json[text]);
 }
 
