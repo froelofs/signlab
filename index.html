@@ -116,20 +116,6 @@ function toSiGML(text){
   playText(json[text]);
 }
 
-// function changeFunc() {
-//   var selectBox = document.getElementById("display");
-//   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-//   if (selectedValue == "avatar") {
-//     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
-//   }
-//   else if (selectedValue == "freestyle") {
-//     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
-//   }
-//   else if (selectedValue == "video") {
-//     document.getElementById("avatar").setAttribute("class", "undisplayed");
-//   }
-// }
-
 
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
@@ -206,12 +192,6 @@ function changeFunc(myRadio) {
   <input type="radio" id="freestylu" name="display" value="freestyle" onclick="changeFunc(this);">
   <label for="freestyle">Freestyle with Avatar</label>
 
-
-    <!-- <radio name="display" id="display" onchange="changeFunc();">
-      <display value="avatar">Avatar</display>
-      <display value="video">Video</display>
-      <display value="freestyle">Freestyle with avatar</display>
-    </radio> -->
     <br>
     <br>
     Enter Sentence:
