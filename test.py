@@ -8,7 +8,8 @@ def click(ev):
     alert(type(str({document['mySiGML'].value})))
 
 def translate(ev):
-	alert(main(document['mySiGML'].value))
+	alert(document['mySiGML'].value)
+	# alert(main(document['mySiGML'].value))
 	# result = main(document['mySiGML'].value)
 	# alert(result)
 
@@ -28,10 +29,10 @@ def translate(ev):
 # 	else:
 # 		alert("No results were found")
 
-def update_input(ev):
-	alert("something has changed")
-	selected = [option.value for option in sel if option.selected]
-	document['mySiGML'].value = selected[0].lower()
+# def update_input(ev):
+# 	alert("something has changed")
+# 	selected = [option.value for option in sel if option.selected]
+# 	document['mySiGML'].value = selected[0].lower()
 
 # def update_select(ev):
 #     # selects / deselects options in the SELECT box
