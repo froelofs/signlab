@@ -7,25 +7,26 @@ def click(ev):
     InfoDialog("Hello", f"Hello, {document['mySiGML'].value} !")
     alert(type(str({document['mySiGML'].value})))
 
-# def translate(ev):
-# 	result = main(document['mySiGML'].value)
-# 	alert(result)
+def translate(ev):
+	alert(main(document['mySiGML'].value))
+	# result = main(document['mySiGML'].value)
+	# alert(result)
 
-sel = ""
-def matches(ev):
-	input = document['mySiGML'].value
-	results = searchDict(input)
-	if len(results):
-		# alert("These are the results:")
-		# alert(results)
-		# document["mySiGML"].value = results
-		sel = html.SELECT(size=5, multiple=False)
-		for item in results:
-		    sel <= html.OPTION(item)
-		document["suggestions"] <= sel
-		sel.bind("change", update_input)
-	else:
-		alert("No results were found")
+# sel = ""
+# def matches(ev):
+# 	input = document['mySiGML'].value
+# 	results = searchDict(input)
+# 	if len(results):
+# 		# alert("These are the results:")
+# 		# alert(results)
+# 		# document["mySiGML"].value = results
+# 		sel = html.SELECT(size=5, multiple=False)
+# 		for item in results:
+# 		    sel <= html.OPTION(item)
+# 		document["suggestions"] <= sel
+# 		sel.bind("change", update_input)
+# 	else:
+# 		alert("No results were found")
 
 def update_input(ev):
 	alert("something has changed")
@@ -42,7 +43,7 @@ def update_input(ev):
 	
 
 # bind event 'click' on button to function echo
-document["echo"].bind("click", matches)
+document["freestyle"].bind("click", translate)
 
 #bind "keyup event to textarea"
 # document["mySiGML"].bind("keyup", matches)

@@ -183,15 +183,15 @@ function openPage(event,page){
 </script> -->
 
 <!-- Necessary for translating python into javascript -->
-<!-- <script src="static/brython.js"></script>
-<script src="static/brython_stdlib.js"></script> -->
+<script src="static/brython.js"></script>
+<script src="static/brython_stdlib.js"></script>
 
 
 </head>
 
-<!-- <body onload="CWASA.init(); brython(1);"> -->
+<body onload="CWASA.init(); brython(1);">
 <!-- <body onload="brython(1);"> -->
-<body onload="CWASA.init();">
+<!-- <body onload="CWASA.init();"> -->
 
 
 <!--================================================================-->
@@ -233,6 +233,7 @@ function openPage(event,page){
     <input type="button" id = "play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
    <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+    <button id="echo">freestyle</button>
     <br>
     <br>
     Adjust speed: <span class="CWASASpeed av0"></span>
