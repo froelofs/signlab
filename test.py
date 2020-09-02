@@ -1,7 +1,7 @@
 from browser import document, alert, html
 from browser.widgets.dialog import InfoDialog
-# from main import main
-from functionsAux import searchDict
+from main import main
+# from functionsAux import searchDict
 
 def click(ev):
     InfoDialog("Hello", f"Hello, {document['mySiGML'].value} !")
