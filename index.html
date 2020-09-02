@@ -169,6 +169,8 @@ function openPage(event,page){
 //      });
 // }
 
+//Clicks on the page set as default to make sure it is diplayed when the page is loaded
+document.getElementById("defaultOpen").click();
 
 </script>
 
@@ -197,7 +199,7 @@ function openPage(event,page){
 
 <div class="tab" align="center">
   <button class="tablinks" onclick="openPage(event, 'Home')">Home</button>
-  <button class="tablinks" onclick="openPage(event, 'Translate')">Translate to NGT</button>
+  <button id="defaultOpen" class="tablinks" onclick="openPage(event, 'Translate')">Translate to NGT</button>
   <button class="tablinks" onclick="openPage(event, 'Software')">Software</button>
 </div>
 
