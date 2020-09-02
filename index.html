@@ -116,16 +116,29 @@ function toSiGML(text){
   playText(json[text]);
 }
 
-function changeFunc() {
-  var selectBox = document.getElementById("display");
-  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-  if (selectedValue == "avatar") {
+// function changeFunc() {
+//   var selectBox = document.getElementById("display");
+//   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+//   if (selectedValue == "avatar") {
+//     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+//   }
+//   else if (selectedValue == "freestyle") {
+//     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+//   }
+//   else if (selectedValue == "video") {
+//     document.getElementById("avatar").setAttribute("class", "undisplayed");
+//   }
+// }
+
+
+function changeFunc(myRadio) {
+  if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
   }
-  else if (selectedValue == "freestyle") {
+  else if (myRadio.value == "freestyle") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
   }
-  else if (selectedValue == "video") {
+  else if (myRadio.value == "video") {
     document.getElementById("avatar").setAttribute("class", "undisplayed");
   }
 }
@@ -186,11 +199,11 @@ function changeFunc() {
   <label for="option">Choose a display option:</label>
   <br>
 
-  <input type="radio" id="avatar" name="display" value="avatar" checked onclick="changeFunc();">
+  <input type="radio" id="avatar" name="display" value="avatar" checked onclick="changeFunc(this);">
   <label for="avatar">Avatar</label><br>
-  <input type="radio" id="video" name="display" value="video" onclick="changeFunc();">
+  <input type="radio" id="video" name="display" value="video" onclick="changeFunc(this);">
   <label for="video">Video</label><br>
-  <input type="radio" id="freestylu" name="display" value="freestyle" onclick="changeFunc();">
+  <input type="radio" id="freestylu" name="display" value="freestyle" onclick="changeFunc(this);">
   <label for="freestyle">Freestyle with Avatar</label>
 
 
