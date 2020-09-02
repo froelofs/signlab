@@ -117,7 +117,7 @@ function toSiGML(text){
 }
 
 function changeFunc() {
-  var selectBox = document.getElementById("option");
+  var selectBox = document.getElementById("display");
   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
   if (selectedValue == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
@@ -184,11 +184,11 @@ function changeFunc() {
 
   <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
     <p>Choose a display option:</p>
-  <input type="radio" id="avatar" name="option" value="avatar">
+  <input type="radio" id="avatar" name="display" value="avatar">
   <label for="avatar">Avatar</label><br>
-  <input type="radio" id="video" name="option" value="video">
+  <input type="radio" id="video" name="display" value="video">
   <label for="video">Video</label><br>
-  <input type="radio" id="freestylu" name="option" value="freestyle">
+  <input type="radio" id="freestylu" name="display" value="freestyle">
   <label for="freestyle">Freestyle with Avatar</label>
     <!-- <label for="option">Choose a display option:</label>
 
