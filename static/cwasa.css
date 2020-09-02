@@ -16,6 +16,17 @@ h3, h4 {
     /*-webkit-margin-after:  0.04em;*/
 }
 
+.vembedr {
+  display: inline-block;
+  border-radius: 25px; /* adjust it to your needs */
+  overflow: hidden;
+}
+
+.vembedr iframe {
+  display: block;
+  border: none;
+}
+
 .txtFPS, .txtLogSpeed {
 	font-family: monospace;  font-size: 1em;  font-weight: bold;
 	text-align: center;  color: #E33;  width: 3.5em;
