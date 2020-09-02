@@ -143,6 +143,10 @@ function changeFunc(myRadio) {
   }
 }
 
+function openPage(event,page){
+  alert(page);
+}
+
 // function goPython(text){
 //     $.ajax({
 //       method: "POST",
@@ -188,7 +192,13 @@ function changeFunc(myRadio) {
 <!--================================================================-->
 <h3>Interface ZonMW COVID-19 Project</h3>
 
-<div align="center">
+<div class="tab">
+  <button class="tablinks" onclick="openPage(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openPage(event, 'Translate')">Translate to NGT</button>
+  <button class="tablinks" onclick="openPage(event, 'Software')">Software</button>
+</div>
+
+<div id="Translate" align="center">
   <!-- CWA signing avatar panel 0 -->
   <!--================================================================-->
   <!-- <div class="CWASAPanel av0" align="center" ></div> -->
