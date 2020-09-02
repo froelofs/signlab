@@ -183,20 +183,21 @@ function changeFunc() {
   <!--================================================================-->
 
   <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
-    <p>Choose a display option:</p>
-  <input type="radio" id="avatar" name="display" value="avatar">
+    <label for="option">Choose a display option:</label>
+
+  <!-- <input type="radio" id="avatar" name="display" checked value="avatar">
   <label for="avatar">Avatar</label><br>
   <input type="radio" id="video" name="display" value="video">
   <label for="video">Video</label><br>
   <input type="radio" id="freestylu" name="display" value="freestyle">
-  <label for="freestyle">Freestyle with Avatar</label>
-    <!-- <label for="option">Choose a display option:</label>
+  <label for="freestyle">Freestyle with Avatar</label> -->
 
-    <select name="option" id="option" onchange="changeFunc();">
-      <option value="avatar">Avatar</option>
-      <option value="video">Video</option>
-      <option value="freestyle">Freestyle with avatar</option>
-    </select> -->
+
+    <radio name="display" id="display" onchange="changeFunc();">
+      <display value="avatar" checked>Avatar</display>
+      <display value="video">Video</display>
+      <display value="freestyle">Freestyle with avatar</display>
+    </radio>
     <br>
     <br>
     Enter Sentence:
