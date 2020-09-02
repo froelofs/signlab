@@ -117,7 +117,7 @@ h3, h4 {
 
  .tab button {
   background-color: inherit;
-  float: left;
+  float: center;
   border: none;
   outline: none;
   cursor: pointer;
@@ -131,5 +131,12 @@ h3, h4 {
 
 .tab button.active {
   background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
 /*--------*/
