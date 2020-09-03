@@ -151,6 +151,9 @@ function openPage(event,page){
 }
 
 function goPython(){
+  // DEBUG
+  console.log(source); //example: http://localhost/crowd.jpg
+  console.log(typeof source);//example: string
     $.ajax({
       method: "POST",
       url: "/test.php",
@@ -159,8 +162,8 @@ function goPython(){
       // beforeSend: function() {
       //   alert(text);
       // },
-      success: function(response) {
-        console.log (response);
+      success: function(result) {
+        console.log (result);
         // alert(response);
       },
       error: function() {
