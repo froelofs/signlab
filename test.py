@@ -1,6 +1,6 @@
 from browser import document, alert, html
 from browser.widgets.dialog import InfoDialog
-from main import main
+# from main import main
 import sys
 import os
 # from functionsAux import searchDict
