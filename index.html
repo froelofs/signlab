@@ -154,8 +154,8 @@ function goPython(text){
     $.ajax({
       method: "POST",
       url: "test.php",
-      data: JSON.stringify({"param": text}),
-      contentType: "application/json;charset=UTF-8",
+      // data: JSON.stringify({"param": text}),
+      // contentType: "application/json;charset=UTF-8",
       beforeSend: function() {
         alert(text);
       },
