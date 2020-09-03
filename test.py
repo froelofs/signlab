@@ -1,6 +1,8 @@
 from browser import document, alert, html
 from browser.widgets.dialog import InfoDialog
 from main import main
+import sys
+import os
 # from functionsAux import searchDict
 
 def click(ev):
@@ -9,6 +11,8 @@ def click(ev):
 
 def translate(ev):
 	alert(document['mySiGML'].value)
+	alert( sys.path )
+	alert( os.getcwd() )
 	# alert(main(document['mySiGML'].value))
 	# result = main(document['mySiGML'].value)
 	# alert(result)
