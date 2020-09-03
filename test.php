@@ -9,5 +9,9 @@
 // $world = stream_get_contents($pipes[1]);
 // var_dump($world);
 
-	echo "hello world";
+	echo json_encode("hello world");
+	// get the q parameter from URL
+	// $q = $_REQUEST["q"];
+	// echo q
+
 ?>

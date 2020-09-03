@@ -151,10 +151,10 @@ function openPage(event,page){
   event.currentTarget.className += " active";
 }
 
-function goPython(){
+function goPython(text){
     $.ajax({
       method: "POST",
-      url: "/test.php",
+      url: "/test.php?q=" + text,
       // data: JSON.stringify({"param": text}),
       // contentType: "application/json;charset=UTF-8",
       // beforeSend: function() {
@@ -236,8 +236,8 @@ function goPython(){
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 
     <!-- <script type="text/python" src="test.py"></script> -->
-    <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
-    <button id="freestyle" onclick='goPython();'>freestyle</button>
+    <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button>
+    <!-- <button id="freestyle" onclick='goPython();'>freestyle</button> -->
     <br>
     <br>
     Adjust speed: <span class="CWASASpeed av0"></span>
