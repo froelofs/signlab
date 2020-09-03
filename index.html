@@ -153,9 +153,9 @@ function openPage(event,page){
 
 function goPython(text){
     $.ajax({
-      'method': "POST",
-      'url': "test.php?text=" + text,
-      // data: JSON.stringify({"text": text}),
+      method: "POST",
+      url: "/test.php",
+      data: {"text": text},
       // contentType: "application/json;charset=UTF-8",
       // beforeSend: function() {
       //   alert(text);
