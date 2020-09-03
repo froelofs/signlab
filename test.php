@@ -7,5 +7,6 @@ $descriptors = [['pipe', 'r'], ['pipe', 'w'], ['pipe', 'w']];
 $handle = proc_open('echo Hello world, $USER!', $descriptors, $pipes, null, ['USER' => 'guest']);
 $world = stream_get_contents($pipes[1]);
 var_dump($world); -->
-
-echo "hello world";
+<?php
+	echo "hello world";
+?>
