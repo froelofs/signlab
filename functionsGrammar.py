@@ -2,8 +2,9 @@
 Functions pertaining to the pre-processsing of the sentence (grammar aspect).
 IMPORTANT: all the functions in this file should be replaced by a grammar that covers all these aspects.
 '''
-import spacy
-import nl_core_news_sm
+# import spacy
+# import nl_core_news_sm
+import nltk
 
 #'Main' Function
 '''Approximates and adds indices, negation scope and affirmation scope (should preferably be replaced by a grammar)
