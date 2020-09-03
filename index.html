@@ -151,11 +151,8 @@ function openPage(event,page){
 }
 
 function goPython(){
-  // DEBUG
-  console.log(source); //example: http://localhost/crowd.jpg
-  console.log(typeof source);//example: string
     $.ajax({
-      method: "POST",
+      method: "GET",
       url: "/test.php",
       // data: JSON.stringify({"param": text}),
       // contentType: "application/json;charset=UTF-8",
