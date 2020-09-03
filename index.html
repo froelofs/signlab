@@ -150,24 +150,24 @@ function openPage(event,page){
   event.currentTarget.className += " active";
 }
 
-// function goPython(text){
-//     $.ajax({
-//       method: "POST",
-//       url: "main.py",
-//       data: JSON.stringify({"param": text}),
-//       contentType: "application/json;charset=UTF-8",
-//       beforeSend: function() {
-//         alert(text);
-//       },
-//       success: function(response) {
-//         playURL(response);
-//         alert("It worked " + response);
-//       },
-//       error: function() {
-//         alert('Something went wrong');
-//         },
-//      });
-// }
+function goPython(text){
+    $.ajax({
+      method: "POST",
+      url: "main.py",
+      data: JSON.stringify({"param": text}),
+      contentType: "application/json;charset=UTF-8",
+      beforeSend: function() {
+        alert(text);
+      },
+      success: function(response) {
+        // console.log (response);
+        alert(response);
+      },
+      error: function() {
+        alert('Something went wrong');
+        },
+     });
+}
 
 //Clicks on the page set as default to make sure it is diplayed when the page is loaded
 
