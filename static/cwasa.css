@@ -156,6 +156,7 @@ margin:5px;
   background-color: #ddd; 
   display: inline-block;
   margin: 3px; 
-  /*max-width: 200px;*/
+  border-radius: 25px;
+  /*max-width: 250px;*/
 }
 /*--------*/
