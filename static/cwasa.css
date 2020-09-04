@@ -133,10 +133,12 @@ h3, h4 {
   background-color: #ccc;
 }
 
+.tablinks{
+  border: 1px solid #ccc;
+}
+
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
 }
 /*--------*/
