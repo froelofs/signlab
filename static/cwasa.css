@@ -154,5 +154,6 @@ margin:5px;
   background-color: #ddd; 
   display: inline-block;
   margin: 3px; 
+  max-width: 125px;
 }
 /*--------*/
