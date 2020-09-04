@@ -154,11 +154,12 @@ h3, h4 {
 
 .displayInfo{
   background-color: #a6a6a6;
-  display: inline-block;
+  display: relative;
   margin: 3px; 
   border-radius: 25px;
   z-index: 1;
-  /*max-width: 250px;*/
+  max-width: 275px;
+  text-align: center;
 }
 
 .displayInfo * {
