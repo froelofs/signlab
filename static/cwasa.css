@@ -153,7 +153,7 @@ margin:5px;
 }
 
 .displayInfo{
-  background-color: #ddd; 
+  background-color: #808080; 
   display: inline-block;
   margin: 3px; 
   border-radius: 25px;
@@ -161,6 +161,7 @@ margin:5px;
 }
 
 .displayInfo * {
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 /*--------*/
