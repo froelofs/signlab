@@ -159,4 +159,8 @@ margin:5px;
   border-radius: 25px;
   /*max-width: 250px;*/
 }
+
+.displayInfo * {
+    padding: 5px;
+}
 /*--------*/
