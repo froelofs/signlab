@@ -76,7 +76,9 @@ h3, h4 {
 }
 
 .txtaSiGMLText, .statusLog {
-    font-family: monospace;  font-size: 0.9em; width: 500px;
+    font-family: monospace;  
+    font-size: 0.9em; 
+    width: 500px;
 }
 
 .txtSiGMLURL {
