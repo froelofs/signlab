@@ -151,9 +151,8 @@ margin:5px;
 }
 
 .displayInfo{
-  background-color: #ddd;
-  /*max-height: 30px;
-  width: 60px;
-*/  margin: 3px; 
+  background-color: #ddd; 
+  display: inline-block;
+  margin: 3px; 
 }
 /*--------*/

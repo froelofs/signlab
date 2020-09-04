@@ -175,7 +175,7 @@ function goPython(text){
 }
 
 function displayInfo(id){
-  document.getElementById(id).setAttribute("class", "displayed");
+  document.getElementById(id).setAttribute("class", "displayInfo");
 }
 
 function undisplayInfo(id){
@@ -228,8 +228,8 @@ function undisplayInfo(id){
   <br>
 
   <input type="radio" id="avatar" name="display" value="avatar" checked onclick="changeFunc(this);">
-  <label for="avatar">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar')" onmouseout="undisplayInfo('infoAvatar')"></i>
-  <div id="infoAvatar" style="background-color: #ddd; display: inline-block;">This option will display the translation using an avatar</div>
+  <label for="avatar">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
+  <div id="infoAvatar" class="displayInfo">This option will display the translation using an avatar</div>
   <br>
   <input type="radio" id="video" name="display" value="video" onclick="changeFunc(this);">
   <label for="video">Video</label><br>
