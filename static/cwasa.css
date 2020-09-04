@@ -148,4 +148,11 @@ h3, h4 {
 .fa_custom {
 color: #003399
 }
+
+.displayInfo{
+  background-color: #ddd;
+  max-height: 30px;
+  max-width: 60px;
+  margin: 3px; 
+}
 /*--------*/
