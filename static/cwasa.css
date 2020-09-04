@@ -136,7 +136,8 @@ h3, h4 {
 }
 
 .tablinks{
-  border: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 
 .tabcontent {
