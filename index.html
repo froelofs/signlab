@@ -115,9 +115,28 @@ var json = (function() {
   return json;
 })();
 
+var jsonvideo = (function() {
+  var jsonvideo = null;
+  $.ajax({
+    'async': false,
+    'global': false,
+    'url': "videoDict.json",
+    'dataType': "json",
+    'success': function(data) {
+      jsonvideo = data;
+    }
+  });
+  return jsonvideo;
+})();
+
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
+  if(document.getElementById('avatar').checked) {
   playText(json[text]);
+}else if(document.getElementById('video').checked) {
+  document.getElementById('videos').src = jsonvideo[text];
+}
+
 }
 
 
@@ -246,7 +265,7 @@ function undisplayInfo(id){
     <p>Displays the translation using a video</p>
   </span>
   <br>
-  <input type="radio" id="freestylu" name="display" value="freestyle" onclick="changeFunc(this);">
+  <input type="radio" id="freestyle" name="display" value="freestyle" onclick="changeFunc(this);">
   <label for="freestyle" style="margin: 5px">Freestyle with Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   <span id="infoAvatar" class="undisplayed">
     <p>Attempts to translate any sentence into NGT (experimental)</p>
