@@ -31,6 +31,10 @@ function playText(stext) {
 	CWASA.playSiGMLText(stext);
 }
 
+function changeVideo(text) {
+  document.getElementById('videos').src = text;
+}
+
 function addStatus(evt) {
 	var elt = document.getElementById("myStatusLog");
 	var msg = evt.msg;
@@ -134,10 +138,11 @@ function toSiGML(text){
   if(document.getElementById('avatar').checked) {
   playText(json[text]);
 }else if(document.getElementById('video').checked) {
-  document.getElementById('videos').src = jsonvideo[text];
+  changeVideo(jsonvideo[text]);
+  }
 }
 
-}
+
 
 
 function changeFunc(myRadio) {
@@ -246,7 +251,7 @@ function undisplayInfo(id){
   <!--================================================================-->
 
   <span id="videos" class="undisplayed" align="right">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f7xMGTE7D5w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="about:blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </span>
 
   <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
