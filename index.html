@@ -31,8 +31,10 @@ function playText(stext) {
 	CWASA.playSiGMLText(stext);
 }
 
+// verandert de source van de embedded video
 function changeVideo(text) {
-  document.getElementById('videos').src = text;
+  document.getElementById('videos').src = text
+  document.getElementById('videos').contentWindow.location.reload(); //hoort niet te hoeven
 }
 
 function addStatus(evt) {
