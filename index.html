@@ -137,12 +137,13 @@ var jsonvideo = (function() {
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
-  if (document.getElementById("avatar").checked) {
-    playText(json[text]);
-  }
-  else if (document.getElementById("video").checked) {
-    changeVideo(jsonvideo[text]);
-  }
+  playText(json[text]);
+  // if (document.getElementById("avatar").checked) {
+  //   playText(json[text]);
+  // }
+  // else if (document.getElementById("video").checked) {
+  //   changeVideo(jsonvideo[text]);
+  // }
 }
 
 
