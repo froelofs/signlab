@@ -124,12 +124,15 @@ function toSiGML(text){
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("video").setAttribute("class", "undisplayed");
   }
   else if (myRadio.value == "freestyle") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("video").setAttribute("class", "undisplayed");
   }
   else if (myRadio.value == "video") {
     document.getElementById("avatar").setAttribute("class", "undisplayed");
+    document.getElementById("video").setAttribute("class", "prerecorded");
   }
 }
 
