@@ -137,10 +137,10 @@ var jsonvideo = (function() {
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
-  if (myRadio.value == "avatar") {
+  if (document.getElementById("avatar").checked) {
     playText(json[text]);
   }
-  else if (myRadio.value == "video") {
+  else if (document.getElementById("video").checked) {
     changeVideo(jsonvideo[text]);
   }
 }
@@ -261,7 +261,7 @@ function undisplayInfo(id){
   <label for="option">Choose a display option:</label>
   <br>
 
-  <input type="radio" id="avatar" name="display" value="avatar" checked="checked" onclick="changeFunc(this);">
+  <input type="radio" id="avatar" name="display" value="avatar" checked onclick="changeFunc(this);">
   <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   <span id="infoAvatar" class="undisplayed">
     <p>Displays the translation using an avatar</p>
