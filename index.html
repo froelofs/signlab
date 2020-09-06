@@ -33,7 +33,8 @@ function playText(stext) {
 
 // verandert de source van de embedded video
 function changeVideo(text) {
-  document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
+  window.frames['videos'].location = text;
+  // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
   document.getElementById('test').innerHTML = document.getElementById('videos').src;
 }
 
