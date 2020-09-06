@@ -255,7 +255,7 @@ function undisplayInfo(id){
   <span id="avatar" class="CWASAAvatar av0" align="right" ></span>
   <!--================================================================-->
 
-  <span id="videos" class="undisplayed" align="right">
+  <span id="videos" class="prerecorded" align="right">
     <iframe width="560" height="315" src="about:blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </span>
 
@@ -268,7 +268,7 @@ function undisplayInfo(id){
   <span id="infoAvatar" class="undisplayed" align="left">
     <p>Displays the translation using an avatar</p>
   </span>
-  
+
   <br>
   <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
   <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
