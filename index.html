@@ -137,10 +137,12 @@ var jsonvideo = (function() {
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
-  if (document.getElementById("avatar").checked) { // if avatar is checked, sigml is sent
+  // if avatar is checked, sigml is sent
+  if (document.getElementById("avatarDisplay").checked) { 
     playText(json[text]);
   }
-  else if (document.getElementById("video").checked) { // if video is checked, source of embedded video changes
+  // if video is checked, source of embedded video changes
+  else if (document.getElementById("video").checked) {
     changeVideo(jsonvideo[text]);
   }
 }
@@ -261,19 +263,19 @@ function undisplayInfo(id){
   <label for="option">Choose a display option:</label>
   <br>
 
-  <input type="radio" id="avatar" name="display" value="avatar" checked onclick="changeFunc(this);">
+  <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
   <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   <span id="infoAvatar" class="undisplayed" align="right">
     <p>Displays the translation using an avatar</p>
   </span>
   <br>
-  <input type="radio" id="video" name="display" value="video" onclick="changeFunc(this);">
+  <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
   <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   <span id="infoAvatar" class="undisplayed" align="right">
     <p>Displays the translation using a video</p>
   </span>
   <br>
-  <input type="radio" id="freestyle" name="display" value="freestyle" onclick="changeFunc(this);">
+  <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
   <label for="freestyle" style="margin: 5px">Freestyle with Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   <span id="infoAvatar" class="undisplayed" align="right">
     <p>Attempts to translate any sentence into NGT (experimental)</p>
