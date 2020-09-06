@@ -113,10 +113,8 @@ h3, h4 {
 
  .tab{
   overflow: hidden;
-  border: 2px solid #ccc;
+  border-bottom: : 2px solid #ccc;
   background-color: #f1f1f1;
-  border-left: none;
-  border-right: none;
  }
 
  .tab button {
