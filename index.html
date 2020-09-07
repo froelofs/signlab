@@ -253,36 +253,38 @@ function undisplayInfo(id){
   <!-- CWA signing avatar panel 0 -->
   <!--================================================================-->
   <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-  <span id="avatar" class="CWASAAvatar av0" align="right" ></span>
+  <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
   <!--================================================================-->
 
-  <span id="videos" class="undisplayed" align="right">
+  <span id="videos" class="undisplayed" align="left">
     <iframe width="560" height="315" src="about:blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </span>
 
-  <span align="left" style="display: inline-block; vertical-align: top;margin:30px;">
+  <span align="right" style="vertical-align: top;margin:30px;">
   <label for="option">Choose a display option:</label>
   <br>
 
   <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
   <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');" style="position: relative;"></i>
-  <span id="infoAvatar" class="undisplayed" align="left">
+  <span id="infoAvatar" class="undisplayed" align="right">
     <p>Displays the translation using an avatar</p>
   </span>
   
   <br>
   <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
   <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
-  <span id="infoVideo" class="undisplayed" align="left">
+  <span id="infoVideo" class="undisplayed" align="right">
     <p>Displays the translation using a video</p>
   </span>
+
   <br>
   <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
   <label for="freestyle" style="margin: 5px">Freestyle with Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoFreestyle');" onmouseout="undisplayInfo('infoFreestyle');"></i>
-  <span id="infoFreestyle" class="undisplayed" align="left">
+  <span id="infoFreestyle" class="undisplayed" align="right">
     <p>Attempts to translate any sentence into NGT (experimental)</p>
   </span>
     <br>
+
     <br>
     Enter Sentence:
     <br>
