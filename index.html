@@ -32,10 +32,10 @@ function playText(stext) {
 }
 
 // verandert de source van de embedded video
-function changeVideo(text) {
-  document.getElementById('videos').src = text;
+function changeVideo(url) {
+  window.frames['videos'].location.replace(url);
+  // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
   document.getElementById('test').innerHTML = document.getElementById('videos').src;
-  // document.getElementById('videos').contentWindow.location.reload(); //hoort niet te hoeven
 }
 
 function addStatus(evt) {
@@ -257,7 +257,7 @@ function undisplayInfo(id){
   <!--================================================================-->
 
   <span id="videos" class="undisplayed" align="left">
-    <iframe width="560" height="315" src="about:blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </span>
 
   <span align="right" style="vertical-align: top;margin:30px;">
@@ -269,7 +269,7 @@ function undisplayInfo(id){
   <span id="infoAvatar" class="undisplayed" align="right">
     <p>Displays the translation using an avatar</p>
   </span>
-  
+
   <br>
   <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
   <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
