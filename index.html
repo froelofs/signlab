@@ -249,105 +249,95 @@ function undisplayInfo(id){
   <button class="tablinks" onclick="openPage(event, 'Software')">Software</button>
 </div>
 
-<!-- <div id="Translate" class="tabcontent" align="center"> -->
-<table style="width:100%" id="Translate" class="tabcontent" align="center">
-<tr>
+<div id="Translate" class="tabcontent" align="center">
   <!-- CWA signing avatar panel 0 -->
   <!--================================================================-->
-  <!-- <span id="avatar" class="CWASAAvatar av0" align="left" ></span> -->
-  <td align="left" valign="center">
-    <div id ="avatar" class="CWASAPanel av0" align="center" ></div>
-
-    <div id="videos" class="undisplayed" align="center">
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-    </div>
-  </td>
-
+  <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+  <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
   <!--================================================================-->
-  <td align="center" valign="center">
 
-    <!-- <span align="right" style="display: inline-block; vertical-align: top;margin:30px;"> -->
-    <label for="option">Choose a display option:</label>
+  <span id="videos" class="undisplayed" align="left">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </span>
+
+  <span align="right" style="display:inline-block; vertical-align: top;margin:30px;">
+  <label for="option">Choose a display option:</label>
+  <br>
+
+  <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+  <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');" style="position: relative;"></i>
+  <span id="infoAvatar" class="undisplayed" align="right">
+    <p>Displays the translation using an avatar</p>
+  </span>
+
+  <br>
+  <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
+  <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
+  <span id="infoVideo" class="undisplayed" align="right">
+    <p>Displays the translation using a video</p>
+  </span>
+
+  <br>
+  <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
+  <label for="freestyle" style="margin: 5px">Freestyle with Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoFreestyle');" onmouseout="undisplayInfo('infoFreestyle');"></i>
+  <span id="infoFreestyle" class="undisplayed" align="right">
+    <p>Attempts to translate any sentence into NGT (experimental)</p>
+  </span>
     <br>
 
-    <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
-    <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');" style="position: relative;"></i>
-    <span id="infoAvatar" class="undisplayed" align="right">
-      <p>Displays the translation using an avatar</p>
+    <br>
+    Enter Sentence:
+    <br>
+    <span class="ui-widget" id="suggestions">
+      <input id="mySiGML" class="txtaSiGMLText" style="margin-top:10px;margin-bottom:10px;">
     </span>
 
     <br>
-    <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
-    <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
-    <span id="infoVideo" class="undisplayed" align="right">
-      <p>Displays the translation using a video</p>
-    </span>
+    <input type="button" id = "play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+   <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
+    <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 
+    <!-- <script type="text/python" src="test.py"></script> -->
+    <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
+    <button id="freestyle">Freestyle</button>
     <br>
-    <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
-    <label for="freestyle" style="margin: 5px">Freestyle with Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoFreestyle');" onmouseout="undisplayInfo('infoFreestyle');"></i>
-    <span id="infoFreestyle" class="undisplayed" align="right">
-      <p>Attempts to translate any sentence into NGT (experimental)</p>
-    </span>
-      <br>
-
-      <br>
-      Enter Sentence:
-      <br>
-      <span class="ui-widget" id="suggestions">
-        <input id="mySiGML" class="txtaSiGMLText" style="margin-top:10px;margin-bottom:10px;">
-      </span>
-
-      <br>
-      <input type="button" id = "play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
-     <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
-      <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
-
-      <!-- <script type="text/python" src="test.py"></script> -->
-      <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
-      <button id="freestyle">Freestyle</button>
-      <br>
-      <br>
-      Adjust speed: <span class="CWASASpeed av0"></span>
-      <br>
-    </tr>
-    </td>
-    </table>
-    <!-- </span> -->
-
-    <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
-
-    <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
-    <div align="center" class="undisplayed">
-
-      <span style="font-size: 90%;" >
-        Sign/Frame:
-        <input id="mySF" class="txtSF" value="0/0" type="text" />
-        &nbsp;
-        Gloss:
-        <input id="myGloss" class="txtGloss" value="[none]" type="text" />
-        &nbsp;
-        FPS:
-        <input id="myFPS" class="txtFPS" value="00.00" type="text" />
-      </span>
-    </div>
-
-
-    <div align="center">
-        <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
-        <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
-        </textarea>
-    </div>
-
     <br>
+    Adjust speed: <span class="CWASASpeed av0"></span>
+    <br>
+  </span>
+
+  <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
+
+  <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+  <div align="center" class="undisplayed">
+
+    <span style="font-size: 90%;" >
+      Sign/Frame:
+      <input id="mySF" class="txtSF" value="0/0" type="text" />
+      &nbsp;
+      Gloss:
+      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+      &nbsp;
+      FPS:
+      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+    </span>
+  </div>
 
 
-    <!-- SToCA applet element panel -->
-    <!--================================================================-->
-    <div class="SToCA" align="center" ></div>
-    <!--================================================================-->
-<!-- </div> -->
+  <div align="center">
+      <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+      <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+      </textarea>
+  </div>
 
+  <br>
+
+
+  <!-- SToCA applet element panel -->
+  <!--================================================================-->
+  <div class="SToCA" align="center" ></div>
+  <!--================================================================-->
+</div>
 
 <!-- Defines the page displayed when "Home" is selected from the tab options -->
 <div id="Home" class="tabcontent" align="center">
