@@ -152,12 +152,14 @@ h3, h4 {
 
 .displayInfo{
   background-color: #8c8c8c;
-  /*position: relative;*/
-  /*margin: 1px; */
   border-radius: 25px;
-  /*z-index: 2;*/
-  /*max-width: 275px;*/
   text-align: center;
+  /*margin: 0px; 
+  width: 400px; 
+  padding: 2px; 
+  display: inline-block;*/
+  /*z-index: 2;*/
+  /*position: relative;*/
 }
 
 
