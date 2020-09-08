@@ -263,7 +263,7 @@ function undisplayInfo(id){
   <span align="left" style="display:inline-block; vertical-align: top;margin:30px;">
   <label for="option" style="margin-right: -100px">Choose a display option:</label>
   
-  <span id="infoAvatar" class="undisplayed" align="right">
+  <span id="infoAvatar" class="undisplayed">
     Displays the translation using an avatar
   </span>
 
@@ -272,7 +272,7 @@ function undisplayInfo(id){
     <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
     <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   </span>
-  <span id="infoVideo" class="undisplayed" align="right">
+  <span id="infoVideo" class="undisplayed">
       Displays the translation using a video
   </span>
   
@@ -281,7 +281,7 @@ function undisplayInfo(id){
     <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
     <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
   </span>
-   <span id="infoFreestyle" class="undisplayed" align="right" style="max-width: 50px">
+   <span id="infoFreestyle" class="undisplayed">
       Attempts to translate any sentence into NGT (experimental)
   </span>
   
