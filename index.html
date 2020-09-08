@@ -273,12 +273,12 @@ function undisplayInfo(id){
     <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   </span>
   <span id="infoVideo">
-    <p style="background-color: #8c8c8c;">
+    <p style="background-color: #8c8c8c;display: inline-block;">
      Displays the translation using a video
    </p> 
   </span>
   
-  <br>
+  <!-- <br> -->
   <span style="margin-right: -25px; margin-top: -5px">
     <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
     <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
