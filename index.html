@@ -269,8 +269,8 @@ function undisplayInfo(id){
 
   <br>
   <span style="margin-right: -25px; margin-bottom: -5px">
-    <input type="radio" id="avatarDisplay" style="margin-bottom: 0px" name="display" value="avatar" checked onclick="changeFunc(this);">
-    <label for="avatar" style="margin-right: 5px; margin-bottom: 0px">Avatar</label><i class="fa fa-question-circle" style="margin-bottom: 0px" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
+    <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+    <label for="avatar" style="margin-right: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
   </span>
   <p id="infoVideo" style="background-color: #8c8c8c; margin: 0px; position: relative; z-index: 2">
     Displays the translation using a video
@@ -278,11 +278,11 @@ function undisplayInfo(id){
   
   <br>
   <span style="margin-right: -25px; margin-top: -5px">
-    <input type="radio" id="videoDisplay" style="margin-top:0px" name="display" value="video" onclick="changeFunc(this);">
-    <label for="video" style="margin-top:0px; margin-right: 5px">Video</label><i style="margin-top:0px" class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
+    <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
+    <label for="video" style="margin-right: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
   </span>
-   <span id="infoFreestyle" class="undisplayed" style=" margin: 0px;">
-      Attempts to translate any sentence into NGT (experimental)
+  <span id="infoFreestyle" class="undisplayed" style="margin: 0px">
+    Attempts to translate any sentence into NGT (experimental)
   </span>
   
    <br>
