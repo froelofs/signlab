@@ -159,9 +159,11 @@ h3, h4 {
   /*max-width: 275px;*/
   text-align: center;
 }
-/*
+
+
 .displayInfo * {
+    background-color: #8c8c8c;
     padding-top: 1px;
     padding-bottom: 1px;
-}*/
+}
 /*--------*/
