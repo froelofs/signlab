@@ -156,6 +156,8 @@ h3, h4 {
   text-align: center;
   margin: 0px; 
   padding: 5px; 
+  padding-bottom: 3px;
+  padding-top: 3px;
   display: inline-block;
   /*z-index: 2;*/
   /*position: relative;*/
