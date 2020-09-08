@@ -261,33 +261,34 @@ function undisplayInfo(id){
   </span>
 
   <span align="left" style="display:inline-block; vertical-align: top;margin:30px;">
-  <label for="option">Choose a display option:</label>
-  <br>
+  <label for="option" style="margin-right: -100px">Choose a display option:</label>
+  
+  <span id="infoAvatar" class="undisplayed" align="right">
+    Displays the translation using an avatar
+  </span>
 
-  <span>
+  <br>
+  <span style="margin-right: -100px">
     <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
     <label for="avatar" style="margin: 5px">Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
-    <span id="infoAvatar" class="undisplayed" align="right">
-      Displays the translation using an avatar
-    </span>
+  </span>
+  <span id="infoVideo" class="undisplayed" align="right">
+      Displays the translation using a video
   </span>
   
   <br>
-  <span style="margin-bottom: -20px; margin-top: -20px">
+  <span style="margin-right: -100px">
     <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
     <label for="video" style="margin: 5px">Video</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
-    <span id="infoVideo" class="undisplayed" align="right">
-      Displays the translation using a video
-    </span>
+  </span>
+   <span id="infoFreestyle" class="undisplayed" align="right" style="max-width: 50px">
+      Attempts to translate any sentence into NGT (experimental)
   </span>
   
    <br>
-  <span style="margin-right: -100px">
+  <span>
     <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
     <label for="freestyle" style="margin: 5px">Freestyle with Avatar</label><i class="fa fa-question-circle" onmouseenter="displayInfo('infoFreestyle');" onmouseout="undisplayInfo('infoFreestyle');"></i>
-  </span>
-  <span id="infoFreestyle" class="undisplayed" align="right" style="max-width: 50px">
-      Attempts to translate any sentence into NGT (experimental)
   </span>
 
     <br>
