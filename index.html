@@ -48,10 +48,6 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
-function showGame(whichgame){
-
-}
-
 function addStatus(evt) {
 	var elt = document.getElementById("myStatusLog");
 	var msg = evt.msg;
@@ -282,8 +278,9 @@ var tag = document.createElement('script');
   <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
   <!--================================================================-->
 
-  <span id="player" class="undisplayed" align="left">
+  <span id="videos" class="undisplayed" align="left">
     <iframe id="videoHolder" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <!-- <iframe id="videoHolder" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
   </span>
 
   <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
