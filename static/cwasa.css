@@ -145,14 +145,13 @@ h3, h4 {
   padding: 6px 12px;
 }
 
+/*Styles the triangle to in the bottom left of the tooltip*/
 .ui-tooltip-content::after {
     content: '';
     position: absolute;
     border-style: solid;
     display: block;
     width: 0;
-}
-.ui-tooltip-content::after {
     top: 10px;
     left: -10px;
     border-color: transparent #ffffff;
