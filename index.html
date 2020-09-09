@@ -42,7 +42,14 @@ function changeVideo(url) {
   // window.frames['videos'].location.replace(url);
   // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
   // document.getElementById('test').innerHTML = document.getElementById('videos').src;
-  player.loadVideoByUrl(url);
+  var frame=document.getElementById("videoHolder");
+  var clone=frame.cloneNode(true);
+  clone.setAttribute('src',url);
+  frame.parentNode.replaceChild(clone,frame);
+}
+
+function showGame(whichgame){
+
 }
 
 function addStatus(evt) {
@@ -275,51 +282,9 @@ var tag = document.createElement('script');
   <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
   <!--================================================================-->
 
-  <div id="player" class="undisplayed" align="left">
-    <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
-  </div>
-  <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        // if (event.data == YT.PlayerState.PLAYING && !done) {
-        //   setTimeout(stopVideo, 6000);
-        //   done = true;
-        // }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
+  <span id="player" class="undisplayed" align="left">
+    <iframe id="videoHolder" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </span>
 
   <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
   <label for="option" style="margin-right:-100px; margin-bottom:-5px">Choose a display option:</label>
