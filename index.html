@@ -229,8 +229,10 @@ function undisplayInfo(id){
 
 // Displays titles of all HTML elements as a tooltip
 $( function() {
-    $( document ).tooltip();
-  } );
+    $(".fa fa-question-circle").tooltip({
+      // position: { my: "left+15 center", at: "right center" }
+    });
+});
 
 
 
