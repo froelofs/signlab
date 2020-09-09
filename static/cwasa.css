@@ -145,6 +145,17 @@ h3, h4 {
   padding: 6px 12px;
 }
 
+.ui-tooltip {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 0;
+    opacity: 1;
+}
+.ui-tooltip-content {
+    position: relative;
+    padding: 1em;
+}
 
 .ui-tooltip-content::after {
     content: '';
