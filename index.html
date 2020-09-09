@@ -39,9 +39,13 @@ function playText(stext) {
 
 // verandert de source van de embedded video
 function changeVideo(url) {
-  window.frames['videos'].location.replace(url);
+  // window.frames['videos'].location.replace(url);
   // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
-  document.getElementById('test').innerHTML = document.getElementById('videos').src;
+  // document.getElementById('test').innerHTML = document.getElementById('videos').src;
+  var frame=document.getElementById("videoHolder");
+  var clone=frame.cloneNode(true);
+  clone.setAttribute('src',url);
+  frame.parentNode.replaceChild(clone,frame);
 }
 
 function addStatus(evt) {
@@ -155,8 +159,6 @@ function toSiGML(text){
 }
 
 
-
-
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
@@ -234,6 +236,9 @@ $( function() {
     });
 });
 
+var tag = document.createElement('script');
+
+
 
 </script>
 
@@ -274,7 +279,8 @@ $( function() {
   <!--================================================================-->
 
   <span id="videos" class="undisplayed" align="left">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <iframe id="videoHolder" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <!-- <iframe id="videoHolder" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
   </span>
 
   <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
@@ -285,14 +291,14 @@ $( function() {
     <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
     <label for="avatar" style="margin-right: 5px">Avatar</label>
     <i class="fa fa-question-circle" title="Displays the translation of select sentences using an avatar"></i>
- 
-  
+
+
   <br>
   <!-- Defines the button and questioncircle displayed for the option "video" -->
     <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
     <label for="video" style="margin-right:5px">Video</label>
     <i class="fa fa-question-circle" title="Displays the translation using a video"></i>
-  
+
   <br>
   <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
   <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
