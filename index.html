@@ -272,42 +272,25 @@ $( function() {
 
   <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
   <label for="option" style="margin-right:-100px; margin-bottom:-5px">Choose a display option:</label>
-  <!-- Defines the infobox displayed for the option "avatar" -->
-  <span id="infoAvatar" class="undisplayed">
-    Displays the translation using an avatar
-  </span>
 
   <br>
    <!-- Defines the button and questioncircle displayed for the option "avatar" -->
-  <span style="margin-right:-25px; margin-bottom:-5px; margin-top:-5px">
     <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
     <label for="avatar" style="margin-right: 5px">Avatar</label>
-    <i class="fa fa-question-circle" title="Displays the translation using an avatar"></i>
-  </span>
-  <!-- Defines the infobox displayed for the option "video" -->
-  <span id="infoVideo" class="undisplayed" style="margin:0px">
-    Displays the translation using a video
-  </span>
+    <i class="fa fa-question-circle" title="Displays the translation of select sentences using an avatar"></i>
+ 
   
   <br>
   <!-- Defines the button and questioncircle displayed for the option "video" -->
-  <span style="margin-right:-25px; margin-top:-5px">
     <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
     <label for="video" style="margin-right:5px">Video</label>
-    <i class="fa fa-question-circle" onmouseenter="displayInfo('infoVideo');" onmouseout="undisplayInfo('infoVideo');"></i>
-  </span>
-  <!-- Defines the infobox displayed for the option "freestyle" -->
-  <span id="infoFreestyle" class="undisplayed">
-    Attempts to translate any sentence into NGT (experimental)
-  </span>
+    <i class="fa fa-question-circle" title="Displays the translation using a video"></i>
   
   <br>
   <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
-  <span>
-    <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
-    <label for="freestyle" style="margin-right:5px">Freestyle with Avatar</label>
-    <i class="fa fa-question-circle" onmouseenter="displayInfo('infoFreestyle');" onmouseout="undisplayInfo('infoFreestyle');"></i>
-  </span>
+  <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
+  <label for="freestyle" style="margin-right:5px">Freestyle with Avatar</label>
+  <i class="fa fa-question-circle" title="Attempts to translate any sentence into NGT using an avatar (experimental)"></i>
 
     <br>
     Enter Sentence:
