@@ -14,8 +14,14 @@
 <script type="text/javascript"
     src="cwa/allcsa.js"></script>
 
+<!-- imports stylesheet for autocomplete -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<!-- imports stylesheet for tooltip -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- imports necessary jquery-->
 <script type="text/javascript" src="../static/jquery-3.5.1.min.js"></script>
+<!-- imports jquery UI necessary for autocomplete and tooltip -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 <!-- imports stylesheet for question circle -->
@@ -215,6 +221,10 @@ function undisplayInfo(id){
   document.getElementById(id).setAttribute("class", "undisplayed");
 }
 
+// Displays titles of elements as a tooltip
+$( function() {
+    $( document ).tooltip();
+  } );
 
 
 
@@ -272,7 +282,7 @@ function undisplayInfo(id){
   <span style="margin-right:-25px; margin-bottom:-5px; margin-top:-5px">
     <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
     <label for="avatar" style="margin-right: 5px">Avatar</label>
-    <i class="fa fa-question-circle" onmouseenter="displayInfo('infoAvatar');" onmouseout="undisplayInfo('infoAvatar');"></i>
+    <i class="fa fa-question-circle" title="Displays the translation using an avatar"></i>
   </span>
   <!-- Defines the infobox displayed for the option "video" -->
   <span id="infoVideo" class="undisplayed" style="margin:0px">
