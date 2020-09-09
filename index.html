@@ -161,14 +161,20 @@ function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("videos").setAttribute("class", "undisplayed");
+    document.getElementById("play").setAttribute("class", "displayed");
+    document.getElementById("freestyle").setAttribute("class", "undisplayed");
   }
   else if (myRadio.value == "freestyle") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("videos").setAttribute("class", "undisplayed");
+    document.getElementById("play").setAttribute("class", "undisplayed");
+    document.getElementById("freestyle").setAttribute("class", "displayed");
   }
   else if (myRadio.value == "video") {
     document.getElementById("avatar").setAttribute("class", "undisplayed");
     document.getElementById("videos").setAttribute("class", "prerecorded");
+    document.getElementById("play").setAttribute("class", "displayed");
+    document.getElementById("freestyle").setAttribute("class", "undisplayed");
   }
 }
 
@@ -221,7 +227,7 @@ function undisplayInfo(id){
   document.getElementById(id).setAttribute("class", "undisplayed");
 }
 
-// Displays titles of elements as a tooltip
+// Displays titles of all HTML elements as a tooltip
 $( function() {
     $( document ).tooltip();
   } );
@@ -300,7 +306,7 @@ $( function() {
     </span>
 
     <br>
-    <input type="button" id = "play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+    <input type="button" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
    <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
     <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
 
