@@ -344,9 +344,9 @@ function addSuggestion(suggestion){
     Adjust speed: <span class="CWASASpeed av0"></span>
     <br>
 
-    <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px;">
+    <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px; width: 250px;">
     <label for="suggestions">Suggestions box</label>
-    <input type="button" value="Send" onclick='CWASA.stopSiGML();' style="display: inline-block; width: 250px;" />
+    <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" />
   </span>
 
   <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
