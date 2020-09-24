@@ -252,7 +252,7 @@ function addSuggestion(suggestion){
   const fs = require('fs') 
     
   // Write data in 'Output.txt' . 
-  fs.writeFile('Output.txt', suggestion, (err) => { 
+  fs.writeFile('suggestions.txt', suggestion, (err) => { 
         
       // In case of a error throw err. 
       if (err) throw err; 
