@@ -104,7 +104,7 @@ $( function() {
   // Activates the jquery autocomplete function when the user gives input
   $( "#mySiGML" ).autocomplete({
     source: options,
-    appendTo: "#suggestions",
+    appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
@@ -315,7 +315,7 @@ $( function() {
     <br>
     Enter Sentence:
     <br>
-    <span class="ui-widget" id="suggestions">
+    <span class="ui-widget" id="autocomp">
       <input id="mySiGML" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px;">
     </span>
 
@@ -331,6 +331,9 @@ $( function() {
     <br>
     Adjust speed: <span class="CWASASpeed av0"></span>
     <br>
+
+    <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px;">
+    <input type="button" value="Send" onclick='CWASA.stopSiGML();' style="display: inline-block;" />
   </span>
 
   <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
