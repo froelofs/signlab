@@ -31,7 +31,7 @@ def main(sentence, flag = False):
 
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
-    print(sigmlsentence)
+    # print(sigmlsentence)
 
     #Creates temporary file
     # tempSigmlFile = tempfile.NamedTemporaryFile(suffix = '.sigml')

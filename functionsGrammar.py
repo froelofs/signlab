@@ -3,7 +3,7 @@ Functions pertaining to the pre-processsing of the sentence (grammar aspect).
 IMPORTANT: all the functions in this file should be replaced by a grammar that covers all these aspects.
 '''
 import spacy
-# import nl_core_news_sm
+import nl_core_news_sm
 
 #'Main' Function
 '''Approximates and adds indices, negation scope and affirmation scope (should preferably be replaced by a grammar)
@@ -32,6 +32,7 @@ def preprocess(sentence):
             	#Appends word with its context (PoS-tag and dependancy)
                 context.append((str(token.text), token.pos_, token.dep_))
                 context, already, size = replaceIndicators(context, token, indicator, begin, end, already, size)
+            print("lemma: ", token.lemma_)
 
     #Concatenates special verb cases with 'niet'
     context = neg_verbs_concat(context)
