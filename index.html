@@ -148,7 +148,7 @@ function toSiGML(text){
   if (document.getElementById("avatarDisplay").checked) {
     entry = json[text];
     if (entry == undefined) {
-      alert("There is currently no translation available. Please send it to us via the suggestions box on this page or try out our freestyle option.")
+      alert("There is currently no translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out our freestyle option.")
     }
     else{
       playText(entry);
@@ -156,7 +156,13 @@ function toSiGML(text){
   }
   // if video is checked, source of embedded video changes
   else if (document.getElementById("videoDisplay").checked) {
-    changeVideo(jsonvideo[text]);
+    entry = json[text];
+    if (entry == undefined) {
+      alert("There is currently no translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out our freestyle option.")
+    }
+    else{
+    changeVideo(entry);
+    }
   }
 }
 
@@ -272,7 +278,7 @@ $( function() {
 </div>
 
 <div id="Translate" class="tabcontent" align="center" width="100%">
-  <p>This webiste serves as an interface for a translation system from Dutch to Dutch sign language (NGT).</p>
+  <p>This website serves as an interface for a translation system from Dutch to Dutch sign language (NGT).</p>
   <!-- CWA signing avatar panel 0 -->
   <!--================================================================-->
   <!-- <div class="CWASAPanel av0" align="center" ></div> -->
@@ -303,8 +309,9 @@ $( function() {
   <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
   <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
   <label for="freestyle" style="margin-right:5px">Freestyle with Avatar</label>
-  <i class="fa fa-question-circle" title="Attempts to translate any sentence into NGT using an avatar (experimental)"></i>
+  <i class="fa fa-question-circle" title="Attempts to translate any Dutch sentence into NGT using an avatar (experimental)"></i>
 
+    <br>
     <br>
     Enter Sentence:
     <br>
