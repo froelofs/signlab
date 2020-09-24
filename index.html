@@ -146,8 +146,13 @@ var jsonvideo = (function() {
 function toSiGML(text){
   // if avatar is checked, sigml is sent
   if (document.getElementById("avatarDisplay").checked) {
-    // playText(json[text]);
-    alert(json[text]);
+    entry = json[text];
+    if (entry == undefined) {
+      alert("There is currently no translation available. Please send it to us via the suggestions box on this page or try out our freestyle option.")
+    }
+    else{
+      playText(entry);
+    }
   }
   // if video is checked, source of embedded video changes
   else if (document.getElementById("videoDisplay").checked) {
