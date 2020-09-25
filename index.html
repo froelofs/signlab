@@ -1,18 +1,33 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Interface ZonMW COVID 19 Project</title>
+<title>Breaking the sign language barrier</title>
 
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Access-Control-Allow-Methods" content="GET">
 <meta http-equiv="Access-Control-Allow-Methods" content="POST">
 
-<!-- CWA @ vhg.cmp.uea.ac.uk/jrwg/ -->
+<!-- Meta tag to make the website responsive to different types of devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<!-- CSS files -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="static/cwasa.css">
-<script type="text/javascript"
-    src="cwa/allcsa.js"></script>
+
+<!-- Needed for bootstrap functionality: jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+<script 
+  type="text/javascript" 
+  src="cwa/allcsa.js">  
+</script>
 
 <!-- imports stylesheet for autocomplete -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
@@ -282,15 +297,76 @@ function addSuggestion(suggestion){
 
 
 <!--================================================================-->
-<h3>Interface ZonMW COVID-19 Project!</h3>
-<p id="test"></p>
-<div class="tab" align="center">
+
+<!-- Navigation bar -->
+
+<nav class="navbar navbar-expand navbar-dark bg-info"> 
+  <a class="navbar-brand mx-auto order-md-last" href="#">SignTranslation</a>
+  
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" onclick="openPage(event, 'Home')">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="openPage(event, 'Translate')">Translate!</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="openPage(event, 'Team')">Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="openPage(event, 'Partners')">Partners</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="openPage(event, 'Funding')">Funding</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Further resources</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#" onclick="openPage(event, 'devTools')">Developer tools</a>
+          <a class="dropdown-item" href="#" onclick="openPage(event, 'Literature')">Literature</a>
+          <a class="dropdown-item" href="#">Add something else?</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!-- <div class="tab" align="center">
   <button id="defaultOpen" class="tablinks" onclick="openPage(event, 'Translate')">Translate to NGT</button>
   <button class="tablinks" onclick="openPage(event, 'Software')">Software</button>
 </div>
+ -->
+
+<!-- Home -->
+<div id="Home" class="tabcontent" align="left" width="100%">
+
+  <p>
+    In times of COVID-19, communication between health care providers and deaf patients is very difficult, because sign language interpreters are often not allowed to enter the hospital and mouth caps make lipreading impossible.
+  </p>
+
+  <p>
+    We are developing an online tool that translates the most common questions and announcements in the diagnosis and treatment of COVID-19 from Dutch into Dutch Sign Language. Translations are displayed by means of videos and animated avatars.
+  </p>
+
+
+<!--   <div>
+    Welcome to our website! We are developing tools to automatically translate text into sign language. 
+    While such tools are in a very early stage of development,
+    they can already be useful for certain purposes.
+  </div>
+  <div>
+    Currently, we are developing a tool to help hospital personnel communicate with deaf patients. In times of COVID-19, sign language interpreters
+    are often not allowed to enter the hospital and mouth caps make lipreading impossible. This makes communication with deaf patients even more difficult
+    than it usually is. We hope that our tool will help to address this problem.
+  </div> -->
+</div>
+
+<!-- Translate -->
 
 <div id="Translate" class="tabcontent" align="center" width="100%">
-  <p>This website serves as an interface for a translation system from Dutch to Dutch sign language (NGT).</p>
   <!-- CWA signing avatar panel 0 -->
   <!--================================================================-->
   <!-- <div class="CWASAPanel av0" align="center" ></div> -->
@@ -382,10 +458,60 @@ function addSuggestion(suggestion){
   <!--================================================================-->
 </div>
 
-<!-- Defines the page displayed when "Software" is selected from the tab options -->
+<!-- Team page -->
+<div id="Team" class="tabcontent" align="left" width="100%">
+
+  
+  <p>
+    <b>Coordination</b><br>
+    Floris Roelofsen, University of Amsterdam<br>
+    Anika Smeijers, Amsterdam Medical Centre<br>
+  </p>
+
+  
+  <p>
+    <b>Avatar and interface development</b><br>
+    Lyke Esselink, University of Amsterdam<br>
+    Shani Mende-Gillings, University of Amsterdam<br> 
+   </p>
+   <p>
+    <b>Video translations</b><br>
+    <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
+    <a href="https://maxvonk.com/">Max Vonk video productions</a><br>
+   </p>
+  
+</div>
+
+<!-- Funding page -->
+<div id="Funding" class="tabcontent" align="left" width="100%">
+ <p>
+  We gratefully acknowledge funding from the Netherlands Organisation for Innovation in Healthcare (ZonMw) through the
+  <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.  
+ </p> 
+ <p>
+   <!-- <img src="images/ZonMWlogo.png" alt="ZonMW logo" width="150" height="60" style="display: inline-block;"> -->
+ </p>
+</div>
+
+<!-- Partners page -->
+<div id="Partners" class="tabcontent" align="left" width="100%">
+ <p>
+  Our translation tool makes use of the 
+  <a>JASinging avatar software</a>
+  developed by the
+  <a>Virtual Humans Group </a>
+  at the
+  <a>University of East Anglia</a>.
+ </p> 
+ <p>
+   We are very grateful to John Glauert for providing a distribution of the software for our project.
+ </p>
+</div>
+
+<!-- "Software" page -->
 <div id="Software" class="tabcontent" align="center">
   <p>The avatar software used for displaying the translations has been provided by John Glauert.</p>
-  <p>This project was funded by <img src="images/ZonMWlogo.png" alt="ZonMW logo" width="150" height="60" style="display: inline-block;"></p>
+  <p>This project was funded by </p>
 </div>
 
 <!-- Clicks on the page set as default to make sure it is diplayed when the website is loaded -->
