@@ -13,7 +13,7 @@
 <!-- Meta tag to make the website responsive to different types of devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -25,18 +25,10 @@
 <!-- CSS files -->
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 <!-- <link rel="stylesheet" href="static/cwasa.css"> -->
+<link rel="stylesheet" href="static/cwasa-reduced.css">
 
-
-<!-- Needed for bootstrap functionality: jQuery, Popper.js, Bootstrap JS -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
- -->
-
-<script 
-  type="text/javascript" 
-  src="cwa/allcsa.js">  
-</script>
+<!-- script for generating avatar animations -->
+<script type="text/javascript" src="cwa/allcsa.js"> </script>
 
 <!-- imports stylesheet for autocomplete -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
@@ -46,6 +38,7 @@
 
 <!-- imports necessary jquery-->
 <script type="text/javascript" src="../static/jquery-3.5.1.min.js"></script>
+
 <!-- imports jquery UI necessary for autocomplete and tooltip -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
@@ -303,48 +296,18 @@ function addSuggestion(suggestion){
 
 <!-- <body onload="CWASA.init(); brython(1);"> -->
 <!-- <body onload="brython(1);"> -->
+
+<!--================================================================-->
+<!--================================================================-->
+<!--================================================================-->
+<!--================================================================-->
+
 <body id="page-top" onload="CWASA.init();">
 
 
 <!--================================================================-->
 
-<!-- Navigation bar -->
 
-<!-- <nav class="navbar navbar-expand-md navbar-dark bg-info"> 
-  <div class="container">
-    <a class="navbar-brand mx-auto order-md-last" href="#">Sign language translation for hospital personnel</a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerTarget" aria-controls="navbarTogglerTarget" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerTarget">
-      <ul class="navbar-nav nav-fill">
-        <li class="nav-item active">
-          <a class="nav-link" href="#" onclick="openPage(event, 'Home')">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="openPage(event, 'Translate')">Translate!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="openPage(event, 'Team')">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="openPage(event, 'Partners')">Partners</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="openPage(event, 'Funding')">Funding</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Further resources</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#" onclick="openPage(event, 'devTools')">Developer tools</a>
-            <a class="dropdown-item" href="#" onclick="openPage(event, 'Literature')">Literature</a>
-            <a class="dropdown-item" href="#">Add something else?</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
 <!-- Navigation-->
 <nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -379,15 +342,7 @@ function addSuggestion(suggestion){
  -->
 
 
-<!-- <div class="tab" align="center">
-  <button id="defaultOpen" class="tablinks" onclick="openPage(event, 'Translate')">Translate to NGT</button>
-  <button class="tablinks" onclick="openPage(event, 'Software')">Software</button>
-</div>
- -->
-
-<!-- Home -->
-
-<!-- <div id="Home" class="tabcontent landingpage" display="block" align="left" width="100%"> -->
+<!--================================================================-->
 
 <!-- About -->
 <section class="projects-section intro-section bg-light" id="About">
@@ -428,102 +383,108 @@ function addSuggestion(suggestion){
         </div>
     </div>
 </section>
-<!-- </div> -->
+
+<!--================================================================-->
 
 <!-- Translate -->
 
 <section class="projects-section bg-light" id="Translate">
-  <!-- CWA signing avatar panel 0 -->
-  <!--================================================================-->
-  <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-  <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
-  <!--================================================================-->
+    <div class="container">
+        <!-- CWA signing avatar panel 0 -->
+        <!--================================================================-->
+        <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+        <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
+        <!--================================================================-->
 
-  <span id="videos" class="undisplayed" align="left">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-  </span>
+        <span id="videos" class="undisplayed" align="left">
+          <iframe width="500" height="500" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </span>
 
-  <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
-  <label for="option" style="margin-right:-100px; margin-bottom:-5px">Choose a display option:</label>
+        <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
+            <label for="option" style="margin-right:-100px; margin-bottom:15px">
+                <h4>Choose a translation option:</h4>
+            </label>
 
-  <br>
-   <!-- Defines the button and questioncircle displayed for the option "avatar" -->
-    <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
-    <label for="avatar" style="margin-right: 5px">Avatar</label>
-    <i class="fa fa-question-circle" title="Displays the translation of select sentences using an avatar"></i>
- 
-  
-  <br>
-  <!-- Defines the button and questioncircle displayed for the option "video" -->
-    <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
-    <label for="video" style="margin-right:5px">Video</label>
-    <i class="fa fa-question-circle" title="Displays the translation using a video"></i>
-  
-  <br>
-  <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
-  <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
-  <label for="freestyle" style="margin-right:5px">Freestyle with Avatar</label>
-  <i class="fa fa-question-circle" title="Attempts to translate any Dutch sentence into NGT using an avatar (experimental)"></i>
+            
+            
+            <br>
+            <!-- Defines the button and questioncircle displayed for the option "video" -->
+              <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
+              <label for="video" style="margin-right:5px">Pre-recorded video translation</label>
+            
+            <br>
+             <!-- Defines the button and questioncircle displayed for the option "avatar" -->
+              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+              <label for="avatar" style="margin-right: 5px">Pre-processed avatar translation</label>
+           
+            <br>
+            <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
+            <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
+            <label for="freestyle" style="margin-right:5px">Avatar translation computed on the fly</label>
+            <i class="fa fa-question-circle" title="This functionality is experimental.
+            Correctness of the result cannot be guaranteed."></i>
 
-    <br>
-    <br>
-    Enter Sentence:
-    <br>
-    <span class="ui-widget" id="autocomp">
-      <input id="mySiGML" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px;">
-    </span>
+              <br>
+              <br>
+              <h4>Enter Sentence:</h4>
+              
+              <span class="ui-widget" id="autocomp">
+                <input id="mySiGML" class="input txtaSiGMLText" style="margin-top:10px; margin-bottom:20px;"> <!-- class="txtaSiGMLText" -->
+              </span>
 
-    <br>
-    <input type="button" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
-    <input type="button" id="freestyle" value="Freestyle" class="undisplayed">
-   <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
-    <input type="button" value="Stop" onclick='CWASA.stopSiGML();' />
+              <br>
+              <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+              <input type="button" id="freestyle" value="Freestyle" class="undisplayed">
+             <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
+              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
 
-    <!-- <script type="text/python" src="test.py"></script> -->
-    <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
-    <br>
-    <br>
-    Adjust speed: <span class="CWASASpeed av0"></span>
-    <br>
+              <!-- <script type="text/python" src="test.py"></script> -->
+              <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
+              <br>
+              <br>
+              Adjust speed: <span class="CWASASpeed av0"></span>
+              <br>
 
-    <label for="suggestions">Suggestions box: </label>
-    <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px; width: 250px;">
-   <!--  <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
-  </span>
+              <label for="suggestions">Suggestions box: </label>
+              <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px; width: 250px;">
+             <!--  <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
+        </span>
 
-  <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
+        <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
 
-  <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
-  <div align="center" class="undisplayed">
+        <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+        <div align="center" class="undisplayed">
 
-    <span style="font-size: 90%;" >
-      Sign/Frame:
-      <input id="mySF" class="txtSF" value="0/0" type="text" />
-      &nbsp;
-      Gloss:
-      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
-      &nbsp;
-      FPS:
-      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
-    </span>
-  </div>
-
-
-  <div align="center">
-      <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
-      <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
-      </textarea>
-  </div>
-
-  <br>
+              <span style="font-size: 90%;" >
+                Sign/Frame:
+                <input id="mySF" class="txtSF" value="0/0" type="text" />
+                &nbsp;
+                Gloss:
+                <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+                &nbsp;
+                FPS:
+                <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+              </span>
+        </div>
 
 
-  <!-- SToCA applet element panel -->
-  <!--================================================================-->
-  <div class="SToCA" align="center" ></div>
-  <!--================================================================-->
+        <div align="center">
+            <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+            <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+            </textarea>
+        </div>
+
+        <br>
+
+
+        <!-- SToCA applet element panel -->
+        <!--================================================================-->
+        <div class="SToCA" align="center" ></div>
+        <!--================================================================-->
+    </div>
 </section>
 
+<!--================================================================-->
 
 <!-- Team section -->
 <section class="projects-section intro-section bg-white" id="Team">
@@ -537,7 +498,7 @@ function addSuggestion(suggestion){
                     
                     <h4>Team</h4>
 
-                    <p class="text-black-50 mb-3">
+                    <p class="text-black-50 mb-3 mt-4">
                       <b>Coordination</b><br>
                       Floris Roelofsen, University of Amsterdam<br>
                       Anika Smeijers, Amsterdam Medical Centre<br>
@@ -565,6 +526,7 @@ function addSuggestion(suggestion){
     </div>
 </section>
 
+<!--================================================================-->
 
 <!-- Funding page -->
 <section class="projects-section bg-light" id="Funding">
@@ -586,6 +548,7 @@ function addSuggestion(suggestion){
     </div> 
 </section>
 
+<!--================================================================-->
 
 <!-- Partners page -->
 <section class="projects-section intro-section bg-white" id="Partners">
@@ -619,20 +582,21 @@ function addSuggestion(suggestion){
           
 </section>
 
+<!--================================================================-->
+
 <!-- Resources section -->
 <section class="projects-section bg-light" id="Resources">
     
       <div class="container" height="100%">
           <h2>Further resources</h2>
           <p>
-            Here we could list computational tools / resources, and perhaps give pointers to the literature.
+            Here we could list computational tools / resources, and perhaps give pointers to some literature.
           </p>
       </div>
     
 </section>
 
-<!-- Clicks on the page set as default to make sure it is diplayed when the website is loaded -->
-<!-- <script>document.getElementById("defaultOpen").click();</script> -->
+<!--================================================================-->
 
 <!-- Footer-->
 <footer class="footer bg-black small text-center text-white-50"><div class="container">Footer text</div></footer>
