@@ -10281,6 +10281,9 @@ body {
 .projects-section {
   padding: 10rem 0;
 }
+.intro-section {
+  padding: 0 0;
+}
 .projects-section .featured-text {
   padding: 2rem;
 }
