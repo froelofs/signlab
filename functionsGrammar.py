@@ -32,7 +32,6 @@ def preprocess(sentence):
             	#Appends word with its context (PoS-tag and dependancy)
                 context.append((str(token.text), token.pos_, token.dep_))
                 context, already, size = replaceIndicators(context, token, indicator, begin, end, already, size)
-            print("lemma: ", token.lemma_)
 
     #Concatenates special verb cases with 'niet'
     context = neg_verbs_concat(context)
