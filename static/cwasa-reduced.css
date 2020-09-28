@@ -60,8 +60,9 @@
 }
 
 .txtaSiGMLText, .statusLog {
-    font-family: monospace;  
+    /*font-family: monospace;  
     font-size: 0.9em; 
+    */
     width: 500px;
 }
 

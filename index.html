@@ -430,7 +430,7 @@ function addSuggestion(suggestion){
               <h4>Enter Sentence:</h4>
 
               <span class="ui-widget" id="autocomp">
-                <input id="mySiGML" class="input txtaSiGMLText" style="margin-top:10px; margin-bottom:20px;"> <!-- class="txtaSiGMLText" -->
+                <input id="mySiGML" class="input txtaSiGMLText" style="margin-top:10px; margin-bottom:20px;"> 
               </span>
 
               <br>
@@ -443,11 +443,12 @@ function addSuggestion(suggestion){
               <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
               <br>
               <br>
-              Adjust speed: <span class="CWASASpeed av0"></span>
+              Adjust speed: <span class="CWASASpeed av0" style="margin-bottom:5px"></span>
               <br>
 
               <label for="suggestions">Suggestions box: </label>
-              <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px; width: 250px;">
+              <br>
+              <input id="suggestions" class="input txtaSiGMLText" style="margin-top:5px; margin-bottom:10px;">
              <!--  <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 
@@ -560,7 +561,7 @@ function addSuggestion(suggestion){
               <div class="col-lg-6">
                   <div class="bg-light text-center h-100 project">
                       <div class="d-flex h-100">
-                          <div class="project-text w-100 my-auto text-center text-lg-right">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
                               <h4 class="text-black">University of East Anglia</h4>
                               <p class="text-black-50 mb-3">
                                   Our translation tool makes use of the
@@ -575,7 +576,7 @@ function addSuggestion(suggestion){
                                    We are especially grateful to 
                                    <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a> for providing a distribution of the software for our project.
                               </p>
-                              <hr class="d-none d-lg-block mb-0 mr-0" />
+                              <hr class="d-none d-lg-block mb-0 ml-0" />
                           </div>
                       </div>
                   </div>
@@ -603,6 +604,10 @@ function addSuggestion(suggestion){
                       </div>
                   </div>
               </div>
+          </div>
+          <div class="row">
+                <div class="col-xl-12"><img class="img-fluid" src="images/landscape.jpeg" alt="" /></div>
+            
           </div>
 </section>
 
