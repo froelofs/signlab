@@ -2490,20 +2490,20 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff !important;
-  background-color: #64a19d !important;
-  border-color: #64a19d !important;
+  color: #fff;
+  background-color: #64a19d;
+  border-color: #64a19d;
 }
 .btn-primary:hover {
-  color: #fff !important;
-  background-color: #548b87 !important;
-  border-color: #4f837f !important;
+  color: #fff;
+  background-color: #548b87;
+  border-color: #4f837f;
 }
 .btn-primary:focus, .btn-primary.focus {
-  color: #fff !important;
-  background-color: #548b87 !important;
-  border-color: #4f837f !important;
-  box-shadow: 0 0 0 0.2rem rgba(123, 175, 172, 0.5) !important;
+  color: #fff;
+  background-color: #548b87;
+  border-color: #4f837f;
+  box-shadow: 0 0 0 0.2rem rgba(123, 175, 172, 0.5);
 }
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
@@ -10279,7 +10279,7 @@ body {
 }
 
 .projects-section {
-  padding: 5rem 0;
+  padding: 10rem 0;
 }
 .section-fixtotop {
   padding: 0 0;
