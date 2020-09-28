@@ -265,15 +265,15 @@ $( function() {
 });
 
 function addSuggestion(suggestion){
-  // Requiring fs module in which 
-  // writeFile function is defined. 
+  // Requiring fs module in which
+  // writeFile function is defined.
   const fs = require('fs');
-    
-  // Write data in 'Output.txt' . 
-  fs.appendFile('suggestions.txt', suggestion, (err) => { 
-        
-      // In case of a error throw err. 
-      if (err) throw err; 
+
+  // Write data in 'Output.txt' .
+  fs.appendFile('suggestions.txt', suggestion, (err) => {
+
+      // In case of a error throw err.
+      if (err) throw err;
   });
 }
 
@@ -397,7 +397,8 @@ function addSuggestion(suggestion){
         <!--================================================================-->
 
         <span id="videos" class="undisplayed" align="left">
-          <iframe width="500" height="500" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          <iframe src="https://www.dropbox.com/s/bhm5glj5ih29med/AlledaagsDingen_03_Kanikuhelpen.mp4?raw=1"></iframe>
+          <!-- <iframe width="320" height="240" src="https://www.dropbox.com/s/bhm5glj5ih29med/AlledaagsDingen_03_Kanikuhelpen.mp4?raw=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
         </span>
 
         <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
@@ -405,18 +406,18 @@ function addSuggestion(suggestion){
                 <h4>Choose a translation option:</h4>
             </label>
 
-            
-            
+
+
             <br>
             <!-- Defines the button and questioncircle displayed for the option "video" -->
               <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
               <label for="video" style="margin-right:5px">Pre-recorded video translation</label>
-            
+
             <br>
              <!-- Defines the button and questioncircle displayed for the option "avatar" -->
               <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
               <label for="avatar" style="margin-right: 5px">Pre-processed avatar translation</label>
-           
+
             <br>
             <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
             <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
@@ -427,7 +428,7 @@ function addSuggestion(suggestion){
               <br>
               <br>
               <h4>Enter Sentence:</h4>
-              
+
               <span class="ui-widget" id="autocomp">
                 <input id="mySiGML" class="input txtaSiGMLText" style="margin-top:10px; margin-bottom:20px;"> <!-- class="txtaSiGMLText" -->
               </span>
@@ -492,10 +493,10 @@ function addSuggestion(suggestion){
     <div class="container" height="100%">
 
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-            
+
             <div class="col-xl-6 col-lg-6">
                 <div class="featured-text text-center text-lg-left">
-                    
+
                     <h4>Team</h4>
 
                     <p class="text-black-50 mb-3 mt-4">
@@ -504,11 +505,11 @@ function addSuggestion(suggestion){
                       Anika Smeijers, Amsterdam Medical Centre<br>
                     </p>
 
-                    
+
                     <p class="text-black-50 mb-3">
                       <b>Avatar and interface development</b><br>
                       Lyke Esselink, University of Amsterdam<br>
-                      Shani Mende-Gillings, University of Amsterdam<br> 
+                      Shani Mende-Gillings, University of Amsterdam<br>
                     </p>
 
                     <p class="text-black-50 mb-3">
@@ -521,8 +522,8 @@ function addSuggestion(suggestion){
             </div>
             <div class="col-xl-6 col-lg-6"><img class="img-fluid mb-3 mb-lg-0" src="images/team2.jpg" alt="" /></div>
         </div>
-        
-        
+
+
     </div>
 </section>
 
@@ -530,9 +531,9 @@ function addSuggestion(suggestion){
 
 <!-- Funding page -->
 <section class="projects-section bg-light" id="Funding">
-    
+
     <div class="container" height="100%">
-    
+
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
             <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="images/bg-masthead.jpg" alt="" /></div>
             <div class="col-xl-4 col-lg-5">
@@ -545,32 +546,32 @@ function addSuggestion(suggestion){
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </section>
 
 <!--================================================================-->
 
 <!-- Partners page -->
 <section class="projects-section intro-section bg-white" id="Partners">
-    
+
       <div class="container" height="100%">
 
           <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-            
+
             <div class="col-xl-6 col-lg-6">
                 <div class="featured-text text-center text-lg-left mr-5">
-                    
+
                     <h4>Partners</h4>
 
                     <p class="text-black-50 mb-3">
-                        Our translation tool makes use of the 
+                        Our translation tool makes use of the
                         <a href="http://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASinging avatar software</a>
                         developed by the
                         <a href="http://vh.cmp.uea.ac.uk/index.php/Virtual_Humans_Group" target="_blank">Virtual Humans Group </a>
                         at the
                         <a href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>.
-                    </p> 
-                    
+                    </p>
+
                     <p class="text-black-50 mb-3">
                          We are especially grateful to <b>John Glauert</b> for providing a distribution of the software for our project.
                     </p>
@@ -579,21 +580,21 @@ function addSuggestion(suggestion){
             </div>
             <div class="col-xl-6 col-lg-6"><img class="img-fluid mb-3 mb-lg-0" src="images/partners.jpg" alt="" /></div>
         </div>
-          
+
 </section>
 
 <!--================================================================-->
 
 <!-- Resources section -->
 <section class="projects-section bg-light" id="Resources">
-    
+
       <div class="container" height="100%">
           <h2>Further resources</h2>
           <p>
             Here we could list computational tools / resources, and perhaps give pointers to some literature.
           </p>
       </div>
-    
+
 </section>
 
 <!--================================================================-->
