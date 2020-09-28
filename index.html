@@ -168,7 +168,7 @@ function toSiGML(text){
   if (document.getElementById("avatarDisplay").checked) {
     entry = json[text];
     if (entry == undefined) {
-      alert("There is currently no translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out our freestyle option.")
+      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
     }
     else{
       playText(entry);
@@ -178,7 +178,7 @@ function toSiGML(text){
   else if (document.getElementById("videoDisplay").checked) {
     entry = json[text];
     if (entry == undefined) {
-      alert("There is currently no translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out our freestyle option.")
+      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
     }
     else{
     changeVideo(entry);
@@ -270,7 +270,7 @@ function addSuggestion(suggestion){
   // writeFile function is defined.
   const fs = require('fs');
 
-  // Write data in 'Output.txt' .
+  // Write data in 'suggestions.txt' .
   fs.appendFile('suggestions.txt', suggestion, (err) => {
 
       // In case of a error throw err.
@@ -430,13 +430,11 @@ function addSuggestion(suggestion){
               <h4>Enter Sentence:</h4>
 
               <span class="ui-widget" id="autocomp">
-                <input id="mySiGML" class="input txtaSiGMLText" style="margin-top:10px; margin-bottom:20px;"> 
+                <input id="mySiGML" class="input" style="margin-top:10px; margin-bottom:20px;width: 500px;"> 
               </span>
 
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
-              <input type="button" id="freestyle" value="Freestyle" class="undisplayed">
-             <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
 
               <!-- <script type="text/python" src="test.py"></script> -->
@@ -445,10 +443,11 @@ function addSuggestion(suggestion){
               <br>
               Adjust speed: <span class="CWASASpeed av0" style="margin-bottom:5px"></span>
               <br>
+              <br>
 
               <label for="suggestions">Suggestions box: </label>
               <br>
-              <input id="suggestions" class="input txtaSiGMLText" style="margin-top:5px; margin-bottom:10px;">
+              <input id="suggestions" class="input" style="margin-top:5px; margin-bottom:10px; width: 500px;">
              <!--  <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 

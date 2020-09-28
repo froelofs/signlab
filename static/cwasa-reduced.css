@@ -12,9 +12,17 @@
 }
 
 .txtFPS, .txtLogSpeed {
-	font-family: monospace;  font-size: 1em;  font-weight: bold;
-	text-align: center;  color: #E33;  width: 3.5em;
+	/*font-family: monospace;  font-size: 1em; color: #E33;  */
+  /*font-weight: bold;*/
+  text-align: center;
+  width: 3.5em;
 }
+
+/*FR: I added this to get rid of the "reset" button in the speed control UI. Just to simplify the UI. */
+.bttnSpeedReset {
+  display: none;
+}
+
 .txtSF {
 	font-family: monospace;  font-size: 1em;  font-weight: bold;
 	text-align: center;  color: #E33;  width: 4.5em;
