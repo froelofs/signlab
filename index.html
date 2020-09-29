@@ -4,7 +4,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>COVID-19 Sign Language Translation</title>
+<title>Sign Language Translation COVID-19</title>
 
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Access-Control-Allow-Methods" content="GET">
@@ -16,34 +16,46 @@
 <!-- Icon -->
 <link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
 
+<!-- =============================================== -->
+<!-- Fonts -->
+
 <!-- Fonts for grayscale theme -->
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
-<!-- CSS file for bootstrap grayscale theme -->
-<link href="static/grayscalestyles.css" rel="stylesheet" />
+<!-- =============================================== -->
+<!-- CSS files -->
 
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- CSS for question circle -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- CSS file for bootstrap grayscale theme -->
+<link rel="stylesheet" href="css/grayscalestyles.css">
 <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
-<!-- <link rel="stylesheet" href="static/cwasa.css"> -->
-<link rel="stylesheet" href="static/cwasa-reduced.css">
+<link rel="stylesheet" href="css/cwasa-reduced.css">
+<!-- CSS for Jquery autocomplete and tooltips -->
+<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link> -->
+<!-- CSS for autocomplete form -->
+<link rel="stylesheet" href="css/autocomp.css"></link>
+
+
+<!-- =============================================== -->
+<!-- Javascripts (more scripts are loaded at the very end, somehow the placement matters) -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- Autocomplete JS-->
+<script type="text/javascript" src="js/autocomp.js"></script>
+
 
 <!-- script for generating avatar animations -->
 <script type="text/javascript" src="cwa/allcsa.js"> </script>
 
-<!-- CSS for autocomplete -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
 
-<!-- CSS for tooltip -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-<!-- imports necessary jquery-->
-<script type="text/javascript" src="../static/jquery-3.5.1.min.js"></script>
-
-<!-- imports jquery UI necessary for autocomplete and tooltip -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-
+<!-- =============================================== -->
 
 <script language="javascript">
 
@@ -100,6 +112,18 @@ $( function() {
 
   // Defines all the options for autocomplete suggestions
   var options = ["Goedemorgen","Goedemiddag","Goedenavond","Tot ziens","Tot morgen","Heeft U goed geslapen?","Welterusten","Eet smakelijk","Ik kom op een later moment terug.","Ik moet even weg.","Sorry, ik heb geen tijd.","Ik ga u een nieuw infuus geven.","De arts gaat u een nieuw infuus geven.","De verpleegkundige gaat u een nieuw infuus geven.","Een laborant komt bloedprikken (Voor Avatar: een laborant komt in de ochtend/ middag bloedprikken).","Een co- assistent (student in opleiding tot arts) komt bloedprikken.","Een collega komt bloedprikken.","Sorry, het lukt mij niet het infuus te prikken. Ik ga een collega vragen.","De MRI is goed.","De bloeduitslagen zijn goed.","De bloeduitslagen zijn niet helemaal goed.","De uitslag van de CT scan is goed.","De uitslag van de CT scan is niet helemaal goed.","De röntgenfoto is verbeterd.","De röntgenfoto is verslechterd.","De röntgenfoto is hetzelfde gebleven.","Heeft u pijn?","Op een schaal van 0-10, waarbij 0 ‘geen pijn’ is en 10 de meeste pijn die u zich kunt voor stellen, hoeveel pijn heeft u?","Waar heeft U pijn?","Wat voor soort pijn heeft U? Drukkend, stekend, krampend of anders omschrijven?","Ik kom het infuus controleren (of het nog goed loopt).","U moet in bed blijven.","Als U op de Intensive care ligt bellen de artsen of verpleegkundigen elke dag met uw contactpersoon om te vertellen hoe het gaat.","Ik ga nu het zuurstof kapje over uw neus en mond doen.","Er gebeuren vandaag geen onderzoeken of gesprekken meer.","De COVID-19 test is negatief, dit betekent dat u waarschijnlijk geen Corona heeft.","Soms heeft de test het fout dus we gaan nog meer onderzoek doen.","De COVID-19 test is positief, dit betekent dat u wel Corona heeft.","We gaan in het bloed testen of U antistoffen tegen Corona heeft. Als U antistoffen heeft betekent dit dat U nu Corona heeft of dat U Corona heeft gehad in het verleden.","De Coronatest in het bloed is negatief: u heeft geen antistoffen tegen Corona.","De Coronatest in het bloed is positief: u heeft wel antistoffen tegen Corona.","Met dit recept kunt U medicijnen ophalen bij apotheek.","Met dit recept kan iemand anders medicijnen voor U ophalen bij de apotheek.","Bent U ergens allergisch voor?","Waar bent u allergisch voor?","Gebruikt u medicijnen?","Welke medicijnen gebruikt u?","Kan iemand (thuis) een foto maken van de medicijnen die u gebruikt?"," Rookt u?","Bent U weleens eerder (voor u zelf) in het ziekenhuis geweest?","Welk ziekenhuis was U toen en waarom?","Wanneer was dat?","Zijn er mensen in Uw omgeving ziek?","Welke apotheek komt u?","Wie is uw huisarts?","Wat is uw geboortedatum?","Heeft u speciale dieetwensen? Zoals vegetarisch, veganistisch of bepaalde producten niet?","Heeft U gehoorapparaten of een CI?","Hoe wilt U het liefst communiceren als er geen tolk is? Met liplezen? Zinnen opschrijven? Via deze computer? Of iets anders?","Wilt u toegang tot uw elektronisch dossier? Daarmee kunt u thuis via de computer uitslagen van onderzoeken in zien.","Ik moet naar de wc.","Moet u naar de wc?","Kan ik U helpen?","Ik ga u wassen.","Ik ga u helpen met douchen.","U moet in de douche op de stoel zitten","Wilt u videobellen?","Zal ik u helpen zodat u kunt videobellen?","Dit is de alarmknop, als u hierop drukt dan komt er iemand naar u toe.","Wilt u een tv met teletekst zodat u de ondertiteling kunt aanzetten?","Wat wilt u eten?","Wat wilt u eten, kunt u het aanwijzen op de kaart?","Wat wilt u drinken?","Wat wilt u drinken, kunt u het aanwijzen op de kaart?","Heeft u het warm?","Heeft u het koud?","Het bed gaat nu omhoog.","Het bed gaat nu omlaag.","Wie komt U ophalen?","Ik help U.","Wij helpen U.","Heeft U in de afgelopen 24 uur een van deze klachten gehad: Hoesten, verkoudsheidsklachten, verhoging of koorts, benauwdheid, reuk en/ of smaak verlies?","Heeft U op dit moment een huisgenoot met koorts en/ of benauwdheidsklachten?","Heeft U de afgelopen 7 dagen een Corontest gehad? Zo ja, was deze positief?","Heeft U een huisgenoot/ gezinslid met klachten van het Coronavirus?","Bent U in quarantaine omdat U direct contact heeft gehad met iemand waarbij het nieuwe Coronavirus is vastgesteld? Of heeft U de afgelopen 14 dagen contact gehad met iemand die het Coronavirus heeft?"];
+
+  // // MD Bootstrap autocomplete
+  // $('#mySiGML').mdbAutocomplete({
+  //   data: options,
+  //   dataColor: 'green',
+  //   inputFocus: '2px solid green',
+  //   inputBlur: '1px solid #ced4da',
+  //   inputFocusShadow: '0 1px 0 0 #4285f4',
+  //   inputBlurShadow: ''
+  //   });
+  //initiate the autocomplete function on the "mySiGML" element, and pass along the "options" array as possible autocomplete values:
+  autocomplete(document.getElementById("mySiGML"), options);
 
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
@@ -166,7 +190,7 @@ function toSiGML(text){
   if (document.getElementById("avatarDisplay").checked) {
     entry = json[text];
     if (entry == undefined) {
-      alert("There is currently no translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out our freestyle option.")
+      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
     }
     else{
       playText(entry);
@@ -176,7 +200,7 @@ function toSiGML(text){
   else if (document.getElementById("videoDisplay").checked) {
     entry = json[text];
     if (entry == undefined) {
-      alert("There is currently no translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out our freestyle option.")
+      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
     }
     else{
     changeVideo(entry);
@@ -190,42 +214,21 @@ function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("videos").setAttribute("class", "undisplayed");
-    document.getElementById("play").setAttribute("class", "displayed");
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("freestyle").setAttribute("class", "undisplayed");
   }
   else if (myRadio.value == "freestyle") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("videos").setAttribute("class", "undisplayed");
     document.getElementById("play").setAttribute("class", "undisplayed");
-    document.getElementById("freestyle").setAttribute("class", "displayed");
+    document.getElementById("freestyle").setAttribute("class", "btn btn-primary displayed");
   }
   else if (myRadio.value == "video") {
     document.getElementById("avatar").setAttribute("class", "undisplayed");
     document.getElementById("videos").setAttribute("class", "prerecorded");
-    document.getElementById("play").setAttribute("class", "displayed");
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("freestyle").setAttribute("class", "undisplayed");
   }
-}
-
-function openPage(event,page){
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(page).style.display = "block";
-  event.currentTarget.className += " active";
 }
 
 function goPython(text){
@@ -268,7 +271,7 @@ function addSuggestion(suggestion){
   // writeFile function is defined.
   const fs = require('fs');
 
-  // Write data in 'Output.txt' .
+  // Write data in 'suggestions.txt' .
   fs.appendFile('suggestions.txt', suggestion, (err) => {
 
       // In case of a error throw err.
@@ -310,7 +313,7 @@ function addSuggestion(suggestion){
 <!-- Navigation-->
 <nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">COVID-19 Sign Language Translation</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">COVID-19 SignTranslate</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -323,6 +326,7 @@ function addSuggestion(suggestion){
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Funding">Funding</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Partners">Partners</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="index-nl.html">NL</a></li>
             </ul>
         </div>
     </div>
@@ -420,32 +424,46 @@ function addSuggestion(suggestion){
             <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
             <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
             <label for="freestyle" style="margin-right:5px">On-demand avatar translation</label>
-            <i class="fa fa-question-circle" title="This functionality is experimental.
-            Correctness of the result cannot be guaranteed."></i>
+            <i class="fa fa-question-circle" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed."></i>
 
               <br>
               <br>
-              <h4>Enter Sentence:</h4>
+              <!-- <h4>Enter Sentence:</h4> -->
 
-              <span class="ui-widget" id="autocomp">
-                <input id="mySiGML" class="input txtaSiGMLText" style="margin-top:10px; margin-bottom:20px;"> <!-- class="txtaSiGMLText" -->
-              </span>
+              <!-- <span class="ui-widget" id="autocomp"> -->
+                <!-- <label for="mySiGML"></label> -->
+                <!-- <input id="mySiGML" class="input" style="margin-top:10px; margin-bottom:20px;width: 500px;">  -->
+                  <!-- <div class="md-form">
+                      <input type="search" id="mySiGML" class="form-control">
+                      <label for="mySiGML" class="active">Enter a sentence or keywords here</label>
+                  </div>
+              </span> -->
+
+              <!-- Custom made autocomplete form -->
+              <form autocomplete="off" action="/action_page.php">
+                <div class="autocomplete" style="width:500px;">
+                  <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a sentence or keywords here">
+                </div>
+                <!-- <input type="submit"> -->
+              </form>
+
 
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
-              <input type="button" id="freestyle" value="Freestyle" class="undisplayed">
-             <!--  <input type="button" id="play" value="Translate" onclick='playURL("house.sigml");'/> -->
+              <input type="button" class="btn btn-primary undisplayed" id="freestyle" value="Translate" onclick='goPython(document.getElementById("mySiGML").value);' />
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
 
               <!-- <script type="text/python" src="test.py"></script> -->
               <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
               <br>
               <br>
-              Adjust speed: <span class="CWASASpeed av0"></span>
+              Adjust speed: <span class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
               <br>
 
               <label for="suggestions">Suggestions box: </label>
-              <input id="suggestions" class="txtaSiGMLText" style="margin-top:10px; margin-bottom:10px; width: 250px;">
+              <br>
+              <input id="suggestions" class="input" style="margin-top:5px; margin-bottom:10px; width: 500px;">
              <!--  <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 
@@ -558,7 +576,7 @@ function addSuggestion(suggestion){
               <div class="col-lg-6">
                   <div class="bg-light text-center h-100 project">
                       <div class="d-flex h-100">
-                          <div class="project-text w-100 my-auto text-center text-lg-right">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
                               <h4 class="text-black">University of East Anglia</h4>
                               <p class="text-black-50 mb-3">
                                   Our translation tool makes use of the
@@ -573,7 +591,7 @@ function addSuggestion(suggestion){
                                    We are especially grateful to 
                                    <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a> for providing a distribution of the software for our project.
                               </p>
-                              <hr class="d-none d-lg-block mb-0 mr-0" />
+                              <hr class="d-none d-lg-block mb-0 ml-0" />
                           </div>
                       </div>
                   </div>
@@ -602,6 +620,9 @@ function addSuggestion(suggestion){
                   </div>
               </div>
           </div>
+          <div class="row">
+                <div class="col-xl-12"><img class="img-fluid" src="images/landscape.jpeg" alt="" /></div>
+          </div>
 </section>
 
 <!--================================================================-->
@@ -622,13 +643,21 @@ function addSuggestion(suggestion){
 
 <!-- Footer-->
 <footer class="footer bg-black small text-center text-white-50"><div class="container">Footer text</div></footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-<!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<!-- Core theme JS-->
-<script src="static/grayscalescript.js"></script>
+
+
+<!-- Javascripts -->
+
+<!-- Jquery JS is loaded in the beginning, see above -->
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Javascript for smooth scrolling-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Grayscale theme JS-->
+<script type="text/javascript" src="js/grayscalescript.js"></script>
+
 
 </body>
 </html>
