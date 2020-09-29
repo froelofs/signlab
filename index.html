@@ -29,8 +29,6 @@
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<!-- MDB Bootstrap -->
-<link rel="stylesheet" href="css/mdb.min.css">
 <!-- CSS for question circle -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- CSS file for bootstrap grayscale theme -->
@@ -38,13 +36,26 @@
 <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
 <link rel="stylesheet" href="css/cwasa-reduced.css">
 <!-- CSS for Jquery autocomplete and tooltips -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link> -->
+<!-- CSS for autocomplete form -->
+<link rel="stylesheet" href="css/autocomp.css"></link>
+
+
+<!-- =============================================== -->
+<!-- Javascripts (more scripts are loaded at the very end, somehow the placement matters) -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- Autocomplete JS-->
+<script type="text/javascript" src="js/autocomp.js"></script>
 
 
 <!-- script for generating avatar animations -->
 <script type="text/javascript" src="cwa/allcsa.js"> </script>
 
 
+<!-- =============================================== -->
 
 <script language="javascript">
 
@@ -111,6 +122,8 @@ $( function() {
   //   inputFocusShadow: '0 1px 0 0 #4285f4',
   //   inputBlurShadow: ''
   //   });
+  //initiate the autocomplete function on the "mySiGML" element, and pass along the "options" array as possible autocomplete values:
+  autocomplete(document.getElementById("mySiGML"), options);
 
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
@@ -201,42 +214,21 @@ function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("videos").setAttribute("class", "undisplayed");
-    document.getElementById("play").setAttribute("class", "displayed");
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("freestyle").setAttribute("class", "undisplayed");
   }
   else if (myRadio.value == "freestyle") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("videos").setAttribute("class", "undisplayed");
     document.getElementById("play").setAttribute("class", "undisplayed");
-    document.getElementById("freestyle").setAttribute("class", "displayed");
+    document.getElementById("freestyle").setAttribute("class", "btn btn-primary displayed");
   }
   else if (myRadio.value == "video") {
     document.getElementById("avatar").setAttribute("class", "undisplayed");
     document.getElementById("videos").setAttribute("class", "prerecorded");
-    document.getElementById("play").setAttribute("class", "displayed");
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("freestyle").setAttribute("class", "undisplayed");
   }
-}
-
-function openPage(event,page){
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(page).style.display = "block";
-  event.currentTarget.className += " active";
 }
 
 function goPython(text){
@@ -432,27 +424,33 @@ function addSuggestion(suggestion){
             <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
             <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
             <label for="freestyle" style="margin-right:5px">On-demand avatar translation</label>
-            <i class="fa fa-question-circle" title="This functionality is experimental.
-            Correctness of the result cannot be guaranteed."></i>
+            <i class="fa fa-question-circle" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed."></i>
 
               <br>
               <br>
               <!-- <h4>Enter Sentence:</h4> -->
 
-              <span class="ui-widget" id="autocomp">
+              <!-- <span class="ui-widget" id="autocomp"> -->
                 <!-- <label for="mySiGML"></label> -->
                 <!-- <input id="mySiGML" class="input" style="margin-top:10px; margin-bottom:20px;width: 500px;">  -->
-                  <div class="md-form">
+                  <!-- <div class="md-form">
                       <input type="search" id="mySiGML" class="form-control">
                       <label for="mySiGML" class="active">Enter a sentence or keywords here</label>
                   </div>
+              </span> -->
 
-              </span>
-
+              <!-- Custom made autocomplete form -->
+              <form autocomplete="off" action="/action_page.php">
+                <div class="autocomplete" style="width:500px;">
+                  <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a sentence or keywords here">
+                </div>
+                <!-- <input type="submit"> -->
+              </form>
 
 
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary undisplayed" id="freestyle" value="Translate" onclick='goPython(document.getElementById("mySiGML").value);' />
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
 
               <!-- <script type="text/python" src="test.py"></script> -->
@@ -646,20 +644,20 @@ function addSuggestion(suggestion){
 <!-- Footer-->
 <footer class="footer bg-black small text-center text-white-50"><div class="container">Footer text</div></footer>
 
-<!-- jQuery -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<!-- Jquery UI necessary for autocomplete and tooltips -->
-<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Javascripts -->
+
+<!-- Jquery JS is loaded in the beginning, see above -->
+
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
 <!-- Javascript for smooth scrolling-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- Grayscale theme JS-->
-<script src="js/grayscalescript.js"></script>
+<script type="text/javascript" src="js/grayscalescript.js"></script>
+
 
 </body>
 </html>
