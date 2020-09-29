@@ -18,6 +18,9 @@ function autocomplete(inp, arr) {
       /*for each item in the array...*/
       for (i = 0; i < arr.length; i++) {
         /*check if the item starts with the same letters as the text field value:*/
+        // 
+        // SHANI: YOUR "MATCHING" PROCEDURE SHOULD REPLACE THE NEXT LINE, WHICH SIMPLY CHECKS WHETHER THE INPUT VAL MATCHES THE INITIAL PART OF THE ARRAY ELEMENT
+        // 
         if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
           /*create a DIV element for each matching element:*/
           b = document.createElement("DIV");
