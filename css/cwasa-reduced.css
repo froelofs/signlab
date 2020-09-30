@@ -94,26 +94,3 @@
 
 .displayed { }
 .undisplayed { display: none; }
-
-/*.suggestions{
-	width: 50 px;
-}*/
-.ui-widget
- {
-    /*max-width: 500px;*/
-    width: 500px;
- }
-
-
-/*Styles the triangle in the bottom left of the tooltip*/
-.ui-tooltip-content::after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    display: block;
-    width: 0;
-    top: 10px;
-    left: -10px;
-    border-color: transparent #ffffff;
-    border-width: 10px 10px 10px 0;
-}
