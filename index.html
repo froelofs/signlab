@@ -68,7 +68,7 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!-- Javascript for smooth scrolling-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- Grayscale theme JS-->
@@ -278,13 +278,6 @@ function displayInfo(id){
 function undisplayInfo(id){
   document.getElementById(id).setAttribute("class", "undisplayed");
 }
-
-// // Displays titles of all HTML elements as a tooltip
-// $( function() {
-//     $(document).tooltip({
-//       position: { my: "left+15 center", at: "right center"},
-//     });
-// });
 
 //Enables all tooltips in the document
 $(document).ready(function(){
