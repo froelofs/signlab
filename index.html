@@ -50,12 +50,29 @@
 <!-- jquery ui -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script language="javascript">
+//Solves naming conflicts between jquery ui and bootstrap
+$.widget.bridge('uitooltip', $.ui.tooltip);
+$.widget.bridge('uibutton', $.ui.button);
+</script>
+
+
 <!-- Autocomplete JS-->
-<script type="text/javascript" src="js/autocomp.js"></script>
+<!-- <script type="text/javascript" src="js/autocomp.js"></script> -->
 
 
 <!-- script for generating avatar animations -->
 <script type="text/javascript" src="cwa/allcsa.js"> </script>
+
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Javascript for smooth scrolling-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Grayscale theme JS-->
+<script type="text/javascript" src="js/grayscalescript.js"></script>
 
 
 <!-- =============================================== -->
@@ -109,10 +126,6 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 
 <script>
 // let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
-
-//Solves naming conflicts between jquery ui and bootstrap
-$.widget.bridge('uitooltip', $.ui.tooltip);
-$.widget.bridge('uibutton', $.ui.button);
 
 // Defines the functions and variable necessary for autcomplete suggestions
 $( function() {
@@ -656,14 +669,7 @@ function addSuggestion(suggestion){
 
 <!-- Jquery JS is loaded in the beginning, see above -->
 
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- Javascript for smooth scrolling-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<!-- Grayscale theme JS-->
-<script type="text/javascript" src="js/grayscalescript.js"></script>
+
 
 
 </body>
