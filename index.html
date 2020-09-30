@@ -114,7 +114,7 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
   //Solves naming conflicts between jquery ui and bootstrap
   $.widget.bridge('uitooltip', $.ui.tooltip);
   $.widget.bridge('uibutton', $.ui.button);
-  
+
 // let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
 
 // Defines the functions and variable necessary for autcomplete suggestions
@@ -661,6 +661,11 @@ function addSuggestion(suggestion){
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script>
+var _tooltip = jQuery.fn.tooltip;
+alert(_tooltip);
+</script>
 <!-- Javascript for smooth scrolling-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- Grayscale theme JS-->
