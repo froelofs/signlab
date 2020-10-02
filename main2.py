@@ -1,3 +1,5 @@
+#!/var/www/illc/projects/signlanguage/pythonTest/venv/bin/python
+
 '''
 Signs NGT sentence using the JASigning avatar
 
