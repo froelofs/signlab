@@ -1,11 +1,10 @@
 ''' Auxiliary functions: functions that are used in sign.py or offer extra functionality'''
-# import pickle
-# import re
+import pickle
+import re
 
 # infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 from HamNoSysDict import categoriesHamNoSys as cat #categorydict
 from dictFile import infoSigns
-
 
 '''Accepts a written HamNoSys notation and returns the category it belongs to'''
 def findCategory(hamnosys, dictionary = cat):

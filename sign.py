@@ -6,9 +6,9 @@ import sys
 import re
 import functionsAux as fa
 
-# from HamNoSysDict import categoriesHamNoSys as cat #categorydict
-infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
-
+from HamNoSysDict import categoriesHamNoSys as cat #categorydict
+# infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+from dictFile import infoSigns
 
 """Class object for a Sign."""
 class Sign(object):

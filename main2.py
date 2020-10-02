@@ -14,7 +14,7 @@ import functionsAux as fa
 # import sendsigml as ss
 import sign
 import pickle
-infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+# infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 from dictFile import infoSigns
 
 def main(sentence, flag = False):
@@ -34,6 +34,7 @@ def main(sentence, flag = False):
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
     print(sigmlsentence)
+    return sigmlsentence
 
     #Creates temporary file
     # tempSigmlFile = tempfile.NamedTemporaryFile(suffix = '.sigml')

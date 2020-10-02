@@ -20,8 +20,6 @@ def processSentence(context, flag):
 		   'NN', 'O', 'OO', 'P', 'PP', 'Q', 'QQ', 'R', 'RR', 'S', 'SS', 'T',
 		   'TT', 'U', 'UU', 'V', 'W', 'WW', 'X', 'Y', 'YY', 'Z', 'ZZ']
 
-	infoSigns = pickle.load(open("dictFile.p", "rb"))
-
 	#Detects WH-questions
 	wh = whDetect(context)
 	#Detects alternative questions
