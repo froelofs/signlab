@@ -254,25 +254,21 @@ function changeFunc(myRadio) {
   }
 }
 
-function goPython(text){
-    $.ajax({
-      method: "GET",
-      url: "/test.php",
-      data: {"text": text},
-      // contentType: "application/json;charset=UTF-8",
-      // beforeSend: function() {
-      //   alert(text);
-      // },
-      success: function(result) {
-        // console.log (result);
-        alert(result);
-        // alert(response);
-      },
-      error: function() {
-        alert('Something went wrong');
-        },
+//Makes an ajax call to a php file that runs the python script
+function phpCallPython(text){
+  $.ajax({
+       url : 'pythonCall.php',
+       type : 'POST',
+       data: {"input": text},
+       success : function (result) {
+          console.log (result);
+          playText(result);
+       },
+       error : function () {
+          console.log ('Something went wrong');
+       }
      });
-}
+  }
 
 function displayInfo(id){
   document.getElementById(id).setAttribute("class", "displayInfo");
@@ -471,9 +467,9 @@ function addSuggestion(suggestion){
 
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
-              <input type="button" class="btn btn-primary undisplayed" id="freestyle" value="Translate" onclick='goPython(document.getElementById("mySiGML").value);' />
+              <input type="button" class="btn btn-primary undisplayed" id="freestyle" value="Translate" onclick='phpCallPython(document.getElementById("mySiGML").value);' />
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
-              <input type="button" value="avatar test" onclick="playText(document.getElementById('mySiGML').value);">
+              <!-- <input type="button" value="avatar test" onclick="playText(document.getElementById('mySiGML').value);"> -->
 
               <!-- <script type="text/python" src="test.py"></script> -->
               <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->

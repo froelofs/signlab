@@ -1,3 +1,5 @@
+#!/var/www/illc/projects/signlanguage/pythonTest/venv/bin/python
+
 '''
 Signs NGT sentence using the JASigning avatar
 
@@ -23,7 +25,6 @@ def main(sentence, flag = False):
     preamble = '<?xml version="{}" encoding="{}"?>\n<sigml>\n\n'.format(xml_version, encoding)
     postamble = '\n</sigml>'
 
-    print(sentence, type(sentence))
     #Approximates and adds indeces, negation scope and affirmation scope (preferably replaced by a grammar in the future)
     context = fg.preprocess(sentence)
 
@@ -32,22 +33,19 @@ def main(sentence, flag = False):
 
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
+    print(sigmlsentence)
+    return sigmlsentence
 
-
-    #Creates temporary file
+    # Creates temporary file
     tempSigmlFile = tempfile.NamedTemporaryFile(suffix = '.sigml')
     tempSigmlFile.write(sigmlsentence.encode())
     tempSigmlFile.read()
 
-    if __name__ == '__main__':
-        #Feeds it to sigml-player
-        ss.sendsigml([tempSigmlFile.name])
+    # Feeds it to sigml-player
+    ss.sendsigml([tempSigmlFile.name])
 
-        #Delete temporary file
-        tempSigmlFile.close()
-    else:
-        print("this works")
-        return tempSigmlFile.name
+    # Delete temporary file
+    tempSigmlFile.close()
 
 if __name__ == '__main__':
     #User did not specify glossed sentence
