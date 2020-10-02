@@ -11,7 +11,7 @@ import sys
 import functionsGrammar as fg
 import functionsMain as fm
 import functionsAux as fa
-import sendsigml as ss
+# import sendsigml as ss
 import sign
 import pickle
 # infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
@@ -36,22 +36,11 @@ def main(sentence, flag = False):
     print(sigmlsentence)
     return sigmlsentence
 
-    # Creates temporary file
-    tempSigmlFile = tempfile.NamedTemporaryFile(suffix = '.sigml')
-    tempSigmlFile.write(sigmlsentence.encode())
-    tempSigmlFile.read()
-
-    # Feeds it to sigml-player
-    ss.sendsigml([tempSigmlFile.name])
-
-    # Delete temporary file
-    tempSigmlFile.close()
-
 if __name__ == '__main__':
     #User did not specify glossed sentence
     if len(sys.argv) == 1:
         print("Please specify a glossed sentence to be signed")
-
+        
     #Explains sign
     elif sys.argv[1] == 'explain':
         #User did not specify sign to be explained
