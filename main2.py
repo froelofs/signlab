@@ -9,10 +9,10 @@ import sys
 import functionsGrammar as fg
 import functionsMain as fm
 import functionsAux as fa
-# import sendsigml as ss
+import sendsigml as ss
 import sign
 import pickle
-# infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
+infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 from dictFile import infoSigns
 
 def main(sentence, flag = False):
@@ -31,18 +31,18 @@ def main(sentence, flag = False):
 
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
-    # print(sigmlsentence)
+    print(sigmlsentence)
 
-    #Creates temporary file
-    # tempSigmlFile = tempfile.NamedTemporaryFile(suffix = '.sigml')
-    # tempSigmlFile.write(sigmlsentence.encode())
-    # tempSigmlFile.read()
+    # Creates temporary file
+    tempSigmlFile = tempfile.NamedTemporaryFile(suffix = '.sigml')
+    tempSigmlFile.write(sigmlsentence.encode())
+    tempSigmlFile.read()
 
-    #Feeds it to sigml-player
-    # ss.sendsigml([tempSigmlFile.name])
+    # Feeds it to sigml-player
+    ss.sendsigml([tempSigmlFile.name])
 
-    #Delete temporary file
-    # tempSigmlFile.close()
+    # Delete temporary file
+    tempSigmlFile.close()
 
 if __name__ == '__main__':
     #User did not specify glossed sentence
