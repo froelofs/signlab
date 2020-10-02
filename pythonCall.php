@@ -1,9 +1,8 @@
 <?php
-
 if(isset($_POST['input'])){
 	$text = $_POST['input'];
-	$command = escapeshellcmd('main.py '. $text ."2>&1");
-	$output = shell_exec($command);
+	$command = '/var/www/illc/projects/signlanguage/ZonMw/main.py '. $text ." 2>&1";
+	$output = passthru($command);
 	echo $output;
 }
 else{
