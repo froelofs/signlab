@@ -29,12 +29,12 @@ def main(sentence, flag = False):
     context = fg.preprocess(sentence)
 
     #Creates the SiGML of the signs
-    sigml = fm.processSentence(context, flag)
-
+    sigml, glosses = fm.processSentence(context, flag)
+    
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
-    # print(sigmlsentence)
-    return sigmlsentence
+    print(sigmlsentence, "\n", glosses)
+    return sigmlsentence, glosses
 
 if __name__ == '__main__':
     lines = sys.stdin.readlines()
@@ -92,5 +92,5 @@ if __name__ == '__main__':
 
         #Processes sentence
         else:
-            main(userInput[0])
+            main(" ".join(userInput))
         

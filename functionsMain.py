@@ -143,8 +143,11 @@ def processSentence(context, flag):
 
 			currentSigml = currentSign.get_full_sigml()
 			sigml += currentSigml + '\n'
+		
+	#saves the gloss of each sign	
+	glosses = re.findall('gloss="(.*)"',sigml)
 
-	return sigml
+	return sigml, glosses
 
 #Helper Functions
 '''Detects WH-questions'''
