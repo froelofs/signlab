@@ -1,4 +1,4 @@
-#!/var/www/illc/projects/signlanguage/pythonTest/venv/bin/python
+#!/var/www/illc/projects/signlanguage/ZonMw/venv/bin/python
 
 '''
 Signs NGT sentence using the JASigning avatar
@@ -33,64 +33,69 @@ def main(sentence, flag = False):
     
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
-    print(sigmlsentence, "\n", glosses)
-    return sigmlsentence, glosses
+    print(sentence, ";", " ".join(glosses), ";", sigmlsentence)
 
 if __name__ == '__main__':
     lines = sys.stdin.readlines()
-    print(lines)
     #User did not specify glossed sentence
     if len(lines) == 0:
-        print("Please specify a glossed sentence to be signed")
-    else:
-        userInput = lines[0][:-1].split(" ")
-
-        #Explains sign
-        if userInput[0] == 'explain':
-            #User did not specify sign to be explained
-            if len(userInput) == 1:
-                print("Please specify a sign to be explained")
-            #Sign is specified by user
-            else:
-                #Sign is not in the database
-                if not userInput[1] in infoSigns:
-                    print("Please specify a sign that is in the database ()")
-                #Sign is in the database
-                else:
-                    fa.explainSign(sign.Sign(str(userInput[1])).get_gloss())
-
-        #Fingerspells input
-        elif userInput[0] == 'spell':
-            #User did not specify input to be fingerspelled
-            if len(userInput) == 1:
-                print("Please specify input to be fingerspelled")
-            #Input is specified by user
-            else:
-                main(userInput[1], str(userInput[0]))
-
-        #Adds a sign to dictionary
-        elif userInput[0] == 'add':
-            #User did not specify all values
-            if len(userInput) < 5:
-                print("Please specify gloss, HamNoSys-SiGML, and SAMPA, in that order")
-            #All values are specified
-            else:
-                #Gloss is already present in dictionary
-                if userInput[1] in infoSigns:
-                    #Ask if user is reaaally sure about their decision
-                    var = input("Gloss already in dictionary\nAre you sure you want to overwrite it?\n(Y/N) ")
-                    print()
-                    #Only changes dict entry when answer is Y, y or yes
-                    if var == 'Y' or var == 'y' or var == 'yes':
-                        fa.addSign(userInput[1], userInput[2], userInput[3])
-                    #Reassures user nothing has been changed in the dictionary.
-                    else:
-                        print("Nothing added to or changed in the dictionary")
-                #Gloss not present in dictionary
-                else:
-                    fa.addSign(userInput[1], userInput[2], userInput[3])
-
-        #Processes sentence
+        if len(sys.argv) == 1:
+            print("Please specify a glossed sentence to be signed")
+            quit()
         else:
-            main(" ".join(userInput))
+            userInput = sys.argv[1:]
+    elif lines[0] == "\n":
+        print("Please specify a glossed sentence to be signed")
+        quit()
+    else:
+        userInput = lines[0].strip("\n").split(" ")
+
+    #Explains sign
+    if userInput[0] == 'explain':
+        #User did not specify sign to be explained
+        if len(userInput) == 1:
+            print("Please specify a sign to be explained")
+        #Sign is specified by user
+        else:
+            #Sign is not in the database
+            if not userInput[1] in infoSigns:
+                print("Please specify a sign that is in the database ()")
+            #Sign is in the database
+            else:
+                fa.explainSign(sign.Sign(str(userInput[1])).get_gloss())
+
+    #Fingerspells input
+    elif userInput[0] == 'spell':
+        #User did not specify input to be fingerspelled
+        if len(userInput) == 1:
+            print("Please specify input to be fingerspelled")
+        #Input is specified by user
+        else:
+            main(userInput[1], str(userInput[0]))
+
+    #Adds a sign to dictionary
+    elif userInput[0] == 'add':
+        #User did not specify all values
+        if len(userInput) < 5:
+            print("Please specify gloss, HamNoSys-SiGML, and SAMPA, in that order")
+        #All values are specified
+        else:
+            #Gloss is already present in dictionary
+            if userInput[1] in infoSigns:
+                #Ask if user is reaaally sure about their decision
+                var = input("Gloss already in dictionary\nAre you sure you want to overwrite it?\n(Y/N) ")
+                print()
+                #Only changes dict entry when answer is Y, y or yes
+                if var == 'Y' or var == 'y' or var == 'yes':
+                    fa.addSign(userInput[1], userInput[2], userInput[3])
+                #Reassures user nothing has been changed in the dictionary.
+                else:
+                    print("Nothing added to or changed in the dictionary")
+            #Gloss not present in dictionary
+            else:
+                fa.addSign(userInput[1], userInput[2], userInput[3])
+
+    #Processes sentence
+    else:
+        main(" ".join(userInput))
         
