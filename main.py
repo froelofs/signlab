@@ -1,4 +1,4 @@
-#!/var/www/illc/projects/signlanguage/pythonTest/venv/bin/python
+#!/var/www/illc/projects/signlanguage/ZonMw/venv/bin/python
 
 '''
 Signs NGT sentence using the JASigning avatar
@@ -33,17 +33,16 @@ def main(sentence, flag = False):
     
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
-    print(sigmlsentence, "\n", glosses)
-    return sigmlsentence, glosses
+    print(sentence, ";", " ".join(glosses), ";", sigmlsentence)
 
 if __name__ == '__main__':
     lines = sys.stdin.readlines()
-    print(lines)
+    # print(lines)
     #User did not specify glossed sentence
     if len(lines) == 0:
         print("Please specify a glossed sentence to be signed")
     else:
-        userInput = lines[0][:-1].split(" ")
+        userInput = lines[0].strip("\n").split(" ")
 
         #Explains sign
         if userInput[0] == 'explain':
