@@ -226,7 +226,7 @@ function toSiGML(text){
   }
   // if video is checked, source of embedded video changes
   else if (document.getElementById("videoDisplay").checked) {
-    entry = json[text];
+    entry = jsonvideo[text];
     if (entry == undefined) {
       alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
     }
