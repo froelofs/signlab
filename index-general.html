@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Sign Language Translation COVID-19</title>
+
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Access-Control-Allow-Methods" content="GET">
+<meta http-equiv="Access-Control-Allow-Methods" content="POST">
+
+<!-- Meta tag to make the website responsive to different types of devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Icon -->
+<link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
+
+<!-- =============================================== -->
+<!-- Fonts -->
+
+<!-- Fonts for grayscale theme -->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+<!-- =============================================== -->
+<!-- CSS files -->
+
+<!-- CSS for Jquery autocomplete and tooltips -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- CSS for question circle -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- CSS file for bootstrap grayscale theme -->
+<link rel="stylesheet" href="css/grayscalestyles.css">
+<!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
+<link rel="stylesheet" href="css/cwasa-reduced.css">
+
+<!-- CSS for autocomplete form -->
+<!-- <link rel="stylesheet" href="css/autocomp.css"></link> -->
+
+
+<!-- =============================================== -->
+<!-- Javascripts (more scripts are loaded at the very end, somehow the placement matters) -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+//Solves naming conflicts between jquery ui and bootstrap
+  $.widget.bridge('uitooltip', $.ui.tooltip);
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+<!-- Grayscale theme JS-->
+<script type="text/javascript" src="js/grayscalescript.js"></script>
+<!-- Javascript for smooth scrolling-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+
+<!-- Autocomplete JS-->
+<!-- <script type="text/javascript" src="js/autocomp.js"></script> -->
+
+
+<!-- script for generating avatar animations -->
+<script type="text/javascript" src="cwa/allcsa.js"> </script>
+
+
+<!-- =============================================== -->
+
+<script language="javascript">
+
+function playURL(surl) {
+	CWASA.playSiGMLURL(surl);
+}
+
+function playText(stext) {
+	CWASA.playSiGMLText(stext);
+}
+
+// verandert de source van de embedded video
+function changeVideo(url) {
+  // window.frames['videos'].location.replace(url);
+  // // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
+  // document.getElementById('test').innerHTML = document.getElementById('videos').src;
+  var frame=document.getElementById("videoHolder");
+  var clone=frame.cloneNode(true);
+  clone.setAttribute('src',url);
+  frame.parentNode.replaceChild(clone,frame);
+}
+
+function addStatus(evt) {
+	var elt = document.getElementById("myStatusLog");
+	var msg = evt.msg;
+	if (evt.av != "*") {
+		msg = "[av" + evt.av + "] " + msg;
+	}
+	elt.value = elt.value + msg + "\n";
+}
+CWASA.addHook("status", addStatus);
+
+var lggr = CWASA.getLogger("CWASA", "trace");
+
+function setFPS(evt) {
+	var elt = document.getElementById("myFPS");
+	elt.value = evt.msg.toFixed(2);
+}
+CWASA.addHook("avatarfps", setFPS, 0);
+
+function setSignFrame(evt) {
+	var msg = evt.msg;
+	var elt = document.getElementById("mySF");
+	elt.value = (msg.s+1)+"/"+(msg.f+1);
+	elt = document.getElementById("myGloss");
+	elt.value = msg.g;
+}
+CWASA.addHook("avatarsign", setSignFrame, 0);
+
+</script>
+
+
+<script>
+
+
+// let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
+
+// Defines the functions and variable necessary for autcomplete suggestions
+$( function() {
+
+  // Defines all the options for autocomplete suggestions
+  var options = ["Goedemorgen","Goedemiddag","Goedenavond","Tot ziens","Tot morgen","Heeft U goed geslapen?","Welterusten","Eet smakelijk","Ik kom op een later moment terug.","Ik moet even weg.","Sorry, ik heb geen tijd.","Ik moet naar de WC.", "Moet U naar de WC?", "Kan ik U helpen?", "Ik ga u wassen.", "Ik ga u helpen met douchen.","U moet in de douche op de stoel zitten.", "Wilt U videobellen?", "Zal ik u helpen videobellen?", "Dit is de alarmknop, als u hier op drukt komt er iemand naar u toe.", "Wilt u een TV met teletekst zodat u de ondertiteling aan kunt zetten?", "Wat wilt u eten?", "Wat wilt u eten, kunt u het aanwijzen op de kaart?", "Wat wilt u drinken?", "Wat wilt u drinken, kunt u het aanwijzen op de kaart?", "Heeft u het koud?", "Heeft u het warm?", "Het bed gaat nu omhoog", "Het bed gaat nu omlaag", "Wie komt u ophalen?", "Ik help u", "Wij helpen u", "Bent u ergens allergisch voor?", "Waar bent u allergisch voor?", "Gebruikt u medicijnen?", "Welke medicijnen gebruikt u?", "Kunt u iemand (thuis) een foto laten maken van de medicijnen die u gebruikt?", "Rookt u?", "Bent u wel eens eerder in het ziekenhuis geweest?", "In welk ziekenhuis bent u geweest en met welke reden?", "Wanneer bent u naar het ziekenhuis geweest?", "Zijn er mensen in uw omgeving ziek?", "Welke apotheek komt u?", "Wat is uw geboortedatum?", "Wie is uw huisarts?", "Heeft u nog speciale dieetwensen? Zoals vegetarisch of veganistisch?", "Heeft u gehoorapparaten of een CI?", "Communicatie zonder tolk?", "Electrisch dossier", "Hoe gaat het met u?", "Hoe voelt u zich?", "Bent u verdrietig?", "Bent u boos?", "Ik vind het naar dat u boos bent", "Kunt u vertellen waarom u verdrietig bent?", "Kan ik iets voor u doen?", "Bent u ergens ongerust over? Zo ja, wat?", "Waar bent u ongerust over?", "Waar maakt u zich zorgen over?", "Bent u ergens bang voor?", "Ik en mijn collega's gaan zo goed mogelijk voor u zorgen.", "U mag alles vragen.", "Nog even volhouden, het wordt beter.", "Het komt goed.", "Het gaat langzaam, maar komt goed.", "Bent u duizelig?", "Bent u misselijk?", "Bent u moe?", "Afgelopen 24 uur klachten", "Huisgenoot klachten koorts/benauwdheid", "Afgelopen 7 dagen coronatest", "Huisgenoot klachten coronavirus", "Quarantaine", "Heeft u begrepen wat ik vertel?", "Heeft u begrepen wat er gaat gebeuren?", "Kunt u in eigen woorden vertellen wat we net besproken hebben?", "Kunt u vertellen waarom u dit wel wilt?", "Kunt u vertellen waarom u dit niet wilt?", "Wilt u meer informatie?", "Wilt u met iemand, een vriend of familie, videobellen om samen te overleggen?", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Wat er aan de hand is", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Om te vertellen hoe het gaat?", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Om uit te leggen wat er gaat gebeuren?", "Heeft u een voorkeur tolk?", "Mag ik uw huisarts bellen? Zodat hij/zij meer medische informatie over u kunt vertellen", "Ik ga u een infuus geven.", "De arts gaat u een nieuw infuus geven.", "De verpleegkundige gaat u een nieuw infuus geven", "Een laborant komt bloedprikken", "Een co-assisent komt bloedprikken", "Een collega komt bloedprikken", "Sorry, het lukt mij niet het infuus te prikken.", "De bloeduitslagen zijn goed.", "De bloeduitslagen zijn niet helemaal goed", "De bloeduitslagen zijn niet goed.", "De uitslag van de CT scan is goed.", "De uitslag van de CT scan is niet helemaal goed.", "De rontgenfoto is verbeterd.", "De rontgenfoto is hetzelfde gebleven.", "De rontgenfoto is verslechterd.", "De COVID-19 test is negatief, dit betekent dat u waarschijnlijk geen Corona heeft.", "Soms heeft de test het fout dus we gaan nog meer onderzoek doen.", "De COVID-19 test is positief, dit betekent dat u wel Corona heeft.", "We gaan in het bloed testen of u antistoffen tegen Corona heeft, als u antistoffen heeft betekent dit dat u nu Corona heeft of dat u dit heeft gehad in het verleden.", "De Coronatest in het bloef is negatief, u heeft geen antistoffen tegen Corona.", "De Coronatest in het bloed is positief: u heeft wel antistoffen tegen Corona.", "Met dit recept kunt u medicijnen ophalen bij de apotheek.", "Met dit recept kan iemand anders medicijnen voor u ophalen bij de apotheek."];
+
+  // // MD Bootstrap autocomplete
+  // $('#mySiGML').mdbAutocomplete({
+  //   data: options,
+  //   dataColor: 'green',
+  //   inputFocus: '2px solid green',
+  //   inputBlur: '1px solid #ced4da',
+  //   inputFocusShadow: '0 1px 0 0 #4285f4',
+  //   inputBlurShadow: ''
+  //   });
+  //initiate the autocomplete function on the "mySiGML" element, and pass along the "options" array as possible autocomplete values:
+  // autocomplete(document.getElementById("mySiGML"), options);
+
+  // Defines the filter that searches the list of options for matches
+  function customFilter(array, terms) {
+    arrayOfTerms = terms.split(" ");
+    punctuation = ["?",",",".",";",":","/"];
+    arrayOfTerms.forEach(function (term) {
+      if (punctuation.includes(term)) {
+        var matcher = new RegExp("\\" + term, "i");
+      }
+      else{
+        var matcher = new RegExp("\\b" + term, "i");
+      }
+      array = $.grep(array, function (value) {
+       return matcher.test(value.label || value.value || value);
+      });
+    });
+    return array;
+  }
+
+  // Activates the jquery autocomplete function when the user gives input
+  $( "#mySiGML" ).autocomplete({
+    source: options,
+    appendTo: "#autocomp",
+    multiple: true,
+    mustMatch: false,
+    source: function (request, response) {
+        response(customFilter(options, request.term));
+    },
+  });
+});
+
+// Stores the json dictionary of translated sentences as a variable
+var json = (function() {
+  var json = null;
+  $.ajax({
+    'async': false,
+    'global': false,
+    'url': "sentencesDictNL.json",
+    'dataType': "json",
+    'success': function(data) {
+      json = data;
+    }
+  });
+  return json;
+})();
+
+var jsonvideo = (function() {
+  var jsonvideo = null;
+  $.ajax({
+    'async': false,
+    'global': false,
+    'url': "videoDict.json",
+    'dataType': "json",
+    'success': function(data) {
+      jsonvideo = data;
+    }
+  });
+  return jsonvideo;
+})();
+
+// Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
+function toSiGML(text){
+  // if avatar is checked, sigml is sent
+  if (document.getElementById("avatarDisplay").checked) {
+    entry = json[text];
+    if (entry == undefined) {
+      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
+    }
+    else{
+      playText(entry);
+    }
+  }
+  // if video is checked, source of embedded video changes
+  else if (document.getElementById("videoDisplay").checked) {
+    entry = jsonvideo[text];
+    if (entry == undefined) {
+      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
+    }
+    else{
+    changeVideo(entry);
+    }
+  }
+}
+
+
+
+function changeFunc(myRadio) {
+  if (myRadio.value == "avatar") {
+    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("videos").setAttribute("class", "undisplayed");
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("freestyle").setAttribute("class", "undisplayed");
+  }
+  else if (myRadio.value == "freestyle") {
+    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("videos").setAttribute("class", "undisplayed");
+    document.getElementById("play").setAttribute("class", "undisplayed");
+    document.getElementById("freestyle").setAttribute("class", "btn btn-primary displayed");
+  }
+  else if (myRadio.value == "video") {
+    document.getElementById("avatar").setAttribute("class", "undisplayed");
+    document.getElementById("videos").setAttribute("class", "prerecorded");
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("freestyle").setAttribute("class", "undisplayed");
+  }
+}
+
+///Makes an ajax call to the python script (by way of a php wrapper)
+function callPython(text) {
+  showBusyState();
+  $.ajax({
+    url : 'pythonCall.php',
+    type : 'POST',
+    data: {"input": text},
+    dataType: "json",
+    success : onSuccess,
+    error : onError,
+  });
+  function onSuccess(result) {
+    if (result.errorcode) {
+      console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
+    } else {
+      output = result.output.split(";");
+      glosses = output[1];
+      console.log(glosses)
+      playText(output[2].trim());
+    }
+    showBusyState(false);
+  }
+  function onError(xhr, error) {
+    console.log ('Something went wrong. Error message: '+error);
+    showBusyState(false);
+  }
+  function showBusyState(state) {
+    $(document.body).toggleClass('busy', state===undefined?true:state);
+  }
+}
+
+function displayInfo(id){
+  document.getElementById(id).setAttribute("class", "displayInfo");
+}
+
+function undisplayInfo(id){
+  document.getElementById(id).setAttribute("class", "undisplayed");
+}
+
+//Enables all tooltips in the document
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+function addSuggestion(suggestion){
+  // Requiring fs module in which
+  // writeFile function is defined.
+  const fs = require('fs');
+
+  // Write data in 'suggestions.txt' .
+  fs.appendFile('suggestions.txt', suggestion, (err) => {
+
+      // In case of a error throw err.
+      if (err) throw err;
+  });
+}
+
+</script>
+
+
+<!-- <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+</script>
+
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+</script> -->
+
+<!-- Necessary for translating python into javascript -->
+<!-- <script src="static/brython.js"></script>
+<script src="static/brython_stdlib.js"></script> -->
+
+
+</head>
+
+<!-- <body onload="CWASA.init(); brython(1);"> -->
+<!-- <body onload="brython(1);"> -->
+
+<!--================================================================-->
+<!--================================================================-->
+<!--================================================================-->
+<!--================================================================-->
+
+<body id="page-top" onload="CWASA.init();">
+
+
+<!--================================================================-->
+
+
+<!-- Navigation-->
+<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <img src="images/hand-icon.png" height="25">
+          SignLab 
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#About">Home</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Translate">Translate!</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ProjectInfo">Project info</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Further resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="index-nl.html">NL</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Masthead-->
+<!-- <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">SignTranslation</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">Helps medics communicate with deaf patients.</h2>
+            <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+        </div>
+    </div>
+</header>
+ -->
+
+
+<!--================================================================-->
+
+<!-- About -->
+<section class="projects-section bg-light" id="About">
+    <div class="container">
+        <!-- Challenge Row-->
+        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                    <h4>Sign language: Linguistic structure made visible</h4>
+                    <p class="mb-4">
+                      <!-- <img src="img/elise-1.jpg" class="rounded float-right" alt="" height="300"> -->
+                      Investigating sign languages has the potential to yield important linguistic insights which are much more difficult to obtain by investigating spoken languages alone, because linguistic structures are sometimes much easier to detect in sign languages than in spoken languages. Quite literally, sign languages often make linguistic structure <b><a href="https://doi.org/10.1515/tl-2018-0012" target="_blank">directly visible</a></b>.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                    <h4>Breaking language barriers</h4>
+                    <p class="mb-4">
+                      <!-- <img src="img/avatar.png" class="rounded float-left" alt="" height="400"> -->
+                      Not only can science benefit from investigating sign languages; it also has an important role to play in diminishing the 
+                      <b><a href="https://beeldverhalen.npofocus.nl/waarom-is-gebarentaal-nodig/?fbclid=IwAR3_XDN8TnlzN_WZ1l-jfN9rYIXkH_XmyOyNSgVzBREox3cxArkTL-k2G2I" target="_blank">language barrier</a></b> between deaf and hearing people. Deeper insights into the grammar of sign languages are essential in training sign language interpreters and to lay a solid foundation for sign language machine translation.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div> 
+            </div>
+    </div>
+</section>
+
+
+
+<!--================================================================-->
+
+<!-- Translate -->
+
+<section class="projects-section bg-white" id="Translate">
+    <div class="container" height="100%">
+        <!-- CWA signing avatar panel 0 -->
+        <!--================================================================-->
+        <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+        <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
+        <!--================================================================-->
+
+
+        <span id="videos" class="undisplayed" align="left">
+          <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw?rel=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+        </span>
+
+        <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
+            <label for="option" style="margin-right:-100px; margin-bottom:15px">
+                <h4>Choose a translation option:</h4>
+            </label>
+
+            <br>
+            <!-- Defines the button and questioncircle displayed for the option "video" -->
+              <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
+              <label for="video" style="margin-right:5px">Pre-recorded video translation</label>
+
+            <br>
+             <!-- Defines the button and questioncircle displayed for the option "avatar" -->
+              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+              <label for="avatar" style="margin-right: 5px">Pre-processed avatar translation</label>
+
+            <br>
+            <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
+            <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
+            <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">On-demand avatar translation</label>
+           <!--  <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed."></i> -->
+
+              <br>
+              <br>
+              <!-- <h4>Enter Sentence:</h4> -->
+
+              <!-- <span class="ui-widget" id="autocomp"> -->
+                <!-- <label for="mySiGML"></label> -->
+                <!-- <input id="mySiGML" class="input" style="margin-top:10px; margin-bottom:20px;width: 500px;">  -->
+                  <!-- <div class="md-form">
+                      <input type="search" id="mySiGML" class="form-control">
+                      <label for="mySiGML" class="active">Enter a sentence or keywords here</label>
+                  </div>
+              </span> -->
+
+              <!-- Custom made autocomplete form -->
+              <form autocomplete="off">
+                <div class="autocomplete" style="width:400px;">
+                  <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a sentence or keywords here">
+                </div>
+                <!-- <input type="submit"> -->
+              </form>
+
+
+              <br>
+              <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary undisplayed" id="freestyle" value="Translate" onclick='callPython(document.getElementById("mySiGML").value);' />
+              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+              <!-- <input type="button" value="avatar test" onclick="playText(document.getElementById('mySiGML').value);"> -->
+
+              <!-- <script type="text/python" src="test.py"></script> -->
+              <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
+              <br>
+              <br>
+              Adjust speed: <span class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
+              <br>
+              Gloss:
+              <input class="txtGloss av0" value="[none]" type="text">
+              <br>
+
+              <label for="suggestions">Suggestions box: </label>
+              <br>
+              <input id="suggestions" class="input" style="margin-top:5px; margin-bottom:10px; width: 400px;">
+             <!--  <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
+        </span>
+
+        <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
+
+        <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+        <div align="center" class="undisplayed">
+
+              <span style="font-size: 90%;" >
+                Sign/Frame:
+                <input id="mySF" class="txtSF" value="0/0" type="text" />
+                &nbsp;
+                Gloss:
+                <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+                &nbsp;
+                FPS:
+                <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+              </span>
+        </div>
+
+
+        <div align="center">
+            <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+            <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+            </textarea>
+        </div>
+
+        <br>
+
+
+        <!-- SToCA applet element panel -->
+        <!--================================================================-->
+        <div class="SToCA" align="center" ></div>
+        <!--================================================================-->
+    </div>
+</section>
+
+<!--================================================================-->
+
+<!-- Project info section -->
+<section class="projects-section bg-light" id="ProjectInfo">
+
+    <div class="container" height="100%">
+
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+
+            <!-- Column for Team and Funding -->
+            <div class="col-xl-6 col-lg-6">
+                
+                <!-- Team -->
+                <div class="project-text text-center text-lg-left">
+
+                    <h2 class="mb-4">Team</h2>
+
+                    <h5>Project coordination</h5>
+                    <p class="text-black-50 mb-3">
+                      Floris Roelofsen, University of Amsterdam<br>
+                      Anika Smeijers, Amsterdam Medical Centre<br>
+                    </p>
+
+                    <h5>Avatar translation and web interface</h5>
+                    <p class="text-black-50 mb-3">
+                      Lyke Esselink, University of Amsterdam<br>
+                      Shani Mende-Gillings, University of Amsterdam<br>
+                      Floris Roelofsen, University of Amsterdam<br>
+                    </p>
+
+                    <h5>Video translation</h5>
+                    <p class="text-black-50 mb-3">
+                      <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
+                      <a href="https://maxvonk.com/">Max Vonk video productions</a><br>
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+
+                <!-- Funding -->
+                <div class="project-text pt-0 text-lg-left">
+                    <h2>Funding</h2>
+                    <p class="text-black-50 mb-0">
+                      We gratefully acknowledge funding from the Netherlands Organisation for Innovation in Healthcare (ZonMw) through the
+                      <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+            </div>
+
+            <!-- Column for partners -->
+
+            <div class="col-xl-6 col-lg-6">
+                
+                <!-- East Anglia -->
+                      
+                <div class="project-text text-center text-lg-left">
+                    <h2 class="mb-4">Partners</h2>
+                    <h5>University of East Anglia</h5>
+                    <p class="text-black-50 mb-3 mt-1">
+                        Our translation tool makes use of the
+                        <a href="http://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASinging avatar software</a>
+                        developed by the
+                        <a href="http://vh.cmp.uea.ac.uk/index.php/Virtual_Humans_Group" target="_blank">Virtual Humans Group </a>
+                        at the
+                        <a href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>.
+                    </p>
+
+                    <p class="text-black-50 mb-0">
+                         We are especially grateful to
+                         <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a> for providing a distribution of the software for our project.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>  
+
+                <!-- Geneva -->
+
+                <div class="project-text pt-0 text-lg-left">
+                    <h5>University of Geneva</h5>
+                    <p class="mb-3 text-black-50 mt-1">
+                        The
+                        <a href="https://www.unige.ch/fti/en/faculte/departements/dtim/" target="_blank">Department of Translation Technology</a>
+                        at the
+                        <a href="https://www.unige.ch/" target="_blank">University of Geneva</a>
+                        is developing a similar translation tool for Swiss-French Sign Language as part of the
+                        <a href="https://babeldr.unige.ch/" target="_blank">BabelDr project</a>.
+                    </p>
+                    <p class="mb-3 text-black-50">
+                        <a href="https://www.unige.ch/fti/en/faculte/departements/dtim/membrestim/david/" target="_blank">Bastien David</a>
+                        of the Geneva group is helping us with encoding NGT signs in SiGML.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                      
+                
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<!--================================================================-->
+
+<!-- Resources section -->
+<section class="projects-section bg-white" id="Resources">
+
+      <div class="container" height="100%">
+          <div class="project-text pt-0 text-lg-left">
+              <h2>Further resources</h2>
+              <p class="mb-3 text-black-50">
+                The
+                <a href="https://www.gebarencentrum.nl/" target="_blank">Dutch Sign Language Centre</a>
+                offers an online video dictionary containing more than 16.000 signs in Sign Language of the Netherlands.
+              </p>
+              <p class="mb-3 text-black-50">
+                On the 
+                <a href="https://www.wattelt.org/corona/" target="_blank">Wattelt!</a> website
+                you can find a video with general advice for health care professional with deaf patients in times of COVID-19.
+                The video also teaches you fifteen essential signs.
+              </p>
+              <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+      </div>
+
+</section>
+
+<!--================================================================-->
+
+<!-- Footer-->
+<footer class="footer bg-light small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam</div></footer>
+
+
+<!-- Javascripts -->
+
+<!-- Jquery JS is loaded in the beginning, see above -->
+
+
+
+</body>
+</html>
