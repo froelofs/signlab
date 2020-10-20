@@ -1,4 +1,4 @@
-#!/var/www/illc/projects/signlanguage/ZonMw/venv/bin/python
+#!/var/www/illc/projects/signlanguage/venv/bin/python
 
 '''
 Signs NGT sentence using the JASigning avatar
