@@ -285,6 +285,12 @@ function addSuggestion(suggestion){
   });
 }
 
+//Forces the width of the autcomplete menu to fit the parent's width
+jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+  var ul = this.menu.element;
+  ul.outerWidth(this.element.outerWidth());
+}
+
 </script>
 
 
