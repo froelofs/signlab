@@ -58,7 +58,7 @@ if __name__ == '__main__':
         #Sign is specified by user
         else:
             #Sign is not in the database
-            if not userInput[1] in infoSigns:
+            if not userInput[1].upper() in infoSigns:
                 print("Please specify a sign that is in the database ()")
             #Sign is in the database
             else:

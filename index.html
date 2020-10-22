@@ -236,32 +236,35 @@ function toSiGML(text){
   }
 }
 
-
+var flag = "";
 
 function changeFunc(myRadio) {
-  if (myRadio.value == "avatar") {
-    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
-    document.getElementById("videos").setAttribute("class", "undisplayed");
-    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
-    document.getElementById("freestyle").setAttribute("class", "undisplayed");
+  if (myRadio.value == "fingerspell") {
+    // document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+    // document.getElementById("freestyle").setAttribute("class", "undisplayed");
+    flag = "spell";
   }
   else if (myRadio.value == "freestyle") {
-    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
-    document.getElementById("videos").setAttribute("class", "undisplayed");
-    document.getElementById("play").setAttribute("class", "undisplayed");
-    document.getElementById("freestyle").setAttribute("class", "btn btn-primary displayed");
+    // document.getElementById("play").setAttribute("class", "undisplayed");
+    // document.getElementById("freestyle").setAttribute("class", "btn btn-primary displayed");
+    flag = "";
   }
-  else if (myRadio.value == "video") {
-    document.getElementById("avatar").setAttribute("class", "undisplayed");
-    document.getElementById("videos").setAttribute("class", "prerecorded");
-    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
-    document.getElementById("freestyle").setAttribute("class", "undisplayed");
+  else if (myRadio.value == "explain") {
+    // document.getElementById("avatar").setAttribute("class", "undisplayed");
+    // document.getElementById("videos").setAttribute("class", "prerecorded");
+    // document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+    // document.getElementById("freestyle").setAttribute("class", "undisplayed");
+    flag = "explain";
   }
 }
 
 ///Makes an ajax call to the python script (by way of a php wrapper)
 function callPython(text) {
   showBusyState();
+  //Adds a flag to the input if applicable
+  if (flag != ""){
+    text = flag + " " + text;
+  }
   $.ajax({
     url : 'pythonCall.php',
     type : 'POST',
@@ -290,13 +293,13 @@ function callPython(text) {
   }
 }
 
-function displayInfo(id){
-  document.getElementById(id).setAttribute("class", "displayInfo");
-}
+// function displayInfo(id){
+//   document.getElementById(id).setAttribute("class", "displayInfo");
+// }
 
-function undisplayInfo(id){
-  document.getElementById(id).setAttribute("class", "undisplayed");
-}
+// function undisplayInfo(id){
+//   document.getElementById(id).setAttribute("class", "undisplayed");
+// }
 
 //Enables all tooltips in the document
 $(document).ready(function(){
@@ -317,19 +320,6 @@ function addSuggestion(suggestion){
 }
 
 </script>
-
-
-<!-- <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
-</script>
-
-<script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
-</script> -->
-
-<!-- Necessary for translating python into javascript -->
-<!-- <script src="static/brython.js"></script>
-<script src="static/brython_stdlib.js"></script> -->
 
 
 </head>
@@ -438,51 +428,38 @@ function addSuggestion(suggestion){
         <!--================================================================-->
 
 
-        <span id="videos" class="undisplayed" align="left">
-          <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw?rel=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
-        </span>
-
         <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
             <label for="option" style="margin-right:-100px; margin-bottom:15px">
-                <h4>Choose a translation option:</h4>
+                <h4>Choose an output option:</h4>
             </label>
 
             <br>
-            <!-- Defines the button and questioncircle displayed for the option "video" -->
-              <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
-              <label for="video" style="margin-right:5px">Pre-recorded video translation</label>
+            <!-- Defines the button and label displayed for the option "fingerspell" -->
+              <input type="radio" id="fingerspellDisplay" name="display" value="fingerspell" onclick="changeFunc(this);">
+              <label for="fingerspell" style="margin-right:5px">Fingerspell</label>
 
-            <br>
+           <!--  <br> -->
              <!-- Defines the button and questioncircle displayed for the option "avatar" -->
-              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
-              <label for="avatar" style="margin-right: 5px">Pre-processed avatar translation</label>
+         <!--      <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+              <label for="avatar" style="margin-right: 5px">Pre-processed avatar translation</label> -->
 
             <br>
-            <!-- Defines the button and questioncircle displayed for the option "freestyle" -->
+            <!-- Defines the button and label displayed for the option "freestyle" -->
             <input type="radio" id="freestyleDisplay" name="display" value="freestyle" onclick="changeFunc(this);">
             <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">On-demand avatar translation</label>
            <!--  <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed."></i> -->
 
               <br>
               <br>
-              <!-- <h4>Enter Sentence:</h4> -->
 
-              <!-- <span class="ui-widget" id="autocomp"> -->
-                <!-- <label for="mySiGML"></label> -->
-                <!-- <input id="mySiGML" class="input" style="margin-top:10px; margin-bottom:20px;width: 500px;">  -->
-                  <!-- <div class="md-form">
-                      <input type="search" id="mySiGML" class="form-control">
-                      <label for="mySiGML" class="active">Enter a sentence or keywords here</label>
-                  </div>
-              </span> -->
-
+              <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a word or sentence here">
               <!-- Custom made autocomplete form -->
-              <form autocomplete="off">
+           <!--    <form autocomplete="off">
                 <div class="autocomplete" style="width:400px;">
                   <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a sentence or keywords here">
-                </div>
+                </div> -->
                 <!-- <input type="submit"> -->
-              </form>
+             <!--  </form> -->
 
 
               <br>
