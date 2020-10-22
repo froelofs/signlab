@@ -293,6 +293,29 @@ function callPython(text) {
   }
 }
 
+//Stores suggestions
+function addSuggestion(text){
+  showBusyState();
+  $.ajax({
+    url : 'suggestions.php',
+    type : 'POST',
+    data: {"input": text},
+    dataType: "json",
+    success : onSuccess,
+    error : onError,
+  });
+  function onSuccess(result) {
+    showBusyState(false);
+  }
+  function onError(xhr, error) {
+    console.log ('Something went wrong. Error message: '+error);
+    showBusyState(false);
+  }
+  function showBusyState(state) {
+    $(document.body).toggleClass('busy', state===undefined?true:state);
+  }
+}
+
 // function displayInfo(id){
 //   document.getElementById(id).setAttribute("class", "displayInfo");
 // }
