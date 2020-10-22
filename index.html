@@ -131,129 +131,40 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 
 
 <script>
-
-
-// let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
-
-// Defines the functions and variable necessary for autcomplete suggestions
-$( function() {
-
-  // Defines all the options for autocomplete suggestions
-  var options = ["Goedemorgen","Goedemiddag","Goedenavond","Tot ziens","Tot morgen","Heeft U goed geslapen?","Welterusten","Eet smakelijk","Ik kom op een later moment terug.","Ik moet even weg.","Sorry, ik heb geen tijd.","Ik moet naar de WC.", "Moet U naar de WC?", "Kan ik U helpen?", "Ik ga u wassen.", "Ik ga u helpen met douchen.","U moet in de douche op de stoel zitten.", "Wilt U videobellen?", "Zal ik u helpen videobellen?", "Dit is de alarmknop, als u hier op drukt komt er iemand naar u toe.", "Wilt u een TV met teletekst zodat u de ondertiteling aan kunt zetten?", "Wat wilt u eten?", "Wat wilt u eten, kunt u het aanwijzen op de kaart?", "Wat wilt u drinken?", "Wat wilt u drinken, kunt u het aanwijzen op de kaart?", "Heeft u het koud?", "Heeft u het warm?", "Het bed gaat nu omhoog", "Het bed gaat nu omlaag", "Wie komt u ophalen?", "Ik help u", "Wij helpen u", "Bent u ergens allergisch voor?", "Waar bent u allergisch voor?", "Gebruikt u medicijnen?", "Welke medicijnen gebruikt u?", "Kunt u iemand (thuis) een foto laten maken van de medicijnen die u gebruikt?", "Rookt u?", "Bent u wel eens eerder in het ziekenhuis geweest?", "In welk ziekenhuis bent u geweest en met welke reden?", "Wanneer bent u naar het ziekenhuis geweest?", "Zijn er mensen in uw omgeving ziek?", "Welke apotheek komt u?", "Wat is uw geboortedatum?", "Wie is uw huisarts?", "Heeft u nog speciale dieetwensen? Zoals vegetarisch of veganistisch?", "Heeft u gehoorapparaten of een CI?", "Communicatie zonder tolk?", "Electrisch dossier", "Hoe gaat het met u?", "Hoe voelt u zich?", "Bent u verdrietig?", "Bent u boos?", "Ik vind het naar dat u boos bent", "Kunt u vertellen waarom u verdrietig bent?", "Kan ik iets voor u doen?", "Bent u ergens ongerust over? Zo ja, wat?", "Waar bent u ongerust over?", "Waar maakt u zich zorgen over?", "Bent u ergens bang voor?", "Ik en mijn collega's gaan zo goed mogelijk voor u zorgen.", "U mag alles vragen.", "Nog even volhouden, het wordt beter.", "Het komt goed.", "Het gaat langzaam, maar komt goed.", "Bent u duizelig?", "Bent u misselijk?", "Bent u moe?", "Afgelopen 24 uur klachten", "Huisgenoot klachten koorts/benauwdheid", "Afgelopen 7 dagen coronatest", "Huisgenoot klachten coronavirus", "Quarantaine", "Heeft u begrepen wat ik vertel?", "Heeft u begrepen wat er gaat gebeuren?", "Kunt u in eigen woorden vertellen wat we net besproken hebben?", "Kunt u vertellen waarom u dit wel wilt?", "Kunt u vertellen waarom u dit niet wilt?", "Wilt u meer informatie?", "Wilt u met iemand, een vriend of familie, videobellen om samen te overleggen?", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Wat er aan de hand is", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Om te vertellen hoe het gaat?", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Om uit te leggen wat er gaat gebeuren?", "Heeft u een voorkeur tolk?", "Mag ik uw huisarts bellen? Zodat hij/zij meer medische informatie over u kunt vertellen", "Ik ga u een infuus geven.", "De arts gaat u een nieuw infuus geven.", "De verpleegkundige gaat u een nieuw infuus geven", "Een laborant komt bloedprikken", "Een co-assisent komt bloedprikken", "Een collega komt bloedprikken", "Sorry, het lukt mij niet het infuus te prikken.", "De bloeduitslagen zijn goed.", "De bloeduitslagen zijn niet helemaal goed", "De bloeduitslagen zijn niet goed.", "De uitslag van de CT scan is goed.", "De uitslag van de CT scan is niet helemaal goed.", "De rontgenfoto is verbeterd.", "De rontgenfoto is hetzelfde gebleven.", "De rontgenfoto is verslechterd.", "De COVID-19 test is negatief, dit betekent dat u waarschijnlijk geen Corona heeft.", "Soms heeft de test het fout dus we gaan nog meer onderzoek doen.", "De COVID-19 test is positief, dit betekent dat u wel Corona heeft.", "We gaan in het bloed testen of u antistoffen tegen Corona heeft, als u antistoffen heeft betekent dit dat u nu Corona heeft of dat u dit heeft gehad in het verleden.", "De Coronatest in het bloef is negatief, u heeft geen antistoffen tegen Corona.", "De Coronatest in het bloed is positief: u heeft wel antistoffen tegen Corona.", "Met dit recept kunt u medicijnen ophalen bij de apotheek.", "Met dit recept kan iemand anders medicijnen voor u ophalen bij de apotheek."];
-
-  // // MD Bootstrap autocomplete
-  // $('#mySiGML').mdbAutocomplete({
-  //   data: options,
-  //   dataColor: 'green',
-  //   inputFocus: '2px solid green',
-  //   inputBlur: '1px solid #ced4da',
-  //   inputFocusShadow: '0 1px 0 0 #4285f4',
-  //   inputBlurShadow: ''
-  //   });
-  //initiate the autocomplete function on the "mySiGML" element, and pass along the "options" array as possible autocomplete values:
-  // autocomplete(document.getElementById("mySiGML"), options);
-
-  // Defines the filter that searches the list of options for matches
-  function customFilter(array, terms) {
-    arrayOfTerms = terms.split(" ");
-    punctuation = ["?",",",".",";",":","/"];
-    arrayOfTerms.forEach(function (term) {
-      if (punctuation.includes(term)) {
-        var matcher = new RegExp("\\" + term, "i");
-      }
-      else{
-        var matcher = new RegExp("\\b" + term, "i");
-      }
-      array = $.grep(array, function (value) {
-       return matcher.test(value.label || value.value || value);
-      });
-    });
-    return array;
-  }
-
-  // Activates the jquery autocomplete function when the user gives input
-  $( "#mySiGML" ).autocomplete({
-    source: options,
-    appendTo: "#autocomp",
-    multiple: true,
-    mustMatch: false,
-    source: function (request, response) {
-        response(customFilter(options, request.term));
-    },
-  });
-});
-
-// Stores the json dictionary of translated sentences as a variable
-var json = (function() {
-  var json = null;
-  $.ajax({
-    'async': false,
-    'global': false,
-    'url': "sentencesDictNL.json",
-    'dataType': "json",
-    'success': function(data) {
-      json = data;
-    }
-  });
-  return json;
-})();
-
-var jsonvideo = (function() {
-  var jsonvideo = null;
-  $.ajax({
-    'async': false,
-    'global': false,
-    'url': "videoDict.json",
-    'dataType': "json",
-    'success': function(data) {
-      jsonvideo = data;
-    }
-  });
-  return jsonvideo;
-})();
-
-// Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
-function toSiGML(text){
-  // if avatar is checked, sigml is sent
-  if (document.getElementById("avatarDisplay").checked) {
-    entry = json[text];
-    if (entry == undefined) {
-      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
-    }
-    else{
-      playText(entry);
-    }
-  }
-  // if video is checked, source of embedded video changes
-  else if (document.getElementById("videoDisplay").checked) {
-    entry = jsonvideo[text];
-    if (entry == undefined) {
-      alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
-    }
-    else{
-    changeVideo(entry);
-    }
-  }
-}
-
 var flag = "";
 
 function changeFunc(myRadio) {
   if (myRadio.value == "fingerspell") {
-    // document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
-    // document.getElementById("freestyle").setAttribute("class", "undisplayed");
+    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("explanation").setAttribute("class", "undisplayed");
+    document.getElementById("explText").setAttribute("class", "undisplayed");
+    document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
+    document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
+    document.getElementById("glossLabel").style.display = 'inline-block';
+    document.getElementById("speedLabel").style.display = 'inline-block';
+    document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
     flag = "spell";
   }
   else if (myRadio.value == "freestyle") {
-    // document.getElementById("play").setAttribute("class", "undisplayed");
-    // document.getElementById("freestyle").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("explanation").setAttribute("class", "undisplayed");
+    document.getElementById("explText").setAttribute("class", "undisplayed");
+    document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
+    document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
+    document.getElementById("glossLabel").style.display = 'inline-block';
+    document.getElementById("speedLabel").style.display = 'inline-block';
+    document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
     flag = "";
   }
   else if (myRadio.value == "explain") {
-    // document.getElementById("avatar").setAttribute("class", "undisplayed");
-    // document.getElementById("videos").setAttribute("class", "prerecorded");
-    // document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
-    // document.getElementById("freestyle").setAttribute("class", "undisplayed");
+    document.getElementById("avatar").setAttribute("class", "undisplayed");
+    document.getElementById("explanation").setAttribute("class", "explSpan");
+    document.getElementById("explText").setAttribute("class", "explSiGML");
+    document.getElementById("speedAdj").setAttribute("class", "undisplayed");
+    document.getElementById("outputGloss").setAttribute("class", "undisplayed");
+    document.getElementById("glossLabel").style.display = 'none';
+    document.getElementById("speedLabel").style.display = 'none';
+    document.getElementById("stopButton").setAttribute("class", "btn btn-primary undisplayed");
     flag = "explain";
   }
 }
@@ -278,9 +189,25 @@ function callPython(text) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
     } else {
       output = result.output.split(";");
-      glosses = output[1];
-      console.log(glosses)
-      playText(output[2].trim());
+      if (output[0].slice(0,5) == "HamNo" || output[0] == text){
+        if (flag == "explain"){
+          parent = document.querySelector('#explText');
+          console.log(output);
+          //Ensures newlines and tabs in output are displayed in div
+          var pre = document.createElement("pre");
+          pre.appendChild(document.createTextNode(output));
+          parent.append(pre);
+        }
+        else{
+          glosses = output[1];
+          console.log(glosses)
+          playText(output[2].trim());
+        }
+      }
+      else{
+        alert(output);
+      }
+      
     }
     showBusyState(false);
   }
@@ -436,6 +363,9 @@ $(document).ready(function(){
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
         <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
+        <span id="explanation" class="undisplayed" align="left" style="width: 500px; height: 500px;">
+          <div id="explText" class = "undisplayed"></div>
+        </span>
         <!--================================================================-->
 
 
@@ -449,51 +379,41 @@ $(document).ready(function(){
               <input type="radio" id="fingerspellDisplay" name="display" value="fingerspell" onclick="changeFunc(this);">
               <label for="fingerspell" style="margin-right:5px">Fingerspell</label>
 
-           <!--  <br> -->
-             <!-- Defines the button and questioncircle displayed for the option "avatar" -->
-         <!--      <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
-              <label for="avatar" style="margin-right: 5px">Pre-processed avatar translation</label> -->
-
             <br>
             <!-- Defines the button and label displayed for the option "freestyle" -->
             <input type="radio" id="freestyleDisplay" name="display" value="freestyle" checked onclick="changeFunc(this);">
             <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label>
-           <!--  <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed."></i> -->
+
+             <br>
+             <!-- Defines the button and questioncircle displayed for the option "avatar" -->
+              <input type="radio" id="explainDisplay" name="display" value="explain" onclick="changeFunc(this);">
+              <label for="avatar" style="margin-right: 5px">Explanation SiGML</label>
+
 
               <br>
               <br>
 
               <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a word or sentence here">
-              <!-- Custom made autocomplete form -->
-           <!--    <form autocomplete="off">
-                <div class="autocomplete" style="width:400px;">
-                  <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a sentence or keywords here">
-                </div> -->
-                <!-- <input type="submit"> -->
-             <!--  </form> -->
-             <br>
-
-              <br>
-              <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
-              <input type="button" class="btn btn-primary undisplayed" id="freestyle" value="Translate" onclick='callPython(document.getElementById("mySiGML").value);' />
-              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
-              <!-- <input type="button" value="avatar test" onclick="playText(document.getElementById('mySiGML').value);"> -->
-
-              <!-- <script type="text/python" src="test.py"></script> -->
-              <!-- <button id="freestyle" onclick='goPython(document.getElementById("mySiGML").value);'>freestyle</button> -->
-              <br>
-              <br>
-              Adjust speed: <span class="CWASASpeed av0" style="margin-bottom:5px"></span>
-              <br>
-              <br>
-              Gloss:
-              <input class="txtGloss av0" value="[none]" type="text">
               <br>
 
-              <label for="suggestions">Suggestions box: </label>
+              <br>
+              <input type="button" class="btn btn-primary" value="Translate" onclick='callPython(document.getElementById("mySiGML").value);'/>
+              <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
+
+              <br>
+              <br>
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
+              <br>
+              <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
+              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
+              <br>
+
+              <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
               <input id="suggestions" class="input" style="margin-top:5px; margin-bottom:10px; width: 400px;">
-              <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" />
+              <!-- <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 
         <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->
