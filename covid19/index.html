@@ -181,7 +181,16 @@ $( function() {
         response(customFilter(options, request.term));
     },
   });
+
+  //Forces the width of the autcomplete menu to fit the parent's width
+  jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+  var ul = this.menu.element;
+  ul.outerWidth(this.element.outerWidth());
+  }
+
 });
+
+
 
 // Stores the json dictionary of translated sentences as a variable
 var json = (function() {
@@ -283,12 +292,6 @@ function addSuggestion(suggestion){
       // In case of a error throw err.
       if (err) throw err;
   });
-}
-
-//Forces the width of the autcomplete menu to fit the parent's width
-jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-  var ul = this.menu.element;
-  ul.outerWidth(this.element.outerWidth());
 }
 
 </script>
