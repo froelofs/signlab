@@ -245,6 +245,8 @@ function changeFunc(myRadio) {
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
+    document.getElementById("glossLabel").style.display = 'inline-block';
+    document.getElementById("speedLabel")style.display = 'inline-block';
   }
   else if (myRadio.value == "video") {
     document.getElementById("avatar").setAttribute("class", "undisplayed");
@@ -252,6 +254,8 @@ function changeFunc(myRadio) {
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "undisplayed");
     document.getElementById("outputGloss").setAttribute("class", "undisplayed");
+    document.getElementById("glossLabel").style.display = 'none';
+    document.getElementById("speedLabel")style.display = 'none';
   }
 }
 
@@ -429,10 +433,11 @@ function addSuggestion(suggestion){
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
               <br>
               <br>
-              Adjust speed: <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
               <br>
               <br>
-              Gloss:
+              <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
               <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
               <br>
 
