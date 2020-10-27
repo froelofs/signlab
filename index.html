@@ -174,12 +174,15 @@ function callPython(text) {
   showBusyState();
   //Adds a flag to the input if applicable
   if (flag != ""){
-    text = flag + " " + text;
+    inputPython = flag + " " + text;
+  }
+  else{
+    inputPython = text;
   }
   $.ajax({
     url : 'pythonCall.php',
     type : 'POST',
-    data: {"input": text},
+    data: {"input": inputPython},
     dataType: "json",
     success : onSuccess,
     error : onError,
@@ -189,18 +192,22 @@ function callPython(text) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
     } else {
       output = result.output.split(";");
-      if (output[0].slice(0,5) == "HamNo" || output[0] == text){
+      if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
         if (flag == "explain"){
           parent = document.querySelector('#explText');
           console.log(output);
           //Ensures newlines and tabs in output are displayed in div
           var pre = document.createElement("pre");
           pre.appendChild(document.createTextNode(output));
+          if (parent.childNodes.length != 0) {
+            parent.removeChild(parent.childNodes[0])    
+          }
           parent.append(pre);
         }
         else{
-          glosses = output[1];
-          console.log(glosses)
+          console.log(output[1]);
+          console.log(output[2]);
+          document.getElementById("translation").value = output[1];
           playText(output[2].trim());
         }
       }
@@ -364,7 +371,7 @@ $(document).ready(function(){
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
         <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
         <span id="explanation" class="undisplayed" align="left" style="width: 500px; height: 500px;">
-          <div id="explText" class = "undisplayed"></div>
+          <div id="explText" class ="undisplayed" style="width: 480px; height: 480px;"></div>
         </span>
         <!--================================================================-->
 
@@ -394,6 +401,10 @@ $(document).ready(function(){
               <br>
 
               <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a word or sentence here">
+              <br>
+
+              <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
+              <input id="translation" type="text" style="width:100%; display:inline-block; overflow-x: scroll;" readonly>
               <br>
 
               <br>

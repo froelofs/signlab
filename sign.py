@@ -428,6 +428,7 @@ class Sign(object):
 		notations = [n for n in notations if n]
 
 		newsigml = ",".join(notations)
+		
 		self.sigml = newsigml
 
 

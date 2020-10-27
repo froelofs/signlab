@@ -39,7 +39,7 @@ def preprocess(sentence):
     context = indexing(context)
     context = negating(context, context[-1][1]=='PUNCT')
     context = affirming(context, context[-1][1]=='PUNCT')
-
+    
     return context
 
 
@@ -160,7 +160,7 @@ def indexing(context):
 
 	#Checks the sentence for verbs and everything that is treated as a noun
 	verbCount = len(["yes" for word,tag,_ in context if ((tag == "VERB" and word in directionals) or word == "op_aux")])
-	nounCount = len(["yes" for word,tag,_ in context if tag == "NOUN" or word in pronouns])
+	nounCount = len(["yes" for word,tag,_ in context if tag in ["NOUN","PROPN"] or word in pronouns])
 
 	zijnCheck = []
 
@@ -189,7 +189,7 @@ def indexing(context):
 			tag = sign[1]
 
 		#Adds the correct index to the sentence
-		if (tag == "NOUN" and word not in ["i_3a","i_3b","op_aux"]) or word in pronouns:
+		if (tag in ["NOUN","PROPN"] and word not in ["i_3a","i_3b","op_aux"]) or word in pronouns:
 			#Chooses the correct index
 			if word in ["ik","index_1"]:
 				index = "1"
@@ -222,7 +222,7 @@ def indexing(context):
 			elif verbCount > 0 and nounCount > 1:
 				subjObj.append([(index,i)])
 			#Ensures no index is added after the noun if 'zijn' is not in the sentence
-			elif tag == "NOUN" and not zijnCheck:
+			elif (tag == "NOUN" or "PROPN") and not zijnCheck:
 				indexSign = ""
 				continue
 
@@ -231,7 +231,7 @@ def indexing(context):
 			if p:
 				#Replaces the word with its corresponding index
 				sign = (p,"")
-				if tag == "NOUN":
+				if (tag == "NOUN" or "PROPN"):
 					#Checks whether the index should be added after the noun
 					if i != end and context[i+1][1] != "ADJ" and context[i+1][0] not in ["i_3a","i_3b"]:
 						#Inserts the index after the noun
@@ -259,7 +259,7 @@ def indexing(context):
 
 	end = len(context)
 
-	
+
 	if subjObj:
 		#Loops through the tuples of collected verbs and indices
 		for item in subjObj:
