@@ -437,7 +437,7 @@ function addSuggestion(text){
               <!-- Custom made autocomplete form -->
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
-                  <textarea id="mySiGML" type="text" name="mySiGML" rows="2" style="width: 100%;" placeholder="Enter a sentence or keywords here"></textarea>
+                  <textarea id="mySiGML" placeholder="Enter a sentence or keywords here"></textarea>
                 </div>
                 <!-- <input type="submit"> -->
               </form>
@@ -457,7 +457,7 @@ function addSuggestion(text){
 
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <input id="suggestions" class="input" style="margin-top:5px; margin-bottom:10px; width: 400px;">
+              <textarea id="suggestions" rows="2" style='width: 100%;' placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
               <!-- <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 

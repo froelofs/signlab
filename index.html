@@ -143,6 +143,9 @@ function changeFunc(myRadio) {
     document.getElementById("glossLabel").style.display = 'inline-block';
     document.getElementById("speedLabel").style.display = 'inline-block';
     document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("translation").setAttribute("class", "displayed");
+    document.getElementById("tranLabel").style.display = 'inline-block';
     flag = "spell";
   }
   else if (myRadio.value == "freestyle") {
@@ -154,6 +157,9 @@ function changeFunc(myRadio) {
     document.getElementById("glossLabel").style.display = 'inline-block';
     document.getElementById("speedLabel").style.display = 'inline-block';
     document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("translation").setAttribute("class", "displayed");
+    document.getElementById("tranLabel").style.display = 'inline-block';
     flag = "";
   }
   else if (myRadio.value == "explain") {
@@ -165,6 +171,9 @@ function changeFunc(myRadio) {
     document.getElementById("glossLabel").style.display = 'none';
     document.getElementById("speedLabel").style.display = 'none';
     document.getElementById("stopButton").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("translation").setAttribute("class", "undisplayed");
+    document.getElementById("tranLabel").style.display = 'none';
     flag = "explain";
   }
 }
@@ -209,6 +218,8 @@ function callPython(text) {
           console.log(output[2]);
           document.getElementById("translation").value = output[1];
           playText(output[2].trim());
+          document.getElementById("replayButton").setAttribute("name", output[2].trim());
+          document.getElementById("replayButton").setAttribute("class", "btn btn-primary");
         }
       }
       else{
@@ -399,17 +410,17 @@ $(document).ready(function(){
 
               <br>
               <br>
-
-              <input id="mySiGML" type="text" name="mySiGML" style="width: 100%;" placeholder="Enter a word or sentence here">
+              <textarea id="mySiGML" rows="2" name= "mySiGML" style="width: 100%; resize: none" placeholder="Enter a word or sentence here"></textarea>
               <br>
 
               <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
-              <input id="translation" type="text" style="width:100%; display:inline-block; overflow-x: scroll;" readonly>
+              <textarea id="translation" type="text" readonly></textarea> 
               <br>
 
               <br>
               <input type="button" class="btn btn-primary" value="Translate" onclick='callPython(document.getElementById("mySiGML").value);'/>
               <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)">
 
               <br>
               <br>
@@ -421,9 +432,9 @@ $(document).ready(function(){
               <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
               <br>
 
-              <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
+              <label for="suggestions" class= "undisplayed" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <input id="suggestions" class="input" style="margin-top:5px; margin-bottom:10px; width: 400px;">
+              <textarea id="suggestions" class= "undisplayed" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
               <!-- <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 

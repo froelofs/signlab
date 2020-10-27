@@ -122,3 +122,14 @@ body.busy::before {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+#translation{
+  width:100%; 
+  display:inline-block; 
+  resize: none
+}
+
+#suggestions{
+  width: 100%; 
+  resize: none;
+}
