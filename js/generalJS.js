@@ -26,17 +26,3 @@ function addSuggestion(text){
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
 }
-
-// $("#mySiGML").keypress(function(event) {
-//     if (event.which == 13) {
-//       event.preventDefault();
-//       callPython(document.getElementById("mySiGML").value);
-//     }
-// });
-
-$("#suggestions").keypress(function(event) {
-    if (event.which == 13) {
-      event.preventDefault();
-      addSuggestion(document.getElementById("suggestions").value);
-    }
-});
