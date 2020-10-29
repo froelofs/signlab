@@ -43,7 +43,6 @@ $( function() {
     mustMatch: false,
     source: function (request, response) {
       autocompSugg = customFilter(options, request.term);
-      console.log(autocompSugg);
       response(autocompSugg);
     },
   });
