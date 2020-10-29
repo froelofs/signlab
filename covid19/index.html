@@ -75,6 +75,8 @@
 <script language="javascript" type="text/javascript" src="../js/avatarJS.js"></script>
 <!-- script specific to zonmw project -->
 <script language="javascript" type="text/javascript" src="zonmwJS.js"></script>
+<!-- script for shared functions across all pages -->
+<script language="javascript" type="text/javascript" src="../js/generalJS.js"></script>
 
 </head>
 
@@ -203,7 +205,7 @@
               <!-- Custom made autocomplete form -->
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
-                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here"></textarea>
+                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if (event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
                 </div>
                 <!-- <input type="submit"> -->
               </form>
@@ -224,7 +226,7 @@
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
               <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
-              <!-- <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
+              <!-- <input type="button" id="suggButton" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 
         <!-- <button id="echo" onclick='suggestions(document.getElementById("mySiGML").value);'>click !</button> -->

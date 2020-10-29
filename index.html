@@ -74,6 +74,8 @@
 <script language="javascript" type="text/javascript" src="js/avatarJS.js"></script>
 <!-- script specific to main page -->
 <script language="javascript" type="text/javascript" src="js/signlabJS.js"></script>
+<!-- script for shared functions across all pages -->
+<script language="javascript" type="text/javascript" src="js/generalJS.js"></script>
 
 </head>
 
@@ -200,7 +202,7 @@
 
               <br>
               <br>
-              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here"></textarea>
+              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here" onkeydown="if (event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value);}"></textarea>
               <br>
 
               <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
@@ -208,7 +210,7 @@
               <br>
 
               <br>
-              <input type="button" class="btn btn-primary" value="Translate" onclick='callPython(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary" id="play" value="Translate" onclick='callPython(document.getElementById("mySiGML").value);'/>
               <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
               <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)">
 
