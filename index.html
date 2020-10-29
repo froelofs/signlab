@@ -38,10 +38,6 @@
 <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
 <link rel="stylesheet" href="css/cwasa-reduced.css">
 
-<!-- CSS for autocomplete form -->
-<!-- <link rel="stylesheet" href="css/autocomp.css"></link> -->
-
-
 <!-- =============================================== -->
 <!-- Javascripts (more scripts are loaded at the very end, somehow the placement matters) -->
 
@@ -68,11 +64,6 @@
 <!-- Javascript for smooth scrolling-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-
-<!-- Autocomplete JS-->
-<!-- <script type="text/javascript" src="js/autocomp.js"></script> -->
-
-
 <!-- script for generating avatar animations -->
 <script type="text/javascript" src="cwa/allcsa.js"> </script>
 
@@ -89,7 +80,7 @@ function playText(stext) {
 	CWASA.playSiGMLText(stext);
 }
 
-// verandert de source van de embedded video
+//changes the source of the embedded video
 function changeVideo(url) {
   // window.frames['videos'].location.replace(url);
   // // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
@@ -133,6 +124,7 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 <script>
 var flag = "";
 
+//Adapts the page to the chosen option
 function changeFunc(myRadio) {
   if (myRadio.value == "fingerspell") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
@@ -144,7 +136,7 @@ function changeFunc(myRadio) {
     document.getElementById("speedLabel").style.display = 'inline-block';
     document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translation").setAttribute("class", "displayed");
+    document.getElementById("translation").setAttribute("class", "inputBox");
     document.getElementById("tranLabel").style.display = 'inline-block';
     flag = "spell";
   }
@@ -158,7 +150,7 @@ function changeFunc(myRadio) {
     document.getElementById("speedLabel").style.display = 'inline-block';
     document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translation").setAttribute("class", "displayed");
+    document.getElementById("translation").setAttribute("class", "inputBox");
     document.getElementById("tranLabel").style.display = 'inline-block';
     flag = "";
   }
@@ -172,7 +164,7 @@ function changeFunc(myRadio) {
     document.getElementById("speedLabel").style.display = 'none';
     document.getElementById("stopButton").setAttribute("class", "btn btn-primary undisplayed");
     document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translation").setAttribute("class", "undisplayed");
+    document.getElementById("translation").style.display = 'none';
     document.getElementById("tranLabel").style.display = 'none';
     flag = "explain";
   }
@@ -261,32 +253,15 @@ function addSuggestion(text){
   }
 }
 
-// function displayInfo(id){
-//   document.getElementById(id).setAttribute("class", "displayInfo");
-// }
-
-// function undisplayInfo(id){
-//   document.getElementById(id).setAttribute("class", "undisplayed");
-// }
-
 //Enables all tooltips in the document
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
-
-
 </script>
 
 
 </head>
 
-<!-- <body onload="CWASA.init(); brython(1);"> -->
-<!-- <body onload="brython(1);"> -->
-
-<!--================================================================-->
-<!--================================================================-->
-<!--================================================================-->
-<!--================================================================-->
 
 <body id="page-top" onload="CWASA.init();">
 
@@ -381,8 +356,8 @@ $(document).ready(function(){
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
         <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
-        <span id="explanation" class="undisplayed" align="left" style="width: 500px; height: 500px;">
-          <div id="explText" class ="undisplayed" style="width: 480px; height: 480px;"></div>
+        <span id="explanation" class="undisplayed" align="left">
+          <div id="explText" class ="undisplayed" align="center"></div>
         </span>
         <!--================================================================-->
 
@@ -403,18 +378,18 @@ $(document).ready(function(){
             <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label>
 
              <br>
-             <!-- Defines the button and questioncircle displayed for the option "avatar" -->
+             <!-- Defines the button and label displayed for the option "explanation" -->
               <input type="radio" id="explainDisplay" name="display" value="explain" onclick="changeFunc(this);">
               <label for="avatar" style="margin-right: 5px">Explanation SiGML</label>
 
 
               <br>
               <br>
-              <textarea id="mySiGML" rows="2" name= "mySiGML" style="width: 100%; resize: none" placeholder="Enter a word or sentence here"></textarea>
+              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here"></textarea>
               <br>
 
               <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
-              <textarea id="translation" type="text" readonly></textarea> 
+              <textarea id="translation" type="text" class ="inputBox" readonly></textarea> 
               <br>
 
               <br>
@@ -432,9 +407,9 @@ $(document).ready(function(){
               <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
               <br>
 
-              <label for="suggestions" class= "undisplayed" style="display: inline-block;">Suggestions box: </label>
+              <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <textarea id="suggestions" class= "undisplayed" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
               <!-- <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 

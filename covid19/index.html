@@ -38,9 +38,6 @@
 <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
 <link rel="stylesheet" href="../css/cwasa-reduced.css">
 
-<!-- CSS for autocomplete form -->
-<!-- <link rel="stylesheet" href="css/autocomp.css"></link> -->
-
 
 <!-- =============================================== -->
 <!-- Javascripts (more scripts are loaded at the very end, somehow the placement matters) -->
@@ -68,11 +65,6 @@
 <!-- Javascript for smooth scrolling-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-
-<!-- Autocomplete JS-->
-<!-- <script type="text/javascript" src="js/autocomp.js"></script> -->
-
-
 <!-- script for generating avatar animations -->
 <script type="text/javascript" src="../cwa/allcsa.js"> </script>
 
@@ -89,7 +81,7 @@ function playText(stext) {
 	CWASA.playSiGMLText(stext);
 }
 
-// verandert de source van de embedded video
+//changes the source of the embedded video
 function changeVideo(url) {
   // window.frames['videos'].location.replace(url);
   // // document.getElementById('videos').src = "https://www.youtube-nocookie.com/embed/f7xMGTE7D5w";
@@ -134,8 +126,6 @@ CWASA.addHook("avatarsign", setSignFrame, 0);
 //Stores suggestions returned by autocomplete
 var autocompSugg = [];
 
-// let scrapeJSON = 'http://bluegalaxy.info/cgi/scrapeJSON.py'
-
 // Defines the functions and variable necessary for autcomplete suggestions
 $( function() {
   // Defines all the options for autocomplete suggestions
@@ -172,7 +162,7 @@ $( function() {
     },
   });
 
-  //Forces the width of the autcomplete menu to fit the parent's width
+  //Forces the width of the autcomplete menu to fit the input field's width
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
   var ul = this.menu.element;
   ul.outerWidth(this.element.outerWidth());
@@ -181,7 +171,7 @@ $( function() {
 
 
 
-// Stores the json dictionary of translated sentences as a variable
+// Stores the json dictionary of SiGML translations as a variable
 var json = (function() {
   var json = null;
   $.ajax({
@@ -196,6 +186,7 @@ var json = (function() {
   return json;
 })();
 
+// Stores the json dictionary of links to video translations as a variable
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
@@ -220,7 +211,7 @@ function toSiGML(text){
     if (document.getElementById("avatarDisplay").checked) {
       entry = json[text];
       if (entry == undefined) {
-        alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
+        alert("There is currently no pre-processed translation available. You can send the sentence you were trying to translate to us via the suggestions box on this page.")
       }
       else{
         playText(entry);
@@ -240,7 +231,7 @@ function toSiGML(text){
 }
 
 
-
+//Adapts the page to the chosen option
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
@@ -261,14 +252,6 @@ function changeFunc(myRadio) {
     document.getElementById("speedLabel").style.display = 'none';
   }
 }
-
-// function displayInfo(id){
-//   document.getElementById(id).setAttribute("class", "displayInfo");
-// }
-
-// function undisplayInfo(id){
-//   document.getElementById(id).setAttribute("class", "undisplayed");
-// }
 
 //Enables all tooltips in the document
 $(document).ready(function(){
@@ -437,7 +420,7 @@ function addSuggestion(text){
               <!-- Custom made autocomplete form -->
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
-                  <textarea id="mySiGML" placeholder="Enter a sentence or keywords here"></textarea>
+                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here"></textarea>
                 </div>
                 <!-- <input type="submit"> -->
               </form>
@@ -457,7 +440,7 @@ function addSuggestion(text){
 
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <textarea id="suggestions" rows="2" style='width: 100%;' placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
               <!-- <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
         </span>
 
