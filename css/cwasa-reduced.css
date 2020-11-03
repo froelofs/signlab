@@ -122,7 +122,8 @@ body.busy::before {
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: 10px
+  width: 480px; 
+  height: 480px;
 }
 
 .inputBox{
