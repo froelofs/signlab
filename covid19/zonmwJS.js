@@ -27,7 +27,7 @@ $( function() {
         var matcher = new RegExp("\\" + term, "i");
       }
       else{
-        var matcher = new RegExp("(\\b" + term + "|" + term + "\\b)", "i");
+        var matcher = new RegExp(term, "i");
         console.log(matcher);
       }
       array = $.grep(array, function (value) {
