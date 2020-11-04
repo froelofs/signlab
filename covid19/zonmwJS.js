@@ -22,6 +22,7 @@ $( function() {
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
+      console.log(term);
       if (punctuation.includes(term)) {
         var matcher = new RegExp("\\" + term, "i");
       }
