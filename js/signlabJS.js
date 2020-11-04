@@ -31,18 +31,32 @@ function changeFunc(myRadio) {
     flag = "";
   }
   else if (myRadio.value == "explain") {
-    document.getElementById("avatar").setAttribute("class", "undisplayed");
+    document.getElementById("avatarTut").setAttribute("class", "undisplayed");
     document.getElementById("explanation").setAttribute("class", "explSpan");
     document.getElementById("explText").setAttribute("class", "explSiGML");
-    document.getElementById("speedAdj").setAttribute("class", "undisplayed");
-    document.getElementById("outputGloss").setAttribute("class", "undisplayed");
-    document.getElementById("glossLabel").style.display = 'none';
-    document.getElementById("speedLabel").style.display = 'none';
-    document.getElementById("stopButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translation").style.display = 'none';
-    document.getElementById("tranLabel").style.display = 'none';
+    document.getElementById("speedAdjTut").setAttribute("class", "undisplayed");
+    document.getElementById("outputGlossTut").setAttribute("class", "undisplayed");
+    document.getElementById("glossLabelTut").style.display = 'none';
+    document.getElementById("speedLabelTut").style.display = 'none';
+    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("translationTut").style.display = 'none';
+    document.getElementById("tranLabelTut").style.display = 'none';
     flag = "explain";
+  }
+  else if (myRadio.value == "expl+ava") {
+    document.getElementById("avatarTut").setAttribute("class", "undisplayed");
+    document.getElementById("explanation").setAttribute("class", "explSpan");
+    document.getElementById("explText").setAttribute("class", "explSiGML");
+    document.getElementById("speedAdjTut").setAttribute("class", "undisplayed");
+    document.getElementById("outputGlossTut").setAttribute("class", "undisplayed");
+    document.getElementById("glossLabelTut").style.display = 'none';
+    document.getElementById("speedLabelTut").style.display = 'none';
+    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("translationTut").style.display = 'none';
+    document.getElementById("tranLabelTut").style.display = 'none';
+    flag = "explain,";
   }
 }
 
@@ -50,6 +64,8 @@ function changeFunc(myRadio) {
 function callPython(text) {
   showBusyState();
   //Adds a flag to the input if applicable
+  flags = flag.split(",");
+  flag = flags[0];
   if (flag != ""){
     inputPython = flag + " " + text;
   }
@@ -67,7 +83,8 @@ function callPython(text) {
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-    } else {
+    } 
+    else {
       output = result.output.split(";");
       if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
         if (flag == "explain"){
@@ -84,14 +101,18 @@ function callPython(text) {
         else{
           console.log(output[1]);
           console.log(output[2]);
-          document.getElementById("translation").value = output[1];
+          document.getElementById("translationTut").value = output[1];
           playText(output[2].trim());
-          document.getElementById("replayButton").setAttribute("name", output[2].trim());
-          document.getElementById("replayButton").setAttribute("class", "btn btn-primary");
+          document.getElementById("replayButtonTut").setAttribute("name", output[2].trim());
+          document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary");
         }
       }
       else{
         alert(output);
+      }
+      if (flags.length == 2){
+      	flag = flags[1];
+      	callPython(text);
       }
       
     }
