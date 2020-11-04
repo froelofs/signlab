@@ -61,6 +61,17 @@
 	border: 0px; padding: 0px;
 }
 
+.CWASAAvatarTut {
+  display: inline-block;
+    /*margin-left: 10px;
+    margin-right: 5px;*/
+    /*margin-bottom: 20px;*/
+  /*position: relative; */
+  background: #A3B8D2;
+  width: 200px; height: 300px;
+  border: 0px; padding: 0px;
+}
+
 .CWASAGUI {
 	text-align: center;
 	position: relative;

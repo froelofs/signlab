@@ -339,7 +339,6 @@
       <div class="container" height="100%">
           <div class="project-text pt-0 text-lg-left">
               <h2>Tutorial</h2>
-              <span id="avatarTut" class="undisplayed" align="right" ></span>
               <span id="explanation" class="explSpan" align="left">
                 <div id="explText" class ="explSiGML"></div>
               </span>
@@ -360,6 +359,7 @@
               <textarea id="SiGMLTut" placeholder="Enter the gloss(es) whose SiGML you would like explained here"></textarea>
               <br>
               
+              <span id="avatarTut" class="undisplayed"></span>
               <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value);'/>
               <input type="button" id="stopButtonTut" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
               <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name)">
