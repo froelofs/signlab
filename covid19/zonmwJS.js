@@ -33,6 +33,7 @@ $( function() {
        return matcher.test(value.label || value.value || value);
       });
     });
+    console.log(array);
     return array;
   }
 
