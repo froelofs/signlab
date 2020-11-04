@@ -134,9 +134,6 @@
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
         <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
-        <span id="explanation" class="undisplayed" align="left">
-          <div id="explText" class ="undisplayed"></div>
-        </span>
         <!--================================================================-->
 
 
@@ -154,9 +151,6 @@
             <!-- Defines the button and label displayed for the option "freestyle" -->
             <input type="radio" id="freestyleDisplay" name="display" value="freestyle" checked onclick="changeFunc(this);">
             <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label>
-
-           
-
 
               <br>
               <br>
@@ -354,14 +348,29 @@
               <h4>Choose an output option:</h4>
               <br>
               <!-- Defines the button and label displayed for the option "explanation" -->
-              <input type="radio" id="explainDisplay" name="display" value="explain" onclick="changeFunc(this);">
+              <input type="radio" id="explainDisplay" name="display" value="explain" onclick="changeFunc(this);" checked>
               <label for="avatar" style="margin-right: 5px">Explanation SiGML</label>
               <br>
               <br>
-              <!-- Defines the button and label displayed for the option "fingerspell" -->
+              <!-- Defines the button and label displayed for the option "explain+ava" -->
               <input type="radio" id="explain+ava" name="display" value="explain+ava" onclick="changeFunc(this);">
-              <label for="explain+ava" style="margin-right:5px">Explanation SiGML + avatar animation</label>
-              
+              <label for="explain+ava" style="margin-right:5px">Explanation SiGML + avatar animation</label> 
+              <br>
+              <textarea id="SiGMLTut" placeholder="enter the gloss(es) of which you would like SiGML explained here"></textarea>
+              <br>
+              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value);'/>
+              <input type="button" id="stopButtonTut" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name)">
+
+              <br>
+              <br>
+              <label id="speedLabelTut" for="speedAdjTut" style="display: none;">Adjust speed: </label>
+               <span id="speedAdjTut" class="none" style="margin-bottom:5px"></span>
+              <br>
+              <br>
+              <label id="glossLabelTut"for="outputGlossTut" style="display: none;">Gloss: </label>
+              <input id="outputGlossTut" class="undisplayed" value="[none]" type="text">
+              <br>
             </span>
           </div>
       </div>

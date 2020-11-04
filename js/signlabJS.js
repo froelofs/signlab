@@ -3,59 +3,31 @@ var flag = "";
 //Adapts the page to the chosen option
 function changeFunc(myRadio) {
   if (myRadio.value == "fingerspell") {
-    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
-    document.getElementById("explanation").setAttribute("class", "undisplayed");
-    document.getElementById("explText").setAttribute("class", "undisplayed");
-    document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
-    document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
-    document.getElementById("glossLabel").style.display = 'inline-block';
-    document.getElementById("speedLabel").style.display = 'inline-block';
-    document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
-    document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translation").setAttribute("class", "inputBox");
-    document.getElementById("tranLabel").style.display = 'inline-block';
+  	document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
     flag = "spell";
   }
   else if (myRadio.value == "freestyle") {
-    document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
-    document.getElementById("explanation").setAttribute("class", "undisplayed");
-    document.getElementById("explText").setAttribute("class", "undisplayed");
-    document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
-    document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
-    document.getElementById("glossLabel").style.display = 'inline-block';
-    document.getElementById("speedLabel").style.display = 'inline-block';
-    document.getElementById("stopButton").setAttribute("class", "btn btn-primary displayed");
-    document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translation").setAttribute("class", "inputBox");
-    document.getElementById("tranLabel").style.display = 'inline-block';
+  	document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
     flag = "";
   }
   else if (myRadio.value == "explain") {
     document.getElementById("avatarTut").setAttribute("class", "undisplayed");
-    document.getElementById("explanation").setAttribute("class", "explSpan");
-    document.getElementById("explText").setAttribute("class", "explSiGML");
     document.getElementById("speedAdjTut").setAttribute("class", "undisplayed");
     document.getElementById("outputGlossTut").setAttribute("class", "undisplayed");
     document.getElementById("glossLabelTut").style.display = 'none';
     document.getElementById("speedLabelTut").style.display = 'none';
     document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary undisplayed");
     document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translationTut").style.display = 'none';
-    document.getElementById("tranLabelTut").style.display = 'none';
     flag = "explain";
   }
   else if (myRadio.value == "expl+ava") {
-    document.getElementById("avatarTut").setAttribute("class", "undisplayed");
-    document.getElementById("explanation").setAttribute("class", "explSpan");
-    document.getElementById("explText").setAttribute("class", "explSiGML");
-    document.getElementById("speedAdjTut").setAttribute("class", "undisplayed");
-    document.getElementById("outputGlossTut").setAttribute("class", "undisplayed");
-    document.getElementById("glossLabelTut").style.display = 'none';
-    document.getElementById("speedLabelTut").style.display = 'none';
-    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar av0");
+    document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av0");
+    document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av0");
+    document.getElementById("glossLabelTut").style.display = 'inline-block';
+    document.getElementById("speedLabelTut").style.display = 'inline-block';
+    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("translationTut").style.display = 'none';
-    document.getElementById("tranLabelTut").style.display = 'none';
     flag = "explain,";
   }
 }
@@ -113,8 +85,7 @@ function callPython(text) {
       if (flags.length == 2){
       	flag = flags[1];
       	callPython(text);
-      }
-      
+      }  
     }
     showBusyState(false);
   }
