@@ -22,19 +22,16 @@ $( function() {
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
-      console.log(term);
       if (punctuation.includes(term)) {
         var matcher = new RegExp("\\" + term, "i");
       }
       else{
         var matcher = new RegExp(term, "i");
-        console.log(matcher);
       }
       array = $.grep(array, function (value) {
        return matcher.test(value.label || value.value || value);
       });
     });
-    console.log(array);
     return array;
   }
 
