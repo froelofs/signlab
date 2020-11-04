@@ -28,6 +28,7 @@ $( function() {
       }
       else{
         var matcher = new RegExp("(\\b" + term + "|" + term + "\\b)", "i");
+        console.log(matcher);
       }
       array = $.grep(array, function (value) {
        return matcher.test(value.label || value.value || value);
