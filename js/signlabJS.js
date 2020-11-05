@@ -20,7 +20,7 @@ function changeFunc(myRadio) {
     document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
     flag = "explain";
   }
-  else if (myRadio.value == "expl+ava") {
+  else if (myRadio.value == "explAva") {
     document.getElementById("avatarTut").setAttribute("class", "CWASAAvatarTut av0");
     document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av0");
