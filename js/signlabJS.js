@@ -21,7 +21,7 @@ function changeFunc(myRadio) {
     flag = "explain";
   }
   else if (myRadio.value == "explAva") {
-    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatarTut av0");
+    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabelTut").style.display = 'inline-block';
