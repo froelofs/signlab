@@ -343,7 +343,8 @@
                 <div id="explText" class ="explSiGML"></div>
               </span>
 
-            <span align="right" style="display:inline-block; vertical-align:top; margin:30px;">
+            <span id="avatarTut" style="display: inline-block; background: #A3B8D2; width:200px; height:500px;"></span>
+            <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
               <h4>Choose an output option:</h4>
               <br>
               <!-- Defines the button and label displayed for the option "explanation" -->
@@ -359,19 +360,19 @@
               <textarea id="SiGMLTut" placeholder="Enter the gloss(es) whose SiGML you would like explained here"></textarea>
               <br>
               
-              <span id="avatarTut" class="undisplayed"></span>
+
               <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value);'/>
-              <input type="button" id="stopButtonTut" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML();'/>
               <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name)">
               <br>
               
               <br>
               <label id="speedLabelTut" for="speedAdjTut" style="display: none;">Adjust speed: </label>
-               <span id="speedAdjTut" class="none" style="margin-bottom:5px"></span>
+              <span id="speedAdjTut" class="undisplayed" style="margin-bottom:5px"></span>
               <br>
               
               <br>
-              <label id="glossLabelTut"for="outputGlossTut" style="display: none;">Gloss: </label>
+              <label id="glossLabelTut" for="outputGlossTut" style="display: none;">Gloss: </label>
               <input id="outputGlossTut" class="undisplayed" value="[none]" type="text">
               <br>
             </span>
