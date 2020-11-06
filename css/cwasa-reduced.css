@@ -132,7 +132,7 @@ body.busy::before {
 }
 
 
-.main {
+.nav-link.main {
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
 
