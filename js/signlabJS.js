@@ -120,20 +120,11 @@ function callPython(text) {
 //   evt.currentTarget.className += " active";
 // }
 
-// $('.nav-link').click(function(event) {
+function fadeTab(id){
+  tablinks = document.getElementsByClassName("tabFade");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" fadeIn", " undisplayed");
+  }
 
-// event.preventDefault();
-
-// document.getElementById("aaa").getAttribute("href");
-
-// });
-
-// $('.nav-link').on('show.bs.tab', function (e) {
-//   $('.nav-link').on('show.bs.tab', function (e) {
-//   // Get all elements with class="tablinks" and remove the class "active"
-//   tablinks = document.getElementsByClassName("nav-link");
-//   for (i = 0; i < tablinks.length; i++) {
-//     tablinks[i].className = tablinks[i].className.replace(" main", "");
-//   }
-  	
-// })
+  document.getElementById(id).className += " fadeIn";
+}

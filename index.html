@@ -60,14 +60,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#About" onclick="document.getElementById('About').setAttribute('class', 'projects-section bg-light main');">Mission</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Translate" onclick="document.getElementById('Translate').setAttribute('class', 'projects-section bg-light main');">Translator</a></li>
-                <li class="nav-item"><a class="nav-link" href="#People" onclick="document.getElementById('People').setAttribute('class', 'projects-section bg-light main');">People</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Publications" onclick="document.getElementById('Publications').setAttribute('class', 'projects-section bg-light main');">Publications</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Funding" onclick="document.getElementById('Funding').setAttribute('class', 'projects-section bg-light main');">Funding</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Tutorial" onclick="document.getElementById('Tutorial').setAttribute('class', 'projects-section bg-light main');">SiGML</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Resources" onclick="document.getElementById('Resources').setAttribute('class', 'projects-section bg-light main');">Resources</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Projects" onclick="document.getElementById('Projects').setAttribute('class', 'projects-section bg-light main');">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#About" onclick="fadeTab('About');">Mission</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Translate" onclick="fadeTab('Translate');">Translator</a></li>
+                <li class="nav-item"><a class="nav-link" href="#People" onclick="fadeTab('People');">People</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Publications" onclick="fadeTab('Publications');">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Funding" onclick="fadeTab('Funding');">Funding</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Tutorial" onclick="fadeTab('Tutorial');">SiGML</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Resources" onclick="fadeTab('Resources');">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Projects" onclick="fadeTab('Projects');">Projects</a></li>
             </ul>
         </div>
     </div>
@@ -314,7 +314,7 @@
 <!--================================================================-->
 
 <!-- Funding section -->
-<section class="projects-section bg-white undisplayed" id="Funding">
+<section class="projects-section bg-white tabFade undisplayed" id="Funding">
 
       <div class="container" height="100%">
           <div class="project-text pt-0 text-lg-left">
