@@ -120,9 +120,10 @@ function callPython(text) {
 //   evt.currentTarget.className += " active";
 // }
 
-$('.nav-link').click(function(event) {
+// $('.nav-link').click(function(event) {
 
-event.preventDefault();
+// event.preventDefault();
 
+// document.getElementById("aaa").getAttribute("href");
 
-});
+// });
