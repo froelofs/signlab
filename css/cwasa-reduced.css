@@ -132,7 +132,7 @@ body.busy::before {
 }
 
 
-.nav-link:shown.bs.tab  {
+.nav-link:show {
   animation: fadein 2s;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
