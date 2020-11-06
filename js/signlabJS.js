@@ -119,3 +119,10 @@ function callPython(text) {
 //   document.getElementById(tabName).style.display = "block";
 //   evt.currentTarget.className += " active";
 // }
+
+$('.nav-link').click(function(event) {
+
+event.preventDefault();
+
+
+});
