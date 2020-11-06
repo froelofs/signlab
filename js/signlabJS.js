@@ -126,5 +126,5 @@ function fadeTab(id){
     tablinks[i].className = tablinks[i].className.replace(" fadeIn", " undisplayed");
   }
 
-  document.getElementById(id).className += " fadeIn";
+  document.getElementById(id).className.replace(" undisplayed", " fadeIn");;
 }
