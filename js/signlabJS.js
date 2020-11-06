@@ -133,7 +133,7 @@ function callPython(text) {
 
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
     // here is the new selected tab id
-    selectedTabId = e.target.id;
+    selectedTabId = e.target.href;
     console.log(selectedTabId);
 
     e.target.className += "fadeIn";
