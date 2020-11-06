@@ -131,8 +131,11 @@ function callPython(text) {
 //   console.log(document.getElementById(id).className);
 // }
 
-$('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
+$('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
     // here is the new selected tab id
-    var selectedTabId = e.target.id;
-    console.log(id);
+    selectedTabId = e.target.id;
+    console.log(selectedTabId);
+
+    e.target.className += "fadeIn";
+    e.relatedTarget.replace(" fadeIn", " undisplayed");
 });
