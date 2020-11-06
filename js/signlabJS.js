@@ -123,6 +123,7 @@ function callPython(text) {
 function fadeTab(id){
   tablinks = document.getElementsByClassName("tabFade");
   for (i = 0; i < tablinks.length; i++) {
+  	console.log(tablinks[i].className);
     tablinks[i].className = tablinks[i].className.replace(" fadeIn", " undisplayed");
   }
 
