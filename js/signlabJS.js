@@ -121,7 +121,9 @@ function callPython(text) {
 // }
 
 function fadeTab(id){
-  tablinks = document.getElementsByClassName("projects-section");
+  alert("hi");
+  tablinks = document.getElementsByClassName("tabFade");
+  alert("hey");
   for (i = 0; i < tablinks.length; i++) {
   	console.log(tablinks[i].className);
     tablinks[i].className = tablinks[i].className.replace(" fadeIn", " undisplayed");
