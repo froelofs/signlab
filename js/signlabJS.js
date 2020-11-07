@@ -132,6 +132,8 @@ function callPython(text) {
 // }
 
 $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
+	alert("The function works!")
+	alert(e);
 	targetHref = e.target.href;
 	relatedHref = e.relatedTarget.href;
 	alert(targetHref);
