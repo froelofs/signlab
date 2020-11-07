@@ -131,7 +131,7 @@ function callPython(text) {
 //   console.log(document.getElementById(id).className);
 // }
 
-$('a').on('show.bs.tab', function (e) {
+$('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
     e.target.replace(" undisplayed", "");
     e.relatedTarget.className += "undisplayed";
 });
