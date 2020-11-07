@@ -134,10 +134,7 @@ function callPython(text) {
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	linkCurrentTab = document.getElementsByClassName("nav-link tabFade active")[0];
 	nextTab = e.target;
-	nextTab.className += "active";
-    linkCurrentTab.className.replace(" active","");
 	relatedHref = linkCurrentTab + "";
-	document.getElementById(relatedHref.split("#")[1]).className.replace(" active", "");
 	document.getElementById(relatedHref.split("#")[1]).className.replace(" fadeIn", "");
 	targetHref = nextTab.href.split("#")[1];
     document.getElementById(targetHref).className += "fadeIn";
