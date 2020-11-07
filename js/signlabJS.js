@@ -134,12 +134,13 @@ function callPython(text) {
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	targetHref = e.target.href.split("#")[1];
 	// relatedHref = e.relatedTarget.href.split("#")[1];
-	relatedHref = $(event.relatedTarget).attr('href').split("#")[1];
+	var relatedHref = $(event.relatedTarget).attr('href');
 	console.log(targetHref);
     document.getElementById(targetHref).className.replace(" undisplayed", "");
     getElementById(relatedHref).className += "undisplayed";
     alert("Done");
 });
+
 
 // $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
 // 	alert("The function works!")
