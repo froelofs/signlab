@@ -141,6 +141,7 @@ $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	document.getElementById(relatedHref.split("#")[1]).className.replace(" fadeIn", "");
 	targetHref = nextTab.href.split("#")[1];
     document.getElementById(targetHref).className += "fadeIn";
+ });
 
 
 // $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
