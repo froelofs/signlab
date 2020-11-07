@@ -136,7 +136,7 @@ $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	// relatedHref = e.relatedTarget.href.split("#")[1];
 	relatedHref = document.getElementsByClassName("nav-link tabFade active");
 	// var relatedHref = $(event.relatedTarget).attr('href');
-	console.log(relatedHref);
+	console.log(relatedHref[0]);
     document.getElementById(targetHref).className.replace(" undisplayed", " active");
     document.getElementById(relatedHref).className += "undisplayed";
     alert("Done");
