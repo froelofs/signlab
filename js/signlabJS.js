@@ -135,9 +135,20 @@ $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
 	alert("The function works!")
 	alert(e);
 	targetHref = e.target.href;
-	relatedHref = e.relatedTarget.href;
+	// relatedHref = e.relatedTarget.href;
 	alert(targetHref);
     getElementById(targetHref.substring(1)).replace(" undisplayed", "");
-    getElementById(relatedHref.substring(1)).className += "undisplayed";
+    // getElementById(relatedHref.substring(1)).className += "undisplayed";
     alert("Done");
 });
+
+// $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
+// 	alert("The function works!")
+// 	alert(e);
+// 	targetHref = e.target.href;
+// 	relatedHref = e.relatedTarget.href;
+// 	alert(targetHref);
+//     getElementById(targetHref.substring(1)).replace(" undisplayed", "");
+//     getElementById(relatedHref.substring(1)).className += "undisplayed";
+//     alert("Done");
+// });
