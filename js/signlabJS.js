@@ -136,7 +136,7 @@ $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	relatedHref = e.relatedTarget.href.split("#")[1];
 	console.log(targetHref);
     document.getElementById(targetHref).className.replace(" undisplayed", "");
-    // getElementById(relatedHref.substring(1)).className += "undisplayed";
+    getElementById(relatedHref).className += "undisplayed";
     alert("Done");
 });
 
