@@ -133,7 +133,7 @@ function callPython(text) {
 
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	targetHref = e.target.href.split("#")[1];
-	// relatedHref = e.relatedTarget.href;
+	relatedHref = e.relatedTarget.href;
 	console.log(targetHref);
     document.getElementById(targetHref).className.replace(" undisplayed", "");
     // getElementById(relatedHref.substring(1)).className += "undisplayed";
