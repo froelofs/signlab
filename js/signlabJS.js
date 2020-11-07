@@ -138,7 +138,7 @@ $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	// var relatedHref = $(event.relatedTarget).attr('href');
 	console.log(relatedHref);
     document.getElementById(targetHref).className.replace(" undisplayed", " active");
-    document.getElementById(relatedHref).className += "undisplayed";
+    document.getElementById(relatedHref).className.replace(" active", " undisplayed");
     alert("Done");
 });
 
