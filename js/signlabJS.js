@@ -131,7 +131,11 @@ function callPython(text) {
 //   console.log(document.getElementById(id).className);
 // }
 
-$('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
-    e.target.replace(" undisplayed", "");
-    e.relatedTarget.className += "undisplayed";
+$('a[class="nav-link fadeIn"]').on('shown.bs.tab', function (e) {
+	targetHref = e.target.href;
+	relatedHref = e.relatedTarget.href;
+	alert(targetHref);
+    getElementById(targetHref.substring(1)).replace(" undisplayed", "");
+    getElementById(relatedHref.substring(1)).className += "undisplayed";
+    alert("Done");
 });
