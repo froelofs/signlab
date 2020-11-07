@@ -131,7 +131,7 @@ function callPython(text) {
 //   console.log(document.getElementById(id).className);
 // }
 
-$('a[class="nav-link fadeIn"]').on('shown.bs.tab', function (e) {
+$('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	targetHref = e.target.href;
 	relatedHref = e.relatedTarget.href;
 	alert(targetHref);
