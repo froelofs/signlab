@@ -135,7 +135,7 @@ $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
 	targetHref = e.target.href.split("#")[1];
 	// relatedHref = e.relatedTarget.href;
 	console.log(targetHref);
-    getElementById(targetHref).className.replace(" undisplayed", "");
+    document.getElementById(targetHref).className.replace(" undisplayed", "");
     // getElementById(relatedHref.substring(1)).className += "undisplayed";
     alert("Done");
 });
