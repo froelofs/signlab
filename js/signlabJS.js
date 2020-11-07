@@ -132,15 +132,15 @@ function callPython(text) {
 // }
 
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
-	targetHref = e.target.href.split("#")[1];
-	// relatedHref = e.relatedTarget.href.split("#")[1];
-	relatedHref = document.getElementsByClassName("nav-link tabFade active")[0] + "";
-	// var relatedHref = $(event.relatedTarget).attr('href');
-	console.log(relatedHref.split("#")[1]);
-    document.getElementById(targetHref).className.replace(" undisplayed", " active");
-    document.getElementById(relatedHref.split("#")[1]).className.replace(" active", " undisplayed");
-    alert("Done");
-});
+	linkCurrentTab = document.getElementsByClassName("nav-link tabFade active")[0];
+	nextTab = e.target;
+	nextTab.className += "active";
+    linkCurrentTab.className.replace(" active","");
+	relatedHref = linkCurrentTab + "";
+	document.getElementById(relatedHref.split("#")[1]).className.replace(" active", "");
+	document.getElementById(relatedHref.split("#")[1]).className.replace(" fadeIn", "");
+	targetHref = nextTab.href.split("#")[1];
+    document.getElementById(targetHref).className += "fadeIn";
 
 
 // $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
