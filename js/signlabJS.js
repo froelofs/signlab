@@ -132,12 +132,10 @@ function callPython(text) {
 // }
 
 $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
-	alert("The function works!")
-	alert(e);
-	targetHref = e.target.href;
+	targetHref = e.target.href.split("#")[1];
 	// relatedHref = e.relatedTarget.href;
-	alert(targetHref);
-    getElementById(targetHref.substring(1)).replace(" undisplayed", "");
+	console.log(targetHref);
+    getElementById(targetHref).className.replace(" undisplayed", "");
     // getElementById(relatedHref.substring(1)).className += "undisplayed";
     alert("Done");
 });
