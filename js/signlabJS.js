@@ -134,9 +134,9 @@ function callPython(text) {
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	targetHref = e.target.href.split("#")[1];
 	// relatedHref = e.relatedTarget.href.split("#")[1];
-	relatedHref = document.getElementsByClassName("nav-link tabFade active");
+	relatedHref = document.getElementsByClassName("nav-link tabFade active")[0].split("#")[1];
 	// var relatedHref = $(event.relatedTarget).attr('href');
-	console.log(relatedHref[0]);
+	console.log(relatedHref);
     document.getElementById(targetHref).className.replace(" undisplayed", " active");
     document.getElementById(relatedHref).className += "undisplayed";
     alert("Done");
