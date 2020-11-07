@@ -134,9 +134,10 @@ function callPython(text) {
 $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
 	targetHref = e.target.href.split("#")[1];
 	// relatedHref = e.relatedTarget.href.split("#")[1];
-	var relatedHref = $(event.relatedTarget).attr('href');
+	relatedHref = document.getElementsByClassName("nav-link tabFade active").href.split("#")[1];
+	// var relatedHref = $(event.relatedTarget).attr('href');
 	console.log(targetHref);
-    document.getElementById(targetHref).className.replace(" undisplayed", "");
+    document.getElementById(targetHref).className.replace(" undisplayed", " active");
     getElementById(relatedHref).className += "undisplayed";
     alert("Done");
 });
