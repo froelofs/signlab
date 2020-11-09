@@ -102,7 +102,7 @@ function openTab(evt, tabName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="fadeIn" and hide them
+  // Get current tab and hide it
   tabcontent = document.getElementsByClassName("fadeIn");
   for (i = 0; i < tabcontent.length; i++) {
     if (tabcontent[i].className.includes("undisplayed") == false){
@@ -117,11 +117,7 @@ function openTab(evt, tabName) {
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  console.log(tabName);
-  console.log(document.getElementById(tabName).className);
   newTab = document.getElementById(tabName);
   newTab.className = newTab.className.replace(" undisplayed", "");
-  // document.getElementById(tabName).style.display = 'block';
-  console.log(document.getElementById(tabName).className);
   evt.currentTarget.className += " active";
 }
