@@ -6,7 +6,7 @@
       "width":            380,
       "height":           320,
       "avList":           "avsfull",
-      "initAv":           "luna",
+      "initAv":           "anna",
       "initSiGMLURL":     "scotland-H.sigml"
     },
     {
@@ -14,7 +14,7 @@
       "height":           208,
       "background":       "Salmon",
       "avList":           "avs",
-      "initAv":           "francoise",
+      "initAv":           "anna",
       "allowFrameSteps":  false,
       "allowSiGMLText":   false,
       "initSiGMLURL":     "welkom-ngt.sigml"
