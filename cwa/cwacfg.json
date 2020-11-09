@@ -33,5 +33,17 @@
       "initSiGMLURL":     "iTakeMug.sigml",
       "allowSiGMLText":   true
     }
+
+    {
+      "description":      "Default if client configuration is missing or restricted",
+      "width":            384,
+      "height":           320,
+      "avList":           "avs",
+      "initAv":           "anna",
+      "initCamera":       [ 0, 0.23, 3.24, 5, 18, 30, -1, -1 ],
+      "allowFrameSteps":  true,
+      "initSiGMLURL":     "iTakeMug.sigml",
+      "allowSiGMLText":   true
+    }
   ]
 }
