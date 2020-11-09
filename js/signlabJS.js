@@ -98,34 +98,23 @@ function callPython(text) {
   }
 }
 
-// function fadeTab(id){
-//   tablinks = document.getElementsByClassName("tabFade");
-//   for (i = 0; i < tablinks.length; i++) {
-//   	console.log(tablinks[i].className);
-//     tablinks[i].className = tablinks[i].className.replace(" fadeIn", " undisplayed");
-//   }
+function openTab(evt, tabName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
-//   document.getElementById(id).className.replace(" undisplayed", " fadeIn");
-//   console.log(document.getElementById(id).className);
-// }
+  // Get all elements with class="fadeIn" and hide them
+  tabcontent = document.getElementsByClassName("fadeIn");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].className += " undisplayed";
+  }
 
-// $('a[class="nav-link tabFade"]').on('show.bs.tab', function (e) {
-// 	linkCurrentTab = document.getElementsByClassName("nav-link tabFade active")[0];
-// 	nextTab = e.target;
-// 	relatedHref = linkCurrentTab + "";
-// 	document.getElementById(relatedHref.split("#")[1]).className.replace(" fadeIn", "");
-// 	targetHref = nextTab.href.split("#")[1];
-//     document.getElementById(targetHref).className += "fadeIn";
-//  });
+  // Get all elements with class="nav-link" and remove the class "active"
+  tablinks = document.getElementsByClassName("nav-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
-
-// $('a[class="nav-link tabFade"]').on('shown.bs.tab', function (e) {
-// 	alert("The function works!")
-// 	alert(e);
-// 	targetHref = e.target.href;
-// 	relatedHref = e.relatedTarget.href;
-// 	alert(targetHref);
-//     getElementById(targetHref.substring(1)).replace(" undisplayed", "");
-//     getElementById(relatedHref.substring(1)).className += "undisplayed";
-//     alert("Done");
-// });
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).className.replace(" undisplayed", "");
+  evt.currentTarget.className += " active";
+}

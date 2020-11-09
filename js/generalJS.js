@@ -8,7 +8,7 @@ $(document).ready(function(){
 function addSuggestion(text){
   showBusyState();
   $.ajax({
-    url : '../suggestions.php',
+    url : '../signlab/suggestions.php',
     type : 'POST',
     data: {"input": text},
     dataType: "json",
@@ -16,7 +16,13 @@ function addSuggestion(text){
     error : onError,
   });
   function onSuccess(result) {
+    if (result.errorcode) {
+      console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
+    } 
+    else{
+    console.log(result.output);
     showBusyState(false);
+    }
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
