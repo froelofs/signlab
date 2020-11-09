@@ -106,7 +106,8 @@ function openTab(evt, tabName) {
   tabcontent = document.getElementsByClassName("fadeIn");
   for (i = 0; i < tabcontent.length; i++) {
     if (tabcontent[i].className.includes("undisplayed") == false){
-    tabcontent[i].className += " undisplayed";
+      console.log(tabcontent[i].className);
+     tabcontent[i].className += " undisplayed";
     }
   }
 
