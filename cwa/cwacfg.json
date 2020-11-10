@@ -32,10 +32,10 @@
       "allowFrameSteps":  true,
       "initSiGMLURL":     "iTakeMug.sigml",
       "allowSiGMLText":   true
-    }
+    },
 
     {
-      "description":      "Default if client configuration is missing or restricted",
+      "description":      "Avatar for tutorial page",
       "width":            384,
       "height":           320,
       "avList":           "avs",
