@@ -131,17 +131,6 @@
 <!--================================================================-->
 
 <!-- Translate -->
-<script>
-var partofday = new Date().getHours();
-if (partofday < 12) {
-    link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1";
-  } else if (partofday < 18) {
-    link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1";
-  } else {
-    link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1";
-  }
-</script>
-
 <section class="projects-section bg-white" id="Translate">
    <h1 align="center">Translate</h1>
     <div class="container" height="100%">
@@ -153,10 +142,19 @@ if (partofday < 12) {
 
 
         <span id="videos" class="undisplayed" align="left">
-          <iframe id="videoHolder" width="600" height="500" src=link frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+          <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </span>
 
+        <!-- Misschien moet dit in een ander bestand? -->
         <script type="text/javascript">
+          var partofday = new Date().getHours();
+          if (partofday < 12) {
+              link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1";
+            } else if (partofday < 18) {
+              link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1";
+            } else {
+              link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1";
+            }
           document.getElementById("videoHolder").src = link;
         </script>
 
