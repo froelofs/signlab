@@ -131,6 +131,17 @@
 <!--================================================================-->
 
 <!-- Translate -->
+<script>
+const partofday = new Date().getHours();
+if (partofday < 12) {
+    link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1";
+  } else if (partofday < 18) {
+    link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1";
+  } else {
+    link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1";
+  }
+
+</script>
 
 <section class="projects-section bg-white" id="Translate">
    <h1 align="center">Translate</h1>
@@ -143,7 +154,7 @@
 
 
         <span id="videos" class="undisplayed" align="left">
-          <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/kfrivlDWyJw?rel=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+          <iframe id="videoHolder" width="600" height="500" src=link frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </span>
 
         <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
@@ -235,7 +246,7 @@
 
             <!-- Column for Team and Funding -->
             <div class="col-xl-6 col-lg-6">
-                
+
                 <!-- Team -->
                 <div class="project-text text-center text-lg-left">
 
@@ -276,9 +287,9 @@
             <!-- Column for partners -->
 
             <div class="col-xl-6 col-lg-6">
-                
+
                 <!-- East Anglia -->
-                      
+
                 <div class="project-text text-center text-lg-left">
                     <h2 class="mb-4">Partners</h2>
                     <h5>University of East Anglia</h5>
@@ -296,7 +307,7 @@
                          <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a> for providing a distribution of the software for our project.
                     </p>
                     <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>  
+                </div>
 
                 <!-- Geneva -->
 
@@ -316,8 +327,8 @@
                     </p>
                     <hr class="d-none d-lg-block mb-0 ml-0" />
                 </div>
-                      
-                
+
+
             </div>
         </div>
 
@@ -340,7 +351,7 @@
                 offers an online video dictionary containing more than 16.000 signs in Sign Language of the Netherlands.
               </p>
               <p class="mb-3 text-black-50">
-                On the 
+                On the
                 <a href="https://www.wattelt.org/corona/" target="_blank">Wattelt!</a> website
                 you can find a video with general advice for health care professional with deaf patients in times of COVID-19.
                 The video also teaches you fifteen essential signs.
