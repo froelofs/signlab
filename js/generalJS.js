@@ -26,6 +26,7 @@ function addSuggestion(text){
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
+    alertMessage(error, 'Something went wrong. Error message: '+ error, "suggestions");
     showBusyState(false);
   }
   function showBusyState(state) {
