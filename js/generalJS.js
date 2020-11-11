@@ -8,7 +8,7 @@ $(document).ready(function(){
 function addSuggestion(text){
   showBusyState();
   $.ajax({
-    url : 'signlanguage/suggestions.php',
+    url : 'suggestions.php',
     type : 'POST',
     data: {"input": text},
     dataType: "json",
