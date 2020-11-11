@@ -32,3 +32,34 @@ function addSuggestion(text){
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
 }
+
+function alertMessage (type, text, parent){
+  if (type == "success"){
+    msgClass = "alert alert-success alert-dismissible";
+  }
+  else if (type == "info"){
+    msgClass = "alert alert-info alert-dismissible";
+  }
+  else if (type == "error"){
+    msgClass = "alert alert-danger alert-dismissible";
+  }
+
+  var alert = document.createElement("div");
+  var a = document.createElement("a");
+  a.setAttribute("href", "#");
+  a.setAttribute("data-dismiss","alert");
+  a.setAttribute("aria-label","close");
+  a.appendChild(document.createTextNode("&times;"));
+  alert.appendChild(a);
+  var textNode = document.createTextNode(text);
+  alert.appendChild(textNode);
+
+  var element = document.getElementById("parent");
+  element.appendChild(alert);
+
+
+  // <div class="alert alert-success alert-dismissible">
+  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  //   <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  // </div>
+}
