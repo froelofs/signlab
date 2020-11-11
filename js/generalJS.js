@@ -58,8 +58,10 @@ function alertMessage (type, text, parent){
   alert.appendChild(textNode);
   alert.setAttribute("class",msgClass);
   
-  var element = document.getElementById(parent);
-  element.appendChild(alert);
+  // var element = document.getElementById(parent);
+  // element.appendChild(alert);
+
+  document.body.appendChild(alert);
 
 
   // <div class="alert alert-success alert-dismissible">
