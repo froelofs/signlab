@@ -52,16 +52,15 @@ function alertMessage (type, text, parent){
   a.setAttribute("data-dismiss","alert");
   a.setAttribute("aria-label","close");
   a.setAttribute("class","close");
-  a.appendChild(document.createTextNode("&times;"));
-  alert.appendChild(a);
+  a.append(document.createTextNode("&times;"));
+  alert.append(a);
   var textNode = document.createTextNode(text);
-  alert.appendChild(textNode);
+  alert.append(textNode);
   alert.setAttribute("class",msgClass);
   
-  // var element = document.getElementById(parent);
-  // element.appendChild(alert);
+  var element = document.getElementById(parent);
+  element.append(alert);
 
-  document.body.appendChild(alert);
 
 
   // <div class="alert alert-success alert-dismissible">
