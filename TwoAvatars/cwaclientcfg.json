@@ -8,6 +8,16 @@
       "avList":           "avsfull",
       "initAv":           "anna",
       "initSiGMLURL":     "scotland-H.sigml"
+    },
+    {
+      "width":            380,
+      "height":           208,
+      "background":       "Salmon",
+      "avList":           "avs",
+      "initAv":           "anna",
+      "allowFrameSteps":  false,
+      "allowSiGMLText":   false,
+      "initSiGMLURL":     "welkom-ngt.sigml"
     }
   ]
 }
