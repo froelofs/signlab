@@ -11,6 +11,7 @@ function addSuggestion(text){
     url : 'suggestions.php',
     type : 'POST',
     data: {"input": text},
+    dataType: "json",
     success : onSuccess,
     error : onError,
   });
