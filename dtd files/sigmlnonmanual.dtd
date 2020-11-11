@@ -1,0 +1,468 @@
+<!-- sigmlnonmanual.dtd
+
+    This is the DTD for the non-manual subset of gestural-SiGML, v1.0,
+    defining the sign_nonmanual element.
+-->
+
+<!--File Name:      SigmlCNonManual.dtd                         -->
+<!--Author:         Kevin Parsons                               -->
+<!--Description:    Definition of non-manual extension to       -->
+<!--                HamNoSys as described in 'ViSiCAST          -->
+<!--                Deliverable D5-1: Interface Definitions'    -->
+<!--                (D5-1v012.pdf)                              -->
+<!--Date Created:   27 March 2001                               -->
+<!--Date Modifed:   18 May   2001                               -->
+<!--Date Modifed:   29 May   2001                               -->
+<!--Date Modifed:   2001-12-08   R.E.                           -->
+<!--                - Added entities for abbreviated tags.      -->
+<!--Date Modifed:   2003-10-02   R.E.                           -->
+<!--                - Added entities for D5-1v017rev2.pdf       -->
+<!--                - Introduction of definitions for the       -->
+<!--                  extra_tier element, allowing the          -->
+<!--                  introduction of extra non-manual          -->
+<!--                  primitives of the form Xnn, where X is    -->
+<!--                  an (otherwise unused) letter, and nn is   -->
+<!--                  a pair of decimal digits.                 -->
+<!--Date Modifed:   2004-09-25   R.E.                           -->
+<!--Date Modifed:   - Added four more eye_gaze tags.            -->
+
+<!-- Entities -->
+
+<!ENTITY % shoulder_movement_abbrev
+    "UL | UR | UB | HL | HR | HB | SL | SR | SB"
+>
+
+<!ENTITY % shoulder_movement
+    "%shoulder_movement_abbrev;                 |
+     UL_left_shoulder_raised                    |
+     UR_right_shoulder_raised                   |
+     UB_both_shoulders_raised                   |
+     HL_left_shoulder_hunched_forward           |
+     HR_right_shoulder_hunched_forward          |
+     HB_both_shoulders_hunched_forward          |
+     SL_left_shoulder_shrugging_up_and_down     |
+     SR_right_shoulder_shrugging_up_and_down    |
+     SB_both_shoulders_shrugging_up_and_down
+    "
+>
+
+<!ENTITY % body_movement_abbrev
+    "RL | RR | TL | TR | TF | TB | SI | HE | ST | RD"
+>
+
+<!ENTITY % body_movement
+    "%body_movement_abbrev; |
+     RL_rotated_left        |
+     RR_rotated_right       |
+     TL_tilted_left         |
+     TR_tilted_right        |
+     TF_tilted_forwards     |
+     TB_tilted_backwards    |
+     SI_sigh                |
+     HE_heave               |
+     ST_straight            |
+     RD_round
+    "
+>
+
+<!ENTITY % head_movement_abbrev
+    "NO | SH | SR | SL | TR | TL | NF | NB | PF | PB | LI"
+>
+
+<!ENTITY % head_movement
+    "%head_movement_abbrev;     |
+     NO_nodding_up_and_down     |
+     SH_shaking_left_and_right  |
+     SR_turned_right            |
+     SL_turned_left             |
+     TR_tilted_right            |
+     TL_tilted_left             |
+     NF_tilted_forward          |
+     NB_tilted_back             |
+     PF_pushed_forward          |
+     PB_pushed_backward         |
+     LI_head_movement_linked_to_eye_gaze
+    "
+>
+
+<!--  2004-09  The last four values were added at request of IZ @ Viataal  -->
+<!ENTITY % eye_gaze_abbrev
+    "AD | FR | HD | HI | HC | UP | DN | LE | RI | NO | RO | LU | LD | RU | RD"
+>
+
+<!ENTITY % eye_gaze
+    "%eye_gaze_abbrev;                              |
+     AD_towards_addressee                           |
+     FR_far                                         |
+     HD_towards_the_signer_s_own_hands              |
+     HI_towards_the_signer_s_own_dominant_hand      |
+     HC_towards_the_signer_s_own_non_dominant_hand  |
+     UP_up                                          |
+     DN_down                                        |
+     LE_left                                        |
+     RI_right                                       |
+     NO_no_target_unfocussed                        |
+     RO_rolling_eyes                                |
+     LU_left_up                                     |
+     LD_left_down                                   |
+     RU_right_up                                    |
+     RD_right_down
+    "
+>
+
+<!ENTITY % eye_brows_abbrev
+    "RB | RR | RL | FU"
+>
+
+<!ENTITY % eye_brows
+    "%eye_brows_abbrev;             |
+     RB_both_eyebrows_raised        |
+     RR_right_eyebrow_raised        |
+     RL_left_eyebrow_raised         |
+     FU_eye_brows_furrowed
+    "
+>
+
+<!ENTITY % eye_lids_abbrev
+    "WB | WR | WL | SB | SR | SL | CB | CR | CL | TB | TR | TL | BB"
+>
+
+<!ENTITY % eye_lids
+    "%eye_lids_abbrev;                          |
+     WB_wide_open_eyelids                       |
+     WR_wide_open_right_eyelid                  |
+     WL_wide_open_left_eyelid                   |
+     SB_narrowed_almost_closed_eyelids_slits    |
+     SR_narrowed_almost_closed_right_eyelid     |
+     SL_narrowed_almost_closed_left_eyelid      |
+     CB_closed_eyelids                          |
+     CR_closed_right_eyelid                     |
+     CL_closed_left_eyelid                      |
+     TB_tightly_shut_eyelids                    |
+     TR_tightly_shut_right_eyelid               |
+     TL_tightly_shut_left_eyelid                |
+     BB_eye_blink_at_the_very_end_of_a_sign
+    "
+>
+
+<!ENTITY % nose_abbrev
+    "WR | TW | WI"
+>
+
+<!ENTITY % nose
+    "%nose_abbrev;          |
+     WR_wrinkled_nose       |
+     TW_twitching_nose      |
+     WI_widened_nostrils
+    "
+>
+
+<!ENTITY % mouth_gesture_abbrev
+    " D01 | D02 | D03 | D04 | D05 | D06 | D07 | D08 | D09
+    | J01 | J02 | J03 | J04
+    | L01 | L02 | L03 | L04 | L05 | L06 | L07 | L08 | L09 | L10
+    | L11 | L12 | L13 | L14 | L15 | L16 | L17 | L18 | L19 | L20
+    | L21 | L22 | L23 | L24 | L25 | L26 | L27 | L28 | L29 | L30
+    | L31 | L32 | L33 | L34 | L35
+    | C01 | C02 | C03 | C04 | C05 | C06 | C07 | C08 | C09 | C10
+    | C11 | C12 | C13
+    | T01 | T02 | T03 | T04 | T05 | T06 | T07 | T08 | T09 | T10
+    | T11 | T12 | T13 | T14 | T15 | T16 | T17"
+>
+
+<!ENTITY % mouth_gesture
+    "%mouth_gesture_abbrev;                                         |
+     D01_eee_sss                                                    |
+     D02_f                                                          |
+     D03_ef                                                         |
+     D04_af                                                         |
+     D05_clattering_teeth                                           |
+     D06_clattering_teeth_with_raised_upper_lip                     |
+     D07_one_bite_resulting_in_closed_teeth                         |
+     D08_one_bite_lips_stretched_teeth_visible                      |
+     D09_teeth_on_lower_lip_open_almost_close_tongue_behind_upper_teeth |
+
+     J01_lower_jaw_moves_sideways_left_and_right                    |
+     J02_lower_jaw_chews_mouth_remains_closed                       |
+     J03_mouth_open_jaw_forward_teeth_visible                       |
+     J04_mouth_open_jaw_gagaga_at_pharynx                           |
+
+     L01_sh                                                         |
+     L02_prrr                                                       |
+     L03_pr                                                         |
+     L04_pursed_lips                                                |
+     L05_o_oa_open_o                                                |
+     L06_ooo_closed_o                                               |
+     L07_oa                                                         |
+     L08_boam                                                       |
+     L09_bam                                                        |
+     L10_boa                                                        |
+     L11_ba                                                         |
+     L12_bee                                                        |
+     L13_pi                                                         |
+     L14_pch                                                        |
+     L15_bsss_bee                                                   |
+     L16_pf                                                         |
+     L17_p                                                          |
+     L18_p_p_p                                                      |
+     L19_phh                                                        |
+     L20_phh                                                        |
+     L21_ph                                                         |
+     L22_ph                                                         |
+     L23_mmm                                                        |
+     L24_mmm_while_holding_breath                                   |
+     L25_m_m_m                                                      |
+     L26_one_side_of_upper_lip_raised                               |
+     L27_mouth_slightly_open_tongue_to_upper_close_lips_hidden      |
+     L28_tongue_on_upper_lip_close_mouth_lips_hidden                |
+     L29_lips_closed_hidden_mouth_corners_curved_down               |
+     L30_lips_pursed_curved_down                                    |
+     L31_lips_closed_corners_of_mouth_curved_down                   |
+     L32_mouth_slightly_open_blow_lips_vibrate_initially            |
+     L33_mouth_open_close_sh_with_teeth_showing                     |
+     L34_lips_closed_stretched_strongly                             |
+     L35_blow_out_air_through_slightly_open_lips                    |
+
+     C01_puffed_cheeks                                              |
+     C02_cheeks_and_lip_area_puffed                                 |
+     C03_gradually_puffing_cheeks                                   |
+     C04_one_cheek_puffed                                           |
+     C05_one_cheek_puffed_while_briefly_blowing_out_air             |
+     C06_one_cheek_puffed_briefly_blowing_air_cheek_pushed          |
+     C07_cheeks_sucked_in                                           |
+     C08_cheeks_sucked_in_sucking_in_air                            |
+     C09_tongue_pushed_visibly_into_cheek                           |
+     C10_tongue_repeatedly_pushes_into_cheek                        |
+     C11_one_cheek_puffed_blow_out_briefly_at_corner_several_times  |
+     C12_lips_closed_tongue_pushed_behind_lower_lip                 |
+     C13_cheeks_slightly_in_jaw_down_blow_closed_lips_several_times |
+
+     T01_l                                                          |
+     T02_tip_of_tongue_slightly_protruding                          |
+     T03_l_l_l                                                      |
+     T04_tongue_sticks_out_briefly                                  |
+     T05_a                                                          |
+     T06_tongue_sticking_out_repeatedly                             |
+     T07_lalala                                                     |
+     T08_alalal                                                     |
+     T09_als                                                        |
+     T10_lf                                                         |
+     T11_laf                                                        |
+     T12_tip_of_tongue_touches_one_corner_of_the_mouth              |
+     T13_tongue_tip_between_lower_lip_lower_teeth_middle_tongue_showing |
+     T14_tip_of_tongue_is_protruded_and_moving_sidewards            |
+     T15_oval_circling_movement_of_tongue_in_open_mouth             |
+     T16_lips_pursed_with_tip_of_tongue_protruding                  |
+     T17_mouth_open_tongue_protrudes_briefly"
+>
+
+<!ENTITY % mouthmetatype
+    "mouthmetatype ( holdprevious | stretchprevious ) #REQUIRED"
+>
+
+<!ENTITY % nonmanual_start_timing
+    "slight_delay           |
+     start_slightly_ahead
+    "
+>
+
+<!ENTITY % nonmanual_end_timing
+    "lasts_longer           |
+     ends_before
+    "
+>
+
+<!ENTITY % shoulder_item
+    "( shoulder_movement | shoulder_par )"  
+>
+
+<!ENTITY % body_item
+    "( body_movement | body_par )"  
+>
+
+<!ENTITY % head_item
+    "( head_movement | head_par )"  
+>
+
+<!ENTITY % eye_gaze_item
+    "( eye_gaze | eye_par )"    
+>
+
+<!ENTITY % facial_expression
+    "( eye_brows | eye_lids | nose )"
+>
+
+<!ENTITY % facial_expression_item
+    "( %facial_expression; | facial_expr_par )" 
+>
+
+<!ENTITY % mouthing
+    "( mouth_gesture | mouth_picture | mouth_meta )"
+>
+
+<!ENTITY % mouthing_item
+    "( %mouthing; | mouthing_par)"  
+>
+
+<!ENTITY % extra_item
+    "( extra_movement | extra_par )"  
+>
+
+<!ENTITY % synchronization
+    "presynchronization     (%nonmanual_start_timing;) #IMPLIED
+     postsynchronization    (%nonmanual_end_timing;)   #IMPLIED"
+>
+
+<!-- Top level element  -->
+
+<!ELEMENT sign_nonmanual
+    (   
+        shoulder_tier?,
+        body_tier?,
+        head_tier?,
+        eyegaze_tier?,
+        facialexpr_tier?,
+        mouthing_tier?,
+        extra_tier?
+    )
+>
+
+<!-- Tier elements -->
+
+<!ELEMENT shoulder_tier
+    ( %shoulder_item;, (neutral?, %shoulder_item;)* ) 
+>
+<!ATTLIST shoulder_tier
+    %synchronization;
+>
+
+<!ELEMENT body_tier
+    ( %body_item;, (neutral?, %body_item;)* ) 
+>
+<!ATTLIST body_tier
+    %synchronization;
+>
+
+<!ELEMENT head_tier
+    ( %head_item;, (neutral?, %head_item;)* ) 
+>
+<!ATTLIST head_tier
+    %synchronization;
+>
+
+<!ELEMENT eyegaze_tier
+    ( %eye_gaze_item;, (neutral?, %eye_gaze_item;)* ) 
+>
+<!ATTLIST eyegaze_tier
+    %synchronization;
+>
+
+<!ELEMENT facialexpr_tier
+    ( %facial_expression_item;, (neutral?, %facial_expression_item;)* ) 
+>
+<!ATTLIST facialexpr_tier
+    %synchronization;
+>
+
+<!ELEMENT mouthing_tier
+    ( %mouthing_item;, (neutral?, %mouthing_item;)* ) 
+>
+<!ATTLIST mouthing_tier
+    %synchronization;
+    fitpicturetomanual  (true | false) "false"
+>
+
+<!ELEMENT extra_tier
+    ( %extra_item;, (neutral?, %extra_item;)* ) 
+>
+<!ATTLIST extra_tier
+    %synchronization;
+>
+
+<!-- Parallel items  -->
+<!ELEMENT shoulder_par
+    ( shoulder_movement, shoulder_movement+ )
+>
+
+<!ELEMENT body_par
+    ( body_movement, body_movement+ )
+>
+
+<!ELEMENT head_par
+    ( head_movement, head_movement+ )
+>
+
+<!ELEMENT eye_par
+    ( eye_gaze, eye_gaze+ )
+>
+
+<!ELEMENT facial_expr_par                   
+    ( %facial_expression;, (%facial_expression;)+ )
+>                                           
+
+<!ELEMENT mouthing_par
+    ( %mouthing;, (%mouthing;)+ )
+>
+
+<!ELEMENT extra_par
+    ( extra_movement, extra_movement+ )
+>
+
+<!-- Movement elements -->
+
+<!ELEMENT shoulder_movement EMPTY>
+<!ATTLIST shoulder_movement
+    movement (%shoulder_movement;) #REQUIRED
+>
+
+<!ELEMENT body_movement EMPTY>
+<!ATTLIST body_movement
+    movement (%body_movement;) #REQUIRED
+>
+
+<!ELEMENT head_movement EMPTY>
+<!ATTLIST head_movement
+    movement (%head_movement;) #REQUIRED
+>
+
+<!ELEMENT eye_gaze EMPTY>
+<!ATTLIST eye_gaze
+    direction (%eye_gaze;) #REQUIRED
+>
+
+<!ELEMENT eye_brows EMPTY>
+<!ATTLIST eye_brows
+    movement (%eye_brows;) #REQUIRED
+>
+
+<!ELEMENT eye_lids EMPTY>
+<!ATTLIST eye_lids
+    movement (%eye_lids;) #REQUIRED
+>
+
+<!ELEMENT nose EMPTY>
+<!ATTLIST nose
+    movement (%nose;) #REQUIRED
+>
+
+<!ELEMENT mouth_gesture EMPTY>
+<!ATTLIST mouth_gesture
+    movement (%mouth_gesture;) #REQUIRED
+>
+
+<!ELEMENT mouth_picture EMPTY>
+<!ATTLIST mouth_picture
+    picture CDATA #REQUIRED
+>
+
+<!ELEMENT mouth_meta EMPTY>
+<!ATTLIST mouth_meta
+    %mouthmetatype;
+>
+
+<!ELEMENT extra_movement EMPTY>
+<!ATTLIST extra_movement
+    movement CDATA #REQUIRED
+>
+
+<!ELEMENT neutral EMPTY>

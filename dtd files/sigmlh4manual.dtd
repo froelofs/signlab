@@ -1,0 +1,1094 @@
+<!-- sigmlh4manual.dtd
+
+    2011-04-11
+  - various changes to support HamNoSys 4:
+
+    - allow nondominant, in conjunction with approx_shape="true",
+      as a legitimate handshape;
+
+    - new handconfig attribute: successivefingers, primarily for
+      use in the case when the handconfig is the operand of
+      changeposture motion.
+
+    - new fingerplay attribute: digits;
+
+    - new repetition attributes: approx_repetition and
+      ellipse_direction;
+
+    2010-02-03
+    -add the three timing attributes for motions: duration, speed, timescale;
+
+    2007-03-07:
+    -new definition for nonmanualconfig element, and related change to
+     content model for sign_manual;
+
+    2004-08-12:
+    -baseshift_size, repetition_incrdecr_size, and baseshift_incrdecr_size
+     attributes added to the set of repetition attributes, the first
+     in response to a request from CS;
+
+    2004-03-13:
+    -started work on the new set of boolean motion-manner
+     attributes introduced by JRK to supersede the manner attribute;
+
+    2003-08:
+    -nonman_motion element introduced. (RE)
+    -allow location_hand to have sites on arm as well as hand. (RE)
+
+
+    2001-08-20 to 2001-08-29:
+    various changes for HamNoSys 4 (RE):
+
+    -add options "dorsal | palmar" to %side entity
+     (NB "radial | ulnar" are already there), and include
+     side attributes in location_hand;
+
+    -remove "wristpulse" option from %handpart;
+     (use "wristback" with side="palmar" instead);
+
+    -remove several apparently redundant options from
+     %fingerpart; and %side;
+
+    -remove JRK's {def,use}_locname attributes from
+     %handconfig_attribs;
+
+    -introduce use_locname element, and allow it as an option
+     in %location;
+
+    -introduce def_locname attribute into: location_{hand,bodyarm}
+     (where it is currently unused), {directed,circular}motion,
+     wristrotation,  changeposture, and %handconfig_attribs;
+
+    -replace old wristrotation element with a new wristmotion one
+     (an option for simplemotion), and introduce the associated
+     %wristmotion attribute set;
+
+    -enhanced set of %repetition_attribs, as indicated by section
+     3.5.6 of D5-1;
+
+    -remove JRK's brushing attribute from motions, and instead
+     allow directedmotion and circularmotion (but no others for
+     the present) to have an optional %location child, representing
+     the location at which the brushing contact is made (see
+     section 3.5.3 of D5-1);
+
+    -introduce alternating, second_alternating attributes into the
+     collection of %motion_attribs;
+     (to be reviewed: logically, these should be _repetition_
+     attributes?, see section 3.5.2 of D5-1, which defines the
+     semantics;)
+
+
+    2001-07-27:
+    Introduction of sigmlh4manual DTD, with changes arising from
+    the conversion of the h2s translator to process HamNoSys 4.
+    (RE)
+
+    -locbody entity changes: rename undernose, mouth,
+     aboveshoulders, as nostrils, lips, shouldertop, and
+     introduce earlobe;
+
+    -introduce opposed_finger attribute into %handconfig_attribs,
+     to represent the "large" modifier that may be attached to a
+     finger to indicate that it's the one opposed to the thumb in
+     some hand postures as described at the end of sect. 3.2.2 of
+     D5-1;
+
+    This is the DTD for the manual subset of core SiGML 1.0,
+    defining the sign_manual element.
+-->
+
+
+<!-- ######## ENTITY definitions ######## -->
+
+
+<!ENTITY % boolfalse '(true | false) "false"'>
+
+
+<!-- Directions. -->
+
+<!--
+8 compass points, imagined on a vertical circle,
+seen from the signer's point of view.
+The abbreviations are u=up, d=down, r=right, l=left.
+-->
+
+<!ENTITY % the8directions
+    "u
+    | ur
+    | r
+    | dr
+    | d
+    | dl
+    | l
+    | ul"
+>
+
+<!--
+26 directions, being the faces, edges, and vertices of a cube
+centred on the signer, labelled from the signer's point of view.
+The abbreviations are u=up, d=down, r=right, l=left, o=out, i=in.
+-->
+
+<!ENTITY % the26directions
+    "%the8directions;
+    | ol
+    | o
+    | or
+    | il
+    | i
+    | ir
+    | uo
+    | do
+    | di
+    | ui
+    | uol
+    | dol
+    | dil
+    | uil
+    | uor
+    | dor
+    | dir
+    | uir"
+>
+
+<!--
+4 directions for the major axis of an ellipse, lying in a
+vertical circle, seen from the signer's point of view.
+The abbreviations are h=horizontal, v=vertical, ur=up/right,
+ul=up/left.
+-->
+
+<!ENTITY % ellipse_direction
+    "( h
+    | ur
+    | v
+    | ul ) #IMPLIED"
+>
+
+
+<!-- Handshapes. -->
+
+<!ENTITY % basichandshape_values
+    "fist
+    | flat
+    | finger2
+    | finger23
+    | finger23spread
+    | finger2345
+    | pinch12
+    | pinchall
+    | pinch12open
+    | cee12
+    | ceeall
+    | cee12open"
+>
+
+<!ENTITY % basichandshape
+    "( %basichandshape_values; ) #IMPLIED"
+>
+
+<!ENTITY % basichandshape_plus
+    "( %basichandshape_values;
+    | nondominant ) #IMPLIED"
+>
+
+<!--
+<!ENTITY % fingerbending
+    "( bent
+    | round
+    | hooked
+    | dblbent
+    | dblhooked
+    | halfbent ) #IMPLIED"
+>
+
+<!ENTITY % thumbpos
+    "( out
+    | across
+    | opposed ) #IMPLIED"
+>
+-->
+
+<!ENTITY % ceeopening
+    "( tight
+    | slack ) #IMPLIED"
+>
+
+
+<!-- Locations. -->
+
+<!ENTITY % locbody
+    " head
+    | headtop
+    | forehead
+    | eyebrows
+    | eyes
+    | uppereyelid
+    | lowereyelid
+    | nose
+    | nostrils
+    | lips
+    | upperlip
+    | lowerlip
+    | tongue
+    | teeth
+    | upperteeth
+    | lowerteeth
+    | chin
+    | underchin
+    | neck
+    | shoulders
+    | shouldertop
+    | chest
+    | stomach
+    | belowstomach
+    | ear
+    | earlobe
+    | cheek"
+>
+
+<!ENTITY % locarm
+    " upperarm
+    | elbow
+    | elbowinside
+    | lowerarm"
+>
+
+<!ENTITY % handpart
+    " wristback
+    | thumbball
+    | palm
+    | handback
+    | thumbside
+    | pinkyside"
+>
+
+<!-- 2002-09-11  pad reinstated (possibly temporarily); -->
+<!ENTITY % fingerpart
+    " tip
+    | nail
+    | pad
+    | midjoint
+    | base
+    | side"
+>
+
+<!ENTITY % pcontact
+    " touch
+    | close"
+>
+
+<!ENTITY % contact_bodyarm
+    "( %pcontact;
+    | armextended ) #IMPLIED"
+>
+
+<!ENTITY % contact_hand
+    "( %pcontact;
+    | interlock
+    | cross ) #IMPLIED"
+>
+
+<!ENTITY % side
+    "( left_beside
+    | left_at
+    | right_at
+    | right_beside
+    | front
+    | back
+    | dorsal
+    | palmar
+    | radial
+    | ulnar ) #IMPLIED"
+>
+
+<!ENTITY % site_bodyarm
+    "( %locbody;
+    | %locarm;
+    | neutralspace ) #IMPLIED"
+>
+
+<!--
+2003-08-26
+Now we allow sites on the arm as well as hand and fingers,
+enabling us to support the HNS "baum" (tree) example.
+(So it might be a good idea to rename this as site_handarm.)
+-->
+<!ENTITY % site_hand
+    "( %locarm;
+    | %handpart;
+    | %fingerpart; ) #IMPLIED"
+>
+
+
+<!--
+The values of locname are the possible labels that may be
+attached to positions for later reference.
+-->
+
+<!ENTITY % locname "( 1 | 2 | 3 | 4 | 5 )">
+
+<!ENTITY % def_locname_attrib "def_locname %locname; #IMPLIED">
+<!ENTITY % use_locname_attrib "use_locname %locname; #REQUIRED">
+
+
+<!-- Motion. -->
+
+<!ENTITY % wristmotion
+    " nodding
+    | swinging
+    | twisting
+    | stircw
+    | stirccw"
+>
+<!-- Manner of motion: repetition, size, manner, dynamics. -->
+
+<!ENTITY % repetition
+    "( fromstart
+    | fromstart_several
+    | tofroto
+    | manyrandom
+    | continue
+    | continue_several
+    | reverse
+    | swap ) #IMPLIED"
+>
+
+<!ENTITY % size
+    "( small
+    | big ) #IMPLIED"
+>
+
+<!ENTITY % manner
+    "( fast
+    | slow
+    | tense
+    | rest
+    | halt ) #IMPLIED"
+>
+
+<!ENTITY % incrdecr
+    "( increasing | decreasing ) #IMPLIED"
+>
+
+<!--
+dynamicsize_attribs is only used to describe how a wavy, zigzag, or
+circular movement gets bigger or smaller.
+-->
+
+<!ENTITY % dynamicsize_attribs
+    "incrdecr %incrdecr;
+     incrdecr_size %size;"
+>
+
+<!ENTITY % clock_direction "( %the8directions; ) #IMPLIED">
+
+<!ENTITY % zigzag_attribs
+    "zigzag_style (zigzag | wavy) #IMPLIED
+     zigzag_size %size;
+     zigzag_incrdecr %incrdecr;
+     zigzag_incrdecr_size %size;"
+>
+
+
+<!-- Hand Posture Attributes. -->
+
+<!--
+Explanation of the attributes of hand postures:
+
+bodypart:
+Usually a handconfig refers to a hand, but if it refers to
+some other body part, such as the elbow, this is indicated by the
+bodypart attribute.
+
+handshape:
+The basic HamNoSys handshape, or nondominant, which in conjunction
+with approx_shape='true' denotes any relaxed handshape.
+
+approx_shape:
+True if the handshape is only approximate.
+
+splay:
+This defines the amount of splaying of the four fingers, from
+0 (together) to 2 (maximally splayed).  For physiological reasons,
+splay has no effect on fingers with large amounts of bending at the
+base joint.  Thus the splay code effectively applies only to the
+extended fingers.  If splay is absent, the amount of splaying is
+whatever is implied by the handshape.  Splay values for individual
+fingers may be overridden by later attributes implying such things
+as contacts between fingers.
+
+mainbend:
+The general digit bending specification which may appear
+in a basic handshape in HamNoSys.  It may be overridden
+by the individual digit bending specifications (see below).
+Note that for a pinch handshape this attribute specifies the
+kind of overlap between the thumb and the combining fingers.
+The value is either a string of numerical bend codes of the
+form "bbb", or one of a set of standard identifiers.
+The three bend codes apply to joints 1 (base of the digit), 2,
+and 3, respectively.  Each bend value is in the range 0..4
+(i.e. min..max), corresponding approximately to bend angles
+between 0 and 90 degrees).
+Admissible named values, with the corresponding bend codes, are:
+    bent        400
+    round       222
+    hooked      044
+    dblbent     440
+    dblhooked   444
+    halfbent    200
+
+thumbpos:
+This corresponds to the optional thumbposition in a basic
+HamNoSys handshape, apart from a cee handshape, (see ceeopening
+below).  The value is one of a set of standard identifiers,
+or a pair of angle codes of the form "aa".
+The allowed names correspond directly to the HamNoSys
+thumbposition, plus the value "halfout" (which recognizes a
+common application of the between operator).  They are, with
+the corresponding angle codes:
+    out         40
+    halfout     20
+    across      24
+    opposed     44
+Note, however, that this type of thumbpos may imply bending
+attributes for thumb joints 2 and 3 (e.g. "across"),
+while the second type using angle codes does not.  
+Each angle code is a digit in the range 0..4 (i.e. min..max).
+The first describes the angle between the thumb and the extended
+index finger: 0 for parallel and 4 for maximally extended.
+The second describes the rotation of the thumb about the axis of
+the extended index finger: 0 when the thumb is in the plane of the
+palm and 4 when it is maximally rotated in front of the palm.
+If thumbpos is omitted it implies the thumb is alongside the
+edge of the palm (equivalent to the bend code 00).
+
+ceeopening:
+Thiscorresponds to the HamNoSys thumbposition in the case
+of a cee handshape.
+
+specialfingers:
+A string of single-digit finger identifiers.  Depending on the
+handshape, it specifies a nonstandard set of extended finger(s),
+or a non-standard set of combining fingers in a thumb combination.
+(Corresponds to relevant instances of HamNoSys fingernothumb*.)
+
+exempteddigits:
+Similar format to specialfingers above, but it may also
+include the thumb identifier (1); the specified digits are
+exempted from the mainbend specification described above.
+(Corresponds to HamNoSys fingernothumb* and the third HamNoSys
+thumbspecials option.)
+
+bend1, bend2, bend3, bend4, bend5:
+Explicit individual digit bending specifications, with the same
+permitted values as the mainbend attribute described above.
+These specifications override those defined explicitly or
+implicitly by earlier attributes.
+(These can be used to represent to HamNoSys fingershape*
+modifiers.)
+
+contactpair, contactkind:
+These jointly specify a HamNoSys fingercrossing;
+contactpair, of the form "dd", identifies the two digits (finger
+or thumb) involved; contactkind identifes the site on the first
+digit at which the second makes contact.
+
+second_contactpair, second_contactkind:
+These allow a second HamNoSys fingercrossing to be specified.
+(It is assumed that no more than two such specifications are needed,
+at least until non-human avatars are used.)
+
+thumbbetween:
+This has the form "dd", identifying a pair of fingers between
+which the thumb is placed.  (Corresponds to the first of the
+HamNoSys thumbspecials options.)
+
+thumbenclosed:
+If true specifies that the thumb is enclosed by the
+fingers of its hand, in the context of handshape with some or
+all of its fingers in the fist (double-hooked) posture.
+(Corresponds to the second HamNoSys thumbspecials option, i.e.
+plain hambetween.)
+
+thumbcontact:
+This indicates a nonstandard contact point for the thumb on
+those finger(s) determined by other parts of the handshape
+specification.  (Corresponds to the fourth and final HamNoSys
+thumbspecials option.)
+
+opposedfinger:
+A single-digit finger identifier.  In the case where several
+fingers ("specialfingers" above) participate in a thumb-combination
+handshape, this may be used to indicate which of these fingers is
+opposite the thumb, or contacting it.
+(Corresponds to the finger with the "thumb opposed" flag set,
+as introduced in HamNoSys 4.)
+
+successivefingers:
+The presence of this attribute indicates that the posture
+should be produced in stages, with successive fingers moving
+to their positions in the order indicated.
+This is intended primararily for use when the handconfig appears
+as the target of a HamNoSys 4 handshape change that includes a
+modifier specifying a staged change of this kind.
+
+extfidir:
+The direction in which the fingers would point if they were
+fully extended.
+
+palmor:
+The orientation of the palm about the axis of the extended
+middle finger.
+
+abs_extfidir, abs_palmor:
+True if the left/right aspect of extfidir and palmor is literal.
+By default, "right" means the dominant side of the body and "left"
+the non-dominant side.
+
+rel_extfidir, rel_palmor:
+True if respective extfidir and palmor should track the subsequent
+movement.
+
+approx_extfidir, approx_palmor:
+True if the extfidir or palmor need only be approximate.
+
+2002-08-22
+==========
+Added various second_* attributes to represent betweenness in
+basic handshapes, extended finger directions and palm orientations.
+
+
+NB  Synthesis software can ignore the approx_... attributes.
+
+NB  The order of attributes in the above list is significant in
+that a later attribute overrides any relevant predecessor, i.e.
+synthesis software should process them in the order given.
+
+NB  For each class of basic handshape in HamNoSys only a subset
+of these attributes may be defined, e.g. thumbbetween only makes
+sense when thumbpos is "across".  We leave the complete
+characterization of such context-dependent constraints to the
+HamNoSys 4 definition.
+-->
+
+<!ENTITY % handconfig_attribs
+    "bodypart %site_bodyarm;
+    side %side;
+
+    handshape %basichandshape_plus;
+    second_handshape %basichandshape;
+    approx_shape %boolfalse;
+
+    splay ( 0 | 1 | 2 ) #IMPLIED
+
+    mainbend CDATA #IMPLIED
+    second_mainbend CDATA #IMPLIED
+
+    thumbpos CDATA  #IMPLIED
+    second_thumbpos CDATA  #IMPLIED
+    ceeopening %ceeopening;
+    second_ceeopening %ceeopening;
+
+    specialfingers CDATA #IMPLIED
+    exempteddigits CDATA #IMPLIED
+
+    bend1 CDATA  #IMPLIED
+    bend2 CDATA  #IMPLIED
+    bend3 CDATA  #IMPLIED
+    bend4 CDATA  #IMPLIED
+    bend5 CDATA  #IMPLIED
+
+    contactpair CDATA #IMPLIED
+    contactkind ( %fingerpart; ) #IMPLIED
+
+    second_contactpair CDATA #IMPLIED
+    second_contactkind ( %fingerpart; ) #IMPLIED
+
+    thumbbetween CDATA #IMPLIED
+    thumbenclosed %boolfalse;
+    thumbcontact ( %fingerpart; ) #IMPLIED
+    opposedfinger CDATA #IMPLIED
+
+    successivefingers ( towards_thumb | towards_pinky ) #IMPLIED
+
+    extfidir ( %the26directions; ) #IMPLIED
+    second_extfidir ( %the26directions; ) #IMPLIED
+    abs_extfidir %boolfalse;
+    rel_extfidir %boolfalse;
+    approx_extfidir %boolfalse;
+
+    palmor ( %the8directions; ) #IMPLIED
+    second_palmor ( %the8directions; ) #IMPLIED
+    abs_palmor %boolfalse;
+    rel_palmor %boolfalse;
+    approx_palmor %boolfalse;"
+>
+
+<!ENTITY  % handconfiguration
+    "handconfig | split_handconfig"
+>
+
+
+<!-- Locations. -->
+
+<!--
+A basic location is used to identify a single location. 
+(For a double-handed sign, this may resolve to two separate
+locations.)
+
+A split_location specifies a separate location for each hand.
+One of these locations may be a position on the opposite hand, but not
+both.
+
+A handconstellation may specify the detailed location of the hands
+with respect to each other, including proximity, and the general
+location in signing space of the hands thus configured.
+-->
+
+<!ENTITY  % location  "location_bodyarm | location_hand | use_locname" >
+<!ENTITY  % location_both
+    "%location; | split_location | handconstellation"
+>
+
+
+<!-- Hand Posture. -->
+
+<!ENTITY  % posture   "( %handconfiguration; )*, ( %location_both; )?" >
+
+
+<!-- Kinds of basic motion. -->
+
+<!-- crossmotion is an obsolete feature of Hamnosys 2.0. -->
+
+<!ENTITY % simplemotion
+    "directedmotion |
+    circularmotion |
+    wristmotion |
+    crossmotion |
+    fingerplay |
+    changeposture |
+    nomotion"
+>
+
+<!--
+2010-01:
+For motions (as for signs) we have three floating point values:
+duration, speed and timescale.
+Duration is measured in seconds; it defaults to the "natural" value.
+Speed and timescale both have a default value of 1.0 .
+Actual duration is given by the formula: duration * timescale / speed .
+-->
+<!ENTITY % timing_attribs
+    "duration  CDATA  #IMPLIED
+    speed      CDATA  #IMPLIED
+    timescale  CDATA  #IMPLIED"
+>
+<!ENTITY % manner_attribs
+    "fast %boolfalse;
+    slow %boolfalse;
+    tense %boolfalse;
+    rest %boolfalse;
+    halt %boolfalse;"
+>
+<!ENTITY % motion_attribs
+    "%timing_attribs;
+    %manner_attribs;
+    manner %manner;
+    bouncing %boolfalse;
+    fused %boolfalse;
+    alternating %boolfalse;
+    second_alternating %boolfalse;
+    abs_motion %boolfalse;"
+>
+
+<!ENTITY % motion
+    "%simplemotion;
+    | nonman_motion
+    | par_motion
+    | seq_motion
+    | split_motion
+    | rpt_motion
+    | tgt_motion"
+>
+
+<!ENTITY % brushing_location "%location;" >
+
+<!--
+Two repetition attributes are provided.  This is because the effect of
+certain combinations of repetition operators is not the composition of
+their separate effects.  They should therefore be placed in the same
+node, rather than in nested rpt_motion elements.  For example, if both
+repetition and second_repetition are "fromstart", the effect should be
+to perform the motion three times, not four times.  When they are
+"reverse" and "fromstart", the effect is to perform first the motion,
+then its reverse, then the original motion. The reversed motion is not
+repeated.
+HamNoSys 4: further enhancements to the set of repetition attributes
+(but note we currently treat alternating repetition attributes
+separately, including them with the general motion attributes).
+
+approx_repetition,
+ellipse_direction:
+These are meaningful only when the repetition is "fromstart_several",
+when "approx_repetition" means that the start locations of the
+repeated movement should be varied, and "ellipse_direction" indicates
+that these locations should be constrained to a plane with the given
+inclination.
+-->
+
+<!ENTITY % repetition_attribs
+    "repetition %repetition;
+    second_repetition %repetition;
+    repetition_incrdecr %incrdecr;
+    repetition_incrdecr_size %size;
+    repetition_baseshift ( %the26directions; ) #IMPLIED
+    baseshift_size %size;
+    baseshift_incrdecr %incrdecr;
+    baseshift_incrdecr_size %size;
+	approx_repetition %boolfalse;
+    ellipse_direction %ellipse_direction;"
+>
+
+<!--
+The fingerplay digits attribute is intended for use when the
+handshape limits the set of fingers available for wiggling: the
+attribute should identify the available fingers - as in the
+corresponding HamNoSys 4 construct.
+-->
+<!ENTITY % fingerplay_attrib
+    "digits CDATA #IMPLIED"
+>
+
+
+<!-- ######## ELEMENT definitions ######## -->
+
+
+<!--
+A sign_manual is either a sequence of sign_manuals, or a basic sign
+consisting of nonmanual configuration, hand configuration, hand
+constellation, and motion.
+
+The set of handconfigs is to be understood as being implicitly in
+parallel, not sequential.  Each handconfig or split_handconfig may
+specify some components of the configuration, the overall initial
+configuration being the union of these. This allows e.g. a single
+location to be specified, together with separate hand shapes.  It
+is an error for multiple handconfigs to specify inconsistent data.
+
+The handconstellation specifies a relationship between the two hands,
+typically sites on the two hands which are to be in contact or
+proximity.
+
+The movements are assumed to be implicitly in sequence.
+
+2003-08
+nondominant attribute introduced (by RE) to support HNS HamNondominant
+prefix (implies both_hands='false').
+
+2004-06
+holdover attribute introduced (by JRK, in 2004-05 originally) to support
+a simple form of co-articulation: if this attribute is 'true' for a sign
+with both_hands set to 'false' then the non-dominant hand will retain its
+final position from the previous sign.
+
+2007-03
+nonmanualconfig now deals with a single articulator, so we allow any
+number of them here.
+-->
+
+<!--
+<!ELEMENT sign_manual
+    ( ( nonmanualconfig? , %posture; , ( %motion; )* )
+    | ( sign_manual, sign_manual+ )
+    )
+>
+-->
+<!ELEMENT sign_manual
+    ( ( nonmanualconfig* , %posture; , ( %motion; )* )
+    | ( sign_manual, sign_manual+ )
+    )
+>
+<!ATTLIST sign_manual
+    both_hands      %boolfalse;
+    nondominant     %boolfalse;
+    holdover        %boolfalse;
+    lr_symm         %boolfalse;
+    ud_symm         %boolfalse;
+    oi_symm         %boolfalse;
+    outofphase      %boolfalse;
+    realspace       %boolfalse;
+>
+
+<!ELEMENT handconfig EMPTY>
+<!ATTLIST handconfig %handconfig_attribs;>
+
+<!ELEMENT split_handconfig ( handconfig, handconfig ) >
+
+<!--
+In location_hand:
+The second group of attributes, if present, indicate betweenness.
+True digits value indicates the set of fingers defining the site: if
+in addition site itself is defined as a fingerpart then the site is
+the indicated part of the specified fingers.
+The location_hand subelement is for contact.
+-->
+
+<!ELEMENT  location_hand  ( location_hand? ) >
+<!ATTLIST  location_hand
+    location                %site_hand;
+    side                    %side;
+    digits                  CDATA           #IMPLIED
+    approx_location         %boolfalse;
+
+    second_location         %site_hand;
+    second_side             %side;
+    second_digits           CDATA           #IMPLIED
+    approx_second_location  %boolfalse;
+
+    contact                 %contact_hand;
+
+    %def_locname_attrib;
+>
+
+<!--
+In location_bodyarm:
+An undefined location means "in neutral space".
+The location_hand subelement is for contact/distance.
+-->
+
+<!ELEMENT  location_bodyarm  ( location_hand? ) >
+<!ATTLIST  location_bodyarm
+    location                %site_bodyarm;
+    side                    %side;
+    approx_location         %boolfalse;
+
+    second_location         %site_bodyarm;
+    second_side             %side;
+    approx_second_location  %boolfalse;
+
+    behind                  %boolfalse;
+    contact                 %contact_bodyarm;
+
+    %def_locname_attrib;
+>
+
+<!ELEMENT  use_locname  EMPTY >
+<!ATTLIST  use_locname
+    %use_locname_attrib;
+>
+
+<!ELEMENT  split_location  ( (%location;) , (%location;) ) >
+
+<!--
+In a handconstellation:
+if location_hands are present, they are, in order:
+        [of-dom-on-nondom, of-nondom-on-dom];
+the optional location_bodyarm subelement (should really be restricted to
+location_body only?) specifies the location of the handconstellation;
+the contact attribute defines the distance relation between the hands.
+-->
+
+<!ELEMENT  handconstellation  (
+    (location_hand, location_hand)?, location_bodyarm?
+)>
+<!ATTLIST  handconstellation
+    contact     %contact_hand;
+>
+
+
+<!--
+The DTD places no restrictions on how the three types of complex
+motion may be nested inside each other.  Given that in Hamnosys, there
+are examples of any type of complex motion occurring inside any other,
+there is no way within the DTD to exclude arbitrarily deep nesting
+without artificially multiplying entities.  We therefore let the DTD
+allow all nestings, but may require restrictions on nesting for correct
+SiGML.
+
+In the Hamnosys corpus, we have observed only the following nestings:
+    par(seq)
+    seq(par)
+    par(split)
+    split(par)
+    seq(split)
+    split(seq)
+    split(par(seq))
+seq(seq) may be necessary in order to express complex patterns of
+repetition. Any one-handed motion should be allowed to occur within a
+split motion. We propose that only these nestings be allowed.  It is
+up to each SiGML processor to decide what complexity of nesting it will
+correctly handle.  Excessive nesting should never cause a program error,
+but result only in some components of the motion being ignored.  Further
+experience in the processing of SiGML will reveal whether arbitrary
+nesting causes any significant complications.
+-->
+
+<!--
+2003-08
+nonman_motion element introduced (by RE) to cater for the non-manual
+form of action1t in HNS.
+The (in this context misleadingly named) handconfig child element
+identifies the non-manual articulator.
+Allowing a general motion child is clearly over-permissive: it remains
+to be determined what more restrictive form of motion is best
+specified in this context.
+-->
+
+<!ELEMENT split_motion ( ( %motion; ), ( %motion; ) ) >
+<!ATTLIST split_motion %motion_attribs;>
+
+<!ELEMENT par_motion ( ( %motion; ), ( %motion; )+ ) >
+<!ATTLIST par_motion %motion_attribs;>
+
+<!ELEMENT seq_motion ( ( %motion; ), ( %motion; )+ ) >
+<!ATTLIST seq_motion %motion_attribs;>
+
+<!ELEMENT tgt_motion ( ( %motion; ), ( %posture; ) ) >
+<!ATTLIST tgt_motion %motion_attribs;>
+
+<!ELEMENT rpt_motion ( %motion; ) >
+<!ATTLIST rpt_motion
+    %motion_attribs;
+    %repetition_attribs;
+>
+
+<!ELEMENT nonman_motion ( handconfig, ( %motion; ) ) >
+<!ATTLIST nonman_motion %motion_attribs;>
+
+
+
+<!--
+nonmanualconfig specifies an initial configuration of non-manual
+elements.  It is rarely used.  We allow an arbitrary set of handconfigs
+here, which is far too liberal, but certainly includes everything that
+can validly appear.  It may include motions, but a motion in this
+context should not be understood as a real motion, but as a
+specification of an intended position relative to the neutral position.
+For example, raised shoulders would be notated as a small upward
+movement of the shoulders.
+
+2007-03
+New definition for nonmanualconfig, making the above more or less true;
+but now each instance covers a single articulator.
+-->
+
+<!--
+<!ELEMENT nonmanualconfig ( handconfig* )>
+-->
+<!ELEMENT nonmanualconfig ( handconfig, ( %motion; ) ) >
+<!ATTLIST nonmanualconfig %motion_attribs;>
+
+
+<!-- Motion types -->
+
+<!--
+In some cases, a simple motion element may have a brushing contact
+location as a sub-element.
+(RE, 2001-08)
+-->
+
+<!--
+When the "second" attributes of directedmotion are present, the
+meaning is betweenness.  This is rarely used.
+
+The ellipse_direction refers to the plane in which the zigzag motion
+happens.
+-->
+
+<!ELEMENT directedmotion ( (%brushing_location;)? ) >
+<!ATTLIST directedmotion
+    direction (%the26directions;) #REQUIRED
+    size %size;
+    second_direction (%the26directions;) #IMPLIED
+    second_size %size;
+
+    curve (%the8directions;) #IMPLIED
+    curve_size %size;
+
+    %zigzag_attribs;
+    ellipse_direction %ellipse_direction;
+
+    %motion_attribs;
+
+    %def_locname_attrib;
+>
+
+
+<!--
+The dynamicsize_attribs refers to the dynamics of the circular
+motion. 
+If a zigzag is present, it is assumed to be of constant size and
+perpendicular to the plane of the circle.
+-->
+
+<!ELEMENT circularmotion ( (%brushing_location;)? ) >
+<!ATTLIST circularmotion
+    axis (%the26directions;) #REQUIRED
+    second_axis (%the26directions;) #IMPLIED
+    size %size;
+
+    start %clock_direction;
+    clockplus %boolfalse;
+    second_clockplus %boolfalse;
+    end %clock_direction;
+
+    ellipse_direction %ellipse_direction;
+    ellipse_size %size;
+
+    %zigzag_attribs;
+
+    %dynamicsize_attribs;
+    %motion_attribs;
+
+    %def_locname_attrib;
+>
+
+
+<!ELEMENT wristmotion EMPTY>
+<!ATTLIST wristmotion
+    motion ( %wristmotion; ) #REQUIRED
+    size %size;
+
+    %motion_attribs;
+>
+
+
+<!-- crossmotion is an obsolete(?) feature of Hamnosys 2.0. -->
+
+<!ELEMENT crossmotion EMPTY>
+<!ATTLIST crossmotion
+    cross ( plus | x ) #REQUIRED
+    %motion_attribs;
+>
+
+
+<!ELEMENT fingerplay EMPTY>
+<!ATTLIST fingerplay
+    %motion_attribs;
+	%fingerplay_attrib;
+>
+
+
+<!--
+changeposture should only occur in a tgt_motion, when the required
+motion consists only of the change of hand configuration specified
+by the associated posture.
+-->
+
+<!ELEMENT changeposture EMPTY>
+<!ATTLIST changeposture
+    %def_locname_attrib;
+>
+
+
+<!--
+nomotion is used as a placeholder when a split_motion specifies
+motion for only one hand.
+-->
+
+<!ELEMENT nomotion EMPTY>
+
+
+<!-- End of SiGML Manual DTD -->
