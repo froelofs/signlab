@@ -11,7 +11,6 @@ function addSuggestion(text){
     url : 'suggestions.php',
     type : 'POST',
     data: {"input": text},
-    dataType: "json",
     success : onSuccess,
     error : onError,
   });
@@ -20,8 +19,8 @@ function addSuggestion(text){
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
     } 
     else{
-    console.log(result.output);
-    showBusyState(false);
+     console.log(result.output);
+     showBusyState(false);
     }
   }
   function onError(xhr, error) {
