@@ -7,17 +7,26 @@
       "height":           320,
       "avList":           "avsfull",
       "initAv":           "anna",
-      "initSiGMLURL":     "scotland-H.sigml"
+      "allowSiGMLText":   true,
+      "description":      "avatar for translation page"
     },
     {
       "width":            380,
       "height":           208,
-      "background":       "Salmon",
       "avList":           "avs",
       "initAv":           "anna",
-      "allowFrameSteps":  false,
-      "allowSiGMLText":   false,
-      "initSiGMLURL":     "welkom-ngt.sigml"
+      "allowFrameSteps":  true,
+      "allowSiGMLText":   true,
+      "description":      "avatar 1 on SiGML page"
+    },
+    {
+      "width":            380,
+      "height":           208,
+      "avList":           "avs",
+      "initAv":           "anna",
+      "allowFrameSteps":  true,
+      "allowSiGMLText":   true,
+      "description":      "avatar 2 on SiGML page"
     }
   ]
 }
