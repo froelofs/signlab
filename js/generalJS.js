@@ -59,6 +59,7 @@ function alertMessage (type, text, parent){
   alert.append(textNode);
   alert.setAttribute("class",msgClass);
   
+  $("#" + parent).empty();
   var element = document.getElementById(parent);
   element.append(alert);
 
