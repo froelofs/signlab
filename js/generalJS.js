@@ -55,7 +55,7 @@ function alertMessage (type, text, parent){
   var textNode = document.createTextNode(text);
   alert.appendChild(textNode);
 
-  var element = document.getElementById("parent");
+  var element = document.getElementById(parent);
   element.appendChild(alert);
 
 
