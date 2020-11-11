@@ -34,6 +34,7 @@ function addSuggestion(text){
   }
 }
 
+//Creates alerts
 function alertMessage (type, text, parent){
   var msgClass = "";
   if (type == "success"){
@@ -61,7 +62,8 @@ function alertMessage (type, text, parent){
   var element = document.getElementById(parent);
   element.append(alert);
 
-  document.body.append(alert);
+  console.log(document.getElementsByClassName("close"));
+  console.log(document.getElementsByClassName("msgClass"));
 
   // <div class="alert alert-success alert-dismissible">
   //   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
