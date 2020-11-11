@@ -168,3 +168,7 @@ body.busy::before {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+.material-icons { 
+  display: inline-flex; vertical-align: text-bottom; 
+}
