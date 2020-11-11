@@ -18,7 +18,10 @@ function addSuggestion(text){
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-    } 
+    }
+    else if (result.output == ""){
+      console.log(result.error);
+    }
     else{
      console.log(result.output);
      showBusyState(false);
@@ -26,7 +29,7 @@ function addSuggestion(text){
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
-    alertMessage(error, 'Something went wrong. Error message: '+ error, "suggestions");
+    alertMessage(error, 'Something went wrong. Error message: '+ error, "alertBox");
     showBusyState(false);
   }
   function showBusyState(state) {
@@ -54,17 +57,16 @@ function alertMessage (type, text, parent){
   a.setAttribute("aria-label","close");
   a.setAttribute("class","close");
   a.append(document.createTextNode("&times;"));
-  alert.append(a);
+  alert.appendChild(a);
+ 
   var textNode = document.createTextNode(text);
   alert.append(textNode);
   alert.setAttribute("class",msgClass);
   
   $("#" + parent).empty();
   var element = document.getElementById(parent);
-  element.append(alert);
+  element.appendChild(alert);
 
-  console.log(alert.className);
-  console.log(a.className);
 
   // <div class="alert alert-success alert-dismissible">
   //   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
