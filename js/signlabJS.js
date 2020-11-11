@@ -73,7 +73,6 @@ function callPython(text) {
         else{
           console.log(output[1]);
           console.log(output[2]);
-          document.getElementById("translationTut").value = output[1];
           playText(output[2].trim());
           document.getElementById("replayButtonTut").setAttribute("name", output[2].trim());
           document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary");
