@@ -168,5 +168,3 @@ body.busy::before {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-
-@font-face { font-family: 'Glyphicons Halflings';}
