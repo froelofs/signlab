@@ -61,7 +61,7 @@ function alertMessage (type, text, parent){
   var element = document.getElementById(parent);
   element.append(alert);
 
-  documen.body.append(alert);
+  document.body.append(alert);
 
   // <div class="alert alert-success alert-dismissible">
   //   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
