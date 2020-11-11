@@ -56,7 +56,7 @@ function alertMessage (type, text, parent){
   a.setAttribute("data-dismiss","alert");
   a.setAttribute("aria-label","close");
   a.setAttribute("class","close");
-  a.append(document.createTextNode("&times;"));
+  a.html("&times;")
   alert.appendChild(a);
  
   var textNode = document.createTextNode(text);
