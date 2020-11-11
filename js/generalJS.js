@@ -35,6 +35,7 @@ function addSuggestion(text){
 }
 
 function alertMessage (type, text, parent){
+  var msgClass = "";
   if (type == "success"){
     msgClass = "alert alert-success alert-dismissible";
   }
@@ -50,11 +51,13 @@ function alertMessage (type, text, parent){
   a.setAttribute("href", "#");
   a.setAttribute("data-dismiss","alert");
   a.setAttribute("aria-label","close");
+  a.setAttribute("class","close");
   a.appendChild(document.createTextNode("&times;"));
   alert.appendChild(a);
   var textNode = document.createTextNode(text);
   alert.appendChild(textNode);
-
+  alert.setAttribute("class",msgClass);
+  
   var element = document.getElementById(parent);
   element.appendChild(alert);
 
