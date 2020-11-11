@@ -62,8 +62,8 @@ function alertMessage (type, text, parent){
   var element = document.getElementById(parent);
   element.append(alert);
 
-  console.log(document.getElementsByClassName("close"));
-  console.log(document.getElementsByClassName("msgClass"));
+  console.log(alert.className);
+  console.log(a.className);
 
   // <div class="alert alert-success alert-dismissible">
   //   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
