@@ -182,7 +182,7 @@
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
               <textarea id="suggestions" class="inputBox" style="position: relative; z-index:0;" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
-              <span id="alertBox" style="display: inline-block; z-index:20; position: absolute;"></span>
+              <div id="alertBox" style="z-index:20; position: fixed;"></div>
               <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value);'/>
               
         </span>
