@@ -93,6 +93,7 @@ function callPython(text, alertID) {
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
     showBusyState(false);
+    alertMessage("error", 'Oops, something went wrong', alertID);
   }
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
