@@ -55,6 +55,7 @@ function callPython(text) {
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
+      alertMessage("error", 'Oops, something went wrong', "alertMainTran");
     } 
     else {
       output = result.output.split(";");
@@ -79,7 +80,8 @@ function callPython(text) {
         }
       }
       else{
-        alert(output);
+        console.log(output);
+        alertMessage("error", output, "alertMainTran");
       }
       if (flags.length == 2){
       	flag = flags[1];
