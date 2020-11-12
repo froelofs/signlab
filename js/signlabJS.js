@@ -67,7 +67,7 @@ function callPython(text, alertID) {
           var pre = document.createElement("pre");
           pre.appendChild(document.createTextNode(output));
           if (parent.childNodes.length != 0) {
-            parent.removeChild(parent.childNodes[0])    
+            parent.removeChild(parent.childNodes[0]);    
           }
           parent.append(pre);
         }
@@ -87,8 +87,8 @@ function callPython(text, alertID) {
       	flag = flags[1];
       	callPython(text);
       }  
-    }
     showBusyState(false);
+    }
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
