@@ -11,7 +11,7 @@
 
 		$fileName = "https://github.com/froelofs/signlab/blob/master/suggestions.txt";
 		if ( !file_exists($fileName) ) {
-	    $error = "File not found";
+	    $error = "File " + $fileName + " not found";
 	  	}
 	  	else{
 	  		//opens file in append mode
