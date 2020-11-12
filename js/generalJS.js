@@ -29,7 +29,7 @@ function addSuggestion(text){
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
-    alertMessage(error, 'Something went wrong. Error message: '+ error, "alertBox");
+    alertMessage("error", 'Oops! Something went wrong.', "alertBox");
     showBusyState(false);
   }
   function showBusyState(state) {
