@@ -21,19 +21,19 @@ function addSuggestion(text, alertID){
       alertMessage("error", 'Oops, something went wrong', alertID);
     }
     else if (result.output == ""){
-      console.log(result.error);
+      console.log("This ouput is empty: " + result.error);
       alertMessage("error", 'Oops, something went wrong', alertID);
     }
     else{
      console.log(result.output);
-     showBusyState(false);
      alertMessage("success", 'Thank you, your suggestion has been sent', alertID);
     }
+    showBusyState(false);
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
-    alertMessage("error", 'Oops, something went wrong', alertID);
     showBusyState(false);
+    alertMessage("error", 'Oops, something went wrong', alertID); 
   }
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
