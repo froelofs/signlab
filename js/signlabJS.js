@@ -33,7 +33,7 @@ function changeFunc(myRadio) {
 }
 
 ///Makes an ajax call to the python script (by way of a php wrapper)
-function callPython(text) {
+function callPython(text, alertID) {
   showBusyState();
   //Adds a flag to the input if applicable
   flags = flag.split(",");
@@ -55,7 +55,7 @@ function callPython(text) {
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-      alertMessage("error", 'Oops, something went wrong', "alertMainTran");
+      alertMessage("error", 'Oops, something went wrong', alertID);
     } 
     else {
       output = result.output.split(";");
@@ -81,7 +81,7 @@ function callPython(text) {
       }
       else{
         console.log(output);
-        alertMessage("error", output, "alertMainTran");
+        alertMessage("error", output, alertID);
       }
       if (flags.length == 2){
       	flag = flags[1];

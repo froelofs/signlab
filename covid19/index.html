@@ -200,8 +200,8 @@
 
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
-              <!-- <input type="button" id="suggButton" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
         </span>
 
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->

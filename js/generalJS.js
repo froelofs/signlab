@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
 //Stores suggestions
-function addSuggestion(text){
+function addSuggestion(text, alertID){
   showBusyState();
   $.ajax({
     url : 'suggestions.php',
@@ -18,21 +18,21 @@ function addSuggestion(text){
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-      alertMessage("error", 'Oops, something went wrong', "alertMainTran");
+      alertMessage("error", 'Oops, something went wrong', alertID);
     }
     else if (result.output == ""){
       console.log(result.error);
-      alertMessage("error", 'Oops, something went wrong', "alertMainTran");
+      alertMessage("error", 'Oops, something went wrong', alertID);
     }
     else{
      console.log(result.output);
      showBusyState(false);
-     alertMessage("success", 'Thank you, your suggestion has been sent', "alertMainTran");
+     alertMessage("success", 'Thank you, your suggestion has been sent', alertID);
     }
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
-    alertMessage("error", 'Oops, something went wrong', "alertMainTran");
+    alertMessage("error", 'Oops, something went wrong', alertID);
     showBusyState(false);
   }
   function showBusyState(state) {
