@@ -94,6 +94,10 @@
         <!-- Challenge Row-->
         <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
                 <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                 <!--  <div class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                  </div> -->
                     <h4>Sign language: Linguistic structure made visible</h4>
                     <p class="mb-4">
                       <!-- <img src="img/elise-1.jpg" class="rounded float-right" alt="" height="300"> -->
@@ -130,6 +134,7 @@
 
 <section class="projects-section bg-white fadeIn undisplayed" id="Translate">
     <div class="container" height="100%">
+      <div id="alertMainTran" class="alertBox" style="z-index:20; position: fixed;"></div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
@@ -153,7 +158,7 @@
 
               <br>
               <br>
-              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here" onkeydown="if (event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value);}"></textarea>
+              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here" onkeydown="if (event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
               <br>
 
               <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
@@ -161,7 +166,7 @@
               <br>
 
               <br>
-              <input type="button" class="btn btn-primary" id="play" value="Play" onclick='callPython(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary" id="play" value="Play" onclick='callPython(document.getElementById("mySiGML").value, "alertMainTran");'/>
               <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
               <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)">
 
@@ -177,10 +182,12 @@
 
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
-              <input type="button" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" />
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertMainTran');}"></textarea>
+              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertMainTran");'/>
+              
         </span>
 
+    
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
         <div align="center" class="undisplayed">
 
@@ -336,6 +343,7 @@
 <section class="projects-section bg-white fadeIn undisplayed" id="Tutorial">
 
       <div class="container" height="100%">
+        <div id="alertTutorial" class="alertBox"></div>
           <div class="project-text pt-0 text-lg-left">
               <h2 align="center" style="margin-bottom: 20px;">Tutorial</h2>
               <span id="explanation" class="explSpan" align="left" style="width: 300px; vertical-align:top;">
@@ -359,7 +367,7 @@
               <br>
               
 
-              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value);'/>
+              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value, "alertTutorial");'/>
               <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML();'/>
               <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name)">
               <br>
@@ -375,7 +383,7 @@
               <br>
             </span>
 
-            <span id="avatarTut" class="CWASAAvatar av1" align="center" style="width: 300px"></span>
+            <span id="avatarTut" class="undisplayed" align="center" style="width: 300px"></span>
             <!-- <div class="CWASAAvatar" align="center" ></div>-->          
           </div>
       </div>
@@ -464,10 +472,11 @@
 
 <!-- script for communication with and set up of the avatar -->
 <script language="javascript" type="text/javascript" src="js/avatarJS.js"></script>
-<!-- script specific to main page -->
-<script language="javascript" type="text/javascript" src="js/signlabJS.js"></script>
 <!-- script for shared functions across all pages -->
 <script language="javascript" type="text/javascript" src="js/generalJS.js"></script>
+<!-- script specific to main page -->
+<script language="javascript" type="text/javascript" src="js/signlabJS.js"></script>
+
 
 </body>
 </html>

@@ -172,3 +172,8 @@ body.busy::before {
 .material-icons { 
   display: inline-flex; vertical-align: text-bottom; 
 }
+
+.alertBox{
+  z-index:20; 
+  position: fixed;
+}

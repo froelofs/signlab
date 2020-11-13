@@ -86,14 +86,14 @@ var jsonvideo = (function() {
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
   if(autocompSugg.includes(text) == false){
-    alert("Please choose an option from the autocomplete suggestions.")
+    alertMessage("info", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
     // if avatar is checked, sigml is sent
     if (document.getElementById("avatarDisplay").checked) {
       entry = json[text];
       if (entry == undefined) {
-        alert("There is currently no pre-processed translation available. You can send the sentence you were trying to translate to us via the suggestions box on this page.")
+        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
         playText(entry);
@@ -103,7 +103,7 @@ function toSiGML(text){
     else if (document.getElementById("videoDisplay").checked) {
       entry = jsonvideo[text];
       if (entry == undefined) {
-        alert("There is currently no pre-processed translation available. Please send the sentence you were trying to translate to us via the suggestions box on this page and/or try out the on-demand avatar translation option.")
+        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
       changeVideo(entry);

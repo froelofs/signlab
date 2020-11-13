@@ -5,10 +5,10 @@ $(document).ready(function(){
 
 
 //Stores suggestions
-function addSuggestion(text){
+function addSuggestion(text, alertID){
   showBusyState();
   $.ajax({
-    url : 'signlanguage/suggestions.php',
+    url : 'suggestions.php',
     type : 'POST',
     data: {"input": text},
     dataType: "json",
@@ -18,17 +18,61 @@ function addSuggestion(text){
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-    } 
-    else{
-    console.log(result.output);
-    showBusyState(false);
+      alertMessage("error", 'Oops, something went wrong', alertID);
     }
+    else if (result.output == ""){
+      console.log("This ouput is empty: " + result.error);
+      alertMessage("error", 'Oops, something went wrong', alertID);
+    }
+    else{
+     console.log(result.output);
+     alertMessage("success", 'Thank you, your suggestion has been sent', alertID);
+    }
+    showBusyState(false);
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
     showBusyState(false);
+    alertMessage("error", 'Oops, something went wrong', alertID); 
   }
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
+}
+
+//Creates alerts
+function alertMessage (type, text, parent){
+  var msgClass = "";
+  if (type == "success"){
+    msgClass = "alert alert-success alert-dismissible";
+  }
+  else if (type == "info"){
+    msgClass = "alert alert-info alert-dismissible";
+  }
+  else if (type == "error"){
+    msgClass = "alert alert-danger alert-dismissible";
+  }
+
+  var alert = document.createElement("div");
+  var a = document.createElement("a");
+  a.setAttribute("href", "#");
+  a.setAttribute("data-dismiss","alert");
+  a.setAttribute("aria-label","close");
+  a.setAttribute("class","close");
+  a.innerHTML = '&times;';
+  alert.appendChild(a);
+ 
+  var textNode = document.createTextNode(text);
+  alert.append(textNode);
+  alert.setAttribute("class",msgClass);
+  
+  $("#" + parent).empty();
+  var element = document.getElementById(parent);
+  element.appendChild(alert);
+
+
+  // <div class="alert alert-success alert-dismissible">
+  //   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  //   <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  // </div>
 }

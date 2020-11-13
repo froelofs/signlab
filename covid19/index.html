@@ -134,6 +134,7 @@
 <section class="projects-section bg-white" id="Translate">
    <h1 align="center">Translate</h1>
     <div class="container" height="100%">
+      <div id="alertZonMwTran" class="alertBox"></div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
@@ -199,8 +200,8 @@
 
               <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
               <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'"></textarea>
-              <!-- <input type="button" id="suggButton" value="Send" onclick='addSuggestion(document.getElementById("suggestions").value);' style="display: inline-block;" /> -->
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
         </span>
 
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
@@ -404,10 +405,11 @@
 
 <!-- script for communication with and set up of the avatar -->
 <script language="javascript" type="text/javascript" src="../js/avatarJS.js"></script>
-<!-- script specific to zonmw project -->
-<script language="javascript" type="text/javascript" src="zonmwJS.js"></script>
 <!-- script for shared functions across all pages -->
 <script language="javascript" type="text/javascript" src="../js/generalJS.js"></script>
+<!-- script specific to zonmw project -->
+<script language="javascript" type="text/javascript" src="zonmwJS.js"></script>
+
 
 </body>
 </html>
