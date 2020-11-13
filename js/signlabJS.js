@@ -2,6 +2,7 @@ var flag = "";
 
 //Adapts the page to the chosen option
 function changeFunc(myRadio) {
+  console.log("value: " + myRadio);
   if (myRadio.value == "fingerspell") {
   	document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
     flag = "spell";
@@ -21,9 +22,9 @@ function changeFunc(myRadio) {
     flag = "explain";
   }
   else if (myRadio.value == "explAva") {
-    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar av0");
-    document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av0");
-    document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av0");
+    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar av1");
+    document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av1");
+    document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av1");
     document.getElementById("glossLabelTut").style.display = 'inline-block';
     document.getElementById("speedLabelTut").style.display = 'inline-block';
     document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary displayed");
@@ -38,6 +39,7 @@ function callPython(text, alertID) {
   //Adds a flag to the input if applicable
   flags = flag.split(",");
   flag = flags[0];
+  console.log("flag: " + flag);
   if (flag != ""){
     inputPython = flag + " " + text;
   }
@@ -85,7 +87,7 @@ function callPython(text, alertID) {
       }
       if (flags.length == 2){
       	flag = flags[1];
-      	callPython(text);
+      	callPython(text, alertID);
       }  
     showBusyState(false);
     }
