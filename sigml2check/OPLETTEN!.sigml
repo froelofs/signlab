@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="OPLETTEN">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='OpEt'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamfinger23/>
+		<hamthumbacrossmod/>
+		<hamextfingerui/>
+		<hampalmd/>
+		<hamnose/>
+		<hamseqbegin/>
+		<hamtouch/>
+		<hamindexfinger/>
+		<hammiddlefinger/>
+		<hamfingerpad/>
+		<hamseqend/>
+		<hamparbegin/>
+		<hammoveo/>
+		<hamsmallmod/>
+		<hamfast/>
+		<hamreplace/>
+		<hamfinger23/>
+		<hamthumbacrossmod/>
+		<hambetween/>
+		<hamfinger23/>
+		<hamthumbacrossmod/>
+		<hamfingerstraightmod/>
+		<hamextfingeru/>
+		<hambetween/>
+		<hamextfingerui/>
+		<hamfast/>
+		<hamparend/>
+		<hamrepeatfromstartseveral/>
+	</hamnosys_manual>
+</hns_sign>
+
+<hns_sign gloss="NATUURLIJK!">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='tY@'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamflathand/>
+		<hambetween/>
+		<hamflathand/>
+		<hamthumboutmod/>
+		<hamextfingero/>
+		<hambetween/>
+		<hamextfingerol/>
+		<hampalmu/>
+		<hambetween/>
+		<hampalmul/>
+		<hamchest/>
+		<hamlrbeside/>
+		<hambetween/>
+		<hamchest/>
+		<hamlrat/>
+		<hamclose/>
+		<hamnomotion/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="GELUKKIG_B">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='x@lYk@x'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamflathand/>
+		<hamthumboutmod/>
+		<hamextfingerl/>
+		<hambetween/>
+		<hamextfingerul/>
+		<hampalml/>
+		<hamchest/>
+		<hamseqbegin/>
+		<hamclose/>
+		<hammiddlefinger/>
+		<hamfingerbase/>
+		<hamhandback/>
+		<hamseqend/>
+		<hammoveo/>
+		<hamtouch/>
+		<hamrepeatfromstartseveral/>
+		<hamsmallmod/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>

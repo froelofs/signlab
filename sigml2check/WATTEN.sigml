@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="WATTEN">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='vAt@'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamflathand/>
+		<hamthumbopenmod/>
+		<hamextfingerul/>
+		<hampalmd/>
+		<hamparbegin/>
+		<hammiddlefinger/>
+		<hamfingertip/>
+		<hamplus/>
+		<hammiddlefinger/>
+		<hamfingertip/>
+		<hamparend/>
+		<hamtouch/>
+		<hamneck/>
+		<hamclose/>
+		<hamparbegin/>
+		<hammovedr/>
+		<hamsmallmod/>
+		<hamreplace/>
+		<hampinchall/>
+		<hamfingerstraightmod/>
+		<hamextfingeru/>
+		<hampalml/>
+		<hamclose/>
+		<hamfast/>
+		<hamparend/>
+		<hamrepeatfromstartseveral/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>

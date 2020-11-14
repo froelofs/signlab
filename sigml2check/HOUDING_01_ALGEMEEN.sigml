@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="HOUDING_01_ALGEMEEN">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='hA_udIN'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamflathand/>
+		<hamthumboutmod/>
+		<hamfingerstraightmod/>
+		<hamextfingerl/>
+		<hampalml/>
+		<hamshoulders/>
+		<hamlrat/>
+		<hamseqbegin/>
+		<hamtouch/>
+		<hammiddlefinger/>
+		<hamfingertip/>
+		<hamseqend/>
+		<hamparbegin/>
+		<hammoved/>
+		<hamreplace/>
+		<hampalml/>
+		<hambetween/>
+		<hampalmul/>
+		<hamparend/>
+		<hamstomach/>
+		<hamlrat/>
+		<ha/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>
