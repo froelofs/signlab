@@ -162,7 +162,7 @@
               <br>
 
               <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
-              <textarea id="translation" type="text" class ="inputBox" readonly></textarea> 
+              <textarea id="translation" type="text" class="inputBox" readonly></textarea> 
               <br>
 
               <br>
@@ -346,6 +346,67 @@
         <div id="alertTutorial" class="alertBox"></div>
         <h2 align="center" style="margin-bottom: 20px;">Tutorial</h2>
         
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <textarea id="explSiGML1" readonly style="white-space: pre;">
+              '<?xml version="1.0" encoding="UTF-8"?>
+                <sigml>
+                  <hamgestural_sign gloss="HUIS">
+                    <sign_nonmanual>
+                      <mouthing_tier>
+                        <mouth_picture picture="hYs"/>
+                      </mouthing_tier>
+                    </sign_nonmanual>
+                    <sign_manual both_hands="true" lr_symm="true">
+                      <handconfig handshape="flat"/>
+                      <handconfig extfidir="ul"/>
+                      <handconfig palmor="dr"/>
+                      <handconstellation contact="touch">
+                        <location_hand digits="2" location="tip"/>
+                        <location_hand digits="2" location="tip"/>
+                        <location_bodyarm location="shouldertop"/>
+                      </handconstellation>
+                      <par_motion>
+                        <directedmotion curve="u" direction="dr" size="small"/>
+                        <tgt_motion>
+                          <changeposture/>
+                          <handconfig extfidir="o" palmor="l"/>
+                        </tgt_motion>
+                      </par_motion>
+                    </sign_manual>
+                  </hamgestural_sign>
+                </sigml>'
+            </textarea>
+          </div>
+
+          <div class="col-md-4">
+              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='playText(document.getElementById("explSiGML1").value'/>
+              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <br>
+              <br>
+              <label id="speedLabelTut" for="speedAdjTut" style="display: none;">Adjust speed: </label>
+              <span id="speedAdjTut" class="undisplayed" style="margin-bottom:5px"></span>
+              <br>
+              
+              <br>
+              <label style="display: none;">Gloss: </label>
+              <input class="undisplayed" value="[none]" type="text">
+          </div>
+          <div class="col-md-4">
+            <span class="CWASAAvatar av1" align="right" style="width: 350px"></span>
+          </div>
+        </div>
+        
+
+
+
+
         <!-- Defines the bottom SiGML text field and avatar with buttons -->
         <div class="row">
             
@@ -370,7 +431,6 @@
               <br>
               
 
-              <!-- Defines the SiGML textfield at the end of the tutorial page -->
               <textarea id="SiGMLTut" placeholder="Enter the gloss(es) whose SiGML you would like explained here"></textarea>
               <br>
               
@@ -393,8 +453,7 @@
           </div>
 
           <div class="col-md-4">
-            <!-- Defines the avatar at the end of the tutorial page -->
-            <span id="avatarTut" class="CWASAAvatar av1" align="right" style="width: 350px"></span>
+            <span id="avatarTut" class="CWASAAvatar av2" align="right" style="width: 350px"></span>
           </div>
         </div>
 
