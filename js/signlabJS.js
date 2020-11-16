@@ -22,7 +22,7 @@ function changeFunc(myRadio) {
     flag = "explain";
   }
   else if (myRadio.value == "explAva") {
-    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar av1");
+    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar");
     document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av1");
     document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av1");
     document.getElementById("glossLabelTut").style.display = 'inline-block';
