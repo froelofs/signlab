@@ -354,23 +354,6 @@
 
         <div class="row">
           <div class="col-md-4"></div>
-
-          <div class="col-md-4">
-              <span class="CWASAAvatar av1" style="width: 350px; height: 400px;"></span>
-              <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value)'/>
-              <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML();'/>
-              <br>
-              
-              <br>
-              <label style="display: none;">Adjust speed: </label>
-              <span class="undisplayed" style="margin-bottom:5px"></span>
-              <br>
-              
-              <br>
-              <label style="display: none;">Gloss: </label>
-              <input class="undisplayed" value="[none]" type="text">
-          </div>
-
           
           <div class="col-md-4">
             <textarea id="explSiGML1" readonly style="width: 350px; height: 500px;">
@@ -402,6 +385,22 @@
   </hamgestural_sign>
 </sigml>
             </textarea>
+          </div>
+
+           <div class="col-md-4">
+              <span class="CWASAAvatar av1" style="width: 350px; height: 400px;"></span>
+              <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value)'/>
+              <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <br>
+              
+              <br>
+              <label style="display: none;">Adjust speed: </label>
+              <span class="undisplayed" style="margin-bottom:5px"></span>
+              <br>
+              
+              <br>
+              <label style="display: none;">Gloss: </label>
+              <input class="undisplayed" value="[none]" type="text">
           </div>
 
             
