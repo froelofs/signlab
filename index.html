@@ -344,12 +344,18 @@
 
       <div class="container-fluid" height="100%" align="center">
         <div id="alertTutorial" class="alertBox"></div>
-          <div class="project-text pt-0 text-lg-left">
-              <h2 align="center" style="margin-bottom: 20px;">Tutorial</h2>
-              <span id="explanation" class="explSpan" align="left">
-                <div id="explText" class="explSiGML" align="center"></div>
-              </span>
+        <h2 align="center" style="margin-bottom: 20px;">Tutorial</h2>
+        
+        <!-- Defines the bottom SiGML text field and avatar with buttons -->
+        <div class="row">
+            
+          <div class="col-md-4">
+            <span id="explanation" class="explSpan" align="left">
+              <div id="explText" class="explSiGML" align="center"></div>
+            </span>
+          </div>
 
+          <div class="col-md-4">
             <span align="left" style="display:inline-block; vertical-align:top; margin-right:20px; margin-left: 20px;">
               <h4>Choose an output option:</h4>
               <br>
@@ -384,11 +390,14 @@
               <input id="outputGlossTut" class="undisplayed" value="[none]" type="text">
               <br>
             </span>
+          </div>
 
+          <div class="col-md-4">
             <!-- Defines the avatar at the end of the tutorial page -->
             <span id="avatarTut" class="CWASAAvatar av1" align="right" style="width: 350px"></span>
-                    
           </div>
+        </div>
+
       </div>
 
 </section>
