@@ -54,8 +54,8 @@ $( function() {
     return sentOptions;
   })();
 
-  // Defines the options for autocomplete suggestions
-  var options = [];
+  // Defines the options for autocomplete suggestions as the avatar sentences by default
+  var options = sentOptions;
 
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
