@@ -54,8 +54,6 @@ $( function() {
     return sentOptions;
   })();
 
-  console.log("sentence suggestions: " + sentOptions);
-
   // Defines the options for autocomplete suggestions
   var options = [];
 
@@ -84,6 +82,7 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
+      console.log("options" + options);
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
@@ -116,7 +115,7 @@ function toSiGML(text){
     checkText(text);
     // if avatar is checked, sigml is sent
     if (document.getElementById("avatarDisplay").checked) {
-      entry = json[text];
+      entry = jsonSent[text];
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
