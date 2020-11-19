@@ -108,7 +108,7 @@ function checkText(text){
   console.log("input: "+text);
   if (text.includes("...") == true){
     if (text.includes("minuten") == true){
-      alertMessage("success","Minuten recognised!")
+      alertMessage("success","Minuten recognised!");
     }
 
   }
