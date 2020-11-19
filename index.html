@@ -389,8 +389,8 @@
 
            <div class="col-md-4">
               <span class="CWASAAvatar av1" style="width: 350px; height: 400px;"></span>
-              <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value)'/>
-              <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value,1)'/>
+              <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML(1);'/>
               <br>
               
               <br>
@@ -438,9 +438,9 @@
               <br>
               
 
-              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value, "alertTutorial");'/>
-              <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML();'/>
-              <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name)">
+              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value, "alertTutorial",2);'/>
+              <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML(2);'/>
+              <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name,2)">
               <br>
               
               <br>
