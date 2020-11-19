@@ -110,7 +110,21 @@ function checkText(text){
     if (text.includes("minuten") == true){
       alertMessage("success","Minuten recognised!");
     }
-
+    else if (text.includes("dagen" == true)){
+      alertMessage("success","Dagen recognised!");
+    }
+    else if (text.includes("weken" == true)){
+      alertMessage("success","Weken recognised!");
+    }
+    else if (text.includes("maanden" == true)){
+      alertMessage("success","Maanden recognised!");
+    }
+    else if (text.includes("uur" == true)){
+      alertMessage("success","Uur recognised!");
+    }
+  }
+  else if (text.includes("(tijdstip)")){
+    alertMessage("success","Tijdstip recognised!")
   }
 }
 
