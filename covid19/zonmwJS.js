@@ -123,7 +123,7 @@ function checkText(text){
       alertMessage("success","Uur recognised!");
     }
   }
-  else if (text.includes("(tijdstip)")){
+  else if (text.includes("*tijdstip*")){
     alertMessage("success","Tijdstip recognised!")
   }
 }
