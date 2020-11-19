@@ -108,8 +108,9 @@ $( function() {
 
 function checkText(text){
   text = text.split(" ");
+  console.log("input: "+text);
   if (text.includes("...") == true){
-    if (text.includes("minuten")){
+    if (text.includes("minuten") == true){
       alertMessage("success","Minuten recognised!")
     }
 
