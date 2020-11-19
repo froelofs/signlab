@@ -108,23 +108,23 @@ function checkText(text){
   console.log("input: "+text);
   if (text.includes("...") == true){
     if (text.includes("minuten") == true){
-      alertMessage("success","Minuten recognised!");
+      alertMessage("success","Minuten recognised!","alertZonMwTran");
     }
     else if (text.includes("dagen" == true)){
-      alertMessage("success","Dagen recognised!");
+      alertMessage("success","Dagen recognised!","alertZonMwTran");
     }
     else if (text.includes("weken" == true)){
-      alertMessage("success","Weken recognised!");
+      alertMessage("success","Weken recognised!","alertZonMwTran");
     }
     else if (text.includes("maanden" == true)){
-      alertMessage("success","Maanden recognised!");
+      alertMessage("success","Maanden recognised!","alertZonMwTran");
     }
     else if (text.includes("uur" == true)){
-      alertMessage("success","Uur recognised!");
+      alertMessage("success","Uur recognised!","alertZonMwTran");
     }
   }
   else if (text.includes("*tijdstip*")){
-    alertMessage("success","Tijdstip recognised!")
+    alertMessage("success","Tijdstip recognised!","alertZonMwTran");
   }
 }
 
