@@ -16,6 +16,7 @@ import sign
 import pickle
 # infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 from dictFile import infoSigns
+# from getGSiGML import getGSiGML
 
 
 def main(sentence, flag = False):
