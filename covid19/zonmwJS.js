@@ -47,8 +47,9 @@ $( function() {
   // Defines autocomplete suggestions when display by avatar is chosen
   var sentOptions = (function(){
     var sentOptions = [];
-    for key in json:
+    for (key in json){
       sentOptions.push(key);
+    }
 
     return sentOptions;
   });
