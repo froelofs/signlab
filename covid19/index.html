@@ -180,7 +180,7 @@
               <!-- Custom made autocomplete form -->
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
-                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if (event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
+                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
                 </div>
                 <!-- <input type="submit"> -->
               </form>
@@ -188,7 +188,7 @@
               <div>
                <label for="minutes" style="display: inline-block;">Number of minutes:</label>
                <input type="number" id="minutes" name="minutes" min="2" max="59" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);">
+               <input type="submit" style="display: inline-block;" onclick="if(document.getElementById('minutes').value > 59){document.getElementById('minutes').setAttribute('title','Please input a number between 1 and 60');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
               </div>
 
               <br>
