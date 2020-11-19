@@ -1,9 +1,9 @@
-function playURL(surl) {
-	CWASA.playSiGMLURL(surl);
+function playURL(surl,av = 0) {
+	CWASA.playSiGMLURL(surl,av);
 }
 
-function playText(stext) {
-	CWASA.playSiGMLText(stext);
+function playText(stext,av = 0) {
+	CWASA.playSiGMLText(stext,av);
 }
 
 function addStatus(evt) {
