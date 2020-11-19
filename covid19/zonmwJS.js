@@ -96,6 +96,16 @@ $( function() {
   }
 });
 
+function checktText(text){
+  text = text.split(" ");
+  if (text.includes("...") == true){
+    if (text.includes("minuten")){
+      alertMessage("success","Minuten recognised!")
+    }
+
+  }
+}
+
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text){
@@ -103,6 +113,7 @@ function toSiGML(text){
     alertMessage("info", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
+    checkText(text);
     // if avatar is checked, sigml is sent
     if (document.getElementById("avatarDisplay").checked) {
       entry = json[text];
