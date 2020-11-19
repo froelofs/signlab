@@ -176,4 +176,5 @@ body.busy::before {
 .alertBox{
   z-index:20; 
   position: fixed;
+  vertical-align: top;
 }
