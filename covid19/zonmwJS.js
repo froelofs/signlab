@@ -103,12 +103,17 @@ $( function() {
   }
 });
 
-function checkText(text){
+function checkText(text,value=-1){
   text = text.split(" ");
   console.log("input: "+text);
   if (text.includes("...") == true){
+    // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
-      alertMessage("success","Minuten recognised!","alertZonMwTran");
+      if value == -1:
+        document.getElementById('minutesBox').style.display("block");
+      else:
+        text = text.join().replace("...",value);
+      alertMessage("success",text,"alertZonMwTran");
     }
     else if (text.includes("dagen" == true)){
       alertMessage("success","Dagen recognised!","alertZonMwTran");
