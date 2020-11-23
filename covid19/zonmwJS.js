@@ -110,7 +110,7 @@ function checkText(text,value=-1){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
       if (value == -1){
-        document.getElementById('minutesBox').style.display("block");
+        document.getElementById('minutesBox').style.display = "block";
       }
       else{
         text = text.join(" ").replace("...",value);
