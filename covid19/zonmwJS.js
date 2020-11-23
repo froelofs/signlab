@@ -114,9 +114,19 @@ function checkText(text,value=-1){
         return false;
       }
       else{
-        text = text.join(" ").replace("...",value);
+        if (value == 1){
+          text = text.join(" ");
+          text = text.replace("minuten","minuut");
+          text = text.replace("...",value);
+        }
+        else{
+         text = text.join(" ").replace("...",value);
+        }
         document.getElementById('minutesBox').setAttribute("class","undisplayed");
       }
+    }
+    else if (text.includes("uur" == true)){
+      alertMessage("success","Uur recognised!","alertZonMwTran");
     }
     else if (text.includes("dagen" == true)){
       alertMessage("success","Dagen recognised!","alertZonMwTran");
@@ -126,9 +136,6 @@ function checkText(text,value=-1){
     }
     else if (text.includes("maanden" == true)){
       alertMessage("success","Maanden recognised!","alertZonMwTran");
-    }
-    else if (text.includes("uur" == true)){
-      alertMessage("success","Uur recognised!","alertZonMwTran");
     }
   }
   else if (text.includes("*tijdstip*")){
@@ -149,7 +156,6 @@ function toSiGML(text,value=-1){
   else {
     text = checkText(text,value);
     if (text == false){
-      console.log("value: " + value);
       return text;
     }
     else{
