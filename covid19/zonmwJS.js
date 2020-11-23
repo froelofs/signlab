@@ -126,16 +126,75 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("uur" == true)){
-      alertMessage("success","Uur recognised!","alertZonMwTran");
+      if (value == -1){
+        document.getElementById('hoursBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
+        return false;
+      }
+      else{
+        if (value == 1){
+          text = text.join(" ");
+          text = text.replace("uren","uur");
+          text = text.replace("...",value);
+        }
+        else{
+         text = text.join(" ").replace("...",value);
+        }
+        document.getElementById('hoursBox').setAttribute("class","undisplayed");
+      }
     }
     else if (text.includes("dagen" == true)){
-      alertMessage("success","Dagen recognised!","alertZonMwTran");
-    }
+      if (value == -1){
+        document.getElementById('daysBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 21 to fill in the blank", "alertZonMwTran");
+        return false;
+      }
+      else{
+        if (value == 1){
+          text = text.join(" ");
+          text = text.replace("dagen","dag");
+          text = text.replace("...",value);
+        }
+        else{
+         text = text.join(" ").replace("...",value);
+        }
+        document.getElementById('daysBox').setAttribute("class","undisplayed");
+      }
     else if (text.includes("weken" == true)){
-      alertMessage("success","Weken recognised!","alertZonMwTran");
+      if (value == -1){
+        document.getElementById('weeksBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 12 to fill in the blank", "alertZonMwTran");
+        return false;
+      }
+      else{
+        if (value == 1){
+          text = text.join(" ");
+          text = text.replace("weken","week");
+          text = text.replace("...",value);
+        }
+        else{
+         text = text.join(" ").replace("...",value);
+        }
+        document.getElementById('weeksBox').setAttribute("class","undisplayed");
+      }
     }
     else if (text.includes("maanden" == true)){
-      alertMessage("success","Maanden recognised!","alertZonMwTran");
+      if (value == -1){
+        document.getElementById('monthsBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 12 to fill in the blank", "alertZonMwTran");
+        return false;
+      }
+      else{
+        if (value == 1){
+          text = text.join(" ");
+          text = text.replace("maanden","maand");
+          text = text.replace("...",value);
+        }
+        else{
+         text = text.join(" ").replace("...",value);
+        }
+        document.getElementById('monthsBox').setAttribute("class","undisplayed");
+  weeks
     }
   }
   else if (text.includes("*tijdstip*")){
