@@ -105,13 +105,12 @@ $( function() {
 
 function checkText(text,value=-1){
   text = text.split(" ");
-  console.log("input: "+text);
   if (text.includes("...") == true){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
       if (value == -1){
-        alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         document.getElementById('minutesBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
@@ -150,11 +149,13 @@ function toSiGML(text,value=-1){
   else {
     text = checkText(text,value);
     if (text == false){
+      console.log("value: " + value);
       return text;
     }
     else{
      // if avatar is checked, sigml is sent
      if (document.getElementById("avatarDisplay").checked) {
+      console.log("text: " + text);
       entry = jsonSent[text];
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
