@@ -109,11 +109,12 @@ function checkText(text,value=-1){
   if (text.includes("...") == true){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
-      if value == -1:
+      if (value == -1){
         document.getElementById('minutesBox').style.display("block");
-      else:
-        text = text.join().replace("...",value);
-      alertMessage("success",text,"alertZonMwTran");
+      }
+      else{
+        text = text.join(" ").replace("...",value);
+      }
     }
     else if (text.includes("dagen" == true)){
       alertMessage("success","Dagen recognised!","alertZonMwTran");
@@ -131,6 +132,10 @@ function checkText(text,value=-1){
   else if (text.includes("*tijdstip*")){
     alertMessage("success","Tijdstip recognised!","alertZonMwTran");
   }
+  else{
+    text = text.join(" ");
+  }
+  return text;
 }
 
 
@@ -140,7 +145,7 @@ function toSiGML(text){
     alertMessage("info", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    checkText(text);
+    text = checkText(text);
     // if avatar is checked, sigml is sent
     if (document.getElementById("avatarDisplay").checked) {
       entry = jsonSent[text];
