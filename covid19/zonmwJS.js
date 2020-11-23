@@ -110,10 +110,13 @@ function checkText(text,value=-1){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
       if (value == -1){
+        alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         document.getElementById('minutesBox').style.display = "block";
+        return false;
       }
       else{
         text = text.join(" ").replace("...",value);
+        document.getElementById('minutesBox').setAttribute("class","undisplayed");
       }
     }
     else if (text.includes("dagen" == true)){
@@ -140,14 +143,18 @@ function checkText(text,value=-1){
 
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
-function toSiGML(text){
+function toSiGML(text,value=-1){
   if(autocompSugg.includes(text) == false){
     alertMessage("info", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    text = checkText(text);
-    // if avatar is checked, sigml is sent
-    if (document.getElementById("avatarDisplay").checked) {
+    text = checkText(text,value);
+    if (text == false){
+      return text;
+    }
+    else{
+     // if avatar is checked, sigml is sent
+     if (document.getElementById("avatarDisplay").checked) {
       entry = jsonSent[text];
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
@@ -155,9 +162,9 @@ function toSiGML(text){
       else{
         playText(entry);
       }
-    }
-    // if video is checked, source of embedded video changes
-    else if (document.getElementById("videoDisplay").checked) {
+     }
+     // if video is checked, source of embedded video changes
+     else if (document.getElementById("videoDisplay").checked) {
       entry = jsonvideo[text];
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
@@ -166,6 +173,7 @@ function toSiGML(text){
       changeVideo(entry);
       }
     }
+   }
   }
 }
 
