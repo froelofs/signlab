@@ -185,10 +185,10 @@
                 <!-- <input type="submit"> -->
               </form>
 
-              <div>
+              <div id="minutesBox" class="undisplayed">
                <label for="minutes" style="display: inline-block;">Number of minutes:</label>
                <input type="number" id="minutes" name="minutes" min="2" max="59" value="2" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(document.getElementById('minutes').value > 59){alertMessage('info','Please input a number between 1 and 60','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(document.getElementById('minutes').value > 59){alertMessage('info','Please input a number between 1 and 60','minutes');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
               </div>
 
               <br>
