@@ -365,14 +365,13 @@
 
 <!--================================================================-->
 
-<!-- Resources section -->
+<!-- Suggestions section -->
 <section class="projects-section bg-white" id="Suggestions">
       <div class="container" height="100%">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
-                <label for="suggestions" style="display: inline-block;">Suggesties: </label>
-                <br>
-                <textarea id="suggestions" class="inputBox" placeholder="Vul hier suggesties in. Als u meer dan 1 woord wilt suggereren, scheid ze met ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+                Vul hier uw suggesties in. Wanneer u meer dan één woord wilt suggereren, scheid de woorden dan met een ';'. 
+                <textarea id="suggestions" class="inputBox" placeholder="Suggesties" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
                 <input type="button" value="Verstuur" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
               </p>
               <hr class="d-none d-lg-block mb-0 ml-0" />
@@ -385,7 +384,7 @@
 <!--================================================================-->
 
 <!-- Resources section -->
-<section class="projects-section bg-white" id="Resources">
+<section class="projects-section bg-light" id="Resources">
       <div class="container" height="100%">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
