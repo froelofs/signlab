@@ -282,4 +282,3 @@ function changeFunc(myRadio) {
     options = videoOptions;
   }
 }
-}
