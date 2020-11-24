@@ -110,7 +110,7 @@ function checkText(text,value=-1){
     if (text.includes("minuten") == true){
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
-        alertMessage("info", "Vul een getal tussen 1 en 60 in", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 1 en 60 om het aantal minuten in te vullen", "alertZonMwTran");
         return false;
       }
       else{
@@ -128,7 +128,7 @@ function checkText(text,value=-1){
     else if (text.includes("uur" == true)){
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 73 om het aantal uren in te vullen", "alertZonMwTran");
         return false;
       }
       else{
@@ -146,7 +146,7 @@ function checkText(text,value=-1){
     else if (text.includes("dagen" == true)){
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 21 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 21 om het aantal uren in te vullen", "alertZonMwTran");
         return false;
       }
       else{
@@ -163,7 +163,7 @@ function checkText(text,value=-1){
     else if (text.includes("weken" == true)){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 12 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 12 om het aantal weken in te vullen", "alertZonMwTran");
         return false;
       }
       else{
@@ -181,7 +181,7 @@ function checkText(text,value=-1){
     else if (text.includes("maanden" == true)){
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 12 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 12 om het aantal maanden in te vullen", "alertZonMwTran");
         return false;
       }
       else{
@@ -210,7 +210,7 @@ function checkText(text,value=-1){
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
   if(autocompSugg.includes(text) == false){
-    alertMessage("info", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
+    alertMessage("info", "Kies astublieft een optie van de gegeven suggesties", "alertZonMwTran");
   }
   else {
     text = checkText(text,value);
@@ -223,7 +223,7 @@ function toSiGML(text,value=-1){
       console.log("text: " + text);
       entry = jsonSent[text];
       if (entry == undefined) {
-        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
+        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
       }
       else{
         playText(entry);
@@ -233,7 +233,7 @@ function toSiGML(text,value=-1){
      else if (document.getElementById("videoDisplay").checked) {
       entry = jsonvideo[text];
       if (entry == undefined) {
-        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
+        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
       }
       else{
       changeVideo(entry);
