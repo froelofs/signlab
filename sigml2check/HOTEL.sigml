@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="HOTEL">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='hotEl'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamalternatingmotion/>
+		<hamfinger2/>
+		<hamthumbacrossmod/>
+		<hamfingerbendmod/>
+		<hambetween/>
+		<hamfinger2/>
+		<hamthumbacrossmod/>
+		<hamfingerhookmod/>
+		<hamextfingerul/>
+		<hampalmd/>
+		<hambetween/>
+		<hampalmdr/>
+		<hamchin/>
+		<hamlrat/>
+		<hamseqbegin/>
+		<hamtouch/>
+		<hamindexfinger/>
+		<hamfingermidjoint/>
+		<hamlrb/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>

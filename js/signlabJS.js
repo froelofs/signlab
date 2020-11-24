@@ -27,8 +27,8 @@ function changeFunc(myRadio) {
     document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av1");
     document.getElementById("glossLabelTut").style.display = 'inline-block';
     document.getElementById("speedLabelTut").style.display = 'inline-block';
-    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary displayed");
-    document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
+    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary displayed av1");
+    document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed av1");
     flag = "explain,";
   }
 }

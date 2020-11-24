@@ -9,7 +9,7 @@
 	else{
 		$input = $_REQUEST['input'] + "";
 
-		$fileName = "https://github.com/froelofs/signlab/blob/master/suggestions.txt";
+		$fileName = "suggestions.txt";
 		if ( !file_exists($fileName) ) {
 	    $error = "File " + $fileName + " not found";
 	  	}

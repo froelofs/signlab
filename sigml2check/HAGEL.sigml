@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="HAGEL">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='haX@l'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<mparbegin/>
+		<hammovedl/>
+		<hamplus/>
+		<hammoveul/>
+		<hamparend/>
+		<hamparbegin/>
+		<hammoveur/>
+		<hamplus/>
+		<hammovedr/>
+		<hamparend/>
+		<hamrepeatfromstart/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="OPHOUDEN!">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='OpA'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamflathand/>
+		<hamthumboutmod/>
+		<hambetween/>
+		<hamflathand/>
+		<hamextfingerol/>
+		<hampalmd/>
+		<hamparbegin/>
+		<hamhandback/>
+		<hamplus/>
+		<hampalm/>
+		<hamparend/>
+		<hamtouch/>
+		<hamparbegin/>
+		<hammover/>
+		<hamlargemod/>
+		<hamfast/>
+		<hamreplace/>
+		<hamextfingero/>
+		<hambetween/>
+		<hamextfingeror/>
+		<hamfast/>
+		<hamparend/>
+	</hamnosys_manual>
+</hns_sign>
+
+</sigml>

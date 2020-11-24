@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="SPRINGEN_KIKKER">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='mmmmmm'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamfinger23/>
+		<hamthumbacrossmod/>
+		<hamextfingerol/>
+		<hambetween/>
+		<hamextfingero/>
+		<hampalmd/>
+		<hamchest/>
+		<hamclose/>
+		<hamcirclel/>
+		<hamclockur/>
+		<hamrest/>
+		<hamcirclel/>
+		<hamclo/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>

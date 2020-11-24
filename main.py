@@ -16,7 +16,8 @@ import sign
 import pickle
 # infoSigns = pickle.load(open("dictFile.p", "rb")) #signdict
 from dictFile import infoSigns
-from write2file import write2file
+# from getGSiGML import getGSiGML
+
 
 def main(sentence, flag = False):
 
@@ -34,7 +35,7 @@ def main(sentence, flag = False):
     
     #Creates the contents of the SiGML file
     sigmlsentence = preamble + sigml + postamble
-    write2file(sigmlsentence,glosses)
+    
     print(sentence, ";", " ".join(glosses), ";", sigmlsentence)
 
 if __name__ == '__main__':

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss="HUILEN">
+	<hamnosys_nonmanual>
+		<hnm_mouthpicture picture='h9_yl@'/>
+	</hamnosys_nonmanual>
+	<hamnosys_manual>
+		<hamsymmlr/>
+		<hamfinger2/>
+		<hamthumbacrossmod/>
+		<hamextfingerul/>
+		<hambetween/>
+		<hamextfingeril/>
+		<hampalmdr/>
+		<hambetween/>
+		<hampalmd/>
+		<hameyes/>
+		<hamlrat/>
+		<hamseqbegin/>
+		<hamtouch/>
+		<hamindexfinger/>
+		<hamfingerpad/>
+		<hamseqend/>
+		<hamfusionbegin/>
+		<hamparbegin/>
+		<hammoved/>
+		<hamsmallmod/>
+		<hamreplace/>
+		<hamfinger2/>
+	</hamnosys_manual>
+</hns_sign>
+
+
+</sigml>
