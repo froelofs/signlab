@@ -62,6 +62,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ProjectInfo">Project Information</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Translate">Translate</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#About">About Us</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Suggestions">Suggestions</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Further Resources</a></li>
                 <li class="nav-item"><a class="nav-link" href="index-nl.html">NL</a></li>
             </ul>
@@ -241,11 +242,6 @@
               <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
               <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
               <br>
-
-              <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
-              <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
-              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
         </span>
 
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
@@ -368,11 +364,31 @@
 </section>
 
 
+<!--================================================================-->
+
+<!-- Suggestions section -->
+<section class="projects-section bg-white" id="Suggestions">
+      <div class="container" height="100%">
+          <div class="project-text pt-0 text-lg-left">
+            <h4>Suggestions</h4>
+              <p class="mb-3 text-black-50">
+                Enter your suggestion here. If you have more than one word to suggest, separate them with ';'. <br>
+              </p>
+              <p class="mb-3 text-black-50">
+                <textarea id="suggestions" class="inputBox" rows="4" cols="50" placeholder="Suggestion" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+                <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
+              </p>
+              <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+      </div>
+</section>
+
+
 
 <!--================================================================-->
 
 <!-- Resources section -->
-<section class="projects-section bg-white" id="Resources">
+<section class="projects-section bg-light" id="Resources">
       <div class="container" height="100%">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
@@ -395,7 +411,7 @@
 <!--================================================================-->
 
 <!-- Footer-->
-<footer class="footer bg-light small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam</div></footer>
+<footer class="footer bg-white small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam</div></footer>
 
 
 <!-- Javascripts -->
