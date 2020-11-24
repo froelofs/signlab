@@ -195,7 +195,7 @@ function checkText(text,value=-1){
          text = text.join(" ").replace("...",value);
         }
         document.getElementById('monthsBox').setAttribute("class","undisplayed");
-  weeks
+      }
     }
   }
   else if (text.includes("*tijdstip*")){
