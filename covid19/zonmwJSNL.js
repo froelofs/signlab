@@ -160,6 +160,7 @@ function checkText(text,value=-1){
         }
         document.getElementById('daysBox').setAttribute("class","undisplayed");
       }
+    }
     else if (text.includes("weken" == true)){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
