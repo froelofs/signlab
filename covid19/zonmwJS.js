@@ -244,6 +244,8 @@ function toSiGML(text,value=-1){
   }
 }
 
+
+//Adapts the base video according to the time of day
 function checkToD() {
     var partofday = new Date().getHours();
     if (partofday < 12) {

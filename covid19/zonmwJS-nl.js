@@ -243,6 +243,19 @@ function toSiGML(text,value=-1){
   }
 }
 
+//Adapts the base video according to the time of day
+function checkToD() {
+    var partofday = new Date().getHours();
+    if (partofday < 12) {
+        link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI";
+      } else if (partofday < 18) {
+        link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=XficFZU4PCY";
+      } else {
+        link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
+      }
+    document.getElementById("videoHolder").src = link;
+}
+
 
 //Adapts the page to the chosen option
 function changeFunc(myRadio) {

@@ -160,19 +160,6 @@
           <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </span>
 
-        <!-- Misschien moet dit in een ander bestand? -->
-        <script type="text/javascript">
-          var partofday = new Date().getHours();
-          if (partofday < 12) {
-              link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI";
-            } else if (partofday < 18) {
-              link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=XficFZU4PCY";
-            } else {
-              link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
-            }
-          document.getElementById("videoHolder").src = link;
-        </script>
-
         <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
             <label for="option" style="margin-right:-100px; margin-bottom:15px">
                 <h4>Kies een vertaaloptie:</h4>
@@ -180,7 +167,7 @@
 
             <br>
             <!-- Defines the button and label displayed for the option "video" -->
-              <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
+              <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this); checkToD();">
               <label for="video" style="margin-right:5px">Video vertaling</label>
 
             <br>
