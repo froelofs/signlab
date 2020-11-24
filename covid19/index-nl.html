@@ -62,6 +62,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ProjectInfo">Project Informatie</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Translate">Vertaal</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#About">Over Ons</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Suggestions">Suggesties</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Extra Informatie</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.html">EN</a></li>
             </ul>
@@ -240,11 +241,6 @@
               <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
               <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
               <br>
-
-              <label for="suggestions" style="display: inline-block;">Suggesties: </label>
-              <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Vul hier suggesties in. Als u meer dan 1 woord wilt suggereren, scheid ze met ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
-              <input type="button" value="Verstuur" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
         </span>
 
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
@@ -370,13 +366,32 @@
 <!--================================================================-->
 
 <!-- Resources section -->
+<section class="projects-section bg-white" id="Suggestions">
+      <div class="container" height="100%">
+          <div class="project-text pt-0 text-lg-left">
+              <p class="mb-3 text-black-50">
+                <label for="suggestions" style="display: inline-block;">Suggesties: </label>
+                <br>
+                <textarea id="suggestions" class="inputBox" placeholder="Vul hier suggesties in. Als u meer dan 1 woord wilt suggereren, scheid ze met ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+                <input type="button" value="Verstuur" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
+              </p>
+              <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+      </div>
+
+</section>
+
+
+<!--================================================================-->
+
+<!-- Resources section -->
 <section class="projects-section bg-white" id="Resources">
       <div class="container" height="100%">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
                 Het
                 <a href="https://www.gebarencentrum.nl/" target="_blank">Nederlands Gebarencentrum</a>
-                heeft een online gebarenwoordenboek met vieeos van meer dan 16.000 gebaren in Nederlandse Gebarentaal.
+                heeft een online gebarenwoordenboek met videos van meer dan 16.000 gebaren in Nederlandse Gebarentaal.
               </p>
               <p class="mb-3 text-black-50">
                 Op de
