@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Vertaling Gebarentaal COVID-19</title>
+
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Access-Control-Allow-Methods" content="GET">
+<meta http-equiv="Access-Control-Allow-Methods" content="POST">
+
+<!-- Meta tag to make the website responsive to different types of devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Icon -->
+<link rel="icon" type="image/x-icon" href="../images/hand-icon.png" />
+
+<!-- =============================================== -->
+<!-- Fonts -->
+
+<!-- Fonts for grayscale theme -->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+<!-- =============================================== -->
+<!-- CSS files -->
+
+<!-- CSS for Jquery autocomplete and tooltips -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<!-- CSS for question circle -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- CSS file for bootstrap grayscale theme -->
+<link rel="stylesheet" href="../css/grayscalestyles.css">
+<!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
+<link rel="stylesheet" href="../css/cwasa-reduced.css">
+
+</head>
+
+<body id="page-top" onload="CWASA.init();">
+
+
+<!--================================================================-->
+
+
+<!-- Navigation-->
+<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="../index.html">
+        <img src="../images/hand-icon.png" height="25">
+          SignLab Amsterdam
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#About">Home</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Translate">Vertaal</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ProjectInfo">Project Informatie</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Meer Informatie</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">EN</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Masthead-->
+<!-- <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">SignTranslation</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">Helps medics communicate with deaf patients.</h2>
+            <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+        </div>
+    </div>
+</header>
+ -->
+
+
+<!--================================================================-->
+
+<!-- About -->
+<section class="projects-section bg-light" id="About">
+    <div class="container">
+        <!-- Challenge Row-->
+        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+            <div class="col-lg-6">
+                <h1 align="center">Over ons</h1>
+                <div class="bg-light text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-black">Probleem</h4>
+                            <p class="mb-1 text-black-50">
+                            In tijden van COVID-19 is het voor artsen en verpleegkundigen erg lastig om te communiceren met dove patienten.
+                            Gebarentolken mogen vaak ziekenhuizen en klinieken niet betreden, en door mondkapjes is liplezen niet mogelijk.
+                            </p>
+                            <hr class="d-none d-lg-block mb-0 ml-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--             <div class="col-lg-6"><img class="img-fluid" src="images/demo-image-02.jpg" alt="" /></div>
+        </div> -->
+        <!-- Approach Row-->
+<!--         <div class="row justify-content-center no-gutters">
+            <div class="col-lg-6"><img class="img-fluid" src="images/demo-image-01.jpg" alt="" /></div> -->
+            <div class="col-lg-6">
+                <div class="bg-light text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-black">Hoe helpt deze website?</h4>
+                            <p class="mb-1 text-black-50">
+                            Deze website geeft artsen en verpleegkundigen de mogelijkheid om zinnen die veel gebruikt worden in de diagnose en behandeling van COVID-19 van het Nederlands naar Nederlandse Gebarentaal te vertalen. Vertalingen worden getoond via videos en een geanimeerde avatar.
+                            </p>
+                            <hr class="d-none d-lg-block mb-0 ml-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--================================================================-->
+
+<!-- Translate -->
+<section class="projects-section bg-white" id="Translate">
+    <div class="container-fluid" height="100%" align="center">
+      <div id="alertZonMwTran" class="alertBox"></div>
+      <h1 align="center">Vertaal</h1>
+        <!-- CWA signing avatar panel 0 -->
+        <!--================================================================-->
+        <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+        <span id="avatar" class="CWASAAvatar av0" align="left" ></span>
+        <!--================================================================-->
+
+
+        <span id="videos" class="undisplayed" align="left">
+          <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+        </span>
+
+        <!-- Misschien moet dit in een ander bestand? -->
+        <script type="text/javascript">
+          var partofday = new Date().getHours();
+          if (partofday < 12) {
+              link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI";
+            } else if (partofday < 18) {
+              link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=XficFZU4PCY";
+            } else {
+              link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
+            }
+          document.getElementById("videoHolder").src = link;
+        </script>
+
+        <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
+            <label for="option" style="margin-right:-100px; margin-bottom:15px">
+                <h4>Kies een vertaaloptie:</h4>
+            </label>
+
+            <br>
+            <!-- Defines the button and label displayed for the option "video" -->
+              <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this);">
+              <label for="video" style="margin-right:5px">Video vertaling</label>
+
+            <br>
+             <!-- DDefines the button and label displayed for the option "avatar" -->
+              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+              <label for="avatar" style="margin-right: 5px">Avatar vertaling</label>
+
+              <br>
+              <br>
+
+              <!-- Custom made autocomplete form -->
+              <form autocomplete="off">
+                <div id="autocomp" class="autocomplete" style="width:400px;">
+                  <textarea id="mySiGML" class="inputBox" placeholder="Vul hier een zin of trefwoorden in" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
+                </div>
+                <!-- <input type="submit"> -->
+              </form>
+
+              <div id="minutesBox" class="undisplayed">
+               <label for="minutes" style="display: inline-block;">Aantal minuten:</label>
+               <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Vul een getal in tussen 0 en 60','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
+              </div>
+
+              <div id="hoursBox" class="undisplayed">
+               <label for="hours" style="display: inline-block;">Aantal uren:</label>
+               <input type="number" id="hours" name="hours" min="1" max="72" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Vul een getal in tussen 0 en 73','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
+              </div>
+
+              <div id="daysBox" class="undisplayed">
+               <label for="days" style="display: inline-block;">Aantal dagen:</label>
+               <input type="number" id="days" name="days" min="1" max="20" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 20){alertMessage('error','Vul een getal in tussen 0 en 21','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
+              </div>
+
+              <div id="weeksBox" class="undisplayed">
+               <label for="weeks" style="display: inline-block;">Aantal weken:</label>
+               <input type="number" id="weeks" name="weeks" min="1" max="" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
+              </div>
+
+              <div id="monthsBox" class="undisplayed">
+               <label for="months" style="display: inline-block;">Aantal maanden:</label>
+               <input type="number" id="months" name="months" min="1" max="" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
+              </div>
+
+              <br>
+              <input type="button" class="btn btn-primary" id="play" value="Start" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+              <br>
+              <br>
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Pas snelheid aan: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
+              <br>
+              <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
+              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
+              <br>
+
+              <label for="suggestions" style="display: inline-block;">Suggesties: </label>
+              <br>
+              <textarea id="suggestions" class="inputBox" placeholder="Vul hier suggesties in. Als u meer dan 1 woord wilt suggereren, scheid ze met ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
+        </span>
+
+        <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+        <div align="center" class="undisplayed">
+
+              <span style="font-size: 90%;" >
+                Sign/Frame:
+                <input id="mySF" class="txtSF" value="0/0" type="text" />
+                &nbsp;
+                Gloss:
+                <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+                &nbsp;
+                FPS:
+                <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+              </span>
+        </div>
+
+
+        <div align="center">
+            <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+            <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+            </textarea>
+        </div>
+
+        <br>
+
+
+        <!-- SToCA applet element panel -->
+        <!--================================================================-->
+        <div class="SToCA" align="center" ></div>
+        <!--================================================================-->
+    </div>
+</section>
+
+<!--================================================================-->
+
+<!-- Project info section -->
+<section class="projects-section bg-light" id="ProjectInfo">
+
+    <div class="container" height="100%">
+      <h1 align="center">Project Informatie</h1>
+
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+
+            <!-- Column for Team and Funding -->
+            <div class="col-xl-6 col-lg-6">
+
+                <!-- Team -->
+                <div class="project-text text-center text-lg-left">
+
+                    <h2 class="mb-4">Team</h2>
+
+                    <h5>Project coördinatie</h5>
+                    <p class="text-black-50 mb-3">
+                      Floris Roelofsen, Universiteit van Amsterdam<br>
+                      Anika Smeijers, Amsterdam Medisch Centrum<br>
+                    </p>
+
+                    <h5>Avatar vertaling en web interface</h5>
+                    <p class="text-black-50 mb-3">
+                      Lyke Esselink, Universiteit van Amsterdam<br>
+                      Shani Mende-Gillings, Universiteit van Amsterdam<br>
+                      Floris Roelofsen, Universiteit van Amsterdam<br>
+                    </p>
+
+                    <h5>Video vertaling</h5>
+                    <p class="text-black-50 mb-3">
+                      <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
+                      <a href="https://maxvonk.com/">Max Vonk video productions</a><br>
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+
+                <!-- Funding -->
+                <div class="project-text pt-0 text-lg-left">
+                    <h2>Financiering</h2>
+                    <p class="text-black-50 mb-0">
+                      Dankbaar erkennen we financiering van de Nederlandse Organisatie voor Gezondheidsonderzoek en Zorginnovatie (ZonMw) door het
+                      <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programma</a>.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+            </div>
+
+            <!-- Column for partners -->
+
+            <div class="col-xl-6 col-lg-6">
+
+                <!-- East Anglia -->
+
+                <div class="project-text text-center text-lg-left">
+                    <h2 class="mb-4">Partners</h2>
+                    <h5>University of East Anglia</h5>
+                    <p class="text-black-50 mb-3 mt-1">
+                        Onze vertalings-tool maakt gebruik van
+                        <a href="http://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASinging avatar software</a>
+                        ontwikkeld door de
+                        <a href="http://vh.cmp.uea.ac.uk/index.php/Virtual_Humans_Group" target="_blank">Virtual Humans Group </a>
+                        van de
+                        <a href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>.
+                    </p>
+
+                    <p class="text-black-50 mb-0">
+                         We zijn
+                         <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a> vooral dankbaar, voor het beschikbaar maken van een distributie van de software voor ons project.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+
+                <!-- Geneva -->
+
+                <div class="project-text pt-0 text-lg-left">
+                    <h5>University of Geneva</h5>
+                    <p class="mb-3 text-black-50 mt-1">
+                        De
+                        <a href="https://www.unige.ch/fti/en/faculte/departements/dtim/" target="_blank">Afdeling vertaaltechnologie</a>
+                        van de
+                        <a href="https://www.unige.ch/" target="_blank">University of Geneva</a>
+                        ontwikkelt een vergelijkbare vertalings-tool voor Zwitsers-Franse Gebarentaal als onderdeel van het
+                        <a href="https://babeldr.unige.ch/" target="_blank">BabelDr project</a>.
+                    </p>
+                    <p class="mb-3 text-black-50">
+                        <a href="https://www.unige.ch/fti/en/faculte/departements/dtim/membrestim/david/" target="_blank">Bastien David</a>
+                        van de Genève groep helpt ons met het encoderen van NGT gebaren in SiGML.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<!--================================================================-->
+
+<!-- Resources section -->
+<section class="projects-section bg-white" id="Resources">
+      <div class="container" height="100%">
+          <div class="project-text pt-0 text-lg-left">
+              <h2>Meer informatie</h2>
+              <p class="mb-3 text-black-50">
+                Het
+                <a href="https://www.gebarencentrum.nl/" target="_blank">Nederlands Gebarencentrum</a>
+                heeft een online gebarenwoordenboek met vieeos van meer dan 16.000 gebaren in Nederlandse Gebarentaal.
+              </p>
+              <p class="mb-3 text-black-50">
+                Op de
+                <a href="https://www.wattelt.org/corona/" target="_blank">Wattelt!</a> website
+                vindt u een video met algemeen advies voor medisch personeel met dove patienten in tijden van COVID-19.
+                Deze video leert u ook vijftien essentiele gebaren.
+              </p>
+              <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+      </div>
+
+</section>
+
+<!--================================================================-->
+
+<!-- Footer-->
+<footer class="footer bg-light small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam</div></footer>
+
+
+<!-- Javascripts -->
+
+<!-- Jquery JS is loaded in the beginning, see above -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+//Solves naming conflicts between jquery ui and bootstrap
+  $.widget.bridge('uitooltip', $.ui.tooltip);
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+
+<!-- Grayscale theme JS-->
+<script type="text/javascript" src="../js/grayscalescript.js"></script>
+<!-- Javascript for smooth scrolling-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<!-- script for generating avatar animations -->
+<script type="text/javascript" src="../cwa/allcsa.js"> </script>
+
+
+<!-- =============================================== -->
+
+<!-- script for communication with and set up of the avatar -->
+<script language="javascript" type="text/javascript" src="../js/avatarJS.js"></script>
+<!-- script for shared functions across all pages -->
+<script language="javascript" type="text/javascript" src="../js/generalJS.js"></script>
+<!-- script specific to zonmw project -->
+<script language="javascript" type="text/javascript" src="zonmwJS-nl.js"></script>
+
+
+</body>
+</html>
