@@ -195,7 +195,7 @@ function checkText(text,value=-1){
          text = text.join(" ").replace("...",value);
         }
         document.getElementById('monthsBox').setAttribute("class","undisplayed");
-  weeks
+      }
     }
   }
   else if (text.includes("*tijdstip*")){
@@ -206,6 +206,7 @@ function checkText(text,value=-1){
   }
   return text;
 }
+
 
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -280,4 +281,5 @@ function changeFunc(myRadio) {
     document.getElementById("speedLabel").style.display = 'none';
     options = videoOptions;
   }
+}
 }
