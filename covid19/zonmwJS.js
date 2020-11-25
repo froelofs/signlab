@@ -141,7 +141,13 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("...",value);
         }
+        if (text.split(" ").includes("...") == true){
+          alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
+          return false;
+        }
+        else{
         document.getElementById('hoursBox').style.display = "none";
+        }
       }
     }
     else if (text.includes("dagen") == true){
