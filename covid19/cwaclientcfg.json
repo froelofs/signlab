@@ -1,0 +1,32 @@
+{
+  "description"     : "========  CWASA client configuration data ========",
+
+  "avSettings" : [
+    {
+      "width":            380,
+      "height":           320,
+      "avList":           "avsfull",
+      "initAv":           "francoise",
+      "allowSiGMLText":   true,
+      "description":      "avatar for translation page"
+    },
+    {
+      "width":            380,
+      "height":           208,
+      "avList":           "avs",
+      "initAv":           "francoise",
+      "allowFrameSteps":  true,
+      "allowSiGMLText":   true,
+      "description":      "avatar 1 on SiGML page"
+    },
+    {
+      "width":            380,
+      "height":           208,
+      "avList":           "avs",
+      "initAv":           "francoise",
+      "allowFrameSteps":  true,
+      "allowSiGMLText":   true,
+      "description":      "avatar 2 on SiGML page"
+    }
+  ]
+}
