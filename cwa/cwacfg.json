@@ -1,7 +1,7 @@
 {
   "description"     : "========  CWASA installation configuration data  ========",
 
-  "jasBase"         : "https://florisroelofsen.github.io/signlab/cwa/",
+  "jasBase"         : "https://lykeesselink.github.io/cwasa/uva2020/",
   "jasVersionTag"   : "uva2020",
 
   "sigmlBase"       : "sigml",
