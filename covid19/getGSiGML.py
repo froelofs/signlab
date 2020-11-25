@@ -12,7 +12,9 @@ def getGSiGML(word,directory):
 	if match:
 		entry = dictionary[match]
 		if type(entry) == dict:
-			entry = context(entry)
+			# entry = context(entry)
+			print("Entry" + word + "requires the context function")
+			quit()
 		elif entry == "":
 			print("No entry could be found for " + word)
 			quit()
