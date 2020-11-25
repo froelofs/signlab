@@ -6,7 +6,7 @@
 		<hnm_mouthpicture picture='haX@l'/>
 	</hamnosys_nonmanual>
 	<hamnosys_manual>
-		<mparbegin/>
+		<hamparbegin/>
 		<hammovedl/>
 		<hamplus/>
 		<hammoveul/>
