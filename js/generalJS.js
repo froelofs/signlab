@@ -42,6 +42,7 @@ function addSuggestion(text, alertID){
 
 //Creates alerts
 function alertMessage (type, text, parent){
+  console.log(text);
   var msgClass = "";
   if (type == "success"){
     msgClass = "alert alert-success alert-dismissible";
