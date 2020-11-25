@@ -231,7 +231,7 @@ function toSiGML(text,value=-1){
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
       entry = jsonSent[text];
-      if (entry == undefined || entry == "") {
+      if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
