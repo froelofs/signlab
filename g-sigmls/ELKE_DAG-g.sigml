@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="ELKE_DAG">
+        <sign_manual>
+            <handconfig handshape="flat" mainbend="dblbent" second_handshape="flat" second_mainbend="round" second_thumbpos="out"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+            <handconfig palmor="dl"/>
+            <location_bodyarm contact="touch" location="cheek" second_location="chin">
+                <location_hand digits="4" location="midjoint"/>
+            </location_bodyarm>
+            <par_motion>
+                <directedmotion direction="u" size="small" slow="true"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat" mainbend="dblbent" second_handshape="flat" second_mainbend="round" second_thumbpos="out"/>
+                    <handconfig extfidir="u" palmor="dl" second_extfidir="ul"/>
+                    <location_bodyarm contact="touch" location="cheek">
+                        <location_hand digits="4" location="midjoint"/>
+                    </location_bodyarm>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="Elk" speed="0.8"/>
+                <mouth_picture picture="DA" speed="1"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <facialexpr_tier>
+                <eye_brows movement="DN"/>
+                <eye_lids movement="CB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="ELKE_DAG2">
+        <sign_manual>
+            <handconfig bend4="bent" bend5="round" handshape="finger2345" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="u" second_palmor="ul"/>
+            <location_bodyarm location="shoulders" side="right_at"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_brows movement="RB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

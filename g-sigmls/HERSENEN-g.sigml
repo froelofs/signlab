@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="HERSENEN">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="out"/>
+            <handconfig extfidir="u" second_extfidir="l"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm contact="touch" location="headtop">
+                <location_hand digits="3" location="tip"/>
+            </location_bodyarm>
+            <rpt_motion repetition="reverse" second_repetition="reverse">
+                <par_motion>
+                    <directedmotion direction="ui" size="small"/>
+                    <directedmotion direction="or" size="small"/>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="irso" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="UP"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>
