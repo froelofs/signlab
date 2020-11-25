@@ -1,9 +1,10 @@
 import sys
+from ZonMwDict import ZonMw as dictionary
 
 # Looks for a word in the dictionary in order to return the sign's sigml from the corresponding file
-def getGSiGML(word,dictionary,directory):
+def getGSiGML(word,directory):
 	match = ""
-	for key in dictionary.keys:
+	for key in dictionary.keys():
 		if key == word:
 			match = key
 			break
@@ -16,9 +17,9 @@ def getGSiGML(word,dictionary,directory):
 			print("No entry could be found for " + word)
 			quit()
 		file = open(directory + "/" + entry, "r")
-		sigml = f.read()
-		f.close()
+		sigml = ''.join(file.readlines()[1:])
+		file.close()
 		return sigml
 
 if __name__ == '__main__':
-	print(getGSiGML(sys.argv[1],sys.argv[2],sys.argv[3]))
+	print(getGSiGML(sys.argv[1],sys.argv[2]))
