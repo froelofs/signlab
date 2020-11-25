@@ -207,7 +207,6 @@ function checkText(text,value=-1){
     }
   }
   else if (text.includes("*tijdstip*") == true){
-    alert("Tijdstip recognised!");
     alertMessage("success","Tijdstip recognised!","alertZonMwTran");
     return false;
   }
