@@ -144,9 +144,10 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("dagen" == true)){
+      alertMessage("error","Dagen herkent!","alertZonMwTran");
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 21 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
@@ -164,7 +165,7 @@ function checkText(text,value=-1){
     else if (text.includes("weken" == true)){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 12 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
@@ -182,7 +183,7 @@ function checkText(text,value=-1){
     else if (text.includes("maanden" == true)){
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 12 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
