@@ -224,6 +224,7 @@ function toSiGML(text,value=-1){
      // if avatar is checked, sigml is sent
      if (document.getElementById("avatarDisplay").checked) {
       console.log("text: " + text);
+      document.getElementById('mySiGML').value = text;
       entry = jsonSent[text];
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
