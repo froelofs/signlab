@@ -1,5 +1,5 @@
 ZonMw = {
-	'GOED_01': '', 
+	'GOED_01': 'GOED_01-g.sigml', 
 	'MORGEN_01_OCHTEND_01': '', 
 	'MIDDAG_01': '', 
 	'AVOND_01': '', 

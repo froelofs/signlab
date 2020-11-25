@@ -106,7 +106,7 @@ $( function() {
 function checkText(text,value=-1){
   text = text.split(" ");
   console.log(text);
-;  if (text.includes("...") == true){
+  if (text.includes("...") == true){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
       if (value == -1){
@@ -123,7 +123,7 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("...",value);
         }
-        document.getElementById('minutesBox').setAttribute("class","undisplayed");
+      document.getElementById('minutesBox').style.display = "none";
       }
     }
     else if (text.includes("uur" == true)){

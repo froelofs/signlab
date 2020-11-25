@@ -17,8 +17,8 @@ def getGSiGML(word,directory):
 			print("No entry could be found for " + word)
 			quit()
 		file = open(directory + "/" + entry, "r")
-		sigml = f.readlines()[1:-1]
-		f.close()
+		sigml = ''.join(file.readlines()[1:])
+		file.close()
 		return sigml
 
 if __name__ == '__main__':
