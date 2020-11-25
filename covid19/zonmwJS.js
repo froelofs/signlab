@@ -126,7 +126,7 @@ function checkText(text,value=-1){
       document.getElementById('minutesBox').style.display = "none";
       }
     }
-    else if (text.includes("uur" == true)){
+    else if (text.includes("uur") == true){
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
@@ -141,10 +141,10 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("...",value);
         }
-        document.getElementById('hoursBox').setAttribute("class","undisplayed");
+        document.getElementById('hoursBox').style.display = "none";
       }
     }
-    else if (text.includes("dagen" == true)){
+    else if (text.includes("dagen") == true){
       alertMessage("error","Dagen herkent!","alertZonMwTran");
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
@@ -160,10 +160,10 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("...",value);
         }
-        document.getElementById('daysBox').setAttribute("class","undisplayed");
+        document.getElementById('daysBox').style.display = "none";
       }
     }
-    else if (text.includes("weken" == true)){
+    else if (text.includes("weken") == true){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
@@ -178,10 +178,10 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("...",value);
         }
-        document.getElementById('weeksBox').setAttribute("class","undisplayed");
+        document.getElementById('weeksBox').style.display = "none";
       }
     }
-    else if (text.includes("maanden" == true)){
+    else if (text.includes("maanden") == true){
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
@@ -196,11 +196,11 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("...",value);
         }
-        document.getElementById('monthsBox').setAttribute("class","undisplayed");
+        document.getElementById('monthsBox').style.display = "none";
       }
     }
   }
-  else if (text.includes("*tijdstip*")){
+  else if (text.includes("*tijdstip*") == true){
     alertMessage("success","Tijdstip recognised!","alertZonMwTran");
   }
   else{
