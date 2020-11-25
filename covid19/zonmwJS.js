@@ -105,7 +105,8 @@ $( function() {
 
 function checkText(text,value=-1){
   text = text.split(" ");
-  if (text.includes("...") == true){
+  console.log(text);
+;  if (text.includes("...") == true){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
       if (value == -1){
