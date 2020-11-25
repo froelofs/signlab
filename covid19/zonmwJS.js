@@ -219,7 +219,7 @@ function checkText(text,value=-1){
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
   if(autocompSugg.includes(text) == false){
-    alertMessage("info", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
+    alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
     text = checkText(text,value);
@@ -231,7 +231,7 @@ function toSiGML(text,value=-1){
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
       entry = jsonSent[text];
-      if (entry == undefined or entry == "") {
+      if (entry == undefined || entry == "") {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
