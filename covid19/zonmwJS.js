@@ -205,6 +205,25 @@ function checkText(text,value=-1){
         document.getElementById('monthsBox').style.display = "none";
       }
     }
+    else if (text.includes("bloeddruk") == true){
+      if (value == -1){
+        document.getElementById('systolicBPBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 69 and 191 to fill in the first blank", "alertZonMwTran");
+        return false;
+      }
+      else{
+        text = text.join(" ").replace("...",value);
+        if (text.split(" ").includes("...") == true){
+          document.getElementById('systolicBPBox').style.display = "none";
+          document.getElementById('diastolicBPBox').style.display = "block";
+          alertMessage("info", "Please choose a number between 39 and 101 to fill in the second blank", "alertZonMwTran");
+          return false;
+        }
+        else{
+        document.getElementById('diastolicBPBox').style.display = "none";
+        }
+      }
+    }
   }
   else if (text.includes("*tijdstip*") == true){
     alertMessage("success","Tijdstip recognised!","alertZonMwTran");
