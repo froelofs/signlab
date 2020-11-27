@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="DOCHTER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="dO:tYr"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" thumbpos="opposed"/>
+      <handconfig extfidir="il"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="right_at">
+        <location_hand digits="13" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart">
+        <par_motion>
+          <directedmotion direction="o" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinchall" mainbend="bent"/>
+            <handconfig extfidir="l" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

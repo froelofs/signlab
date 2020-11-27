@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BENZINE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bin@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2" second_thumbpos="out" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shouldertop" side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" direction="dl"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="dl" palmor="dl" second_extfidir="do"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

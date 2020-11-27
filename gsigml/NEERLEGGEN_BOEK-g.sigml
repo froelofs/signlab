@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NEERLEGGEN_BOEK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="ceeall" mainbend="bent"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="dr"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at"/>
+      <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHOPPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sOp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l" second_extfidir="dl"/>
+        <handconfig extfidir="or" palmor="d" second_extfidir="do"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="stomach" second_location="chest" second_side="right_at"/>
+        <location_bodyarm contact="close" location="chest" second_location="chest" second_side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="o" fast="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <handconfig extfidir="uo" palmor="d" second_extfidir="ol"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="chest" second_location="chest" second_side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PAP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pAp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="l" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin" side="right_at">
+        <location_hand digits="2" location="midjoint"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <wristmotion motion="stircw"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

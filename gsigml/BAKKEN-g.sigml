@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BAKKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bAk@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several" second_repetition="fromstart_several">
+        <directedmotion direction="o" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

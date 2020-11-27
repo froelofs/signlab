@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WEGBRENGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bE:N"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="o" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
+          <handconfig extfidir="uo" second_extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

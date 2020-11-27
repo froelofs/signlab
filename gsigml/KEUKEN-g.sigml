@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KEUKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="k2k@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_mainbend="bent" thumbpos="out"/>
+        <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_mainbend="bent" thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="dl" palmor="l"/>
+        <handconfig extfidir="dr" palmor="r"/>
+      </split_handconfig>
+      <location_bodyarm contact="close" location="stomach" side="right_at"/>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="i" fast="true" size="small"/>
+          <nomotion/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="touch" location="stomach" second_location="stomach" second_side="right_at">
+            <location_hand digits="3" location="tip"/>
+          </location_bodyarm>
+          <location_bodyarm contact="close" location="stomach" side="left_at"/>
+        </split_location>
+      </tgt_motion>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="o" fast="true" size="small"/>
+          <directedmotion direction="i" fast="true" size="small"/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="close" location="stomach" side="right_at"/>
+          <location_bodyarm contact="touch" location="stomach" second_location="stomach" second_side="left_at">
+            <location_hand digits="3" location="tip"/>
+          </location_bodyarm>
+        </split_location>
+      </tgt_motion>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="i" fast="true" size="small"/>
+          <directedmotion direction="o" fast="true" size="small"/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="touch" location="stomach" second_location="stomach" second_side="right_at">
+            <location_hand digits="3" location="tip"/>
+          </location_bodyarm>
+          <location_bodyarm contact="close" location="stomach" side="left_at"/>
+        </split_location>
+      </tgt_motion>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="o" fast="true" size="small"/>
+          <directedmotion direction="i" fast="true" size="small"/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="close" location="stomach" side="right_at"/>
+          <location_bodyarm contact="touch" location="stomach" second_location="stomach" second_side="left_at">
+            <location_hand digits="3" location="tip"/>
+          </location_bodyarm>
+        </split_location>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

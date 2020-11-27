@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VUURTOREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vyyto"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="head" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out" thumbpos="opposed"/>
+          <handconfig extfidir="ui" palmor="d"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

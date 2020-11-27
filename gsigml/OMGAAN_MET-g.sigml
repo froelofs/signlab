@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OMGAAN_MET">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Oma"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <split_handconfig>
+        <handconfig extfidir="dl" palmor="dl" second_extfidir="do"/>
+        <handconfig extfidir="or" palmor="u" second_extfidir="uo"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <rpt_motion repetition="fromstart">
+          <circularmotion axis="d" size="small"/>
+        </rpt_motion>
+        <rpt_motion repetition="fromstart">
+          <circularmotion axis="d" size="small"/>
+        </rpt_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

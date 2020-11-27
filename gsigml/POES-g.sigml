@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="POES">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pus"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig ceeopening="slack" handshape="cee12open" mainbend="bent"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="lips" second_location="chin" second_side="right_at" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="r" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="pinch12open" mainbend="bent"/>
+          <handconfig extfidir="u" palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

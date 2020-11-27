@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="CARAVAN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kER@vEn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_mainbend="hooked" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_mainbend="hooked" second_thumbpos="across" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="d" second_extfidir="ol"/>
+        <handconfig extfidir="r" palmor="r" second_extfidir="or"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="palmar"/>
+        <location_hand digits="2" location="midjoint" side="palmar"/>
+      </handconstellation>
+      <split_motion>
+        <directedmotion direction="r" size="small"/>
+        <directedmotion direction="r" size="small"/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

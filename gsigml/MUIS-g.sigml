@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MUIS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mAs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" mainbend="round" second_handshape="flat" second_thumbpos="out"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="o" palmor="d"/>
+        <handconfig extfidir="o" palmor="u" second_extfidir="uo"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="midjoint" side="palmar"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several" second_repetition="fromstart_several">
+        <par_motion>
+          <directedmotion curve="d" direction="ui" fast="true" size="small"/>
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig handshape="flat" mainbend="hooked" second_handshape="flat" second_mainbend="round" second_thumbpos="out" thumbpos="out"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

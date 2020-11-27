@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KLIMREK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="klIIIIImmrEEEk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig ceeopening="slack" handshape="ceeall"/>
+        <handconfig extfidir="u" second_extfidir="uo"/>
+        <handconfig palmor="d"/>
+        <split_location>
+          <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+          <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="left_at"/>
+        </split_location>
+        <split_motion>
+          <par_motion>
+            <directedmotion curve="d" curve_size="small" direction="u" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="uo" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <nomotion/>
+        </split_motion>
+        <split_motion>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" second_extfidir="uo"/>
+          </tgt_motion>
+          <par_motion>
+            <directedmotion curve="d" curve_size="small" direction="u"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="uo" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+        </split_motion>
+        <split_motion>
+          <par_motion>
+            <directedmotion curve="d" direction="u" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="uo" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" second_extfidir="uo"/>
+          </tgt_motion>
+        </split_motion>
+        <split_motion>
+          <nomotion/>
+          <par_motion>
+            <directedmotion curve="d" direction="u" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="uo" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+        </split_motion>
+      </sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig ceeopening="slack" handshape="ceeall"/>
+        <handconfig extfidir="u" second_extfidir="uo"/>
+        <handconfig palmor="d"/>
+        <handconstellation contact="touch">
+          <location_hand location="thumbside"/>
+          <location_hand location="thumbside"/>
+          <location_bodyarm location="head"/>
+        </handconstellation>
+        <rpt_motion repetition="fromstart_several" repetition_baseshift="d">
+          <directedmotion direction="r"/>
+        </rpt_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RUZIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="uzi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_beside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="left_at" side="left_beside"/>
+      </split_location>
+      <directedmotion curve="d" curve_size="small" direction="l" size="small"/>
+      <directedmotion curve="u" direction="r" size="small"/>
+      <directedmotion curve="d" curve_size="small" direction="l" size="small"/>
+      <directedmotion curve="u" direction="r" size="small"/>
+      <directedmotion curve="d" curve_size="small" direction="l" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

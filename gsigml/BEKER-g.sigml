@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEKER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bek@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig ceeopening="slack" handshape="ceeall"/>
+      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <directedmotion direction="d" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

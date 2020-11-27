@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ANTWOORDAPPARAAT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AoApa"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="pinch12open"/>
+        <handconfig handshape="finger2" specialfingers="5" thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d"/>
+        <handconfig extfidir="or" palmor="ur" second_extfidir="uo"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="5" location="nail" side="palmar"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="i"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="l" palmor="dl"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

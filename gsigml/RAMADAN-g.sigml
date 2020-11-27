@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RAMADAN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AmA"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="nostrils" side="left_beside">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <directedmotion curve="r" direction="dl" size="small"/>
+        <location_bodyarm location="chin" second_location="lips" second_side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

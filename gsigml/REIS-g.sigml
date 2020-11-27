@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="REIS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="E_is"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="ol"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at" side="right_at"/>
+      <directedmotion direction="o" halt="true"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

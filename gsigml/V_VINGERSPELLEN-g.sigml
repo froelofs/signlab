@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="V_VINGERSPELLEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

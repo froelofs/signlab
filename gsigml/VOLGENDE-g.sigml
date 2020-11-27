@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VOLGENDE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vOxn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="l" second_extfidir="dl"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at" side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" direction="o"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" palmor="l" second_extfidir="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WIJZEN_NAAR_LINKS">
+    <sign_nonmanual/>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent"/>
+      <handconfig extfidir="ul" second_extfidir="ol"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" side="left_at"/>
+      <directedmotion direction="dl" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

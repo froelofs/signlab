@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VADER_02">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vad"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="forehead">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <directedmotion curve="u" direction="d" size="small"/>
+        <location_bodyarm contact="touch" location="chin">
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHOMMEL">
+    <sign_nonmanual/>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist"/>
+      <handconfig extfidir="o" second_extfidir="do"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chest" second_location="stomach" second_side="right_at" side="right_at">
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="uo" size="big" slow="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="shoulders" side="right_at"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion curve="d" direction="di" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="l" second_extfidir="do"/>
+        </tgt_motion>
+      </par_motion>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="uo" size="big" slow="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="shoulders" side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

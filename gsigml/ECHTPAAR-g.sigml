@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ECHTPAAR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="paa"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <handconfig handshape="fist" thumbpos="across"/>
+        <handconfig extfidir="ul" second_extfidir="uo"/>
+        <handconfig palmor="dl"/>
+        <location_bodyarm location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
+        <par_motion>
+          <directedmotion direction="l" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+      </sign_manual>
+      <sign_manual>
+        <handconfig bend3="bent" contactkind="midjoint" contactpair="31" handshape="finger23spread"/>
+        <handconfig extfidir="uo"/>
+        <handconfig palmor="ul"/>
+        <location_bodyarm location="chest" second_location="shoulders" second_side="right_at" side="right_at"/>
+        <directedmotion direction="l" size="small"/>
+        <directedmotion direction="r" size="small"/>
+        <directedmotion direction="l" size="small"/>
+        <directedmotion direction="r" size="small"/>
+        <directedmotion direction="l" size="small"/>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

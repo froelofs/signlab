@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HALTE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="At@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head" side="right_at"/>
+      <directedmotion direction="o" fast="true" halt="true" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

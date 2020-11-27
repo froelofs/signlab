@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KROM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kOm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12" second_handshape="pinch12" second_mainbend="bent"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="dl"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="tip"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm contact="close" location="shoulders"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="r" direction="d" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinch12" mainbend="bent"/>
+            <handconfig extfidir="ur" palmor="l" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="close">
+          <location_hand digits="2" location="tip"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

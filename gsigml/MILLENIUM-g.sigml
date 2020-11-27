@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MILLENIUM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mIlm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="u" palmor="d"/>
+        <handconfig extfidir="u" palmor="r"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" second_location="shoulders" side="left_at"/>
+        <location_bodyarm location="shoulders"/>
+      </split_location>
+      <par_motion>
+        <directedmotion curve="l" curve_size="big" direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="u"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

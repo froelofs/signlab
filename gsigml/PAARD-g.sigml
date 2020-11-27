@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PAARD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pat"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <split_handconfig>
+        <handconfig extfidir="l" second_extfidir="uo"/>
+        <handconfig extfidir="or"/>
+      </split_handconfig>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <split_motion>
+            <par_motion>
+              <directedmotion direction="d" size="small"/>
+              <tgt_motion>
+                <changeposture/>
+                <handconfig extfidir="ol" second_extfidir="l"/>
+              </tgt_motion>
+            </par_motion>
+            <nomotion/>
+          </split_motion>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="midjoint" side="right_beside"/>
+            <location_hand digits="2" location="midjoint" side="right_beside"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

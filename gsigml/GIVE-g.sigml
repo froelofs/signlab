@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GIVE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ver"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="il"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      <par_motion>
+        <directedmotion direction="o" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" palmor="l" second_extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

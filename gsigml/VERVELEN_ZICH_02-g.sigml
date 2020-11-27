@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERVELEN_ZICH_02">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmmmmmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" second_handshape="finger23" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head" second_location="head" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <wristmotion motion="stircw"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

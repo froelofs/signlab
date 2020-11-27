@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PIZZA">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pi:ta:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="d" second_extfidir="ol"/>
+        <handconfig extfidir="or" palmor="u"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm location="chest" second_location="shoulders" side="left_at"/>
+        <location_bodyarm location="chest"/>
+      </split_location>
+      <par_motion>
+        <circularmotion axis="d" size="big" slow="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" second_extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

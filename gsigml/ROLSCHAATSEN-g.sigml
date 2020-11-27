@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ROLSCHAATSEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rO:lllsas"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig extfidir="ol" second_extfidir="u"/>
+        <handconfig palmor="l" second_palmor="dl"/>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at" side="right_at"/>
+        <wristmotion motion="stircw" size="small"/>
+        <wristmotion motion="stircw" size="small"/>
+      </sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+        <handconfig extfidir="o"/>
+        <handconfig palmor="l"/>
+        <handconstellation contact="close">
+          <location_bodyarm contact="close" location="chest"/>
+        </handconstellation>
+        <split_motion>
+          <par_motion>
+            <directedmotion direction="or"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="or" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="or" second_extfidir="o"/>
+          </tgt_motion>
+        </split_motion>
+        <split_motion>
+          <par_motion>
+            <directedmotion direction="il"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="ol" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <par_motion>
+            <directedmotion direction="ol"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="ol" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+        </split_motion>
+        <split_motion>
+          <par_motion>
+            <directedmotion direction="or"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="or" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <par_motion>
+            <directedmotion direction="ir"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="or" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+        </split_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

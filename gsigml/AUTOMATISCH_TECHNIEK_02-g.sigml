@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AUTOMATISCH_TECHNIEK_02">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="atomati"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat"/>
+        <handconfig handshape="flat" thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="d" second_extfidir="ol" second_palmor="dl"/>
+        <handconfig extfidir="or" palmor="u" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="palm"/>
+        <location_hand location="palm"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="u" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

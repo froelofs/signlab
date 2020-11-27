@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RITS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rIt"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="dl" palmor="dl"/>
+        <handconfig extfidir="dr" palmor="r" second_extfidir="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="1" location="nail"/>
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+        <location_bodyarm contact="touch" location="stomach"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="u" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="dl" palmor="r" second_extfidir="il" second_palmor="dr"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

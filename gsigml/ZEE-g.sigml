@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZEE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zeee"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="d" second_palmor="dr"/>
+      <location_bodyarm location="shoulders" second_location="chest" side="left_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="r" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" palmor="d" second_extfidir="o" second_palmor="dl"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion curve="d" curve_size="small" direction="r" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="d" second_palmor="dr"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="r" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="d" second_palmor="dl"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AARDBEI">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="abEj"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="uo" second_extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="tongue"/>
+      <directedmotion direction="o" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

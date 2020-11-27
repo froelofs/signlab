@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERSTANDIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v@sAnI"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="ear" second_location="forehead" second_side="right_at" side="right_at">
+        <location_hand location="palm"/>
+      </location_bodyarm>
+      <wristmotion motion="nodding" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

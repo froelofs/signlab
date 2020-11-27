@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WINTER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vItYr"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig bend2="dblbent" bend3="dblbent" bend4="dblbent" bend5="dblbent" handshape="flat"/>
+      <handconfig extfidir="l" second_extfidir="il"/>
+      <split_handconfig>
+        <handconfig palmor="d"/>
+        <handconfig palmor="u"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_hand digits="5" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <directedmotion direction="l" size="small"/>
+        <directedmotion direction="l" size="small"/>
+      </split_motion>
+      <split_motion>
+        <directedmotion direction="r" size="small"/>
+        <directedmotion direction="r" size="small"/>
+      </split_motion>
+      <split_motion>
+        <directedmotion direction="l" size="small"/>
+        <directedmotion direction="l" size="small"/>
+      </split_motion>
+      <split_motion>
+        <directedmotion direction="r" size="small"/>
+        <directedmotion direction="r" size="small"/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

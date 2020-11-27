@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERVANGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v@vAN"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="or"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="chest" second_side="right_at" side="right_beside"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="l"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" second_extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

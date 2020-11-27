@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KARTON">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kAtOn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="fist"/>
+        <handconfig handshape="fist"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="l" second_palmor="dl"/>
+        <handconfig extfidir="ur" palmor="r" second_palmor="dr"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest" side="right_at"/>
+        <location_bodyarm location="shoulders" second_location="chest" side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="i" fast="true"/>
+          <nomotion/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="right_at">
+            <location_hand digits="3" location="midjoint" side="dorsal"/>
+          </location_bodyarm>
+          <location_bodyarm location="shoulders" second_location="chest" side="left_at"/>
+        </split_location>
+      </tgt_motion>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="o" fast="true" size="small"/>
+          <directedmotion direction="i" fast="true" size="small"/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="close" location="shoulders" second_location="chest" side="right_at"/>
+          <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="left_at">
+            <location_hand digits="3" location="midjoint" side="dorsal"/>
+          </location_bodyarm>
+        </split_location>
+      </tgt_motion>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="i" fast="true" size="small"/>
+          <directedmotion direction="o" fast="true" size="small"/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="right_at">
+            <location_hand digits="3" location="midjoint" side="dorsal"/>
+          </location_bodyarm>
+          <location_bodyarm location="shoulders" second_location="chest" side="left_at"/>
+        </split_location>
+      </tgt_motion>
+      <tgt_motion>
+        <split_motion>
+          <nomotion/>
+          <directedmotion direction="i" fast="true" size="small"/>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="right_at"/>
+          <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="left_at"/>
+        </split_location>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

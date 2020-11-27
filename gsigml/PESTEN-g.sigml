@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PESTEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pEs@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="neck"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="o" fast="true" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="opposed"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

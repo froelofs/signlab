@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MES">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mEs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="2" location="nail" side="right_beside"/>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <split_motion>
+            <directedmotion direction="ol" fast="true" size="small"/>
+            <nomotion/>
+          </split_motion>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="midjoint" side="right_beside"/>
+            <location_hand digits="2" location="midjoint" side="right_beside"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

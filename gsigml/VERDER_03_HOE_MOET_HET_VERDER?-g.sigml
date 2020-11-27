@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERDER_03_HOE_MOET_HET_VERDER?">
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <facial_expr_par>
+          <eye_brows movement="RB"/>
+          <eye_brows movement="RB"/>
+          <eye_lids movement="WB"/>
+        </facial_expr_par>
+      </facialexpr_tier>
+      <mouthing_tier>
+        <mouth_picture picture="vEd@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+      <handconfig extfidir="ol" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+      <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+      <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

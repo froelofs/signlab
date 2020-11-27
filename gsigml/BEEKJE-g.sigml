@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEEKJE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="beee"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="round" second_thumbpos="opposed" thumbpos="opposed"/>
+      <handconfig extfidir="o" second_extfidir="or"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="chest" side="right_at"/>
+      <directedmotion direction="or" size="small" zigzag_size="small" zigzag_style="wavy"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

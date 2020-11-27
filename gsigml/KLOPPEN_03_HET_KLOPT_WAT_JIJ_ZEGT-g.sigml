@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KLOPPEN_03_HET_KLOPT_WAT_JIJ_ZEGT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several" second_repetition="fromstart_several">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+          <handconfig extfidir="uo"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

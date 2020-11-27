@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HUISWERK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="h9_yswERk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="opposed"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="tip"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm contact="close" location="neck"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="r" fast="true" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinchall" mainbend="bent"/>
+            <handconfig extfidir="u" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

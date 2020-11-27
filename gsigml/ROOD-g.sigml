@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ROOD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ro:d"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="nostrils" second_location="lips">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig handshape="finger2" mainbend="bent" thumbpos="across"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

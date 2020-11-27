@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RECEPT_02_KOKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sEp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig ceeopening="slack" handshape="cee12"/>
+      <handconfig extfidir="u" second_extfidir="ur"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="neck" second_location="head" second_side="right_at" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="d"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="dl" second_extfidir="or"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

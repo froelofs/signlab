@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NEERLEGGEN_BAL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="fff"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <tgt_motion>
+        <directedmotion curve="u" direction="do"/>
+        <location_bodyarm location="chest"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

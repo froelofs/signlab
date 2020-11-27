@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="REACTIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="reAsi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="round" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="nose" second_location="cheek" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="u" second_extfidir="uo"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

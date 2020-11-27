@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZELF">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sElf"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="chest">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion curve="d" direction="uo" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ul" palmor="l" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEURT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="b2t"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="i"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="chest" second_location="shoulders"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONDERBROEK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Obu"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open" mainbend="bent"/>
+      <handconfig extfidir="do" second_extfidir="o"/>
+      <handconfig palmor="dl" second_palmor="d"/>
+      <location_bodyarm contact="touch" location="belowstomach" second_location="belowstomach" second_side="right_at">
+        <location_hand digits="1" location="nail"/>
+      </location_bodyarm>
+      <directedmotion direction="u"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TWEEENTWINTIG_22">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="twe@ntwInt@x"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <wristmotion motion="swinging" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

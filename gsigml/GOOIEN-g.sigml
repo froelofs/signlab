@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GOOIEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="goj"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="neck" second_location="ear" second_side="right_at" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="o" fast="true" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="out"/>
+          <handconfig extfidir="u" palmor="d" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
