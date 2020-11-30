@@ -189,8 +189,15 @@ body.busy::before {
     @extend .fa-chevron-down;
   }
 }*/
+
 .glyphicon {
-    display: inline-block;
+  display: inline-block;
+  font-family: FontAwesome !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .glyphicon-chevron-up:before{
