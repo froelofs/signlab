@@ -71,3 +71,8 @@ function alertMessage (type, text, parent){
   var element = document.getElementById(parent);
   element.appendChild(alert);
 }
+
+$('.timepicker').timepicker({
+    'default': 'now',
+    showInputs: false,
+  });
