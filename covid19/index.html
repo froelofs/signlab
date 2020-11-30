@@ -233,7 +233,7 @@
 
               <div id="timeBox" class="md-form">
                <input id="timeInput" type="text" class="form-control timepicker" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;">
+               <!-- <input type="submit" style="display: inline-block;"> -->
               </div>
 
               <br>
@@ -458,7 +458,10 @@
 <script type="text/javascript" src="../cwa/allcsa.js"> </script>
 
 <script type="text/javascript">
-  $('.timepicker').timepicker();
+  $('#timeInput').pickatime({
+   autoclose: true,
+   'default': 'now'
+});
 </script>
 
 
