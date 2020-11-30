@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="ACHT_UUR">
+  <hamgestural_sign gloss="ACHT_UUR_LANG_8">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="Axy"/>
@@ -10,10 +10,8 @@
       <handconfig handshape="finger23spread" second_handshape="finger23spread" second_thumbpos="out"/>
       <handconfig extfidir="ul" second_extfidir="u"/>
       <handconfig palmor="l"/>
-      <location_bodyarm location="shoulders" second_location="shoulders" side="right_beside"/>
-      <rpt_motion repetition="fromstart_several">
-        <directedmotion direction="l" size="small"/>
-      </rpt_motion>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+      <circularmotion axis="o"/>
     </sign_manual>
   </hamgestural_sign>
 </sigml>
