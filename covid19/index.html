@@ -229,6 +229,12 @@
                <input type="submit" style="display: inline-block;" onclick="if(40 > document.getElementById('diastolicBP').value > 100){alertMessage('error','Please input a number between 39 and 101','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('diastolicBP').value);}">
               </div>
 
+              <div id="timeBox" class="md-form md-outline input-with-post-icon timepicker" default="now">
+               <input type="text" id="manualOperations" class="form-control" placeholder="Select time">
+               <label for="manualOperations"></label>
+                <i class="fas fa-envelope  input-prefix"></i>
+              </div>
+
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
