@@ -194,8 +194,8 @@ body.busy::before {
 }
 
 .glyphicon-chevron-left:before {
-  content: "\f053";
+  content: "\f077";
 }
 .glyphicon-chevron-right:before {
-  content: "\f054";
+  content: "\f078";
 }
