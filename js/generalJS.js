@@ -88,8 +88,8 @@ $('.timepicker').timepicker({
       time = time[0] + time[1];
     } 
     else if (language == "NL"){
-      convert = {"05":"5 over","10":"10 over","15":"15 over","20":"10 voor half","25":"5 voor half","35":"5 over half",
-      "40":"10 over half","45":"15 voor","50":"10 voor","55":"5 voor"};
+      convert = {"05":"5 over","10":"10 over","15":"kwart over","20":"10 voor half","25":"5 voor half","30":,"half","35":"5 over half",
+      "40":"10 over half","45":"kwart voor","50":"10 voor","55":"5 voor"};
       hour = parseInt(time[0]);
       minutes = time[1];
 
@@ -97,7 +97,7 @@ $('.timepicker').timepicker({
         hour = hour - 12;
       }
 
-      hour = toString(hour);
+      hour = hour.toString();
       
       // Rounds the minutes to the nearest option
       if (minutes.charAt(1) == "1" || minutes.charAt(1) == "2"){
@@ -107,15 +107,12 @@ $('.timepicker').timepicker({
        minutes = minutes.charAt(0) + "5";
       }
 
-      // Deals with the case of 30 minutes
-      if (minutes == "30"){
+      if (parseInt(minutes) > 25){
        hour = parseInt(hour) + 1;
-       time = "half " + toString(hour);
       }
-      else{
-        minutes = convert[minutes];
-        time = minutes + " " + hour;
-      }     
+
+      minutes = convert[minutes];
+      time = minutes + " " + hour; 
     }
   return time;
   }
