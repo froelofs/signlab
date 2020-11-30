@@ -88,7 +88,7 @@ $('.timepicker').timepicker({
       time = time[0] + time[1];
     } 
     else if (language == "NL"){
-      convert = {"05":"5 over","10":"10 over","15":"kwart over","20":"10 voor half","25":"5 voor half","30":,"half","35":"5 over half",
+      convert = {"05":"5 over","10":"10 over","15":"kwart over","20":"10 voor half","25":"5 voor half","30":"half","35":"5 over half",
       "40":"10 over half","45":"kwart voor","50":"10 voor","55":"5 voor"};
       hour = parseInt(time[0]);
       minutes = time[1];
