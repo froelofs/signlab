@@ -114,7 +114,7 @@ $('.timepicker').timepicker({
        time = "half " + toString(hour);
       }
       else{
-        minutes = convert{minutes};
+        minutes = convert[minutes];
         time = minutes + " " + hour;
       }     
     }
