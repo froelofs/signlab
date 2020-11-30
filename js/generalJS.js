@@ -73,7 +73,7 @@ function alertMessage (type, text, parent){
 }
 
 $('.timepicker').timepicker({
-    'default': 'now',
+    default: 'now',
     showInputs: false,
     use24hours: true,
     format: 'HH:mm',
