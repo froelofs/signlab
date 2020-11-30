@@ -207,7 +207,9 @@ function checkText(text,value=-1){
   return text;
 }
 
-
+function startPose(){
+  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual><head_tier><head_movement movement='PB' size='small'/></head_tier><body_tier><body_movement movement='ST' /></body_tier><facialexpr_tier><eye_brows movement='RB' /><eye_lids movement='WB' /></facialexpr_tier></sign_nonmanual></hamgestural_sign></sigml>");
+}
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
