@@ -230,8 +230,8 @@
                <input type="submit" style="display: inline-block;" onclick="if(40 > document.getElementById('diastolicBP').value > 100){alertMessage('error','Please input a number between 39 and 101','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('diastolicBP').value);}">
               </div>
 
-              <div id="timeBox" class="md-form bootstrap-timepicker timepicker">
-               <input id="timeInput" type="text" class="form-control timepicker" style="display: inline-block;">
+              <div id="timeBox" class="md-form">
+               <input id="timeInput" type="text" class="form-control timepicker">
                <!-- <input type="submit" style="display: inline-block;"> -->
               </div>
 
@@ -460,7 +460,7 @@
 <script type="text/javascript">
   $('.timepicker').timepicker({
     'default': 'now',
-    showInputs: false
+    showInputs: false,
   });
 </script>
 
