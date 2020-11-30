@@ -1,0 +1,1044 @@
+<!--
+	animgen configuration file
+-->
+
+<config>
+
+<!--
+Config file version.
+
+There are two version ids.  The "majorid" attribute should be changed
+whenever a change to the structure
+of this file makes it incompatible with other versions of animgen.
+The same value should be set in the variable ConfigMajorVersion
+in animgenlib.cpp.  The program checks that the two are identical
+and throws a fatal error if they are not.
+
+"minorid" should be changed when this file changes in any way
+that will not cause problems for any version of animgen having the
+correct majorid.  This value will be read and reported to the log
+file by animgen, but is otherwise ignored.
+-->
+<version majorid="2007-03-18" minorid="2007-03-18"/>
+<!--
+	Major and minor version updated from 2004-08-03 to 2007-03-18.
+	Changes:
+		<bodyconstraints> attribute reachInit replaced by
+			reachFar, reachNearHard, and reachNearSoft, to allow for
+			pulling the shoulder back when the wrist joint would
+			otherwise be too near the shoulder.
+		maxScAngleOut and maxScAngleIn renamed to maxScAngleFwd and
+			maxScAngleBack.
+	- Richard Kennaway
+-->
+
+
+<!--
+Select relative rotation of slap bones in arms of Visia avatar.
+The correct value will prevent the wrists from becoming unnaturally
+thin at the extremes of rotation of the forearm joint.
+-->
+<slapoffset left="-0.7" right="0.7"/>
+<!-- Note that Visia is no longer supported. -->
+
+
+<!--
+Adjust Visia's initial posture by rotating the back bones about
+the X-axis.
+-->
+<visia-tweak-back lower="0" middle="0" top="0.5"/>
+<!-- Note that Visia is no longer supported. -->
+
+
+<!--
+Timing information for various types of gestures.
+	STD_MOVE is the default time to move from one posture to another,
+		in seconds.
+	ZIGZAGREPS is the default number of repetitions in a zigzag movement.
+	SUCCESSIVE_FINGERS: the duration of a movement with fingers moving one by one
+		is multiplied by 1 + |s|*SUCCESSIVE_FINGERS, where s is the spread
+		parameter and is in the range -1..1.
+	shape_lead and orientation_lead are lead/lag parameters and must lie strictly
+		between -1 and 1.
+	All the other attributes of <gesturetiming> are multiples of STD_MOVE.
+-->
+<gesturetiming
+	STD_MOVE = "0.27"
+	SMALLCURVE = "1.05"
+	MEDIUMCURVE = "1.1"
+	BIGCURVE = "1.2"
+	CIRCLE = "1.5"
+	ZIGZAG = "3.5"
+	ZIGZAG_REPS = "3"
+	RETURN_MOVE = "0.7"
+	REPEAT_SCALE = "0.6"
+	SIGN_GAP = "0.15"
+	PHRASE_GAP = "2.6"
+	SUCCESSIVE_FINGERS = "0.5"
+	shape_lead = "0.8"
+	orientation_lead = "0"
+/>
+
+
+<!--
+signingspace: specification of the layout of Hamnosys sites in signing
+	space.
+
+	horiz_spacing: multiple of half distance between shoulder joint
+		centres
+	vert_spacing: multiple of arm length (distance from shoulder to
+		wrist joint centres)
+	inout_spacing: multiple of arm length
+	fan: tangent of angle between the plane of the centre sites and
+		the plane of the right_beside sites.
+	curve: 0 implies that each xy group of sites in signing space is
+		a plane.  1 implies that it curves inwards to a certain maximum
+		extent.  Intermediate values interpolate.
+
+	nearbelly: multiple of arm length.
+	signspacesitesize: multiple of horizontal spacing.  Size of
+		sites in signing space.
+	torsositesize: WARNING: absolute measurement in metres.  Size of
+		sites on the surface of the torso.
+	neckheight: WARNING: absolute measurement in metres.  Vertical
+		distance of neck sites above shouldertop sites.
+-->
+<signingspace
+	horiz_spacing = "0.8"
+	vert_spacing = "0.25"
+	inout_spacing = "0.15"
+	signspacesitesize = "1.2"
+	fan = "0.6"
+	curve = "1"
+	nearbelly = "0.10"
+	torsositesize = "0.10"
+	neckheight = "0.02"
+/>
+
+<!--
+Geometric information for various types of gestures.
+
+handDistance..torsoDistance: distance of default separation at each
+	class of site.  This has been tweaked to be the same as
+leadinangle: the angle over which a circular motion reaches its
+	full amplitude
+leadoutangle: the angle over which a circular motion declines to
+	zero at the end
+zigzag_ratio: the ratio of zigzag offset to traverse
+baseshift_ratio: the ratio of base shift to standard size of movement
+movement_to_size_ratio: the size of a movement at a given site as a
+	proportion of the default distance from that site.
+elbowRaise: the angle through which the elbow is rotated by a standard
+	displacement, in degrees.
+-->
+<gesturegeometry
+	handDistance = "0.10"
+	armDistance = "0.10"
+	headDistance = "0.10"
+	torsoDistance = "0.10"
+	leadinangle = "0.9"
+	leadoutangle = "0.9"
+	zigzag_ratio = "0.33"
+	baseshift_ratio = "0.5"
+	movement_to_size_ratio = "1.3"
+	elbowRaise = "15"
+>
+
+<!--
+The elbow directions specify where the elbow should point when the wrist joint is
+directly outwards, inwards, upwards, downwards, forwards, or at the shoulder joint.
+(The last of these is included only to take account of a theoretical case which should
+never arise in practice.)
+These are given as rotation angles in degrees from standard orientations of the elbow
+for each of those wrist positions:
+		wrist		standard direction	axis of
+		direction		of elbow		rotation
+		out				down			left/right, positive = forwards
+		in				down			left/right, positive = forwards
+		up				forwards		up/down, positive = outwards
+		down			forwards		up/down, positive = outwards
+		forwards		down			fwd/back, positive = outwards
+		zero			down			fwd/back, positive = outwards
+The left_* versions specify the values for the left arm.  If these are omitted, the
+values apply to both arms.
+-->
+	<elbowdirections
+		out="10"
+		in="80"
+		up="30"
+		down="20"
+		forward="20"
+		zero="20"
+		left_out="10"
+		left_in="80"
+		left_up="30"
+		left_down="20"
+		left_forward="20"
+		left_zero="20"
+	/>
+
+<!--
+amplitude1: radians.  The angle towards the palm that the base joint
+	of a finger bends during fingerplay
+amplitude2: radians.  The angle away from the palm that the base joint
+	of a finger bends during fingerplay
+numcycles: the number of oscillations each finger makes
+duration: the duration of a fingerplay is
+	numcycles * duration * STD_MOVE
+leadinangle: the phase over which the motion reaches its
+	full amplitude
+leadoutangle: the phase over which the motion declines to
+	zero at the end
+-->
+	<fingerplay
+		amplitude1="0.35"
+		amplitude2="-0.05"
+		numcycles="2"
+		duration="1"
+		leadinangle = "1.5"
+		leadoutangle = "1.5"
+	/>
+
+
+<!--
+The sizes of various types of movement, as proportions of their default
+sizes.  In all of these, the medium value defaults to 1 and the undef
+value defaults to the medium value.
+-->
+	<straight_sizes
+		verysmall="0.15"
+		small="0.4"
+		big="1.6" />
+	<curve_angles
+		verysmall="0.94"
+		small="1.5"
+		medium="2.8"
+		big="3.14" />
+	<curve_ellipticities
+		verysmall="0"
+		small="0"
+		medium="0"
+		big="1" />
+	<curve_durations
+		verysmall="1"
+		small="1"
+		medium="1.05"
+		big="1.1" />
+	<circle_radii
+		verysmall="0.085"
+		small="0.2"
+		medium="0.5"
+		big="1" />
+	<circle_durations
+		verysmall="1.1"
+		small="1.2"
+		medium="1.3"
+		big="1.6" />
+	<zigzag_sizes
+		verysmall="0.25"
+		small="0.6"
+		big="2" />
+	<incrdecr_sizes
+		undef="1"
+		verysmall="1.1"
+		small="1.25"
+		medium="2"
+		big="3.3" />
+	<eccentricity_sizes
+		undef="1"
+		verysmall="0.85"
+		small="0.7"
+		medium="0.33"
+		big="0.2" />
+	<wristwaggle_sizes
+		verysmall="0.2"
+		small="0.5"
+		medium="1"
+		big="1.5" />
+	<elbowmovement_sizes
+		verysmall="0.2"
+		small="0.5"
+		medium="1"
+		big="1.5" />
+	<baseshift_sizes
+		undef="1"
+		verysmall="0.2"
+		small="0.5"
+		medium="1"
+		big="1.5" />
+	<baseshiftincrdecr_sizes
+		undef="1"
+		incr="1.7"
+		decr="0.6" />
+
+
+<!--
+Wrist-waggling
+	amplitudes: radians
+	leadin/out: radians
+	duration: proportion of STD_MOVE required for a single cycle of the
+		movement.  The duration of a wrist motion will thus be
+		duration*numcycles*STD_MOVE
+-->
+	<wrist_waggling>
+		<nodding
+			amplitude1="0.5"
+			amplitude2="-0.3"
+			numcycles="2"
+			duration="1.15"
+			leadinangle = "0.5"
+			leadoutangle = "0.5"
+		/>
+		<swinging
+			amplitude1="0.3"
+			amplitude2="-0.2"
+			numcycles="2"
+			duration="1.15"
+			leadinangle = "0.5"
+			leadoutangle = "0.5"
+		/>
+		<twisting
+			amplitude1="0.4"
+			amplitude2="-0.4"
+			numcycles="3"
+			duration="0.9"
+			leadinangle = "0.5"
+			leadoutangle = "0.5"
+		/>
+		<stircw
+			amplitude1="0.3"
+			amplitude2="0"
+			numcycles="1"
+			duration="1.6"
+			leadinangle = "0.5"
+			leadoutangle = "0.5"
+		/>
+		<stirccw
+			amplitude1="0.3"
+			amplitude2="0"
+			numcycles="1"
+			duration="1.6"
+			leadinangle = "0.5"
+			leadoutangle = "0.5"
+		/>
+	</wrist_waggling>
+
+</gesturegeometry>
+
+<!--
+one_handed_compliance:
+When only one hand moves in order to establish a handconstellation
+with the other, the other hand will move this proportion of the way
+to or from the designated moving hand.
+
+elbow_max_straightness:
+The minimum allowed value for the exterior angle at the elbow, in
+radians.
+
+elbow_max_raise:
+The maximum allowed rotation of the arm about the shoulder-wrist
+axis in order to prevent the upper arm intersecting the torso, in
+radians.
+
+scAngleProportion:
+The sternoclavicular joint is only allowed to move at most this
+proportion of the angle from the lateral direction to the target
+direction, as measured from the midpoint between the shoulders.
+
+maxScAngle:
+The maximum angle of rotation of the sternoclavicular joint.
+
+reachFar:
+That proportion of the maximum reach distance beyond which the
+sternoclavicular joint will begin to be used to reach positions
+far away.
+
+reachNearHard:
+The minimum separation that animgen will attempt to maintain
+between wrist joint and shoulder joint, as a proportion of maximum
+reach distance.
+
+reachNearSoft:
+That proportion of reachNearHard within which the
+sternoclavicular joint will begin to be used to reach positions
+close to the shoulder joint.  Always at least 1.
+
+bodyAngle:
+The maximum angle between the upper arm and a certain vector.
+These are chosen so as to prevent the upper arm penetrating
+the torso.
+
+upperArmProportion:
+When calculating the bodyAngle from points defining a cone centered
+at the shoulder (instead of using the bodyAngle parameter), the
+angle of the cone is increased by a certain proportion of the angle
+between the upper arm axis and a line from the shoulder to the
+surface of the upper arm.  This parameter is that proportion.
+A negative value is allowed.
+
+forearmTwist:
+The proportion of the wrist rotation about its Y axis that is
+transferred to the elbow.
+
+handAngle:
+The maximum bending of the wrist joint about the X axis.
+Obsolete.
+-->
+
+<bodylanguage
+	one_handed_compliance="0.0"
+/>
+
+
+<bodyconstraints
+	elbow_max_straightness = "0.25"
+	elbow_max_raise = "1.6"
+	arm_plane_angle = "0.4"
+	scAngleProportion = "0.5"
+	maxScAngleUp = "0.6"
+	maxScAngleDown = "0.02"
+	maxScAngleFwd = "0.6"
+	maxScAngleBack = "0.6"
+	reachFar = "0.8"
+	reachNearHard = "0.16"
+	reachNearSoft = "2"
+	bodyAngle = "1.90"
+	rightBodyVector = "-1.5 1 1"
+	leftBodyVector = "1.5 1 1"
+	upperArmProportion = "0.3"
+	forearmTwistRatio = "0.5"
+	upperarmTwistRatio = "0.5"
+	handAngle = "0.6"
+	wristRadialLimit = "0.3"
+	wristUlnarLimit = "0.8"
+	wristDorsalLimit = "1.5"
+	wristPalmarLimit = "1.57"
+/>
+
+
+<repetitions
+	timeratio_laxreturn = "0.55"
+	timeratio_continue = "0.2"
+	spaceratio_continue = "0"
+/>
+
+<!--
+mannertimes.
+Values are multiples of ordinary time, i.e. a "fast" movement
+takes 0.45 the time of an ordinary ("targetted") movement.
+-->
+<mannertimes
+	targetted="1"
+	fast="0.45"
+	slow="2.2"
+	tense="2.3"
+	rest="2"
+	halt="1.05"
+	lax="1.2"
+	softcontact="1.1"
+	hardcontact="1.25"
+	linear="1"
+/>
+
+
+<!--
+morphtimes.
+Values are seconds.
+
+My first choice was 0.26, 0.4, 0.8, but this was described by
+Hamburg as too fast.  Have increased times by 50%.
+-->
+<morphtimes
+	fast="0.39"
+	medium="0.6"
+	slow="1.2"
+/>
+
+
+<!--
+Information determining the response of the various controllers.
+timeConstant is roughly the reciprocal of the characteristic time
+	for the controller to respond to a step change in reference.
+oscConstant should be zero for critically damped motion, positive
+	for underdamped, and negative for overdamped.  A value of around
+	0.05 is generally suitable.  Critically or overdamped motion
+	looks sluggish.
+speedUp determines how much the time constant should increase as the
+	error approaches zero.  Values in the range of 5 to 12 generally
+	work well.  Higher values can cause instability.
+overshoot is obsolete.  It applies only to scalar controllers, and
+	has the effect of terminating the response as soon as the error
+	goes to (or past) zero.  This was an early attempt to obtain the
+	effect of stopping suddenly, and was superceded by the speedUp
+	parameter.  However, overshoot is still useful for modelling
+	contact stops.
+-->
+<trajectories
+	endpoint = "0.99"
+	numsteps = "1000"
+>
+
+
+	<targetted
+		timeConstant = "4"
+		oscConstant = "0.05"
+		speedUp = "8"
+		overshoot = "0"
+		endpoint = "0.99"
+	/>
+
+	<targettedfast
+		timeConstant = "4"
+		oscConstant = "0.05"
+		speedUp = "10"
+		overshoot = "0"
+		endpoint = "0.99"
+	/>
+
+	<targettedslow
+		timeConstant = "4"
+		oscConstant = "0.05"
+		speedUp = "0"
+		overshoot = "0"
+		endpoint = "0.99"
+	/>
+
+	<tense
+		timeConstant = "4"
+		oscConstant = "0.05"
+		speedUp = "8"
+		overshoot = "0"
+		endpoint = "0.99"
+	/>
+
+<!--
+	<rest
+		timeConstant = "4"
+		oscConstant = "0.05"
+		speedUp = "8"
+		overshoot = "0"
+		endpoint = "0.99"
+		overrun = "0.5"
+	/>
+-->
+
+	<suddenstop
+		timeConstant = "8"
+		oscConstant = "0.15"
+		speedUp = "8"
+		overshoot = "0.2"
+		endpoint = "0.99"
+		overrun = "0.5"
+	/>
+
+	<softcontact
+		timeConstant = "4"
+		oscConstant = "0.10"
+		speedUp = "8"
+		overshoot = "0.03"
+		endpoint = "0.99"
+		overrun = "0.03"
+	/>
+
+	<hardcontact
+		timeConstant = "8"
+		oscConstant = "0.15"
+		speedUp = "15"
+		overshoot = "0.2"
+		endpoint = "0.99"
+		overrun = "0.3"
+	/>
+
+	<lax
+		timeConstant = "10"
+		oscConstant = "0.05"
+		speedUp = "0"
+		overshoot = "0"
+		endpoint = "0.99"
+	/>
+
+</trajectories>
+
+<controllers>
+
+	<!-- Not used. -->
+	<all
+		timeConstant = "20"
+		oscConstant = "0.05"
+		speedUp = "10"
+		overshoot = "0"
+	/>
+
+	<!-- Used for absolute hand location. -->
+	<handLoc
+		timeConstant = "40"
+		oscConstant = "0.05"
+		speedUp = "10"
+		overshoot = "0"
+	/>
+
+	<!-- Used for absolute hand orientation. -->
+	<handRot
+		timeConstant = "13"
+		oscConstant = "0.05"
+		speedUp = "3"
+		overshoot = "0"
+	/>
+
+	<!-- Used for hand shape. -->
+	<handshape
+		timeConstant = "20"
+		oscConstant = "0.05"
+		speedUp = "4"
+		overshoot = "0"
+	/>
+
+	<!-- Used for wrist joint. -->
+	<wrist
+		timeConstant = "12"
+		oscConstant = "0.05"
+		speedUp = "6.5"
+		overshoot = "0"
+	/>
+
+	<!-- Used for shoulder and elbow joints. -->
+	<arm
+		timeConstant = "10"
+		oscConstant = "0.05"
+		speedUp = "5"
+		overshoot = "0"
+	/>
+
+</controllers>
+
+
+<!--
+thumbratio: ratio of length of ThumbTMJ bones to IndexMCJ bones.
+The IndexMCJ bone was chosen as the standard of length because
+it is almost the same for Visia's left and right hands.  The other
+finger bones vary between the two hands to a non-physiological degree.
+
+thumbjointsangle:
+The angle of the hinge axes of the second and third joints of the
+thumb to the plane of the hand, when the thumb is alongside the
+palm.
+
+thumbbasebendangle:
+The angle between the bend axis of the base joint of the thumb
+and the Y axis.
+
+thumbbasedirection:
+The angle between the first bone of the thumb and the downwards
+vertical in the standard pose.  Typically around 1 to 1.2 radians,
+and should always be more than 0.78 (45 degrees).
+
+leftThumbTwist, rightThumbTwist:
+Used by Visia 2, 3, and 4 only.  After aligning the thumb bones to
+all point vertically downwards, the thumbs are twisted by these
+amounts about the positive and negative Y-axes respectively.
+-->
+<!-- Note that the Visia avatars are no longer supported. -->
+<avatargeometry
+	thumbratio = "0.55"
+	thumbjointsangle = "0.8"
+	thumbbasebendangle = "0.2"
+	thumbbasedirection = "1.1"
+	leftThumbTwist = "1.57"
+	rightThumbTwist = "1.57"
+
+	forearmthickness = "0.082"
+	upperarmthickness = "0.110"
+	knucklethickness = "0.127"
+	wristsize = "0.054"
+	wristeccentricity = "1.3"
+>
+
+<!-- Ratio of length of most distal phalanx to next most distal
+phalanx.  Ignored if the avatar's asd.xml file specifies the
+fingertip locations. -->
+<fingergeometry>
+	<onefingergeometry digit="1" side="left" tipratio="0.929"/>
+	<onefingergeometry digit="2" side="left" tipratio="1.110"/>
+	<onefingergeometry digit="3" side="left" tipratio="0.805"/>
+	<onefingergeometry digit="4" side="left" tipratio="1.014"/>
+	<onefingergeometry digit="5" side="left" tipratio="0.834"/>
+
+	<onefingergeometry digit="1" side="right" tipratio="0.809"/>
+	<onefingergeometry digit="2" side="right" tipratio="1.017"/>
+	<onefingergeometry digit="3" side="right" tipratio="0.868"/>
+	<onefingergeometry digit="4" side="right" tipratio="0.956"/>
+	<onefingergeometry digit="5" side="right" tipratio="0.973"/>
+</fingergeometry>
+
+<!--
+The joint angle limits for each finger, from thumb (1) to small
+finger (5).  All values apply to both left and right hands.
+digit: which finger
+base, midjoint, endjoint: maximum bend in radians
+basezero, midjointzero, endjointzero: bend when the hand is flat.
+minsplay: maximum splay towards the little finger, relative to the
+    hand with fingers parallel.
+maxsplay; maximum splay towards the thumb, relative to the
+    hand with fingers parallel.
+flatsplay: amount of splay when the hand is flat and the fingers
+    touching.
+fistsplay: amount of splay (as evidenced by the first phalanges)
+    when the hand makes a fist.
+fisttwist: amount of splay (as evidenced by the second phalanges)
+    when the hand makes a fist.
+-->
+<fingerlimits>
+	<onefingerlimits
+		digit="1"
+		base="1.57" midjoint="1.57" endjoint="1.57"
+		basezero="0" midjointzero="0" endjointzero="0"
+		minsplay="0" maxsplay="1.57"
+	/>
+	<onefingerlimits
+		digit="2"
+		base="1.57" midjoint="1.88" endjoint="1.26"
+		basezero="0.0" midjointzero="0.0" endjointzero="0.0"
+		minsplay="-0.374" maxsplay="0.393"
+		flatsplay = "-0.12" fistsplay="-0.12" fisttwist="0.10"
+	/>
+	<onefingerlimits
+		digit="3"
+		base="1.61" midjoint="1.84" endjoint="1.36"
+		basezero="0.0" midjointzero="0.0" endjointzero="0.0"
+		minsplay="-0.258" maxsplay="0.131"
+		flatsplay = "0" fistsplay="0" fisttwist="0"
+	/>
+	<onefingerlimits
+		digit="4"
+		base="1.57" midjoint="1.72" endjoint="1.64"
+		basezero="0.0" midjointzero="0.0" endjointzero="0.0"
+		minsplay="-0.495" maxsplay="0.131"
+		flatsplay = "0.07" fistsplay="0.07" fisttwist="0"
+	/>
+	<onefingerlimits
+		digit="5"
+		base="1.57" midjoint="1.57" endjoint="1.57"
+		basezero="0.0" midjointzero="0.0" endjointzero="0.0"
+		minsplay="-0.619" maxsplay="0.196"
+		flatsplay = "0.09" fistsplay="0.14" fisttwist="-0.23"
+	/>
+</fingerlimits>
+
+<!--
+Definitions of all the handshapes in terms of finger bending.
+Each finger bending consists of 4 numbers, representing respectively
+the bends at the first, second, and third joints, and the splay angle.
+For each of these, 0 represents the value when the joint is not bent
+and 4 is its maximum bending,  These minima and maxima are defined in
+radians in the fingerlimits elements.
+
+Each handshape has two different finger bendings:
+"specialbends" is the bending of the extended fingers (e.g. the index
+finger for the finger2 handshape) and "ordinarybends" for the other
+fingers.  The thumb is not described here.
+"extendedfingers" is the set of extended fingers (which includes the
+thumb for some handshapes).
+-->
+	<handshapes>
+		<fist
+			specialbends="0000"
+			ordinarybends="4440"
+			extendedfingers=""
+			class="fist"
+		/>
+		<flat
+			specialbends="0000"
+			ordinarybends="0000"
+			extendedfingers="2345"
+			class="flat"
+		/>
+		<finger2
+			specialbends="0000"
+			ordinarybends="4440"
+			extendedfingers="2"
+			class="fist"
+		/>
+		<finger23
+			specialbends="0000"
+			ordinarybends="4440"
+			extendedfingers="23"
+			class="fist"
+		/>
+		<finger23spread
+			specialbends="0004"
+			ordinarybends="4440"
+			extendedfingers="23"
+			class="splay"
+		/>
+		<finger2345
+			specialbends="0004"
+			ordinarybends="4440"
+			extendedfingers="2345"
+			class="splay"
+		/>
+		<pinchall
+			specialbends="2.5 2 1 0"
+			ordinarybends="4440"
+			extendedfingers="12345"
+			class="pinchall"
+		/>
+		<pinch12
+			specialbends="2.5 2 1 0"
+			ordinarybends="4440"
+			extendedfingers="12"
+			class="pinch12"
+		/>
+		<pinch12open
+			specialbends="2.5 2 1 0"
+			ordinarybends="0 1 0.4 4"
+			extendedfingers="12"
+			class="pinch12"
+		/>
+		<ceeall
+			specialbends="0.8 1.8 1.8 0"
+			ordinarybends="4440"
+			extendedfingers="12345"
+			class="ceeall"
+		/>
+		<cee12
+			specialbends="0.8 1.8 1.8 0"
+			ordinarybends="4440"
+			extendedfingers="12"
+			class="cee12"
+		/>
+		<cee12open
+			specialbends="0.8 1.8 1.8 0"
+			ordinarybends="0 1 0.4 0"
+			extendedfingers="12"
+			class="cee12"
+		/>
+	</handshapes>
+
+<!--
+In handshapeclasses, the effects are defined of the finger and thumb
+bending modifiers.  These all correspond to the HamNoSys modifiers,
+except for thumbbent, which represents the effect of the finger-bent
+modifier in those classes of handshape where it affects the thumb as
+well.  Because the articulation of the thumb differs from that of the
+fingers, different bend values are required.
+-->
+	<handshapeclasses>
+		<fist
+			straight="000"
+			bent="400"
+			round="222"
+			hooked="044"
+			dblbent="440"
+			dblhooked="444"
+			halfbent="200"
+
+			alongside="-1.2 1.8 3   2   0"
+			out=      "-0.4 2.6 2.4 -0.0 0.3"
+			across=   " 3.5 1.5 0.8 1.8 1.6"
+			opposed=  " 4.4 2.0 2.5 -0.8 -0.4"
+		/>
+		<flat
+			straight="000"
+			bent="400"
+			round="222"
+			hooked="044"
+			dblbent="440"
+			dblhooked="444"
+			halfbent="200"
+
+			alongside="-0.7 1.3 3   1.3  -0.2"
+			out=      "-0.4 2.6 2.4 -0.0 0.3"
+			across=   " 2.8 0.7 1.8 1.7  1.6"
+			opposed=  " 4.4 2.0 2.5 -0.8 -0.4"
+		/>
+		<splay
+			straight="0004"
+			bent="4004"
+			round="2224"
+			hooked="0444"
+			dblbent="4404"
+			dblhooked="4444"
+			halfbent="2004"
+
+			alongside="-1.2 1.8 3   2   0"
+			out=      "-0.4 2.6 2.4 -0.0 0.3"
+			across=   " 2.8 0.7 1.8 1.7 1.6"
+			opposed=  " 4.4 2.0 2.5 -0.8 -0.4"
+		/>
+		<pinchall
+			straight="0000"
+			bent="3.7 0 0 0"
+			round="3 3 3 0"
+			hooked="3 4 3 0"
+			dblbent="4 3 2 0"
+			dblhooked="4 3 3 0"
+			halfbent="3 2.5 2.5 0"
+
+			alongside= "4   3   3.7 1.1  1.9"
+			out=       "4   3   3.7 1.1  1.9"
+			across=    "4   3   3.7 1.1  1.9"
+			opposed=   "4   3   3.7 1.1  1.9"
+			thumbbent= "4.3 1.7 3.7 0   -1"
+		/>
+		<pinch12
+			straight="0000"
+			bent="3.7 0 0 0"
+			round="3 3 3 0"
+			hooked="3 4 3 0"
+			dblbent="4 3 2 0"
+			dblhooked="4 3 3 0"
+			halfbent="3 2.5 2.5 0"
+
+			alongside= "4   3   3.7 1.1  1.9"
+			out=       "4   3   3.7 1.1  1.9"
+			across=    "4   3   3.7 1.1  1.9"
+			opposed=   "4   3   3.7 1.1  1.9"
+			thumbbent= "4.3 1.7 3.7 0   -1"
+		/>
+		<ceeall
+			straight="0000"
+			bent="3000"
+			round="1330"
+			hooked="2440"
+			dblbent="2320"
+			dblhooked="2330"
+			halfbent="1 2.5 2.5 0"
+
+			alongside= "3.8 2.0 3.8 0.6  0.6"
+			out=       "3.8 2.0 3.8 0.6  0.6"
+			across=    "3.8 2.0 3.8 0.6  0.6"
+			opposed=   "3.8 2.0 3.8 0.6  0.6"
+			thumbbent= "4.3 1.7 3.7 0   -0.5"
+		/>
+		<cee12
+			straight="0000"
+			bent="3000"
+			round="1330"
+			hooked="2440"
+			dblbent="2320"
+			dblhooked="2330"
+			halfbent="1 2.5 2.5 0"
+
+			alongside= "3.8 2.0 3.8 0.6  0.6"
+			out=       "3.8 2.0 3.8 0.6  0.6"
+			across=    "3.8 2.0 3.8 0.6  0.6"
+			opposed=   "3.8 2.0 3.8 0.6  0.6"
+			thumbbent= "4.3 1.7 3.7 0   -0.5"
+		/>
+	</handshapeclasses>
+
+<!--
+incrementalthumbbending represents the additional effect on the thumb
+of fingerbending codes when the thumb has a thumbout or thumbopposed
+modifier.
+-->
+	<incrementalthumbbending
+		straight="0 0 0 0 0"
+		bent="0 0 0 2 0"
+		round="0 0 0 1 1"
+		hooked="0 0 0 0 1.5"
+		dblbent="0 0 0 2 1"
+		dblhooked="0 0 0 2 2"
+		halfbent="0 0 0 0.5 0.5"
+	/>
+
+<!--
+ceefingers represents the additional bending at the base of each finger
+when the cee is slack or tight, measured in fingerbending units (i.e.
+min to max is 4 units).
+-->
+	<ceefingers
+		slack="-0.8"
+		tight="0.5"
+	/>
+
+<!--
+specialcases holds a collection of special-case hacks for particular handshapes.
+
+tbf_thumb, tbf_index: the thumb and index finger bends for thumbbetween="23" and
+the fist handshape.
+-->
+	<specialcases
+		MiddleCrossedOverIndex_index = "0.7 0 0 -2"
+		MiddleCrossedOverIndex_middle = "-0.2 1 1 -2"
+
+		ThumbToBentMiddle_thumb = "3.5 0.25 0.5 0.8 0"
+		ThumbToBentMiddle_index = "0 0 0 0"
+		ThumbToBentMiddle_middle = "2.25 0 0 0"
+
+		FistAroundThumb_thumb = "2.8 0.7 1.8 2 1.6"
+		FistAroundThumb_fingers = "3.5 3.5 3.5 0"
+
+		PinchBentThumbToMiddle_thumb = "3 0.5 0.5 1.3 0"
+		PinchBentThumbToMiddle_index = "0 0 0 0"
+
+		PinchNo2_thumb = "4 3 2 1.4 1.9"
+		PinchNo2_index = "0 0 0 0"
+
+		IndexCrossOverThumb_thumb = "4 1 0 2 0"
+		IndexCrossOverThumb_index = "3.5 2 0 0"
+
+		Thumbbetween23Fist_thumb = "3.5 1.8 3 2.5 -0.5"
+		Thumbbetween23Fist_index = "2.5 4 2 0"
+	/>
+</avatargeometry>
+
+
+<!--
+The standard waiting posture.
+The current definition uses a SiGML extension allowing directions
+to be specified with greater resolution than in Hamnosys.
+-->
+<waitgesture>
+<hamgestural_sign gloss="=wait">
+	<sign_manual both_hands="true" lr_symm="true">
+		<handconfig extfidir="ddool" palmor="dlll"/>
+		<handconfig handshape="flat" mainbend="111" splay="1"
+			bend1="1 1 3 1 0"/>
+		<location_bodyarm
+			location="belowstomach"
+			second_location="stomach"
+			side="right_at"
+			second_side="right_beside"
+			contact="close"
+		>
+			<location_hand location="palm" side="palmar"/>
+		</location_bodyarm>
+	</sign_manual>
+	<sign_nonmanual>
+		<body_tier>
+			<body_movement movement="ST" />
+		</body_tier>
+		<facialexpr_tier>
+			<eye_brows movement="RB" />
+			<eye_lids movement="WB" />
+		</facialexpr_tier>
+	</sign_nonmanual>
+</hamgestural_sign>
+</waitgesture>
+
+
+
+<!--
+Attributes of the form A_B define the ratio of measurement A to
+measurement B.  These will generally be overridden by the avatar's
+asd.xml file, if it defines the necessary points.
+-->
+<facegeometry
+	nosewidth_eyesep = "0.56"
+	nosetipwidth_basewidth = "0.25"
+	nosedepth_nosehalfwidth = "1.3"
+	noseraise_nosedepth = "0.16"
+	nosehook = "0.05"
+	nostrildepth = "0.05"
+	nostrilplacement = "0.45"
+	nostrildilation = "0.1"
+/>
+
+
+
+</config>
+
+<!--
+Nothing should appear here.
+-->
