@@ -229,6 +229,10 @@
                <input type="submit" style="display: inline-block;" onclick="if(40 > document.getElementById('diastolicBP').value > 100){alertMessage('error','Please input a number between 39 and 101','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('diastolicBP').value);}">
               </div>
 
+              <div id="timeBox" class="md-form">
+               <input type="text" class="form-control" placeholder="Select a time">
+              </div>
+
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
@@ -415,7 +419,7 @@
 <!--================================================================-->
 
 <!-- Footer-->
-<footer class="footer bg-white small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam</div></footer>
+<footer class="footer bg-white small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam <i class="material-icons">email</i>: signlab.amsterdam@gmail.com</div></footer>
 
 
 <!-- Javascripts -->
