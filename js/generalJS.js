@@ -76,5 +76,6 @@ $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
     use24hours: true,
-    format: 'HH:mm'
+    format: 'HH:mm',
+    showMeridian: false
   });
