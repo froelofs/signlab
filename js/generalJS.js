@@ -79,7 +79,8 @@ $('.timepicker').timepicker({
     format: 'HH:mm',
     showMeridian: false,
     fromnow: 0,
-    minuteStep: 5
+    minuteStep: 5,
+    autoclose: true
   });
 
   function adaptTime(time,language="NL"){
