@@ -42,7 +42,7 @@
 
 </head>
 
-<body id="page-top" onload="CWASA.init(); startPose();">
+<body id="page-top" onload="CWASA.init();">
 
 
 <!--================================================================-->
@@ -175,7 +175,7 @@
 
             <br>
              <!-- Defines the button and label displayed for the option "avatar" -->
-              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this);">
+              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this); startPose();">
               <label for="avatar" style="margin-right: 5px">Avatar translation</label>
 
               <br>
