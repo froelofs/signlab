@@ -227,7 +227,15 @@ function checkText(text,value=-1){
   }
   else if (text.includes("*tijdstip*") == true){
     alertMessage("success","Tijdstip recognised!","alertZonMwTran");
-    return false;
+    if (value == -1){
+      document.getElementById('timeBox').style.display = "block";
+      alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
+      return false;
+    }
+    else{
+      text = text.join(" ").replace("...",value);
+      document.getElementById('timeBox').style.display = "none";
+    }
   }
   else{
     text = text.join(" ");
