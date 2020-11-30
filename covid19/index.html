@@ -462,7 +462,9 @@
     'default': 'now',
     showInputs: false,
     autoclose: true,
-    afterDone: alert("Hi"),
+    afterDone: function(){
+      alert("Hi");
+    },
     'donetext': "Done",
   });
 </script>
