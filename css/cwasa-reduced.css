@@ -180,7 +180,7 @@ body.busy::before {
 }
 
 /*Overrides the glyphicons in the timepicker*/
-.glyphicon {
+/*.glyphicon {
   @extend .fa;
   &.glyphicon-chevron-up {
     @extend .fa-chevron-up;
@@ -188,4 +188,11 @@ body.busy::before {
   &.glyphicon-chevron-down {
     @extend .fa-chevron-down;
   }
+}*/
+
+.glyphicon-chevron-left:before {
+  content: "\f053";
+}
+.glyphicon-chevron-right:before {
+  content: "\f054";
 }
