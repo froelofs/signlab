@@ -193,9 +193,9 @@ body.busy::before {
     display: inline-block;
 }
 
-.glyphicon-chevron-up:before {
+.glyphicon-chevron-up{
   content: "\f077";
 }
-.glyphicon-chevron-down:before {
+.glyphicon-chevron-down{
   content: "\f078";
 }
