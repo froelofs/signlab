@@ -992,17 +992,10 @@ to be specified with greater resolution than in Hamnosys.
 <waitgesture>
 <hamgestural_sign gloss="=wait">
 	<sign_manual both_hands="true" lr_symm="true">
-		<handconfig extfidir="ddool" palmor="dlll"/>
-		<handconfig handshape="flat" mainbend="111" splay="1"
-			bend1="1 1 3 1 0"/>
-		<location_bodyarm
-			location="belowstomach"
-			second_location="stomach"
-			side="right_at"
-			second_side="right_beside"
-			contact="close"
-		>
-			<location_hand location="palm" side="palmar"/>
+		<handconfig extfidir="dl" /> <handconfig palmor="l" />
+		<handconfig handshape="fist" thumbpos="across" />
+		<location_bodyarm contact="touch" location="belowstomach" side="right_beside">
+			<location_hand digits="1" />
 		</location_bodyarm>
 	</sign_manual>
 	<sign_nonmanual>
