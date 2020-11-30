@@ -73,11 +73,50 @@ function alertMessage (type, text, parent){
 }
 
 $('.timepicker').timepicker({
-    default: 'now',
+    'default': 'now',
     showInputs: false,
     use24hours: true,
     format: 'HH:mm',
     showMeridian: false,
     fromnow: 0,
-    minuteStep: 1
+    minuteStep: 5
   });
+
+  function adaptTime(time,language="NL"){
+    time = time.split(":");
+    if (language == "EN"){
+      time = time[0] + time[1];
+    } 
+    else if (language == "NL"){
+      convert = {"05":"5 over","10":"10 over","15":"15 over","20":"10 voor half","25":"5 voor half","35":"5 over half",
+      "40":"10 over half","45":"15 voor","50":"10 voor","55":"5 voor"};
+      console.log(Object.keys(convert));
+      hour = parseInt(time[0]);
+      minutes = time[1];
+
+      if (hour > 12){
+        hour = hour - 12;
+      }
+
+      hour = toString(hour);
+      
+      // Rounds the minutes to the nearest option
+      if (minutes.charAt(1) == "1" || minutes.charAt(1) == "2"){
+       minutes = minutes.charAt(0) + "0";
+      }
+      else if (minutes.charAt(1) == "3" || minutes.charAt(1) == "4"){
+       minutes = minutes.charAt(0) + "5";
+      }
+
+      // Deals with the case of 30 minutes
+      if (minutes == "30"){
+       hour = parseInt(hour) + 1;
+       time = "half " + toString(hour);
+      }
+      else{
+        minutes = convert{minutes};
+        time = minutes + " " + hour;
+      }     
+    }
+  return time;
+  }

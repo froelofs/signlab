@@ -230,9 +230,9 @@
                <input type="submit" style="display: inline-block;" onclick="if(40 > document.getElementById('diastolicBP').value > 100){alertMessage('error','Please input a number between 39 and 101','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('diastolicBP').value);}">
               </div>
 
-              <div id="timeBox" class="md-form">
-               <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px;display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="alert(document.getElementById('timeInput').value);">
+              <div id="timeBox" class="md-form" style="display:none;">
+               <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="toSiGML(document.getElementById('timeInput').value);">
               </div>
 
               <br>
@@ -455,20 +455,7 @@
 
 
 <!-- script for generating avatar animations -->
-<script type="text/javascript" src="../cwa/allcsa.js"> </script>
-
-<script type="text/javascript">
-  $('.timepicker').timepicker({
-    'default': 'now',
-    showInputs: false,
-    use24hours: true,
-    format: 'HH:mm',
-    showMeridian: false,
-    fromnow: 0,
-    minuteStep: 1
-  });
-</script>
-
+<script type="text/javascript" src="../cwa/allcsa.js"></script>
 
 <!-- =============================================== -->
 
