@@ -90,7 +90,6 @@ $('.timepicker').timepicker({
     else if (language == "NL"){
       convert = {"05":"5 over","10":"10 over","15":"15 over","20":"10 voor half","25":"5 voor half","35":"5 over half",
       "40":"10 over half","45":"15 voor","50":"10 voor","55":"5 voor"};
-      console.log(Object.keys(convert));
       hour = parseInt(time[0]);
       minutes = time[1];
 

@@ -241,7 +241,7 @@ function checkText(text,value=-1){
     }
     else{
       value = adaptTime(value);
-      text = text.join(" ").replace("...",value);
+      text = text.join(" ").replace("*tijdstip*",value);
       document.getElementById('timeBox').style.display = "none";
     }
   }
