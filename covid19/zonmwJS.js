@@ -249,7 +249,7 @@ function startPose() {
 }
 
 $(window).on("load", function(){
-  setTimeout(startPose, 500);
+  setTimeout(startPose, 1000);
 } );
 
 
