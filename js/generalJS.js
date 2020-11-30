@@ -75,5 +75,6 @@ function alertMessage (type, text, parent){
 $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
-    use24hours: true
+    use24hours: true,
+    format: 'HH:mm'
   });
