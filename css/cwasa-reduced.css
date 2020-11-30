@@ -189,6 +189,9 @@ body.busy::before {
     @extend .fa-chevron-down;
   }
 }*/
+.glyphicon {
+    display: inline-block;
+}
 
 .glyphicon-chevron-left:before {
   content: "\f053";
