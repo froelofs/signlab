@@ -12,7 +12,7 @@ var jsonSent = (function() {
   $.ajax({
     'async': false,
     'global': false,
-    'url': "sentencesDictNL.json",
+    'url': "sentencesDictEN.json",
     'dataType': "json",
     'success': function(data) {
       jsonSent = data;
@@ -27,7 +27,7 @@ var jsonvideo = (function() {
   $.ajax({
     'async': false,
     'global': false,
-    'url': "videoDict.json",
+    'url': "videoDictNL.json",
     'dataType': "json",
     'success': function(data) {
       jsonvideo = data;
@@ -115,8 +115,7 @@ function checkText(text,value=-1){
   text = text.split(" ");
   console.log(text);
   if (text.includes("...") == true){
-    // alertMessage("success","Minuten recognised!","alertZonMwTran");
-    if (text.includes("minuten") == true){
+    if (text.includes("minutes") == true){
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
@@ -125,7 +124,7 @@ function checkText(text,value=-1){
       else{
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("minuten","minuut");
+          text = text.replace("minutes","minute");
           text = text.replace("...",value);
         }
         else{
@@ -134,7 +133,7 @@ function checkText(text,value=-1){
       document.getElementById('minutesBox').style.display = "none";
       }
     }
-    else if (text.includes("uur") == true){
+    else if (text.includes("hours") == true){
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
@@ -143,7 +142,7 @@ function checkText(text,value=-1){
       else{
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("uren","uur");
+          text = text.replace("hours","hour");
           text = text.replace("...",value);
         }
         else{
@@ -158,8 +157,7 @@ function checkText(text,value=-1){
         }
       }
     }
-    else if (text.includes("dagen") == true){
-      alertMessage("error","Dagen herkent!","alertZonMwTran");
+    else if (text.includes("days") == true){
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
@@ -168,7 +166,7 @@ function checkText(text,value=-1){
       else{
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("dagen","dag");
+          text = text.replace("days","day");
           text = text.replace("...",value);
         }
         else{
@@ -177,7 +175,7 @@ function checkText(text,value=-1){
         document.getElementById('daysBox').style.display = "none";
       }
     }
-    else if (text.includes("weken") == true){
+    else if (text.includes("weeks") == true){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
@@ -186,7 +184,7 @@ function checkText(text,value=-1){
       else{
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("weken","week");
+          text = text.replace("weeks","week");
           text = text.replace("...",value);
         }
         else{
@@ -195,7 +193,7 @@ function checkText(text,value=-1){
         document.getElementById('weeksBox').style.display = "none";
       }
     }
-    else if (text.includes("maanden") == true){
+    else if (text.includes("months") == true){
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
@@ -204,7 +202,7 @@ function checkText(text,value=-1){
       else{
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("maanden","maand");
+          text = text.replace("months","month");
           text = text.replace("...",value);
         }
         else{
@@ -213,7 +211,7 @@ function checkText(text,value=-1){
         document.getElementById('monthsBox').style.display = "none";
       }
     }
-    else if (text.includes("bloeddruk") == true){
+    else if (text.includes("pressure") == true){
       if (value == -1){
         document.getElementById('systolicBPBox').style.display = "block";
         alertMessage("info", "Please choose a number between 69 and 191 to fill in the first blank", "alertZonMwTran");
@@ -233,15 +231,15 @@ function checkText(text,value=-1){
       }
     }
   }
-  else if (text.includes("*tijdstip*") == true){
+  else if (text.includes("*time*") == true){
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
       alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
       return false;
     }
     else{
-      value = adaptTime(value);
-      text = text.join(" ").replace("*tijdstip*",value);
+      value = adaptTime(value,"EN");
+      text = text.join(" ").replace("*time*",value);
       document.getElementById('timeBox').style.display = "none";
     }
   }
