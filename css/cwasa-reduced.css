@@ -206,8 +206,10 @@ body.busy::before {
  background-color : #006666;
  text-align : center;
  display : block;
+ z-index: 1040;
 }
 
 #pwdAlert{
  text-align : center;
+ z-index: 1050;
 }
