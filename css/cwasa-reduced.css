@@ -198,4 +198,5 @@ body.busy::before {
 
 .container-fluid{
   width: 80%;
+  text-align: center;
 }
