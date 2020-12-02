@@ -204,7 +204,7 @@ body.busy::before {
  width : 100%;
  height : 100%; 
  background-color : #006666;
- text-align : center;
+ text-align: center;
  display : block;
  z-index: 1040;
  position: fixed;
