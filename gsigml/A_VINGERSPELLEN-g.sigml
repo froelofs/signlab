@@ -9,7 +9,7 @@
     <sign_manual>
       <handconfig handshape="fist" thumbpos="out"/>
       <handconfig extfidir="u"/>
-      <handconfig palmor="d"/>
+      <handconfig palmor="od"/>
       <location_bodyarm contact="close" location="shoulders" side="right_at"/>
     </sign_manual>
   </hamgestural_sign>

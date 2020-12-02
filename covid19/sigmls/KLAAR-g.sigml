@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="KLAAR_01_/_AFGELOPEN_02_HET_IS_AL_KLAAR">
+  <hamgestural_sign gloss="KLAAR">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="Al"/>
