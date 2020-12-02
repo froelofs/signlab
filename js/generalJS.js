@@ -174,6 +174,7 @@ $(function(){
  filler.style.zIndex = "40";
  filler.style.color = "#006666";
  filler.style.textAlign = "center";
+ filler.style.display = "block";
 
  var l = document.createElement("label");
  l.setAttribute("for","pwd");
