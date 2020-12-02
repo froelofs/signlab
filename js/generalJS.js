@@ -158,7 +158,7 @@ function compare(input){
   }
 }
 
-function check(){
+$(function(){
 
  var a = document.createElement("div");
  a.setAttribute("id","pwdAlert");
@@ -194,4 +194,4 @@ function check(){
  filler.appendChild(button);
 
  $("body").prepend(a,filler);
-}
+});
