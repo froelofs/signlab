@@ -33,6 +33,7 @@ var jsonvideo = (function() {
       jsonvideo = data;
     }
   });
+  console.log("options: " + sentOptions);
   return jsonvideo;
 })();
 
@@ -53,7 +54,6 @@ var autocompSugg = [];
     for (key in jsonSent){
       sentOptions.push(key);
     }
-    console.log("options: " + sentOptions);
     return sentOptions;
   })();
 
@@ -62,7 +62,6 @@ var autocompSugg = [];
     for (key in jsonvideo){
       videoOptions.push(key);
     }
-
     return videoOptions;
   })();
 
