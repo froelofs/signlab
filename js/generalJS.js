@@ -194,9 +194,9 @@ $(function(){
  button.style.display = "inline-block";
  button.style.position = "fixed";
 
- filler.appendChild(l);
- filler.appendChild(field);
- filler.appendChild(button);
+ filler.append(l);
+ filler.append(field);
+ filler.append(button);
 
  $("body").prepend(a,filler);
 });
