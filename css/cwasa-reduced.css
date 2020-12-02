@@ -205,9 +205,13 @@ body.busy::before {
  height : 100%; 
  background-color : #006666;
  text-align: center;
- display : block;
+/* display : block;*/
  z-index: 1040;
  position: fixed;
+
+ display: flex; 
+ justify-content: center; 
+ align-items: center; 
 }
 
 #pwdAlert{
