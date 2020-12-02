@@ -172,7 +172,7 @@ $(function(){
  filler.style.height = "100%"; 
  filler.style.position = "fixed";
  filler.style.zIndex = "40";
- filler.style.color = "#006666";
+ filler.style.backgroundColor = "#006666";
  filler.style.textAlign = "center";
  filler.style.display = "block";
 
