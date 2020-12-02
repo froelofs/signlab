@@ -135,13 +135,14 @@ function compare(input){
   var check = null;
   $.ajax({
    'async': false,
-  'global': false,
+   'global': false,
    'url': "check.json",
-  'dataType': "json",
+   'dataType': "json",
    'success': function(data) {
-     check = data;
-  }
+    check = data;
+   }
   });
+  console.log("data: " + check);
   
   for (key in check){
    if(input == check[key]){
@@ -149,8 +150,8 @@ function compare(input){
     break;
    }
   }
-  console.log("check: ",check);
-  console.log("input: ", input);
+  console.log("check: " + check);
+  console.log("input: " + input);
 
   if (check == true){
    document.getElementById("checkPage").style.display = "none";
