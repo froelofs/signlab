@@ -207,9 +207,11 @@ body.busy::before {
  text-align : center;
  display : block;
  z-index: 1040;
+ position: fixed;
 }
 
 #pwdAlert{
  text-align : center;
  z-index: 1050;
+ position: fixed;
 }
