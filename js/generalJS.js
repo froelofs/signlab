@@ -149,6 +149,8 @@ function compare(input){
     break;
    }
   }
+  console.log("check: ",check);
+  console.log("input: ", input);
 
   if (check == true){
    document.getElementById("checkPage").style.display = "none";
