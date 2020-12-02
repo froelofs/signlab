@@ -180,15 +180,19 @@ $(function(){
  l.setAttribute("for","pwd");
  l.style.display = "inline-block";
  l.innerHTML = "password: ";
+ l.style.position = "fixed";
 
  var field = document.createElement("input");
  field.setAttribute("type","password");
  field.setAttribute("id","pwd");
  field.style.display = "inline-block";
+ field.style.position = "fixed";
+
  var button = document.createElement("input");
  button.setAttribute("type","submit");
  button.setAttribute("onclick","compare(field.value)");
  button.style.display = "inline-block";
+ button.style.position = "fixed";
 
  filler.appendChild(l);
  filler.appendChild(field);
