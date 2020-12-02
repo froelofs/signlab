@@ -129,3 +129,70 @@ $('.timepicker').timepicker({
    time = minutes + " " + hour; 
    return time;
   }
+
+  function check(){
+
+   var a = document.createElement("div");
+   a.setAttribute("id","pwdAlert");
+   a.style.textAlign = "center";
+   a.style.zIndex = "20";
+   a.style.position = "fixed";
+
+   var filler = document.createElement("div");
+   filler.setAttribute("id","checkPage");
+   filler.style.width = "100%";
+   filler.style.height = "100%"; 
+   filler.style.position = "fixed";
+   filler.style.zIndex = "999";
+   filler.style.color = "#006666";
+   filler.style.textAlign = "center";
+
+   var l = document.createElement("label");
+   l.setAttribute("for","pwd");
+   l.style.display = "inline-block";
+   l.innerHTML = "password: ";
+
+   var field = document.createElement("input");
+   field.setAttribute("type","password");
+   field.setAttribute("id","pwd");
+   field.style.display = "inline-block";
+   
+   var button = document.createElement("input");
+   button.setAttribute("type","submit");
+   button.setAttribute("onclick","compare(field.value)");
+   button.style.display = "inline-block";
+
+   filler.appendChild(l);
+   filler.appendChild(field);
+   filler.appendChild(button);
+
+   $("body").prepend(a,filler);
+}
+   
+
+function compare(input){
+  var check = null;
+  $.ajax({
+   'async': false,
+  'global': false,
+   'url': "check.json",
+  'dataType': "json",
+   'success': function(data) {
+     check = data;
+  }
+  });
+  
+  for (key in check){
+   if(input == check[key]){
+    check = true;
+    break;
+   }
+  }
+
+  if (check == true){
+   document.getElementById("checkPage").style.display = "none";
+  }
+  else{
+   alertMessage("error","The password you have entered is incorrect","pwdAlert");
+  }
+}
