@@ -176,27 +176,28 @@ $(function(){
  filler.style.textAlign = "center";
  filler.style.display = "block";
 
+ var s = document.createElement("span");
+ s.style.textAlign = "center";
+
  var l = document.createElement("label");
  l.setAttribute("for","pwd");
  l.style.display = "inline-block";
  l.innerHTML = "password: ";
- l.style.position = "fixed";
 
  var field = document.createElement("input");
  field.setAttribute("type","password");
  field.setAttribute("id","pwd");
  field.style.display = "inline-block";
- field.style.position = "fixed";
 
  var button = document.createElement("input");
  button.setAttribute("type","submit");
  button.setAttribute("onclick","compare(field.value)");
  button.style.display = "inline-block";
- button.style.position = "fixed";
 
- filler.append(l);
- filler.append(field);
- filler.append(button);
+ s.append(l);
+ s.append(field);
+ s.append(button);
+ filler.append(s);
 
  $("body").prepend(a,filler);
 });
