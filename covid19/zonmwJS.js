@@ -49,24 +49,24 @@ $(window).on("load", function(){
 var autocompSugg = [];
 
 // Defines autocomplete suggestions when display by avatar is chosen
-  var sentOptions = (function(){
-    var sentOptions = [];
-    for (key in jsonSent){
-      sentOptions.push(key);
-    }
-    return sentOptions;
-  })();
+var sentOptions = (function(){
+  var sentOptions = [];
+  for (key in jsonSent){
+    sentOptions.push(key);
+  }
+  return sentOptions;
+})();
 
-  var videoOptions = (function(){
-    var videoOptions = [];
-    for (key in jsonvideo){
-      videoOptions.push(key);
-    }
-    return videoOptions;
-  })();
+var videoOptions = (function(){
+  var videoOptions = [];
+  for (key in jsonvideo){
+    videoOptions.push(key);
+  }
+  return videoOptions;
+})();
 
   // Defines the options for autocomplete suggestions as the avatar sentences by default
-  var options = sentOptions;
+var options = sentOptions;
 
 // Defines the functions and variable necessary for autcomplete suggestions
 $( function() {
