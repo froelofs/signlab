@@ -53,7 +53,7 @@ var autocompSugg = [];
     for (key in jsonSent){
       sentOptions.push(key);
     }
-
+    console.log("options: " + sentOptions);
     return sentOptions;
   })();
 
@@ -77,6 +77,7 @@ $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
     arrayOfTerms = terms.split(" ");
+    console.log("input: ", terms)
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
       if (punctuation.includes(term)) {
@@ -89,6 +90,7 @@ $( function() {
        return matcher.test(value.label || value.value || value);
       });
     });
+    console.log("suggestions: " + array);
     return array;
   }
 
