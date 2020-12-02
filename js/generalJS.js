@@ -142,7 +142,6 @@ function compare(input){
     check = data;
    }
   });
-  console.log("data: ", check);
   
   for (key in check){
    if(input == check[key]){
@@ -150,8 +149,6 @@ function compare(input){
     break;
    }
   }
-  console.log("check: ", check);
-  console.log("input: ", input);
 
   if (check == true){
    document.getElementById("checkPage").style.display = "none";
