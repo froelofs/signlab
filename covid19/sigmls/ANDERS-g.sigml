@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ANDERS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AnY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" specialfingers="5" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="or" fast="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="u" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
