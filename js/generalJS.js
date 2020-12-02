@@ -158,46 +158,46 @@ function compare(input){
   }
 }
 
-$(function(){
+// $(function(){
 
- var a = document.createElement("div");
- a.setAttribute("id","pwdAlert");
- a.style.textAlign = "center";
- a.style.zIndex = "50";
- a.style.position = "fixed";
+//  var a = document.createElement("div");
+//  a.setAttribute("id","pwdAlert");
+//  a.style.textAlign = "center";
+//  a.style.zIndex = "50";
+//  a.style.position = "fixed";
 
- var filler = document.createElement("div");
- filler.setAttribute("id","checkPage");
- filler.style.width = "100%";
- filler.style.height = "100%"; 
- filler.style.position = "fixed";
- filler.style.zIndex = "40";
- filler.style.backgroundColor = "#006666";
- filler.style.textAlign = "center";
- filler.style.display = "block";
+//  var filler = document.createElement("div");
+//  filler.setAttribute("id","checkPage");
+//  filler.style.width = "100%";
+//  filler.style.height = "100%"; 
+//  filler.style.position = "fixed";
+//  filler.style.zIndex = "40";
+//  filler.style.backgroundColor = "#006666";
+//  filler.style.textAlign = "center";
+//  filler.style.display = "block";
 
- var s = document.createElement("span");
- s.style.textAlign = "center";
+//  var s = document.createElement("span");
+//  s.style.textAlign = "center";
 
- var l = document.createElement("label");
- l.setAttribute("for","pwd");
- l.style.display = "inline-block";
- l.innerHTML = "password: ";
+//  var l = document.createElement("label");
+//  l.setAttribute("for","pwd");
+//  l.style.display = "inline-block";
+//  l.innerHTML = "password: ";
 
- var field = document.createElement("input");
- field.setAttribute("type","password");
- field.setAttribute("id","pwd");
- field.style.display = "inline-block";
+//  var field = document.createElement("input");
+//  field.setAttribute("type","password");
+//  field.setAttribute("id","pwd");
+//  field.style.display = "inline-block";
 
- var button = document.createElement("input");
- button.setAttribute("type","submit");
- button.setAttribute("onclick","compare(field.value)");
- button.style.display = "inline-block";
+//  var button = document.createElement("input");
+//  button.setAttribute("type","submit");
+//  button.setAttribute("onclick","compare(field.value);");
+//  button.style.display = "inline-block";
 
- s.append(l);
- s.append(field);
- s.append(button);
- filler.append(s);
+//  s.append(l);
+//  s.append(field);
+//  s.append(button);
+//  filler.append(s);
 
- $("body").prepend(a,filler);
-});
+//  $("body").prepend(a,filler);
+// });
