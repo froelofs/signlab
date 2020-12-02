@@ -195,3 +195,7 @@ body.busy::before {
 .glyphicon-chevron-down:before{
   content: "\f078" !important;
 }
+
+.container-fluid{
+  width: 80%;
+}
