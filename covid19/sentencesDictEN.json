@@ -83,9 +83,9 @@
 	"I am going to give you a new IV drip.":"",
 	"The doctor is going to give you a new IV drip.":"",
 	"The nurse is going to give you a new IV drip.":"",
-	"A laboratory technician will come in the morning to take some blood.":"",
-	"A laboratory technician will come in the afternoon to take some blood.":"",
-	"A student doctor will come to take some blood.":"",
+	"A lab technician will come in the morning to take some blood samples.":"",
+	"A lab technician will come in the afternoon to take some blood samples.":"",
+	"A student doctor will come to take some blood samples.":"",
 	"A colleague will come to take some blood samples.":"",
 	"I am sorry, I cannot insert the IV drip. I am going to ask a colleague."
 	"The blood results are good.":"",
