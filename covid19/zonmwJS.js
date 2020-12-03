@@ -31,9 +31,11 @@ var jsonvideo = (function() {
     error: errorF,
   });
   function successS (data) {
+    console.log("This works");
      jsonvideo = data;
     }
   function errorF (xhr, error){
+    console.log("This doesn't work");
     console.log(error);
   }
   return jsonvideo;
