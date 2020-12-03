@@ -8,7 +8,7 @@
             <location_bodyarm location="neck" side="right_at"/>
             <tgt_motion tense="true">
                 <changeposture/>
-                <handconfig contactkind="midjoint" contactpair="12" handshape="pinch12open" second_handshape="pinch12open" second_mainbend="bent"/>
+                <handconfig  handshape="pinch12open" second_handshape="pinch12open" mainbend="410" bend2="bent"/>
             </tgt_motion>
         </sign_manual>
         <sign_nonmanual>

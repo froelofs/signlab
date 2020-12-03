@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="TOT_ZIENS_2_PERSONEN">
-    <sign_nonmanual/>
+  <hamgestural_sign gloss="TOT_ZIENS">
     <sign_manual both_hands="true" lr_symm="true">
       <split_handconfig>
         <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
@@ -52,7 +51,13 @@
         </par_motion>
       </split_motion>
     </sign_manual>
+    <sign_nonmanual>
+    <head_tier>
+      <head_movement movement="SR" speed="0.7"/>
+    </head_tier>
+      <eyegaze_tier>
+      <eye_gaze direction="HC"/>
+    </eyegaze_tier>
+    </sign_nonmanual>
   </hamgestural_sign>
-
-
 </sigml>

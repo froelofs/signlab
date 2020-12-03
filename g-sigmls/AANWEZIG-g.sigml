@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AANWEZIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="SSS" speed="0.7"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual nondominant="true">
+      <handconfig handshape="flat" mainbend="bent" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="o" palmor="d" second_extfidir="uo"/>
+      <location_bodyarm contact="close" location="chest" second_location="chest" side="left_beside"/>
+      <directedmotion direction="do" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
