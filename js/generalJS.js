@@ -75,8 +75,6 @@ function alertMessage (type, text, parent){
 $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
-    use24hours: true,
-    format: 'HH:mm',
     showMeridian: false,
     fromnow: 0,
     minuteStep: 5,
@@ -88,14 +86,6 @@ $('.timepicker').timepicker({
     hour = parseInt(time[0]);
     minutes = time[1];
 
-    if (hour > 12){
-     hour = hour - 12;
-     if (hour == 0){
-      hour = 12;
-     }
-    }
-
-    hour = hour.toString();
       
     // Rounds the minutes to the nearest option
     if (minutes.charAt(1) == "1" || minutes.charAt(1) == "2"){
@@ -107,26 +97,32 @@ $('.timepicker').timepicker({
 
     //Translates the time according to the language the page is set to
     if (language == "EN"){
+      if (minutes == "00"){
+        return hour + " o'clock";
+      }
       convert = {"05":"5 past","10":"10 past","15":"quarter past","20":"20 past","25":"25 past","30":"half past","35":"25 to",
       "40":"20 to","45":"quarter to","50":"10 to","55":"5 to"};
 
       if (parseInt(minutes) > 30){
-       hour = parseInt(hour) + 1;
+       hour = hour + 1;
       }
       
       minutes = convert[minutes];
     } 
     else if (language == "NL"){
+      if (minutes == "00"){
+        return hour + " uur";
+      }
       convert = {"05":"5 over","10":"10 over","15":"kwart over","20":"10 voor half","25":"5 voor half","30":"half","35":"5 over half",
       "40":"10 over half","45":"kwart voor","50":"10 voor","55":"5 voor"};
 
       if (parseInt(minutes) > 25){
-       hour = parseInt(hour) + 1;
+       hour = hour + 1;
       }
       
       minutes = convert[minutes];
     }
-   time = minutes + " " + hour; 
+   time = minutes + " " + hour.toString();
    return time;
   }
 
