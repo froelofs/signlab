@@ -10,13 +10,20 @@ function changeVideo(url) {
 var jsonSent = (function() {
   var jsonSent = null;
   $.ajax({
-    'global': false,
-    'url': "sentencesDictEN.json",
-    'dataType': "json",
-    'success': function(data) {
-     jsonSent = data;
+    url: "sentencesDictEN.json",
+    dataType: "json",
+    success: function(data){
+      jsonvideo = data;
     }
   });
+  function successS (data) {
+    console.log("SentDict works!");
+     jsonvideo = data;
+    }
+  function errorF (xhr, error){
+    console.log("SentDict doesn't work");
+    console.log(error);
+  }
   return jsonSent;
 })();
 
@@ -25,16 +32,36 @@ var jsonSent = (function() {
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
-    'global':false,
-    'url': "videoDictEN.json",
-    'dataType': "json",
-    'success': function(data){
+    url: "videoDictEN.json",
+    dataType: "json",
+    success: function(data){
       jsonvideo = data;
     }
   });
+  function successS (data) {
+    console.log("videoDict works!");
+     jsonvideo = data;
+    }
+  function errorF (xhr, error){
+    console.log("videoDict doesn't work");
+    console.log(error);
+  }
   return jsonvideo;
 })();
 
+// var json = (function() {
+//   var json = null;
+//   $.ajax({
+//     'async': false,
+//     'global': false,
+//     'url': "/content.json",
+//     'dataType': "json",
+//     'success': function(data) {
+//       json = data;
+//     }
+//   });
+//   return json;
+// })();
 
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual><head_tier><head_movement movement='PB' size='small'/></head_tier></sign_nonmanual></hamgestural_sign></sigml>");
