@@ -25,13 +25,14 @@ var jsonSent = (function() {
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
-    'url': "videoDictNL.json",
-    'dataType': "json",
-    'success': function(data) {
-     jsonvideo = data;
-    }
+    url: "videoDictNL.json",
+    dataType: "json",
+    success: successS,
     error: errorF,
   });
+  function successS (data) {
+     jsonvideo = data;
+    }
   function errorF (xhr, error){
     console.log(error);
   }
