@@ -17,9 +17,6 @@ var jsonSent = (function() {
     success: function(data) {
      jsonSent = data;
     }
-    error: function(xhr, error){
-      console.log(error);
-    }
   });
   return jsonSent;
 })();
