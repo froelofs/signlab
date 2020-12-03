@@ -249,5 +249,8 @@
 	"Honger":"",
 	"Dorst":"",
 	"Tolk gebarentaal":"",
-	"Schrijftolk":""
+	"Schrijftolk":"",
+	"*tijdstip* uur 's avonds":"",
+	"*tijdstip* uur 's middags":"",
+	"*tijdstip* uur 's ochtends":"",
 }

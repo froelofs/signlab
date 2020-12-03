@@ -75,8 +75,6 @@ function alertMessage (type, text, parent){
 $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
-    use24hours: true,
-    format: 'HH:mm',
     showMeridian: false,
     fromnow: 0,
     minuteStep: 5,
@@ -88,14 +86,6 @@ $('.timepicker').timepicker({
     hour = parseInt(time[0]);
     minutes = time[1];
 
-    if (hour > 12){
-     hour = hour - 12;
-     if (hour == 0){
-      hour = 12;
-     }
-    }
-
-    hour = hour.toString();
       
     // Rounds the minutes to the nearest option
     if (minutes.charAt(1) == "1" || minutes.charAt(1) == "2"){
@@ -111,7 +101,7 @@ $('.timepicker').timepicker({
       "40":"20 to","45":"quarter to","50":"10 to","55":"5 to"};
 
       if (parseInt(minutes) > 30){
-       hour = parseInt(hour) + 1;
+       hour = hour + 1;
       }
       
       minutes = convert[minutes];
@@ -121,12 +111,12 @@ $('.timepicker').timepicker({
       "40":"10 over half","45":"kwart voor","50":"10 voor","55":"5 voor"};
 
       if (parseInt(minutes) > 25){
-       hour = parseInt(hour) + 1;
+       hour = hour + 1;
       }
       
       minutes = convert[minutes];
     }
-   time = minutes + " " + hour; 
+   time = minutes + " " + hour.toString();
    return time;
   }
 
