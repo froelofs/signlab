@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HONGER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hON@r"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <split_location>
+        <location_bodyarm contact="touch" location="chest" second_location="stomach" second_side="right_at">
+          <location_hand digits="3" location="midjoint" side="dorsal"/>
+        </location_bodyarm>
+        <location_bodyarm contact="touch" location="stomach" second_location="stomach" second_side="left_at">
+          <location_hand digits="3" location="midjoint" side="dorsal"/>
+        </location_bodyarm>
+      </split_location>
+      <split_motion>
+        <seq_motion>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+        </seq_motion>
+        <seq_motion>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+        </seq_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

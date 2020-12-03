@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VANMIDDAG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAmmId@x"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig extfidir="ol"/>
+        <handconfig palmor="d"/>
+        <directedmotion direction="d" size="small"/>
+      </sign_manual>
+      <sign_manual>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+        <handconfig extfidir="u"/>
+        <handconfig palmor="l"/>
+        <location_bodyarm contact="touch" location="chin">
+          <location_hand digits="2" location="midjoint" side="left_beside"/>
+        </location_bodyarm>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ul" palmor="l" second_extfidir="u"/>
+          <location_bodyarm contact="touch" location="chin">
+            <location_hand digits="2" location="midjoint" side="dorsal"/>
+          </location_bodyarm>
+        </tgt_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

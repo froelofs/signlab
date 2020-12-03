@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MORGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mOrx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="earlobe" side="right_at">
+        <location_hand digits="1" location="tip" side="left_beside"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="do"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+  
+</sigml>

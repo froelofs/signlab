@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HALF_UUR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Afy"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head"/>
+      <par_motion>
+        <directedmotion curve="r" curve_size="big" direction="d"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="dl" palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

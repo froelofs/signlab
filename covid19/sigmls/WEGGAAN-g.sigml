@@ -15,7 +15,7 @@
         <directedmotion direction="o"/>
         <tgt_motion fast="true">
           <changeposture/>
-          <handconfig handshape="pinch12" mainbend="bent"/>
+          <handconfig  handshape="pinch12open" second_handshape="pinch12open" mainbend="410" bend2="bent"/>
           <handconfig extfidir="u" palmor="l"/>
         </tgt_motion>
       </par_motion>
