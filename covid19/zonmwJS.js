@@ -21,7 +21,7 @@ var jsonSent = (function() {
   return jsonSent;
 })();
 
-console.log("options: " + jsonSent);
+
 
 // Stores the json dictionary of links to video translations as a variable
 var jsonvideo = (function() {
@@ -58,7 +58,6 @@ var sentOptions = (function(){
   return sentOptions;
 })();
 
-console.log("sentOptions: " + sentOptions);
 
 var videoOptions = (function(){
   var videoOptions = [];
@@ -104,6 +103,8 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
+      console.log("options: " + jsonSent);
+      console.log("sentOptions: " + sentOptions);
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
