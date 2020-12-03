@@ -18,9 +18,10 @@ var jsonSent = (function() {
       jsonSent = data;
     }
   });
-  console.log("options: " + jsonSent);
   return jsonSent;
 })();
+
+console.log("options: " + jsonSent);
 
 // Stores the json dictionary of links to video translations as a variable
 var jsonvideo = (function() {
@@ -54,9 +55,10 @@ var sentOptions = (function(){
   for (key in jsonSent){
     sentOptions.push(key);
   }
-  console.log("sentOptions: " + sentOptions);
   return sentOptions;
 })();
+
+console.log("sentOptions: " + sentOptions);
 
 var videoOptions = (function(){
   var videoOptions = [];
