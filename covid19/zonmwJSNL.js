@@ -234,7 +234,7 @@ function toSiGML(text,value=-1){
         alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
       }
       else{
-        playText(entry);
+        playSiGMLURL(entry);
       }
      }
      // if video is checked, source of embedded video changes
