@@ -18,6 +18,7 @@ var jsonSent = (function() {
       jsonSent = data;
     }
   });
+  console.log("options: " + jsonSent);
   return jsonSent;
 })();
 
@@ -33,7 +34,6 @@ var jsonvideo = (function() {
       jsonvideo = data;
     }
   });
-  console.log("options: " + sentOptions);
   return jsonvideo;
 })();
 
@@ -54,6 +54,7 @@ var sentOptions = (function(){
   for (key in jsonSent){
     sentOptions.push(key);
   }
+  console.log("sentOptions: " + sentOptions);
   return sentOptions;
 })();
 
@@ -87,7 +88,7 @@ $( function() {
         var matcher = new RegExp(term, "i");
       }
       array = $.grep(array, function (value) {
-       return matcher.test(value.label || value.value || value);
+      return matcher.test(value.label || value.value || value);
       });
     });
     console.log("suggestions: " + array);
