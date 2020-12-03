@@ -14,13 +14,15 @@ var jsonSent = (function() {
     'global': false,
     'url': "sentencesDictEN.json",
     'dataType': "json",
-    'success': function(data) {
-      jsonSent = data;
+    success: function(data) {
+     jsonSent = data;
+    }
+    error: function(xhr, error){
+      console.log(error);
     }
   });
   return jsonSent;
 })();
-
 
 
 // Stores the json dictionary of links to video translations as a variable
@@ -31,7 +33,7 @@ var jsonvideo = (function() {
     'global': false,
     'url': "videoDictNL.json",
     'dataType': "json",
-    'success': function(data) {
+    success: function(data) {
       jsonvideo = data;
     }
   });
@@ -67,7 +69,7 @@ var videoOptions = (function(){
   return videoOptions;
 })();
 
-  // Defines the options for autocomplete suggestions as the avatar sentences by default
+// Defines the options for autocomplete suggestions as the avatar sentences by default
 var options = sentOptions;
 
 // Defines the functions and variable necessary for autcomplete suggestions
@@ -103,7 +105,7 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
-      console.log("options: " + jsonSent);
+      console.log("json: " + jsonSent);
       console.log("sentOptions: " + sentOptions);
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
