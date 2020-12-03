@@ -25,21 +25,16 @@ var jsonSent = (function() {
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
-    url: "videoDictEN.json",
-    dataType: "json",
-    success: successS,
-    error: errorF,
-  });
-  function successS (data) {
-    console.log("This works");
-     jsonvideo = data;
+    'global':false,
+    'url': "videoDictEN.json",
+    'dataType': "json",
+    'success': function(data){
+      jsonvideo = data;
     }
-  function errorF (xhr, error){
-    console.log("This doesn't work");
-    console.log(error);
-  }
+  });
   return jsonvideo;
 })();
+
 
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual><head_tier><head_movement movement='PB' size='small'/></head_tier></sign_nonmanual></hamgestural_sign></sigml>");
