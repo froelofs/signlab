@@ -25,7 +25,7 @@ var jsonSent = (function() {
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
-    url: "videoDictNL.json",
+    url: "videoDictEN.json",
     dataType: "json",
     success: successS,
     error: errorF,
@@ -78,8 +78,6 @@ $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
     arrayOfTerms = terms.split(" ");
-    console.log("input: ", terms);
-    console.log("array: ", array);
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
       if (punctuation.includes(term)) {
@@ -92,7 +90,6 @@ $( function() {
       return matcher.test(value.label || value.value || value);
       });
     });
-    console.log("suggestions: " + array);
     return array;
   }
 
