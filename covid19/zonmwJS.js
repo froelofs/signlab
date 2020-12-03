@@ -25,13 +25,16 @@ var jsonSent = (function() {
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
-    'global': false,
     'url': "videoDictNL.json",
     'dataType': "json",
     'success': function(data) {
      jsonvideo = data;
     }
+    error: errorF,
   });
+  function errorF (xhr, error){
+    console.log(error);
+  }
   return jsonvideo;
 })();
 
