@@ -10,11 +10,10 @@ function changeVideo(url) {
 var jsonSent = (function() {
   var jsonSent = null;
   $.ajax({
-    'async': false,
     'global': false,
     'url': "sentencesDictEN.json",
     'dataType': "json",
-    success: function(data) {
+    'success': function(data) {
      jsonSent = data;
     }
   });
@@ -26,12 +25,11 @@ var jsonSent = (function() {
 var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
-    'async': false,
     'global': false,
     'url': "videoDictNL.json",
     'dataType': "json",
-    success: function(data) {
-      jsonvideo = data;
+    'success': function(data) {
+     jsonvideo = data;
     }
   });
   return jsonvideo;
