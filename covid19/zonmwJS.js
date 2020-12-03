@@ -271,7 +271,7 @@ function toSiGML(text,value=-1){
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
-        playText(entry);
+        playSiGMLURL(entry);
       }
      }
      // if video is checked, source of embedded video changes
