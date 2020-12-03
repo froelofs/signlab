@@ -98,7 +98,7 @@ $('.timepicker').timepicker({
     //Translates the time according to the language the page is set to
     if (language == "EN"){
       if (minutes == "00"){
-        return hour + "o'clock";
+        return hour + " o'clock";
       }
       convert = {"05":"5 past","10":"10 past","15":"quarter past","20":"20 past","25":"25 past","30":"half past","35":"25 to",
       "40":"20 to","45":"quarter to","50":"10 to","55":"5 to"};
@@ -111,7 +111,7 @@ $('.timepicker').timepicker({
     } 
     else if (language == "NL"){
       if (minutes == "00"){
-        return hour + "uur";
+        return hour + " uur";
       }
       convert = {"05":"5 over","10":"10 over","15":"kwart over","20":"10 voor half","25":"5 voor half","30":"half","35":"5 over half",
       "40":"10 over half","45":"kwart voor","50":"10 voor","55":"5 voor"};
