@@ -18,7 +18,7 @@ var jsonSent = (function() {
      console.log("SentDict works!");
      console.log(typeof data);
      console.log(data);
-     console.log(data["Goodbye"]);
+     console.log(data["Afdeling."]);
      jsonSent = data;
     }
   function errorF (xhr, error){
@@ -41,6 +41,7 @@ var jsonVideo = (function() {
     console.log("videoDict works!");
     console.log(typeof data);
     console.log(data);
+    console.log(data["Goodbye"]);
      jsonVideo = data;
     }
   function errorF (xhr, error){
