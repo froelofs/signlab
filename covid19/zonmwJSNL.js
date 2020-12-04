@@ -10,18 +10,18 @@ var jsonSent;
 var sentOptions;
 
 // Stores the necessities for autcomplete suggestions and the dict of sentences for the avatar
-function callback(response) {
+function callbackSent(response) {
   jsonSent = response;
   sentOptions = Object.keys(jsonSent);
 }
 
 // Retrieves the dict of sentences with SiGML translations
 $.ajax({
- 'url': "sentencesDictEN.json",
- 'success': function (data) {
-  callback(data);
+ url: "sentencesDictEN.json",
+ success: function (data) {
+  callbackSent(data);
  },
- 'error': function(xhr, error){
+ error: function(xhr, error){
   console.log(error);
  }
 });
@@ -33,7 +33,7 @@ var jsonVideo;
 var videoOptions;
 
 // Stores the necessities for autcomplete suggestions and the dict of sentences for video
-function callback(response) {
+function callbackVideo(response) {
  jsonVideo = response;
  videoOptions = Object.keys(jsonVideo);
  options = videoOptions;
@@ -44,10 +44,10 @@ $.ajax({
  url: "videoDictEN.json",
  global: false,
  success: function(data) {
- callback(data);
+  callbackVideo(data);
  },
  error: function(xhr, error){
- console.log(error);
+  console.log(error);
  }
 });
 
