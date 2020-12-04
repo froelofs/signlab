@@ -46,6 +46,8 @@ var jsonVideo = (function() {
     console.log("videoDict doesn't work");
     console.log(error);
   }
+  console.log("Check 2");
+  console.log(jsonVideo);
   return jsonVideo;
 })();
 
