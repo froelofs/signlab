@@ -93,6 +93,7 @@ $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
     console.log(terms);
+    console.log(array);
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
