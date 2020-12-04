@@ -87,11 +87,7 @@ var sentOptions = (function(){
 
 
 var videoOptions = (function(){
-  var videoOptions = [];
-  for (key in jsonVideo){
-    videoOptions.push(key);
-  }
-  return videoOptions;
+  return jsonVideo.keys();
 })();
 
 // Defines the options for autocomplete suggestions as the avatar sentences by default
