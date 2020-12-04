@@ -24,15 +24,19 @@ var jsonSent = null
   
   
 
-
 // Stores the json dictionary of links to video translations as a variable
   var jsonVideo = null;
+
+  function callback(response) {
+   jsonVideo = response;
+  }
+
   $.ajax({
     url: "videoDictEN.json",
     success: function(data) {
      console.log("videoDict works!");
-     console.log(typeof data);
-     jsonVideo = data;
+     callback(data);
+     // jsonVideo = data;
     },
     error: function(xhr, error){
      console.log("videoDict doesn't work");
