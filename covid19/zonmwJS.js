@@ -26,22 +26,25 @@ var jsonSent = null
 
 // Stores the json dictionary of links to video translations as a variable
   var jsonVideo;
+  var videoOptions;
+
+  // Defines autocomplete suggestions when display by video is chosen
+  // var videoOptions = (function(){
+  //   return jsonVideo.keys();
+  // })();
 
   function callback(response) {
    jsonVideo = response;
-   console.log(response);
-   console.log(jsonVideo);
+   videoOptions = Object.keys(jsonVideo);
   }
 
   $.ajax({
     url: "videoDictEN.json",
+    global: false,
     success: function(data) {
-     console.log("videoDict works!");
      callback(data);
-     // jsonVideo = data;
     },
     error: function(xhr, error){
-     console.log("videoDict doesn't work");
      console.log(error);
     }
   });
@@ -80,10 +83,7 @@ var sentOptions = (function(){
   return sentOptions;
 })();
 
-// Defines autocomplete suggestions when display by video is chosen
-var videoOptions = (function(){
-  return jsonVideo.keys();
-})();
+
 
 // Defines the options for autocomplete suggestions as the avatar sentences by default
 var options = videoOptions;
@@ -92,6 +92,7 @@ var options = videoOptions;
 $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
+    console.log(terms);
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
@@ -102,7 +103,7 @@ $( function() {
         var matcher = new RegExp(term, "i");
       }
       array = $.grep(array, function (value) {
-      return matcher.test(value.label || value.value || value);
+       return matcher.test(value.label || value.value || value);
       });
     });
     return array;
@@ -115,9 +116,8 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
-      console.log("json: " + jsonVideo);
-      console.log("sentOptions: " + videoOptions);
       autocompSugg = customFilter(options, request.term);
+      console.log("suggestions: ", autocompSugg);
       response(autocompSugg);
     },
   });
