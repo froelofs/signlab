@@ -36,19 +36,15 @@ var jsonSent = null
   function callback(response) {
    jsonVideo = response;
    videoOptions = Object.keys(jsonVideo);
-   console.log(videoOptions);
   }
 
   $.ajax({
     url: "videoDictEN.json",
     global: false,
     success: function(data) {
-     console.log("videoDict works!");
      callback(data);
-     // jsonVideo = data;
     },
     error: function(xhr, error){
-     console.log("videoDict doesn't work");
      console.log(error);
     }
   });
@@ -96,6 +92,7 @@ var options = videoOptions;
 $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
+    console.log(terms);
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
@@ -109,6 +106,7 @@ $( function() {
       return matcher.test(value.label || value.value || value);
       });
     });
+    console.log(array);
     return array;
   }
 
@@ -119,8 +117,6 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
-      console.log("json: " + jsonVideo);
-      console.log("sentOptions: " + videoOptions);
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
