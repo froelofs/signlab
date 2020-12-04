@@ -6,62 +6,50 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
-// Stores the json dictionary of SiGML translations as a variable
-var jsonSent = null
+var jsonSent;
+var sentOptions;
 
-  $.ajax({
-    'url': "sentencesDictEN.json",
-    'success': function (data) {
-      console.log("SentDict works!");
-      console.log(typeof data);
-      jsonSent = data;
-    },
-    'error': function(xhr, error){
-     console.log("SentDict doesn't work");
-     console.log(error);
-   }
-  });
+// Stores the necessities for autcomplete suggestions and the dict of sentences for the avatar
+function callbackSent(response) {
+  jsonSent = response;
+  sentOptions = Object.keys(jsonSent);
+}
 
+// Retrieves the dict of sentences with SiGML translations
+$.ajax({
+ url: "sentencesDictEN.json",
+ success: function (data) {
+  callbackSent(data);
+ },
+ error: function(xhr, error){
+  console.log(error);
+ }
+});
 
+// Stores the default setting for autocomplete suggestions
+var options;
 
-// Stores the json dictionary of links to video translations as a variable
-  var jsonVideo;
-  var videoOptions;
+var jsonVideo;
+var videoOptions;
 
-  // Defines autocomplete suggestions when display by video is chosen
-  // var videoOptions = (function(){
-  //   return jsonVideo.keys();
-  // })();
+// Stores the necessities for autcomplete suggestions and the dict of sentences for video
+function callbackVideo(response) {
+ jsonVideo = response;
+ videoOptions = Object.keys(jsonVideo);
+ options = videoOptions;
+}
 
-  function callback(response) {
-   jsonVideo = response;
-   videoOptions = Object.keys(jsonVideo);
-  }
-
-  $.ajax({
-    url: "videoDictEN.json",
-    global: false,
-    success: function(data) {
-     callback(data);
-    },
-    error: function(xhr, error){
-     console.log(error);
-    }
-  });
-
-// var json = (function() {
-//   var json = null;
-//   $.ajax({
-//     'async': false,
-//     'global': false,
-//     'url': "/content.json",
-//     'dataType': "json",
-//     'success': function(data) {
-//       json = data;
-//     }
-//   });
-//   return json;
-// })();
+// Retrieves the dict of sentences with video links
+$.ajax({
+ url: "videoDictEN.json",
+ global: false,
+ success: function(data) {
+  callbackVideo(data);
+ },
+ error: function(xhr, error){
+  console.log(error);
+ }
+});
 
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual><head_tier><head_movement movement='PB' size='small'/></head_tier></sign_nonmanual></hamgestural_sign></sigml>");
@@ -72,28 +60,14 @@ $(window).on("load", function(){
   // setTimeout(startPose, 1000);
 } );
 
-//Stores suggestions returned by autocomplete
+//Stores suggestions returned by autocomplete so user input can be checked against it
 var autocompSugg = [];
 
-// Defines autocomplete suggestions when display by avatar is chosen
-var sentOptions = (function(){
-  var sentOptions = [];
-  for (key in jsonSent){
-    sentOptions.push(key);
-  }
-  return sentOptions;
-})();
 
-
-
-// Defines the options for autocomplete suggestions as the avatar sentences by default
-var options = videoOptions;
-
-// Defines the functions and variable necessary for autcomplete suggestions
+// Defines the functions for autcomplete suggestions
 $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
-    console.log(terms);
     arrayOfTerms = terms.split(" ");
     punctuation = ["?",",",".",";",":","/"];
     arrayOfTerms.forEach(function (term) {
@@ -112,13 +86,11 @@ $( function() {
 
   // Activates the jquery autocomplete function when the user gives input
   $( "#mySiGML" ).autocomplete({
-    source: options,
     appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
       autocompSugg = customFilter(options, request.term);
-      console.log(autocompSugg);
       response(autocompSugg);
     },
   });
@@ -270,6 +242,7 @@ function checkText(text,value=-1){
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
+  // Checks user input against autcomplete suggestions
   if(autocompSugg.includes(text) == false){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
@@ -279,7 +252,7 @@ function toSiGML(text,value=-1){
       return text;
     }
     else{
-     // if avatar is checked, sigml is sent
+     // if avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
       entry = jsonSent[text];
