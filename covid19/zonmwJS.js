@@ -29,6 +29,8 @@ var jsonSent = null
 
   function callback(response) {
    jsonVideo = response;
+   console.log(response);
+   console.log(jsonVideo);
   }
 
   $.ajax({
