@@ -11,9 +11,8 @@ var jsonSent = (function() {
   var jsonSent = null;
   $.ajax({
     url: "sentencesDictEN.json",
-    success: function(data){
-      jsonvideo = data;
-    }
+    success: successS,
+    error: errorF
   });
   function successS (data) {
     console.log("SentDict works!");
@@ -32,9 +31,8 @@ var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
     url: "videoDictEN.json",
-    success: function(data){
-      jsonvideo = data;
-    }
+    success: successS,
+    error: errorF
   });
   function successS (data) {
     console.log("videoDict works!");
