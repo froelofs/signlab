@@ -17,7 +17,7 @@ function callbackSent(response) {
 
 // Retrieves the dict of sentences with SiGML translations
 $.ajax({
- url: "sentencesDictEN.json",
+ url: "sentencesDictNL.json",
  success: function (data) {
   callbackSent(data);
  },
@@ -41,7 +41,7 @@ function callbackVideo(response) {
 
 // Retrieves the dict of sentences with video links
 $.ajax({
- url: "videoDictEN.json",
+ url: "videoDictNL.json",
  global: false,
  success: function(data) {
   callbackVideo(data);
