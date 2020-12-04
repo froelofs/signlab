@@ -212,7 +212,8 @@ function startPose() {
 }
 
 $(window).on("load", function(){
-  setTimeout(startPose, 1000);
+  checkToD();
+  // setTimeout(startPose, 1000);
 } );
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -299,7 +300,7 @@ function compare(input){
    'dataType': "json",
    'success': function(data) {
     check = data;
-    
+
     for (key in check){
      if(input == check[key]){
       check = true;
