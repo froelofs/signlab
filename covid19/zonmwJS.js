@@ -17,8 +17,7 @@ var jsonSent = (function() {
   function successS (data) {
      console.log("SentDict works!");
      console.log(typeof data);
-     console.log(data);
-     console.log(data["Afdeling."]);
+     console.log(JSON.stringify(data));
      jsonSent = data;
     }
   function errorF (xhr, error){
@@ -40,8 +39,7 @@ var jsonVideo = (function() {
   function successS (data) {
     console.log("videoDict works!");
     console.log(typeof data);
-    console.log(data);
-    console.log(data["Goodbye"]);
+    console.log(JSON.stringify(data));
      jsonVideo = data;
     }
   function errorF (xhr, error){
