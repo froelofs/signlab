@@ -85,7 +85,7 @@ var sentOptions = (function(){
   return sentOptions;
 })();
 
-
+// Defines autocomplete suggestions when display by video is chosen
 var videoOptions = (function(){
   return jsonVideo.keys();
 })();
