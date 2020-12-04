@@ -35,6 +35,7 @@ var jsonSent = null
 
   $.ajax({
     url: "videoDictEN.json",
+    global: false,
     success: function(data) {
      console.log("videoDict works!");
      callback(data);
