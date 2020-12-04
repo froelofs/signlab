@@ -103,10 +103,9 @@ $( function() {
         var matcher = new RegExp(term, "i");
       }
       array = $.grep(array, function (value) {
-      return matcher.test(value.label || value.value || value);
+       return matcher.test(value.label || value.value || value);
       });
     });
-    console.log(array);
     return array;
   }
 
@@ -118,6 +117,7 @@ $( function() {
     mustMatch: false,
     source: function (request, response) {
       autocompSugg = customFilter(options, request.term);
+      console.log("suggestions: ", autocompSugg);
       response(autocompSugg);
     },
   });
