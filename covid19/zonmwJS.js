@@ -120,8 +120,8 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
-      console.log("json: " + jsonSent);
-      console.log("sentOptions: " + sentOptions);
+      console.log("json: " + jsonvideo);
+      console.log("sentOptions: " + videoOptions);
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
