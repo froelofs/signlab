@@ -38,6 +38,8 @@ var jsonvideo = (function() {
   });
   function successS (data) {
     console.log("videoDict works!");
+    console.log(typeof data);
+    console.log(data);
      jsonvideo = data;
     }
   function errorF (xhr, error){
