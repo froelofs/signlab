@@ -61,11 +61,11 @@ $(window).on("load", function(){
   // setTimeout(startPose, 1000);
 } );
 
-//Stores suggestions returned by autocomplete
+//Stores suggestions returned by autocomplete so user input can be checked against it
 var autocompSugg = [];
 
 
-// Defines the functions and variable necessary for autcomplete suggestions
+// Defines the functions for autcomplete suggestions
 $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
@@ -89,13 +89,13 @@ $( function() {
 
   // Activates the jquery autocomplete function when the user gives input
   $( "#mySiGML" ).autocomplete({
-    source: options,
     appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
       console.log(options);
       autocompSugg = customFilter(options, request.term);
+
       console.log(autocompSugg);
       response(autocompSugg);
     },
@@ -248,6 +248,7 @@ function checkText(text,value=-1){
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
+  // Checks user input against autcomplete suggestions
   if(autocompSugg.includes(text) == false){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
@@ -257,7 +258,7 @@ function toSiGML(text,value=-1){
       return text;
     }
     else{
-     // if avatar is checked, sigml is sent
+     // if avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
       entry = jsonSent[text];
