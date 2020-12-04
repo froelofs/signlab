@@ -7,49 +7,40 @@ function changeVideo(url) {
 }
 
 // Stores the json dictionary of SiGML translations as a variable
-var jsonSent = (function() {
-  var jsonSent = null;
+var jsonSent = null
+
   $.ajax({
-    url: "sentencesDictEN.json",
-    success: successS,
-    error: errorF
-  });
-  function successS (data) {
+    'url': "sentencesDictEN.json",
+    'success': function (data) {
      console.log("SentDict works!");
      console.log(typeof data);
      console.log(JSON.stringify(data));
      jsonSent = data;
-    }
-  function errorF (xhr, error){
+    },
+    'error': function(xhr, error){
     console.log("SentDict doesn't work");
     console.log(error);
-  }
-  return jsonSent;
-})();
+   }
+  });
+  
+  
 
 
 // Stores the json dictionary of links to video translations as a variable
-var jsonVideo = (function() {
   var jsonVideo = null;
   $.ajax({
     url: "videoDictEN.json",
-    success: successS,
-    error: errorF
-  });
-  function successS (data) {
+    success: function(data) {
     console.log("videoDict works!");
     console.log(typeof data);
     console.log(JSON.stringify(data));
      jsonVideo = data;
-    }
-  function errorF (xhr, error){
+    },
+    error: function(xhr, error){
     console.log("videoDict doesn't work");
     console.log(error);
-  }
-  console.log("Check 2");
-  console.log(jsonVideo);
-  return jsonVideo;
-})();
+    }
+  });
 
 // var json = (function() {
 //   var json = null;
