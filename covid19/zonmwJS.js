@@ -315,7 +315,7 @@ function checkToD() {
       } else {
         link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
       }
-    document.getElementById("videoHolder").src = link;
+    changeVideo(link);
 }
 
 
