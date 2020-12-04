@@ -19,7 +19,7 @@ var jsonSent = (function() {
      console.log(typeof data);
      console.log(data);
      console.log(data["Goodbye"]);
-     jsonvideo = data;
+     jsonSent = data;
     }
   function errorF (xhr, error){
     console.log("SentDict doesn't work");
@@ -30,8 +30,8 @@ var jsonSent = (function() {
 
 
 // Stores the json dictionary of links to video translations as a variable
-var jsonvideo = (function() {
-  var jsonvideo = null;
+var jsonVideo = (function() {
+  var jsonVideo = null;
   $.ajax({
     url: "videoDictEN.json",
     success: successS,
@@ -41,13 +41,13 @@ var jsonvideo = (function() {
     console.log("videoDict works!");
     console.log(typeof data);
     console.log(data);
-     jsonvideo = data;
+     jsonVideo = data;
     }
   function errorF (xhr, error){
     console.log("videoDict doesn't work");
     console.log(error);
   }
-  return jsonvideo;
+  return jsonVideo;
 })();
 
 // var json = (function() {
@@ -87,7 +87,7 @@ var sentOptions = (function(){
 
 var videoOptions = (function(){
   var videoOptions = [];
-  for (key in jsonvideo){
+  for (key in jsonVideo){
     videoOptions.push(key);
   }
   return videoOptions;
@@ -299,7 +299,7 @@ function toSiGML(text,value=-1){
      }
      // if video is checked, source of embedded video changes
      else if (document.getElementById("videoDisplay").checked) {
-      entry = jsonvideo[text];
+      entry = jsonVideo[text];
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
