@@ -25,7 +25,7 @@ var jsonSent = null
 
 
 // Stores the json dictionary of links to video translations as a variable
-  var jsonVideo = null;
+  var jsonVideo;
 
   function callback(response) {
    jsonVideo = response;
