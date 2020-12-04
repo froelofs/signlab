@@ -117,7 +117,7 @@ $( function() {
     mustMatch: false,
     source: function (request, response) {
       autocompSugg = customFilter(options, request.term);
-      console.log("suggestions: ", autocompSugg);
+      console.log(autocompSugg);
       response(autocompSugg);
     },
   });
