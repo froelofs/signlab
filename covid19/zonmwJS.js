@@ -26,11 +26,17 @@ var jsonSent = null
 
 // Stores the json dictionary of links to video translations as a variable
   var jsonVideo;
+  var videoOptions;
+
+  // Defines autocomplete suggestions when display by video is chosen
+  // var videoOptions = (function(){
+  //   return jsonVideo.keys();
+  // })();
 
   function callback(response) {
    jsonVideo = response;
-   console.log(response);
-   console.log(jsonVideo);
+   videoOptions = jsonVideo.keys();
+   console.log(videoOptions);
   }
 
   $.ajax({
@@ -81,10 +87,7 @@ var sentOptions = (function(){
   return sentOptions;
 })();
 
-// Defines autocomplete suggestions when display by video is chosen
-var videoOptions = (function(){
-  return jsonVideo.keys();
-})();
+
 
 // Defines the options for autocomplete suggestions as the avatar sentences by default
 var options = videoOptions;
