@@ -11,7 +11,6 @@ var jsonSent = (function() {
   var jsonSent = null;
   $.ajax({
     url: "sentencesDictEN.json",
-    dataType: "json",
     success: function(data){
       jsonvideo = data;
     }
@@ -33,7 +32,6 @@ var jsonvideo = (function() {
   var jsonvideo = null;
   $.ajax({
     url: "videoDictEN.json",
-    dataType: "json",
     success: function(data){
       jsonvideo = data;
     }
