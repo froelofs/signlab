@@ -1,19 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <sigml>
-  <hamgestural_sign gloss="HOOG">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="mo"/>
-      </mouthing_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_mainbend="bent" second_thumbpos="across"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="l"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
-      <directedmotion direction="u" size="big"/>
-    </sign_manual>
-  </hamgestural_sign>
 <hamgestural_sign gloss='STANDAARD_POSE'>
        <sign_manual both_hands='true' lr_symm='true'>
 		<handconfig extfidir='dl' /> <handconfig palmor='l' />

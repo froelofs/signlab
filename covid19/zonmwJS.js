@@ -261,7 +261,6 @@ function toSiGML(text,value=-1){
       }
       else{
         playURL(entry);
-        startPose();
       }
      }
      // if video is checked, source of embedded video changes
