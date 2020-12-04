@@ -16,6 +16,8 @@ var jsonSent = (function() {
   });
   function successS (data) {
     console.log("SentDict works!");
+    console.log(typeof data);
+    console.log(data);
      jsonvideo = data;
     }
   function errorF (xhr, error){
