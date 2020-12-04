@@ -124,7 +124,7 @@ $( function() {
     multiple: true,
     mustMatch: false,
     source: function (request, response) {
-      console.log("json: " + jsonvideo);
+      console.log("json: " + jsonVideo);
       console.log("sentOptions: " + videoOptions);
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
