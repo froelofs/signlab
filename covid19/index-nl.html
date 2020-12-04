@@ -42,7 +42,7 @@
 
 </head>
 
-<body id="page-top" onload="CWASA.init();">
+<body id="page-top" style="text-align: center;" onload="CWASA.init();">
 
 <div id="pwdAlert"></div>
 
@@ -60,7 +60,7 @@
 
 <!-- Navigation-->
 <nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
+    <div class="container-fluid" style="width: 100%;">
         <a class="navbar-brand js-scroll-trigger" href="../index-nl.html">
         <img src="../images/hand-icon.png" height="25">
           SignLab Amsterdam
@@ -99,10 +99,10 @@
 
 <!-- ProjectInfo -->
 <section class="projects-section bg-light" id="ProjectInfo">
-    <div class="container">
-        <!-- Challenge Row-->
-        <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0">
-            <div class="col-lg">
+  <div class="container-fluid">
+      <!-- Challenge Row-->
+      <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0">
+          <div class="col-lg">
                 <div class="bg-light text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
@@ -160,12 +160,12 @@
 <!-- Translate -->
 <section class="projects-section bg-white" id="Translate">
     <div class="container-fluid" height="100%" align="center" style="text-align: center; width: 100%;">
-      <div id="alertZonMwTran" class="alertBox"></div>
-      <div style="display: flex; justify-content: center; align-items: center; text-align: center; margin-bottom: 20px;">
-       <p class="mb-1 text-black-50" style="display: inline-block; width: 60%;">
+     <div id="alertZonMwTran" class="alertBox"></div>
+     <div style="display: flex; justify-content: center; align-items: center; text-align: center; margin-bottom: 20px;">
+      <p class="mb-1 text-black-50" style="display: inline-block; width: 60%;">
          <b>Belangrijk: voorzichtigheid geboden in het gebruik van gebarende avatars</b>
          <br>
-         De World Federation of the Deaf (WFD) en de World Association of Sign Language Interpreters (WASLI) waarschuwen voor het gebruik van gebarende avatars als vervanging van menselijke gebarentolken. De kwaliteit van gebarende avatars is veel minder dan de kwaliteit van gekwalificeerde menselijke gebarentolken. Maak daarom alleen gebruik van de avatar vertalingen die onze applicatie biedt in situaties waarin er absoluut geen menselijke gebarentolk ingezet kan worden en er ook geen video vertaling beschikbaar is. De volledige WFD/WASLI statement is <a href="https://wfdeaf.org/news/wfd-wasli-issue-statement-signing-avatars/">hier</a> te lezen. 
+         De World Federation of the Deaf (WFD) en de World Association of Sign Language Interpreters (WASLI) waarschuwen voor het gebruik van gebarende avatars als vervanging van menselijke gebarentolken. De kwaliteit van gebarende avatars is veel minder dan de kwaliteit van gekwalificeerde menselijke gebarentolken. Maak daarom alleen gebruik van de avatar vertalingen die onze applicatie biedt in situaties waarin er absoluut geen menselijke gebarentolk ingezet kan worden en er ook geen video vertaling beschikbaar is. De volledige WFD/WASLI statement is <a href="https://wfdeaf.org/news/wfd-wasli-issue-statement-signing-avatars/">hier</a> te lezen.
          De Nederlandse Vereniging van Doven (Dovenschap)
          <a href="https://www.dovenschap.nl/wfd-wasli-standpunt-tegen-gebarenavatars/">ondersteunt</a>
          dit statement.
@@ -174,7 +174,7 @@
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-      
+
         <!--================================================================-->
 
         <span id="videos" class="prerecorded" align="left" style="text-align: left;">
@@ -183,7 +183,7 @@
 
         <span id="avatar" class="CWASAAvatar av0" align="left" style="text-align: left; display: none;"></span>
 
-        <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
+        <span align="left" style="display:inline-block; vertical-align:top; margin:30px; text-align: left;">
             <label for="option" style="margin-right:-100px; margin-bottom:15px">
                 <h4>Kies een vertaaloptie:</h4>
             </label>
@@ -239,6 +239,11 @@
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
               </div>
 
+              <div id="timeBox" class="md-form" style="display:none;">
+               <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="toSiGML(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
+              </div>
+
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Start" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
@@ -290,9 +295,9 @@
 <!-- About us section -->
 <section class="projects-section bg-light" id="About">
 
-    <div class="container" height="100%">
+  <div class="container-fluid" height="100%">
 
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+      <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
             <!-- Column for Team and Funding -->
             <div class="col-xl-6 col-lg-6">
@@ -377,8 +382,8 @@
 
 <!-- Suggestions section -->
 <section class="projects-section bg-white" id="Suggestions">
-      <div class="container" height="100%">
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+  <div class="container-fluid" height="100%">
+    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
             <!-- Column for suggestions  -->
             <div class="col-xl-auto">
               <div class="project-text pt-0 text-lg-left">
@@ -403,7 +408,7 @@
 
 <!-- Resources section -->
 <section class="projects-section bg-light" id="Resources">
-      <div class="container" height="100%">
+      <div class="container-fluid" height="100%">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
                 Het
