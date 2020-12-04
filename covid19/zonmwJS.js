@@ -12,14 +12,13 @@ var jsonSent = null
   $.ajax({
     'url': "sentencesDictEN.json",
     'success': function (data) {
-     console.log("SentDict works!");
-     console.log(typeof data);
-     console.log(JSON.stringify(data));
-     jsonSent = data;
+      console.log("SentDict works!");
+      console.log(typeof data);
+      jsonSent = data;
     },
     'error': function(xhr, error){
-    console.log("SentDict doesn't work");
-    console.log(error);
+     console.log("SentDict doesn't work");
+     console.log(error);
    }
   });
   
@@ -31,14 +30,13 @@ var jsonSent = null
   $.ajax({
     url: "videoDictEN.json",
     success: function(data) {
-    console.log("videoDict works!");
-    console.log(typeof data);
-    console.log(JSON.stringify(data));
+     console.log("videoDict works!");
+     console.log(typeof data);
      jsonVideo = data;
     },
     error: function(xhr, error){
-    console.log("videoDict doesn't work");
-    console.log(error);
+     console.log("videoDict doesn't work");
+     console.log(error);
     }
   });
 
