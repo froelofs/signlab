@@ -297,20 +297,20 @@ function compare(input){
    'dataType': "json",
    'success': function(data) {
     check = data;
+    
+    for (key in check){
+     if(input == check[key]){
+      check = true;
+      break;
+     }
+    }
+
+    if (check == true){
+     document.getElementById("checkPage").style.display = "none";
+    }
+    else{
+     alertMessage("error","Dit wachtwoord is fout","pwdAlert");
+    }
    }
   });
-  
-  for (key in check){
-   if(input == check[key]){
-    check = true;
-    break;
-   }
-  }
-
-  if (check == true){
-   document.getElementById("checkPage").style.display = "none";
-  }
-  else{
-   alertMessage("error","Dit wachtwoord is fout","pwdAlert");
-  }
 }
