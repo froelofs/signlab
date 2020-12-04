@@ -91,7 +91,7 @@ var videoOptions = (function(){
 })();
 
 // Defines the options for autocomplete suggestions as the avatar sentences by default
-var options = sentOptions;
+var options = videoOptions;
 
 // Defines the functions and variable necessary for autcomplete suggestions
 $( function() {
