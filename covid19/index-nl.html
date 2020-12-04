@@ -159,7 +159,7 @@
 
 <!-- Translate -->
 <section class="projects-section bg-white" id="Translate">
-    <div class="container-fluid" height="100%" align="center">
+    <div class="container-fluid" height="100%" align="center" style="text-align: center; width: 100%;">
       <div id="alertZonMwTran" class="alertBox"></div>
       <div style="display: flex; justify-content: center; align-items: center; text-align: center; margin-bottom: 20px;">
        <p class="mb-1 text-black-50" style="display: inline-block; width: 60%;">
@@ -174,12 +174,14 @@
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-        <span id="avatar" class="CWASAAvatar av0" align="left"></span>
+      
         <!--================================================================-->
 
-        <span id="videos" class="undisplayed" align="left">
+        <span id="videos" class="prerecorded" align="left" style="text-align: left;">
           <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </span>
+
+        <span id="avatar" class="CWASAAvatar av0" align="left" style="text-align: left; display: none;"></span>
 
         <span align="left" style="display:inline-block; vertical-align:top; margin:30px;">
             <label for="option" style="margin-right:-100px; margin-bottom:15px">
@@ -188,12 +190,12 @@
 
             <br>
             <!-- Defines the button and label displayed for the option "video" -->
-            <input type="radio" id="videoDisplay" name="display" value="video" onclick="changeFunc(this); checkToD();">
+            <input type="radio" id="videoDisplay" name="display" value="video" checked onclick="changeFunc(this); checkToD();">
             <label for="video" style="margin-right:5px">Video vertaling</label>
 
             <br>
              <!-- DDefines the button and label displayed for the option "avatar" -->
-              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked onclick="changeFunc(this); startPose();">
+              <input type="radio" id="avatarDisplay" name="display" value="avatar" onclick="changeFunc(this); startPose();">
               <label for="avatar" style="margin-right: 5px">Avatar vertaling</label>
 
               <br>
