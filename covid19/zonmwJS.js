@@ -35,7 +35,7 @@ var jsonSent = null
 
   function callback(response) {
    jsonVideo = response;
-   videoOptions = jsonVideo.keys();
+   videoOptions = Object.keys(jsonVideo);
    console.log(videoOptions);
   }
 
