@@ -21,8 +21,8 @@ var jsonSent = null
      console.log(error);
    }
   });
-  
-  
+
+
 
 // Stores the json dictionary of links to video translations as a variable
   var jsonVideo = null;
@@ -130,7 +130,7 @@ $( function() {
 function checkText(text,value=-1){
   text = text.split(" ");
   console.log(text);
-  if (text.includes("...") == true){
+  if (text.includes("*amount*") == true){
     if (text.includes("minutes") == true){
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
@@ -141,10 +141,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("minutes","minute");
-          text = text.replace("...",value);
+          text = text.replace("*amount*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*amount*",value);
         }
       document.getElementById('minutesBox').style.display = "none";
       }
@@ -159,12 +159,12 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("hours","hour");
-          text = text.replace("...",value);
+          text = text.replace("*amount*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*amount*",value);
         }
-        if (text.split(" ").includes("...") == true){
+        if (text.split(" ").includes("*amount*") == true){
           alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
           return false;
         }
@@ -183,10 +183,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("days","day");
-          text = text.replace("...",value);
+          text = text.replace("*amount*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*amount*",value);
         }
         document.getElementById('daysBox').style.display = "none";
       }
@@ -201,10 +201,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("weeks","week");
-          text = text.replace("...",value);
+          text = text.replace("*amount*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*amount*",value);
         }
         document.getElementById('weeksBox').style.display = "none";
       }
@@ -219,10 +219,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("months","month");
-          text = text.replace("...",value);
+          text = text.replace("*amount*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*amount*",value);
         }
         document.getElementById('monthsBox').style.display = "none";
       }
@@ -234,8 +234,8 @@ function checkText(text,value=-1){
         return false;
       }
       else{
-        text = text.join(" ").replace("...",value);
-        if (text.split(" ").includes("...") == true){
+        text = text.join(" ").replace("*amount*",value);
+        if (text.split(" ").includes("*amount*") == true){
           document.getElementById('systolicBPBox').style.display = "none";
           document.getElementById('diastolicBPBox').style.display = "block";
           alertMessage("info", "Please choose a number between 39 and 101 to fill in the second blank", "alertZonMwTran");
@@ -353,7 +353,7 @@ function compare(input){
     check = data;
    }
   });
-  
+
   for (key in check){
    if(input == check[key]){
     check = true;
