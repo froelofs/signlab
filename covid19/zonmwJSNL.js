@@ -105,7 +105,7 @@ $( function() {
 
 function checkText(text,value=-1){
   text = text.split(" ");
-  if (text.includes("...") == true){
+  if (text.includes("*aantal*") == true){
     // alertMessage("success","Minuten recognised!","alertZonMwTran");
     if (text.includes("minuten") == true){
       if (value == -1){
@@ -117,10 +117,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("minuten","minuut");
-          text = text.replace("...",value);
+          text = text.replace("*aantal*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*aantal*",value);
         }
         document.getElementById('minutesBox').setAttribute("class","undisplayed");
       }
@@ -135,10 +135,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("uren","uur");
-          text = text.replace("...",value);
+          text = text.replace("*aantal*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*aantal*",value);
         }
         document.getElementById('hoursBox').setAttribute("class","undisplayed");
       }
@@ -153,10 +153,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("dagen","dag");
-          text = text.replace("...",value);
+          text = text.replace("*aantal*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*aantal*",value);
         }
         document.getElementById('daysBox').setAttribute("class","undisplayed");
       }
@@ -171,10 +171,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("weken","week");
-          text = text.replace("...",value);
+          text = text.replace("*aantal*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*aantal*",value);
         }
         document.getElementById('weeksBox').setAttribute("class","undisplayed");
       }
@@ -189,10 +189,10 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("maanden","maand");
-          text = text.replace("...",value);
+          text = text.replace("*aantal*",value);
         }
         else{
-         text = text.join(" ").replace("...",value);
+         text = text.join(" ").replace("*aantal*",value);
         }
         document.getElementById('monthsBox').setAttribute("class","undisplayed");
       }
@@ -299,7 +299,7 @@ function compare(input){
     check = data;
    }
   });
-  
+
   for (key in check){
    if(input == check[key]){
     check = true;
