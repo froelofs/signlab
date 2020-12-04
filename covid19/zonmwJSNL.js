@@ -212,7 +212,8 @@ function startPose() {
 }
 
 $(window).on("load", function(){
-  setTimeout(startPose, 1000);
+  checkToD();
+  // setTimeout(startPose, 1000);
 } );
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -261,7 +262,7 @@ function checkToD() {
       } else {
         link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
       }
-    document.getElementById("videoHolder").src = link;
+    changeVideo(link);
 }
 
 
@@ -299,7 +300,7 @@ function compare(input){
    'dataType': "json",
    'success': function(data) {
     check = data;
-    
+
     for (key in check){
      if(input == check[key]){
       check = true;
