@@ -304,7 +304,7 @@ function compare(input){
       break;
      }
     }
-
+    
     if (check == true){
      document.getElementById("checkPage").style.display = "none";
     }
