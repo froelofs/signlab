@@ -103,6 +103,8 @@ $('.timepicker').timepicker({
         return hour + " o'clock";
       }
       console.log(time);
+      console.log(typeof minutes);
+      console.log(minutes);
       convert = {"05":"5 past","10":"10 past","15":"a quarter past","20":"20 past","25":"25 past","30":"half past","35":"25 to",
       "40":"20 to","45":"a quarter to","50":"10 to","55":"5 to"};
 
