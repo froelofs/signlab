@@ -114,6 +114,7 @@ function checkText(text,value=-1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         text = false;
+        console.log("reached the right if. " + text);
       }
       else{
         if (value == 1){
@@ -177,7 +178,6 @@ function checkText(text,value=-1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
         text = false;
-        console.log("reached the right if. " + text);
       }
       else{
         if (value == 1){
