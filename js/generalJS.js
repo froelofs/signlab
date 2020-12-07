@@ -79,8 +79,10 @@ $('.timepicker').timepicker({
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
-    formatTime: 'HH:mm',
+    // formatTime: 'HH:mm',
     // twelvehour: true,
+    min: "00:00",
+    max: "12:00"
   });
 
 $('.datetimepicker').datetimepicker({format: 'HH:mm'});
