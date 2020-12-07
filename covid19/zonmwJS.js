@@ -110,18 +110,22 @@ function checkText(text,value=-1){
     console.log("amount detected");
     if (text.includes("minutes") == true){
       console.log("minutes detected");
+      console.log(typeof value);
       if (value == -1){
+        console.log("-1");
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
         if (value == 1){
+          console.log("1");
           text = text.join(" ");
           text = text.replace("minutes","minute");
           text = text.replace("*amount*",value);
         }
         else{
+          console.log("other");
          text = text.join(" ").replace("*amount*",value);
         }
       document.getElementById('minutesBox').style.display = "none";
