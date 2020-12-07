@@ -128,6 +128,6 @@ $('.timepicker').timepicker({
     }
    time = minutes + " " + hour.toString();
    console.log(time);
-   // time = time.replace(':', "_")
+  // time = time.replace(":", "_")
    return time;
   }
