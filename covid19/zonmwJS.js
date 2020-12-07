@@ -312,6 +312,8 @@ function toSiGML(text,value=-1){
       }
       else{
         playURL(entry);
+        document.getElementById("replayButton").setAttribute("name", entry);
+        document.getElementById("replayButton").style.display = 'inline-block';
       }
      }
      // if video is checked, source of embedded video changes
@@ -354,6 +356,7 @@ function changeFunc(myRadio) {
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabel").style.display = 'inline-block';
     document.getElementById("speedLabel").style.display = 'inline-block';
+    document.getElementById("replayButton").style.display = 'none';
     options = sentOptions;
   }
   else if (myRadio.value == "video") {
@@ -365,6 +368,7 @@ function changeFunc(myRadio) {
     document.getElementById("outputGloss").setAttribute("class", "undisplayed");
     document.getElementById("glossLabel").style.display = 'none';
     document.getElementById("speedLabel").style.display = 'none';
+    document.getElementById("replayButton").style.display = 'none';
     options = videoOptions;
   }
 }
