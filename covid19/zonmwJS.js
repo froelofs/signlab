@@ -110,16 +110,13 @@ function checkText(text,value=-1){
     console.log("amount detected");
     if (text.includes("minutes") == true){
       console.log("minutes detected");
-      console.log(typeof value);
       if (value == -1){
-        console.log("-1");
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
-        return false;
+        text = false;
       }
       else{
         if (value == 1){
-          console.log("1");
           text = text.join(" ");
           text = text.replace("minutes","minute");
           text = text.replace("*amount*",value);
@@ -136,7 +133,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
-        return false;
+        text = false;
       }
       else{
         if (value == 1){
@@ -149,7 +146,7 @@ function checkText(text,value=-1){
         }
         if (text.split(" ").includes("*amount*") == true){
           alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
-          return false;
+          text = false;
         }
         else{
         document.getElementById('hoursBox').style.display = "none";
@@ -161,7 +158,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
-        return false;
+        text = false;
       }
       else{
         if (value == 1){
@@ -180,7 +177,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
-        return false;
+        text = false;
       }
       else{
         if (value == 1){
@@ -199,7 +196,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
-        return false;
+        text = false;
       }
       else{
         if (value == 1){
@@ -218,7 +215,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('systolicBPBox').style.display = "block";
         alertMessage("info", "Please choose a number between 69 and 191 to fill in the first blank", "alertZonMwTran");
-        return false;
+        text = false;
       }
       else{
         text = text.join(" ").replace("*amount*",value);
@@ -226,7 +223,7 @@ function checkText(text,value=-1){
           document.getElementById('systolicBPBox').style.display = "none";
           document.getElementById('diastolicBPBox').style.display = "block";
           alertMessage("info", "Please choose a number between 39 and 101 to fill in the second blank", "alertZonMwTran");
-          return false;
+          text = false;
         }
         else{
          document.getElementById('diastolicBPBox').style.display = "none";
@@ -235,7 +232,7 @@ function checkText(text,value=-1){
     }
     else if (text.includes("a week")){
       console.log("a week!");
-      return false;
+      text = false;
     }
   }
   else if (text.includes("*time*") == true){
@@ -243,7 +240,7 @@ function checkText(text,value=-1){
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
       alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
-      return false;
+      text = false;
     }
     else{
       value = adaptTime(value,"EN");
@@ -253,7 +250,7 @@ function checkText(text,value=-1){
   }
   else if (text.includes("*day*")){
     console.log("day!");
-    return false;
+    text = false;
   }
   else{
     text = text.join(" ");
