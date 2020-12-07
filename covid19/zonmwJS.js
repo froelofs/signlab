@@ -229,7 +229,7 @@ function checkText(text,value=-1){
           return false;
         }
         else{
-        document.getElementById('diastolicBPBox').style.display = "none";
+         document.getElementById('diastolicBPBox').style.display = "none";
         }
       }
     }
@@ -258,6 +258,7 @@ function checkText(text,value=-1){
   else{
     text = text.join(" ");
   }
+  console.log("Reached this return: " + text);
   return text;
 }
 
@@ -269,6 +270,7 @@ function toSiGML(text,value=-1){
   }
   else {
     text = checkText(text,value);
+    console.log("outcome: " + text);
     if (text == false){
       return text;
     }
