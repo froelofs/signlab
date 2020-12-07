@@ -108,6 +108,8 @@ function checkText(text,value=-1){
   console.log("value: " + value);
   if (text.includes("*amount*") == true){
     console.log("amount detected");
+    console.log(text.includes("minutes"));
+    console.log(text);
     if (text.includes("minutes") == true){
       console.log("minutes detected");
       if (value == -1){
