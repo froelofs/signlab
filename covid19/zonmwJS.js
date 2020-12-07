@@ -105,6 +105,9 @@ $( function() {
 function checkText(text,value=-1){
   text = text.replace(".","");
   text = text.split(" ");
+  if (text.length > 1){
+    text.push(".");
+  }
   console.log(text);
   console.log("value: " + value);
   if (text.includes("*amount*") == true){
@@ -254,6 +257,7 @@ function checkText(text,value=-1){
   else{
     text = text.join(" ");
   }
+  text = text.replace(" .",".");
   console.log("reached this return: " + text);
   return text;
 }
