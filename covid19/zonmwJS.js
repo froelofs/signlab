@@ -103,6 +103,7 @@ $( function() {
 });
 
 function checkText(text,value=-1){
+  text = text.replace(".","");
   text = text.split(" ");
   console.log(text);
   console.log("value: " + value);
