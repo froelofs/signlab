@@ -51,6 +51,32 @@ $.ajax({
  }
 });
 
+var jsonVariable;
+
+// Stores the dict of sentences with variables for the avatar
+// function callbackVar(response) {
+//  jsonVariable = response;
+// }
+
+// Retrieves the dict of sentences with variables for the avatar
+// $.ajax({
+//  url: "variableDictEN.json",
+//  global: false,
+//  success: function(data) {
+//   callbackVar(data);
+//  },
+//  error: function(xhr, error){
+//   console.log(error);
+//  }
+// });
+
+
+
+// Keeps track of whether the dict with sentences with variables needs to be called
+var variable = false;
+
+
+
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual><head_tier><head_movement movement='PB' size='small'/></head_tier></sign_nonmanual></hamgestural_sign></sigml>");
 }
@@ -269,13 +295,20 @@ function toSiGML(text,value=-1){
     text = checkText(text,value);
     console.log("outcome: " + text);
     if (text == false){
+      variable = true;
       return text;
     }
     else{
      // if avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
-      entry = jsonSent[text];
+      if (variable == true){
+        entry = jsonVariable[text];
+      }
+      else{
+        variable = false;
+        entry = jsonSent[text];
+      }
       if (entry == undefined) {
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
