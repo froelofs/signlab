@@ -103,8 +103,8 @@ $('.timepicker').timepicker({
         return hour + " o'clock";
       }
       console.log(time);
-      convert = {"05":"5 past","10":"10 past","15":"quarter past","20":"20 past","25":"25 past","30":"half past","35":"25 to",
-      "40":"20 to","45":"quarter to","50":"10 to","55":"5 to"};
+      convert = {"05":"5 past","10":"10 past","15":"a quarter past","20":"20 past","25":"25 past","30":"half past","35":"25 to",
+      "40":"20 to","45":"a quarter to","50":"10 to","55":"5 to"};
 
       if (parseInt(minutes) > 30){
        hour = hour + 1;
