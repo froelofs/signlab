@@ -78,7 +78,8 @@ $('.timepicker').timepicker({
     showMeridian: false,
     fromnow: 0,
     minuteStep: 5,
-    autoclose: true
+    autoclose: true,
+    formatTime: 'hh:mm'
   });
 
   function adaptTime(time,language="EN"){
