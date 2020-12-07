@@ -85,6 +85,7 @@ $('.timepicker').timepicker({
 
   function adaptTime(time,language="EN"){
     time = time.replace(":", "_");
+    console.log(time);
     return time;
   //   time = time.split(":");
   //   hour = parseInt(time[0]);
