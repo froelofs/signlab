@@ -102,6 +102,7 @@ $('.timepicker').timepicker({
       if (minutes == "00"){
         return hour + " o'clock";
       }
+      console.log(time);
       convert = {"05":"5 past","10":"10 past","15":"quarter past","20":"20 past","25":"25 past","30":"half past","35":"25 to",
       "40":"20 to","45":"quarter to","50":"10 to","55":"5 to"};
 
@@ -110,6 +111,7 @@ $('.timepicker').timepicker({
       }
       
       minutes = convert[minutes];
+      console.log(minutes);
     } 
     else if (language == "NL"){
       if (minutes == "00"){
@@ -125,5 +127,6 @@ $('.timepicker').timepicker({
       minutes = convert[minutes];
     }
    time = minutes + " " + hour.toString();
+   console.log(time);
    return time;
   }
