@@ -117,7 +117,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
-        text = false;
+        return false;
       }
       else{
         if (value == 1){
@@ -136,7 +136,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
-        text = false;
+        return false;
       }
       else{
         if (value == 1){
@@ -149,7 +149,7 @@ function checkText(text,value=-1){
         }
         if (text.split(" ").includes("*amount*") == true){
           alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
-          text = false;
+          return false;
         }
         else{
         document.getElementById('hoursBox').style.display = "none";
@@ -161,7 +161,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
-        text = false;
+        return false;
       }
       else{
         if (value == 1){
@@ -180,7 +180,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
-        text = false;
+        return false;
       }
       else{
         if (value == 1){
@@ -199,7 +199,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
-        text = false;
+        return false;
       }
       else{
         if (value == 1){
@@ -218,7 +218,7 @@ function checkText(text,value=-1){
       if (value == -1){
         document.getElementById('aWeekBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", "alertZonMwTran");
-        text = false;
+        return false;
       }
       else{
         convert = {"1":"once","2":"twice","3": "three times","4":"four times","5":"fives times","6":"six times","7":"seven times"};
@@ -231,7 +231,7 @@ function checkText(text,value=-1){
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
       alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
-      text = false;
+      return false;
     }
     else{
       value = adaptTime(value);
@@ -244,7 +244,7 @@ function checkText(text,value=-1){
     if(value == -1){
       alertMessage("info", "Please choose a day of the week to fill in the blank", "alertZonMwTran");
       document.getElementById('dayOfTheWeekBox').style.display = "block";
-      text = false;
+      return false;
     }
     else{
       text = text.join(" ").replace("*day*",value);

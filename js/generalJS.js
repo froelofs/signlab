@@ -79,12 +79,11 @@ $('.timepicker').timepicker({
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
-    formatTime: 'HH:mm',
+    formatTime: 'hh:mm',
     twelvehour: true,
   });
 
   function adaptTime(time,language="EN"){
-<<<<<<< HEAD
     time = time.split(":");
     hour = parseInt(time[0]);
     minutes = time[1];
@@ -129,5 +128,6 @@ $('.timepicker').timepicker({
     }
    time = minutes + " " + hour.toString();
    console.log(time);
+   // time = time.replace(':', "_")
    return time;
   }
