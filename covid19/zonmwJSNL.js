@@ -234,7 +234,7 @@ function toSiGML(text,value=-1){
      }
      // if video is checked, source of embedded video changes
      else if (document.getElementById("videoDisplay").checked) {
-      entry = jsonvideo[text];
+      entry = jsonVideo[text];
       if (entry == undefined) {
         alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
       }

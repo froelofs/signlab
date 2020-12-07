@@ -125,31 +125,3 @@ $('.timepicker').timepicker({
    time = minutes + " " + hour.toString();
    return time;
   }
-
-  
-// function compare(input){
-//   var check = null;
-//   $.ajax({
-//    'async': false,
-//    'global': false,
-//    'url': "check.json",
-//    'dataType': "json",
-//    'success': function(data) {
-//     check = data;
-//    }
-//   });
-  
-//   for (key in check){
-//    if(input == check[key]){
-//     check = true;
-//     break;
-//    }
-//   }
-
-//   if (check == true){
-//    document.getElementById("checkPage").style.display = "none";
-//   }
-//   else{
-//    alertMessage("error","The password you have entered is incorrect","pwdAlert");
-//   }
-// }

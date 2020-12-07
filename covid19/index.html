@@ -37,8 +37,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- CSS file for bootstrap grayscale theme -->
 <link rel="stylesheet" href="../css/grayscalestyles.css">
+<!-- CSS file for flag icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css">
 <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
 <link rel="stylesheet" href="../css/cwasa-reduced.css">
+
 
 </head>
 
@@ -76,7 +79,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#About">About Us</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Suggestions">Suggestions</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Further Resources</a></li>
-                <li class="nav-item"><a class="nav-link" href="index-nl.html">NL</a></li>
+                <li class="nav-item"><a class="nav-link" href="index-nl.html"><span class="flag-icon flag-icon-nl"></span></a></li>
             </ul>
         </div>
     </div>
@@ -201,7 +204,7 @@
               <!-- Custom made autocomplete form -->
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
-                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
+                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value,-1);}"></textarea>
                 </div>
                 <!-- <input type="submit"> -->
               </form>
