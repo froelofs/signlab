@@ -84,7 +84,7 @@ $('.timepicker').timepicker({
   });
 
   function adaptTime(time,language="EN"){
-    time = time.replace(":", "_");
+    // time = time.replace(":", "_");
     console.log(time);
 
     time = time.split(":");
