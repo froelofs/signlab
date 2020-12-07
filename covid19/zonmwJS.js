@@ -122,7 +122,6 @@ function checkText(text,value=-1){
           text = text.replace("*amount*",value);
         }
         else{
-          console.log("other");
          text = text.join(" ").replace("*amount*",value);
         }
       document.getElementById('minutesBox').style.display = "none";
@@ -178,6 +177,7 @@ function checkText(text,value=-1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
         text = false;
+        console.log("reached the right if. " + text);
       }
       else{
         if (value == 1){
@@ -210,29 +210,17 @@ function checkText(text,value=-1){
         document.getElementById('monthsBox').style.display = "none";
       }
     }
-    else if (text.includes("pressure") == true){
-      console.log("pressure detected");
+    else if (text.includes("a week")){
+      console.log("a week detected");
       if (value == -1){
-        document.getElementById('systolicBPBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 69 and 191 to fill in the first blank", "alertZonMwTran");
+        document.getElementById('aWeekBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", "alertZonMwTran");
         text = false;
       }
       else{
-        text = text.join(" ").replace("*amount*",value);
-        if (text.split(" ").includes("*amount*") == true){
-          document.getElementById('systolicBPBox').style.display = "none";
-          document.getElementById('diastolicBPBox').style.display = "block";
-          alertMessage("info", "Please choose a number between 39 and 101 to fill in the second blank", "alertZonMwTran");
-          text = false;
-        }
-        else{
-         document.getElementById('diastolicBPBox').style.display = "none";
-        }
+        convert = {"1":"once","2":"twice","3": "three times":"4":"four times","5":"fives times","6":"six times","7":"seven times"};
+        text.join(" ").replace("*amount*",convert[value]);
       }
-    }
-    else if (text.includes("a week")){
-      console.log("a week!");
-      text = false;
     }
   }
   else if (text.includes("*time*") == true){
@@ -243,19 +231,27 @@ function checkText(text,value=-1){
       text = false;
     }
     else{
-      value = adaptTime(value,"EN");
+      value = adaptTime(value);
       text = text.join(" ").replace("*time*",value);
       document.getElementById('timeBox').style.display = "none";
     }
   }
   else if (text.includes("*day*")){
-    console.log("day!");
-    text = false;
+    console.log("pick a day detected");
+    if(value == -1){
+      alertMessage("info", "Please choose a day of the week to fill in the blank", "alertZonMwTran");
+      document.getElementById('dayOfTheWeekBox').style.display = "block";
+      text = false;
+    }
+    else{
+      text = text.join(" ").replace("*day*",value);
+      document.getElementById('dayOfTheWeekBox').style.display = "none";
+    } 
   }
   else{
     text = text.join(" ");
   }
-  console.log("Reached this return: " + text);
+  console.log("reached this return: " + text);
   return text;
 }
 

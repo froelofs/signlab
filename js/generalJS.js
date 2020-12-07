@@ -81,7 +81,7 @@ $('.timepicker').timepicker({
     autoclose: true
   });
 
-  function adaptTime(time,language="NL"){
+  function adaptTime(time,language="EN"){
     time = time.split(":");
     hour = parseInt(time[0]);
     minutes = time[1];

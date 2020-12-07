@@ -239,16 +239,24 @@
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 18){alertMessage('error','Please input a number between 0 and 19','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
               </div>
 
-              <div id="systolicBPBox" class="undisplayed">
-               <label for="systolicBP" style="display: inline-block;">Systolic value:</label>
-               <input type="number" id="systolicBP" name="systolicBP" min="70" max="190" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(70 > document.getElementById('systolicBP').value > 190){alertMessage('error','Please input a number between 69 and 191','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('systolicBP').value);}">
+              <div id="aWeekBox" class="undisplayed">
+               <label for="aWeek" style="display: inline-block;">Times a week:</label>
+               <input type="number" id="aWeek" name="aWeek" min="70" max="190" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Please input a number between 0 and 8','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
               </div>
 
-              <div id="diastolicBPBox" class="undisplayed">
-               <label for="diastolicBP" style="display: inline-block;">Diastolic value:</label>
-               <input type="number" id="diastolicBP" name="diastolicBP" min="40" max="100" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(40 > document.getElementById('diastolicBP').value > 100){alertMessage('error','Please input a number between 39 and 101','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('diastolicBP').value);}">
+              <div id="dayOfTheWeekBox" style="display: none;">
+                <label for="dayOfTheWeek" style="display: inline-block;">Day of the week:</label>
+                <select name="dayOfTheWeek" id="dayOfTheWeek">
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+               <input type="submit" style="display: inline-block;" onclick="toSiGML(document.getElementById('mySiGML').value, document.getElementById('dayOfTheWeek').value);">
               </div>
 
               <div id="timeBox" class="md-form" style="display:none;">
