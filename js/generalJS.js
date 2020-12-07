@@ -75,13 +75,15 @@ function alertMessage (type, text, parent){
 $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
-    // showMeridian: false,
+    showMeridian: false,
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
     formatTime: 'HH:mm',
     // twelvehour: true,
   });
+
+$('.datetimepicker').datetimepicker({format: 'HH:mm'});
 
   function adaptTime(time,language="EN"){
     // time = time.replace(":", "_");
