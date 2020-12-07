@@ -218,7 +218,7 @@ function checkText(text,value=-1){
         text = false;
       }
       else{
-        convert = {"1":"once","2":"twice","3": "three times":"4":"four times","5":"fives times","6":"six times","7":"seven times"};
+        convert = {"1":"once","2":"twice","3": "three times","4":"four times","5":"fives times","6":"six times","7":"seven times"};
         text.join(" ").replace("*amount*",convert[value]);
       }
     }
