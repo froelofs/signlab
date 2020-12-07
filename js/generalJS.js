@@ -33,7 +33,7 @@ function addSuggestion(text, alertID){
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
     showBusyState(false);
-    alertMessage("error", 'Oops, something went wrong', alertID); 
+    alertMessage("error", 'Oops, something went wrong', alertID);
   }
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
@@ -62,11 +62,11 @@ function alertMessage (type, text, parent){
   a.setAttribute("class","close");
   a.innerHTML = '&times;';
   alert.appendChild(a);
- 
+
   var textNode = document.createTextNode(text);
   alert.append(textNode);
   alert.setAttribute("class",msgClass);
-  
+
   $("#" + parent).empty();
   var element = document.getElementById(parent);
   element.appendChild(alert);
@@ -84,6 +84,7 @@ $('.timepicker').timepicker({
   });
 
   function adaptTime(time,language="EN"){
+<<<<<<< HEAD
     time = time.split(":");
     hour = parseInt(time[0]);
     minutes = time[1];
