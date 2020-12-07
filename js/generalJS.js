@@ -75,15 +75,15 @@ function alertMessage (type, text, parent){
 $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
-    showMeridian: false,
-    timeFormat: 'hh:mm',
+    // showMeridian: false,
+    // timeFormat: 'hh:mm',
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
     // formatTime: 'HH:mm',
     // twelvehour: true,
-    minTime: "01:00",
-    maxTime: "12:00"
+    min: "01:00",
+    max: "12:00"
   });
 
 
