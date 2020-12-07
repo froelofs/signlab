@@ -80,7 +80,7 @@ $('.timepicker').timepicker({
     minuteStep: 5,
     autoclose: true,
     formatTime: 'HH:mm',
-    twelvehour: true,
+    // twelvehour: true,
   });
 
   function adaptTime(time,language="EN"){
