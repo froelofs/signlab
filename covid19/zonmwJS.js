@@ -54,27 +54,25 @@ $.ajax({
 var jsonVariable;
 
 // Stores the dict of sentences with variables for the avatar
-// function callbackVar(response) {
-//  jsonVariable = response;
-// }
+function callbackVar(response) {
+ jsonVariable = response;
+}
 
 // Retrieves the dict of sentences with variables for the avatar
-// $.ajax({
-//  url: "variableDictEN.json",
-//  global: false,
-//  success: function(data) {
-//   callbackVar(data);
-//  },
-//  error: function(xhr, error){
-//   console.log(error);
-//  }
-// });
-
+$.ajax({
+ url: "variableDictEN.json",
+ global: false,
+ success: function(data) {
+  callbackVar(data);
+ },
+ error: function(xhr, error){
+  console.log(error);
+ }
+});
 
 
 // Keeps track of whether the dict with sentences with variables needs to be called
 var variable = false;
-
 
 
 function startPose() {
