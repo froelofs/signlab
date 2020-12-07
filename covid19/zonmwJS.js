@@ -105,6 +105,7 @@ $( function() {
 function checkText(text,value=-1){
   text = text.split(" ");
   console.log(text);
+  console.log("value: " + value);
   if (text.includes("*amount*") == true){
     console.log("amount detected");
     if (text.includes("minutes") == true){
