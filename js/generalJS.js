@@ -84,6 +84,8 @@ $('.timepicker').timepicker({
   });
 
   function adaptTime(time,language="EN"){
+    time = time.replace(":", "_");
+    return time;
   //   time = time.split(":");
   //   hour = parseInt(time[0]);
   //   minutes = time[1];
@@ -128,6 +130,4 @@ $('.timepicker').timepicker({
   //   }
   //  time = minutes + " " + hour.toString();
   //  console.log(time);
-  // // time = time.replace(":", "_");
-   return time;
   }
