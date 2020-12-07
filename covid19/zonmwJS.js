@@ -106,7 +106,9 @@ function checkText(text,value=-1){
   text = text.split(" ");
   console.log(text);
   if (text.includes("*amount*") == true){
+    console.log("amount detected");
     if (text.includes("minutes") == true){
+      console.log("minutes detected");
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
@@ -125,6 +127,7 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("hours") == true){
+      console.log("hours detected");
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
@@ -149,6 +152,7 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("days") == true){
+      console.log("days detected");
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
@@ -167,6 +171,7 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("weeks") == true){
+      console.log("weeks detected");
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
@@ -185,6 +190,7 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("months") == true){
+      console.log("months detected");
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
@@ -203,6 +209,7 @@ function checkText(text,value=-1){
       }
     }
     else if (text.includes("pressure") == true){
+      console.log("pressure detected");
       if (value == -1){
         document.getElementById('systolicBPBox').style.display = "block";
         alertMessage("info", "Please choose a number between 69 and 191 to fill in the first blank", "alertZonMwTran");
@@ -221,8 +228,13 @@ function checkText(text,value=-1){
         }
       }
     }
+    else if (text.includes("a week")){
+      console.log("a week!");
+      return false;
+    }
   }
   else if (text.includes("*time*") == true){
+    console.log("time detected");
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
       alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
@@ -233,6 +245,10 @@ function checkText(text,value=-1){
       text = text.join(" ").replace("*time*",value);
       document.getElementById('timeBox').style.display = "none";
     }
+  }
+  else if (text.includes("*day*")){
+    console.log("day!");
+    return false;
   }
   else{
     text = text.join(" ");
