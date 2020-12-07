@@ -75,7 +75,7 @@ function alertMessage (type, text, parent){
 $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
-    // showMeridian: false,
+    showMeridian: false,
     // timeFormat: 'hh:mm',
     fromnow: 0,
     minuteStep: 5,
