@@ -85,7 +85,6 @@ $('.timepicker').timepicker({
     max: "12:00"
   });
 
-$('.datetimepicker').datetimepicker({format: 'HH:mm'});
 
   function adaptTime(time,language="EN"){
     // time = time.replace(":", "_");
