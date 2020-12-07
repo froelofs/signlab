@@ -76,13 +76,14 @@ $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
     showMeridian: false,
+    timeFormat: 'hh:mm',
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
     // formatTime: 'HH:mm',
     // twelvehour: true,
-    min: "00:00",
-    max: "12:00"
+    minTime: "00:00",
+    maxTime: "12:00"
   });
 
 
