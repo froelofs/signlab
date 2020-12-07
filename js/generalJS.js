@@ -79,7 +79,7 @@ $('.timepicker').timepicker({
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
-    formatTime: 'hh:mm',
+    formatTime: 'HH:mm',
     twelvehour: true,
   });
 
