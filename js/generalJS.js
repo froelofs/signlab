@@ -82,8 +82,8 @@ $('.timepicker').timepicker({
     autoclose: true,
     // formatTime: 'HH:mm',
     // twelvehour: true,
-    maxHours: "13",
-    minHours: "2",
+    minHours: "1",
+    maxHours: "12"   
   });
 
 
