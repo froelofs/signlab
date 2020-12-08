@@ -117,7 +117,26 @@ $( function() {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
+    change: function( event, ui ) {
+      console.log("You selected: " + ui.item.value);
+      var text = checkText(ui.item.value);
+      if (text == false){
+       variable = true;
+      }
+      else{
+        document.getElementById('mySiGML').value = text;
+      }
+    }
   });
+
+  // $('#tags').on('autocompleteselect', function (e, ui) {
+
+  //       $('#tagsname').html('You selected: ' + ui.item.value);
+  //   });
+
+  // $('#mySiGML').on('autocompletechange change', function () {
+  //   $('#tagsname').html('You selected: ' + this.value);
+  // }).change();
 
   //Forces the width of the autcomplete menu to fit the input field's width
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
@@ -280,7 +299,7 @@ function checkText(text,value=-1){
   }
   text = text.replace(" .",".");
   console.log("reached this return: " + text);
-  return text;
+  toSiGML(text);
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -290,13 +309,13 @@ function toSiGML(text,value=-1){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    text = checkText(text,value);
-    console.log("outcome: " + text);
-    if (text == false){
-      variable = true;
-      return text;
-    }
-    else{
+    // text = checkText(text,value);
+    // console.log("outcome: " + text);
+    // if (text == false){
+    //   variable = true;
+    //   return text;
+    // }
+    // else{
      // if avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
@@ -326,7 +345,7 @@ function toSiGML(text,value=-1){
       changeVideo(entry);
       }
     }
-   }
+   // }
   }
 }
 
