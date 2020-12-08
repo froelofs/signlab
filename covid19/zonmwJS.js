@@ -152,7 +152,7 @@ function checkText(text,value=-1){
   console.log(elements);
   elements.forEach(function(element) {
     console.log(element);
-    element.style.display = none;
+    element.style.display = 'none';
   });
 
   text = text.replace(".","");
@@ -458,7 +458,7 @@ $("#myTextArea").on('change',null, function(){
     elements = [...document.getElementsByClassName('varBox')];
     elements.forEach(function(element) {
      console.log(element);
-     element.style.display = none;
+     element.style.display = 'none';
     })
   }
 });
