@@ -84,8 +84,16 @@ $('.timepicker').timepicker({
     // twelvehour: true,
     // minHours: "1",
     // maxHours: "12"
-    minDate: moment({h:1}),
-    maxDate: moment({h:12}),
+   }).on('changeTime.timepicker', function(e) {    
+    var h = e.time.hours;
+    var m = e.time.minutes;
+
+    if(h > 12){
+      $('#timepicker').timepicker('setTime', '1:' + m.toString());
+    }
+    else if(h == 0){
+      $('#timepicker').timepicker('setTime', '12:' + m.toString());
+    } 
   });
 
 
