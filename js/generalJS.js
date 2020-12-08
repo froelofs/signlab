@@ -81,8 +81,8 @@ $('.timepicker').timepicker({
     autoclose: true,
     // minHours: "1",
     // maxHours: "12"
-    min: "01:00",
-    max: "12:59"
+    minTime: "01:00",
+    maxTime: "12:59"
   });
 
 
