@@ -161,7 +161,7 @@ function checkText(text,value=-1){
   console.log(text);
   console.log("value: " + value);
   // Checks whether a variable indicator is present in the sentence and if so, which one
-  if (text.includes("*amount*") == true){
+  if (text.includes("*number*") == true){
     console.log("amount detected");
     if (text.includes("minutes") == true){
       console.log("minutes detected");
@@ -176,11 +176,11 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("minutes","minute");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
           // Replaces the variable indicator with the value provided
-         text = text.join(" ").replace("*amount*",value);
+         text = text.join(" ").replace("*number*",value);
         }
       document.getElementById('minutesBox').style.display = "none";
       }
@@ -198,13 +198,13 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("hours","hour");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
          // Replaces the variable indicator with the value provided
-         text = text.join(" ").replace("*amount*",value);
+         text = text.join(" ").replace("*number*",value);
         }
-        if (text.split(" ").includes("*amount*") == true){
+        if (text.split(" ").includes("*number*") == true){
           alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
           return false;
         }
@@ -226,11 +226,11 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("days","day");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
           // Replaces the variable indicator with the value provided
-         text = text.join(" ").replace("*amount*",value);
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('daysBox').style.display = "none";
       }
@@ -248,11 +248,11 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("weeks","week");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
           // Replaces the variable indicator with the value provided
-         text = text.join(" ").replace("*amount*",value);
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('weeksBox').style.display = "none";
       }
@@ -270,11 +270,11 @@ function checkText(text,value=-1){
         if (value == 1){
           text = text.join(" ");
           text = text.replace("months","month");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
           // Replaces the variable indicator with the value provided
-         text = text.join(" ").replace("*amount*",value);
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('monthsBox').style.display = "none";
       }
@@ -290,7 +290,7 @@ function checkText(text,value=-1){
       else{
         // Replaces the variable indicator with the value provided
         convert = {"1":"once","2":"twice","3": "three times","4":"four times","5":"fives times","6":"six times","7":"seven times"};
-        text.join(" ").replace("*amount*",convert[value]);
+        text.join(" ").replace("*number*",convert[value]);
       }
     }
   }
