@@ -147,7 +147,7 @@ $( function() {
 
 function checkText(text,value=-1){
   // Makes all the variable boxes invisible
-  elements = getElementsByClassName('varBox');
+  elements = document.getElementsByClassName('varBox');
   elements.forEach(function(element) {
     console.log(element);
     element.style.display = none;
@@ -329,6 +329,7 @@ function checkText(text,value=-1){
   text = text.replace(" .",".");
   console.log("reached this return: " + text);
   toSiGML(text);
+  // return text;
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -449,20 +450,10 @@ function compare(input){
   }
 }
 
-// $("#mySiGML").{
-//   if (this.value == ''){
-//     elements = getElementsByClass('varBox');
-//     elements.forEach(function(element) {
-//      console.log(element);
-//      element.style.display = none;
-//     });
-//   }
-// }
-
 $("#myTextArea").on('change',null, function(){
   if (!$.trim($("#myTextArea").val())) {
   // textarea is empty or contains only white-space
-    elements = getElementsByClassName('varBox');
+    elements = document.getElementsByClassName('varBox');
     elements.forEach(function(element) {
      console.log(element);
      element.style.display = none;
