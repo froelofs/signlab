@@ -449,12 +449,22 @@ function compare(input){
   }
 }
 
-$('#mySiGML'){
-  if (this.value == ''){
+// $("#mySiGML").{
+//   if (this.value == ''){
+//     elements = getElementsByClass('varBox');
+//     elements.forEach(function(element) {
+//      console.log(element);
+//      element.style.display = none;
+//     });
+//   }
+// }
+
+$("#myTextArea").live('change', function(){
+  if (!$.trim($("#myTextArea").val())) {
+  // textarea is empty or contains only white-space
     elements = getElementsByClass('varBox');
     elements.forEach(function(element) {
      console.log(element);
      element.style.display = none;
     });
-  }
 }
