@@ -117,16 +117,16 @@ $( function() {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
-    change: function( event, ui ) {
-      console.log("You selected: " + ui.item.value);
-      var text = checkText(ui.item.value);
-      if (text == false){
-       variable = true;
-      }
-      else{
-        document.getElementById('mySiGML').value = text;
-      }
-    }
+    // change: function( event, ui ) {
+    //   console.log("You selected: " + ui.item.value);
+    //   var text = checkText(ui.item.value);
+    //   if (text == false){
+    //    variable = true;
+    //   }
+    //   else{
+    //     document.getElementById('mySiGML').value = text;
+    //   }
+    // }
   });
 
   // $('#tags').on('autocompleteselect', function (e, ui) {
@@ -147,13 +147,13 @@ $( function() {
 
 function checkText(text,value=-1){
   // Makes all the variable boxes invisible
-  elements = [...document.getElementsByClassName('varBox')];
-  console.log(typeof elements);
-  console.log(elements);
-  elements.forEach(function(element) {
-    console.log(element);
-    element.style.display = 'none';
-  });
+  // elements = [...document.getElementsByClassName('varBox')];
+  // console.log(typeof elements);
+  // console.log(elements);
+  // elements.forEach(function(element) {
+  //   console.log(element);
+  //   element.style.display = 'none';
+  // });
 
   text = text.replace(".","");
   text = text.split(" ");
@@ -330,8 +330,8 @@ function checkText(text,value=-1){
   }
   text = text.replace(" .",".");
   console.log("reached this return: " + text);
-  toSiGML(text);
-  // return text;
+  // toSiGML(text);
+  return text;
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -342,14 +342,14 @@ function toSiGML(text,value=-1){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    // text = checkText(text,value);
-    // console.log("outcome: " + text);
-    // if (text == false){
-    //   variable = true;
-    //   return text;
-    // }
-    // else{
-     // if avatar is checked, SiGML is sent
+    text = checkText(text,value);
+    console.log("outcome: " + text);
+    if (text == false){
+      variable = true;
+      return text;
+    }
+    else{
+     // If avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked) {
       document.getElementById('mySiGML').value = text;
       if (variable == true){
@@ -368,7 +368,7 @@ function toSiGML(text,value=-1){
         document.getElementById("replayButton").style.display = 'inline-block';
       }
      }
-     // if video is checked, source of embedded video changes
+     // If video is checked, source of embedded video changes
      else if (document.getElementById("videoDisplay").checked) {
       entry = jsonVideo[text];
       if (entry == undefined) {
@@ -452,13 +452,13 @@ function compare(input){
   }
 }
 
-$("#myTextArea").on('change',null, function(){
-  if (!$.trim($("#myTextArea").val())) {
-  // textarea is empty or contains only white-space
-    elements = [...document.getElementsByClassName('varBox')];
-    elements.forEach(function(element) {
-     console.log(element);
-     element.style.display = 'none';
-    })
-  }
-});
+// $("#myTextArea").on('change',null, function(){
+//   if (!$.trim($("#myTextArea").val())) {
+//   // textarea is empty or contains only white-space
+//     elements = [...document.getElementsByClassName('varBox')];
+//     elements.forEach(function(element) {
+//      console.log(element);
+//      element.style.display = 'none';
+//     })
+//   }
+// });
