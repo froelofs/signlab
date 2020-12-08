@@ -76,24 +76,13 @@ $('.timepicker').timepicker({
     'default': 'now',
     showInputs: false,
     showMeridian: false,
-    // timeFormat: 'hh:mm',
     fromnow: 0,
     minuteStep: 5,
     autoclose: true,
-    // formatTime: 'HH:mm',
-    // twelvehour: true,
     // minHours: "1",
     // maxHours: "12"
-   }).on('changeTime.timepicker', function(e) {    
-    var h = e.time.hours;
-    var m = e.time.minutes;
-
-    if(h > 12){
-      $('#timepicker').timepicker('setTime', '1:' + m.toString());
-    }
-    else if(h == 0){
-      $('#timepicker').timepicker('setTime', '12:' + m.toString());
-    } 
+    min: "01:00",
+    max: "12:59"
   });
 
 
