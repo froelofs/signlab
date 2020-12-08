@@ -116,7 +116,7 @@ $( function() {
     source: function (request, response) {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
-    },
+    }
     // change: function( event, ui ) {
     //   console.log("You selected: " + ui.item.value);
     //   var text = checkText(ui.item.value);
@@ -378,7 +378,7 @@ function toSiGML(text,value=-1){
       changeVideo(entry);
       }
     }
-   // }
+   }
   }
 }
 
