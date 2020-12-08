@@ -147,7 +147,7 @@ $( function() {
 
 function checkText(text,value=-1){
   // Makes all the variable boxes invisible
-  elements = getElementsByClass('varBox');
+  elements = getElementsByClassName('varBox');
   elements.forEach(function(element) {
     console.log(element);
     element.style.display = none;
@@ -462,7 +462,7 @@ function compare(input){
 $("#myTextArea").live('change', function(){
   if (!$.trim($("#myTextArea").val())) {
   // textarea is empty or contains only white-space
-    elements = getElementsByClass('varBox');
+    elements = getElementsByClassName('varBox');
     elements.forEach(function(element) {
      console.log(element);
      element.style.display = none;
