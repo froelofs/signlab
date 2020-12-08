@@ -466,5 +466,6 @@ $("#myTextArea").live('change', function(){
     elements.forEach(function(element) {
      console.log(element);
      element.style.display = none;
-    });
-}
+    })
+  }
+});
