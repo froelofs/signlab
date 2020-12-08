@@ -147,7 +147,9 @@ $( function() {
 
 function checkText(text,value=-1){
   // Makes all the variable boxes invisible
-  elements = document.getElementsByClassName('varBox');
+  elements = [...document.getElementsByClassName('varBox')];
+  console.log(typeof elements);
+  console.log(elements);
   elements.forEach(function(element) {
     console.log(element);
     element.style.display = none;
