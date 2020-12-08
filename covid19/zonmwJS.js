@@ -146,6 +146,13 @@ $( function() {
 });
 
 function checkText(text,value=-1){
+  // Makes all the variable boxes invisible
+  elements = getElementsByClass('varBox');
+  elements.forEach(function(element) {
+    console.log(element);
+    element.style.display = none;
+  });
+
   text = text.replace(".","");
   text = text.split(" ");
   if (text.length > 1){
@@ -153,22 +160,26 @@ function checkText(text,value=-1){
   }
   console.log(text);
   console.log("value: " + value);
+  // Checks whether a variable indicator is present in the sentence and if so, which one
   if (text.includes("*amount*") == true){
     console.log("amount detected");
     if (text.includes("minutes") == true){
       console.log("minutes detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("minutes","minute");
           text = text.replace("*amount*",value);
         }
         else{
+          // Replaces the variable indicator with the value provided
          text = text.join(" ").replace("*amount*",value);
         }
       document.getElementById('minutesBox').style.display = "none";
@@ -176,18 +187,21 @@ function checkText(text,value=-1){
     }
     else if (text.includes("hours") == true){
       console.log("hours detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("hours","hour");
           text = text.replace("*amount*",value);
         }
         else{
+         // Replaces the variable indicator with the value provided
          text = text.join(" ").replace("*amount*",value);
         }
         if (text.split(" ").includes("*amount*") == true){
@@ -195,24 +209,27 @@ function checkText(text,value=-1){
           return false;
         }
         else{
-        document.getElementById('hoursBox').style.display = "none";
+         document.getElementById('hoursBox').style.display = "none";
         }
       }
     }
     else if (text.includes("days") == true){
       console.log("days detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("days","day");
           text = text.replace("*amount*",value);
         }
         else{
+          // Replaces the variable indicator with the value provided
          text = text.join(" ").replace("*amount*",value);
         }
         document.getElementById('daysBox').style.display = "none";
@@ -220,18 +237,21 @@ function checkText(text,value=-1){
     }
     else if (text.includes("weeks") == true){
       console.log("weeks detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("weeks","week");
           text = text.replace("*amount*",value);
         }
         else{
+          // Replaces the variable indicator with the value provided
          text = text.join(" ").replace("*amount*",value);
         }
         document.getElementById('weeksBox').style.display = "none";
@@ -239,18 +259,21 @@ function checkText(text,value=-1){
     }
     else if (text.includes("months") == true){
       console.log("months detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("months","month");
           text = text.replace("*amount*",value);
         }
         else{
+          // Replaces the variable indicator with the value provided
          text = text.join(" ").replace("*amount*",value);
         }
         document.getElementById('monthsBox').style.display = "none";
@@ -258,12 +281,14 @@ function checkText(text,value=-1){
     }
     else if (text.includes("a week")){
       console.log("a week detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('aWeekBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Replaces the variable indicator with the value provided
         convert = {"1":"once","2":"twice","3": "three times","4":"four times","5":"fives times","6":"six times","7":"seven times"};
         text.join(" ").replace("*amount*",convert[value]);
       }
@@ -271,12 +296,14 @@ function checkText(text,value=-1){
   }
   else if (text.includes("*time*") == true){
     console.log("time detected");
+    // If no value has been given for the variable the appropiate box is shown to ask for input
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
       alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
       return false;
     }
     else{
+      // Replaces the variable indicator with the value provided
       value = adaptTime(value);
       text = text.join(" ").replace("*time*",value);
       document.getElementById('timeBox').style.display = "none";
@@ -285,11 +312,13 @@ function checkText(text,value=-1){
   else if (text.includes("*day*")){
     console.log("pick a day detected");
     if(value == -1){
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       alertMessage("info", "Please choose a day of the week to fill in the blank", "alertZonMwTran");
       document.getElementById('dayOfTheWeekBox').style.display = "block";
       return false;
     }
     else{
+      // Replaces the variable indicator with the value provided
       text = text.join(" ").replace("*day*",value);
       document.getElementById('dayOfTheWeekBox').style.display = "none";
     } 
