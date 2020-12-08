@@ -117,7 +117,7 @@ $( function() {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
-    close: function( event, ui ) {
+    change: function( event, ui ) {
       console.log("You selected: " + ui.item.value);
       var text = checkText(ui.item.value);
       if (text == false){
@@ -417,5 +417,15 @@ function compare(input){
   }
   else{
    alertMessage("error","This password is incorrect","pwdAlert");
+  }
+}
+
+$('#mySiGML'){
+  if (this.value == ''){
+    elements = getElementsByClass('varBox');
+    elements.forEach(function(element) {
+     console.log(element);
+     element.style.display = none;
+    });
   }
 }

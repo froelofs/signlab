@@ -215,3 +215,7 @@ body.busy::before {
  z-index: 1050;
  position: fixed;
 }
+
+.varBox{
+  display: none;
+}
