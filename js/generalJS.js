@@ -99,6 +99,8 @@ $('.timepicker').timepicker({
      minutes = minutes.charAt(0) + "5";
     }
 
+    var dayPart = "";
+
     //Translates the time according to the language the page is set to
     if (language == "EN"){
       if (minutes == "00"){
@@ -113,7 +115,7 @@ $('.timepicker').timepicker({
       }
 
       // Only adds the part of day if the difference between now and then is larger than 12 hours
-      if ((partOfDay - hour > 12) || (hour - partOfDay) > 12){
+      if ((partOfDay - hour) > 12 || (hour - partOfDay) > 12){
         console.log("part of day necessary");
         // Adds the part of the day
         if(hour < 12){
@@ -162,7 +164,7 @@ $('.timepicker').timepicker({
     hour = hour - 12;
    }
 
-   time = minutes + " " + hour.toString();
+   time = minutes + " " + hour.toString() + dayPart;
    console.log("output time: " + time);
    return time;
   }
