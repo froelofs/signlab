@@ -212,7 +212,7 @@
               <div id="minutesBox" class="varBox">
                <label for="minutes" style="display: inline-block;">Number of minutes:</label>
                <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Please input a number between 0 and 60','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Please input a number between 0 and 60','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
               </div>
 
               <div id="hoursBox" class="varBox">
