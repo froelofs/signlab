@@ -56,6 +56,7 @@ var jsonVariable;
 // Stores the dict of sentences with variables for the avatar
 function callbackVar(response) {
  jsonVariable = response;
+ varOptions = Object.keys(jsonVariable);
 }
 
 // Retrieves the dict of sentences with variables for the avatar
@@ -116,8 +117,27 @@ $( function() {
     source: function (request, response) {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
-    },
+    }
+    change: function( event, ui ) {
+      console.log("You selected: " + ui.item.value);
+      var text = checkText(ui.item.value);
+      if (text == false){
+       variable = true;
+      }
+      else{
+        document.getElementById('mySiGML').value = text;
+      }
+    }
   });
+
+  // $('#tags').on('autocompleteselect', function (e, ui) {
+
+  //       $('#tagsname').html('You selected: ' + ui.item.value);
+  //   });
+
+  // $('#mySiGML').on('autocompletechange change', function () {
+  //   $('#tagsname').html('You selected: ' + this.value);
+  // }).change();
 
   //Forces the width of the autcomplete menu to fit the input field's width
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
@@ -127,6 +147,15 @@ $( function() {
 });
 
 function checkText(text,value=-1){
+  // Makes all the variable boxes invisible
+  elements = [...document.getElementsByClassName('varBox')];
+  console.log(typeof elements);
+  console.log(elements);
+  elements.forEach(function(element) {
+    console.log(element);
+    element.style.display = 'none';
+  });
+
   text = text.replace(".","");
   text = text.split(" ");
   if (text.length > 1){
@@ -134,130 +163,150 @@ function checkText(text,value=-1){
   }
   console.log(text);
   console.log("value: " + value);
-  if (text.includes("*amount*") == true){
+  // Checks whether a variable indicator is present in the sentence and if so, which one
+  if (text.includes("*number*") == true){
     console.log("amount detected");
     if (text.includes("minutes") == true){
       console.log("minutes detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("minutes","minute");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
-         text = text.join(" ").replace("*amount*",value);
+          // Replaces the variable indicator with the value provided
+         text = text.join(" ").replace("*number*",value);
         }
       document.getElementById('minutesBox').style.display = "none";
       }
     }
     else if (text.includes("hours") == true){
       console.log("hours detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("hours","hour");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
-         text = text.join(" ").replace("*amount*",value);
+         // Replaces the variable indicator with the value provided
+         text = text.join(" ").replace("*number*",value);
         }
-        if (text.split(" ").includes("*amount*") == true){
+        if (text.split(" ").includes("*number*") == true){
           alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
           return false;
         }
         else{
-        document.getElementById('hoursBox').style.display = "none";
+         document.getElementById('hoursBox').style.display = "none";
         }
       }
     }
     else if (text.includes("days") == true){
       console.log("days detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("days","day");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
-         text = text.join(" ").replace("*amount*",value);
+          // Replaces the variable indicator with the value provided
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('daysBox').style.display = "none";
       }
     }
     else if (text.includes("weeks") == true){
       console.log("weeks detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("weeks","week");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
-         text = text.join(" ").replace("*amount*",value);
+          // Replaces the variable indicator with the value provided
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('weeksBox').style.display = "none";
       }
     }
     else if (text.includes("months") == true){
       console.log("months detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("months","month");
-          text = text.replace("*amount*",value);
+          text = text.replace("*number*",value);
         }
         else{
-         text = text.join(" ").replace("*amount*",value);
+          // Replaces the variable indicator with the value provided
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('monthsBox').style.display = "none";
       }
     }
     else if (text.includes("a week")){
       console.log("a week detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('aWeekBox').style.display = "block";
         alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
+        // Replaces the variable indicator with the value provided
         convert = {"1":"once","2":"twice","3": "three times","4":"four times","5":"fives times","6":"six times","7":"seven times"};
-        text.join(" ").replace("*amount*",convert[value]);
+        text.join(" ").replace("*number*",convert[value]);
       }
     }
   }
   else if (text.includes("*time*") == true){
     console.log("time detected");
+    // If no value has been given for the variable the appropiate box is shown to ask for input
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
       alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
       return false;
     }
     else{
+      // Replaces the variable indicator with the value provided
       value = adaptTime(value);
       text = text.join(" ").replace("*time*",value);
       document.getElementById('timeBox').style.display = "none";
@@ -266,11 +315,13 @@ function checkText(text,value=-1){
   else if (text.includes("*day*")){
     console.log("pick a day detected");
     if(value == -1){
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       alertMessage("info", "Please choose a day of the week to fill in the blank", "alertZonMwTran");
       document.getElementById('dayOfTheWeekBox').style.display = "block";
       return false;
     }
     else{
+      // Replaces the variable indicator with the value provided
       text = text.join(" ").replace("*day*",value);
       document.getElementById('dayOfTheWeekBox').style.display = "none";
     }
@@ -279,27 +330,30 @@ function checkText(text,value=-1){
     text = text.join(" ");
   }
   text = text.replace(" .",".");
-  console.log("reached this return: " + text);
-  return text;
+  console.log("completed sentence: " + text);
+  // toSiGML(text);
+  document.getElementById('mySiGML').value = text;
+  // return text;
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
-  // Checks user input against autcomplete suggestions
-  if(autocompSugg.includes(text) == false){
+  console.log("input: " + text);
+  // Checks user input against the autcomplete suggestions and the variable sentences dict
+  if (autocompSugg.includes(text) == false && varOptions.includes(text) == false){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    text = checkText(text,value);
-    console.log("outcome: " + text);
-    if (text == false){
-      variable = true;
-      return text;
-    }
-    else{
-     // if avatar is checked, SiGML is sent
+    // text = checkText(text,value);
+    // console.log("outcome: " + text);
+    // if (text == false){
+    //   variable = true;
+    //   return text;
+    // }
+    // else{
+     // If avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked) {
-      document.getElementById('mySiGML').value = text;
+      // document.getElementById('mySiGML').value = text;
       if (variable == true){
         entry = jsonVariable[text];
       }
@@ -312,9 +366,11 @@ function toSiGML(text,value=-1){
       }
       else{
         playURL(entry);
+        document.getElementById("replayButton").setAttribute("name", entry);
+        document.getElementById("replayButton").style.display = 'inline-block';
       }
      }
-     // if video is checked, source of embedded video changes
+     // If video is checked, source of embedded video changes
      else if (document.getElementById("videoDisplay").checked) {
       entry = jsonVideo[text];
       if (entry == undefined) {
@@ -324,7 +380,7 @@ function toSiGML(text,value=-1){
       changeVideo(entry);
       }
     }
-   }
+   // }
   }
 }
 
@@ -354,6 +410,7 @@ function changeFunc(myRadio) {
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabel").style.display = 'inline-block';
     document.getElementById("speedLabel").style.display = 'inline-block';
+    document.getElementById("replayButton").style.display = 'none';
     options = sentOptions;
   }
   else if (myRadio.value == "video") {
@@ -365,6 +422,7 @@ function changeFunc(myRadio) {
     document.getElementById("outputGloss").setAttribute("class", "undisplayed");
     document.getElementById("glossLabel").style.display = 'none';
     document.getElementById("speedLabel").style.display = 'none';
+    document.getElementById("replayButton").style.display = 'none';
     options = videoOptions;
   }
 }
@@ -395,3 +453,14 @@ function compare(input){
    alertMessage("error","This password is incorrect","pwdAlert");
   }
 }
+
+// $("#myTextArea").on('change',null, function(){
+//   if (!$.trim($("#myTextArea").val())) {
+//   // textarea is empty or contains only white-space
+//     elements = [...document.getElementsByClassName('varBox')];
+//     elements.forEach(function(element) {
+//      console.log(element);
+//      element.style.display = 'none';
+//     })
+//   }
+// });
