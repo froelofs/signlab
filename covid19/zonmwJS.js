@@ -119,25 +119,18 @@ $( function() {
       response(autocompSugg);
     },
     change: function( event, ui ){
-      console.log("You selected: " + ui.item.value);
-      var text = checkText(ui.item.value);
-      if (text == false){
-       variable = true;
-      }
-      else{
-        document.getElementById('mySiGML').value = text;
+      if (ui.item != null){
+        console.log("You selected: " + ui.item.value);
+        var text = checkText(ui.item.value);
+        if (text == false){
+         variable = true;
+        }
+        else{
+          document.getElementById('mySiGML').value = text;
+        }
       }
     }
   });
-
-  // $('#tags').on('autocompleteselect', function (e, ui) {
-
-  //       $('#tagsname').html('You selected: ' + ui.item.value);
-  //   });
-
-  // $('#mySiGML').on('autocompletechange change', function () {
-  //   $('#tagsname').html('You selected: ' + this.value);
-  // }).change();
 
   //Forces the width of the autcomplete menu to fit the input field's width
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
