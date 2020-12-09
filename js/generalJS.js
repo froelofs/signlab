@@ -83,7 +83,7 @@ $('.timepicker').timepicker({
 
 
   function adaptTime(time,language="EN"){
-    console.log(time);
+    console.log("input time: " + time);
 
     time = time.split(":");
     hour = parseInt(time[0]);
@@ -99,8 +99,6 @@ $('.timepicker').timepicker({
      minutes = minutes.charAt(0) + "5";
     }
 
-    console.log(time);
-
     //Translates the time according to the language the page is set to
     if (language == "EN"){
       if (minutes == "00"){
@@ -115,7 +113,8 @@ $('.timepicker').timepicker({
       }
 
       // Only adds the part of day if the difference between now and then is larger than 12 hours
-      if (partOfDay - hour > 12 || hour - partOfDay > 12){
+      if ((partOfDay - hour > 12) || (hour - partOfDay) > 12){
+        console.log("part of day necessary");
         // Adds the part of the day
         if(hour < 12){
           dayPart = " in the morning";
@@ -143,7 +142,7 @@ $('.timepicker').timepicker({
       }
 
       // Only adds the part of day if the difference between now and then is larger than 12 hours
-      if (partOfDay - hour > 12 || hour - partOfDay > 12){
+      if ((partOfDay - hour) > 12 || (hour - partOfDay) > 12){
         // Adds the part of the day
         if(hour < 12){
           dayPart = " 's ochtends";
@@ -164,6 +163,6 @@ $('.timepicker').timepicker({
    }
 
    time = minutes + " " + hour.toString();
-   console.log(time);
+   console.log("output time: " + time);
    return time;
   }
