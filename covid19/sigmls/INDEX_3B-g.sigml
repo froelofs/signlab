@@ -2,21 +2,23 @@
 <sigml>
   <hamgestural_sign gloss="INDEX_3B">
     <sign_nonmanual>
-      <body_tier>
-        <body_movement movement="RL"/>
-      </body_tier>
       <head_tier>
         <head_par>
           <head_movement movement="SL"/>
           <head_movement movement="SL"/>
           <head_movement movement="SL"/>
-          <head_movement movement="SL"/>
         </head_par>
       </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="LD"/>
+        </facial_expr_par>
+       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual nondominant="true">
-      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent"/>
-      <handconfig extfidir="uol" palmor="d"/>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uo" palmor="d"/>
       <location_bodyarm contact="close" location="shoulders" side="left_beside"/>
       <directedmotion direction="dl" size="small"/>
     </sign_manual>
