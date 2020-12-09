@@ -114,8 +114,10 @@ $('.timepicker').timepicker({
        hour = hour + 1;
       }
 
+      console.log(partOfDay - hour);
+      console.log(hour - partOfDay);
       // Only adds the part of day if the difference between now and then is larger than 12 hours
-      if ((partOfDay - hour) > 12 || (hour - partOfDay) > 12){
+      if ((partOfDay < 12 && (hour - partOfDay) > 12) || (partOfDay > 11 && (partOfDay - hour) > 0)){
         console.log("part of day necessary");
         // Adds the part of the day
         if(hour < 12){
