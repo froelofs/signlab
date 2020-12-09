@@ -134,13 +134,11 @@ $( function() {
     },
     select: function( event, ui ){
       if (ui.item != null){
+        document.getElementById('mySiGML').value = text;
         console.log("You selected: " + ui.item.value);
         var text = checkText(ui.item.value);
         if (text == false){
          variable = true;
-        }
-        else{
-          document.getElementById('mySiGML').value = text;
         }
       }
     }
