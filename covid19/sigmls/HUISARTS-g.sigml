@@ -25,26 +25,26 @@
     </sign_manual>
   </hamgestural_sign>
   <hamgestural_sign gloss="HUISARTS">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="As"/>
-      </mouthing_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="finger23" second_handshape="finger23spread" second_mainbend="round" second_thumbpos="across" thumbpos="across"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="u"/>
-      <location_bodyarm contact="close" location="chin">
-        <location_hand digits="23" location="midjoint"/>
-      </location_bodyarm>
-      <rpt_motion repetition="fromstart_several">
-        <tgt_motion>
-          <directedmotion direction="i" fast="true" size="small"/>
-          <location_bodyarm contact="touch" location="chin">
-            <location_hand digits="23" location="tip"/>
-          </location_bodyarm>
-        </tgt_motion>
-      </rpt_motion>
-    </sign_manual>
-  </hamgestural_sign>
+        <sign_manual>
+            <handconfig handshape="finger23" second_handshape="finger23spread" second_mainbend="hooked" second_thumbpos="across" thumbpos="across"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm contact="touch" location="chin" second_location="chin" side="left_at">
+                <location_hand digits="3" location="tip"/>
+            </location_bodyarm>
+            <wristmotion motion="nodding" size="small"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="As" speed="1"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_brows movement="RB"/>
+                <eye_lids movement="WB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
 </sigml>
