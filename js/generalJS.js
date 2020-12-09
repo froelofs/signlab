@@ -8,7 +8,7 @@ $(document).ready(function(){
 function addSuggestion(text, alertID){
   showBusyState();
   $.ajax({
-    url : '../suggestions.php',
+    url : 'suggestions.php',
     type : 'POST',
     data: {"input": text},
     dataType: "json",
