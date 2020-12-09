@@ -33,10 +33,10 @@
       <location_bodyarm location="shoulders" side="right_beside"/>
     </sign_manual>
   </hamgestural_sign>
-  <hamgestural_sign gloss="MINUUT">
+  <hamgestural_sign gloss="MINUTEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="miny"/>
+        <mouth_picture picture="minyt@"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

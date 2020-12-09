@@ -4,7 +4,12 @@
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="Of"/>
+        <mouth_gesture movement="L31" speed="0.8"/>
       </mouthing_tier>
+      <facialexpr_tier>
+        <eye_brows movement="RB" speed="0.6"/>
+        <eye_lids movement="WB" speed="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
       <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>

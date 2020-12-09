@@ -50,7 +50,7 @@
   <hamgestural_sign gloss="TWAALF_12">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="tvalf"/>
+        <mouth_picture picture="wa:lf"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -61,6 +61,28 @@
       <tgt_motion>
         <changeposture/>
         <handconfig palmor="ul"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+  <hamgestural_sign gloss="MIDDAG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mIdAx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chin">
+        <location_hand digits="2" location="midjoint" side="left_beside"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig extfidir="ul" palmor="l" second_extfidir="u"/>
+        <location_bodyarm contact="touch" location="chin">
+          <location_hand digits="2" location="midjoint" side="dorsal"/>
+        </location_bodyarm>
       </tgt_motion>
     </sign_manual>
   </hamgestural_sign>
