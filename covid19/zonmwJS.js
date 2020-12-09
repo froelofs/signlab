@@ -333,9 +333,7 @@ function checkText(text,value=-1){
   }
   text = text.replace(" .",".");
   console.log("completed sentence: " + text);
-  // toSiGML(text);
   document.getElementById('mySiGML').value = text;
-  // return text;
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -346,21 +344,14 @@ function toSiGML(text,value=-1){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    // text = checkText(text,value);
-    // console.log("outcome: " + text);
-    // if (text == false){
-    //   variable = true;
-    //   return text;
-    // }
-    // else{
      // If avatar is checked, SiGML is sent
      if (document.getElementById("avatarDisplay").checked){
       // document.getElementById('mySiGML').value = text;
       if (variable == true){
         entry = jsonVariable[text];
+        variable = false;
       }
       else{
-        variable = false;
         entry = jsonSent[text];
       }
       if (entry == undefined) {
@@ -379,10 +370,9 @@ function toSiGML(text,value=-1){
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
-      changeVideo(entry);
+       changeVideo(entry);
       }
     }
-   // }
   }
 }
 
