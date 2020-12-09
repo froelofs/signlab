@@ -56,6 +56,7 @@ var jsonVariable;
 // Stores the dict of sentences with variables for the avatar
 function callbackVar(response) {
  jsonVariable = response;
+ varOptions = Object.keys(jsonVariable);
 }
 
 // Retrieves the dict of sentences with variables for the avatar
@@ -337,8 +338,8 @@ function checkText(text,value=-1){
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
 function toSiGML(text,value=-1){
   console.log("input: " + text);
-  // Checks user input against autcomplete suggestions
-  if(autocompSugg.includes(text) == false){
+  // Checks user input against the autcomplete suggestions and the variable sentences dict
+  if (autocompSugg.includes(text) == false && varOptions.includes(text) == false){
     alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
