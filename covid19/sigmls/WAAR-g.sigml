@@ -4,7 +4,13 @@
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vaR"/>
+        <mouth_gesture movement="L30"/>
       </mouthing_tier>
+      <facialexpr_tier>
+        <eye_brows movement="FU" speed="0.8"/>
+        <eye_lids movement="SB" speed="0.8"/>
+        <eye_gaze direction="AD" speed="0.8"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
       <handconfig handshape="finger2345" thumbpos="out"/>

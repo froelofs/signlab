@@ -9,9 +9,6 @@
 		</location_bodyarm>
 	</sign_manual>
 	<sign_nonmanual>
-		<head_tier>
-			<head_movement movement='PB' size='small'/>
-		</head_tier>
     <body_tier>
 			<body_movement movement='ST' />
 		</body_tier>

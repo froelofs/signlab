@@ -3,8 +3,16 @@
   <hamgestural_sign gloss="WAT">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="L30"/>
+        <mouth_gesture movement="L30"/>
       </mouthing_tier>
+      <facialexpr_tier>
+        <eye_brows movement="FU" speed="0.8"/>
+        <eye_lids movement="SB" speed="0.8"/>
+        <eye_gaze direction="AD" speed="0.8"/>
+      </facialexpr_tier>
+<head_tier>
+	<head_movement movement='SL' />
+	</head_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
