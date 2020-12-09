@@ -132,7 +132,7 @@ $( function() {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
-    change: function( event, ui ){
+    select: function( event, ui ){
       if (ui.item != null){
         console.log("You selected: " + ui.item.value);
         var text = checkText(ui.item.value);
