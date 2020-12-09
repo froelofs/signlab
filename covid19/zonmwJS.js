@@ -110,15 +110,15 @@ $( function() {
   }
 
   // Activates the jquery autocomplete function when the user gives input
-  $( "#mySiGML" ).autocomplete({
+  $("#mySiGML").autocomplete({
     appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
-    source: function (request, response) {
+    source: function (request, response){
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
-    }
-    change: function( event, ui ) {
+    },
+    change: function( event, ui ){
       console.log("You selected: " + ui.item.value);
       var text = checkText(ui.item.value);
       if (text == false){
@@ -151,7 +151,7 @@ function checkText(text,value=-1){
   elements = [...document.getElementsByClassName('varBox')];
   console.log(typeof elements);
   console.log(elements);
-  elements.forEach(function(element) {
+  elements.forEach(function(element){
     console.log(element);
     element.style.display = 'none';
   });
@@ -352,7 +352,7 @@ function toSiGML(text,value=-1){
     // }
     // else{
      // If avatar is checked, SiGML is sent
-     if (document.getElementById("avatarDisplay").checked) {
+     if (document.getElementById("avatarDisplay").checked){
       // document.getElementById('mySiGML').value = text;
       if (variable == true){
         entry = jsonVariable[text];
