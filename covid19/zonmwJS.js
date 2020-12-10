@@ -456,8 +456,9 @@ function compare(input){
 // });
 
 
-document.getElementById('myTextArea').addEventListener('input', function() {
-  if (document.getElementById('myTextArea').value.length) {
+// Checks the input of the text field and removes variable boxes when it's empty
+document.getElementById('mySiGML').addEventListener('input', function() {
+  if (document.getElementById('mySiGML').value.length) {
     console.log("input field is empty");
     elements = [...document.getElementsByClassName('varBox')];
     elements.forEach(function(element) {
