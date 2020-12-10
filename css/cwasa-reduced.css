@@ -198,6 +198,7 @@ body.busy::before {
 .container-fluid{
   width: 80%;
   text-align: center;
+  height: 100%;
 }
 
 #checkPage{
