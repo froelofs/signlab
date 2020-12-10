@@ -158,6 +158,7 @@ function checkText(text,value=-1){
     element.style.display = 'none';
   });
 
+  // Removes "." for easier comparison
   text = text.replace(".","");
   text = text.split(" ");
   if (text.length > 1){
@@ -377,12 +378,10 @@ function toSiGML(text,value=-1){
 }
 
 
-//Adapts the page to the chosen option
+//Adapts the page to the chosen display option
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
-    // document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("avatar").style.display = 'inline-block';
-    // document.getElementById("videos").setAttribute("class", "undisplayed");
     document.getElementById("videos").style.display = 'none';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
@@ -393,9 +392,7 @@ function changeFunc(myRadio) {
     options = sentOptions;
   }
   else if (myRadio.value == "video") {
-    // document.getElementById("avatar").setAttribute("class", "undisplayed");
     document.getElementById("avatar").style.display = 'none';
-    // document.getElementById("videos").setAttribute("class", "prerecorded");
     document.getElementById("videos").style.display = 'inline-block';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "undisplayed");
@@ -434,32 +431,11 @@ function compare(input){
   }
 }
 
-// $("#myTextArea").on('change',null, function(){
-//   if ($("#myTextArea").val().trim().length < 1) {
-//   // textarea is empty or contains only white-space
-//     elements = [...document.getElementsByClassName('varBox')];
-//     elements.forEach(function(element) {
-//      console.log(element);
-//      element.style.display = 'none';
-//     })
-//   }
-// });
-
-// let textareaID = document.getElementById('textareaID');
-// let yourBtnID = document.getElementById('yourBtnID');
-
-// textareaID.addEventListener('input', function() {
-//     yourBtnID.style.display = 'none';
-//     if (textareaID.value.length) {
-//         yourBtnID.style.display = 'inline-block';
-//     }
-// });
-
-
 // Checks the input of the text field and removes variable boxes when it's empty
 document.getElementById('mySiGML').addEventListener('input', function() {
   if (document.getElementById('mySiGML').value.length < 1) {
     console.log("input field is empty");
+    // Makes all the variable boxes invisible
     elements = [...document.getElementsByClassName('varBox')];
     elements.forEach(function(element) {
       console.log(element);
