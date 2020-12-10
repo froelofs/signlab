@@ -82,21 +82,23 @@
   </hamgestural_sign>
   <hamgestural_sign gloss="INDEX_3A">
     <sign_nonmanual>
-      <body_tier>
-        <body_movement movement="RR"/>
-      </body_tier>
       <head_tier>
         <head_par>
           <head_movement movement="SR"/>
           <head_movement movement="SR"/>
           <head_movement movement="SR"/>
-          <head_movement movement="SR"/>
         </head_par>
       </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="RD"/>
+        </facial_expr_par>
+       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent"/>
-      <handconfig extfidir="uor"/>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
       <handconfig palmor="d"/>
       <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
       <directedmotion direction="dr" size="small"/>
@@ -104,9 +106,14 @@
   </hamgestural_sign>
   <hamgestural_sign gloss="WAAR">
     <sign_nonmanual>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SR"/>
+          <head_movement movement="SR"/>
+        </head_par>
+      </head_tier>
       <mouthing_tier>
-        <mouth_picture picture="vaR"/>
-        <mouth_gesture movement="L30"/>
+        <mouth_picture picture="va:R"/>
       </mouthing_tier>
       <facialexpr_tier>
         <eye_brows movement="FU" speed="0.8"/>
@@ -115,34 +122,31 @@
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
-      <handconfig handshape="finger2345" thumbpos="out"/>
-      <handconfig extfidir="o"/>
-      <handconfig palmor="u"/>
-      <rpt_motion repetition="fromstart_several">
-        <seq_motion>
-          <directedmotion direction="l" fast="true" size="small"/>
-          <directedmotion direction="r" fast="true" size="small"/>
-        </seq_motion>
-      </rpt_motion>
+      <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>
+      <handconfig extfidir="o" />
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="close" location="chest" side="right_beside"/>
     </sign_manual>
   </hamgestural_sign>
   <hamgestural_sign gloss="INDEX_3A">
     <sign_nonmanual>
-      <body_tier>
-        <body_movement movement="RR"/>
-      </body_tier>
       <head_tier>
         <head_par>
           <head_movement movement="SR"/>
           <head_movement movement="SR"/>
           <head_movement movement="SR"/>
-          <head_movement movement="SR"/>
         </head_par>
       </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="RD"/>
+        </facial_expr_par>
+       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent"/>
-      <handconfig extfidir="uor"/>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
       <handconfig palmor="d"/>
       <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
       <directedmotion direction="dr" size="small"/>
@@ -163,27 +167,27 @@
     </sign_manual>
   </hamgestural_sign>
   <hamgestural_sign gloss="WAT">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_gesture movement="L30"/>
-      </mouthing_tier>
-      <facialexpr_tier>
-        <eye_brows movement="FU" speed="0.8"/>
-        <eye_lids movement="SB" speed="0.8"/>
-        <eye_gaze direction="AD" speed="0.8"/>
-      </facialexpr_tier>
-<head_tier>
-	<head_movement movement='SL' />
-	</head_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
-      <wristmotion motion="swinging" size="small"/>
-    </sign_manual>
-  </hamgestural_sign>
+     <sign_nonmanual>
+       <mouthing_tier >
+         <mouth_gesture movement="L30" />
+       </mouthing_tier>
+       <facialexpr_tier>
+         <eye_brows movement="FU" />
+         <eye_lids movement="SB" />
+         <eye_gaze direction="AD" />
+       </facialexpr_tier>
+ <head_tier>
+ 	<head_movement movement='SL' />
+ 	</head_tier>
+     </sign_nonmanual>
+     <sign_manual>
+       <handconfig handshape="finger2" thumbpos="across"/>
+       <handconfig extfidir="u"/>
+       <handconfig palmor="d"/>
+       <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+       <wristmotion motion="swinging" size="small"/>
+     </sign_manual>
+   </hamgestural_sign>
   <hamgestural_sign gloss="PALM_OMHOOG">
     <sign_nonmanual>
       <mouthing_tier>
@@ -198,9 +202,9 @@
       <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>
       <handconfig extfidir="ol" second_extfidir="o"/>
       <handconfig palmor="dl"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      <location_bodyarm location="shoulders" second_location="chest" side="right_beside" second_side="right_at"/>
       <par_motion >
-        <directedmotion curve="u" curve_size="small" direction="r"/>
+        <directedmotion curve="u" curve_size="small" direction="r" size="small"/>
         <tgt_motion>
           <changeposture/>
           <handconfig extfidir="o" palmor="ul"/>

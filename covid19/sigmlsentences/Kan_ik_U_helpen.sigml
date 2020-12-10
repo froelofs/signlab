@@ -129,9 +129,9 @@
       <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>
       <handconfig extfidir="ol" second_extfidir="o"/>
       <handconfig palmor="dl"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      <location_bodyarm location="shoulders" second_location="chest" side="right_beside" second_side="right_at"/>
       <par_motion >
-        <directedmotion curve="u" curve_size="small" direction="r"/>
+        <directedmotion curve="u" curve_size="small" direction="r" size="small"/>
         <tgt_motion>
           <changeposture/>
           <handconfig extfidir="o" palmor="ul"/>
