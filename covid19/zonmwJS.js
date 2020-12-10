@@ -435,7 +435,7 @@ function compare(input){
 }
 
 $("#myTextArea").on('change',null, function(){
-  if ($.trim($("#myTextArea").val()) == "") {
+  if ($("#myTextArea").val().trim().length < 1) {
   // textarea is empty or contains only white-space
     elements = [...document.getElementsByClassName('varBox')];
     elements.forEach(function(element) {
