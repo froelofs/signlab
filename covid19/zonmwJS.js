@@ -434,13 +434,35 @@ function compare(input){
   }
 }
 
-$("#myTextArea").on('change',null, function(){
-  if ($("#myTextArea").val().trim().length < 1) {
-  // textarea is empty or contains only white-space
+// $("#myTextArea").on('change',null, function(){
+//   if ($("#myTextArea").val().trim().length < 1) {
+//   // textarea is empty or contains only white-space
+//     elements = [...document.getElementsByClassName('varBox')];
+//     elements.forEach(function(element) {
+//      console.log(element);
+//      element.style.display = 'none';
+//     })
+//   }
+// });
+
+// let textareaID = document.getElementById('textareaID');
+// let yourBtnID = document.getElementById('yourBtnID');
+
+// textareaID.addEventListener('input', function() {
+//     yourBtnID.style.display = 'none';
+//     if (textareaID.value.length) {
+//         yourBtnID.style.display = 'inline-block';
+//     }
+// });
+
+
+document.getElementById('myTextArea').addEventListener('input', function() {
+  if (document.getElementById('myTextArea').value.length) {
+    console.log("input field is empty");
     elements = [...document.getElementsByClassName('varBox')];
     elements.forEach(function(element) {
-     console.log(element);
-     element.style.display = 'none';
+      console.log(element);
+      element.style.display = 'none';
     })
   }
 });
