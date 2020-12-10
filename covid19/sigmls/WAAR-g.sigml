@@ -2,9 +2,14 @@
 <sigml>
   <hamgestural_sign gloss="WAAR">
     <sign_nonmanual>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SR"/>
+          <head_movement movement="SR"/>
+        </head_par>
+      </head_tier>
       <mouthing_tier>
-        <mouth_picture picture="vaR"/>
-        <mouth_gesture movement="L30"/>
+        <mouth_picture picture="va:R"/>
       </mouthing_tier>
       <facialexpr_tier>
         <eye_brows movement="FU" speed="0.8"/>
@@ -13,15 +18,10 @@
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
-      <handconfig handshape="finger2345" thumbpos="out"/>
-      <handconfig extfidir="o"/>
-      <handconfig palmor="u"/>
-      <rpt_motion repetition="fromstart_several">
-        <seq_motion>
-          <directedmotion direction="l" fast="true" size="small"/>
-          <directedmotion direction="r" fast="true" size="small"/>
-        </seq_motion>
-      </rpt_motion>
+      <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>
+      <handconfig extfidir="o" />
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="close" location="chest" side="right_beside"/>
     </sign_manual>
   </hamgestural_sign>
 </sigml>

@@ -3,8 +3,7 @@
   <hamgestural_sign gloss="WIE">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="vi:"/>
-        <mouth_gesture movement="L30"/>
+        <mouth_gesture movement="J03" speed="0.8"/>
       </mouthing_tier>
       <facialexpr_tier>
         <eye_brows movement="FU" speed="0.8"/>
