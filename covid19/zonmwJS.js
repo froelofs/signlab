@@ -382,7 +382,8 @@ function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     // document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("avatar").style.display = 'inline-block';
-    document.getElementById("videos").setAttribute("class", "undisplayed");
+    // document.getElementById("videos").setAttribute("class", "undisplayed");
+    document.getElementById("videos").style.display = 'none';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
@@ -394,7 +395,8 @@ function changeFunc(myRadio) {
   else if (myRadio.value == "video") {
     // document.getElementById("avatar").setAttribute("class", "undisplayed");
     document.getElementById("avatar").style.display = 'none';
-    document.getElementById("videos").setAttribute("class", "prerecorded");
+    // document.getElementById("videos").setAttribute("class", "prerecorded");
+    document.getElementById("videos").style.display = 'inline-block';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "undisplayed");
     document.getElementById("outputGloss").setAttribute("class", "undisplayed");
