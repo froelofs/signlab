@@ -58,7 +58,7 @@ function callPython(text, alertID) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
       alertMessage("error", 'Oops, something went wrong', alertID);
-    } 
+    }
     else {
       output = result.output.split(";");
       if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
@@ -69,7 +69,7 @@ function callPython(text, alertID) {
           var pre = document.createElement("pre");
           pre.appendChild(document.createTextNode(output));
           if (parent.childNodes.length != 0) {
-            parent.removeChild(parent.childNodes[0]);    
+            parent.removeChild(parent.childNodes[0]);
           }
           parent.append(pre);
         }
@@ -88,7 +88,7 @@ function callPython(text, alertID) {
       if (flags.length == 2){
       	flag = flags[1];
       	callPython(text, alertID);
-      }  
+      }
     showBusyState(false);
     }
   }
@@ -100,28 +100,4 @@ function callPython(text, alertID) {
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
-}
-
-function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get current tab and hide it
-  tabcontent = document.getElementsByClassName("fadeIn");
-  for (i = 0; i < tabcontent.length; i++) {
-    if (tabcontent[i].className.includes("undisplayed") == false){
-     tabcontent[i].className += " undisplayed";
-    }
-  }
-
-  // Get all elements with class="nav-link" and remove the class "active"
-  tablinks = document.getElementsByClassName("nav-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  newTab = document.getElementById(tabName);
-  newTab.className = newTab.className.replace(" undisplayed", "");
-  evt.currentTarget.className += " active";
 }
