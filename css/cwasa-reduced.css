@@ -24,11 +24,13 @@
 }
 
 .txtSF {
-	font-family: monospace;  font-size: 1em;  font-weight: bold;
+  /* font-family: monospace;   */
+	font-size: 1em;  font-weight: bold;
 	text-align: center;  color: #E33;  width: 4.5em;
 }
 .txtGloss {
-	font-family: monospace;  font-size: 1em;  font-weight: bold;
+  /* font-family: monospace;   */
+	font-size: 1em;  font-weight: bold;
 	text-align: center;  color: #E33;  width: 10em;
 }
 
@@ -53,9 +55,9 @@
 .CWASAAvatar {
 	display: inline-block;
 	background: #A3B8D2;
-	width: 500px; 
+	width: 600px; 
   height: 500px;
-	border: 0px; 
+	border: 0px;
   padding: 0px;
 }
 
@@ -66,8 +68,8 @@
 }
 
 .txtaSiGMLText, .statusLog {
-    /*font-family: monospace;  
-    font-size: 0.9em; 
+    /*font-family: monospace;
+    font-size: 0.9em;
     */
     width: 500px;
 }
@@ -127,8 +129,8 @@ body.busy::before {
 }
 
 .inputBox{
-  width:100%; 
-  display:inline-block; 
+  width:100%;
+  display:inline-block;
   resize: none;
 }
 
@@ -169,12 +171,12 @@ body.busy::before {
     to   { opacity: 1; }
 }
 
-.material-icons { 
-  display: inline-flex; vertical-align: text-bottom; 
+.material-icons {
+  display: inline-flex; vertical-align: text-bottom;
 }
 
 .alertBox{
-  z-index: 20; 
+  z-index: 20;
   position: fixed;
 }
 
@@ -203,7 +205,7 @@ body.busy::before {
 
 #checkPage{
  width : 100%;
- height : 100%; 
+ height : 100%;
  background-color : #006666;
  text-align: center;
  display : block;
