@@ -134,12 +134,12 @@
     <hamgestural_sign gloss="PERSOON">
         <sign_manual>
             <handconfig ceeopening="slack" handshape="cee12" second_handshape="finger2" second_thumbpos="opposed"/>
-            <handconfig extfidir="o"/>
+            <handconfig extfidir="uo"/>
             <handconfig palmor="l"/>
-            <location_bodyarm location="head" side="right_at"/>
+            <location_bodyarm location="head" side="right_beside"/>
             <tgt_motion>
                 <directedmotion direction="u" slow="true"/>
-                <location_bodyarm location="chest" second_location="stomach" second_side="right_at" side="right_at"/>
+                <location_bodyarm location="chest" second_side="right_beside" side="right_beside"/>
             </tgt_motion>
         </sign_manual>
         <sign_nonmanual>
