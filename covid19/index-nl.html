@@ -182,7 +182,9 @@
 <!--================================================================-->
 
 <!-- Translate -->
-<section class="projects-section bg-white" id="Translate">
+<section class="projects-section bg-white" id="Translate" style="margin-top:0px;">
+    <div class="container-fluid" style="width:100%; text-align:center;">
+     <div id="alertZonMwTran" class="alertBox"></div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
@@ -193,7 +195,7 @@
           <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </span>
 
-        <span id="avatar" class="CWASAAvatar av0" align="left" style="text-align: left; display: none;" width="600" height="500"></span>
+        <span id="avatar" class="CWASAAvatar av0" align="left" style="text-align: left; display: none;"></span>
 
         <span align="left" style="display:inline-block; vertical-align:top; margin:30px; text-align: left;">
             <label for="option" style="margin-right:-100px; margin-bottom:15px">
@@ -221,37 +223,57 @@
                 <!-- <input type="submit"> -->
               </form>
 
-              <div id="minutesBox" class="undisplayed">
+              <div id="minutesBox" class="varBox">
                <label for="minutes" style="display: inline-block;">Aantal minuten:</label>
                <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Vul een getal in tussen 0 en 60','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
               </div>
 
-              <div id="hoursBox" class="undisplayed">
+              <div id="hoursBox" class="varBox">
                <label for="hours" style="display: inline-block;">Aantal uren:</label>
                <input type="number" id="hours" name="hours" min="1" max="72" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Vul een getal in tussen 0 en 73','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
               </div>
 
-              <div id="daysBox" class="undisplayed">
+              <div id="daysBox" class="varBox">
                <label for="days" style="display: inline-block;">Aantal dagen:</label>
                <input type="number" id="days" name="days" min="1" max="20" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 20){alertMessage('error','Vul een getal in tussen 0 en 21','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
               </div>
 
-              <div id="weeksBox" class="undisplayed">
+              <div id="weeksBox" class="varBox">
                <label for="weeks" style="display: inline-block;">Aantal weken:</label>
                <input type="number" id="weeks" name="weeks" min="1" max="" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
               </div>
 
-              <div id="monthsBox" class="undisplayed">
+              <div id="monthsBox" class="varBox">
                <label for="months" style="display: inline-block;">Aantal maanden:</label>
                <input type="number" id="months" name="months" min="1" max="" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
               </div>
 
-              <div id="timeBox" class="md-form" style="display:none;">
+              <div id="aWeekBox" class="varBox">
+               <label for="aWeek" style="display: inline-block;">Aantal keer per week:</label>
+               <input type="number" id="aWeek" name="aWeek" min="70" max="190" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Vul een getal in tussen 0 en 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
+              </div>
+
+              <div id="dayOfTheWeekBox" class="varBox">
+                <label for="dayOfTheWeek" style="display: inline-block;">Dag van de week:</label>
+                <select name="dayOfTheWeek" id="dayOfTheWeek">
+                  <option value="Monday">Maandag</option>
+                  <option value="Tuesday">Dinsdag</option>
+                  <option value="Wednesday">Woensdag</option>
+                  <option value="Thursday">Donderdag</option>
+                  <option value="Friday">Vrijdag</option>
+                  <option value="Saturday">Zaterdag</option>
+                  <option value="Sunday">Zondag</option>
+                </select>
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, document.getElementById('dayOfTheWeek').value);">
+              </div>
+
+              <div id="timeBox" class="md-form varBox">
                <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
                <input type="submit" style="display: inline-block;" onclick="toSiGML(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
               </div>
@@ -259,6 +281,7 @@
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Start" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+              <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Herhaal" name="" onclick="playURL(document.getElementById('replayButton').name)">
               <br>
               <br>
               <label id="speedLabel" for="speedAdj" style="display: inline-block;">Pas snelheid aan: </label>
@@ -305,11 +328,11 @@
 <!--================================================================-->
 
 <!-- About us section -->
-<section class="projects-section bg-light" id="About">
+<section class="projects-section bg-light" id="About" style="margin-top:0px;">
 
-  <div class="container-fluid" height="100%">
+    <div class="container-fluid" style="margin-top:20px;">
 
-      <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
             <!-- Column for Team and Funding -->
             <div class="col-xl-6 col-lg-6">
@@ -394,8 +417,8 @@
 
 <!-- Suggestions section -->
 <section class="projects-section bg-white" id="Suggestions">
-  <div class="container-fluid" height="100%">
-    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+      <div class="container-fluid" style="margin-top:20px;">
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
             <!-- Column for suggestions  -->
             <div class="col-xl-auto">
               <div class="project-text pt-0 text-lg-left">
@@ -419,8 +442,8 @@
 <!--================================================================-->
 
 <!-- Resources section -->
-<section class="projects-section bg-light" id="Resources">
-      <div class="container-fluid" height="100%">
+<section class="projects-section bg-light" id="Resources" style="margin-top:20px;">
+      <div class="container-fluid">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
                 Het
