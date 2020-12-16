@@ -261,7 +261,7 @@
 
               <div id="aWeekBox" class="varBox">
                <label for="aWeek" style="display: inline-block;">Times a week:</label>
-               <input type="number" id="aWeek" name="aWeek" min="70" max="190" value="1" style="display: inline-block;">
+               <input type="number" id="aWeek" name="aWeek" min="1" max="7" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Please input a number between 0 and 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
               </div>
 

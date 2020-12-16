@@ -237,25 +237,25 @@
 
               <div id="daysBox" class="varBox">
                <label for="days" style="display: inline-block;">Aantal dagen:</label>
-               <input type="number" id="days" name="days" min="1" max="20" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 20){alertMessage('error','Vul een getal in tussen 0 en 21','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
+               <input type="number" id="days" name="days" min="1" max="14" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 14){alertMessage('error','Vul een getal in tussen 0 en 15','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
               </div>
 
               <div id="weeksBox" class="varBox">
                <label for="weeks" style="display: inline-block;">Aantal weken:</label>
-               <input type="number" id="weeks" name="weeks" min="1" max="" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
+               <input type="number" id="weeks" name="weeks" min="1" max="10" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 10){alertMessage('error','Vul een getal in tussen 0 en 11','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
               </div>
 
               <div id="monthsBox" class="varBox">
                <label for="months" style="display: inline-block;">Aantal maanden:</label>
-               <input type="number" id="months" name="months" min="1" max="" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
+               <input type="number" id="months" name="months" min="1" max="18" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 18){alertMessage('error','Vul een getal in tussen 0 en 19','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
               </div>
 
               <div id="aWeekBox" class="varBox">
                <label for="aWeek" style="display: inline-block;">Aantal keer per week:</label>
-               <input type="number" id="aWeek" name="aWeek" min="70" max="190" value="1" style="display: inline-block;">
+               <input type="number" id="aWeek" name="aWeek" min="1" max="7" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Vul een getal in tussen 0 en 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
               </div>
 
