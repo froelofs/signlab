@@ -11,7 +11,6 @@ function addSuggestion(text, alertID){
     url : 'suggestions.php',
     type : 'POST',
     data: {"input": text},
-    dataType: "json",
     success : onSuccess,
     error : onError,
   });
@@ -32,6 +31,8 @@ function addSuggestion(text, alertID){
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
+    console.log("result: " + result);
+    console.log(data);
     showBusyState(false);
     alertMessage("error", 'Oops, something went wrong', alertID);
   }
