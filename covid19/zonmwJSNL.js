@@ -283,7 +283,7 @@ function checkText(text,value=-1){
       }
       // Replaces the variable indicator with the value provided
       else{
-        text.join(" ").replace("*aantal*",value;
+        text.join(" ").replace("*aantal*",value);
         document.getElementById('aWeekBox').style.display = "none";
       }
     }
