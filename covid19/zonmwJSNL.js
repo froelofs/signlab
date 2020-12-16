@@ -298,7 +298,7 @@ function checkText(text,value=-1){
     }
     // Replaces the variable indicator with the value provided
     else{
-      value = adaptTime(value);
+      value = adaptTime(value,"NL");
       text = text.join(" ").replace("*tijdstip*",value);
       document.getElementById('timeBox').style.display = "none";
     }
