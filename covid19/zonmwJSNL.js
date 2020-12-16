@@ -51,15 +51,56 @@ $.ajax({
  }
 });
 
+var jsonVariable;
+
+// Stores the dict of sentences with variables for the avatar
+function callbackVar(response) {
+ jsonVariable = response;
+ varOptions = Object.keys(jsonVariable);
+}
+
+// Retrieves the dict of sentences with variables for the avatar
+$.ajax({
+ url: "variableDictNL.json",
+ global: false,
+ success: function(data) {
+  callbackVar(data);
+ },
+ error: function(xhr, error){
+  console.log(error);
+ }
+});
+
+// Keeps track of whether the dict with sentences with variables needs to be called
+var variable = false;
+
+function startPose() {
+  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
+}
+
+//Adapts the base video according to the time of day
+function checkToD() {
+  var partofday = new Date().getHours();
+  if (partofday < 12) {
+      link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI";
+    } else if (partofday < 18) {
+      link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=XficFZU4PCY";
+    } else {
+      link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
+    }
+  changeVideo(link);
+}
+
+$(window).on("load", function(){
+  checkToD();
+  // setTimeout(startPose, 1000);
+} ); 
+
 //Stores suggestions returned by autocomplete so user input can be checked against it
 var autocompSugg = [];
 
-
 // Defines the functions for autcomplete suggestions
 $( function() {
-  // Defines autocomplete suggestions when display by video is chosen
-  // var videoOptions = ["Pijnschaal","Goedemorgen.","Goedemiddag.","Goedenavond.","Tot ziens.","Tot morgen.","Heeft u goed geslapen?","Welterusten.","Eet smakelijk.","Ik kom op een later moment terug.","Ik moet even weg.","Sorry, ik heb geen tijd.","Ik moet naar de WC.", "Moet U naar de WC?", "Kan ik U helpen?", "Ik ga u wassen.", "Ik ga u helpen met douchen.","U moet in de douche op de stoel zitten.", "Wilt U videobellen?", "Zal ik u helpen videobellen?", "Dit is de alarmknop, als u hier op drukt komt er iemand naar u toe.", "Wilt u een TV met teletekst zodat u de ondertiteling aan kunt zetten?", "Wat wilt u eten?", "Wat wilt u eten, kunt u het aanwijzen op de kaart?", "Wat wilt u drinken?", "Wat wilt u drinken, kunt u het aanwijzen op de kaart?", "Heeft u het koud?", "Heeft u het warm?", "Het bed gaat nu omhoog", "Het bed gaat nu omlaag", "Wie komt u ophalen?", "Ik help u", "Wij helpen u", "Bent u ergens allergisch voor?", "Waar bent u allergisch voor?", "Gebruikt u medicijnen?", "Welke medicijnen gebruikt u?", "Kunt u iemand (thuis) een foto laten maken van de medicijnen die u gebruikt?", "Rookt u?", "Bent u wel eens eerder in het ziekenhuis geweest?", "In welk ziekenhuis bent u geweest en met welke reden?", "Wanneer bent u naar het ziekenhuis geweest?", "Zijn er mensen in uw omgeving ziek?", "Welke apotheek komt u?", "Wat is uw geboortedatum?", "Wie is uw huisarts?", "Heeft u nog speciale dieetwensen? Zoals vegetarisch of veganistisch?", "Heeft u gehoorapparaten of een CI?", "Communicatie zonder tolk?", "Electrisch dossier", "Hoe gaat het met u?", "Hoe voelt u zich?", "Bent u verdrietig?", "Bent u boos?", "Ik vind het naar dat u boos bent", "Kunt u vertellen waarom u verdrietig bent?", "Kan ik iets voor u doen?", "Bent u ergens ongerust over? Zo ja, wat?", "Waar bent u ongerust over?", "Waar maakt u zich zorgen over?", "Bent u ergens bang voor?", "Ik en mijn collega's gaan zo goed mogelijk voor u zorgen.", "U mag alles vragen.", "Nog even volhouden, het wordt beter.", "Het komt goed.", "Het gaat langzaam, maar komt goed.", "Bent u duizelig?", "Bent u misselijk?", "Bent u moe?", "Afgelopen 24 uur klachten", "Huisgenoot klachten koorts/benauwdheid", "Afgelopen 7 dagen coronatest", "Huisgenoot klachten coronavirus", "Quarantaine", "Heeft u begrepen wat ik vertel?", "Heeft u begrepen wat er gaat gebeuren?", "Kunt u in eigen woorden vertellen wat we net besproken hebben?", "Kunt u vertellen waarom u dit wel wilt?", "Kunt u vertellen waarom u dit niet wilt?", "Wilt u meer informatie?", "Wilt u met iemand, een vriend of familie, videobellen om samen te overleggen?", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Wat er aan de hand is", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Om te vertellen hoe het gaat?", "Is er iemand, een vriend of familie, waarvan u graag wilt dat ik die bel? Om uit te leggen wat er gaat gebeuren?", "Heeft u een voorkeur tolk?", "Mag ik uw huisarts bellen? Zodat hij/zij meer medische informatie over u kunt vertellen", "Ik ga u een infuus geven.", "De arts gaat u een nieuw infuus geven.", "De verpleegkundige gaat u een nieuw infuus geven", "Een laborant komt bloedprikken", "Een co-assisent komt bloedprikken", "Een collega komt bloedprikken", "Sorry, het lukt mij niet het infuus te prikken.", "De bloeduitslagen zijn goed.", "De bloeduitslagen zijn niet helemaal goed", "De bloeduitslagen zijn niet goed.", "De uitslag van de CT scan is goed.", "De uitslag van de CT scan is niet helemaal goed.", "De rontgenfoto is verbeterd.", "De rontgenfoto is hetzelfde gebleven.", "De rontgenfoto is verslechterd.", "De COVID-19 test is negatief, dit betekent dat u waarschijnlijk geen Corona heeft.", "Soms heeft de test het fout dus we gaan nog meer onderzoek doen.", "De COVID-19 test is positief, dit betekent dat u wel Corona heeft.", "We gaan in het bloed testen of u antistoffen tegen Corona heeft, als u antistoffen heeft betekent dit dat u nu Corona heeft of dat u dit heeft gehad in het verleden.", "De Coronatest in het bloef is negatief, u heeft geen antistoffen tegen Corona.", "De Coronatest in het bloed is positief: u heeft wel antistoffen tegen Corona.", "Met dit recept kunt u medicijnen ophalen bij de apotheek.", "Met dit recept kan iemand anders medicijnen voor u ophalen bij de apotheek."];
-
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
     arrayOfTerms = terms.split(" ");
@@ -79,209 +120,274 @@ $( function() {
   }
 
   // Activates the jquery autocomplete function when the user gives input
-  $( "#mySiGML" ).autocomplete({
-    // source: options,
+  $("#mySiGML").autocomplete({
     appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
-    source: function (request, response) {
+    source: function (request, response){
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
+    select: function( event, ui ){
+      if (ui.item != null){
+        document.getElementById('mySiGML').value = text;
+        console.log("You selected: " + ui.item.value);
+        var text = checkText(ui.item.value);
+        if (text == false){
+         variable = true;
+        }
+      }
+    }
   });
 
   //Forces the width of the autcomplete menu to fit the input field's width
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-  var ul = this.menu.element;
-  ul.outerWidth(this.element.outerWidth());
+    var ul = this.menu.element;
+    ul.outerWidth(this.element.outerWidth());
   }
 });
 
 function checkText(text,value=-1){
+  // Makes all the variable boxes invisible
+  elements = [...document.getElementsByClassName('varBox')];
+  elements.forEach(function(element){
+    element.style.display = 'none';
+  });
+
+  // Removes "." for easier comparison
+  text = text.replace(".","");
   text = text.split(" ");
+  if (text.length > 1){
+    text.push(".");
+  }
+
+  console.log(text);
+  console.log("value: " + value);
+  // Checks whether a variable indicator is present in the sentence and if so, which one
   if (text.includes("*aantal*") == true){
-    // alertMessage("success","Minuten recognised!","alertZonMwTran");
+    console.log("aantal detected");
     if (text.includes("minuten") == true){
+      console.log("minuten detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
         alertMessage("info", "Kies een getal tussen 1 en 60 om het aantal minuten in te vullen", "alertZonMwTran");
         return false;
       }
+      // Changes the variable from plural to singular if the value is 1
       else{
         if (value == 1){
           text = text.join(" ");
           text = text.replace("minuten","minuut");
           text = text.replace("*aantal*",value);
         }
+        // Replaces the variable indicator with the value provided
         else{
          text = text.join(" ").replace("*aantal*",value);
         }
-        document.getElementById('minutesBox').setAttribute("class","undisplayed");
+        document.getElementById('minutesBox').style.display = "none";
       }
     }
     else if (text.includes("uur" == true)){
+      console.log("uur detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
         alertMessage("info", "Kies een getal tussen 0 en 73 om het aantal uren in te vullen", "alertZonMwTran");
         return false;
       }
+      // Replaces the variable indicator with the value provided
       else{
-        if (value == 1){
-          text = text.join(" ");
-          text = text.replace("uren","uur");
-          text = text.replace("*aantal*",value);
-        }
-        else{
-         text = text.join(" ").replace("*aantal*",value);
-        }
-        document.getElementById('hoursBox').setAttribute("class","undisplayed");
+        text = text.join(" ").replace("*aantal*",value);
+      // Checks for a second blank in the sentence
       }
+      if (text.split(" ").includes("*number*") == true){
+        alertMessage("info", "Kies nog een getal tussen 0 en 73 om het tweede aantal uren in te vullen", "alertZonMwTran");
+        return false;
+      }
+      document.getElementById('hoursBox').style.display = "none";
     }
     else if (text.includes("dagen" == true)){
+      console.log("dagen detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 21 om het aantal uren in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 15 om het aantal uren in te vullen", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("dagen","dag");
           text = text.replace("*aantal*",value);
         }
+        // Replaces the variable indicator with the value provided
         else{
          text = text.join(" ").replace("*aantal*",value);
         }
-        document.getElementById('daysBox').setAttribute("class","undisplayed");
+        document.getElementById('daysBox').style.display = "none";
       }
     }
     else if (text.includes("weken" == true)){
+      console.log("weken detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 12 om het aantal weken in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 11 om het aantal weken in te vullen", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("weken","week");
           text = text.replace("*aantal*",value);
         }
+        // Replaces the variable indicator with the value provided
         else{
          text = text.join(" ").replace("*aantal*",value);
         }
-        document.getElementById('weeksBox').setAttribute("class","undisplayed");
+        document.getElementById('weeksBox').style.display = "none";
       }
     }
     else if (text.includes("maanden" == true)){
+      console.log("maanden detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 12 om het aantal maanden in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 19 om het aantal maanden in te vullen", "alertZonMwTran");
         return false;
       }
       else{
+        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
           text = text.replace("maanden","maand");
           text = text.replace("*aantal*",value);
         }
+        // Replaces the variable indicator with the value provided
         else{
          text = text.join(" ").replace("*aantal*",value);
         }
-        document.getElementById('monthsBox').setAttribute("class","undisplayed");
+        document.getElementById('monthsBox').style.display = "none";
+      }
+    }
+    else if (text.includes("keer per week")){
+      console.log("keer per week detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
+      if (value == -1){
+        document.getElementById('aWeekBox').style.display = "block";
+        alertMessage("info", "Kies een getal tussen 0 en 8 om het aantal keer in te vullen", "alertZonMwTran");
+        return false;
+      }
+      // Replaces the variable indicator with the value provided
+      else{
+        text.join(" ").replace("*aantal*",value;
+        document.getElementById('aWeekBox').style.display = "none";
       }
     }
   }
   else if (text.includes("*tijdstip*")){
-    alertMessage("success","Tijdstip recognised!","alertZonMwTran");
+    console.log("time detected");
+    // If no value has been given for the variable the appropiate box is shown to ask for input
+    if (value == -1){
+      document.getElementById('timeBox').style.display = "block";
+      alertMessage("info", "Kies een tijdstip om in te vullen", "alertZonMwTran");
+      return false;
+    }
+    // Replaces the variable indicator with the value provided
+    else{
+      value = adaptTime(value);
+      text = text.join(" ").replace("*tijdstip*",value);
+      document.getElementById('timeBox').style.display = "none";
+    }
+  }
+  else if (text.includes("*dag*")){
+    console.log("kies een dag detected");
+    // If no value has been given for the variable the appropiate box is shown to ask for input
+    if(value == -1){
+      alertMessage("info", "Kies een dag van de week om in te vullen", "alertZonMwTran");
+      document.getElementById('dayOfTheWeekBox').style.display = "block";
+      return false;
+    }
+    // Replaces the variable indicator with the value provided
+    else{      
+      text = text.join(" ").replace("*dag*",value);
+      document.getElementById('dayOfTheWeekBox').style.display = "none";
+    }
   }
   else{
     text = text.join(" ");
   }
-  return text;
+  text = text.replace(" .",".");
+  console.log("completed sentence: " + text);
+  document.getElementById('mySiGML').value = text;
 }
-
-function startPose() {
-  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
-}
-
-$(window).on("load", function(){
-  checkToD();
-  // setTimeout(startPose, 1000);
-} );
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
-function toSiGML(text,value=-1){
-  if(autocompSugg.includes(text) == false){
-    alertMessage("info", "Kies astublieft een optie van de gegeven suggesties", "alertZonMwTran");
+function toSiGML(text){
+  console.log("input: " + text);
+  // Checks user input against the autcomplete suggestions and the variable sentences dict
+  if(autocompSugg.includes(text) == false && varOptions.includes(text) == false){
+    alertMessage("info", "Kies alstublieft een van de gegeven suggesties", "alertZonMwTran");
   }
   else {
-    text = checkText(text,value);
-    if (text == false){
-      return text;
-    }
-    else{
-     // if avatar is checked, sigml is sent
-     if (document.getElementById("avatarDisplay").checked) {
-      console.log("text: " + text);
-      entry = jsonSent[text];
+    // If avatar is checked, SiGML is sent
+    if (document.getElementById("avatarDisplay").checked) {
+      if (variable == true){
+        entry = jsonVariable[text];
+        variable = false;
+      }
+      else{
+        entry = jsonSent[text];
+      }
       if (entry == undefined) {
         alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
       }
       else{
+        // entry = "zonmw/" + entry;
         playURL(entry);
+        document.getElementById("replayButton").setAttribute("name", entry);
+        document.getElementById("replayButton").style.display = 'inline-block';
       }
-     }
-     // if video is checked, source of embedded video changes
-     else if (document.getElementById("videoDisplay").checked) {
+    }
+    // if video is checked, source of embedded video changes
+    else if (document.getElementById("videoDisplay").checked){
       entry = jsonVideo[text];
-      if (entry == undefined) {
+      if (entry == undefined){
         alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
       }
       else{
-      changeVideo(entry);
+        changeVideo(entry);
       }
     }
-   }
   }
-}
-
-//Adapts the base video according to the time of day
-function checkToD() {
-    var partofday = new Date().getHours();
-    if (partofday < 12) {
-        link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI";
-      } else if (partofday < 18) {
-        link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=XficFZU4PCY";
-      } else {
-        link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
-      }
-    changeVideo(link);
 }
 
 
 //Adapts the page to the chosen option
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
-    // document.getElementById("avatar").setAttribute("class", "CWASAAvatar av0");
     document.getElementById("avatar").style.display = 'inline-block';
-    document.getElementById("videos").setAttribute("class", "undisplayed");
+    document.getElementById("videos").style.display = 'none';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabel").style.display = 'inline-block';
     document.getElementById("speedLabel").style.display = 'inline-block';
+    document.getElementById("replayButton").style.display = 'none';
     options = sentOptions;
   }
   else if (myRadio.value == "video") {
-    // document.getElementById("avatar").setAttribute("class", "undisplayed");
     document.getElementById("avatar").style.display = 'none';
-    document.getElementById("videos").setAttribute("class", "prerecorded");
+    document.getElementById("videos").style.display = 'inline-block';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "undisplayed");
     document.getElementById("outputGloss").setAttribute("class", "undisplayed");
     document.getElementById("glossLabel").style.display = 'none';
     document.getElementById("speedLabel").style.display = 'none';
+    document.getElementById("replayButton").style.display = 'none';
     options = videoOptions;
   }
 }
@@ -289,25 +395,39 @@ function changeFunc(myRadio) {
 function compare(input){
   var check = null;
   $.ajax({
+   'async': false,
    'global': false,
    'url': "check.json",
    'dataType': "json",
    'success': function(data) {
     check = data;
-
-    for (key in check){
-     if(input == check[key]){
-      check = true;
-      break;
-     }
-    }
-
-    if (check == true){
-     document.getElementById("checkPage").style.display = "none";
-    }
-    else{
-     alertMessage("error","Dit wachtwoord is fout","pwdAlert");
-    }
    }
   });
+
+  for (key in check){
+   if(input == check[key]){
+    check = true;
+    break;
+   }
+  }
+
+  if (check == true){
+   document.getElementById("checkPage").style.display = "none";
+  }
+  else{
+   alertMessage("error","Dit wachtwoord is incorrect","pwdAlert");
+  }
 }
+
+// Checks the input of the text field and removes variable boxes when it's empty
+document.getElementById('mySiGML').addEventListener('input', function() {
+  if (document.getElementById('mySiGML').value.length < 1) {
+    console.log("input field is empty");
+    // Makes all the variable boxes invisible
+    elements = [...document.getElementsByClassName('varBox')];
+    elements.forEach(function(element) {
+      console.log(element);
+      element.style.display = 'none';
+    })
+  }
+});
