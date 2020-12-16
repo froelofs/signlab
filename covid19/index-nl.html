@@ -226,31 +226,31 @@
               <div id="minutesBox" class="varBox">
                <label for="minutes" style="display: inline-block;">Aantal minuten:</label>
                <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Vul een getal in tussen 0 en 60','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Vul een getal in tussen 0 en 60','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
               </div>
 
               <div id="hoursBox" class="varBox">
                <label for="hours" style="display: inline-block;">Aantal uren:</label>
                <input type="number" id="hours" name="hours" min="1" max="72" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Vul een getal in tussen 0 en 73','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Vul een getal in tussen 0 en 73','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
               </div>
 
               <div id="daysBox" class="varBox">
                <label for="days" style="display: inline-block;">Aantal dagen:</label>
                <input type="number" id="days" name="days" min="1" max="20" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 20){alertMessage('error','Vul een getal in tussen 0 en 21','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 20){alertMessage('error','Vul een getal in tussen 0 en 21','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
               </div>
 
               <div id="weeksBox" class="varBox">
                <label for="weeks" style="display: inline-block;">Aantal weken:</label>
                <input type="number" id="weeks" name="weeks" min="1" max="" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
               </div>
 
               <div id="monthsBox" class="varBox">
                <label for="months" style="display: inline-block;">Aantal maanden:</label>
                <input type="number" id="months" name="months" min="1" max="" value="1" style="display: inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
               </div>
 
               <div id="aWeekBox" class="varBox">
@@ -275,7 +275,7 @@
 
               <div id="timeBox" class="md-form varBox">
                <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
-               <input type="submit" style="display: inline-block;" onclick="toSiGML(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
               </div>
 
               <br>
