@@ -51,7 +51,7 @@
 <div id="checkPage">
   <div style="display: flex; justify-content: center; align-items: center; height: 100%; text-align: center; color: white;">
    <label for="pwd" style="display: inline-block; text-align: center;">wachtwoord: </label>
-   <input type="password" id="pwd" style="display: inline-block; margin-right: 5px; margin-left: 5px;">
+   <input type="password" id="pwd" style="display: inline-block; margin-right: 5px; margin-left: 5px;" onkeydown="if(event.keyCode == 13){event.preventDefault();compare(document.getElementById('pwd').value);}">
    <input type="submit" onclick="compare(document.getElementById('pwd').value);" style="display: inline-block;">
   </div>
 </div>
@@ -62,7 +62,7 @@
 
 <!-- Navigation-->
 <nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container-fluid" align="center">
+    <div class="container-fluid" style="width: 100%;">
         <a class="navbar-brand" href="#page-top">
         <img src="../images/hand-icon.png" height="25">
           SignLab Amsterdam
@@ -101,7 +101,7 @@
 
 <!-- ProjectInfo -->
 <section class="projects-section bg-light fadeIn" id="ProjectInfo">
-  <div class="container-fluid" align="center">
+  <div class="container-fluid">
       <!-- Challenge Row-->
       <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0" style="margin-top:40px;">
           <div class="col" >
@@ -183,7 +183,7 @@
 
 <!-- Translate -->
 <section class="projects-section bg-light fadeIn undisplayed" id="Translate" style="margin-top:20px;">
-    <div class="container-fluid" style="width:100%; text-align:center; margin-top:20px;">
+    <div class="container-fluid" style="width:100%; margin-top:20px;">
      <div id="alertZonMwTran" class="alertBox"></div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
@@ -191,13 +191,13 @@
 
         <!--================================================================-->
 
-        <span id="videos" class="prerecorded" align="left" style="text-align: left;">
-          <iframe id="videoHolder" width="600" height="500" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+        <span id="videos" class="prerecorded" style="text-align: left;">
+          <iframe id="videoHolder" style="width: 600px; height: 500px;" src="https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </span>
 
-        <span id="avatar" class="CWASAAvatar av0" align="left" style="text-align: left; display: none;"></span>
+        <span id="avatar" class="CWASAAvatar av0" style="text-align: left; display: none;"></span>
 
-        <span align="left" style="display:inline-block; vertical-align:top; margin:30px; text-align: left;">
+        <span style="display:inline-block; vertical-align:top; margin:30px; text-align: left;">
             <label for="option" style="margin-right:-100px; margin-bottom:15px">
                 <h4>Kies een vertaaloptie:</h4>
             </label>
@@ -294,7 +294,7 @@
         </span>
 
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
-        <div align="center" class="undisplayed">
+        <div style="text-align: center;" class="undisplayed">
 
               <span style="font-size: 90%;" >
                 Sign/Frame:
@@ -309,7 +309,7 @@
         </div>
 
 
-        <div align="center">
+        <div style="text-align: center;">
             <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
             <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
             </textarea>
@@ -320,7 +320,7 @@
 
         <!-- SToCA applet element panel -->
         <!--================================================================-->
-        <div class="SToCA" align="center" ></div>
+        <div class="SToCA" style="text-align: center;" ></div>
         <!--================================================================-->
     </div>
 </section>
@@ -330,7 +330,7 @@
 <!-- About us section -->
 <section class="projects-section bg-light fadeIn undisplayed" id="About">
 
-    <div class="container-fluid" height="100%" align="center">
+    <div class="container-fluid" style="text-align: center;">
 
         <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
@@ -465,7 +465,7 @@
 <!--================================================================-->
 
 <!-- Footer-->
-<footer class="footer bg-white small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam</div></footer>
+<footer class="footer bg-white small text-center text-black-50"><div class="container" style="vertical-align: bottom; margin-bottom: 20px;">&copy;2020 SignLab Amsterdam <i class="material-icons">email</i>: signlab.amsterdam@gmail.com</div></footer>
 
 
 <!-- Javascripts -->
