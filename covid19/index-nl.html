@@ -104,7 +104,7 @@
   <div class="container-fluid" style="margin-top:40px;">
       <!-- Challenge Row-->
       <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0" style="margin-top:0px;">
-          <div class="col" >
+          <div class="col" style="padding: 0; margin-right:40px;">
             <div class="bg-light text-center h-100 project" style="padding: 0; margin:0px;">
                 <div class="d-flex h-100" style="padding: 0; margin:0px;">
                     <div class="project-text pb-1 w-100 my-auto text-center text-lg-left" style="padding: 0; margin:0px;">
@@ -418,22 +418,17 @@
 <!-- Suggestions section -->
 <section class="projects-section bg-light fadeIn undisplayed" id="Suggestions">
       <div class="container-fluid" style="margin-top:40px;">
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-            <!-- Column for suggestions  -->
-            <div class="col-xl-auto">
-              <div class="project-text pt-0 text-lg-left">
-                <h4>Suggesties</h4>
-                  <p class="mb-3 text-black-50">
-                    Vul hier uw suggestie(s) in voor woorden of zinnen of andere feedback die u heeft.<br>
-                  </p>
-                  <p class="mb-3 text-black-50">
-                    <textarea id="suggestions" class="inputBox" rows="4" placeholder="Suggestie" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
-                    <input type="button" value="Verstuur" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-              </div>
-            </div>
-          </div>
+        <div class="project-text pt-0 text-lg-left">
+          <h4>Suggesties</h4>
+            <p class="mb-3 text-black-50">
+               Vul hier uw suggestie(s) in voor woorden of zinnen of andere feedback die u heeft.<br>
+            </p>
+            <p class="mb-3 text-black-50">
+              <textarea id="suggestions" class="inputBox" rows="4" placeholder="Suggestie" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertZonMwTran');}"></textarea>
+              <input type="button" value="Verstuur" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertZonMwTran");'/>
+            </p>
+            <hr class="d-none d-lg-block mb-0 ml-0" />
+        </div>
       </div>
 
 </section>
