@@ -144,7 +144,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="ANTI">
+    <hamgestural_sign gloss="ANTISTOFFEN">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig handshape="fist" thumbpos="across"/>
             <handconfig extfidir="u" second_extfidir="uo"/>

@@ -62,8 +62,8 @@
 
 <!-- Navigation-->
 <nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container-fluid" style="width: 100%;">
-        <a class="navbar-brand js-scroll-trigger" href="../index-nl.html">
+    <div class="container-fluid" align="center">
+        <a class="navbar-brand" href="#page-top">
         <img src="../images/hand-icon.png" height="25">
           SignLab Amsterdam
         </a>
@@ -72,12 +72,12 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ProjectInfo">Project Informatie</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Translate">Vertaal</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#About">Over Ons</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Suggestions">Suggesties</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Resources">Extra Informatie</a></li>
+            <ul class="navbar-nav ml-auto" role="tablist">
+                <li class="nav-item"><a class="nav-link active" role="tab" href="#ProjectInfo" onclick="openTab(event, 'ProjectInfo');">Project Informatie</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Translate" onclick="openTab(event, 'Translate');">Vertaal</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#About" onclick="openTab(event, 'About');">Over Ons</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Suggestions" onclick="openTab(event, 'Suggestions');">Suggesties</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Resources" onclick="openTab(event, 'Resources');">Extra Informatie</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.html"><span class="flag-icon flag-icon-gb"></a></li>
             </ul>
         </div>
@@ -100,14 +100,14 @@
 <!--================================================================-->
 
 <!-- ProjectInfo -->
-<section class="projects-section bg-light" id="ProjectInfo">
-  <div class="container-fluid">
+<section class="projects-section bg-light fadeIn" id="ProjectInfo">
+  <div class="container-fluid" align="center">
       <!-- Challenge Row-->
-      <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0">
-          <div class="col-lg">
-                <div class="bg-light text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+      <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0" style="margin-top:40px;">
+          <div class="col" >
+            <div class="bg-light text-center h-100 project" style="padding: 0; margin:0px;">
+                <div class="d-flex h-100" style="padding: 0; margin:0px;">
+                    <div class="project-text pb-1 w-100 my-auto text-center text-lg-left" style="padding: 0; margin:0px;">
                             <h4 class="text-black">Probleem</h4>
                             <p class="mb-1 text-black-50">
                             In tijden van COVID-19 is het voor artsen en verpleegkundigen erg lastig om te communiceren met dove patienten.
@@ -123,11 +123,11 @@
         <!-- Approach Row-->
 <!--         <div class="row justify-content-center no-gutters">
             <div class="col-lg-6"><img class="img-fluid" src="images/demo-image-01.jpg" alt="" /></div> -->
-            <div class="col-lg">
-                <div class="bg-light text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-black">Hoe helpt deze website?</h4>
+            <div class="col" style="padding: 0; margin:0px;">
+                <div class="bg-light text-center h-100 project" style="padding: 0; margin:0px;">
+                    <div class="d-flex h-100" style="padding: 0; margin:0px;">
+                        <div class="project-text pb-1 w-100 my-auto text-center text-lg-left" style="padding: 0; margin:0px;">
+                            <h4 class="text-black">Hoe helpt deze tool?</h4>
                             <p class="mb-1 text-black-50">
                             Deze website geeft artsen en verpleegkundigen de mogelijkheid om zinnen die veel gebruikt worden in de diagnose en behandeling van COVID-19 van het Nederlands naar Nederlandse Gebarentaal te vertalen. Vertalingen worden getoond via videos en een geanimeerde avatar.
                             </p>
@@ -137,13 +137,13 @@
                 </div>
             </div>
 
-            <div class="col-lg">
+            <div class="col" style="padding: 0; margin-left:40px;">
                 <div class="bg-light text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-black">Financiëring</h4>
+                    <div class="d-flex h-100" style="padding: 0; margin:0px;">
+                       <div class="project-text pb-1 w-100 my-auto text-center text-lg-left" style="padding: 0; margin:0px;">
+                            <h4 class="text-black">Financiering</h4>
                             <p class="mb-1 text-black-50">
-                              Dankbaar erkennen we financiëring van de Nederlandse Organisatie voor Gezondheidsonderzoek en Zorginnovatie (ZonMw) door het
+                              Dankbaar erkennen we financiering van de Nederlandse Organisatie voor Gezondheidsonderzoek en Zorginnovatie (ZonMw) door het
                               <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programma</a>.
                             </p>
                             <hr class="d-none d-lg-block mb-0 ml-0" />
@@ -152,27 +152,39 @@
                 </div>
             </div>
         </div>
+
+    <div class="row justify-content-center align-items-start no-gutters mb-2 mb-lg-0" style="margin-top:40px;">
+      <!-- Disclaimer -->
+        <div class="col" style="padding: 0; margin:0px;">
+            <div class="bg-light text-center h-100 project" style="padding: 0; margin:0px;">
+                <div class="d-flex h-100" style="padding: 0; margin:0px;">
+                  <div class="project-text pb-1 w-100 my-auto text-center text-lg-left" style="padding: 0; margin:0px;">
+                      <h4>Disclaimer</h4>
+                      <p class="mb-1 text-black-50">
+                        <b>Belangrijk: voorzichtigheid geboden in het gebruik van gebarende avatars</b>
+                        <br>
+                        De World Federation of the Deaf (WFD) en de World Association of Sign Language Interpreters (WASLI) waarschuwen voor het gebruik van gebarende avatars als vervanging van menselijke gebarentolken. De kwaliteit van gebarende avatars is veel minder dan de kwaliteit van gekwalificeerde menselijke gebarentolken. Maak daarom alleen gebruik van de avatar vertalingen die onze applicatie biedt in situaties waarin er absoluut geen menselijke gebarentolk ingezet kan worden en er ook geen video vertaling beschikbaar is. De volledige WFD/WASLI statement is <a href="https://wfdeaf.org/news/wfd-wasli-issue-statement-signing-avatars/">hier</a> te lezen.
+                        De Nederlandse Vereniging van Doven (Dovenschap)
+                        <a href="https://www.dovenschap.nl/wfd-wasli-standpunt-tegen-gebarenavatars/">ondersteunt</a>
+                        dit statement. Deze tool is daarom niet bedoeld om te dienen als een vervanging voor professionele gebarentolken, maar als back-up voor situaties waar een tolk niet aanwezig kan zijn. Hierdoor is de reikwijdte van zinnen die de tool kan vertalen zeer gelimiteerd.
+                      </p>
+                      <hr class="d-none d-lg-block mb-0 ml-0" />
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+  </div>
+  </section>
 
 
 
 <!--================================================================-->
 
 <!-- Translate -->
-<section class="projects-section bg-white" id="Translate">
-    <div class="container-fluid" height="100%" align="center" style="text-align: center; width: 100%;">
+<section class="projects-section bg-light fadeIn undisplayed" id="Translate" style="margin-top:20px;">
+    <div class="container-fluid" style="width:100%; text-align:center; margin-top:20px;">
      <div id="alertZonMwTran" class="alertBox"></div>
-     <div style="display: flex; justify-content: center; align-items: center; text-align: center; margin-bottom: 20px;">
-      <p class="mb-1 text-black-50" style="display: inline-block; width: 60%;">
-         <b>Belangrijk: voorzichtigheid geboden in het gebruik van gebarende avatars</b>
-         <br>
-         De World Federation of the Deaf (WFD) en de World Association of Sign Language Interpreters (WASLI) waarschuwen voor het gebruik van gebarende avatars als vervanging van menselijke gebarentolken. De kwaliteit van gebarende avatars is veel minder dan de kwaliteit van gekwalificeerde menselijke gebarentolken. Maak daarom alleen gebruik van de avatar vertalingen die onze applicatie biedt in situaties waarin er absoluut geen menselijke gebarentolk ingezet kan worden en er ook geen video vertaling beschikbaar is. De volledige WFD/WASLI statement is <a href="https://wfdeaf.org/news/wfd-wasli-issue-statement-signing-avatars/">hier</a> te lezen.
-         De Nederlandse Vereniging van Doven (Dovenschap)
-         <a href="https://www.dovenschap.nl/wfd-wasli-standpunt-tegen-gebarenavatars/">ondersteunt</a>
-         dit statement.
-       </p>
-      </div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
         <!-- <div class="CWASAPanel av0" align="center" ></div> -->
@@ -211,37 +223,57 @@
                 <!-- <input type="submit"> -->
               </form>
 
-              <div id="minutesBox" class="undisplayed">
+              <div id="minutesBox" class="varBox">
                <label for="minutes" style="display: inline-block;">Aantal minuten:</label>
                <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Vul een getal in tussen 0 en 60','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
               </div>
 
-              <div id="hoursBox" class="undisplayed">
+              <div id="hoursBox" class="varBox">
                <label for="hours" style="display: inline-block;">Aantal uren:</label>
                <input type="number" id="hours" name="hours" min="1" max="72" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Vul een getal in tussen 0 en 73','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
               </div>
 
-              <div id="daysBox" class="undisplayed">
+              <div id="daysBox" class="varBox">
                <label for="days" style="display: inline-block;">Aantal dagen:</label>
                <input type="number" id="days" name="days" min="1" max="20" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 20){alertMessage('error','Vul een getal in tussen 0 en 21','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
               </div>
 
-              <div id="weeksBox" class="undisplayed">
+              <div id="weeksBox" class="varBox">
                <label for="weeks" style="display: inline-block;">Aantal weken:</label>
                <input type="number" id="weeks" name="weeks" min="1" max="" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
               </div>
 
-              <div id="monthsBox" class="undisplayed">
+              <div id="monthsBox" class="varBox">
                <label for="months" style="display: inline-block;">Aantal maanden:</label>
                <input type="number" id="months" name="months" min="1" max="" value="1" style="display: inline-block;">
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 11){alertMessage('error','Vul een getal in tussen 0 en 12','alertZonMwTran');} else{toSiGML(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
               </div>
 
-              <div id="timeBox" class="md-form" style="display:none;">
+              <div id="aWeekBox" class="varBox">
+               <label for="aWeek" style="display: inline-block;">Aantal keer per week:</label>
+               <input type="number" id="aWeek" name="aWeek" min="70" max="190" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Vul een getal in tussen 0 en 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
+              </div>
+
+              <div id="dayOfTheWeekBox" class="varBox">
+                <label for="dayOfTheWeek" style="display: inline-block;">Dag van de week:</label>
+                <select name="dayOfTheWeek" id="dayOfTheWeek">
+                  <option value="maandag">Maandag</option>
+                  <option value="dinsdag">Dinsdag</option>
+                  <option value="woensdag">Woensdag</option>
+                  <option value="donderdag">Donderdag</option>
+                  <option value="vrijdag">Vrijdag</option>
+                  <option value="zaterdag">Zaterdag</option>
+                  <option value="zondag">Zondag</option>
+                </select>
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, document.getElementById('dayOfTheWeek').value);">
+              </div>
+
+              <div id="timeBox" class="md-form varBox">
                <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
                <input type="submit" style="display: inline-block;" onclick="toSiGML(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
               </div>
@@ -249,6 +281,7 @@
               <br>
               <input type="button" class="btn btn-primary" id="play" value="Start" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
               <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+              <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Herhaal" name="" onclick="playURL(document.getElementById('replayButton').name)">
               <br>
               <br>
               <label id="speedLabel" for="speedAdj" style="display: inline-block;">Pas snelheid aan: </label>
@@ -295,11 +328,11 @@
 <!--================================================================-->
 
 <!-- About us section -->
-<section class="projects-section bg-light" id="About">
+<section class="projects-section bg-light fadeIn undisplayed" id="About">
 
-  <div class="container-fluid" height="100%">
+    <div class="container-fluid" height="100%" align="center">
 
-      <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
             <!-- Column for Team and Funding -->
             <div class="col-xl-6 col-lg-6">
@@ -307,7 +340,7 @@
                 <!-- Team -->
                 <div class="project-text text-center text-lg-left">
 
-                    <h2 class="mb-4">Team</h2>
+                    <h4 class="mb-4">Team</h4>
 
                     <h5>Project coördinatie</h5>
                     <p class="text-black-50 mb-3">
@@ -338,7 +371,7 @@
                 <!-- East Anglia -->
 
                 <div class="project-text text-center text-lg-left">
-                    <h2 class="mb-4">Partners</h2>
+                    <h4 class="mb-4">Partners</h4>
                     <h5>University of East Anglia</h5>
                     <p class="text-black-50 mb-3 mt-1">
                         Onze vertalings-tool maakt gebruik van
@@ -383,9 +416,9 @@
 <!--================================================================-->
 
 <!-- Suggestions section -->
-<section class="projects-section bg-white" id="Suggestions">
-  <div class="container-fluid" height="100%">
-    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+<section class="projects-section bg-light fadeIn undisplayed" id="Suggestions" style="margin-top:20px;">
+      <div class="container-fluid" style="margin-top:20px;">
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
             <!-- Column for suggestions  -->
             <div class="col-xl-auto">
               <div class="project-text pt-0 text-lg-left">
@@ -409,8 +442,8 @@
 <!--================================================================-->
 
 <!-- Resources section -->
-<section class="projects-section bg-light" id="Resources">
-      <div class="container-fluid" height="100%">
+<section class="projects-section bg-light fadeIn undisplayed" id="Resources" style="margin-top:20px;">
+      <div class="container-fluid" style="margin-top:20px;">
           <div class="project-text pt-0 text-lg-left">
               <p class="mb-3 text-black-50">
                 Het
