@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="OMHOOG">
+  <hamgestural_sign gloss="KLAAR">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="Omo"/>
+        <mouth_picture picture="Al"/>
       </mouthing_tier>
     </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_mainbend="bent" second_thumbpos="across"/>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
       <handconfig extfidir="u"/>
       <handconfig palmor="l"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
-      <directedmotion direction="u" size="big"/>
+      <location_bodyarm contact="close" location="neck" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="d" fast="true" halt="true" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="l" second_extfidir="or"/>
+          <location_bodyarm location="chest"/>
+        </tgt_motion>
+      </par_motion>
     </sign_manual>
   </hamgestural_sign>
 <hamgestural_sign gloss='STANDAARD_POSE'>
