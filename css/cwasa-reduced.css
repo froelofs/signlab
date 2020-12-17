@@ -225,6 +225,6 @@ body.busy::before {
   display: none;
 }
 
-.text-lg-left{
-  padding-top: 0px;
+.no-top-padding{
+  padding-top: 0px !important;
 }
