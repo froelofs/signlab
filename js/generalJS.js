@@ -34,8 +34,6 @@ function addSuggestion(text, alertID){
     console.log ('Something went wrong. Error message: '+error);
     console.log("data: " + data);
     console.log("text: " + text);
-    console.log("parameters: " + request.params);
-    console.log("param: " + request.body);
     showBusyState(false);
     alertMessage("error", 'Oops, something went wrong', alertID);
   }
