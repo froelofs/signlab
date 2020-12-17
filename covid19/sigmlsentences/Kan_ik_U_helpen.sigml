@@ -100,9 +100,6 @@
       <mouthing_tier>
         <mouth_picture picture="kYn@"/>
       </mouthing_tier>
-      <facialexpr_tier>
-          <eye_brows movement="RB"/>
-      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
       <handconfig handshape="fist" thumbpos="across"/>

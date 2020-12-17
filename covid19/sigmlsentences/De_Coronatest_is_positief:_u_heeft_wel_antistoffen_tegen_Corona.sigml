@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-    <hamgestural_sign gloss="CORONA_V1">
+    <hamgestural_sign gloss="CORONA">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig bend1="bent" handshape="flat" second_handshape="flat" second_thumbpos="out" thumbpos="out"/>
             <handconfig extfidir="ol" second_extfidir="d"/>
@@ -144,7 +144,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="ANTISTOFFEN">
+    <hamgestural_sign gloss="ANTI">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig handshape="fist" thumbpos="across"/>
             <handconfig extfidir="u" second_extfidir="uo"/>
@@ -219,7 +219,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="CORONA_V1">
+    <hamgestural_sign gloss="CORONA">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig bend1="bent" handshape="flat" second_handshape="flat" second_thumbpos="out" thumbpos="out"/>
             <handconfig extfidir="ol" second_extfidir="d"/>
