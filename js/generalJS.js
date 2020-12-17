@@ -31,7 +31,8 @@ function addSuggestion(text, alertID){
   }
   function onError(xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
-    console.log("date: " + data);
+    console.log("data: " + data);
+    console.log("text: " + text);
     showBusyState(false);
     alertMessage("error", 'Oops, something went wrong', alertID);
   }
