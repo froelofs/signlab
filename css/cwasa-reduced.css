@@ -224,3 +224,7 @@ body.busy::before {
 .varBox{
   display: none;
 }
+
+.text-lg-left{
+  padding-top: 0px;
+}
