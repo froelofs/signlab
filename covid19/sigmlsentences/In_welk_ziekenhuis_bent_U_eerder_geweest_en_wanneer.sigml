@@ -172,7 +172,6 @@
         <facial_expr_par>
          <eye_lids movement="SB" />
          <eye_gaze direction="RD"/>
-         <eye_brows movement="RB"/>
         </facial_expr_par>
        </facialexpr_tier>
     </sign_nonmanual>
@@ -192,6 +191,9 @@
           <head_movement movement="SR"/>
         </head_par>
       </head_tier>
+      <facialexpr_tier>
+          <eye_brows movement="RB"/>
+      </facialexpr_tier>
       <mouthing_tier>
         <mouth_picture picture="va:R"/>
       </mouthing_tier>

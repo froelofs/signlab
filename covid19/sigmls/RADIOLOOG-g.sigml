@@ -37,7 +37,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="ARTS">
+    <hamgestural_sign gloss="RADIOLOOG">
         <sign_manual>
             <handconfig handshape="finger23" second_handshape="finger23spread" second_mainbend="hooked" second_thumbpos="across" thumbpos="across"/>
             <handconfig extfidir="u" second_extfidir="ul"/>

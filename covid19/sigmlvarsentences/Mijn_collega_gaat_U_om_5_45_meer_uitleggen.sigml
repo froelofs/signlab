@@ -75,33 +75,29 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="PERSOON">
-        <sign_manual>
-            <handconfig ceeopening="slack" handshape="cee12" second_handshape="finger2" second_thumbpos="opposed"/>
-            <handconfig extfidir="o"/>
-            <handconfig palmor="l"/>
-            <location_bodyarm location="head" side="right_at"/>
-            <tgt_motion>
-                <directedmotion direction="u" slow="true"/>
-                <location_bodyarm location="chest" second_location="stomach" second_side="right_at" side="right_at"/>
-            </tgt_motion>
-        </sign_manual>
-        <sign_nonmanual>
-            <body_tier>
-                <body_movement movement="TL"/>
-            </body_tier>
-            <shoulder_tier>
-                <shoulder_movement movement="UR"/>
-            </shoulder_tier>
-            <head_tier>
-                <head_movement movement="SR"/>
-            </head_tier>
-            <facialexpr_tier>
-                <eye_gaze movement="RI"/>
-                <eye_brows movement="RB"/>
-            </facialexpr_tier>
-        </sign_nonmanual>
-    </hamgestural_sign>
+    <hamgestural_sign gloss="COLLEGA">
+      <sign_manual>
+          <handconfig ceeopening="slack" handshape="cee12" second_handshape="finger2" second_thumbpos="opposed"/>
+          <handconfig extfidir="uo"/>
+          <handconfig palmor="l"/>
+          <location_bodyarm location="head" side="right_beside"/>
+          <tgt_motion>
+              <directedmotion direction="u" slow="true"/>
+              <location_bodyarm location="chest" second_side="right_beside" side="right_beside"/>
+          </tgt_motion>
+      </sign_manual>
+      <sign_nonmanual>
+          <body_tier>
+              <body_movement movement="ST"/>
+          </body_tier>
+          <shoulder_tier>
+              <shoulder_movement movement="UR"/>
+          </shoulder_tier>
+          <facialexpr_tier>
+              <eye_brows movement="RB"/>
+          </facialexpr_tier>
+      </sign_nonmanual>
+      </hamgestural_sign>
   <hamgestural_sign gloss="INDEX_3A">
     <sign_nonmanual>
       <head_tier>

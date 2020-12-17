@@ -50,7 +50,7 @@
     </sign_manual>
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="p9:r:" speed="0.8" />
+        <mouth_picture picture="erson@" speed="0.8" />
       </mouthing_tier>
       <body_tier>
         <body_movement movement="ST" />
