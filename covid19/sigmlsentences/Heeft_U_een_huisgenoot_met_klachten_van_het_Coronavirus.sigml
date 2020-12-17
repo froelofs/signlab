@@ -308,6 +308,7 @@
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
+          <eye_brows movement="RB"/>
          <eye_lids movement="SB" />
          <eye_gaze direction="RD"/>
         </facial_expr_par>
