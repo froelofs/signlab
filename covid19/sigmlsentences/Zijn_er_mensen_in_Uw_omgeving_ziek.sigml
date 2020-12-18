@@ -244,6 +244,9 @@
         <mouthing_tier>
           <mouth_picture picture="SSS" speed="0.7"/>
         </mouthing_tier>
+        <facialexpr_tier>
+            <eye_brows movement="RB"/>
+        </facialexpr_tier>
       </sign_nonmanual>
       <sign_manual nondominant="true">
         <handconfig handshape="flat" mainbend="bent" second_handshape="finger2345" second_thumbpos="out"/>
