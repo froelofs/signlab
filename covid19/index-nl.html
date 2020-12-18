@@ -259,6 +259,12 @@
                <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Vul een getal in tussen 0 en 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
               </div>
 
+              <div id="loneNumberBox" class="varBox">
+               <label for="loneNumber" style="display: inline-block;">Number:</label>
+               <input type="number" id="loneNumber" name="loneNumber" min="1" max="99" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 99){alertMessage('error','Vul een getal in tussen 0 en 100','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('loneNumber').value);}">
+              </div>
+
               <div id="dayOfTheWeekBox" class="varBox">
                 <label for="dayOfTheWeek" style="display: inline-block;">Dag van de week:</label>
                 <select name="dayOfTheWeek" id="dayOfTheWeek">
