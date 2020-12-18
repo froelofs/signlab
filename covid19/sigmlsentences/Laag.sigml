@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="OMLAAG">
+  <hamgestural_sign gloss="LAAG">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="Oma"/>
+        <mouth_picture picture="ma"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

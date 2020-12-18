@@ -97,9 +97,6 @@
           <head_movement movement="NO"/>
         </head_par>
       </head_tier>
-      <facialexpr_tier>
-          <eye_brows movement="RB"/>
-      </facialexpr_tier>
       <mouthing_tier>
         <mouth_picture picture="kYn@"/>
       </mouthing_tier>
