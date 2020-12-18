@@ -292,7 +292,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('loneNumberBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 100 om het aantal keer in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 100 om het aantal in te vullen", "alertZonMwTran");
         return false;
       }
       // Replaces the variable indicator with the value provided
