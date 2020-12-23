@@ -136,6 +136,9 @@ $( function() {
         if (text == false){
          variable = true;
         }
+        else{
+          document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+        }
       }
     }
   });
@@ -337,6 +340,7 @@ function checkText(text,value=-1){
   text = text.replace(" .",".");
   console.log("completed sentence: " + text);
   document.getElementById('mySiGML').value = text;
+  document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -385,7 +389,7 @@ function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").style.display = 'inline-block';
     document.getElementById("videos").style.display = 'none';
-    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("play").setAttribute("class", "undisplayed");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabel").style.display = 'inline-block';
