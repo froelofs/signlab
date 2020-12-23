@@ -40,26 +40,6 @@
       <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
     </sign_manual>
   </hamgestural_sign>
-  <hamgestural_sign gloss="AVOND">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="avOn"/>
-      </mouthing_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="u"/>
-      <location_bodyarm location="neck" side="right_at"/>
-      <par_motion>
-        <directedmotion curve="u" direction="dl"/>
-        <tgt_motion>
-          <changeposture/>
-          <handconfig extfidir="l" palmor="l"/>
-        </tgt_motion>
-      </par_motion>
-    </sign_manual>
-  </hamgestural_sign>
   <hamgestural_sign gloss="IK">
     <sign_nonmanual/>
     <sign_manual>

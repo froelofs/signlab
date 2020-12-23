@@ -301,6 +301,20 @@ function checkText(text,value=-1){
         document.getElementById('aWeekBox').style.display = "none";
       }
     }
+    else {
+      console.log("lone number detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
+      if (value == -1){
+        document.getElementById('loneNumberBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 100 to fill in the blank", "alertZonMwTran");
+        return false;
+      }
+      // Replaces the variable indicator with the value provided
+      else{
+        text = text.join(" ").replace("*number*",value);
+       }
+       document.getElementById('loneNumberBox').style.display = "none";
+      }
   }
   else if (text.includes("*time*") == true){
     console.log("time detected");

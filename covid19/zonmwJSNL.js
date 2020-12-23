@@ -94,7 +94,7 @@ function checkToD() {
 $(window).on("load", function(){
   checkToD();
   // setTimeout(startPose, 1000);
-} ); 
+} );
 
 //Stores suggestions returned by autocomplete so user input can be checked against it
 var autocompSugg = [];
@@ -287,6 +287,20 @@ function checkText(text,value=-1){
         document.getElementById('aWeekBox').style.display = "none";
       }
     }
+    else {
+      console.log("alleenstaand nummer detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
+      if (value == -1){
+        document.getElementById('loneNumberBox').style.display = "block";
+        alertMessage("info", "Kies een getal tussen 0 en 100 om het aantal in te vullen", "alertZonMwTran");
+        return false;
+      }
+      // Replaces the variable indicator with the value provided
+      else{
+        text = text.join(" ").replace("*aantal*",value);
+       }
+       document.getElementById('loneNumberBox').style.display = "none";
+      }
   }
   else if (text.includes("*tijdstip*")){
     console.log("time detected");
@@ -312,7 +326,7 @@ function checkText(text,value=-1){
       return false;
     }
     // Replaces the variable indicator with the value provided
-    else{      
+    else{
       text = text.join(" ").replace("*dag*",value);
       document.getElementById('dayOfTheWeekBox').style.display = "none";
     }
