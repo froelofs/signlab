@@ -458,5 +458,6 @@ document.getElementById('mySiGML').addEventListener('input', function() {
       console.log(element);
       element.style.display = 'none';
     })
+    document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
   }
 });
