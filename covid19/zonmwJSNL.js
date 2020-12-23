@@ -137,7 +137,7 @@ $( function() {
          variable = true;
         }
         else{
-          document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+          ument.getElementById("play").setAttribute("class", "btn btn-primary");
         }
       }
     }
@@ -389,7 +389,7 @@ function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").style.display = 'inline-block';
     document.getElementById("videos").style.display = 'none';
-    document.getElementById("play").setAttribute("class", "undisplayed");
+    document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabel").style.display = 'inline-block';
