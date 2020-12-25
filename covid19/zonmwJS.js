@@ -137,7 +137,7 @@ $( function() {
          variable = true;
         }
         else{
-          ument.getElementById("play").setAttribute("class", "btn btn-primary");
+          document.getElementById("play").setAttribute("class", "btn btn-primary");
         }
       }
     }

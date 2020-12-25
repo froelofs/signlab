@@ -137,7 +137,7 @@ $( function() {
          variable = true;
         }
         else{
-          ument.getElementById("play").setAttribute("class", "btn btn-primary");
+          document.getElementById("play").setAttribute("class", "btn btn-primary");
         }
       }
     }
@@ -340,7 +340,7 @@ function checkText(text,value=-1){
   text = text.replace(" .",".");
   console.log("completed sentence: " + text);
   document.getElementById('mySiGML').value = text;
-  ument.getElementById("play").setAttribute("class", "btn btn-primary");
+  document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
