@@ -101,3 +101,28 @@ function callPython(text, alertID) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
 }
+
+//Changes the javascript file loaded depending on the chosen language
+function changeLanguage(flagClass,clicked) {
+  var head = document.getElementsByTagName('head')[0];
+  var js = document.createElement("script");
+
+  js.type = "text/javascript";
+
+  if (flagClass == "flag-icon flag-icon-nl")
+  {
+    js.src = "covid19/zonmwEN.js";
+    if (clicked == true){
+      document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
+    }
+  }
+  else
+  {
+    js.src = "covid19/zonmwNL.js";
+    if (clicked == true){
+      document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
+    }
+  }
+
+  head.appendChild(js);
+}

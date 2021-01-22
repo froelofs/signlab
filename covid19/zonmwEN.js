@@ -17,7 +17,7 @@ function callbackSent(response) {
 
 // Retrieves the dict of sentences with SiGML translations
 $.ajax({
- url: "sentencesDictNL.json",
+ url: "json/sentencesDictEN.json",
  success: function (data) {
   callbackSent(data);
  },
@@ -41,7 +41,7 @@ function callbackVideo(response) {
 
 // Retrieves the dict of sentences with video links
 $.ajax({
- url: "videoDictNL.json",
+ url: "json/videoDictEN.json",
  global: false,
  success: function(data) {
   callbackVideo(data);
@@ -61,7 +61,7 @@ function callbackVar(response) {
 
 // Retrieves the dict of sentences with variables for the avatar
 $.ajax({
- url: "variableDictNL.json",
+ url: "json/variableDictEN.json",
  global: false,
  success: function(data) {
   callbackVar(data);
@@ -167,170 +167,181 @@ function checkText(text,value=-1){
   console.log(text);
   console.log("value: " + value);
   // Checks whether a variable indicator is present in the sentence and if so, which one
-  if (text.includes("*aantal*") == true){
-    console.log("aantal detected");
-    if (text.includes("minuten") == true){
-      console.log("minuten detected");
+  if (text.includes("*number*") == true){
+    console.log("number detected");
+    if (text.includes("minutes") == true){
+      console.log("minutes detected");
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 1 en 60 om het aantal minuten in te vullen", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
+        return false;
+      }
+      else{
+        // Changes the variable from plural to singular if the value is 1
+        if (value == 1){
+          text = text.join(" ");
+          text = text.replace("minutes","minute");
+          text = text.replace("*number*",value);
+        }
+        // Replaces the variable indicator with the value provided
+        else{
+         text = text.join(" ").replace("*number*",value);
+        }
+        document.getElementById('minutesBox').style.display = "none";
+      }
+    }
+    else if (text.includes("hours") == true){
+      console.log("hours detected");
+      // If no value has been given for the variable the appropiate box is shown to ask for input
+      if (value == -1){
+        document.getElementById('hoursBox').style.display = "block";
+        alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
         return false;
       }
       // Changes the variable from plural to singular if the value is 1
       else{
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("minuten","minuut");
-          text = text.replace("*aantal*",value);
+          text = text.replace("hours","hour");
+          text = text.replace("*number*",value);
         }
         // Replaces the variable indicator with the value provided
         else{
-         text = text.join(" ").replace("*aantal*",value);
+         text = text.join(" ").replace("*number*",value);
         }
-        document.getElementById('minutesBox').style.display = "none";
+        // Checks for a second blank in the sentence
+        if (text.split(" ").includes("*number*") == true){
+          alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
+          return false;
+        }
+        else{
+         document.getElementById('hoursBox').style.display = "none";
+        }
       }
     }
-    else if (text.includes("uur" == true)){
-      console.log("uur detected");
-      // If no value has been given for the variable the appropiate box is shown to ask for input
-      if (value == -1){
-        document.getElementById('hoursBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 73 om het aantal uren in te vullen", "alertZonMwTran");
-        return false;
-      }
-      // Replaces the variable indicator with the value provided
-      else{
-        text = text.join(" ").replace("*aantal*",value);
-      // Checks for a second blank in the sentence
-      }
-      if (text.split(" ").includes("*number*") == true){
-        alertMessage("info", "Kies nog een getal tussen 0 en 73 om het tweede aantal uren in te vullen", "alertZonMwTran");
-        return false;
-      }
-      document.getElementById('hoursBox').style.display = "none";
-    }
-    else if (text.includes("dagen" == true)){
-      console.log("dagen detected");
+    else if (text.includes("days") == true){
+      console.log("days detected");
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 15 om het aantal uren in te vullen", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
         return false;
       }
+      // Changes the variable from plural to singular if the value is 1
       else{
-        // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("dagen","dag");
-          text = text.replace("*aantal*",value);
+          text = text.replace("days","day");
+          text = text.replace("*number*",value);
         }
         // Replaces the variable indicator with the value provided
         else{
-         text = text.join(" ").replace("*aantal*",value);
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('daysBox').style.display = "none";
       }
     }
-    else if (text.includes("weken" == true)){
-      console.log("weken detected");
+    else if (text.includes("weeks") == true){
+      console.log("weeks detected");
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 11 om het aantal weken in te vullen", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
         // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("weken","week");
-          text = text.replace("*aantal*",value);
+          text = text.replace("weeks","week");
+          text = text.replace("*number*",value);
         }
         // Replaces the variable indicator with the value provided
         else{
-         text = text.join(" ").replace("*aantal*",value);
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('weeksBox').style.display = "none";
       }
     }
-    else if (text.includes("maanden" == true)){
-      console.log("maanden detected");
+    else if (text.includes("months") == true){
+      console.log("months detected");
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 19 om het aantal maanden in te vullen", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
         return false;
       }
       else{
         // Changes the variable from plural to singular if the value is 1
         if (value == 1){
           text = text.join(" ");
-          text = text.replace("maanden","maand");
-          text = text.replace("*aantal*",value);
+          text = text.replace("months","month");
+          text = text.replace("*number*",value);
         }
         // Replaces the variable indicator with the value provided
         else{
-         text = text.join(" ").replace("*aantal*",value);
+         text = text.join(" ").replace("*number*",value);
         }
         document.getElementById('monthsBox').style.display = "none";
       }
     }
-    else if (text.includes("keer per week")){
-      console.log("keer per week detected");
+    else if (text.includes("a week")){
+      console.log("a week detected");
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('aWeekBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 8 om het aantal keer in te vullen", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", "alertZonMwTran");
         return false;
       }
       // Replaces the variable indicator with the value provided
       else{
-        text.join(" ").replace("*aantal*",value);
+        convert = {"1":"once","2":"twice","3": "three times","4":"four times","5":"fives times","6":"six times","7":"seven times"};
+        text.join(" ").replace("*number*",convert[value]);
         document.getElementById('aWeekBox').style.display = "none";
       }
     }
     else {
-      console.log("alleenstaand nummer detected");
+      console.log("lone number detected");
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('loneNumberBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 100 om het aantal in te vullen", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 100 to fill in the blank", "alertZonMwTran");
         return false;
       }
       // Replaces the variable indicator with the value provided
       else{
-        text = text.join(" ").replace("*aantal*",value);
+        text = text.join(" ").replace("*number*",value);
        }
        document.getElementById('loneNumberBox').style.display = "none";
       }
   }
-  else if (text.includes("*tijdstip*")){
+  else if (text.includes("*time*") == true){
     console.log("time detected");
     // If no value has been given for the variable the appropiate box is shown to ask for input
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
-      alertMessage("info", "Kies een tijdstip om in te vullen", "alertZonMwTran");
+      alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
       return false;
     }
     // Replaces the variable indicator with the value provided
     else{
-      value = adaptTime(value,"NL");
-      text = text.join(" ").replace("*tijdstip*",value);
+      value = adaptTime(value);
+      text = text.join(" ").replace("*time*",value);
       document.getElementById('timeBox').style.display = "none";
     }
   }
-  else if (text.includes("*dag*")){
-    console.log("kies een dag detected");
+  else if (text.includes("*day*")){
+    console.log("pick a day detected");
     // If no value has been given for the variable the appropiate box is shown to ask for input
     if(value == -1){
-      alertMessage("info", "Kies een dag van de week om in te vullen", "alertZonMwTran");
+      alertMessage("info", "Please choose a day of the week to fill in the blank", "alertZonMwTran");
       document.getElementById('dayOfTheWeekBox').style.display = "block";
       return false;
     }
     // Replaces the variable indicator with the value provided
     else{
-      text = text.join(" ").replace("*dag*",value);
+      text = text.join(" ").replace("*day*",value);
       document.getElementById('dayOfTheWeekBox').style.display = "none";
     }
   }
@@ -347,12 +358,12 @@ function checkText(text,value=-1){
 function toSiGML(text){
   console.log("input: " + text);
   // Checks user input against the autcomplete suggestions and the variable sentences dict
-  if(autocompSugg.includes(text) == false && varOptions.includes(text) == false){
-    alertMessage("info", "Kies alstublieft een van de gegeven suggesties", "alertZonMwTran");
+  if (autocompSugg.includes(text) == false && varOptions.includes(text) == false){
+    alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
   }
   else {
-    // If avatar is checked, SiGML is sent
-    if (document.getElementById("avatarDisplay").checked) {
+     // If avatar is checked, SiGML is sent
+     if (document.getElementById("avatarDisplay").checked){
       if (variable == true){
         entry = jsonVariable[text];
         variable = false;
@@ -361,7 +372,7 @@ function toSiGML(text){
         entry = jsonSent[text];
       }
       if (entry == undefined) {
-        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
+        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
         // entry = "zonmw/" + entry;
@@ -369,22 +380,22 @@ function toSiGML(text){
         document.getElementById("replayButton").setAttribute("name", entry);
         document.getElementById("replayButton").style.display = 'inline-block';
       }
-    }
-    // if video is checked, source of embedded video changes
-    else if (document.getElementById("videoDisplay").checked){
+     }
+     // If video is checked, source of embedded video changes
+     else if (document.getElementById("videoDisplay").checked) {
       entry = jsonVideo[text];
-      if (entry == undefined){
-        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
+      if (entry == undefined) {
+        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
       }
       else{
-        changeVideo(entry);
+       changeVideo(entry);
       }
     }
   }
 }
 
 
-//Adapts the page to the chosen option
+//Adapts the page to the chosen display option
 function changeFunc(myRadio) {
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").style.display = 'inline-block';
@@ -415,7 +426,7 @@ function compare(input){
   $.ajax({
    'async': false,
    'global': false,
-   'url': "check.json",
+   'url': "json/check.json",
    'dataType': "json",
    'success': function(data) {
     check = data;
@@ -433,7 +444,7 @@ function compare(input){
    document.getElementById("checkPage").style.display = "none";
   }
   else{
-   alertMessage("error","Dit wachtwoord is incorrect","pwdAlert");
+   alertMessage("error","This password is incorrect","pwdAlert");
   }
 }
 

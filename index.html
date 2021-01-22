@@ -150,30 +150,123 @@
                 <h4>Choose an output option:</h4>
             </label>
 
-            <br>
+            <!-- <br> -->
+            <!-- Defines the button and label displayed for the option "ZonMwDemo" -->
+              <!-- <input type="radio" id="ZonMwDemo" name="display" value="ZonMwDemo" onclick="changeFunc(this);">
+              <label for="ZonMwDemo" style="margin-right:5px">ZonMw Demo</label> -->
+
+            <!-- <br> -->
             <!-- Defines the button and label displayed for the option "fingerspell" -->
-              <input type="radio" id="fingerspellDisplay" name="display" value="fingerspell" onclick="changeFunc(this);">
-              <label for="fingerspell" style="margin-right:5px">Fingerspell</label>
+              <!-- <input type="radio" id="fingerspellDisplay" name="display" value="fingerspell" onclick="changeFunc(this);">
+              <label for="fingerspell" style="margin-right:5px">Fingerspell</label> -->
 
-            <br>
+            <!-- <br> -->
             <!-- Defines the button and label displayed for the option "freestyle" -->
-            <input type="radio" id="freestyleDisplay" name="display" value="freestyle" checked onclick="changeFunc(this);">
-            <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label>
+            <!-- <input type="radio" id="freestyleDisplay" name="display" value="freestyle" checked onclick="changeFunc(this);">
+            <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label> -->
 
-              <br>
+              <!-- <br>
               <br>
               <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here" onkeydown="if (event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
-              <br>
+              <br> -->
 
-              <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
+              <!-- <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
               <textarea id="translation" type="text" class="inputBox" readonly></textarea> 
-              <br>
+              <br> -->
 
-              <br>
+            <!--   <br>
               <input type="button" class="btn btn-primary" id="play" value="Play" onclick='callPython(document.getElementById("mySiGML").value, "alertMainTran");'/>
               <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
-              <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)">
+              <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)"> -->
 
+              <!-- <br>
+              <br>
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
+              <br> -->
+              <!-- <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
+              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
+              <br> -->
+
+             <!--  <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
+              <br>
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertMainTran');}"></textarea>
+              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertMainTran");'/> -->
+
+              <form autocomplete="off">
+                <div id="autocomp" class="autocomplete" style="width:400px;">
+                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
+                </div>
+              </form>
+
+              <a class="nav-link" href="index-nl.html"><span id="language" class="flag-icon flag-icon-nl"></span></a>
+
+              <div id="minutesBox" class="varBox">
+               <label for="minutes" style="display: inline-block;">Number of minutes:</label>
+               <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Please input a number between 0 and 60','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
+              </div>
+
+              <div id="hoursBox" class="varBox">
+               <label for="hours" style="display: inline-block;">Number of hours:</label>
+               <input type="number" id="hours" name="hours" min="1" max="72" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Please input a number between 0 and 73','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
+              </div>
+
+              <div id="daysBox" class="varBox">
+               <label for="days" style="display: inline-block;">Number of days:</label>
+               <input type="number" id="days" name="days" min="1" max="14" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 14){alertMessage('error','Please input a number between 0 and 15','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
+              </div>
+
+              <div id="weeksBox" class="varBox">
+               <label for="weeks" style="display: inline-block;">Number of weeks:</label>
+               <input type="number" id="weeks" name="weeks" min="1" max="10" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 10){alertMessage('error','Please input a number between 0 and 11','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
+              </div>
+
+              <div id="monthsBox" class="varBox">
+               <label for="months" style="display: inline-block;">Number of months:</label>
+               <input type="number" id="months" name="months" min="1" max="18" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 18){alertMessage('error','Please input a number between 0 and 19','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
+              </div>
+
+              <div id="aWeekBox" class="varBox">
+               <label for="aWeek" style="display: inline-block;">Times a week:</label>
+               <input type="number" id="aWeek" name="aWeek" min="1" max="7" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Please input a number between 0 and 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
+              </div>
+
+              <div id="loneNumberBox" class="varBox">
+               <label for="loneNumber" style="display: inline-block;">Number:</label>
+               <input type="number" id="loneNumber" name="loneNumber" min="1" max="99" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 99){alertMessage('error','Please input a number between 0 and 100','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('loneNumber').value);}">
+              </div>
+
+              <div id="dayOfTheWeekBox" class="varBox">
+                <label for="dayOfTheWeek" style="display: inline-block;">Day of the week:</label>
+                <select name="dayOfTheWeek" id="dayOfTheWeek">
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, document.getElementById('dayOfTheWeek').value);">
+              </div>
+
+              <div id="timeBox" class="md-form varBox">
+               <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
+              </div>
+
+              <br>
+              <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+              <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
               <br>
               <br>
               <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
@@ -183,11 +276,6 @@
               <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
               <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
               <br>
-
-              <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
-              <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertMainTran');}"></textarea>
-              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertMainTran");'/>
               
         </span>
 
@@ -404,10 +492,8 @@
               <label style="display: none;">Gloss: </label>
               <input class="undisplayed" value="[none]" type="text">
           </div>
-
             
         </div>
-
 
 
         <!-- Defines the bottom SiGML text field and avatar with buttons -->
@@ -547,11 +633,11 @@
 <!-- =============================================== -->
 
 <!-- script for communication with and set up of the avatar -->
-<script language="javascript" type="text/javascript" src="js/avatarJS.js"></script>
+<script language="javascript" type="text/javascript" src="js/avatar.js"></script>
 <!-- script for shared functions across all pages -->
-<script language="javascript" type="text/javascript" src="js/generalJS.js"></script>
+<script language="javascript" type="text/javascript" src="js/general.js"></script>
 <!-- script specific to main page -->
-<script language="javascript" type="text/javascript" src="js/signlabJS.js"></script>
+<script language="javascript" type="text/javascript" src="js/signlab.js"></script>
 
 
 </body>
