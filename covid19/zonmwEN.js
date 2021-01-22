@@ -6,6 +6,29 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
+var urlSent;
+if (!sentPath){
+  urlSent = "json/sentencesDictEN.json";
+}
+else{
+  urlSent = sentPath;
+}
+var urlVid;
+if (!vidPath){
+  urlVid = "json/videoDictEN.json";
+}
+else{
+  urlVid = vidPath;
+}
+var urlVar;
+if (!varPath){
+  urlVar = "json/variableDictEN.json";
+}
+else{
+  urlVar = varPath;
+}
+
+
 var jsonSent;
 var sentOptions;
 
@@ -17,7 +40,7 @@ function callbackSent(response) {
 
 // Retrieves the dict of sentences with SiGML translations
 $.ajax({
- url: "json/sentencesDictEN.json",
+ url: urlSent,
  success: function (data) {
   callbackSent(data);
  },
@@ -41,7 +64,7 @@ function callbackVideo(response) {
 
 // Retrieves the dict of sentences with video links
 $.ajax({
- url: "json/videoDictEN.json",
+ url: urlVid,
  global: false,
  success: function(data) {
   callbackVideo(data);
@@ -61,7 +84,7 @@ function callbackVar(response) {
 
 // Retrieves the dict of sentences with variables for the avatar
 $.ajax({
- url: "json/variableDictEN.json",
+ url: urlVar,
  global: false,
  success: function(data) {
   callbackVar(data);

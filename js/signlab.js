@@ -112,16 +112,25 @@ function changeLanguage(clicked=false) {
 
   js.type = "text/javascript";
 
-  if (flagClass == "flag-icon flag-icon-nl")
-  {
+  var sentPath;
+  var vidPath;
+  var varPath;
+
+  if (flagClass == "flag-icon flag-icon-nl"){
     js.src = "covid19/zonmwNL.js";
+    sentPath = "covid19/json/sentencesDictNL.json";
+    vidPath = "covid19/json/videoDictNL.json";
+    varPath = "covid19/json/variableDictNL.json";
     if (clicked == true){
       document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
     }
   }
-  else
-  {
+  else{
     js.src = "covid19/zonmwEN.js";
+
+    sentPath = "covid19/json/sentencesDictEN.json";
+    vidPath = "covid19/json/videoDictEN.json";
+    varPath = "covid19/json/variableDictEN.json";
     if (clicked == true){
       document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
     }
