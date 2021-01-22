@@ -7,27 +7,26 @@ function changeVideo(url) {
 }
 
 var urlSent;
-if (!sentPath){
+if (sentPath == null){
   urlSent = "json/sentencesDictEN.json";
 }
 else{
   urlSent = sentPath;
 }
 var urlVid;
-if (!vidPath){
+if (vidPath == null){
   urlVid = "json/videoDictEN.json";
 }
 else{
   urlVid = vidPath;
 }
 var urlVar;
-if (!varPath){
+if (varPath == null){
   urlVar = "json/variableDictEN.json";
 }
 else{
   urlVar = varPath;
 }
-
 
 var jsonSent;
 var sentOptions;

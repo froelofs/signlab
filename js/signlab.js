@@ -112,10 +112,6 @@ function changeLanguage(clicked=false) {
 
   js.type = "text/javascript";
 
-  var sentPath;
-  var vidPath;
-  var varPath;
-
   if (flagClass == "flag-icon flag-icon-nl"){
     js.src = "covid19/zonmwNL.js";
     sentPath = "covid19/json/sentencesDictNL.json";
