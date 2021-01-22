@@ -104,6 +104,7 @@ function callPython(text, alertID) {
 
 //Changes the javascript file loaded depending on the chosen language
 function changeLanguage(clicked=false) {
+  console.log("changeLanguage has been reached.")
   var head = document.getElementsByTagName('head')[0];
   var js = document.createElement("script");
 
@@ -127,8 +128,10 @@ function changeLanguage(clicked=false) {
   }
 
   head.appendChild(js);
+  console.log("changeLanguage has been completed.")
 }
 
 $(window).on("load", function(){
+  console.log("changeLanguage has been activated.")
   changeLanguage();
 } );
