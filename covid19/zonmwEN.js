@@ -100,7 +100,7 @@ function callbackSent(response) {
   // Special case for demo
   if (typeof sentPath !== 'undefined'){
     // Executes the startpose
-    startPose();
+    // startPose();
     //Simulates the avatar display option being clicked
     changeFunc(document.getElementById("avatarDisplay"));
   }
