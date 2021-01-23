@@ -103,12 +103,17 @@ function callPython(text, alertID) {
 }
 
 //Changes the javascript file loaded depending on the chosen language
-function changeLanguage(clicked=false) {
+function changeLanguage(onload=false) {
   console.log("changeLanguage has been reached.")
   var head = document.getElementsByTagName('head')[0];
   var js = document.createElement("script");
 
-  flagClass = document.getElementById('language').className;
+  if (onload=true){
+    flagClass = "flag-icon flag-icon-gb";
+  }
+  else{
+    flagClass = document.getElementById('language').className;
+  }
 
   js.type = "text/javascript";
 
@@ -117,19 +122,14 @@ function changeLanguage(clicked=false) {
     sentPath = "covid19/json/sentencesDictNL.json";
     vidPath = "covid19/json/videoDictNL.json";
     varPath = "covid19/json/variableDictNL.json";
-    if (clicked == true){
-      document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
-    }
+    document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
   }
   else{
     js.src = "covid19/zonmwEN.js";
-
     sentPath = "covid19/json/sentencesDictEN.json";
     vidPath = "covid19/json/videoDictEN.json";
     varPath = "covid19/json/variableDictEN.json";
-    if (clicked == true){
-      document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
-    }
+    document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
   }
 
   head.appendChild(js);
@@ -138,5 +138,5 @@ function changeLanguage(clicked=false) {
 
 $(window).on("load", function(){
   console.log("changeLanguage has been activated.")
-  changeLanguage();
+  changeLanguage(true);
 } );
