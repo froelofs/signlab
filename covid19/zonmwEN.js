@@ -116,6 +116,7 @@ function checkToD() {
 $(window).on("load", function(){
   checkToD();
   // setTimeout(startPose, 1000);
+  console.log("current directory " + window.location.pathname);
 } );
 
 //Stores suggestions returned by autocomplete so user input can be checked against it
