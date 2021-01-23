@@ -7,21 +7,21 @@ function changeVideo(url) {
 }
 
 var urlSent;
-if (sentPath == null){
+if (typeof sentPath === 'undefined'){
   urlSent = "json/sentencesDictNL.json";
 }
 else{
   urlSent = sentPath;
 }
 var urlVid;
-if (vidPath == null){
+if (typeof vidPath === 'undefined'){
   urlVid = "json/videoDictNL.json";
 }
 else{
   urlVid = vidPath;
 }
 var urlVar;
-if (varPath == null){
+if (typeof varPath === 'undefined'){
   urlVar = "json/variableDictNL.json";
 }
 else{

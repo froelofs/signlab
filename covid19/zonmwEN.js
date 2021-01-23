@@ -6,22 +6,27 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
+if(typeof sentPath !== 'undefined'){
+    // this statement will not execute
+    alert("Variable x is defined.");
+}
+
 var urlSent;
-if (sentPath == null){
+if (typeof sentPath === 'undefined'){
   urlSent = "json/sentencesDictEN.json";
 }
 else{
   urlSent = sentPath;
 }
 var urlVid;
-if (vidPath == null){
+if (typeof vidPath === 'undefined'){
   urlVid = "json/videoDictEN.json";
 }
 else{
   urlVid = vidPath;
 }
 var urlVar;
-if (varPath == null){
+if ( typeof varPath === 'undefined'){
   urlVar = "json/variableDictEN.json";
 }
 else{
