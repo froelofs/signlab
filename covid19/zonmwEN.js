@@ -37,6 +37,9 @@ function changeFunc(myRadio) {
     document.getElementById("replayButton").style.display = 'none';
     options = videoOptions;
   }
+  else if (myRadio.value == "demo"){
+    options = sentOptions;
+  }
 }
 
 var urlSent;
