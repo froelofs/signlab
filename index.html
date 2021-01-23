@@ -201,6 +201,8 @@
               </form>
 
               <span id="language" class="flag-icon flag-icon-nl" onclick="changeLanguage();"></span>
+              <!-- This button exists so that the ZonMw scripts know that the avatar option is active -->
+              <input type="radio" id="avatarDisplay" name="display" value="avatar" checked class="undisplayed" onclick="changeFunc(this); startPose();">
 
               <div id="minutesBox" class="varBox">
                <label for="minutes" style="display: inline-block;">Number of minutes:</label>
@@ -638,6 +640,7 @@
 <script language="javascript" type="text/javascript" src="js/general.js"></script>
 <!-- script specific to main page -->
 <script language="javascript" type="text/javascript" src="js/signlab.js"></script>
+<!-- These variables are defined so that the dicts from the ZonMw project can be used -->
 <script type="text/javascript">
   var sentPath;
   var vidPath;

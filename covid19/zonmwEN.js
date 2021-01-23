@@ -21,7 +21,7 @@ else{
   urlVid = vidPath;
 }
 var urlVar;
-if ( typeof varPath === 'undefined'){
+if (typeof varPath === 'undefined'){
   urlVar = "json/variableDictEN.json";
 }
 else{
@@ -116,7 +116,6 @@ function checkToD() {
 $(window).on("load", function(){
   checkToD();
   // setTimeout(startPose, 1000);
-  console.log("current directory " + window.location.pathname);
 } );
 
 //Stores suggestions returned by autocomplete so user input can be checked against it

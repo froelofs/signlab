@@ -104,7 +104,7 @@ function callPython(text, alertID) {
 
 //Changes the javascript file loaded depending on the chosen language
 function changeLanguage(onload=false) {
-  console.log("changeLanguage has been reached.")
+  // Creates a script element so that the ZonMw script can be loaded in the correct language
   var head = document.getElementsByTagName('head')[0];
   var js = document.createElement("script");
 
@@ -118,6 +118,7 @@ function changeLanguage(onload=false) {
 
   js.type = "text/javascript";
 
+  // Loads the correct file and sets the paths for the corresponding dicts and changes the flag
   if (flagClass == "flag-icon flag-icon-nl"){
     js.src = "covid19/zonmwNL.js";
     sentPath = "covid19/json/sentencesDictNL.json";
@@ -134,10 +135,11 @@ function changeLanguage(onload=false) {
   }
 
   head.appendChild(js);
-  console.log("changeLanguage has been completed.")
+  console.log("language: " + document.getElementById('language').className);
 }
 
 $(window).on("load", function(){
-  console.log("changeLanguage has been activated.")
   changeLanguage(true);
+  //Simulates the avatar display option being clicked
+  document.getElementById("avatarDisplay").click();
 } );
