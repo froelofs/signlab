@@ -32,7 +32,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="CORONA_V1">
+    <hamgestural_sign gloss="CORONA">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig bend1="bent" handshape="flat" second_handshape="flat" second_thumbpos="out" thumbpos="out"/>
             <handconfig extfidir="ol" second_extfidir="d"/>
