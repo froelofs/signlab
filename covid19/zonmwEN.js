@@ -42,16 +42,13 @@ function changeFunc(myRadio) {
   }
 }
 
+// Path settings for demo version
 var urlSent;
 if (typeof sentPath === 'undefined'){
   urlSent = "json/sentencesDictEN.json";
 }
 else{
   urlSent = sentPath;
-  // Executes the startpose
-  startPose();
-  //Simulates the avatar display option being clicked
-  changeFunc(document.getElementById("avatarDisplay"));
 }
 var urlVid;
 if (typeof vidPath === 'undefined'){
@@ -67,26 +64,6 @@ if (typeof varPath === 'undefined'){
 else{
   urlVar = varPath;
 }
-
-var jsonSent;
-var sentOptions;
-
-// Stores the necessities for autcomplete suggestions and the dict of sentences for the avatar
-function callbackSent(response) {
-  jsonSent = response;
-  sentOptions = Object.keys(jsonSent);
-}
-
-// Retrieves the dict of sentences with SiGML translations
-$.ajax({
- url: urlSent,
- success: function (data) {
-  callbackSent(data);
- },
- error: function(xhr, error){
-  console.log(error);
- }
-});
 
 // Stores the default setting for autocomplete suggestions
 var options;
@@ -107,6 +84,33 @@ $.ajax({
  global: false,
  success: function(data) {
   callbackVideo(data);
+ },
+ error: function(xhr, error){
+  console.log(error);
+ }
+});
+
+var jsonSent;
+var sentOptions;
+
+// Stores the necessities for autcomplete suggestions and the dict of sentences for the avatar
+function callbackSent(response) {
+  jsonSent = response;
+  sentOptions = Object.keys(jsonSent);
+  // Special case for demo
+  if (typeof sentPath !== 'undefined'){
+    // Executes the startpose
+    startPose();
+    //Simulates the avatar display option being clicked
+    changeFunc(document.getElementById("avatarDisplay"));
+  }
+}
+
+// Retrieves the dict of sentences with SiGML translations
+$.ajax({
+ url: urlSent,
+ success: function (data) {
+  callbackSent(data);
  },
  error: function(xhr, error){
   console.log(error);
