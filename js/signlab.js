@@ -133,8 +133,8 @@ function changeLanguage(onload=false) {
     varPath = "covid19/json/variableDictEN.json";
     document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
   }
-
   head.appendChild(js);
+  startPose();
   console.log("language: " + document.getElementById('language').className);
 }
 
