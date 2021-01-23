@@ -141,5 +141,5 @@ function changeLanguage(onload=false) {
 $(window).on("load", function(){
   changeLanguage(true);
   //Simulates the avatar display option being clicked
-  document.getElementById("avatarDisplay").click();
+  changeFunc(document.getElementById("avatarDisplay"));
 } );

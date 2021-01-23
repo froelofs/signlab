@@ -419,6 +419,7 @@ function toSiGML(text){
 
 //Adapts the page to the chosen display option
 function changeFunc(myRadio) {
+  console.log("radio value: " + myRadio.value);
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").style.display = 'inline-block';
     document.getElementById("videos").style.display = 'none';
