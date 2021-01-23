@@ -109,7 +109,7 @@ function changeLanguage(onload=false) {
   var js = document.createElement("script");
 
   //Defines a separate case for when the translate page is first loaded
-  if (onload=true){
+  if (onload == true){
     flagClass = "flag-icon flag-icon-gb";
   }
   else{
