@@ -6,11 +6,6 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
-if(typeof sentPath !== 'undefined'){
-    // this statement will not execute
-    alert("Variable x is defined.");
-}
-
 var urlSent;
 if (typeof sentPath === 'undefined'){
   urlSent = "json/sentencesDictEN.json";
