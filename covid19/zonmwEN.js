@@ -6,12 +6,49 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
+
+function startPose() {
+  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
+}
+
+
+//Adapts the page to the chosen display option
+function changeFunc(myRadio) {
+  console.log("radio value: " + myRadio.value);
+  if (myRadio.value == "avatar") {
+    document.getElementById("avatar").style.display = 'inline-block';
+    document.getElementById("videos").style.display = 'none';
+    document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
+    document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
+    document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
+    document.getElementById("glossLabel").style.display = 'inline-block';
+    document.getElementById("speedLabel").style.display = 'inline-block';
+    document.getElementById("replayButton").style.display = 'none';
+    options = sentOptions;
+  }
+  else if (myRadio.value == "video") {
+    document.getElementById("avatar").style.display = 'none';
+    document.getElementById("videos").style.display = 'inline-block';
+    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
+    document.getElementById("speedAdj").setAttribute("class", "undisplayed");
+    document.getElementById("outputGloss").setAttribute("class", "undisplayed");
+    document.getElementById("glossLabel").style.display = 'none';
+    document.getElementById("speedLabel").style.display = 'none';
+    document.getElementById("replayButton").style.display = 'none';
+    options = videoOptions;
+  }
+}
+
 var urlSent;
 if (typeof sentPath === 'undefined'){
   urlSent = "json/sentencesDictEN.json";
 }
 else{
   urlSent = sentPath;
+  // Executes the startpose
+  startPose();
+  //Simulates the avatar display option being clicked
+  changeFunc(document.getElementById("avatarDisplay"));
 }
 var urlVid;
 if (typeof vidPath === 'undefined'){
@@ -96,10 +133,6 @@ $.ajax({
 // Keeps track of whether the dict with sentences with variables needs to be called
 var variable = false;
 
-function startPose() {
-  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
-}
-
 //Adapts the base video according to the time of day
 function checkToD() {
   var partofday = new Date().getHours();
@@ -116,7 +149,6 @@ function checkToD() {
 $(window).on("load", function(){
   checkToD();
   // setTimeout(startPose, 1000);
-  startPose();
 } );
 
 //Stores suggestions returned by autocomplete so user input can be checked against it
@@ -417,33 +449,6 @@ function toSiGML(text){
   }
 }
 
-
-//Adapts the page to the chosen display option
-function changeFunc(myRadio) {
-  console.log("radio value: " + myRadio.value);
-  if (myRadio.value == "avatar") {
-    document.getElementById("avatar").style.display = 'inline-block';
-    document.getElementById("videos").style.display = 'none';
-    document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
-    document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
-    document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
-    document.getElementById("glossLabel").style.display = 'inline-block';
-    document.getElementById("speedLabel").style.display = 'inline-block';
-    document.getElementById("replayButton").style.display = 'none';
-    options = sentOptions;
-  }
-  else if (myRadio.value == "video") {
-    document.getElementById("avatar").style.display = 'none';
-    document.getElementById("videos").style.display = 'inline-block';
-    document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
-    document.getElementById("speedAdj").setAttribute("class", "undisplayed");
-    document.getElementById("outputGloss").setAttribute("class", "undisplayed");
-    document.getElementById("glossLabel").style.display = 'none';
-    document.getElementById("speedLabel").style.display = 'none';
-    document.getElementById("replayButton").style.display = 'none';
-    options = videoOptions;
-  }
-}
 
 function compare(input){
   var check = null;

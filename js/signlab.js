@@ -1,7 +1,7 @@
 var flag = "";
 
 //Adapts the page to the chosen option
-function changeFunc(myRadio) {
+function changeDisplay(myRadio) {
   console.log("value: " + myRadio);
   if (myRadio.value == "fingerspell") {
   	document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
@@ -139,6 +139,4 @@ function changeLanguage(onload=false) {
 
 $(window).on("load", function(){
   changeLanguage(true);
-  //Simulates the avatar display option being clicked
-  changeFunc(document.getElementById("avatarDisplay"));
 } );
