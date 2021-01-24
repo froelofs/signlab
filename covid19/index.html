@@ -226,7 +226,6 @@
                 <div id="autocomp" class="autocomplete" style="width:400px;">
                   <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
                 </div>
-                <!-- <input type="submit"> -->
               </form>
 
               <div id="minutesBox" class="varBox">
@@ -509,11 +508,16 @@
 <!-- =============================================== -->
 
 <!-- script for communication with and set up of the avatar -->
-<script language="javascript" type="text/javascript" src="../js/avatarJS.js"></script>
+<script language="javascript" type="text/javascript" src="../js/avatar.js"></script>
 <!-- script for shared functions across all pages -->
-<script language="javascript" type="text/javascript" src="../js/generalJS.js"></script>
+<script language="javascript" type="text/javascript" src="../js/general.js"></script>
 <!-- script specific to zonmw project -->
-<script language="javascript" type="text/javascript" src="zonmwJS.js"></script>
+<script language="javascript" type="text/javascript" src="zonmwEN.js"></script>
+<script type="text/javascript">
+  var sentPath;
+  var vidPath;
+  var varPath;;
+</script>
 
 </body>
 </html>

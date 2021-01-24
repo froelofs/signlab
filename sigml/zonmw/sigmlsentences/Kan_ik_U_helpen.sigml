@@ -92,9 +92,8 @@
     <sign_nonmanual>
       <head_tier>
         <head_par>
-          <head_movement movement="NO"/>
-          <head_movement movement="NO"/>
-          <head_movement movement="NO"/>
+          <head_movement movement="TL"/>
+          <head_movement movement="TL"/>
         </head_par>
       </head_tier>
       <mouthing_tier>
