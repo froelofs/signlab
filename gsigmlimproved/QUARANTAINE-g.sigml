@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="QUARANTAINE">
+        <sign_manual both_hands="true" lr_symm="true">
+            <split_handconfig>
+                <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+                <handconfig handshape="flat"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="ul" palmor="u" second_extfidir="o"/>
+                <handconfig extfidir="r" palmor="d"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm contact="close" location="chest"/>
+                <location_bodyarm location="shoulders" second_location="shoulders" side="left_at"/>
+            </split_location>
+            <split_motion>
+                <rpt_motion repetition="fromstart">
+                    <wristmotion motion="stircw" size="small"/>
+                </rpt_motion>
+                <nomotion/>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="kara~TEne:" speed="1"/>
+                <mouth_gesture movement="L07" speed="1.4"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

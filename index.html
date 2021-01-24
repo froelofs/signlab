@@ -63,7 +63,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto" role="tablist">
                 <li class="nav-item"><a class="nav-link active" role="tab" href="#About" onclick="openTab(event, 'About');">Mission</a></li>
-                <li class="nav-item"><a class="nav-link" role="tab" href="#Translate" onclick="openTab(event, 'Translate');">Translator</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Translate" onclick="openTab(event, 'Translate');  startPose();">Translator</a></li>
                 <li class="nav-item"><a class="nav-link" role="tab" href="#People" onclick="openTab(event, 'People');">People</a></li>
                 <li class="nav-item"><a class="nav-link" role="tab" href="#Publications" onclick="openTab(event, 'Publications');">Publications</a></li>
                 <li class="nav-item"><a class="nav-link" role="tab" href="#Funding" onclick="openTab(event, 'Funding');">Funding</a></li>
@@ -110,7 +110,7 @@
                 <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
                     <h4>Breaking language barriers</h4>
                     <p class="mb-4">
-                      Not only can science benefit from investigating sign languages; it also has an important role to play in diminishing the 
+                      Not only can science benefit from investigating sign languages; it also has an important role to play in diminishing the
                       <b><a href="https://beeldverhalen.npofocus.nl/waarom-is-gebarentaal-nodig/?fbclid=IwAR3_XDN8TnlzN_WZ1l-jfN9rYIXkH_XmyOyNSgVzBREox3cxArkTL-k2G2I" target="_blank">language barrier</a></b> between deaf and hearing people. Deeper insights into the grammar of sign languages are essential in training sign language interpreters and to lay a solid foundation for sign language machine translation.
                     </p>
                     <hr class="d-none d-lg-block mb-0 ml-0" />
@@ -118,12 +118,12 @@
                 <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
                     <h4>Our mission</h4>
                     <p class="mb-4">
-                      We are pursuing deeper insights into sign language grammar, and we are using these insights to develop a machine translation system that can translate sentences from Dutch into Sign Language of the Netherlands (NGT), displayed by means of an animated avatar. We intend to apply this system in several settings, in particular to support parents of deaf children in the early stages of learning sign language and to 
+                      We are pursuing deeper insights into sign language grammar, and we are using these insights to develop a machine translation system that can translate sentences from Dutch into Sign Language of the Netherlands (NGT), displayed by means of an animated avatar. We intend to apply this system in several settings, in particular to support parents of deaf children in the early stages of learning sign language and to
                       <b><a href="covid19/index.html" target="_blank">
                         improve communication between health care professionals and deaf patients.
                       </a></b>
                     <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div> 
+                </div>
             </div>
     </div>
 </section>
@@ -164,7 +164,7 @@
               <br>
 
               <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
-              <textarea id="translation" type="text" class="inputBox" readonly></textarea> 
+              <textarea id="translation" type="text" class="inputBox" readonly></textarea>
               <br>
 
               <br>
@@ -186,10 +186,10 @@
               <br>
               <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertMainTran');}"></textarea>
               <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertMainTran");'/>
-              
+
         </span>
 
-    
+
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
         <div class="undisplayed" style="text-align: center;">
 
@@ -233,7 +233,7 @@
 
             <!-- Column for team -->
             <div class="col-xl-6 col-lg-6">
-                
+
                 <!-- Team -->
                 <div class="project-text text-center text-lg-left no-top-padding">
 
@@ -247,7 +247,7 @@
                     <h5>
                       Researchers
                     </h5>
-                    
+
                     <p class="text-black-50 mb-3">
                       Lyke Esselink, University of Amsterdam<br>
                       Shani Mende-Gillings, University of Amsterdam<br>
@@ -256,7 +256,7 @@
                     <h5>
                       Undergraduate student alumni
                     </h5>
-                    
+
                      <p class="text-black-50 mb-3">
                       Lyke Esselink (2020)<br>
                       Shani Mende-Gillings (2020)<br>
@@ -276,10 +276,10 @@
             <!-- Column for collaborators -->
 
             <div class="col-xl-6 col-lg-6">
-                
+
                 <div class="project-text text-center text-lg-left no-top-padding">
                     <h5>
-                      Collaborators and advisors 
+                      Collaborators and advisors
                     </h5>
 
                     <p class="text-black-50 mb-3">
@@ -293,7 +293,7 @@
                       Anika Smeijers, Amsterdam University Medical Centre<br>
                       Martine en Roos Wattel, <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
                     </p>
-                </div>      
+                </div>
             </div>
         </div>
 
@@ -345,7 +345,7 @@
       <div class="container-fluid">
         <div id="alertTutorial" class="alertBox"></div>
         <h2 style="margin-bottom: 20px; text-align: center;">Tutorial</h2>
-        
+
         <!-- <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4"></div>
@@ -354,7 +354,7 @@
 
         <div class="row">
           <div class="col-md-4"></div> -->
-          
+
           <div class="col-md-6">
             <textarea id="explSiGML1" readonly style="width: 350px; height: 500px;">
 <?xml version="1.0" encoding="UTF-8"?>
@@ -392,25 +392,25 @@
               <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value,1)'/>
               <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML(1);'/>
               <br>
-              
+
               <br>
               <label style="display: none;">Adjust speed: </label>
               <span class="undisplayed" style="margin-bottom:5px"></span>
               <br>
-              
+
               <br>
               <label style="display: none;">Gloss: </label>
               <input class="undisplayed" value="[none]" type="text">
           </div>
 
-            
+
         </div>
 
 
 
         <!-- Defines the bottom SiGML text field and avatar with buttons -->
         <div class="row">
-            
+
           <div class="col-md-4">
             <span id="explanation" class="explSpan">
               <div id="explText" class="explSiGML"></div>
@@ -425,27 +425,27 @@
               <input type="radio" id="explainDisplay" name="expl" value="explain" onclick="changeFunc(this);">
               <label for="avatar" style="margin-right: 5px">Explanation SiGML</label>
               <br>
-              
+
               <!-- Defines the button and label displayed for the option "explain+ava" -->
               <input type="radio" name="expl" id="explainAva" value="explAva" onclick="changeFunc(this);" checked>
-              <label for="explainAva" style="margin-right:5px">Explanation SiGML + avatar animation</label> 
+              <label for="explainAva" style="margin-right:5px">Explanation SiGML + avatar animation</label>
               <br>
-              
+
 
               <textarea id="SiGMLTut" placeholder="Enter the gloss(es) whose SiGML you would like explained here"></textarea>
               <br>
-              
+
 
               <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value, "alertTutorial",2);'/>
               <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML(2);'/>
               <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name,2)">
               <br>
-              
+
               <br>
               <label id="speedLabelTut" for="speedAdjTut" style="display: none;">Adjust speed: </label>
               <span id="speedAdjTut" class="undisplayed" style="margin-bottom:5px"></span>
               <br>
-              
+
               <br>
               <label id="glossLabelTut" for="outputGlossTut" style="display: none;">Gloss: </label>
               <input id="outputGlossTut" class="undisplayed" value="[none]" type="text">
@@ -476,7 +476,7 @@
                 offers an online video dictionary containing more than 16.000 signs in Sign Language of the Netherlands.
               </p>
               <p class="mb-3 text-black-50">
-                On the 
+                On the
                 <a href="https://www.wattelt.org/corona/" target="_blank">Wattelt!</a> website
                 you can find a video with general advice for health care professional with deaf patients in times of COVID-19.
                 The video also teaches you fifteen essential signs.

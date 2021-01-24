@@ -3,14 +3,14 @@
   <hamgestural_sign gloss="POEPEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="C02]"/>
+        <mouth_gesture movement="C02" speed="0.5"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="opposed" thumbpos="opposed"/>
       <handconfig extfidir="ul" second_extfidir="ui"/>
       <handconfig palmor="dl" second_palmor="l"/>
-      <location_bodyarm contact="close" location="cheek" second_location="ear" second_side="right_at" side="right_at"/>
+      <location_bodyarm location="head" second_location="chin" second_side="right_beside" side="right_beside"/>
       <tgt_motion slow="true" tense="true">
         <changeposture/>
         <handconfig extfidir="l" second_extfidir="uo"/>

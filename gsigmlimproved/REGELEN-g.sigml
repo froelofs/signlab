@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="REGELEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Rex@l@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="bent"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin" side="right_beside">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="o" fast="true" size="small"/>
+          <fingerplay/>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

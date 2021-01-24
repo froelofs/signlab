@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KIJKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kEk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="nose">
+        <location_hand digits="23" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <directedmotion direction="o"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
