@@ -5638,7 +5638,7 @@ a.close.disabled {
 
 .modal-footer {
   position: absolute;
-  height: 2rem;
+  height: 1rem;
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
@@ -10147,7 +10147,7 @@ body {
   min-height: 100vh;
 }
 #content-wrap {
-  padding-bottom: 2rem;    /* Footer height */
+  padding-bottom: 1rem;    /* Footer height */
 }
 
 #mainNav {
@@ -10373,5 +10373,5 @@ body {
 }
 
 .footer {
-  padding: 5rem 0;
+  padding: 1rem 0;
 }
