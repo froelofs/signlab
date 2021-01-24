@@ -572,6 +572,7 @@ pre code {
   width: 100%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  padding-bottom: 2rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -5637,6 +5638,9 @@ a.close.disabled {
 }
 
 .modal-footer {
+  position: absolute;
+  height: 2rem;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -10277,7 +10281,8 @@ body {
 }
 
 .projects-section {
-  padding: 5rem 0;
+  padding: 2rem;
+
 }
 .section-fixtotop {
   padding: 0 0;
