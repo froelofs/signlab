@@ -10143,6 +10143,14 @@ body {
   letter-spacing: 0.0625em;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 2rem;    /* Footer height */
+}
+
 #mainNav {
   min-height: 3.5rem;
   background-color: #fff;
@@ -10279,10 +10287,8 @@ body {
   padding-top: 5rem;
   padding-bottom: 3rem;
 }
-
 .projects-section {
   padding: 2rem;
-
 }
 .section-fixtotop {
   padding: 0 0;
