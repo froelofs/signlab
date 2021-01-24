@@ -572,7 +572,6 @@ pre code {
   width: 100%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  padding-bottom: 2rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -10288,7 +10287,7 @@ body {
   padding-bottom: 3rem;
 }
 .projects-section {
-  padding: 2rem;
+  padding: 5rem 0;
 }
 .section-fixtotop {
   padding: 0 0;
