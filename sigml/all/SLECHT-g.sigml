@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SLECHT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sEx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out" thumbpos="opposed"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="dr"/>
+      <location_bodyarm location="neck" second_location="head" second_side="right_at" side="right_at"/>
+      <par_motion>
+        <directedmotion curve="l" curve_size="small" direction="dl" fast="true" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" palmor="dr"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

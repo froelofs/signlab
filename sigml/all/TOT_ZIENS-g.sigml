@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TOT_ZIENS">
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="u" palmor="l" second_extfidir="ul"/>
+        <handconfig extfidir="or" palmor="dr" second_extfidir="do"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="eyes" second_location="eyes" side="right_at">
+          <location_hand digits="23" location="tip"/>
+        </location_bodyarm>
+        <location_bodyarm location="stomach" side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <split_motion>
+          <par_motion>
+            <directedmotion curve="l" curve_size="small" direction="or"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="ul" palmor="d" second_extfidir="uo" second_palmor="dr"/>
+            </tgt_motion>
+          </par_motion>
+          <par_motion>
+            <directedmotion direction="u" size="big"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="u" palmor="r" second_extfidir="ur"/>
+            </tgt_motion>
+          </par_motion>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="close" location="head" side="right_at"/>
+          <location_bodyarm contact="armextended" location="neck"/>
+        </split_location>
+      </tgt_motion>
+      <split_motion>
+        <par_motion>
+          <directedmotion direction="o" size="small"/>
+        </par_motion>
+        <par_motion>
+          <directedmotion direction="uir" second_direction="oi" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ur" palmor="d" second_extfidir="ui"/>
+          </tgt_motion>
+        </par_motion>
+      </split_motion>
+    </sign_manual>
+    <sign_nonmanual>
+    <head_tier>
+      <head_movement movement="SR" speed="0.7"/>
+    </head_tier>
+      <eyegaze_tier>
+      <eye_gaze direction="HC"/>
+    </eyegaze_tier>
+    </sign_nonmanual>
+  </hamgestural_sign>
+</sigml>

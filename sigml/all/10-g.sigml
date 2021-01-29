@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TIEN_10">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="tIn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="shoulders" side="right_beside"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

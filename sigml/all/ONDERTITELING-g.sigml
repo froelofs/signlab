@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONDERTITELING">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Oti"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger23" second_handshape="finger23spread" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ol" second_extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="left_at"/>
+      <directedmotion direction="r"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
