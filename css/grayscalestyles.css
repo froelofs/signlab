@@ -10379,10 +10379,10 @@ body {
   height: 1rem;
 }
 
-.projects-section .project-text .bi {
+.project-text .fa {
   transition: .3s transform ease-in-out;
 }
 
-.projects-section .project-text .collapsed .bi {
+.project-text .collapsed .fa {
   transform: rotate(-90deg);
 }
