@@ -688,11 +688,6 @@ pre code {
   max-width: 33.3333333333%;
 }
 
-.col-45 {
-  flex: 0 0 37.5%;
-  max-width: 37.5%;
-}
-
 .col-5 {
   flex: 0 0 41.6666666667%;
   max-width: 41.6666666667%;
