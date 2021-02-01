@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+<hns_sign gloss="WELKOM">
+        <hamnosys_nonmanual>
+            <hnm_mouthpicture picture="vEkom"/>
+            <hnm_eyebrows tag="RB"/>
+        </hamnosys_nonmanual>
+        <hamnosys_manual>
+            <hamsymmlr/>
+            <hamparbegin/>
+            <hamflathand/>
+            <hambetween/>
+            <hamflathand/>
+            <hamthumboutmod/>
+            <hamextfingero/>
+            <hambetween/>
+            <hamextfingeror/>
+            <hampalmu/>
+            <hambetween/>
+            <hampalmul/>
+            <hamplus/>
+            <hamflathand/>
+            <hambetween/>
+            <hamflathand/>
+            <hamthumboutmod/>
+            <hamextfingeror/>
+            <hampalmu/>
+            <hamparend/>
+            <hamparbegin/>
+            <hamshoulders/>
+            <hamlrbeside/>
+            <hambetween/>
+            <hamchest/>
+            <hamlrbeside/>
+            <hamarmextended/>
+            <hamplus/>
+            <hamchest/>
+            <hambetween/>
+            <hamshoulders/>
+            <hamlrat/>
+            <hamparend/>
+            <hamparbegin/>
+            <hamparbegin/>
+            <hammoveil/>
+            <hamlargemod/>
+            <hamarcu/>
+            <hamsmallmod/>
+            <hamreplace/>
+            <hamextfingerol/>
+            <hamparend/>
+            <hamplus/>
+            <hamparbegin/>
+            <hammoveil/>
+            <hamarcu/>
+            <hamsmallmod/>
+            <hamreplace/>
+            <hamextfingero/>
+            <hambetween/>
+            <hamextfingeror/>
+            <hamparend/>
+            <hamparend/>
+            <hamparbegin/>
+            <hamshoulders/>
+            <hambetween/>
+            <hamlrat/>
+            <hamchest/>
+            <hamclose/>
+            <hamplus/>
+            <hamshoulders/>
+            <hambetween/>
+            <hamlrat/>
+            <hamchest/>
+            <hamclose/>
+            <hamparend/>
+        </hamnosys_manual>
+    </hns_sign>
+<hamgestural_sign gloss='STANDAARD_POSE'>
+       <sign_manual both_hands='true' lr_symm='true'>
+		<handconfig extfidir='dl' /> <handconfig palmor='l' />
+		<handconfig handshape='fist' thumbpos='across' />
+		<location_bodyarm contact='touch' location='belowstomach' side='right_beside'>
+			<location_hand digits='1' />
+		</location_bodyarm>
+	</sign_manual>
+	<sign_nonmanual>
+		<body_tier>
+			<body_movement movement='ST' />
+		</body_tier>
+		<facialexpr_tier>
+			<eye_brows movement='RB' />
+			<eye_lids movement='WB' />
+		</facialexpr_tier>
+	</sign_nonmanual>
+</hamgestural_sign>
+</sigml>
