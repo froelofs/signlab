@@ -10379,10 +10379,10 @@ body {
   height: 1rem;
 }
 
-.project-text .fa {
+.collapseTransform .fa {
   transition: .3s transform ease-in-out;
 }
 
-.project-text .collapsed .fa {
+.collapseTransform .collapsed .fa {
   transform: rotate(-90deg);
 }
