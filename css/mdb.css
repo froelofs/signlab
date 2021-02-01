@@ -25,7 +25,7 @@
  *
  *   Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js
  */
- a[aria-expanded=true] .fa-chevron-right {
+ a[aria-expanded=true] .bi-chevron-down {
   transition: .3s transform ease-in-out;
   transform: rotate(180deg);
  }
