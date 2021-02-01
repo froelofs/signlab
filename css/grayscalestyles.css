@@ -10378,3 +10378,9 @@ body {
   width: 100%;
   height: 1rem;
 }
+
+
+a[aria-expanded=true] .bi-chevron-right {
+ transition: .3s transform ease-in-out;
+ transform: rotate(90deg);
+}
