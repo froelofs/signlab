@@ -25,11 +25,9 @@
  *
  *   Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js
  */
- a[aria-expanded=true] .expand_more {
-    display: none;
- }
- a[aria-expanded=false] .expand_less {
-    display: none;
+ a[aria-expanded=true] .fa-chevron-right {
+  transition: .3s transform ease-in-out;
+  transform: rotate(180deg);
  }
 
 .mdb-color.lighten-5 {
