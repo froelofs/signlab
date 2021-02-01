@@ -10379,8 +10379,10 @@ body {
   height: 1rem;
 }
 
+.projects-section .project-text .bi {
+  transition: .3s transform ease-in-out;
+}
 
-a[aria-expanded=true] .bi-chevron-right {
- transition: .3s transform ease-in-out;
- transform: rotate(90deg);
+.projects-section .project-text .collapsed .bi {
+  transform: rotate(-90deg);
 }
