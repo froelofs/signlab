@@ -1,9 +1,5 @@
 {
     "I": "sigmlsentences/Ik.sigml",
-    "project": "sigmlsentences/projects.sigml",
-    "publications": "sigmlsentences/publications.sigml",
-    "People": "sigmlsentences/people.sigml",
-    "welkom": "sigmlsentences/welkom.sigml",
     "You": "sigmlsentences/U.sigml",
     "More": "sigmlsentences/Meer.sigml",
     "Explain": "sigmlsentences/Uitleggen.sigml",
