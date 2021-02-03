@@ -10385,3 +10385,8 @@ body {
 .collapseTransform .collapsed .fa {
   transform: rotate(-90deg);
 }
+
+#responsive-logo {
+  width: 50%;
+  height: auto;
+}
