@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sigml>
-<hamgestural_sign gloss="GEBAREN">
+<hamgestural_sign gloss="SIGNLAB AMSTERDAM">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="xba"/>
+        <mouth_picture picture="iin"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true" outofphase="true">
@@ -16,7 +16,7 @@
       <circularmotion axis="l" size="small"/>
     </sign_manual>
   </hamgestural_sign>
-    <hamgestural_sign gloss="LABORANT">
+    <hamgestural_sign gloss="SIGNLAB AMSTERDAM">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig handshape="cee12"/>
             <handconfig extfidir="o" second_extfidir="or"/>
@@ -52,7 +52,7 @@
         </sign_manual>
         <sign_nonmanual>
             <mouthing_tier>
-                <mouth_picture picture="labo" speed="0.6"/>
+                <mouth_picture picture="lab" speed="0.6"/>
             </mouthing_tier>
             <body_tier>
                 <body_movement movement="ST"/>
@@ -67,13 +67,13 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-<hamgestural_sign gloss="AMSTERDAM">
+<hamgestural_sign gloss="SIGNLAB AMSTERDAM">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="Ammst@dAm"/>
       </mouthing_tier>
     </sign_nonmanual>
-    <sign_manual both_hands="true" lr_symm="true">
+    <sign_manual both_hands="true" lr_symm="true" speed="3">
       <handconfig handshape="finger2" thumbpos="across"/>
       <handconfig extfidir="ul"/>
       <handconfig palmor="d"/>
@@ -83,29 +83,29 @@
         <location_bodyarm contact="close" location="chin"/>
       </handconstellation>
       <tgt_motion>
-        <directedmotion direction="o" fast="true" size="small"/>
+        <directedmotion direction="o" speed="3" size="small"/>
         <handconstellation contact="touch"/>
       </tgt_motion>
       <tgt_motion>
-        <directedmotion direction="d" fast="true" size="small"/>
+        <directedmotion direction="d" speed="3" size="small"/>
         <handconstellation contact="close">
           <location_hand digits="2" location="midjoint" side="right_beside"/>
           <location_hand digits="2" location="midjoint" side="right_beside"/>
         </handconstellation>
       </tgt_motion>
       <tgt_motion>
-        <directedmotion direction="o" fast="true" size="small"/>
+        <directedmotion direction="o" speed="3" size="small"/>
         <handconstellation contact="touch"/>
       </tgt_motion>
       <tgt_motion>
-        <directedmotion direction="d" fast="true" size="small"/>
+        <directedmotion direction="d" speed="3" size="small"/>
         <handconstellation contact="close">
           <location_hand digits="2" location="midjoint" side="right_beside"/>
           <location_hand digits="2" location="midjoint" side="right_beside"/>
         </handconstellation>
       </tgt_motion>
       <tgt_motion>
-        <directedmotion direction="o" fast="true" size="small"/>
+        <directedmotion direction="o" speed="3" size="small"/>
         <handconstellation contact="touch"/>
       </tgt_motion>
     </sign_manual>
