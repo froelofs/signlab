@@ -7,24 +7,24 @@
 		$error="Please specify some input";
 	}
 	else{
-		$input = $_REQUEST['input'];
+		$input = $_REQUEST['input'] + "";
 
 		$fileName = "suggestions.txt";
 		if ( !file_exists($fileName) ) {
-	    	$error = "File " + $fileName + " not found";
+	    $error = "File " + $fileName + " not found";
 	  	}
 	  	else{
 	  		//opens file in append mode
 	  		$fp = fopen($fileName, 'a');
   			if ( !$fp ) {
-    			$error = "File could not be opened";
+    			$error = "File could not be opened: " + $fp + " " + getcwd();
   			}  
 			else{
 				fwrite($fp, $input);    
 				fwrite($fp, "\n");    
 				fclose($fp);  
 				  
-				$output = $input;
+				$output = "Suggestion successfully saved";
 			} 
 		}
 	}
