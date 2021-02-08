@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="AANPASSEN_1_2">
+  <hamgestural_sign gloss="AANPASSEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="a:mpss"/>

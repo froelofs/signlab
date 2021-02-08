@@ -23,7 +23,7 @@
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 <!-- =============================================== -->
 <!-- CSS files -->
 
@@ -41,6 +41,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css">
 <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
 <link rel="stylesheet" href="css/cwasa-reduced.css">
+<!-- CSS file for bootstrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 </head>
 
@@ -97,7 +99,10 @@
 <section class="projects-section bg-light fadeIn" id="About">
     <div class="container-fluid">
         <!-- Challenge Row-->
-        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+
+            <!-- Column for info -->
+            <div class="col">
                 <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding">
                  <!--  <div class="alert alert-success alert-dismissible">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -128,6 +133,11 @@
                     <hr class="d-none d-lg-block mb-0 ml-0" />
                 </div>
             </div>
+            <!-- Column for GIF -->
+            <div class="col-5">
+              <img src="htmlvideos/welcome.gif" class="img-fluid" alt="Avatar signing 'WE WHO?'">
+            </div>
+          </div>
     </div>
 </section>
 
@@ -325,7 +335,7 @@
         <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
             <!-- Column for team -->
-            <div class="col-xl-6 col-lg-6">
+            <div class="col-7">
 
                 <!-- Team -->
                 <div class="project-text text-center text-lg-left no-top-padding">
@@ -362,15 +372,7 @@
                       Jetske Beks (2018)<br>
                     </p>
                     <!-- <hr class="d-none d-lg-block mb-0 ml-0" /> -->
-                </div>
 
-            </div>
-
-            <!-- Column for collaborators -->
-
-            <div class="col-xl-6 col-lg-6">
-
-                <div class="project-text text-center text-lg-left no-top-padding">
                     <h5>
                       Collaborators and advisors
                     </h5>
@@ -387,7 +389,16 @@
                       Martine en Roos Wattel, <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
                     </p>
                 </div>
+
             </div>
+
+
+            <!-- Column for GIF -->
+            <div class="col-5">
+              <img src="htmlvideos/people.gif" class="img-fluid" alt="Avatar signing 'WE WHO?'">
+            </div>
+
+
         </div>
 
 
@@ -398,83 +409,135 @@
 
 <!-- Publications section -->
 <section class="projects-section bg-light fadeIn undisplayed" id="Publications">
-
-      <div class="container-fluid">
-        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
-                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding">
-                  <h4><a href="publications/COVID-19.pdf" download="COVID-19">Sign Language Translation in a Healthcare Setting</a></h4>
-                  <p class="mb-4">
-                    It is challenging for healthcare professionals to communicate with Deaf patients,
-                    especially in times of COVID-19. Sign language interpreters cannot always enter hospitals and
-                    clinics, and face masks make lipreading impossible.<br>
-                    We present an application which allows healthcare professionals to translate sentences
-                    that are frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign
-                    Language of the Netherlands (NGT). Translations are displayed by means of videos and
-                    avatar animations. The architecture of the system is such that it could be straightforwardly
-                    extended to other sign languages. We gratefully acknowledge funding from the Netherlands
-                    Organisation for Innovation in Healthcare (ZonMw) through the
-              <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>
-                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
-                  <h4><a href="publications/Corsel.pdf" download="Corsel">Multidimensionality in Sign Language Synthesis: Translation of Dutch into Sign Language of the Netherlands</a></h4>
-                  <p class="mb-4">
-                    This paper explores the implementation of a translator to sign language, using the JASigning avatarsoftware.
-                    Specifically, translation of Dutch into Sign Language of the Netherlands (NGT).
-                    As Dutch has been translated to a textual version of NGT in previous research, this research translated
-                    from textual NGT to synthesised NGT, the output signed by an avatar.
-                    This is one of three papers, each focusing on a different aspect of the translator: Lexical Resources,
-                    the Signing Space, and Multidimensionality. This paper pertains to the latter, and thus attempts to
-                    implement multiple dimensions into the avatar: the manual and non-manual component, which are both necessary
-                    to properly articulate a sign. The non-manual component of a sign being, for example, a facial expression,
-                    a head shake, the posture ofthe signer, etc. Specifically, it attempts to implement the non-manual markers
-                    paired with interrogative and negative constructs in NGT. Although the scope of this project is limited,
-                    it could provide a decent foundation for further research.
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>
-                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
-                  <h4><a href="publications/Esselink.pdf" download="Esselink">Lexical resources for sign language synthesis: The translation of Dutch to Sign Language of the Netherlands</a></h4>
-                  <p class="mb-4">
-                    Deaf people oftentimes have no choice but to communicate in the lingua franca of their country,
-                    despite the fact that this is a second language for them. Their ability to read and write is
-                    significantly worse than that of a hearing person. Additionally, if a deaf child is born into a
-                    family of hearing parents, it is vital that the parents communicate with the child through sign
-                    language as soon as possible, otherwise the language region of that child's brain will be
-                    underdeveloped. There are currently few resources available for people to learn Sign Language
-                    of the Netherlands (NGT). A tool that makes this possible would be invaluable to those who need it. <br>
-                    This thesis investigates what components are necessary to build a system that uses an avatar to
-                    translate a Dutch sentence to NGT. On the basis of the workings of NGT and previous research on
-                    the matter, three main components are devised and implemented: software for sign language synthesis,
-                    lexical resources for encoding signs, and grammatical resources for structuring sentences.
-                    Results show a proof of concept with a corpus of 2226 signs, the ability to make correct use of
-                    classifiers, and the abilities to fingerspell any word that is not in the corpus and convey numbers
-                    correctly. However, the corpus contains a number of errors and of which manual errors and unnatural
-                    mouth signs should particularly be improved. Moreover, further research is necessary to improve the
-                    comprehensibility of signs.
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>
-                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
-                  <h5><a href="publications/Mende_Gillings.pdf" download="Mende_Gillings">The signing space for the synthesis of directional verbs in NGT</a></h4>
-                  <p class="mb-4">
-                    Hearing parents who have deaf children are often put in a difficult position.
-                    They most likely know no sign language and resources for learning are limited and expensive.
-                    Research into sign language translation and synthesis has increased in the past two decades,
-                    due to a growing interest into making public spaces and services more accessible to Deaf people.<br>
-                    This research looks at the potential of a translator from Dutch to Dutch sign language (NGT)
-                    using a sign language avatar. In particular the focus lies on the synthesis of directional verbs,
-                    a critical grammatical component of sign language. The implementation is very limited and therefore
-                    the sentences it produces are not always comprehensible and the signs do not always look natural.
-                    It does, however, also demonstrate the potential of a sign language avatar as a tool for learning sign language.
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>
+<div class="container-fluid">
+  <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+      <!-- Column for text -->
+      <div class="col">
+          <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding">
+            <div class="collapseTransform">
+              <h4>Sign Language Translation in a Healthcare Setting</h4>
+                <p class="mb-4">
+                  <b>Year:</b> 2021 <br>
+                  <b>Authors:</b> L.D. Esselink, S.M. Mende-Gillings, F. Roelofsen, A.S. Smeijers <br>
+                  <b>Type:</b> Manuscript submitted for publication<br>
+                  <a href="publications/COVID-19.pdf" download="COVID-19">Download paper <i class="bi bi-download"></i></a>
+                  <a href="#collapseOne" data-toggle="collapse" class="collapsed" aria-hidden="true">Abstract <i class="bi bi-chevron-down"></i></a>
+                </p>
+                <div id="collapseOne" class="collapse">
+              <p class="mb-4">
+                It is challenging for healthcare professionals to communicate with Deaf patients,
+                especially in times of COVID-19. Sign language interpreters cannot always enter hospitals and
+                clinics, and face masks make lipreading impossible.<br>
+                We present an application which allows healthcare professionals to translate sentences
+                that are frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign
+                Language of the Netherlands (NGT). Translations are displayed by means of videos and
+                avatar animations. The architecture of the system is such that it could be straightforwardly
+                extended to other sign languages. We gratefully acknowledge funding from the Netherlands
+                Organisation for Innovation in Healthcare (ZonMw) through the
+          <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
+              </p>
+              </div>
             </div>
+            <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+          <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+            <div class="collapseTransform">
+            <h4>Multidimensionality in Sign Language Synthesis: Translation of Dutch into Sign Language of the Netherlands</h4>
+              <p class="mb-4">
+                <b>Year:</b> 2020 <br>
+                <b>Author:</b> A.J. Corsel <br>
+                <b>Type:</b> Bachelor thesis <br>
+                <a href="publications/Corsel.pdf" download="Corsel">Download paper <i class="bi bi-download"></i></a>
+                <a href="#collapseTwo" data-toggle="collapse" class="collapsed" aria-hidden="true">Abstract <i class="bi bi-chevron-down"></i></a>
+              </p>
+              <div id="collapseTwo" class="collapse">
+            <p class="mb-4">
+              This paper explores the implementation of a translator to sign language, using the JASigning avatarsoftware.
+              Specifically, translation of Dutch into Sign Language of the Netherlands (NGT).
+              As Dutch has been translated to a textual version of NGT in previous research, this research translated
+              from textual NGT to synthesised NGT, the output signed by an avatar.
+              This is one of three papers, each focusing on a different aspect of the translator: Lexical Resources,
+              the Signing Space, and Multidimensionality. This paper pertains to the latter, and thus attempts to
+              implement multiple dimensions into the avatar: the manual and non-manual component, which are both necessary
+              to properly articulate a sign. The non-manual component of a sign being, for example, a facial expression,
+              a head shake, the posture ofthe signer, etc. Specifically, it attempts to implement the non-manual markers
+              paired with interrogative and negative constructs in NGT. Although the scope of this project is limited,
+              it could provide a decent foundation for further research.
+            </p>
+          </div>
+          </div>
+            <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+          <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+            <div class="collapseTransform">
+            <h4>Lexical resources for sign language synthesis: The translation of Dutch to Sign Language of the Netherlands</h4>
+            <p class="mb-4">
+              <b>Year:</b> 2020 <br>
+              <b>Author:</b> L.D. Esselink <br>
+              <b>Type:</b> Bachelor thesis <br>
+              <a href="publications/Esselink.pdf" download="Esselink">Download paper <i class="bi bi-download"></i></a>
+              <a href="#collapseThree" data-toggle="collapse" class="collapsed" aria-hidden="true">Abstract <i class="bi bi-chevron-down"></i></a>
+            </p>
+            <div id="collapseThree" class="collapse">
+            <p class="mb-4">
+              Deaf people oftentimes have no choice but to communicate in the lingua franca of their country,
+              despite the fact that this is a second language for them. Their ability to read and write is
+              significantly worse than that of a hearing person. Additionally, if a deaf child is born into a
+              family of hearing parents, it is vital that the parents communicate with the child through sign
+              language as soon as possible, otherwise the language region of that child's brain will be
+              underdeveloped. There are currently few resources available for people to learn Sign Language
+              of the Netherlands (NGT). A tool that makes this possible would be invaluable to those who need it. <br>
+              This thesis investigates what components are necessary to build a system that uses an avatar to
+              translate a Dutch sentence to NGT. On the basis of the workings of NGT and previous research on
+              the matter, three main components are devised and implemented: software for sign language synthesis,
+              lexical resources for encoding signs, and grammatical resources for structuring sentences.
+              Results show a proof of concept with a corpus of 2226 signs, the ability to make correct use of
+              classifiers, and the abilities to fingerspell any word that is not in the corpus and convey numbers
+              correctly. However, the corpus contains a number of errors and of which manual errors and unnatural
+              mouth signs should particularly be improved. Moreover, further research is necessary to improve the
+              comprehensibility of signs.
+            </p>
+          </div>
+          </div>
+            <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+          <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+            <div class="collapseTransform">
+            <h4>The signing space for the synthesis of directional verbs in NGT</h4>
+            <p class="mb-4">
+              <b>Year:</b> 2020 <br>
+              <b>Author:</b> S.M. Mede-Gillings <br>
+              <b>Type:</b> Bachelor thesis <br>
+              <a href="publications/Mende_Gillings.pdf" download="Mende_Gillings">Download paper <i class="bi bi-download"></i></a>
+              <a href="#collapseFour" data-toggle="collapse" class="collapsed" aria-hidden="true">Abstract <i class="bi bi-chevron-down"></i></a>
+            </p>
+            <div id="collapseFour" class="collapse">
+            <p class="mb-4">
+              Hearing parents who have deaf children are often put in a difficult position.
+              They most likely know no sign language and resources for learning are limited and expensive.
+              Research into sign language translation and synthesis has increased in the past two decades,
+              due to a growing interest into making public spaces and services more accessible to Deaf people.<br>
+              This research looks at the potential of a translator from Dutch to Dutch sign language (NGT)
+              using a sign language avatar. In particular the focus lies on the synthesis of directional verbs,
+              a critical grammatical component of sign language. The implementation is very limited and therefore
+              the sentences it produces are not always comprehensible and the signs do not always look natural.
+              It does, however, also demonstrate the potential of a sign language avatar as a tool for learning sign language.
+            </p>
+          </div>
+          </div>
+            <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+      </div>
+      <!-- Column for GIF -->
+      <div class="col-5">
+        <img src="htmlvideos/publications.gif" class="img-fluid" alt="Avatar signing 'YOU MORE READ WANT?'">
+      </div>
       </div>
 
+</div>
+
 </section>
+
 
 <!--================================================================-->
 
@@ -649,23 +712,30 @@
 <section class="projects-section bg-light fadeIn undisplayed" id="Projects">
     <div class="container-fluid">
         <!-- Challenge Row-->
-        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
-            <!-- <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding"> -->
-            <div class="project-text my-auto text-center text-lg-left no-top-padding">
-                <h4><a class="nav-link" href="https://projects.illc.uva.nl/signlanguage/covid19">COVID-19 ZonMw project</a></h4>
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+            <!-- Column for text -->
+            <div class="col">
+            <div class="project-text pb-1 w-100 text-center text-lg-left no-top-padding">
+            <!-- <div class="project-text my-auto text-center text-lg-left no-top-padding"> -->
+                <h4><a class="nav-link" href="https://projects.illc.uva.nl/signlanguage/covid19"><img src="images/zonmw-logo.png" class="img-fluid" alt="ZonMW logo" id="responsive-logo">  COVID-19 ZonMw project</a></h4>
                 <p class="mb-4">
                   As a result of COVID-19, the treatment and diagnosis of deaf patients has become more difficult. Facemasks are mandatory in many settings, making lipreading no longer an option and restrictions can inhibit access to sign language interpreters. This in turn limits effective communication between healthcare workers and deaf patients which is a problem in a setting where it is crucial. To help resolve this issue a tool was developed for translating question that are common in the diagnosis and treatment of COVID-19 into NGT. We gratefully acknowledge funding from the Netherlands Organisation for Innovation in Healthcare (ZonMw) through the
             <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
                 </p>
                 <hr class="d-none d-lg-block mb-0 ml-0" />
             </div>
+          </div>
+          <!-- Column for GIF -->
+          <div class="col-5">
+            <img src="htmlvideos/projects.gif" class="img-fluid" alt="Avatar signing 'OUR PROJECTS WHAT?'">
+          </div>
         </div>
     </div>
 </section>
 
 </div>
 <!-- Footer-->
-<footer class="footer bg-white small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam <i class="material-icons">email</i>: signlab.amsterdam@gmail.com</div></footer>
+<footer class="footer bg-white small text-center text-black-50">&copy;2020 SignLab Amsterdam <br><i class="bi bi-envelope"></i>: signlab.amsterdam@gmail.com</footer>
 
 
 <!-- Javascripts -->

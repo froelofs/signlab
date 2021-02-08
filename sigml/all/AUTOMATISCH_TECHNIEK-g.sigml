@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AUTOMATISCH">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Atomati"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+      <split_handconfig>
+        <handconfig extfidir="ul"/>
+        <handconfig extfidir="r" second_extfidir="ur"/>
+      </split_handconfig>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_bodyarm contact="close" location="shoulders"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <split_motion>
+          <par_motion>
+            <directedmotion direction="d" fast="true" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="l" second_extfidir="dl"/>
+            </tgt_motion>
+          </par_motion>
+          <par_motion>
+            <directedmotion direction="d" fast="true" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="dr"/>
+            </tgt_motion>
+          </par_motion>
+        </split_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

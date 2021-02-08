@@ -10378,3 +10378,15 @@ body {
   width: 100%;
   height: 1rem;
 }
+
+.collapseTransform .fa {
+  transition: .3s transform ease-in-out;
+}
+.collapseTransform .collapsed .fa {
+  transform: rotate(-90deg);
+}
+
+#responsive-logo {
+  width: 25%;
+  height: auto;
+}

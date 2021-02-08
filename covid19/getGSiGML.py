@@ -3,14 +3,14 @@ from ZonMwDict import ZonMw as dictionary
 
 # Looks for a word in the dictionary in order to return the sign's sigml from the corresponding file
 def getGSiGML(word,directory):
-	match = ""
-	for key in dictionary.keys():
-		if key == word:
-			match = key
-			break
+	# match = ""
+	# for key in dictionary.keys():
+	# 	if key == word:
+	# 		match = key
+	# 		break
 
-	if match:
-		entry = dictionary[match]
+	if word in dictionary.keys():
+		entry = dictionary[word]
 		if type(entry) == dict:
 			# entry = context(entry)
 			print("Entry" + word + "requires the context function")

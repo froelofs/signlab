@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Sign Language Translation COVID-19</title>
+
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Access-Control-Allow-Methods" content="GET">
+<meta http-equiv="Access-Control-Allow-Methods" content="POST">
+
+<!-- Meta tag to make the website responsive to different types of devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Icon -->
+<link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
+
+<!-- =============================================== -->
+<!-- Fonts -->
+
+<!-- Fonts for grayscale theme -->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- =============================================== -->
+<!-- CSS files -->
+
+<!-- CSS for Jquery autocomplete and tooltips -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Timepicker css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+<!-- CSS for question circle -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- CSS file for bootstrap grayscale theme -->
+<link rel="stylesheet" href="css/grayscalestyles.css">
+<!-- CSS file for flag icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css">
+<!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
+<link rel="stylesheet" href="css/cwasa-reduced.css">
+
+</head>
+
+
+<body id="page-top" onload="CWASA.init();">
+
+<div id="page-container">
+<div id="content-wrap">
+<!--================================================================-->
+
+
+<!-- Navigation-->
+<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container-fluid" style="width: 100%; margin-top: 0px;">
+        <a class="navbar-brand" href="#page-top">
+        <img src="images/hand-icon.png" height="25">
+          SignLab Amsterdam
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto" role="tablist">
+                <li class="nav-item"><a class="nav-link active" role="tab" href="#About" onclick="openTab(event, 'About');">Mission</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Translate" onclick="openTab(event, 'Translate');">Translator</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#People" onclick="openTab(event, 'People');">People</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Publications" onclick="openTab(event, 'Publications');">Publications</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" role="tab" href="#Funding" onclick="openTab(event, 'Funding');">Funding</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" role="tab" href="#Tutorial" onclick="openTab(event, 'Tutorial');">SiGML</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" role="tab" href="#Resources" onclick="openTab(event, 'Resources');">Resources</a></li> -->
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Projects" onclick="openTab(event, 'Projects');">Projects</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Masthead-->
+<!-- <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">SignTranslation</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">Helps medics communicate with deaf patients.</h2>
+            <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+        </div>
+    </div>
+</header>
+ -->
+
+
+<!--================================================================-->
+
+<!-- About -->
+<section class="projects-section bg-light fadeIn" id="About">
+    <div class="container-fluid">
+        <!-- Challenge Row-->
+        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding">
+                 <!--  <div class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                  </div> -->
+                    <h4>Sign language: Linguistic structure made visible</h4>
+                    <p class="mb-4">
+                      <!-- <img src="img/elise-1.jpg" class="rounded float-right" alt="" height="300"> -->
+                      Investigating sign languages has the potential to yield important linguistic insights which are much more difficult to obtain by investigating spoken languages alone, because linguistic structures are sometimes much easier to detect in sign languages than in spoken languages. Quite literally, sign languages often make linguistic structure <b><a href="https://doi.org/10.1515/tl-2018-0012" target="_blank">directly visible</a></b>.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                    <h4>Breaking language barriers</h4>
+                    <p class="mb-4">
+                      Not only can science benefit from investigating sign languages; it also has an important role to play in diminishing the
+                      <b><a href="https://beeldverhalen.npofocus.nl/waarom-is-gebarentaal-nodig/?fbclid=IwAR3_XDN8TnlzN_WZ1l-jfN9rYIXkH_XmyOyNSgVzBREox3cxArkTL-k2G2I" target="_blank">language barrier</a></b> between deaf and hearing people. Deeper insights into the grammar of sign languages are essential in training sign language interpreters and to lay a solid foundation for sign language machine translation.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                    <h4>Our mission</h4>
+                    <p class="mb-4">
+                      We are pursuing deeper insights into sign language grammar, and we are using these insights to develop a machine translation system that can translate sentences from Dutch into Sign Language of the Netherlands (NGT), displayed by means of an animated avatar. We intend to apply this system in several settings, in particular to support parents of deaf children in the early stages of learning sign language and to
+                      <b><a href="covid19/index.html" target="_blank">
+                        improve communication between health care professionals and deaf patients.
+                      </a></b>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+            </div>
+    </div>
+</section>
+
+
+
+<!--================================================================-->
+
+<!-- Translate -->
+
+<section class="projects-section bg-light fadeIn undisplayed" id="Translate">
+    <div class="container-fluid" style="width: 100%;">
+      <div id="alertMainTran" class="alertBox"></div>
+        <!-- CWA signing avatar panel 0 -->
+        <!--================================================================-->
+        <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+        <span id="avatar" class="CWASAAvatar av0" style="vertical-align:top; text-align: left;"></span>
+        <!--================================================================-->
+
+        <span style="display:inline-block; vertical-align:top; margin-left: 30px; text-align: left;">
+            <label for="option" style="margin-right:-100px; margin-bottom:15px">
+                <h4>Choose an output option:</h4>
+            </label>
+
+            <!-- <br> -->
+            <!-- Defines the button and label displayed for the option "ZonMwDemo" -->
+              <!-- <input type="radio" id="ZonMwDemo" name="display" value="ZonMwDemo" onclick="changeDisplay(this);">
+              <label for="ZonMwDemo" style="margin-right:5px">ZonMw Demo</label> -->
+
+            <!-- <br> -->
+            <!-- Defines the button and label displayed for the option "fingerspell" -->
+              <!-- <input type="radio" id="fingerspellDisplay" name="display" value="fingerspell" onclick="changeDisplay(this);">
+              <label for="fingerspell" style="margin-right:5px">Fingerspell</label> -->
+
+            <!-- <br> -->
+            <!-- Defines the button and label displayed for the option "freestyle" -->
+            <!-- <input type="radio" id="freestyleDisplay" name="display" value="freestyle" checked onclick="changeDisplay(this);">
+            <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label> -->
+
+              <!-- <br>
+              <br>
+              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here" onkeydown="if (event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
+              <br> -->
+
+              <!-- <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
+              <textarea id="translation" type="text" class="inputBox" readonly></textarea>
+              <br> -->
+
+            <!--   <br>
+              <input type="button" class="btn btn-primary" id="play" value="Play" onclick='callPython(document.getElementById("mySiGML").value, "alertMainTran");'/>
+              <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
+              <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)"> -->
+
+              <!-- <br>
+              <br>
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
+              <br> -->
+              <!-- <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
+              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
+              <br> -->
+
+             <!--  <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
+              <br>
+              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertMainTran');}"></textarea>
+              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertMainTran");'/> -->
+
+              <form autocomplete="off">
+                <div id="autocomp" class="autocomplete" style="width:400px;">
+                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
+                </div>
+              </form>
+
+              <span id="language" class="flag-icon flag-icon-nl" onclick="changeLanguage();" data-toggle="tooltip" data-placement="bottom" title="Click on the flag to change the input language"></span>
+              <!-- This button exists so that the ZonMw scripts know that the avatar option is active -->
+              <input type="radio" id="avatarDisplay" name="display" value="demo" class="undisplayed">
+
+              <div id="minutesBox" class="varBox">
+               <label for="minutes" style="display: inline-block;">Number of minutes:</label>
+               <input type="number" id="minutes" name="minutes" min="1" max="59" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('minutes').value > 59){alertMessage('error','Please input a number between 0 and 60','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('minutes').value);}">
+              </div>
+
+              <div id="hoursBox" class="varBox">
+               <label for="hours" style="display: inline-block;">Number of hours:</label>
+               <input type="number" id="hours" name="hours" min="1" max="72" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('hours').value > 72){alertMessage('error','Please input a number between 0 and 73','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('hours').value);}">
+              </div>
+
+              <div id="daysBox" class="varBox">
+               <label for="days" style="display: inline-block;">Number of days:</label>
+               <input type="number" id="days" name="days" min="1" max="14" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('days').value > 14){alertMessage('error','Please input a number between 0 and 15','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('days').value);}">
+              </div>
+
+              <div id="weeksBox" class="varBox">
+               <label for="weeks" style="display: inline-block;">Number of weeks:</label>
+               <input type="number" id="weeks" name="weeks" min="1" max="10" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('weeks').value > 10){alertMessage('error','Please input a number between 0 and 11','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('weeks').value);}">
+              </div>
+
+              <div id="monthsBox" class="varBox">
+               <label for="months" style="display: inline-block;">Number of months:</label>
+               <input type="number" id="months" name="months" min="1" max="18" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('months').value > 18){alertMessage('error','Please input a number between 0 and 19','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('months').value);}">
+              </div>
+
+              <div id="aWeekBox" class="varBox">
+               <label for="aWeek" style="display: inline-block;">Times a week:</label>
+               <input type="number" id="aWeek" name="aWeek" min="1" max="7" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 7){alertMessage('error','Please input a number between 0 and 8','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('aWeek').value);}">
+              </div>
+
+              <div id="loneNumberBox" class="varBox">
+               <label for="loneNumber" style="display: inline-block;">Number:</label>
+               <input type="number" id="loneNumber" name="loneNumber" min="1" max="99" value="1" style="display: inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="if(1 > document.getElementById('aWeek').value > 99){alertMessage('error','Please input a number between 0 and 100','alertZonMwTran');} else{checkText(document.getElementById('mySiGML').value, document.getElementById('loneNumber').value);}">
+              </div>
+
+              <div id="dayOfTheWeekBox" class="varBox">
+                <label for="dayOfTheWeek" style="display: inline-block;">Day of the week:</label>
+                <select name="dayOfTheWeek" id="dayOfTheWeek">
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, document.getElementById('dayOfTheWeek').value);">
+              </div>
+
+              <div id="timeBox" class="md-form varBox">
+               <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
+               <input type="submit" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value,document.getElementById('timeInput').value);">
+              </div>
+
+              <br>
+              <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("mySiGML").value);'/>
+              <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+              <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
+              <br>
+              <br>
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+              <br>
+              <br>
+              <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
+              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
+              <br>
+
+        </span>
+
+
+        <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+        <div class="undisplayed" style="text-align: center;">
+
+              <span style="font-size: 90%;" >
+                Sign/Frame:
+                <input id="mySF" class="txtSF" value="0/0" type="text" />
+                &nbsp;
+                Gloss:
+                <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+                &nbsp;
+                FPS:
+                <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+              </span>
+        </div>
+
+
+        <div style="text-align: center;">
+            <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+            <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+            </textarea>
+        </div>
+
+        <br>
+
+
+        <!-- SToCA applet element panel -->
+        <!--================================================================-->
+        <div class="SToCA" tyle="text-align: center;"></div>
+        <!--================================================================-->
+    </div>
+</section>
+
+<!--================================================================-->
+
+<!-- Project info section -->
+<section class="projects-section bg-light fadeIn undisplayed" id="People">
+
+    <div class="container-fluid">
+
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+
+            <!-- Column for team -->
+            <div class="col-xl-6 col-lg-6">
+
+                <!-- Team -->
+                <div class="project-text text-center text-lg-left no-top-padding">
+
+                    <h5>Principal investigator</h5>
+                    <p class="text-black-50 mb-3">
+                      <a href="https://www.florisroelofsen.com/" target="_blank">
+                        Floris Roelofsen</a>,
+                      University of Amsterdam<br>
+                    </p>
+
+                    <h5>
+                      Researchers
+                    </h5>
+
+                    <p class="text-black-50 mb-3">
+                      Lyke Esselink, University of Amsterdam<br>
+                      Shani Mende-Gillings, University of Amsterdam<br>
+                    </p>
+
+                    <h5>
+                      Undergraduate student alumni
+                    </h5>
+
+                     <p class="text-black-50 mb-3">
+                      Lyke Esselink (2020)<br>
+                      Shani Mende-Gillings (2020)<br>
+                      Judith Corsel (2020)<br>
+                      Jasmijn Bleijlevens (2020)<br>
+                      Bram Smit (2019)<br>
+                      Sander Brinkhuijsen (2019)<br>
+                      Steven de Weille (2019)<br>
+                      Nardi Lam (2018)<br>
+                      Jetske Beks (2018)<br>
+                    </p>
+                    <!-- <hr class="d-none d-lg-block mb-0 ml-0" /> -->
+                </div>
+
+            </div>
+
+            <!-- Column for collaborators -->
+
+            <div class="col-xl-6 col-lg-6">
+
+                <div class="project-text text-center text-lg-left no-top-padding">
+                    <h5>
+                      Collaborators and advisors
+                    </h5>
+
+                    <p class="text-black-50 mb-3">
+                      Beppie van den Bogaerde, University of Amsterdam<br>
+                      Onno Crasborn, University of Nijmegen<br>
+                      <a href="https://www.unige.ch/fti/en/faculte/departements/dtim/membrestim/david/" target="_blank">Bastien David</a>,
+                        University of Geneva<br>
+                      Roland Pfau, University of Amsterdam<br>
+                      <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a>, University of East Anglia<br>
+                      Marijke Scheffener, University of Amsterdam<br>
+                      Anika Smeijers, Amsterdam University Medical Centre<br>
+                      Martine en Roos Wattel, <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!--================================================================-->
+
+<!-- Publications section -->
+<section class="projects-section bg-light fadeIn undisplayed" id="Publications">
+
+      <div class="container-fluid">
+        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding">
+                  <h4>Sign Language Translation in a Healthcare Setting</h4>
+                    <p class="mb-4">
+                      <br>
+                      <i class="material-icons">download</i><a href="publications/COVID-19.pdf" download="COVID-19">Download paper</a> <br>
+                      <b>Year:</b> 2021 <br>
+                      <b>Authors:</b> L.D. Esselink, S.M. Mende-Gillings, F. Roelofsen, A.S. Smeijers <br>
+                      <b>Type:</b> Manuscript submitted for publication <br>
+                      <a href="#collapseOne" data-toggle="collapse">Abstract <i class="material-icons">arrow_drop_down</i></a>
+                    </p>
+                    <div id="collapseOne" class="collapse">
+                  <p class="mb-4">
+                    It is challenging for healthcare professionals to communicate with Deaf patients,
+                    especially in times of COVID-19. Sign language interpreters cannot always enter hospitals and
+                    clinics, and face masks make lipreading impossible.<br>
+                    We present an application which allows healthcare professionals to translate sentences
+                    that are frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign
+                    Language of the Netherlands (NGT). Translations are displayed by means of videos and
+                    avatar animations. The architecture of the system is such that it could be straightforwardly
+                    extended to other sign languages. We gratefully acknowledge funding from the Netherlands
+                    Organisation for Innovation in Healthcare (ZonMw) through the
+              <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
+                  </p>
+                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                  <h4>Multidimensionality in Sign Language Synthesis: Translation of Dutch into Sign Language of the Netherlands</h4>
+                    <p class="mb-4">
+                      <br>
+                      <i class="material-icons">download</i><a href="publications/Corsel.pdf" download="Corsel">Download paper</a> <br>
+                      <b>Year:</b> 2020 <br>
+                      <b>Author:</b> S.M. Mede-Gillings <br>
+                      <b>Type:</b> Bachelor thesis <br>
+                      <a href="#collapseTwo" data-toggle="collapse">Abstract <i class="material-icons">arrow_drop_down</i></a>
+                    </p>
+                    <div id="collapseTwo" class="collapse">
+                  <p class="mb-4">
+                    This paper explores the implementation of a translator to sign language, using the JASigning avatarsoftware.
+                    Specifically, translation of Dutch into Sign Language of the Netherlands (NGT).
+                    As Dutch has been translated to a textual version of NGT in previous research, this research translated
+                    from textual NGT to synthesised NGT, the output signed by an avatar.
+                    This is one of three papers, each focusing on a different aspect of the translator: Lexical Resources,
+                    the Signing Space, and Multidimensionality. This paper pertains to the latter, and thus attempts to
+                    implement multiple dimensions into the avatar: the manual and non-manual component, which are both necessary
+                    to properly articulate a sign. The non-manual component of a sign being, for example, a facial expression,
+                    a head shake, the posture ofthe signer, etc. Specifically, it attempts to implement the non-manual markers
+                    paired with interrogative and negative constructs in NGT. Although the scope of this project is limited,
+                    it could provide a decent foundation for further research.
+                  </p>
+                </div>
+                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                  <h4>Lexical resources for sign language synthesis: The translation of Dutch to Sign Language of the Netherlands</h4>
+                  <p class="mb-4">
+                    <br>
+                    <i class="material-icons">download</i><a href="publications/Esselink.pdf" download="Esselink">Download paper</a> <br>
+                    <b>Year:</b> 2020 <br>
+                    <b>Author:</b> S.M. Mede-Gillings <br>
+                    <b>Type:</b> Bachelor thesis <br>
+                    <a href="#collapseThree" data-toggle="collapse">Abstract <i class="material-icons">arrow_drop_down</i></a>
+                  </p>
+                  <div id="collapseThree" class="collapse">
+                  <p class="mb-4">
+                    Deaf people oftentimes have no choice but to communicate in the lingua franca of their country,
+                    despite the fact that this is a second language for them. Their ability to read and write is
+                    significantly worse than that of a hearing person. Additionally, if a deaf child is born into a
+                    family of hearing parents, it is vital that the parents communicate with the child through sign
+                    language as soon as possible, otherwise the language region of that child's brain will be
+                    underdeveloped. There are currently few resources available for people to learn Sign Language
+                    of the Netherlands (NGT). A tool that makes this possible would be invaluable to those who need it. <br>
+                    This thesis investigates what components are necessary to build a system that uses an avatar to
+                    translate a Dutch sentence to NGT. On the basis of the workings of NGT and previous research on
+                    the matter, three main components are devised and implemented: software for sign language synthesis,
+                    lexical resources for encoding signs, and grammatical resources for structuring sentences.
+                    Results show a proof of concept with a corpus of 2226 signs, the ability to make correct use of
+                    classifiers, and the abilities to fingerspell any word that is not in the corpus and convey numbers
+                    correctly. However, the corpus contains a number of errors and of which manual errors and unnatural
+                    mouth signs should particularly be improved. Moreover, further research is necessary to improve the
+                    comprehensibility of signs.
+                  </p>
+                </div>
+                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left">
+                  <h4>The signing space for the synthesis of directional verbs in NGT</h4>
+                  <p class="mb-4">
+                    <br>
+                    <i class="material-icons">download</i><a href="publications/Mende_Gillings.pdf" download="Mende_Gillings">Download paper</a> <br>
+                    <b>Year:</b> 2020 <br>
+                    <b>Author:</b> S.M. Mede-Gillings <br>
+                    <b>Type:</b> Bachelor thesis <br>
+                    <a href="#collapseFour" data-toggle="collapse">Abstract <i class="material-icons" id="arrow_drop_down">arrow_drop_down</i></a>
+                  </p>
+                  <div id="collapseFour" class="collapse">
+                  <p class="mb-4">
+                    Hearing parents who have deaf children are often put in a difficult position.
+                    They most likely know no sign language and resources for learning are limited and expensive.
+                    Research into sign language translation and synthesis has increased in the past two decades,
+                    due to a growing interest into making public spaces and services more accessible to Deaf people.<br>
+                    This research looks at the potential of a translator from Dutch to Dutch sign language (NGT)
+                    using a sign language avatar. In particular the focus lies on the synthesis of directional verbs,
+                    a critical grammatical component of sign language. The implementation is very limited and therefore
+                    the sentences it produces are not always comprehensible and the signs do not always look natural.
+                    It does, however, also demonstrate the potential of a sign language avatar as a tool for learning sign language.
+                  </p>
+                </div>
+                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+            </div>
+      </div>
+
+</section>
+
+<!--================================================================-->
+
+<!-- Funding section -->
+<!-- <section class="projects-section bg-white fadeIn undisplayed" id="Funding">
+
+      <div class="container-fluid">
+          <div class="project-text pt-0 text-lg-left no-top-padding">
+              <h2>Funding</h2>
+              <p class="text-black-50 mb-0">
+                We gratefully acknowledge funding from the Netherlands Organisation for Innovation in Healthcare (ZonMw) through the
+                <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
+              </p> -->
+              <!-- <hr class="d-none d-lg-block mb-0 ml-0" /> -->
+         <!--  </div>
+      </div>
+
+</section> -->
+
+<!--================================================================-->
+
+
+<!-- Tutorial section -->
+<section class="projects-section bg-white fadeIn undisplayed" id="Tutorial">
+
+      <div class="container-fluid">
+        <div id="alertTutorial" class="alertBox"></div>
+        <h2 style="margin-bottom: 20px; text-align: center;">Tutorial</h2>
+
+        <!-- <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4"></div> -->
+
+          <div class="col-md-6">
+            <textarea id="explSiGML1" readonly style="width: 350px; height: 500px;">
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HUIS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hYs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="dr"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="tip"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm location="shouldertop"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="u" direction="dr" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
+            </textarea>
+          </div>
+
+           <div class="col-md-6">
+              <span class="CWASAAvatar av1" style="width: 350px; height: 400px;"></span>
+              <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value,1)'/>
+              <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML(1);'/>
+              <br>
+
+              <br>
+              <label style="display: none;">Adjust speed: </label>
+              <span class="undisplayed" style="margin-bottom:5px"></span>
+              <br>
+
+              <br>
+              <label style="display: none;">Gloss: </label>
+              <input class="undisplayed" value="[none]" type="text">
+          </div>
+
+        </div>
+
+
+        <!-- Defines the bottom SiGML text field and avatar with buttons -->
+        <div class="row">
+
+          <div class="col-md-4">
+            <span id="explanation" class="explSpan">
+              <div id="explText" class="explSiGML"></div>
+            </span>
+          </div>
+
+          <div class="col-md-4">
+            <span style="display:inline-block; vertical-align:top; margin-right:20px; margin-left: 20px;">
+              <h4>Choose an output option:</h4>
+              <br>
+              <!-- Defines the button and label displayed for the option "explanation" -->
+              <input type="radio" id="explainDisplay" name="expl" value="explain" onclick="changeDisplay(this);">
+              <label for="avatar" style="margin-right: 5px">Explanation SiGML</label>
+              <br>
+
+              <!-- Defines the button and label displayed for the option "explain+ava" -->
+              <input type="radio" name="expl" id="explainAva" value="explAva" onclick="changeDisplay(this);" checked>
+              <label for="explainAva" style="margin-right:5px">Explanation SiGML + avatar animation</label>
+              <br>
+
+
+              <textarea id="SiGMLTut" placeholder="Enter the gloss(es) whose SiGML you would like explained here"></textarea>
+              <br>
+
+
+              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value, "alertTutorial",2);'/>
+              <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML(2);'/>
+              <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name,2)">
+              <br>
+
+              <br>
+              <label id="speedLabelTut" for="speedAdjTut" style="display: none;">Adjust speed: </label>
+              <span id="speedAdjTut" class="undisplayed" style="margin-bottom:5px"></span>
+              <br>
+
+              <br>
+              <label id="glossLabelTut" for="outputGlossTut" style="display: none;">Gloss: </label>
+              <input id="outputGlossTut" class="undisplayed" value="[none]" type="text">
+              <br>
+            </span>
+          </div>
+
+          <div class="col-md-4">
+            <span id="avatarTut" class="CWASAAvatar av2" style="width: 350px"></span>
+          </div>
+        </div>
+
+      </div>
+
+</section>
+
+<!--================================================================-->
+
+<!-- Resources section -->
+<section class="projects-section bg-white fadeIn undisplayed" id="Resources">
+
+      <div class="container-fluid">
+          <div class="project-text pt-0 text-lg-left no-top-padding">
+              <h2>Further resources</h2>
+              <p class="mb-3 text-black-50">
+                The
+                <a href="https://www.gebarencentrum.nl/" target="_blank">Dutch Sign Language Centre</a>
+                offers an online video dictionary containing more than 16.000 signs in Sign Language of the Netherlands.
+              </p>
+              <p class="mb-3 text-black-50">
+                On the
+                <a href="https://www.wattelt.org/corona/" target="_blank">Wattelt!</a> website
+                you can find a video with general advice for health care professional with deaf patients in times of COVID-19.
+                The video also teaches you fifteen essential signs.
+              </p>
+              <hr class="d-none d-lg-block mb-0 ml-0" />
+          </div>
+      </div>
+
+</section>
+
+<!--================================================================-->
+
+<!-- Projects -->
+<section class="projects-section bg-light fadeIn undisplayed" id="Projects">
+    <div class="container-fluid">
+        <!-- Challenge Row-->
+        <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+            <!-- <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding"> -->
+            <div class="project-text my-auto text-center text-lg-left no-top-padding">
+                <h4><a class="nav-link" href="https://projects.illc.uva.nl/signlanguage/covid19">COVID-19 ZonMw project</a></h4>
+                <p class="mb-4">
+                  As a result of COVID-19, the treatment and diagnosis of deaf patients has become more difficult. Facemasks are mandatory in many settings, making lipreading no longer an option and restrictions can inhibit access to sign language interpreters. This in turn limits effective communication between healthcare workers and deaf patients which is a problem in a setting where it is crucial. To help resolve this issue a tool was developed for translating question that are common in the diagnosis and treatment of COVID-19 into NGT. We gratefully acknowledge funding from the Netherlands Organisation for Innovation in Healthcare (ZonMw) through the
+            <a href="https://www.zonmw.nl/nl/over-zonmw/coronavirus/programmas/programma-detail/covid-19-programma/" target="_blank">COVID-19 programme</a>.
+                </p>
+                <hr class="d-none d-lg-block mb-0 ml-0" />
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+<!-- Footer-->
+<footer class="footer bg-white small text-center text-black-50"><div class="container">&copy;2020 SignLab Amsterdam <i class="material-icons">email</i>: signlab.amsterdam@gmail.com</div></footer>
+
+
+<!-- Javascripts -->
+
+<!-- Jquery JS is loaded in the beginning, see above -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+//Solves naming conflicts between jquery ui and bootstrap
+  $.widget.bridge('uitooltip', $.ui.tooltip);
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+<!-- Grayscale theme JS-->
+<script type="text/javascript" src="js/grayscalescript.js"></script>
+<!-- Javascript for smooth scrolling-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- script for timepicker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+<!-- script for generating avatar animations -->
+<script type="text/javascript" src="cwa/allcsa.js"> </script>
+
+
+<!-- =============================================== -->
+
+<!-- script for communication with and set up of the avatar -->
+<script language="javascript" type="text/javascript" src="js/avatar.js"></script>
+<!-- script for shared functions across all pages -->
+<script language="javascript" type="text/javascript" src="js/general.js"></script>
+<!-- script specific to main page -->
+<script language="javascript" type="text/javascript" src="js/signlab.js"></script>
+<!-- These variables are defined so that the dicts from the ZonMw project can be used -->
+<script type="text/javascript">
+  var sentPath;
+  var vidPath;
+  var varPath;
+</script>
+</div>
+</body>
+</html>

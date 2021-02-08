@@ -1,4 +1,9 @@
 {
+    "publications": "sigmlsentences/publications.sigml",
+    "welkom": "sigmlsentences/welkom.sigml",
+    "people": "sigmlsentences/people.sigml",
+    "projects": "sigmlsentences/projects.sigml",
+    "demo": "sigmlsentences/demo.sigml",
     "I": "sigmlsentences/Ik.sigml",
     "You": "sigmlsentences/U.sigml",
     "More": "sigmlsentences/Meer.sigml",
