@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<par_motion speed="0.5" rest="true"><?xml version="1.0" encoding="UTF-8"?>
 <sigml>
     <hamgestural_sign gloss="U">
         <sign_manual>
@@ -157,7 +157,7 @@
         </split_handconfig>
           <handconfig extfidir="o" palmor="u" second_palmor="ul"/>
           <location_bodyarm location="chest" side="before" />
-        <par_motion speed="0.5">
+        <par_motion speed="0.5" rest="true">
           <directedmotion curve="u" size="small" direction="ur"/>
           <directedmotion direction="r" size="small"/>
         </par_motion>

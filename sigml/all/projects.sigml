@@ -140,12 +140,13 @@
         </split_handconfig>
           <handconfig extfidir="o" palmor="u" second_palmor="ul"/>
           <location_bodyarm location="chest" side="before" />
-        <par_motion speed="0.5">
+        <par_motion speed="0.5" rest="true">
           <directedmotion curve="u" size="small" direction="ur"/>
           <directedmotion direction="r" size="small"/>
         </par_motion>
       </sign_manual>
   </hamgestural_sign>
+  
 <hamgestural_sign gloss='STANDAARD_POSE'>
        <sign_manual both_hands='true' lr_symm='true'>
 		<handconfig extfidir='dl' /> <handconfig palmor='l' />
