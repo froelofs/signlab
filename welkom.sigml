@@ -108,7 +108,7 @@
       <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
       <handconfig extfidir="il" second_extfidir="ul"/>
       <handconfig palmor="r" second_palmor="dr"/>
-      <location_bodyarm contact="close" location="shoulders"/>
+      <location_bodyarm contact="close" location="chest"/>
     </sign_manual>
   </hamgestural_sign>
   <hamgestural_sign gloss="SIGNLAB AMSTERDAM">
