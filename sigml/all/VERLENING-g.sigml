@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERLENING">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vlenI"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint"/>
+        <location_hand digits="2" location="midjoint"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="l" curve_size="small" direction="or" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

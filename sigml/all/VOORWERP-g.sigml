@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VOORWERP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="voEr"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
+      <handconfig extfidir="or" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="ul" second_palmor="l"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

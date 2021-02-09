@@ -68,7 +68,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto" role="tablist">
                 <li class="nav-item"><a class="nav-link active" role="tab" href="#About" onclick="openTab(event, 'About');">Mission</a></li>
-                <li class="nav-item"><a class="nav-link" role="tab" href="#Translate" onclick="openTab(event, 'Translate');">Translator</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" href="#Translate" onclick="openTab(event, 'Translate');">Avatar Translation</a></li>
                 <li class="nav-item"><a class="nav-link" role="tab" href="#People" onclick="openTab(event, 'People');">People</a></li>
                 <li class="nav-item"><a class="nav-link" role="tab" href="#Publications" onclick="openTab(event, 'Publications');">Publications</a></li>
                 <!-- <li class="nav-item"><a class="nav-link" role="tab" href="#Funding" onclick="openTab(event, 'Funding');">Funding</a></li> -->
@@ -148,7 +148,19 @@
 <!-- Translate -->
 
 <section class="projects-section bg-light fadeIn undisplayed" id="Translate">
-    <div class="container-fluid" style="width: 100%;">
+
+  <div id="disclaimerAvatar" class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding" style="width: 70%;">
+  <h4>Disclaimer</h4>
+   <p class="mb-4">
+      The translation tool on this website explores the possibility of translating text to sign language using animated sign language avatars. It is meant to serve as an option for easing communication in situations where professional sign language interpreters cannot be employed, such as in healthcare. It is challenging for healthcare professionals to communicate with <b><a href="https://doi.org/10.1016/S0140-6736(11)61143-4" target="_blank">Deaf patients</a></b>, especially in times of <b><a href="https://doi.org/10.1001/jamaoto.2020.1705" target="_blank">COVID-19</a></b>. Sign language interpreters cannot always enter hospitals and clinics, facemasks make <b><a href="https://doi.org/10.1136/bmj.m2372" target="_blank">lipreading impossible</a></b> and interpreting via videorelay is not always viable. A demo is available of the translations of various sentences frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign Language of the Netherlans (NGT) to illustrate what is possible with sign language avatars.
+    </p>
+    <p>
+      We would like to emphasise that a qualified sign language interpreter should, whenever available, always be preferred over a machine translation system. Still, it is worth investigating the extent to which a machine translation system making use of avatar technology can be of help in situations in which a human interpreter cannot be employed.
+   </p>
+   <input type="button" class="button" value="Demo" onclick="removeDisclaimer();">
+  </div>
+
+    <div id="avatarTranslator" class="undisplayed" style="width: 100%;">
       <div id="alertMainTran" class="alertBox"></div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->

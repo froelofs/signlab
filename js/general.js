@@ -8,12 +8,12 @@ $(document).ready(function(){
 function addSuggestion(text, alertID){
   showBusyState();
   $.ajax({
-    url : 'suggestions.php',
+    url : '../suggestions.php',
     type : 'POST',
     data: {"input": text},
-    dataType : 'json',
-    success : onSuccess,
-    error : onError,
+    dataType: "json",
+    success: onSuccess,
+    error: onError,
   });
   function onSuccess(result) {
     if (result.errorcode) {
@@ -31,9 +31,7 @@ function addSuggestion(text, alertID){
     showBusyState(false);
   }
   function onError(xhr, error) {
-    console.log ('Something went wrong. Error message: '+error);
-    console.log("data: " + data);
-    console.log("text: " + text);
+    console.log ('Something went wrong. Error message: '+error + ", " + xhr.responseText);
     showBusyState(false);
     alertMessage("error", 'Oops, something went wrong', alertID);
   }

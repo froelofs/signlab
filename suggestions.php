@@ -3,15 +3,15 @@
 	$output="";
 
 	if (empty($_REQUEST['input'])) {
-	$errorcode=-1;
-	$error="Please specify some input";
+		$errorcode=-1;
+		$error="Please specify some input";
 	}
 	else{
-		$input = $_REQUEST['input'] + "";
+		$input = $_REQUEST['input'];
 
 		$fileName = "suggestions.txt";
 		if ( !file_exists($fileName) ) {
-	    $error = "File " + $fileName + " not found";
+	    	$error = "File " + $fileName + " not found";
 	  	}
 	  	else{
 	  		//opens file in append mode
@@ -24,7 +24,7 @@
 				fwrite($fp, "\n");    
 				fclose($fp);  
 				  
-				$output = "Suggestion successfully saved";
+				$output = $input;
 			} 
 		}
 	}

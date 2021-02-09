@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VIES">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vi:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="opposed" thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="nose">
+        <location_hand digits="12" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion direction="do" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="pinch12" mainbend="bent"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

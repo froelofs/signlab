@@ -142,3 +142,8 @@ function changeLanguage(onload=false) {
 $(window).on("load", function(){
   changeLanguage(true);
 } );
+
+function removeDisclaimer(){
+  document.getElementById("avatarTranslator").setAttribute("class","container-fluid");
+  document.getElementById("disclaimerAvatar").setAttribute("class","undisplayed");
+}

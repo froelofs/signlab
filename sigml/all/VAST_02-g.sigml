@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="VAST_02">
+  <hamgestural_sign gloss="VAST">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vAs"/>
