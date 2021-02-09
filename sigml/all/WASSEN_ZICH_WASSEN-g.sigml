@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="WASSEN_ZICH_WASSEN">
+  <hamgestural_sign gloss="WASSEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vAs"/>

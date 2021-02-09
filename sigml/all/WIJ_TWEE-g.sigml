@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="WIJ_TWEE">
+  <hamgestural_sign gloss="WIJ">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vvE"/>

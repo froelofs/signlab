@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERWARD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="T05"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="head" side="right_at"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="dl" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" second_extfidir="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="close">
+          <location_hand digits="3" location="base" side="dorsal"/>
+          <location_hand digits="3" location="base" side="palmar"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

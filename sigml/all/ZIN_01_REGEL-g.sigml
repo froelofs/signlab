@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="ZIN_01_REGEL">
+  <hamgestural_sign gloss="ZIN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="zIn"/>

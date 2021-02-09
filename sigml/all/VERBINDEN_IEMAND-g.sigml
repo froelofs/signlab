@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERBINDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vbIn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="d" second_extfidir="ol" second_palmor="dl"/>
+        <handconfig extfidir="r" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+        <location_hand digits="2" location="nail"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="l" start="dr"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

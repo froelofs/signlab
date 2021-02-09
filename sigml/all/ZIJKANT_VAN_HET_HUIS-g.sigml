@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="ZIJKANT_VAN_HET_HUIS">
+  <hamgestural_sign gloss="ZIJKANT">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="h9_ys"/>
