@@ -192,7 +192,13 @@ $( function() {
       if (ui.item != null){
         document.getElementById('mySiGML').value = text;
         console.log("selected: " + ui.item.value);
-        var text = checkText(ui.item.value);
+        // Check for demo version active
+        if (typeof sentPath === 'undefined'){
+          var text = checkText(ui.item.value,"alertMainTran");
+        }
+        else{
+          var text = checkText(ui.item.value);
+        }
         if (text == false){
          variable = true;
         }
