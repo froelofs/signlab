@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEBEURD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="x@b2:r"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_hand digits="3" location="base" side="palmar"/>
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+      </handconstellation>
+      <rpt_motion alternating="true" repetition="fromstart">
+        <circularmotion axis="r"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

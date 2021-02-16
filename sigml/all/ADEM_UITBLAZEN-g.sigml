@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="ADEM_UITBLAZEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="L19]"/>
+        <mouth_gesture movement="L19"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

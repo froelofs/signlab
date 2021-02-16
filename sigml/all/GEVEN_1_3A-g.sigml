@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="GEVEN_1_3A">
-    <sign_nonmanual/>
+  <hamgestural_sign gloss="GEVEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xef:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345"  bend2="bent" bend3="bent" bend4="bent" bend5="bent" thumbpos="opposed"/>
       <handconfig extfidir="uor" />

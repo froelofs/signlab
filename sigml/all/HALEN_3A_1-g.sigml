@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="HALEN_3A_1">
+  <hamgestural_sign gloss="HALEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="hAl@"/>

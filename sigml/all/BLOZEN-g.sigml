@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="BLOZEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="C02]"/>
+        <mouth_gesture movement="C02"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">

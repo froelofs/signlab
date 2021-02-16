@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GAT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xat"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head" second_location="head" second_side="right_beside" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="i" size="small" start="u"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

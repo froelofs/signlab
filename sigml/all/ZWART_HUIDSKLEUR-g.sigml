@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZWART">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zvA:t"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="head"/>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="i" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

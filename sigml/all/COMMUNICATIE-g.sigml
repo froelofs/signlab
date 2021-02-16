@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="COMMUNICATIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kOmikasi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig ceeopening="slack" handshape="ceeall"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin" second_location="shouldertop" side="right_at"/>
+      <split_motion>
+        <seq_motion>
+          <directedmotion direction="o" size="small"/>
+          <directedmotion direction="i"/>
+          <directedmotion direction="o"/>
+          <directedmotion direction="i"/>
+          <directedmotion direction="o" size="small"/>
+        </seq_motion>
+        <seq_motion>
+          <directedmotion direction="i" size="small"/>
+          <directedmotion direction="o"/>
+          <directedmotion direction="i"/>
+          <directedmotion direction="o"/>
+          <directedmotion direction="i" size="small"/>
+        </seq_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

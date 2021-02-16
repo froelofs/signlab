@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEVEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xef:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig extfidir="o" second_extfidir="ol" />
+      <handconfig palmor="u" second_palmor="ul"/>
+      <handconfig handshape="flat" mainbend="0.50.50.5"  thumbpos="across"/>
+      <tgt_motion>
+          <directedmotion direction="or" size="big" speed="0.8"/>
+       </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

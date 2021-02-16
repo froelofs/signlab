@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="BAAN_WERK">
+  <hamgestural_sign gloss="BAAN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="ba:n"/>

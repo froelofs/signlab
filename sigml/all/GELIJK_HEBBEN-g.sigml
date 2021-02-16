@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="GELIJK_HEBBEN">
+  <hamgestural_sign gloss="GELIJK">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="xE_ik"/>
