@@ -144,8 +144,63 @@
 
 
 <!-- About -->
+<!-- <section class="projects-section bg-light fadeIn undisplayed" id="Translate">
+    <div class="container-fluid"> -->
+        <!-- Challenge Row-->
+    <!--     <div class="row align-items-start no-gutters mb-4 mb-lg-5"> -->
+
+            <!-- Column for info -->
+            <!-- <div class="col">
+                <div class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding">
+                   <p class="mb-4">
+                      The translation tool on this website explores the possibility of translating text to sign language using animated sign language avatars. It is meant to serve as an option for easing communication in situations where professional sign language interpreters cannot be employed, such as in healthcare. 
+                    </p>
+                    <h5>Case Study</h5>
+                    <p class="mb-4">
+                      It is challenging for healthcare professionals to communicate with Deaf patients <b><a href="https://doi.org/10.1016/S0140-6736(11)61143-4" target="_blank">[Felllinger, Holzinger and Pollard, 2012]</a></b>, especially in times of COVID-19 <b><a href="https://doi.org/10.1001/jamaoto.2020.1705" target="_blank">[Mckee, Moran and Zazove, 2020]</a></b>. Sign language interpreters cannot always enter hospitals and clinics, facemasks make lipreading impossible <b><a href="https://doi.org/10.1136/bmj.m2372" target="_blank">[Grote and Izagaren,2020]</a></b> and interpreting via videorelay is not always viable. A demo is available of the translations of various sentences frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign Language of the Netherlans (NGT) to illustrate what is possible with sign language avatars. Just click on the GIF of the avatar to the right.
+                    </p>
+                    <h5>Disclaimer</h5>
+                    <p>
+                      We would like to emphasise that a qualified sign language interpreter should, whenever available, always be preferred over a machine translation system. Still, it is worth investigating the extent to which a machine translation system making use of avatar technology can be of help in situations in which a human interpreter cannot be employed.
+                   </p>
+                   <h5>Additional resources</h5>
+                   <p>
+                     On the
+                     <a href="https://www.wattelt.org/corona/" target="_blank">Wat Telt!</a> website
+                     you can find a video with general advice for health care professional with deaf patients in times of COVID-19. Additionally, this video teaches you fifteen essential signs. Would you like to learn more about the target audience of deaf and hard of hearing people and how to best provide assistance to these people? Sign up for the <b><a href="https://www.rino.nl/cursus/hulpverlening-dove-en-slechthorende-patinten" target="_blank">two-day course providing assistance to deaf and hard of hearing patients at RINO</a></b>! This course is taught by Dr. Anika Smeijers, Prof. Onno Crasborn and Roos Wattel.
+                   </p>
+                </div>
+
+            </div> -->
+            <!-- Column for GIF -->
+            <!-- <div class="col-5">
+              <img src="htmlvideos/demo.gif" class="img-fluid" alt="Avatar signing 'YOU CURIOUS AUTOMATIC SIGN LANGUAGE TRANSLATION?'" onclick="openTab(event, 'TranslateDemo');startPose();">
+            </div>
+          </div>
+    </div> -->
+<!-- </section> -->
+
+
+
+<!--================================================================-->
+
+<!-- Translate -->
+
 <section class="projects-section bg-light fadeIn undisplayed" id="Translate">
-    <div class="container-fluid">
+
+  <!-- <div id="disclaimerAvatar" class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding" style="width: 70%;">
+  <h4>Disclaimer</h4>
+   <p class="mb-4">
+      The translation tool on this website explores the possibility of translating text to sign language using animated sign language avatars. It is meant to serve as an option for easing communication in situations where professional sign language interpreters cannot be employed, such as in healthcare. It is challenging for healthcare professionals to communicate with <b><a href="https://doi.org/10.1016/S0140-6736(11)61143-4" target="_blank">Deaf patients</a></b>, especially in times of <b><a href="https://doi.org/10.1001/jamaoto.2020.1705" target="_blank">COVID-19</a></b>. Sign language interpreters cannot always enter hospitals and clinics, facemasks make <b><a href="https://doi.org/10.1136/bmj.m2372" target="_blank">lipreading impossible</a></b> and interpreting via videorelay is not always viable. A demo is available of the translations of various sentences frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign Language of the Netherlans (NGT) to illustrate what is possible with sign language avatars.
+    </p>
+    <p>
+      We would like to emphasise that a qualified sign language interpreter should, whenever available, always be preferred over a machine translation system. Still, it is worth investigating the extent to which a machine translation system making use of avatar technology can be of help in situations in which a human interpreter cannot be employed.
+   </p>
+    <input type="button" class="button" value="Demo" onclick="removeDisclaimer();">
+   <img src="htmlvideos/demo.gif" class="img-fluid" alt="Avatar signing 'YOU CURIOUS AUTOMATIC SIGN LANGUAGE TRANSLATION?'" onclick="removeDisclaimer();startPose();">
+  </div> -->
+
+  <div class="container-fluid" id="disclaimerAvatar">
         <!-- Challenge Row-->
         <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
@@ -174,33 +229,12 @@
             </div>
             <!-- Column for GIF -->
             <div class="col-5">
-              <img src="htmlvideos/demo.gif" class="img-fluid" alt="Avatar signing 'YOU CURIOUS AUTOMATIC SIGN LANGUAGE TRANSLATION?'" onclick="openTab(event, 'TranslateDemo');startPose();">
+              <img src="htmlvideos/demo.gif" class="img-fluid" alt="Avatar signing 'YOU CURIOUS AUTOMATIC SIGN LANGUAGE TRANSLATION?'" onclick="removeDisclaimer(); startPose();">
             </div>
           </div>
     </div>
-</section>
 
-
-
-<!--================================================================-->
-
-<!-- Translate -->
-
-<section class="projects-section bg-light fadeIn undisplayed" id="TranslateDemo">
-
-  <!-- <div id="disclaimerAvatar" class="project-text pb-1 w-100 my-auto text-center text-lg-left no-top-padding" style="width: 70%;">
-  <h4>Disclaimer</h4>
-   <p class="mb-4">
-      The translation tool on this website explores the possibility of translating text to sign language using animated sign language avatars. It is meant to serve as an option for easing communication in situations where professional sign language interpreters cannot be employed, such as in healthcare. It is challenging for healthcare professionals to communicate with <b><a href="https://doi.org/10.1016/S0140-6736(11)61143-4" target="_blank">Deaf patients</a></b>, especially in times of <b><a href="https://doi.org/10.1001/jamaoto.2020.1705" target="_blank">COVID-19</a></b>. Sign language interpreters cannot always enter hospitals and clinics, facemasks make <b><a href="https://doi.org/10.1136/bmj.m2372" target="_blank">lipreading impossible</a></b> and interpreting via videorelay is not always viable. A demo is available of the translations of various sentences frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign Language of the Netherlans (NGT) to illustrate what is possible with sign language avatars.
-    </p>
-    <p>
-      We would like to emphasise that a qualified sign language interpreter should, whenever available, always be preferred over a machine translation system. Still, it is worth investigating the extent to which a machine translation system making use of avatar technology can be of help in situations in which a human interpreter cannot be employed.
-   </p>
-    <input type="button" class="button" value="Demo" onclick="removeDisclaimer();">
-   <img src="htmlvideos/demo.gif" class="img-fluid" alt="Avatar signing 'YOU CURIOUS AUTOMATIC SIGN LANGUAGE TRANSLATION?'" onclick="removeDisclaimer();startPose();">
-  </div> -->
-
-    <div id="avatarTranslator" class="container-fluid" style="width: 100%;">
+    <div id="avatarTranslator" class="undisplayed" style="width: 100%;">
       <div id="alertMainTran" class="alertBox"></div>
         <!-- CWA signing avatar panel 0 -->
         <!--================================================================-->
@@ -209,54 +243,6 @@
         <!--================================================================-->
 
         <span style="display:inline-block; vertical-align:top; margin-left: 30px; text-align: left;">
-            <!-- <label for="option" style="margin-right:-100px; margin-bottom:15px">
-                <h4>Choose an output option:</h4>
-            </label> -->
-
-            <!-- <br> -->
-            <!-- Defines the button and label displayed for the option "ZonMwDemo" -->
-              <!-- <input type="radio" id="ZonMwDemo" name="display" value="ZonMwDemo" onclick="changeDisplay(this);">
-              <label for="ZonMwDemo" style="margin-right:5px">ZonMw Demo</label> -->
-
-            <!-- <br> -->
-            <!-- Defines the button and label displayed for the option "fingerspell" -->
-              <!-- <input type="radio" id="fingerspellDisplay" name="display" value="fingerspell" onclick="changeDisplay(this);">
-              <label for="fingerspell" style="margin-right:5px">Fingerspell</label> -->
-
-            <!-- <br> -->
-            <!-- Defines the button and label displayed for the option "freestyle" -->
-            <!-- <input type="radio" id="freestyleDisplay" name="display" value="freestyle" checked onclick="changeDisplay(this);">
-            <label for="freestyle" style="margin-right:5px"  data-toggle="tooltip" data-placement="bottom" title="This functionality is experimental. Accuracy of the translation cannot be guaranteed.">Avatar translation</label> -->
-
-              <!-- <br>
-              <br>
-              <textarea id="mySiGML" rows="2" name= "mySiGML" class="inputBox" style="width: 100%; resize: none" placeholder="Enter a word or sentence here" onkeydown="if (event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
-              <br> -->
-
-              <!-- <label id="tranLabel" for="translation" style="display:inline-block;">Translation: </label>
-              <textarea id="translation" type="text" class="inputBox" readonly></textarea>
-              <br> -->
-
-            <!--   <br>
-              <input type="button" class="btn btn-primary" id="play" value="Play" onclick='callPython(document.getElementById("mySiGML").value, "alertMainTran");'/>
-              <input type="button" id="stopButton" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();'/>
-              <input type="button" id="replayButton" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButton').name)"> -->
-
-              <!-- <br>
-              <br>
-              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
-               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
-              <br>
-              <br> -->
-              <!-- <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
-              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
-              <br> -->
-
-             <!--  <label for="suggestions" style="display: inline-block;">Suggestions box: </label>
-              <br>
-              <textarea id="suggestions" class="inputBox" placeholder="Enter your suggestion here. If you have more than one word to suggest, separate them with ';'" onkeydown="if (event.keyCode == 13){event.preventDefault(); addSuggestion(document.getElementById('suggestions').value, 'alertMainTran');}"></textarea>
-              <input type="button" value="Send" style="display: inline-block;" onclick='addSuggestion(document.getElementById("suggestions").value, "alertMainTran");'/> -->
-
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
                   <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
