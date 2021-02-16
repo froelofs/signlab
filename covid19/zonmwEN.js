@@ -194,10 +194,10 @@ $( function() {
         console.log("selected: " + ui.item.value);
         // Check for demo version active
         if (typeof sentPath === 'undefined'){
-          var text = checkText(ui.item.value,"alertMainTran");
+          var text = checkText(ui.item.value);
         }
         else{
-          var text = checkText(ui.item.value);
+          var text = checkText(ui.item.value,"alertMainTran");
         }
         if (text == false){
          variable = true;
