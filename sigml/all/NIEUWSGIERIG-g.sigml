@@ -14,7 +14,7 @@
         <location_hand digits="32" location="base"/>
       </location_bodyarm>
       <rpt_motion repetition="fromstart_several">
-        <circularmotion axis="l" fast="true" size="small" start="ul"/>
+        <circularmotion axis="l" speed="1.7" size="small" start="ul"/>
       </rpt_motion>
     </sign_manual>
   </hamgestural_sign>

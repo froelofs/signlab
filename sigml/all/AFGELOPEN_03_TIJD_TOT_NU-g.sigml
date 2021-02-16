@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="AFGELOPEN_03_TIJD_TOT_NU">
+  <hamgestural_sign gloss="AFGELOPEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="fff"/>
