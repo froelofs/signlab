@@ -210,7 +210,7 @@ $( function() {
   }
 });
 
-function checkText(text,value=-1){
+function checkText(text,value=-1,alert="alertZonMwTran"){
   // Makes all the variable boxes invisible
   elements = [...document.getElementsByClassName('varBox')];
   elements.forEach(function(element){
@@ -234,7 +234,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 1 en 60 om het aantal minuten in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 1 en 60 om het aantal minuten in te vullen", alert);
         return false;
       }
       // Changes the variable from plural to singular if the value is 1
@@ -256,7 +256,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 73 om het aantal uren in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 73 om het aantal uren in te vullen", alert);
         return false;
       }
       // Replaces the variable indicator with the value provided
@@ -271,7 +271,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 15 om het aantal uren in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 15 om het aantal uren in te vullen", alert);
         return false;
       }
       else{
@@ -293,7 +293,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 11 om het aantal weken in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 11 om het aantal weken in te vullen", alert);
         return false;
       }
       else{
@@ -315,7 +315,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 19 om het aantal maanden in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 19 om het aantal maanden in te vullen", alert);
         return false;
       }
       else{
@@ -337,7 +337,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('aWeekBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 8 om het aantal keer in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 8 om het aantal keer in te vullen", alert);
         return false;
       }
       // Replaces the variable indicator with the value provided
@@ -351,7 +351,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('loneNumberBox').style.display = "block";
-        alertMessage("info", "Kies een getal tussen 0 en 100 om het aantal in te vullen", "alertZonMwTran");
+        alertMessage("info", "Kies een getal tussen 0 en 100 om het aantal in te vullen", alert);
         return false;
       }
       // Replaces the variable indicator with the value provided
@@ -366,7 +366,7 @@ function checkText(text,value=-1){
     // If no value has been given for the variable the appropiate box is shown to ask for input
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
-      alertMessage("info", "Kies een tijdstip om in te vullen", "alertZonMwTran");
+      alertMessage("info", "Kies een tijdstip om in te vullen", alert);
       return false;
     }
     // Replaces the variable indicator with the value provided
@@ -380,7 +380,7 @@ function checkText(text,value=-1){
     console.log("kies een dag detected");
     // If no value has been given for the variable the appropiate box is shown to ask for input
     if(value == -1){
-      alertMessage("info", "Kies een dag van de week om in te vullen", "alertZonMwTran");
+      alertMessage("info", "Kies een dag van de week om in te vullen", alert);
       document.getElementById('dayOfTheWeekBox').style.display = "block";
       return false;
     }
@@ -400,11 +400,11 @@ function checkText(text,value=-1){
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
-function toSiGML(text){
+function toSiGML(text,alert="alertZonMwTran"){
   console.log("input: " + text);
   // Checks user input against the autcomplete suggestions and the variable sentences dict
   if(autocompSugg.includes(text) == false && varOptions.includes(text) == false){
-    alertMessage("info", "Kies alstublieft een van de gegeven suggesties", "alertZonMwTran");
+    alertMessage("info", "Kies alstublieft een van de gegeven suggesties", alert);
   }
   else {
     // If avatar is checked, SiGML is sent
@@ -417,7 +417,7 @@ function toSiGML(text){
         entry = jsonSent[text];
       }
       if (entry == undefined) {
-        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
+        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", alert);
       }
       else{
         // entry = "zonmw/" + entry;
@@ -430,7 +430,7 @@ function toSiGML(text){
     else if (document.getElementById("videoDisplay").checked){
       entry = jsonVideo[text];
       if (entry == undefined){
-        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", "alertZonMwTran");
+        alertMessage("info", "Er is op het moment geen vertaling van deze zin, u kunt deze via de suggesties pagina aanvragen.", alert);
       }
       else{
         changeVideo(entry);
