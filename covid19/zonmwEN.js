@@ -200,6 +200,7 @@ $( function() {
           var text = checkText(ui.item.value, -1, "alertMainTran");
         }
         if (text == false){
+         console.log("variable detected");
          variable = true;
         }
         else{
@@ -452,7 +453,6 @@ function toSiGML(text,alert="alertZonMwTran"){
     }
   }
 }
-
 
 function compare(input){
   var check = null;

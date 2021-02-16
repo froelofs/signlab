@@ -445,9 +445,6 @@ function toSiGML(text,alert="alertZonMwTran"){
   }
 }
 
-
-
-
 function compare(input){
   var check = null;
   $.ajax({
