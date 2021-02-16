@@ -227,7 +227,7 @@ function checkText(text,value=-1,alert="alertZonMwTran"){
   // Removes "." for easier comparison
   text = text.replace(".","");
   text = text.split(" ");
-  if (text.length > 1){
+  if (text.length > 2){
     text.push(".");
   }
 
