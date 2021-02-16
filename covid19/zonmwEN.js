@@ -197,7 +197,7 @@ $( function() {
           var text = checkText(ui.item.value);
         }
         else{
-          var text = checkText(ui.item.value,"alertMainTran");
+          var text = checkText(ui.item.value, -1, "alertMainTran");
         }
         if (text == false){
          variable = true;
