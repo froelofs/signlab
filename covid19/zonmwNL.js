@@ -10,8 +10,9 @@ function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
 }
 
-//Adapts the page to the chosen option
+//Adapts the page to the chosen display option
 function changeFunc(myRadio) {
+  console.log("radio value: " + myRadio.value);
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").style.display = 'inline-block';
     document.getElementById("videos").style.display = 'none';
@@ -136,7 +137,6 @@ $.ajax({
 
 // Keeps track of whether the dict with sentences with variables needs to be called
 var variable = false;
-
 
 //Adapts the base video according to the time of day
 function checkToD() {
@@ -263,10 +263,6 @@ function checkText(text,value=-1){
       else{
         text = text.join(" ").replace("*aantal*",value);
       // Checks for a second blank in the sentence
-      }
-      if (text.split(" ").includes("*number*") == true){
-        alertMessage("info", "Kies nog een getal tussen 0 en 73 om het tweede aantal uren in te vullen", "alertZonMwTran");
-        return false;
       }
       document.getElementById('hoursBox').style.display = "none";
     }

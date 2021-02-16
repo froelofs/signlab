@@ -6,11 +6,9 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
-
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
 }
-
 
 //Adapts the page to the chosen display option
 function changeFunc(myRadio) {
@@ -272,14 +270,7 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("*number*",value);
         }
-        // Checks for a second blank in the sentence
-        if (text.split(" ").includes("*number*") == true){
-          alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
-          return false;
-        }
-        else{
-         document.getElementById('hoursBox').style.display = "none";
-        }
+        document.getElementById('hoursBox').style.display = "none";
       }
     }
     else if (text.includes("days") == true){
