@@ -6,11 +6,9 @@ function changeVideo(url) {
   frame.parentNode.replaceChild(clone,frame);
 }
 
-
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
 }
-
 
 //Adapts the page to the chosen display option
 function changeFunc(myRadio) {
@@ -194,8 +192,15 @@ $( function() {
       if (ui.item != null){
         document.getElementById('mySiGML').value = text;
         console.log("selected: " + ui.item.value);
-        var text = checkText(ui.item.value);
+        // Check for demo version active
+        if (typeof sentPath === 'undefined'){
+          var text = checkText(ui.item.value);
+        }
+        else{
+          var text = checkText(ui.item.value, -1, "alertMainTran");
+        }
         if (text == false){
+         console.log("variable detected");
          variable = true;
         }
         else{
@@ -212,7 +217,7 @@ $( function() {
   }
 });
 
-function checkText(text,value=-1){
+function checkText(text,value=-1,alert="alertZonMwTran"){
   // Makes all the variable boxes invisible
   elements = [...document.getElementsByClassName('varBox')];
   elements.forEach(function(element){
@@ -236,7 +241,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('minutesBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 1 and 60 to fill in the blank", alert);
         return false;
       }
       else{
@@ -258,7 +263,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('hoursBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 73 to fill in the blank", alert);
         return false;
       }
       // Changes the variable from plural to singular if the value is 1
@@ -272,14 +277,7 @@ function checkText(text,value=-1){
         else{
          text = text.join(" ").replace("*number*",value);
         }
-        // Checks for a second blank in the sentence
-        if (text.split(" ").includes("*number*") == true){
-          alertMessage("info", "Please choose another number between 0 and 73 to fill in the second blank", "alertZonMwTran");
-          return false;
-        }
-        else{
-         document.getElementById('hoursBox').style.display = "none";
-        }
+        document.getElementById('hoursBox').style.display = "none";
       }
     }
     else if (text.includes("days") == true){
@@ -287,7 +285,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('daysBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 15 to fill in the blank", alert);
         return false;
       }
       // Changes the variable from plural to singular if the value is 1
@@ -309,7 +307,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('weeksBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 11 to fill in the blank", alert);
         return false;
       }
       else{
@@ -331,7 +329,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('monthsBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 19 to fill in the blank", alert);
         return false;
       }
       else{
@@ -353,7 +351,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('aWeekBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 8 to fill in the blank", alert);
         return false;
       }
       // Replaces the variable indicator with the value provided
@@ -368,7 +366,7 @@ function checkText(text,value=-1){
       // If no value has been given for the variable the appropiate box is shown to ask for input
       if (value == -1){
         document.getElementById('loneNumberBox').style.display = "block";
-        alertMessage("info", "Please choose a number between 0 and 100 to fill in the blank", "alertZonMwTran");
+        alertMessage("info", "Please choose a number between 0 and 100 to fill in the blank", alert);
         return false;
       }
       // Replaces the variable indicator with the value provided
@@ -383,7 +381,7 @@ function checkText(text,value=-1){
     // If no value has been given for the variable the appropiate box is shown to ask for input
     if (value == -1){
       document.getElementById('timeBox').style.display = "block";
-      alertMessage("info", "Please choose a time to fill in the blank", "alertZonMwTran");
+      alertMessage("info", "Please choose a time to fill in the blank", alert);
       return false;
     }
     // Replaces the variable indicator with the value provided
@@ -397,7 +395,7 @@ function checkText(text,value=-1){
     console.log("pick a day detected");
     // If no value has been given for the variable the appropiate box is shown to ask for input
     if(value == -1){
-      alertMessage("info", "Please choose a day of the week to fill in the blank", "alertZonMwTran");
+      alertMessage("info", "Please choose a day of the week to fill in the blank", alert);
       document.getElementById('dayOfTheWeekBox').style.display = "block";
       return false;
     }
@@ -417,11 +415,11 @@ function checkText(text,value=-1){
 }
 
 // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
-function toSiGML(text){
+function toSiGML(text,alert="alertZonMwTran"){
   console.log("input: " + text);
   // Checks user input against the autcomplete suggestions and the variable sentences dict
   if (autocompSugg.includes(text) == false && varOptions.includes(text) == false){
-    alertMessage("error", "Please choose an option from the autocomplete suggestions", "alertZonMwTran");
+    alertMessage("error", "Please choose an option from the autocomplete suggestions", alert);
   }
   else {
      // If avatar is checked, SiGML is sent
@@ -434,7 +432,7 @@ function toSiGML(text){
         entry = jsonSent[text];
       }
       if (entry == undefined) {
-        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
+        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page",alert);
       }
       else{
         // entry = "zonmw/" + entry;
@@ -447,7 +445,7 @@ function toSiGML(text){
      else if (document.getElementById("videoDisplay").checked) {
       entry = jsonVideo[text];
       if (entry == undefined) {
-        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page", "alertZonMwTran");
+        alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page",alert);
       }
       else{
        changeVideo(entry);
@@ -455,7 +453,6 @@ function toSiGML(text){
     }
   }
 }
-
 
 function compare(input){
   var check = null;
