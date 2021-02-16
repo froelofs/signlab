@@ -200,6 +200,7 @@ $( function() {
           var text = checkText(ui.item.value, -1, "alertMainTran");
         }
         if (text == false){
+         console.log("variable detected");
          variable = true;
         }
         else{
