@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="GEVEN_3B_AAN_1">
+  <hamgestural_sign gloss="GEVEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="xef:"/>

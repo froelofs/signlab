@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="ANGSTIG">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="T05]"/>
+        <mouth_gesture movement="T05"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

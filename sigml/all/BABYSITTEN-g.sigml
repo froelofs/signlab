@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="BABYSITTEN_/_OPPASSEN">
+  <hamgestural_sign gloss="BABYSITTEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="OpAs"/>

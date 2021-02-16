@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="INKOMEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="INom@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="dl" palmor="l" second_extfidir="l"/>
+        <handconfig extfidir="or" palmor="u" second_extfidir="uo"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="3" location="nail" side="palmar"/>
+        <location_hand digits="2" location="tip"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <directedmotion curve="d" curve_size="small" direction="il" fast="true" size="small"/>
+          <handconstellation contact="touch">
+            <location_hand location="palm"/>
+            <location_hand digits="2" location="nail"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

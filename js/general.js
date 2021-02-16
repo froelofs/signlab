@@ -179,9 +179,9 @@ $('.timepicker').timepicker({
     // Declare all variables
     var i, tabcontent, tablinks;
 
-    if (tabName == 'Translate') {
-      startPose();
-    }
+    // if (tabName == 'Translate') {
+    //   startPose();
+    // }
 
     // Get current tab and hide it
     tabcontent = document.getElementsByClassName("fadeIn");

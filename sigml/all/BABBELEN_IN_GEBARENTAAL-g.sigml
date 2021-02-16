@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="BABBELEN_IN_GEBARENTAAL">
+  <hamgestural_sign gloss="BABBELEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="ffff"/>

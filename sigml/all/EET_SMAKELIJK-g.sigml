@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="EET">
+  <hamgestural_sign gloss="EET_SMAKELIJK">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="ee"/>
@@ -14,7 +14,7 @@
       <wristmotion motion="nodding" size="small"/>
     </sign_manual>
   </hamgestural_sign>
-  <hamgestural_sign gloss="SMAKELIJK">
+  <hamgestural_sign gloss="EET_SMAKELIJK">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="makelk"/>

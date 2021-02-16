@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="EMAIL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="imel"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12" mainbend="round"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+        <location_bodyarm contact="close" location="shoulders" side="left_beside"/>
+      </split_location>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig ceeopening="slack" handshape="cee12" mainbend="bent"/>
+        <handconfig extfidir="ul" palmor="d"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

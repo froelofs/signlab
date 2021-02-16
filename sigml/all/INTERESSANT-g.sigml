@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="INTERESSANT_VINDEN">
+  <hamgestural_sign gloss="INTERESSANT">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="Itr@sAn"/>
