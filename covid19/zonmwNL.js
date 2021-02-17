@@ -431,6 +431,7 @@ function toSiGML(text,alert="alertZonMwTran"){
         playURL(entry);
         document.getElementById("replayButton").setAttribute("name", entry);
         document.getElementById("replayButton").style.display = 'inline-block';
+        document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
       }
     }
     // if video is checked, source of embedded video changes
