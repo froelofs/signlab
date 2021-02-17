@@ -493,5 +493,6 @@ document.getElementById('mySiGML').addEventListener('input', function() {
       element.style.display = 'none';
     })
     document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
+    document.getElementById("replayButton").style.display = 'none';
   }
 });
