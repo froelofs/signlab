@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="OVER_EEN_TIJDJE">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="L04]"/>
+        <mouth_gesture movement="L04"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

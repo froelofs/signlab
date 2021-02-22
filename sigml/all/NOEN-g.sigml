@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NOEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mIdAx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open" mainbend="bent"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin" second_location="chin" second_side="left_at">
+        <location_hand digits="2" location="nail" side="right_beside"/>
+      </location_bodyarm>
+      <directedmotion curve="d" curve_size="small" direction="d" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

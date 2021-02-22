@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="SLIKKEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="L23]"/>
+        <mouth_gesture movement="L23"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

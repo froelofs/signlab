@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LEKKER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lEk@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="ui" second_extfidir="ur"/>
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="close" location="earlobe">
+        <location_hand digits="3" location="midjoint" side="palmar"/>
+      </location_bodyarm>
+      <wristmotion motion="swinging"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="KLETSEN_GEBARENTAAL">
+  <hamgestural_sign gloss="KLETSEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="A:fff"/>

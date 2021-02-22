@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="REAGEREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="reAxe"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="dl" second_palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders"/>
+      <split_motion>
+        <seq_motion>
+          <directedmotion direction="or" size="small"/>
+          <directedmotion direction="il"/>
+          <directedmotion direction="or"/>
+          <directedmotion direction="il"/>
+          <directedmotion direction="or" size="small"/>
+        </seq_motion>
+        <seq_motion>
+          <directedmotion direction="ir" size="small"/>
+          <directedmotion direction="ol"/>
+          <directedmotion direction="ir"/>
+          <directedmotion direction="ol"/>
+          <directedmotion direction="ir" size="small"/>
+        </seq_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="RAAM_ZEMEN">
+  <hamgestural_sign gloss="ZEMEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="raammmzzem@"/>

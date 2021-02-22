@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="LANGDRADIG">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture gesture="L05]"/>
+        <mouth_gesture movement="L05"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">

@@ -3,18 +3,18 @@
   <hamgestural_sign gloss="NORMAAL">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="normaa"/>
+        <mouth_picture picture="nOma:l"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="ul"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="left_at">
-        <location_hand location="pinkyside"/>
+      <handconfig extfidir="ui" second_extfidir="ul"/>
+      <handconfig palmor="d" second_palmor="dl"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="left_at">
+        <location_hand location="thumbside"/>
       </location_bodyarm>
       <rpt_motion repetition="fromstart_several">
-      <circularmotion axis="il" speed="1" size="small"/>
+        <circularmotion axis="ir" size="small"/>
       </rpt_motion>
     </sign_manual>
   </hamgestural_sign>

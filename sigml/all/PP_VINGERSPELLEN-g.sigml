@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="PP_VINGERSPELLEN">
+  <hamgestural_sign gloss="PP">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="p"/>
