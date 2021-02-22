@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="VERKEERD_02_ZIJN">
+  <hamgestural_sign gloss="VERKEERD">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vker"/>

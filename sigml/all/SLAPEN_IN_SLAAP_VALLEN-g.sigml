@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="SLAPEN_IN_SLAAP_VALLEN">
+  <hamgestural_sign gloss="IN_SLAAP_VALLEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="mmmm"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="UIT_ELKAAR_GAAN_/_SCHEIDEN">
+  <hamgestural_sign gloss="SCHEIDEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="mmm"/>

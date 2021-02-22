@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="VOLGENS_HAAR_/_HEM">
+  <hamgestural_sign gloss="VOLGENS">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="nzE"/>
