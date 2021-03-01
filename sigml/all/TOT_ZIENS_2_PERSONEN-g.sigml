@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="TOT_ZIENS_2_PERSONEN">
+  <hamgestural_sign gloss="TOT_ZIENS">
     <sign_nonmanual/>
     <sign_manual both_hands="true" lr_symm="true">
       <split_handconfig>

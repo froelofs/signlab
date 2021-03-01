@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SLIM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sImm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="forehead">
+        <location_hand digits="2" location="nail" side="left_beside"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="uo" size="small" slow="true"/>
+        <tgt_motion slow="true">
+          <changeposture/>
+          <handconfig extfidir="uo" palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

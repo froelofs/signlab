@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sigml>
-    <hamgestural_sign gloss="ROEPEN1_3a">
+    <hamgestural_sign gloss="ROEPEN">
         <sign_manual>
             <handconfig handshape="flat" mainbend="bent"/>
             <handconfig extfidir="u" second_extfidir="ui"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="MOGEN:_MAG_WEL">
+  <hamgestural_sign gloss="MOGEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="mA"/>

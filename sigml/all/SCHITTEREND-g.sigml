@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHITTEREND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AAAAA"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="ur" second_extfidir="uo"/>
+      <handconfig palmor="u" second_palmor="ul"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="neck"/>
+      </handconstellation>
+      <wristmotion motion="twisting"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

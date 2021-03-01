@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="TELEURGESTELD_ZIJN_01">
+  <hamgestural_sign gloss="TELEURGESTELD">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="9:El"/>

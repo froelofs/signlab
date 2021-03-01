@@ -3,17 +3,24 @@
   <hamgestural_sign gloss="MAMA">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="mA"/>
+        <mouth_picture picture="mAmmA"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="l"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm contact="touch" location="chin" second_location="lips">
-        <location_hand digits="2" location="base" side="left_beside"/>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="ul" second_palmor="l"/>
+      <location_bodyarm contact="close" location="cheek">
+        <location_hand digits="3" location="nail" side="dorsal"/>
       </location_bodyarm>
-      <directedmotion direction="r" size="small"/>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <directedmotion direction="l" fast="true" size="small"/>
+          <location_bodyarm contact="touch" location="cheek">
+            <location_hand digits="3" location="nail" side="palmar"/>
+          </location_bodyarm>
+        </tgt_motion>
+      </rpt_motion>
     </sign_manual>
   </hamgestural_sign>
 </sigml>

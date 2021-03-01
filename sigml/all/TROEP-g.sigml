@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TROEP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Oml"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_hand location="palm"/>
+        <location_hand digits="3" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="l"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
