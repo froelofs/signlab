@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="WOELEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="T13"/>
+        <mouth_gesture movement="T13"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

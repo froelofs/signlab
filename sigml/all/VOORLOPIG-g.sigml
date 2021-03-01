@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VOORLOPIG">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="L04"/>
+        <mouth_gesture movement="L04"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

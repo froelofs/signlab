@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VERDOEZELEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="L06"/>
+        <mouth_gesture movement="L06"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true" outofphase="true">

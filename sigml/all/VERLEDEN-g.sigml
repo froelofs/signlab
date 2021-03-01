@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VERLEDEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture movement="C02" speed="0.4"/>
+        <mouth_picture picture="v@led@"/>
       </mouthing_tier>
       <head_tier>
         <head_movement movement="TL" speed="0.3"/>

@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VERRADEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="T02"/>
+        <mouth_gesture movement="T02"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
