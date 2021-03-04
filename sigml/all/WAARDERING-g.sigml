@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="WAARDERING">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="L31"/>
+        <mouth_gesture movement="L31"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VALLEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="C06"/>
+        <mouth_gesture movement="C06"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

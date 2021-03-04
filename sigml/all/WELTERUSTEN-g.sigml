@@ -25,7 +25,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="WELTERUSTEN2">
+    <hamgestural_sign gloss="WELTERUSTEN">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="finger2345" thumbpos="out"/>
             <handconfig extfidir="u"/>

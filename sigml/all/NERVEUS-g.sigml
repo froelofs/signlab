@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZENUWACHTIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="T05"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="d"/>
+      <handconfig palmor="dr"/>
+      <location_bodyarm location="stomach" second_location="chest" second_side="right_at" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <wristmotion motion="swinging" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

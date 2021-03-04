@@ -10,9 +10,15 @@
       <handconfig handshape="flat" mainbend="bent"/>
       <handconfig extfidir="u" second_extfidir="ui"/>
       <handconfig palmor="l"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
-      <directedmotion direction="o" size="small"/>
-      <directedmotion curve="d" direction="u"/>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="nail" side="palmar"/>
+        <location_hand digits="3" location="nail"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <directedmotion curve="r" direction="u"/>
+        <nomotion/>
+      </split_motion>
     </sign_manual>
   </hamgestural_sign>
 </sigml>

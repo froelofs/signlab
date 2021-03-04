@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VLIEGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vvvvvvv"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="or" second_extfidir="ur"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="shoulders" side="right_beside"/>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="d" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent" second_thumbpos="out"/>
+            <handconfig extfidir="or"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

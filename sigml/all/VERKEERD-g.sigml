@@ -3,19 +3,23 @@
   <hamgestural_sign gloss="VERKEERD">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="pfff"/>
+        <mouth_picture picture="vker"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="u"/>
-      <location_bodyarm contact="close" location="head" second_location="head" second_side="right_at"/>
-      <directedmotion direction="l" fast="true" size="small"/>
-      <directedmotion direction="r" fast="true" size="small"/>
-      <directedmotion direction="l" fast="true" size="small"/>
-      <directedmotion direction="r" fast="true" size="small"/>
-      <directedmotion direction="l" fast="true" size="small"/>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="chest" second_location="shoulders" side="left_at">
+        <location_hand location="thumbside"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion direction="or" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo" palmor="l" second_palmor="dl"/>
+        </tgt_motion>
+      </par_motion>
     </sign_manual>
   </hamgestural_sign>
 </sigml>

@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="WAAIEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="L20"/>
+        <mouth_gesture movement="L20"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

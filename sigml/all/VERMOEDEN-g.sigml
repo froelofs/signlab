@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VERMOEDEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="L30"/>
+        <mouth_gesture movement="L30"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
