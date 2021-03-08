@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERVELEND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v@ve:l"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="stomach" second_location="chest">
+        <location_hand location="palm"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="i" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

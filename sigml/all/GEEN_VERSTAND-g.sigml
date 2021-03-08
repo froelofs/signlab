@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEEN_VERSTAND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="T05"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d" second_palmor="dr"/>
+      <location_bodyarm contact="touch" location="eyebrows">
+        <location_hand digits="1" location="midjoint"/>
+      </location_bodyarm>
+      <nomotion/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

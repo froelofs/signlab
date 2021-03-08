@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="VERLIEZEN_01_VOORWERP">
+  <hamgestural_sign gloss="VERLIEZEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vlis"/>

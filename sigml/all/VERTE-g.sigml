@@ -3,7 +3,7 @@
   <hamgestural_sign gloss="VERTE">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="C04"/>
+        <mouth_gesture movement="C04"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
