@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="CRITISCH_01_IN_DE_GATEN_HOUDEN">
+  <hamgestural_sign gloss="IN_DE_GATEN_HOUDEN">
     <sign_nonmanual/>
     <sign_manual>
       <handconfig handshape="finger2"/>
