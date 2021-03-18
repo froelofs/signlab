@@ -225,7 +225,7 @@
               <!-- Custom made autocomplete form -->
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
-                  <textarea id="mySiGML" class="inputBox" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
+                  <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value);}"></textarea>
                 </div>
               </form>
 
@@ -296,13 +296,17 @@
               <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
               <br>
               <br>
-              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
-               <span id="speedAdj" class="undisplayed" style="margin-bottom:5px"></span>
+              <div id="speedAdj" class="undisplayed">
+                <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+                 <span id="speedAdj" class="undisplayed" style="margin-bottom:5px"></span>
+              </div>
               <br>
               <br>
-              <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
-              <input id="outputGloss" class="undisplayed" value="[none]" type="text">
-              <br>
+              <div id="outputGloss" class="undisplayed">
+                <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
+                <input id="outputGloss" class="undisplayed" value="[none]" type="text">
+            </div>
+            <br>
         </span>
 
         <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
