@@ -18,6 +18,7 @@ function changeFunc(myRadio) {
     document.getElementById("videos").style.display = 'none';
     document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
     document.getElementById("speedAdj").setAttribute("class", "CWASASpeed av0");
+    document.getElementById("speedDiv").setAttribute("class", "test");
     document.getElementById("outputGloss").setAttribute("class", "txtGloss av0");
     document.getElementById("glossLabel").style.display = 'inline-block';
     document.getElementById("speedLabel").style.display = 'inline-block';
@@ -29,6 +30,7 @@ function changeFunc(myRadio) {
     document.getElementById("videos").style.display = 'inline-block';
     document.getElementById("play").setAttribute("class", "btn btn-primary displayed");
     document.getElementById("speedAdj").setAttribute("class", "undisplayed");
+    document.getElementById("speedDiv").setAttribute("class", "undisplayed");
     document.getElementById("outputGloss").setAttribute("class", "undisplayed");
     document.getElementById("glossLabel").style.display = 'none';
     document.getElementById("speedLabel").style.display = 'none';

@@ -296,8 +296,10 @@
               <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
               <br>
               <br>
-              <label id="speedLabel" for="speedAdj" style="display: none;">Adjust speed: </label>
-               <span id="speedAdj" class="CWASASpeed av0" style="display: none; margin-bottom:5px"></span>
+              <div id="speedDiv" class="undisplayed">
+              <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+               <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+             </div>
               <br>
               <br>
               <label id="glossLabel"for="outputGloss" style="display: none;">Gloss: </label>
