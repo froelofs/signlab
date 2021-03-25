@@ -475,6 +475,7 @@ function compare(input){
     break;
    }
   }
+  console.log(input);
 
   if (check == true){
    document.getElementById("checkPage").style.display = "none";
