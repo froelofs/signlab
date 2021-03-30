@@ -203,12 +203,12 @@ $('.timepicker').timepicker({
     // }
 
     // Get current tab and hide it
-    tabcontent = document.getElementsByClassName("fadeIn");
-    for (i = 0; i < tabcontent.length; i++) {
-      if (tabcontent[i].className.includes("undisplayed") == false){
-       tabcontent[i].className += " undisplayed";
-      }
-    }
+    // tabcontent = document.getElementsByClassName("fadeIn");
+    // for (i = 0; i < tabcontent.length; i++) {
+    //   if (tabcontent[i].className.includes("undisplayed") == false){
+    //    tabcontent[i].className += " undisplayed";
+    //   }
+    // }
 
     // Get all elements with class="nav-link" and remove the class "active"
     tablinks = document.getElementsByClassName("nav-link");
@@ -217,7 +217,7 @@ $('.timepicker').timepicker({
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    newTab = document.getElementById(tabName);
-    newTab.className = newTab.className.replace(" undisplayed", "");
+    // newTab = document.getElementById(tabName);
+    // newTab.className = newTab.className.replace(" undisplayed", "");
     evt.currentTarget.className += " active";
   }
