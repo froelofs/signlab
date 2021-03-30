@@ -181,7 +181,7 @@ $('.timepicker').timepicker({
   });
 
   $(function changeActive() {
-  var tablinks, newTab, allTabs, sections, i, j
+  var tablinks, newTab, allTabs, sections, i, j, current;
   // Get all elements with class="nav-link" and remove the class "active"
   tablinks = document.getElementsByClassName("nav-link");
   for (i = 0; i < tablinks.length; i++) {
