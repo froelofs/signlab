@@ -7,15 +7,14 @@ function changeLanguage(flagClass) {
 
 	if (flagClass == "flag-icon flag-icon-nl")
 	{
-	    js.src = "covid19/zonmwEN.js";
+	    js.src = "../covid19/zonmwEN.js";
 	    document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
 	}
 	else
 	{
-	    js.src = "covid19/zonmwNL.js";
+	    js.src = "../covid19/zonmwNL.js";
 	    document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
 	}
 
 	head.appendChild(js);
 }
-
