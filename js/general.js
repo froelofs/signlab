@@ -181,16 +181,26 @@ $('.timepicker').timepicker({
   });
 
   function changeActive(tabName) {
+    var tablinks, newTab, allTabs, sections, i, j
     // Get all elements with class="nav-link" and remove the class "active"
-    var tablinks = document.getElementsByClassName("nav-link");
+    tablinks = document.getElementsByClassName("nav-link");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
+    allTabs = ['AboutNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
+    sections = ['About', 'Translate', 'People', 'Publications', 'Projects'];
     // Add an "active" class to the button that opened the tab
-    var newTab = document.getElementById(tabName);
-    console.log(newTab.className);
-    newTab.className = newTab.className.replace("nav-link", "nav-link active");
+    for (j = 0; j < sections.length; j++) {
+      if (document.getElementById(sections[j])) {
+        current = document.getElementById(allTabs[j]);
+        console.log(current.className);
+        current.className = current.className.replace("nav-link", "nav-link active");
+      }
+    }
+    // var newTab = document.getElementById(tabName);
+    // console.log(newTab.className);
+    // newTab.className = newTab.className.replace("nav-link", "nav-link active");
   }
 
   function openTab(evt, tabName) {
