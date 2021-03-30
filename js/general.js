@@ -177,20 +177,21 @@ $('.timepicker').timepicker({
 
   //navbar test
   $(function(){
-    // doc = "nav.html";
-    // tablinks = doc.getElementsByClassName("nav-link");
-    // for (i = 0; i < tablinks.length; i++) {
-    //   tablinks[i].className = tablinks[i].className.replace(" active", "");
-    // }
-    //
-    // // Add an "active" class to the button that opened the tab
-    // newTab = document.getElementById(tabName);
-    // evt.currentTarget.className += " active";
-    $('ul li a').click(function(){ $('li a').removeClass("active"); $(this).addClass("active"); });
-
-
     $("#nav-placeholder").load("nav.html");
   });
+
+  function changeActive(tabName) {
+    var doc = "nav.html";
+    // Get all elements with class="nav-link" and remove the class "active"
+    var tablinks = doc.getElementsByClassName("nav-link");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Add an "active" class to the button that opened the tab
+    var newTab = doc.getElementById(tabName);
+    newTab.className = newTab.className.replace("nav-link", "nav-link active");
+  }
 
   function openTab(evt, tabName) {
     // Declare all variables
