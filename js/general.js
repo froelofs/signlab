@@ -177,11 +177,7 @@ $('.timepicker').timepicker({
 
   //navbar test
   $(function(){
-    if (document.getElementById("About")) {
-      $("#nav-placeholder").load("html/nav.html");
-    } else {
-      $("#nav-placeholder").load("nav.html");
-    }
+    $("#nav-placeholder").load("nav.html");
   });
 
   function openTab(evt, tabName) {
