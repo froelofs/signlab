@@ -102,6 +102,11 @@ function callPython(text, alertID) {
   }
 }
 
+//navbar test
+$(function(){
+  $("#nav-placeholder").load("html/nav.html");
+});
+
 //Changes the javascript file loaded depending on the chosen language
 function changeLanguage(language, onload=false) {
   // Creates a script element so that the ZonMw script can be loaded in the correct language
