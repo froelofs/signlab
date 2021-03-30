@@ -214,7 +214,7 @@ function getPage(){
   // Add an "active" class to the button that opened the tab
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
-      return allTabs[j]);
+      return allTabs[j];
     }
   }
 }
