@@ -181,9 +181,7 @@ $('.timepicker').timepicker({
   });
 
   function changeActive(tabName) {
-    var doc = "nav.html";
     // Get all elements with class="nav-link" and remove the class "active"
-    // var navbar = document.getElementById("nav-placeholder")[1];
     var tablinks = document.getElementsByClassName("nav-link");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -191,6 +189,7 @@ $('.timepicker').timepicker({
 
     // Add an "active" class to the button that opened the tab
     var newTab = document.getElementById(tabName);
+    console.log(newTab.className);
     newTab.className = newTab.className.replace("nav-link", "nav-link active");
   }
 
