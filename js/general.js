@@ -175,6 +175,15 @@ $('.timepicker').timepicker({
    return time;
   }
 
+  //navbar test
+  $(function(){
+    if (document.getElementsById("About")) {
+      $("#nav-placeholder").load("html/nav.html");
+    } else {
+      $("#nav-placeholder").load("nav.html");
+    }
+  });
+
   function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;

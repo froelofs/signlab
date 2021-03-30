@@ -102,10 +102,7 @@ function callPython(text, alertID) {
   }
 }
 
-//navbar test
-$(function(){
-  $("#nav-placeholder").load("html/nav.html");
-});
+
 
 //Changes the javascript file loaded depending on the chosen language
 function changeLanguage(language, onload=false) {
