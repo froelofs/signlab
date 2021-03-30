@@ -103,40 +103,42 @@ function callPython(text, alertID) {
 }
 
 //Changes the javascript file loaded depending on the chosen language
-function changeLanguage(onload=false) {
+function changeLanguage(language, onload=false) {
   // Creates a script element so that the ZonMw script can be loaded in the correct language
   var head = document.getElementsByTagName('head')[0];
   var js = document.createElement("script");
 
   //Defines a separate case for when the translate page is first loaded
-  if (onload == true){
-    flagClass = "flag-icon flag-icon-gb";
-  }
-  else{
-    flagClass = document.getElementById('language').className;
-  }
+  // if (onload == true){
+  //   flagClass = "flag-icon flag-icon-gb";
+  // }
+  // else{
+  //   flagClass = document.getElementById('language').className;
+  // }
 
   js.type = "text/javascript";
 
   // Loads the correct file and sets the paths for the corresponding dicts and changes the flag
-  if (flagClass == "flag-icon flag-icon-nl"){
+  if (language == "Nederlands"){
     js.src = "covid19/zonmwNL.js";
     sentPath = "covid19/json/sentencesDictNL.json";
     vidPath = "covid19/json/videoDictNL.json";
     varPath = "covid19/json/variableDictNL.json";
-    document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
+    // document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
     document.getElementById('mySiGML').placeholder = 'Vul hier een zin of trefwoorden in';
+    document.getElementById('selectExplain').textContent="Verander de taal van de invoer: ";
   }
   else{
     js.src = "covid19/zonmwEN.js";
     sentPath = "covid19/json/sentencesDictEN.json";
     vidPath = "covid19/json/videoDictEN.json";
     varPath = "covid19/json/variableDictEN.json";
-    document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
+    // document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
+    document.getElementById('selectExplain').textContent="Change the input language: ";
   }
   head.appendChild(js);
-  console.log("language: " + document.getElementById('language').className);
+  console.log("language: " + language);
 }
 
 $(window).on("load", function(){
