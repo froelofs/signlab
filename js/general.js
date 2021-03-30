@@ -194,6 +194,7 @@ $('.timepicker').timepicker({
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
       current = document.getElementById(allTabs[j]);
+      console.log(current);
       console.log(current.className);
       current.className = current.className.replace("nav-link", "nav-link active");
     }
