@@ -144,7 +144,9 @@ function changeLanguage(language, onload=false) {
 }
 
 $(window).on("load", function(){
-  changeLanguage(true);
+  if (document.getElementById('Translate')) {
+    changeLanguage(true);
+  }
 } );
 
 function removeDisclaimer(){

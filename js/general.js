@@ -178,6 +178,7 @@ $('.timepicker').timepicker({
   //navbar test
   $(function(){
     $("#nav-placeholder").load("nav.html");
+    
   });
 
   function openTab(evt, tabName) {
