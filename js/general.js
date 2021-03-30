@@ -177,55 +177,70 @@ $('.timepicker').timepicker({
 
   //navbar test
   $(function(){
-    $("#nav-placeholder").load("nav.html");
+    // $("#nav-placeholder").load("nav.html");
+    var bar = '';
+    bar += '<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">';
+    bar += '<div class="container-fluid" style="width: 83%; margin-top: 0px;">';
+    bar += '<a class="navbar-brand" href="index.html">';
+    bar += '<img src="images/hand-icon.png" height="25">';
+    bar += 'SignLab Amsterdam';
+    bar += '</a>';
+    bar += '<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">';
+    bar += 'Menu';
+    bar += '<i class="fas fa-bars"></i>';
+    bar += '</button>';
+    bar += '<div class="collapse navbar-collapse" id="navbarResponsive">';
+    bar += '<ul class="navbar-nav ml-auto" role="tablist">';
+    bar += '<li class="nav-item"><a class="nav-link" href="index.html" id="AboutNav">Welcome</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="translate.html" id="TranslateNav">Avatar Translation</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
+    bar += '</ul>';
+    bar += '</div>';
+    bar += '</div>';
+    bar += '</nav>';
 
-    getPage();
-    // $("#" + id).addClass("active");
+    $("#nav-placeholder").html(bar);
+
+
+    var id = getPage();
+    $("#" + id).addClass("active");
   });
 
-function getPage() {
-  var tablinks, newTab, allTabs, sections, i, j, current;
-  // Get all elements with class="nav-link" and remove the class "active"
-  tablinks = document.getElementsByClassName("nav-link");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
+function getPage(){
   allTabs = ['AboutNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
   sections = ['About', 'Translate', 'People', 'Publications', 'Projects'];
   // Add an "active" class to the button that opened the tab
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
-      current = document.getElementById(allTabs[j]);
-      console.log(current);
-      console.log(current.className);
-      current.className = current.className.replace("nav-link", "nav-link active");
+      return allTabs[j]);
     }
   }
 }
 
-//   $(function changeActive() {
-//   var tablinks, newTab, allTabs, sections, i, j, current;
+// function changeActive(tabName) {
+//   var tablinks, newTab, i;
 //   // Get all elements with class="nav-link" and remove the class "active"
 //   tablinks = document.getElementsByClassName("nav-link");
 //   for (i = 0; i < tablinks.length; i++) {
 //     tablinks[i].className = tablinks[i].className.replace(" active", "");
 //   }
 //
-//   allTabs = ['AboutNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
-//   sections = ['About', 'Translate', 'People', 'Publications', 'Projects'];
-//   // Add an "active" class to the button that opened the tab
-//   for (j = 0; j < sections.length; j++) {
-//     if (document.getElementById(sections[j])) {
-//       current = document.getElementById(allTabs[j]);
-//       console.log(current);
-//       console.log(current.className);
-//       current.className = current.className.replace("nav-link", "nav-link active");
-//     }
-//   }
-//   // var newTab = document.getElementById(tabName);
-//   // console.log(newTab.className);
-//   // newTab.className = newTab.className.replace("nav-link", "nav-link active");
+//   // allTabs = ['AboutNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
+//   // sections = ['About', 'Translate', 'People', 'Publications', 'Projects'];
+//   // // Add an "active" class to the button that opened the tab
+//   // for (j = 0; j < sections.length; j++) {
+//   //   if (document.getElementById(sections[j])) {
+//   //     current = document.getElementById(allTabs[j]);
+//   //     console.log(current);
+//   //     console.log(current.className);
+//   //     current.className = current.className.replace("nav-link", "nav-link active");
+//   //   }
+//   // }
+//   newTab = document.getElementById(tabName);
+//   console.log(newTab.className);
+//   newTab.className = newTab.className.replace("nav-link", "nav-link active");
 // });
 
   function openTab(evt, tabName) {
