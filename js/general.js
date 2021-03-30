@@ -177,7 +177,7 @@ $('.timepicker').timepicker({
 
   //navbar test
   $(function(){
-    if (document.getElementsById("About")) {
+    if (document.getElementById("About")) {
       $("#nav-placeholder").load("html/nav.html");
     } else {
       $("#nav-placeholder").load("nav.html");
