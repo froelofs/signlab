@@ -3,8 +3,11 @@
   <hamgestural_sign gloss="HOEVEN_NIET">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="hufni"/>
+        <mouth_picture picture="hufniii"/>
       </mouthing_tier>
+      <head_tier>
+        <head_movement movement="SH" speed="0.7"/>
+      </head_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="pinch12open"/>

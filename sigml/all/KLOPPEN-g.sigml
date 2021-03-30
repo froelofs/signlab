@@ -5,6 +5,9 @@
       <mouthing_tier>
         <mouth_picture picture="lOpp"/>
       </mouthing_tier>
+      <head_tier>
+        <head_movement movement="NO"/>
+      </head_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>

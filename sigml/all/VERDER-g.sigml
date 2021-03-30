@@ -7,32 +7,27 @@
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="neck" side="right_at"/>
-      <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
-      <par_motion>
-        <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+      <split_handconfig>
+        <handconfig handshape="flat"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="across" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l"/>
+        <handconfig extfidir="or" palmor="dr"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand location="thumbside"/>
+        <location_hand digits="4" location="tip" side="left_beside"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
         <tgt_motion>
-          <changeposture/>
-          <handconfig extfidir="u" second_extfidir="uo"/>
+          <directedmotion curve="d" curve_size="small" direction="do" size="small"/>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="base" side="right_beside"/>
+            <location_hand digits="5" location="midjoint" side="right_beside"/>
+          </handconstellation>
         </tgt_motion>
-      </par_motion>
-      <par_motion>
-        <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
-        <tgt_motion>
-          <changeposture/>
-          <handconfig extfidir="uo"/>
-        </tgt_motion>
-      </par_motion>
-      <par_motion>
-        <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
-        <tgt_motion>
-          <changeposture/>
-          <handconfig extfidir="uo" second_extfidir="o"/>
-        </tgt_motion>
-      </par_motion>
+      </rpt_motion>
     </sign_manual>
   </hamgestural_sign>
 </sigml>

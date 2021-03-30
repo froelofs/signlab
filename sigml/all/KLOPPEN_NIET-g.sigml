@@ -3,20 +3,21 @@
   <hamgestural_sign gloss="KLOPPEN_NIET">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="lOOOp"/>
+        <mouth_picture picture="lOpp"/>
       </mouthing_tier>
+      <head_tier>
+        <head_movement movement="SH"/>
+      </head_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
-      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig extfidir="uo" second_extfidir="u"/>
       <handconfig palmor="l"/>
-      <location_bodyarm contact="close" location="shoulders"/>
-      <wristmotion motion="swinging"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
       <par_motion>
-        <directedmotion direction="o" size="small"/>
+        <directedmotion direction="do"/>
         <tgt_motion>
           <changeposture/>
-          <handconfig handshape="finger2" thumbpos="across"/>
           <handconfig extfidir="o"/>
         </tgt_motion>
       </par_motion>

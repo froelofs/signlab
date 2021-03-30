@@ -3,8 +3,11 @@
   <hamgestural_sign gloss="MAAKT_NIET_UIT">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture movement="L04"/>
+        <mouth_gesture movement="L04" speed="0.6"/>
       </mouthing_tier>
+      <head_tier>
+        <head_movement movement="SH" speed="0.7"/>
+      </head_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
       <split_handconfig>

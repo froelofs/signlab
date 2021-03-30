@@ -3,21 +3,14 @@
   <hamgestural_sign gloss="KRIEBELEN">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="kib@"/>
+        <mouth_picture picture="iiii"/>
       </mouthing_tier>
     </sign_nonmanual>
-    <sign_manual>
-      <split_handconfig>
-        <handconfig handshape="finger2345" mainbend="round"/>
-        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
-      </split_handconfig>
-      <split_handconfig>
-        <handconfig extfidir="ul" palmor="d" second_extfidir="o" second_palmor="dr"/>
-        <handconfig extfidir="l" palmor="d" second_extfidir="or"/>
-      </split_handconfig>
-      <location_bodyarm contact="touch" location="lowerarm" side="dorsal">
-        <location_hand digits="3" location="tip"/>
-      </location_bodyarm>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
       <fingerplay/>
     </sign_manual>
   </hamgestural_sign>

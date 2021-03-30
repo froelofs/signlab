@@ -69,10 +69,10 @@
             <ul class="navbar-nav ml-auto" role="tablist">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Welcome</a></li>
                 <li class="nav-item"><a class="nav-link" href="translate.html">Avatar Translation</a></li>
-                <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
+                <li class="nav-item"><a class="nav-link active" href="people.html">People</a></li>
                 <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
                 <!-- <li class="nav-item"><a class="nav-link" href="funding.html">Funding</a></li> -->
-                <!-- <li class="nav-item"><a class="nav-link active" href="tutorial.html">Tutorial</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link" href="tutorial.html">Tutorial</a></li> -->
                 <!-- <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li> -->
                 <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
             </ul>
@@ -93,126 +93,86 @@
  -->
 
 
-<!-- Tutorial section -->
-<section class="projects-section bg-white fadeIn" id="Tutorial">
+<!--================================================================-->
 
-      <div class="container-fluid">
-        <div id="alertTutorial" class="alertBox"></div>
-        <h2 style="margin-bottom: 20px; text-align: center;">Tutorial</h2>
+<!-- Project info section -->
+<section class="projects-section bg-light fadeIn" id="People">
 
-        <!-- <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
+    <div class="container-fluid">
+
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+
+            <!-- Column for team -->
+            <div class="col-7">
+
+                <!-- Team -->
+                <div class="project-text text-center text-lg-left no-top-padding">
+
+                    <h5>Principal investigator</h5>
+                    <p class="text-black-50 mb-3">
+                      <a href="https://www.florisroelofsen.com/" target="_blank">
+                        Floris Roelofsen</a>,
+                      University of Amsterdam<br>
+                    </p>
+
+                    <h5>
+                      Researchers
+                    </h5>
+
+                    <p class="text-black-50 mb-3">
+                      Lyke Esselink, University of Amsterdam<br>
+                      Shani Mende-Gillings, University of Amsterdam<br>
+                    </p>
+
+                    <h5>
+                      Undergraduate student alumni
+                    </h5>
+
+                     <p class="text-black-50 mb-3">
+                      Lyke Esselink (2020)<br>
+                      Shani Mende-Gillings (2020)<br>
+                      Judith Corsel (2020)<br>
+                      Jasmijn Bleijlevens (2020)<br>
+                      Bram Smit (2019)<br>
+                      Sander Brinkhuijsen (2019)<br>
+                      Steven de Weille (2019)<br>
+                      Nardi Lam (2018)<br>
+                      Jetske Beks (2018)<br>
+                    </p>
+                    <!-- <hr class="d-none d-lg-block mb-0 ml-0" /> -->
+
+                    <h5>
+                      Collaborators and advisors
+                    </h5>
+
+                    <p class="text-black-50 mb-3">
+                      Beppie van den Bogaerde, University of Amsterdam<br>
+                      Onno Crasborn, University of Nijmegen<br>
+                      <a href="https://www.unige.ch/fti/en/faculte/departements/dtim/membrestim/david/" target="_blank">Bastien David</a>,
+                        University of Geneva<br>
+                      Roland Pfau, University of Amsterdam<br>
+                      <a href="https://people.uea.ac.uk/j_glauert" target="_blank">John Glauert</a>, University of East Anglia<br>
+                      Marijke Scheffener, University of Amsterdam<br>
+                      Anika Smeijers, Amsterdam University Medical Centre<br>
+                      Martine en Roos Wattel, <a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a><br>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Column for GIF -->
+            <div class="col-5">
+              <img src="../htmlvideos/people.gif" class="img-fluid" alt="Avatar signing 'WE WHO?'">
+            </div>
+
+
         </div>
 
-        <div class="row">
-          <div class="col-md-4"></div> -->
 
-          <div class="col-md-6">
-            <textarea id="explSiGML1" readonly style="width: 350px; height: 500px;">
-<?xml version="1.0" encoding="UTF-8"?>
-<sigml>
-  <hamgestural_sign gloss="HUIS">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="hYs"/>
-      </mouthing_tier>
-    </sign_nonmanual>
-    <sign_manual both_hands="true" lr_symm="true">
-      <handconfig handshape="flat"/>
-      <handconfig extfidir="ul"/>
-      <handconfig palmor="dr"/>
-      <handconstellation contact="touch">
-        <location_hand digits="2" location="tip"/>
-        <location_hand digits="2" location="tip"/>
-        <location_bodyarm location="shouldertop"/>
-      </handconstellation>
-      <par_motion>
-        <directedmotion curve="u" direction="dr" size="small"/>
-        <tgt_motion>
-          <changeposture/>
-          <handconfig extfidir="o" palmor="l"/>
-        </tgt_motion>
-      </par_motion>
-    </sign_manual>
-  </hamgestural_sign>
-</sigml>
-            </textarea>
-          </div>
-
-           <div class="col-md-6">
-              <span class="CWASAAvatar av1" style="width: 350px; height: 400px;"></span>
-              <input type="button" class="btn btn-primary av1" value="Play" onclick='playText(document.getElementById("explSiGML1").value,1)'/>
-              <input type="button" class="btn btn-primary av1" value="Stop" onclick='CWASA.stopSiGML(1);'/>
-              <br>
-
-              <br>
-              <label style="display: none;">Adjust speed: </label>
-              <span class="undisplayed" style="margin-bottom:5px"></span>
-              <br>
-
-              <br>
-              <label style="display: none;">Gloss: </label>
-              <input class="undisplayed" value="[none]" type="text">
-          </div>
-
-        </div>
-
-
-        <!-- Defines the bottom SiGML text field and avatar with buttons -->
-        <div class="row">
-
-          <div class="col-md-4">
-            <span id="explanation" class="explSpan">
-              <div id="explText" class="explSiGML"></div>
-            </span>
-          </div>
-
-          <div class="col-md-4">
-            <span style="display:inline-block; vertical-align:top; margin-right:20px; margin-left: 20px;">
-              <h4>Choose an output option:</h4>
-              <br>
-              <!-- Defines the button and label displayed for the option "explanation" -->
-              <input type="radio" id="explainDisplay" name="expl" value="explain" onclick="changeDisplay(this);">
-              <label for="avatar" style="margin-right: 5px">Explanation SiGML</label>
-              <br>
-
-              <!-- Defines the button and label displayed for the option "explain+ava" -->
-              <input type="radio" name="expl" id="explainAva" value="explAva" onclick="changeDisplay(this);" checked>
-              <label for="explainAva" style="margin-right:5px">Explanation SiGML + avatar animation</label>
-              <br>
-
-
-              <textarea id="SiGMLTut" placeholder="Enter the gloss(es) whose SiGML you would like explained here"></textarea>
-              <br>
-
-
-              <input type="button" class="btn btn-primary" id="playTut" value="Play" onclick='callPython(document.getElementById("SiGMLTut").value, "alertTutorial",2);'/>
-              <input type="button" id="stopButtonTut" class="undisplayed" value="Stop" onclick='CWASA.stopSiGML(2);'/>
-              <input type="button" id="replayButtonTut" class="undisplayed" value="Replay" name="" onclick="playText(document.getElementById('replayButtonTut').name,2)">
-              <br>
-
-              <br>
-              <label id="speedLabelTut" for="speedAdjTut" style="display: none;">Adjust speed: </label>
-              <span id="speedAdjTut" class="undisplayed" style="margin-bottom:5px"></span>
-              <br>
-
-              <br>
-              <label id="glossLabelTut" for="outputGlossTut" style="display: none;">Gloss: </label>
-              <input id="outputGlossTut" class="undisplayed" value="[none]" type="text">
-              <br>
-            </span>
-          </div>
-
-          <div class="col-md-4">
-            <span id="avatarTut" class="CWASAAvatar av2" style="width: 350px"></span>
-          </div>
-        </div>
-
-      </div>
-
+    </div>
 </section>
+
 
 </div>
 <!-- Footer-->
