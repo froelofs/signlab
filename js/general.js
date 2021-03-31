@@ -175,9 +175,8 @@ $('.timepicker').timepicker({
    return time;
   }
 
-  //navbar test
   $(function(){
-    // $("#nav-placeholder").load("nav.html");
+    // creates navbar in JS
     var bar = '';
     bar += '<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">';
     bar += '<div class="container-fluid" style="width: 83%; margin-top: 0px;">';
@@ -203,16 +202,16 @@ $('.timepicker').timepicker({
 
     $("#nav-placeholder").html(bar);
 
-
+    // gets current page to add active tag
     var id = getPage();
     console.log(id);
     $("#" + id).addClass("active");
   });
 
+// Checks which page the user is on and returns navbar ID
 function getPage(){
   allTabs = ['AboutNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
   sections = ['About', 'Translate', 'People', 'Publications', 'Projects'];
-  // Add an "active" class to the button that opened the tab
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
       return allTabs[j];
