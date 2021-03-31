@@ -210,8 +210,8 @@ $('.timepicker').timepicker({
 
 // Checks which page the user is on and returns navbar ID
 function getPage(){
-  allTabs = ['AboutNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
-  sections = ['About', 'Translate', 'People', 'Publications', 'Projects'];
+  allTabs = ['AboutNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
+  sections = ['About', 'Translate', 'Translator', 'People', 'Publications', 'Projects'];
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
       return allTabs[j];

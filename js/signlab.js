@@ -144,7 +144,7 @@ function changeLanguage(language, onload=false) {
 }
 
 $(window).on("load", function(){
-  if (document.getElementById('Translate')) {
+  if (document.getElementById('Translator')) {
     changeLanguage(true);
   }
 } );
