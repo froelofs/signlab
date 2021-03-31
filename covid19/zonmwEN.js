@@ -39,7 +39,6 @@ function changeFunc(myRadio) {
   }
   else if (myRadio.value == "demo"){
     options = sentOptions;
-    startPose();
   }
 }
 
