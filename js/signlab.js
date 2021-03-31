@@ -152,5 +152,7 @@ $(window).on("load", function(){
 function removeDisclaimer(){
   document.getElementById("avatarTranslator").setAttribute("class","container-fluid");
   document.getElementById("disclaimerAvatar").setAttribute("class","undisplayed");
+  console.log(document.getElementById("TranslateNav").className);
   document.getElementById("TranslateNav").setAttribute("class","nav-link active");
+  console.log(document.getElementById("TranslateNav").className);
 }
