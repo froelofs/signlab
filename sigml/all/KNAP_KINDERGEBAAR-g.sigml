@@ -8,20 +8,24 @@
     </sign_nonmanual>
     <sign_manual>
         <handconfig handshape="flat"/>
-        <handconfig extfidir="ul" second_extfidir="uil"/>
+        <handconfig extfidir="uul" second_extfidir="uuil"/>
         <handconfig palmor="d" second_palmor="dr"/>
-        <location_bodyarm contact="close" location="forehead" second_location="headtop" side="right_beside">
-          <location_hand digits="3" location="nail" side="dorsal"/>
+        <location_bodyarm contact="close" location="forehead" side="right_at">
+          <location_hand digits="3" location="base" side="palmar"/>
         </location_bodyarm>
       <rpt_motion repetition="fromstart">
         <tgt_motion>
            <changeposture/>
-           <location_bodyarm contact="close" location="headtop" side="right_at"/>
+        <location_bodyarm contact="touch" location="forehead" side="right_at">
+          <location_hand digits="3" location="base" side="palmar"/>
+        </location_bodyarm>
         </tgt_motion>
       </rpt_motion>
         <tgt_motion>
            <changeposture/>
-           <location_bodyarm contact="close" location="forehead" second_location="headtop" side="right_beside"/>
+        <location_bodyarm contact="close" location="forehead" side="right_at">
+          <location_hand digits="3" location="base" side="palmar"/>
+        </location_bodyarm>
         </tgt_motion>
     </sign_manual>
   </hamgestural_sign>

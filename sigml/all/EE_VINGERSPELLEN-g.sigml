@@ -2,8 +2,8 @@
 <sigml>
     <hamgestural_sign gloss="EE">
         <sign_manual>
-            <handconfig contactkind="pad" contactpair="12" handshape="fist" mainbend="hooked" second_handshape="flat" second_thumbpos="across" thumbpos="across"/>
-            <handconfig extfidir="u"/>
+            <handconfig  handshape="flat" mainbend="dblhooked" thumbenclosed="true" thumbpos="across"/>
+            <handconfig extfidir="uuo" second_extfidir="u"/>
             <handconfig palmor="d"/>
             <location_bodyarm location="shoulders" side="right_at"/>
             <directedmotion direction="r"/>
