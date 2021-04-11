@@ -2,3 +2,4 @@
 *.mov
 *.mov
 .DS_Store
+files2dict.py
