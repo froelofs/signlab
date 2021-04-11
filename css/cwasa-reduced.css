@@ -233,3 +233,16 @@ body.busy::before {
   opacity: 0.4;
   pointer-events: none;
 }
+
+.textDIV{
+  padding:0px !important;
+}
+
+.avatarGIF{
+  margin-right: 80px;
+}
+
+.publicationDIV{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
