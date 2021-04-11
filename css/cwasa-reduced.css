@@ -93,6 +93,7 @@
 }
 
 .displayed { }
+
 .undisplayed { display: none; }
 
 /* Busy state */
