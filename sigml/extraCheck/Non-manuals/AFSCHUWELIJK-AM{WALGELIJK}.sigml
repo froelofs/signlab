@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-  <hamgestural_sign gloss="AFSCHUWELIJK_VINDEN">
+  <hamgestural_sign gloss="AFSCHUWELIJK">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="T05"/>
