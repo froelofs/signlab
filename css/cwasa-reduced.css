@@ -239,6 +239,10 @@ body.busy::before {
   padding:0px !important;
 }
 
+.peopletextDIV{
+  padding:200px !important;
+}
+
 .avatarGIF{
   /* margin-right: 80px; */
   margin-left: 80px;
