@@ -55,7 +55,7 @@
 .CWASAAvatar {
 	display: inline-block;
 	background: #A3B8D2;
-	width: 600px; 
+	width: 600px;
   height: 500px;
 	border: 0px;
   padding: 0px;
@@ -240,7 +240,8 @@ body.busy::before {
 }
 
 .avatarGIF{
-  margin-right: 80px;
+  /* margin-right: 80px; */
+  margin-left: 80px;
 }
 
 .publicationDIV{
