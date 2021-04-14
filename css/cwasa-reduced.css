@@ -239,13 +239,11 @@ body.busy::before {
   padding:0px !important;
 }
 
-.peopletextDIV{
-  padding-left:200px !important;
-}
 
 .avatarGIF{
   /* margin-right: 80px; */
-  margin-left: 80px;
+  /* margin-left: 80px; */
+  margin-bottom: 80px;
 }
 
 .publicationDIV{
