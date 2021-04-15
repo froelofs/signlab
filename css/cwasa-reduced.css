@@ -30,8 +30,8 @@
 }
 .txtGloss {
   /* font-family: monospace;   */
-	font-size: 1em;  font-weight: bold;
-	text-align: center;  color: #E33;  width: 10em;
+	font-size: 1em; 
+	text-align: left;  width: 10em;
 }
 
 .divCtrlPanel {

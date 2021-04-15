@@ -67,20 +67,23 @@
         <!--================================================================-->
 
         <span style="display:inline-block; vertical-align:top; margin-left: 30px; text-align: left;">
+              
+              <span id="selectExplain">Select your input language: </span>
+              <select class="form-select" aria-label="Default select example" onchange="changeLanguage(this.value);" style="margin-bottom: 50px;">
+               <option  selected value="English">English</option>
+               <option value="Nederlands">Nederlands</option>
+              </select>
+
+              <!-- This button exists so that the ZonMw scripts know that the avatar option is active -->
+              <input type="radio" id="avatarDisplay" name="display" value="demo" class="undisplayed" checked>
+
               <form autocomplete="off">
                 <div id="autocomp" class="autocomplete" style="width:400px;">
                   <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
                 </div>
               </form>
 
-              <span id="selectExplain">Change the input language: </span>
-              <select class="form-select" aria-label="Default select example" onchange="changeLanguage(this.value);" style="margin-bottom: 5px;">
-               <!-- <option selected>Select the input language</option> -->
-               <option  selected value="English">English</option>
-               <option value="Nederlands">Nederlands</option>
-              </select>
-              <!-- This button exists so that the ZonMw scripts know that the avatar option is active -->
-              <input type="radio" id="avatarDisplay" name="display" value="demo" class="undisplayed" checked>
+              
 
               <div id="minutesBox" class="varBox">
                <label for="minutes" style="display: inline-block;">Number of minutes:</label>
@@ -148,12 +151,14 @@
               <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
               <br>
               <br>
+              <br>
+              <br>
               <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
                <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
               <br>
               <br>
-              <label id="glossLabel"for="outputGloss" style="display: inline-block;">Gloss: </label>
-              <input id="outputGloss" class="txtGloss av0" value="[none]" type="text">
+              <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px">Current sign: </label>
+              <input id="outputGloss" class="txtGloss av0" value="none" type="text">
               <br>
         </span>
 
