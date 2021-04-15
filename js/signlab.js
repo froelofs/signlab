@@ -128,7 +128,7 @@ function changeLanguage(language, onload=false) {
     varPath = "covid19/json/variableDictNL.json";
     // document.getElementById('language').setAttribute("class","flag-icon flag-icon-gb");
     document.getElementById('mySiGML').placeholder = 'Vul hier een zin of trefwoorden in';
-    document.getElementById('selectExplain').textContent="Selecteer de invoertaal taal: ";
+    document.getElementById('selectExplain').textContent="Invoertaal: ";
   }
   else{
     js.src = "covid19/zonmwEN.js";
@@ -137,7 +137,7 @@ function changeLanguage(language, onload=false) {
     varPath = "covid19/json/variableDictEN.json";
     // document.getElementById('language').setAttribute("class","flag-icon flag-icon-nl");
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
-    document.getElementById('selectExplain').textContent="Select your input language:: ";
+    document.getElementById('selectExplain').textContent="Input language: ";
   }
   head.appendChild(js);
   console.log("language: " + language);
