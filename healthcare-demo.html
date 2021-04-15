@@ -68,11 +68,17 @@
 
         <span style="display:inline-block; vertical-align:top; margin-left: 30px; margin-top: 20px; text-align: left;">
               
-              <span id="selectExplain">Select your input language: </span>
-              <select class="form-select" aria-label="Default select example" onchange="changeLanguage(this.value);" style="margin-bottom: 50px;">
-               <option  selected value="English">English</option>
-               <option value="Nederlands">Nederlands</option>
-              </select>
+
+              <div class="mb-3 row">
+                <label id="selectExplain" for="inputLanguageForm" class="col-sm-5 col-form-label">Text replaced by javascript based on current input language</label>
+                <div class="col-sm-4">
+                  <select id="inputLanguageForm" class="form-select" aria-label="Default select example" onchange="changeLanguage(this.value);" style="margin-bottom: 0px;">
+                    <option  selected value="English">English</option>
+                    <option value="Nederlands">Nederlands</option>
+                  </select>
+                </div>
+              </div>
+
 
               <!-- This button exists so that the ZonMw scripts know that the avatar option is active -->
               <input type="radio" id="avatarDisplay" name="display" value="demo" class="undisplayed" checked>
