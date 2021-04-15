@@ -55,7 +55,8 @@
 .CWASAAvatar {
 	display: inline-block;
 	background: #A3B8D2;
-	width: 600px;
+  max-width: 600px;
+	width: 80%;
   height: 500px;
 	border: 0px;
   padding: 0px;
