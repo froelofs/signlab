@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="EURO">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="2:ro"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="dr"/>
+      <location_bodyarm location="neck" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="r" direction="d" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="do" palmor="dl" second_extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+      <seq_motion fused="true">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="l" palmor="l"/>
+        </tgt_motion>
+        <directedmotion direction="r" size="small"/>
+      </seq_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

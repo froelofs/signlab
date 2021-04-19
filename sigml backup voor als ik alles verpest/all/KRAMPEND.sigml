@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="KRAMPEND">
+        <sign_manual both_hands="true">
+            <handconfig handshape="finger2345" second_handshape="flat" second_mainbend="round" second_thumbpos="out" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="l" second_extfidir="ul"/>
+                <handconfig extfidir="dr" palmor="r" second_extfidir="r"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+                <location_bodyarm location="chest" second_location="shoulders"/>
+            </split_location>
+            <par_motion>
+                <directedmotion direction="u" slow="true"/>
+                <tgt_motion>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="fist" thumbpos="across"/>
+                    </tgt_motion>
+                    <split_location>
+                        <location_bodyarm location="shoulders" second_location="chest"/>
+                        <location_bodyarm location="chest"/>
+                    </split_location>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ep" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TF"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

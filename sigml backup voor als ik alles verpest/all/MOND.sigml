@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MOND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mOn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="touch" location="lips" side="right_at">
+        <location_hand digits="2" location="nail" second_digits="2" second_location="tip" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="l" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="l" second_extfidir="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="lips" side="left_at">
+          <location_hand digits="2" location="nail" second_digits="2" second_location="tip" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" curve_size="big" direction="r" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="u"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="lips" side="right_at">
+          <location_hand digits="2" location="nail" second_digits="2" second_location="tip" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

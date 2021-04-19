@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BOODSCHAPPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bodsAp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="uo" second_extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="left_at" side="left_at"/>
+      <par_motion>
+        <directedmotion curve="r" direction="r" size="big" slow="true"/>
+        <fingerplay/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo" palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

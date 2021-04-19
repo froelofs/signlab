@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GROOT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xro:t"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="out"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close"/>
+      <directedmotion curve="u" direction="r"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

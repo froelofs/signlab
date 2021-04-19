@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZITTEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="OOp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger23spread" thumbpos="across"/>
+        <handconfig handshape="flat" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="d" palmor="l" second_extfidir="dl"/>
+        <handconfig extfidir="o" palmor="r"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+        <location_bodyarm contact="close" location="stomach" second_location="chest"/>
+      </split_location>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="dr"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="d" palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="4" location="base" side="dorsal"/>
+          <location_hand digits="2" location="nail" side="right_beside"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NIEZEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AAsi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="nose" side="right_at">
+        <location_hand digits="2" location="base" side="palmar"/>
+      </location_bodyarm>
+      <nomotion/>
+      <par_motion>
+        <directedmotion direction="do" fast="true" size="big"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="out"/>
+          <handconfig extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

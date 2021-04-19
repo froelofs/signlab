@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VANDAAR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="fA:n" speed="0.5"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+        <eye_brows movement="RB" speed="0.4"/>
+        <eye_lids movement="WB" speed="0.4"/>
+      </facialexpr_tier>
+      <body_tier>
+        <body_movement movement="SI" speed="0.7"/>
+      </body_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at">
+        <location_hand digits="3" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="d" speed="0.3"/>
+          <tgt_motion slow="true">
+            <changeposture/>
+            <handconfig palmor="l" second_palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="chest" second_location="stomach" second_side="right_at">
+          <location_hand digits="3" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

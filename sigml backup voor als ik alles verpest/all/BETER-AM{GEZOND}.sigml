@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BETER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bet@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="pinch12open"/>
+        <handconfig handshape="flat" mainbend="round" thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="handback"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="u" direction="r" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

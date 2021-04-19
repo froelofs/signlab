@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RUIKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="9_yk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="l" second_extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="touch" location="nose">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="l" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

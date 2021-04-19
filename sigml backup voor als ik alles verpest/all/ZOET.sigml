@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZOET">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zut"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="lips">
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <fingerplay/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHOOL_02">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sxol"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm location="shoulders"/>
+      <par_motion>
+        <directedmotion direction="r" size="big"/>
+        <wristmotion motion="nodding" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="u" palmor="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

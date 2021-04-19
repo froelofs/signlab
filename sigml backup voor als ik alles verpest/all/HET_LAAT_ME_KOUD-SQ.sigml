@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONVERSCHILLIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kul"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="dr" second_palmor="d"/>
+      <handconstellation contact="touch">
+        <location_hand digits="1" location="nail" side="left_beside"/>
+        <location_hand digits="1" location="nail" side="left_beside"/>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders">
+          <location_hand location="pinkyside"/>
+        </location_bodyarm>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="r" fast="true"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="u" palmor="d" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

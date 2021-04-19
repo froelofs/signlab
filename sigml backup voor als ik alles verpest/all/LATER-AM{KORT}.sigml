@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LATER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lat"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      <directedmotion curve="u" direction="o"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

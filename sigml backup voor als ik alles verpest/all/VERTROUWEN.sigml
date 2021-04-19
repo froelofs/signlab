@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERTROUWEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vtOw"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="neck"/>
+      <par_motion>
+        <directedmotion direction="do" slow="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VAN_REPLIEK_DIENEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmmphAmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="touch" location="lips">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="r" curve_size="small" direction="r"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="d" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="lips" side="right_at">
+          <location_hand digits="2" location="base" side="left_beside"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <nomotion/>
+      <par_motion>
+        <directedmotion direction="o" size="big"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

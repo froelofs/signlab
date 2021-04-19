@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="op@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="nose" second_location="eyes" second_side="right_at" side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="opposed" thumbpos="opposed"/>
+        <location_bodyarm contact="close" location="forehead" second_location="forehead" second_side="right_at">
+          <location_hand digits="2" location="nail"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

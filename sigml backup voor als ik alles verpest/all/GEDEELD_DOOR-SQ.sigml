@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEDEELD_DOOR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="deldo:r"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head" second_location="head" second_side="right_at"/>
+      <directedmotion direction="o" size="small"/>
+      <directedmotion curve="d" curve_size="big" direction="d" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ROOS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ros"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="nail" side="right_beside"/>
+        <location_hand digits="2" location="nail" side="right_beside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="ur"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="uo" palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <nomotion/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

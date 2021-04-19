@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERKOPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vkop"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="l" second_extfidir="dl"/>
+        <handconfig extfidir="or" palmor="u" second_extfidir="uo" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="palm"/>
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="uo"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="l" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

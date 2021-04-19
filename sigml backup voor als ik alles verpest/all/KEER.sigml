@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KEER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ker"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="finger2" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="d"/>
+        <handconfig extfidir="ur" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_bodyarm contact="close" location="neck"/>
+      </handconstellation>
+      <tgt_motion>
+        <directedmotion direction="o" size="small"/>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

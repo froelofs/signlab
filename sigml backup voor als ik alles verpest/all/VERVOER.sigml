@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERVOER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vur"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open"/>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l"/>
+        <handconfig extfidir="o" palmor="d" second_extfidir="or"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="left_at"/>
+      </handconstellation>
+      <split_motion>
+        <par_motion>
+          <directedmotion direction="or"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="d" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <par_motion>
+          <directedmotion direction="r"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="uo" palmor="d" second_extfidir="or"/>
+          </tgt_motion>
+        </par_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

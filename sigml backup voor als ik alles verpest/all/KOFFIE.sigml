@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KOFFIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kOfi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="fist" second_handshape="fist" thumbpos="across"/>
+        <handconfig handshape="fist" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d"/>
+        <handconfig extfidir="or" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="thumbside"/>
+        <location_hand digits="5" location="midjoint" side="dorsal"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <split_motion>
+          <circularmotion axis="u" size="small"/>
+          <nomotion/>
+        </split_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

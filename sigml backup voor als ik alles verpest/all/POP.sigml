@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="POP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pOp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <directedmotion direction="d" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

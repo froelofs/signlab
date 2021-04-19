@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KOKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kok@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <handconstellation contact="close">
+        <location_bodyarm location="chest"/>
+      </handconstellation>
+      <tgt_motion>
+        <split_motion>
+          <seq_motion>
+            <directedmotion direction="d" fast="true" size="small"/>
+            <directedmotion direction="u" fast="true"/>
+            <directedmotion direction="d" fast="true"/>
+            <directedmotion direction="u" fast="true"/>
+            <directedmotion direction="d" fast="true" size="small"/>
+          </seq_motion>
+          <seq_motion>
+            <directedmotion direction="u" fast="true" size="small"/>
+            <directedmotion direction="d" fast="true"/>
+            <directedmotion direction="u" fast="true"/>
+            <directedmotion direction="d" fast="true"/>
+            <directedmotion direction="u" fast="true" size="small"/>
+          </seq_motion>
+        </split_motion>
+        <handconstellation contact="close"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LITER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lit"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="finger2" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="u" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm location="chest" second_location="shoulders"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="u" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+          <handconfig extfidir="ol" second_extfidir="u"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

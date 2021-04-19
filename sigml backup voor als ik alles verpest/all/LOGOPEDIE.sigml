@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LOGOPEDIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="loxop@di"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="underchin">
+        <location_hand digits="3" location="base" side="dorsal"/>
+      </location_bodyarm>
+      <wristmotion motion="nodding" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

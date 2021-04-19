@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SERVET">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sE:vEt"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="touch" location="lips" side="right_at">
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <directedmotion direction="r" fast="true" size="small"/>
+        <location_bodyarm contact="touch" location="lips" side="right_beside">
+          <location_hand digits="3" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion curve="r" curve_size="small" direction="l" size="small"/>
+        <location_bodyarm contact="touch" location="lips" side="right_at">
+          <location_hand digits="3" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="r" fast="true" size="small"/>
+        <location_bodyarm contact="touch" location="lips" side="right_beside">
+          <location_hand digits="3" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion curve="r" curve_size="small" direction="l" size="small"/>
+        <location_bodyarm contact="touch" location="lips" side="right_at">
+          <location_hand digits="3" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="r" fast="true" size="small"/>
+        <location_bodyarm contact="touch" location="lips" side="right_beside">
+          <location_hand digits="3" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

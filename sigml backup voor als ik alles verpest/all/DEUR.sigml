@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="DEUR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="d2:r"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="base" side="dorsal"/>
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <split_motion>
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig extfidir="l" second_extfidir="ol"/>
+          </tgt_motion>
+          <nomotion/>
+        </split_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

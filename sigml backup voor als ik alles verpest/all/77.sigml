@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZEVENENZEVENTIG_77">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zev@@nzev@tIx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at" side="right_at"/>
+      <wristmotion motion="swinging"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

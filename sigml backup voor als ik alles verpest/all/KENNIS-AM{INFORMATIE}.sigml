@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KENNIS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kEnIs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12" mainbend="bent"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="finger2" thumbpos="opposed"/>
+        <location_bodyarm contact="touch" location="forehead" side="right_at">
+          <location_hand digits="1" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

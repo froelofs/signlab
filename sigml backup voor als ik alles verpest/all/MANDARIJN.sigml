@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MANDARIJN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mAnEjn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" thumbpos="out"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="d" second_extfidir="do"/>
+        <handconfig extfidir="o" palmor="u" second_extfidir="or"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="base" side="right_beside"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="di" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig handshape="flat" mainbend="round" second_handshape="flat" second_mainbend="round" thumbpos="out"/>
+              <handconfig extfidir="u" palmor="dr" second_extfidir="ul" second_palmor="r"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="touch">
+            <location_hand location="pinkyside"/>
+            <location_hand location="thumbball"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

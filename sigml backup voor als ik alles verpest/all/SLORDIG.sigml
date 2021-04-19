@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SLORDIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sOdI"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="l" second_extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_hand location="palm"/>
+        <location_hand digits="3" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="l" slow="true"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

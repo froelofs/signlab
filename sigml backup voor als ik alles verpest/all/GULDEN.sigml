@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GULDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xYld@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="round" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="u" size="small" start="u"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

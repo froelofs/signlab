@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BUURMAN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bymAn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at"/>
+      <directedmotion curve="u" direction="r"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="flat" thumbpos="opposed"/>
+        <handconfig extfidir="u" palmor="d" second_extfidir="ul"/>
+        <location_bodyarm contact="close" location="eyebrows" side="left_at">
+          <location_hand digits="1" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="pinchall" mainbend="bent"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

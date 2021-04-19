@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LICHTJE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="IxY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="u" second_palmor="ul"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig handshape="ceeall" second_handshape="ceeall" second_mainbend="bent"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

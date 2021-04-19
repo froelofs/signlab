@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GARAGE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xaraS@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="stomach" second_location="chest"/>
+      <tgt_motion>
+        <directedmotion curve="u" direction="uo" size="big"/>
+        <location_bodyarm contact="armextended" location="shouldertop"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="VERTALING">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="l" palmor="d" second_extfidir="o"/>
+                <handconfig extfidir="or" palmor="u" second_extfidir="r" />
+            </split_handconfig>
+            <split_location>
+                <location_hand contact="close" location="thumbball">
+                    <location_hand digits="5" location="base"/>
+                </location_hand>
+                <location_bodyarm location="chest" second_location="chest" second_side="right_at"/>
+            </split_location>
+                <split_motion>
+                    <par_motion>
+                        <directedmotion direction="u" size="small"/>
+                        <tgt_motion>
+                            <changeposture/>
+                            <handconfig extfidir="o" palmor="u" />
+                            <location_hand contact="touch" location="pinkyside">
+                                <location_hand digits="5" location="base"/>
+                            </location_hand>
+                        </tgt_motion>
+                    </par_motion>
+                    <nomotion/>
+                </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_gesture movement="D02" speed="1.7"/>
+                <mouth_picture picture="A:l"/>
+            </mouthing_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

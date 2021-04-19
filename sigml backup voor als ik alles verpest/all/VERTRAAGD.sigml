@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="VERTRAAGD">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="opposed" thumbpos="opposed"/>
+            <handconfig extfidir="o" second_extfidir="uo"/>
+            <handconfig palmor="l"/>
+            <split_location>
+                <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+                <location_hand contact="touch" digits="2" location="tip">
+                    <location_hand digits="2" location="tip"/>
+                </location_hand>
+            </split_location>
+            <par_motion>
+                <directedmotion curve="d" direction="dr" size="big"/>
+                <directedmotion direction="u" size="small"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
+                    <handconfig extfidir="o" palmor="l" second_extfidir="uo" second_palmor="dl"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="v@rtrai" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="SB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

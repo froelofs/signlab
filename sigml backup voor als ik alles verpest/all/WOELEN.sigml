@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WOELEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="T13"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger23spread" second_handshape="finger23" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="u" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="base" side="palmar"/>
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </handconstellation>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig palmor="ul" second_palmor="u"/>
+      </tgt_motion>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig palmor="d"/>
+      </tgt_motion>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig palmor="ul" second_palmor="u"/>
+      </tgt_motion>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig palmor="d"/>
+      </tgt_motion>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig palmor="ul" second_palmor="u"/>
+      </tgt_motion>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig palmor="d"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

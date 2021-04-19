@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BABY">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bebi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true">
+      <split_handconfig>
+        <handconfig handshape="flat"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="u"/>
+        <handconfig extfidir="r" palmor="u"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="base" side="palmar"/>
+        <location_hand digits="3" location="nail"/>
+        <location_bodyarm contact="touch" location="stomach">
+          <location_hand location="pinkyside"/>
+        </location_bodyarm>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <seq_motion>
+          <directedmotion curve="d" curve_size="small" direction="l" size="small"/>
+          <directedmotion curve="d" curve_size="small" direction="r" size="small"/>
+        </seq_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

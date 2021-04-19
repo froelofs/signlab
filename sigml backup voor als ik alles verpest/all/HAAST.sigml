@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HAAST">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hast"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <seq_motion>
+          <directedmotion direction="l" fast="true" size="small"/>
+          <directedmotion direction="r" fast="true" size="small"/>
+        </seq_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

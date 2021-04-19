@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="CIJFER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sE_if@R"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shouldertop" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="i" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

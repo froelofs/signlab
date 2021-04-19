@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEVEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xef:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual nondominant="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="ur" palmor="r" second_extfidir="or"/>
+      <location_bodyarm location="chest" side="left_at"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="r" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="r"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="armextended" location="chest" side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

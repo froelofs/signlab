@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OVER_DRIE_MAANDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="odima"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig bend5="dblbent" handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="l" second_extfidir="ol"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" direction="o"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="JEUK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="2:" speed="0.8"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2345" mainbend="round"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="d" second_extfidir="o" second_palmor="dr"/>
+        <handconfig extfidir="r" palmor="d" />
+      </split_handconfig>
+      <location_bodyarm contact="touch" location="lowerarm" side="dorsal">
+        <location_hand digits="3" location="tip"/>
+      </location_bodyarm>
+      <fingerplay/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

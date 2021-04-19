@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KANTOOR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kA:nto:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="finger2345" mainbend="bent" second_handshape="finger2345"/>
+        <handconfig extfidir="uo"/>
+        <handconfig palmor="d"/>
+        <location_bodyarm contact="close" location="chest"/>
+        <fingerplay/>
+      </sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
+        <handconfig extfidir="uo" second_extfidir="ol"/>
+        <handconfig palmor="l"/>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="tip"/>
+          <location_hand digits="3" location="tip"/>
+          <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+        </handconstellation>
+        <directedmotion direction="r" size="small"/>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VIS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vIs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+      <par_motion>
+        <directedmotion direction="o"/>
+        <wristmotion motion="nodding" size="small"/>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

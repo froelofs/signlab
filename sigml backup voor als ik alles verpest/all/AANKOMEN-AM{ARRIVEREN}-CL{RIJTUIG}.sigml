@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AANKOMEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kOm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ur" second_extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" side="right_beside"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="l" fast="true" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" palmor="d" second_extfidir="l"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="chest" second_location="chest" second_side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

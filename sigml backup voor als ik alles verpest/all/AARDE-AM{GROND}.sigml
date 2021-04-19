@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AARDE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="a:d@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinchall" second_handshape="pinchall" second_mainbend="bent"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="ul" second_palmor="u"/>
+      <handconstellation contact="close">
+        <location_hand location="pinkyside"/>
+        <location_hand location="pinkyside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="r" size="small"/>
+        <fingerplay/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="u"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

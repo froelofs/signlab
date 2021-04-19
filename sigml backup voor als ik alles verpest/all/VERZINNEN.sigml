@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERZINNEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="r" second_palmor="dr"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at">
+        <location_hand digits="2" location="nail" side="left_beside"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="ur" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BAGAGE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bAgAz@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="ol" second_extfidir="d"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="stomach" second_location="stomach" second_side="right_at" side="right_beside"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="d" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

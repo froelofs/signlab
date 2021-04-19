@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEHOORZAMEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xo:rza:m"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="chest" second_side="right_at">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <directedmotion direction="d" slow="true"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

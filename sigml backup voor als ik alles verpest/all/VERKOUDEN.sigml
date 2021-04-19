@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERKOUDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vkAw"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked" second_handshape="finger2" second_mainbend="round" second_thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="nostrils">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="o" size="small"/>
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig handshape="finger2" mainbend="hooked"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

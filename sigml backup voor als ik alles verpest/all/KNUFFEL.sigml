@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KNUFFEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Uf"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="left_at">
+        <location_hand location="midjoint"/>
+      </location_bodyarm>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

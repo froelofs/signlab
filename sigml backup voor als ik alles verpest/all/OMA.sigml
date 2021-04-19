@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OMA">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="oma"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked" second_handshape="finger2" second_mainbend="hooked" thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chin" side="right_at">
+        <location_hand digits="1" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <wristmotion motion="twisting" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

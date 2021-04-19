@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ACHTTIEN_18">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Axtin"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" thumbpos="out"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="chest" second_location="chest" second_side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="l" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

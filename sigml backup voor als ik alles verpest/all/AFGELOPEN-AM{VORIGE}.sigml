@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AFGELOPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Afop"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="neck" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

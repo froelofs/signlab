@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KUSJE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L04"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig bend2="dblbent" bend3="dblbent" bend4="dblbent" bend5="dblbent" handshape="flat"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="touch" location="chin" side="right_at">
+        <location_hand digits="3" location="nail" side="dorsal"/>
+      </location_bodyarm>
+      <nomotion/>
+      <directedmotion direction="or" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
