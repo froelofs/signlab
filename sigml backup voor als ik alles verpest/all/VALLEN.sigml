@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VALLEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="C06"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" mainbend="round" second_handshape="finger23" second_mainbend="round" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d"/>
+      <par_motion>
+        <directedmotion curve="u" direction="dr" fast="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

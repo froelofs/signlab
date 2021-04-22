@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xel"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <par_motion>
+        <circularmotion axis="i"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" thumbpos="out"/>
+          <handconfig extfidir="u"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

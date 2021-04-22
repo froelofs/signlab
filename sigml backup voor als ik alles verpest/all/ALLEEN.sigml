@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ALLEEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Alen"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shouldertop" second_location="shouldertop" second_side="right_at"/>
+      <directedmotion direction="d" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LICHTBEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bEEEEEEE"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
+        <handconfig extfidir="u"/>
+        <handconfig palmor="l"/>
+        <location_bodyarm contact="close" location="neck" second_location="neck" second_side="right_at"/>
+        <directedmotion direction="o" size="small"/>
+      </sign_manual>
+      <sign_manual>
+        <handconfig handshape="pinchall"/>
+        <handconfig extfidir="u"/>
+        <handconfig palmor="l" second_palmor="ul"/>
+        <location_bodyarm location="headtop" side="right_at"/>
+        <rpt_motion repetition="fromstart_several">
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="bent" second_thumbpos="opposed" thumbpos="out"/>
+            <handconfig extfidir="ul" palmor="d" second_extfidir="ui"/>
+          </tgt_motion>
+        </rpt_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

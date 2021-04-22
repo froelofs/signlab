@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="CADEAU">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kAdo"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chin" second_location="cheek" second_side="right_at" side="right_at">
+        <location_hand digits="4" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig exempteddigits="1" handshape="flat" second_handshape="flat" second_mainbend="bent" second_thumbpos="out"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

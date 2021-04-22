@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GELOOF">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="x@lof"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="uo"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="u" palmor="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

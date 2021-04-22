@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZIJKANT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="h9_ys"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="flat"/>
+        <handconfig extfidir="ul"/>
+        <handconfig palmor="dr"/>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="tip"/>
+          <location_hand digits="2" location="tip"/>
+          <location_bodyarm location="head"/>
+        </handconstellation>
+        <par_motion>
+          <directedmotion curve="u" direction="dr" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="o" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+        <split_motion>
+          <directedmotion curve="u" direction="r"/>
+          <nomotion/>
+        </split_motion>
+      </sign_manual>
+      <sign_manual holdover="true">
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig extfidir="uo" palmor="l" second_extfidir="ol"/>
+        <location_bodyarm location="shoulders" side="right_beside"/>
+        <rpt_motion repetition="fromstart">
+          <directedmotion direction="l" size="small"/>
+        </rpt_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

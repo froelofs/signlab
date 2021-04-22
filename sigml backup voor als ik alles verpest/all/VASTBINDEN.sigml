@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VASTBINDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAsbIn@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="ul" second_extfidir="ol"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="i" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="midjoint" side="dorsal"/>
+          <location_hand digits="2" location="midjoint" side="dorsal"/>
+        </handconstellation>
+      </tgt_motion>
+      <directedmotion direction="r"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

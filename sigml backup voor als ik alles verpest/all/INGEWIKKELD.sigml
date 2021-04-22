@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="INGEWIKKELD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="INvIk@l"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" mainbend="hooked" thumbpos="opposed"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm location="shoulders"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="l" curve_size="big" direction="d" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round"/>
+            <handconfig extfidir="dl" palmor="dl"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TIJD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="tEj"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="fist" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="wristback" side="dorsal"/>
+        <location_hand location="wristback" side="palmar"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig extfidir="uo" palmor="dl" second_extfidir="or" second_palmor="d"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

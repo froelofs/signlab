@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HOEVEEL">
+  <sign_nonmanual>
+    <mouthing_tier>
+      <mouth_gesture movement="T16" speed="1.5"/>
+      <mouth_picture picture="ve:l"/>
+    </mouthing_tier>
+    <facialexpr_tier>
+      <eye_brows movement="FU" speed="0.8"/>
+      <eye_lids movement="SB" speed="0.8"/>
+      <eye_gaze direction="AD" speed="0.8"/>
+    </facialexpr_tier>
+  </sign_nonmanual>
+  <sign_manual both_hands="true" lr_symm="true">
+    <handconfig handshape="finger2345" second_handshape="finger2345" thumbpos="out"/>
+    <handconfig extfidir="u"/>
+    <handconfig palmor="ul" second_palmor="u"/>
+    <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+    <par_motion>
+      <directedmotion curve="u" curve_size="small" direction="r" />
+      <fingerplay/>
+    </par_motion>
+  </sign_manual>
+</hamgestural_sign>
+</sigml>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHITTEREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pi:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="uo" second_extfidir="ol"/>
+      <split_handconfig>
+        <handconfig palmor="d" second_palmor="dr"/>
+        <handconfig palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="handback"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <par_motion>
+          <directedmotion direction="ui" fast="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+            <handconfig extfidir="uo" palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+        </tgt_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

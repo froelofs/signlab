@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PLASTIC">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pEsI"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <wristmotion motion="swinging" size="big"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZOMER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zom@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="neck"/>
+      <par_motion>
+        <circularmotion axis="ir" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

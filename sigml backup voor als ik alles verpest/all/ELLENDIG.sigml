@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ELLENDIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chest"/>
+      <circularmotion axis="i" size="small"/>
+      <circularmotion axis="i" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

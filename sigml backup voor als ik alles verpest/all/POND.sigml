@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="POND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pOn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="d"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="d" second_extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

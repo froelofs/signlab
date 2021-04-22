@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERSCHEIDENE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="fff"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="bent" thumbpos="out"/>
+      <handconfig extfidir="uo" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="tip"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm contact="close" location="neck"/>
+      </handconstellation>
+      <par_motion>
+        <par_motion>
+          <directedmotion direction="r"/>
+          <fingerplay/>
+        </par_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

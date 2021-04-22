@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WAARSCHUWEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vasYv"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_mainbend="bent" second_thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="o" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

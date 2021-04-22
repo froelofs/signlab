@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="FOTO">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="foto"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="opposed"/>
+        <handconfig handshape="cee12"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="u" palmor="d" second_extfidir="ul"/>
+        <handconfig extfidir="u" palmor="d" second_extfidir="ur"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="cheek" side="right_at">
+          <location_hand digits="1" location="midjoint"/>
+        </location_bodyarm>
+        <location_bodyarm contact="close" location="eyes" side="left_at"/>
+      </split_location>
+      <rpt_motion repetition="fromstart">
+        <split_motion>
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig bend2="round" handshape="finger2" second_handshape="finger2" second_thumbpos="opposed" thumbpos="opposed"/>
+          </tgt_motion>
+          <nomotion/>
+        </split_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

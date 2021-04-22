@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MILJARD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mIA"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="bent" second_thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="underchin">
+        <location_hand digits="2" location="base" side="dorsal"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion direction="o" slow="true"/>
+        <fingerplay/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+          <handconfig extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

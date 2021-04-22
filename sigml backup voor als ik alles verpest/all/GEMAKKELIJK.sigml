@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEMAKKELIJK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mAk@l@k"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="chin" second_location="chin" second_side="left_at">
+        <location_hand digits="3" location="nail"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <wristmotion motion="stircw" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

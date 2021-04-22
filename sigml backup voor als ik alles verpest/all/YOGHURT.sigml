@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="YOGHURT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="jOxYt"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" specialfingers="5" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="chin" side="right_beside">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" curve_size="big" direction="il"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="l" second_extfidir="ul" second_palmor="dl"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="lips" side="right_at">
+          <location_hand digits="5" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

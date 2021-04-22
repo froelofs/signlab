@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VOETBALLEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vUbal"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="l" second_extfidir="ol" second_palmor="dl"/>
+        <handconfig extfidir="or" palmor="u" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="palm"/>
+        <location_hand digits="3" location="tip"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="or" fast="true" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="o" palmor="d" second_palmor="dl"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

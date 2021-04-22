@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZEBRAPAD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zeebaapAt"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig ceeopening="slack" handshape="ceeall"/>
+      <handconfig extfidir="ol" second_extfidir="o"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="tip"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several" repetition_baseshift="o">
+        <par_motion>
+          <directedmotion direction="r"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="o"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

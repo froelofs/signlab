@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KRIBBE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kIbY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="across"/>
+      <handconfig extfidir="uo" second_extfidir="ur"/>
+      <handconfig palmor="l" second_palmor="ul"/>
+      <location_bodyarm location="neck" side="right_beside"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="dl" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand location="wristback" side="palmar"/>
+          <location_hand location="wristback" side="dorsal"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

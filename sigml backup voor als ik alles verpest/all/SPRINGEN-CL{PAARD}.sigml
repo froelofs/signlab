@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SPRINGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sprINEn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" specialfingers="5" thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="dl"/>
+      <handconstellation contact="close">
+        <location_hand location="palm"/>
+        <location_hand location="palm"/>
+      </handconstellation>
+      <circularmotion axis="l" rest="true" start="ur"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ANDERE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AdYrY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="od"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="l" fast="true" size="small"/>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

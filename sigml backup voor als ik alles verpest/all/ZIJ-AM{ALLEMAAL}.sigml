@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZIJ">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Amal"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="neck" second_location="neck" side="left_at"/>
+      <par_motion>
+        <directedmotion curve="r" direction="r" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="or" palmor="d" second_extfidir="uo" second_palmor="dl"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

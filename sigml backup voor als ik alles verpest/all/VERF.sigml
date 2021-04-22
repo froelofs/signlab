@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERF">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vE:f"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" second_handshape="finger23" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="do" second_extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="u"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger23" thumbpos="across"/>
+          <handconfig extfidir="u" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion direction="d"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger23" mainbend="bent" second_handshape="finger23" second_thumbpos="across" thumbpos="across"/>
+          <handconfig extfidir="do" second_extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion direction="u"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger23" thumbpos="across"/>
+          <handconfig extfidir="u" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion direction="d"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger23" mainbend="bent" second_handshape="finger23" second_thumbpos="across" thumbpos="across"/>
+          <handconfig extfidir="do" second_extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

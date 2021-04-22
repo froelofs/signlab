@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NACHT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="nAxt"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at">
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="l" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig palmor="u" second_palmor="ur"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="forehead">
+          <location_hand digits="5" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KNAP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="nAp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+        <handconfig handshape="flat"/>
+        <handconfig extfidir="uul" second_extfidir="uuil"/>
+        <handconfig palmor="d" second_palmor="dr"/>
+        <location_bodyarm contact="close" location="forehead" side="right_at">
+          <location_hand digits="3" location="base" side="palmar"/>
+        </location_bodyarm>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+           <changeposture/>
+        <location_bodyarm contact="touch" location="forehead" side="right_at">
+          <location_hand digits="3" location="base" side="palmar"/>
+        </location_bodyarm>
+        </tgt_motion>
+      </rpt_motion>
+        <tgt_motion>
+           <changeposture/>
+        <location_bodyarm contact="close" location="forehead" side="right_at">
+          <location_hand digits="3" location="base" side="palmar"/>
+        </location_bodyarm>
+        </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

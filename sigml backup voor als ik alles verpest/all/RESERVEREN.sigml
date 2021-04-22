@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RESERVEREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Ever"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="across" thumbpos="out"/>
+      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="o"/>
+        <tgt_motion halt="true">
+          <changeposture/>
+          <handconfig handshape="fist" thumbpos="across"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

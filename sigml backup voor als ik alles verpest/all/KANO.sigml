@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KANO">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kano"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="flat" thumbpos="across"/>
+        <handconfig handshape="flat" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="o" palmor="l"/>
+        <handconfig extfidir="o" palmor="r"/>
+      </split_handconfig>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="o"/>
+          <directedmotion direction="ol" size="small" slow="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="tip"/>
+          <location_hand digits="3" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

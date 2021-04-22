@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SLAGROOM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sAxrom"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out" thumbpos="opposed"/>
+      <handconfig extfidir="d" second_extfidir="ol"/>
+      <handconfig palmor="dr"/>
+      <location_bodyarm contact="close" location="chest"/>
+      <par_motion>
+        <circularmotion axis="d" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="opposed"/>
+          <handconfig extfidir="do" palmor="d" second_extfidir="or"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion direction="u"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="pinchall" mainbend="bent"/>
+          <handconfig extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

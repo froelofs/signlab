@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERLEGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vle:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="lips" second_location="chin" second_side="right_at" side="right_at">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig palmor="dr"/>
+        <location_bodyarm contact="touch" location="chin" side="right_at">
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VANZELF">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAzElf"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="chest">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <circularmotion axis="l" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

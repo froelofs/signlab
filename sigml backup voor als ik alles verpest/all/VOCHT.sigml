@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VOCHT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vOx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_thumbpos="opposed" thumbpos="opposed"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="pinchall" mainbend="bent"/>
+      </tgt_motion>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig handshape="ceeall" mainbend="bent"/>
+      </tgt_motion>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="pinchall" mainbend="bent"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

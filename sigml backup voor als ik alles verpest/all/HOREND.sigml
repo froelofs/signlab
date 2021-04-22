@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HOREND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="or@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="ui"/>
+      <handconfig palmor="l" second_palmor="ul"/>
+      <location_bodyarm contact="touch" location="earlobe" side="right_at">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion direction="ur"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="u" palmor="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

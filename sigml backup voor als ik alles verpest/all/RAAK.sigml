@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RAAK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rak"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="neck" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="o" fast="true"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

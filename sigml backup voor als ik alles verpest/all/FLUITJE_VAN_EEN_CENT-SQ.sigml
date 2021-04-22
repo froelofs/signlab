@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="FLUITJE_VAN_EEN_CENT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="T13"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chin">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="d" fast="true" size="small"/>
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+            <handconfig extfidir="ul" palmor="r" second_extfidir="il" second_palmor="dr"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="shoulders">
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <nomotion/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

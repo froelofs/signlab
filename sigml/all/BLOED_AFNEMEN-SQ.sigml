@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sigml>
     <hamgestural_sign gloss="BLOED_AFNEMEN">
+      <sign_nonmanual>
+          <mouthing_tier>
+              <mouth_gesture movement="D01"/>
+          </mouthing_tier>
+          <body_tier>
+              <body_movement movement="RR"/>
+          </body_tier>
+          <head_tier>
+              <shoulder_movement movement="SL"/>
+          </head_tier>
+          <facialexpr_tier>
+              <eye_gaze movement="DN"/>
+              <eye_brows movement="DN"/>
+              <eye_lids movement="SB"/>
+          </facialexpr_tier>
+      </sign_nonmanual>
         <sign_manual>
             <handconfig handshape="finger23spread" thumbpos="opposed"/>
             <handconfig extfidir="il" second_extfidir="o"/>
@@ -23,21 +39,5 @@
                 <location_bodyarm location="chest" second_location="shoulders"/>
             </tgt_motion>
         </sign_manual>
-        <sign_nonmanual>
-            <mouthing_tier>
-                <mouth_gesture movement="D01"/>
-            </mouthing_tier>
-            <body_tier>
-                <body_movement movement="RR"/>
-            </body_tier>
-            <head_tier>
-                <shoulder_movement movement="SL"/>
-            </head_tier>
-            <facialexpr_tier>
-                <eye_gaze movement="DN"/>
-                <eye_brows movement="DN"/>
-                <eye_lids movement="SB"/>
-            </facialexpr_tier>
-        </sign_nonmanual>
     </hamgestural_sign>
 </sigml>

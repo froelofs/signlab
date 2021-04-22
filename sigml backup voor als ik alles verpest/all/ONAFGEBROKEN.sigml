@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONAFGEBROKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="do:do:do"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="across" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l"/>
+        <handconfig extfidir="or" palmor="dr"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand location="thumbside"/>
+        <location_hand digits="4" location="tip" side="left_beside"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <directedmotion curve="d" curve_size="small" direction="do" fast="true" size="small"/>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="base" side="right_beside"/>
+            <location_hand digits="5" location="midjoint" side="right_beside"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

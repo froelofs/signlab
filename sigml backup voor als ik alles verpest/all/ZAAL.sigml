@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZAAL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="za:l"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="nail"/>
+        <location_hand digits="3" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <directedmotion direction="o"/>
+        <nomotion/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

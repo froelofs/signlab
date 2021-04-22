@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GEVOEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xvul"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="l" second_extfidir="il"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="touch" location="chest">
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="i" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

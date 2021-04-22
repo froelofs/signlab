@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="INDEX_3A">
+    <sign_nonmanual>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SR"/>
+          <head_movement movement="SR"/>
+          <head_movement movement="SR"/>
+        </head_par>
+      </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="RD"/>
+        </facial_expr_par>
+       </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
+      <directedmotion direction="dr" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

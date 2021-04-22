@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BIDDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bId@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand location="palm"/>
+        <location_hand location="palm"/>
+        <location_bodyarm contact="close" location="shoulders"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="do" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="DERTIEN_13">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="dERtin"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="l" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

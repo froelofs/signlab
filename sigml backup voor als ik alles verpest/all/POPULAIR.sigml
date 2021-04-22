@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="POPULAIR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="popuE"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
+      <handconfig extfidir="or" second_extfidir="uo"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="chest" second_location="shoulders">
+          <location_hand location="wristback" side="palmar"/>
+        </location_bodyarm>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="o" fast="true" size="small"/>
+            <tgt_motion fast="true">
+              <changeposture/>
+              <handconfig extfidir="ol" palmor="l" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="close"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

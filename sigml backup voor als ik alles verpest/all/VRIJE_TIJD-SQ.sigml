@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VRIJ">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vEj"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="or" fast="true" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

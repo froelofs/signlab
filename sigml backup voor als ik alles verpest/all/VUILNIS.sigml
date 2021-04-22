@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VUILNIS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v9nI"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="ol" second_extfidir="uo"/>
+      <handconfig palmor="d" second_palmor="dr"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+      <par_motion>
+        <directedmotion direction="dr" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="out"/>
+          <handconfig extfidir="do"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

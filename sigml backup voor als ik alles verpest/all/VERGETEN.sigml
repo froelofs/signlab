@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERGETEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vxe"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at">
+        <location_hand digits="3" location="nail"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion direction="or" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

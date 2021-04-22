@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KRUIPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kYp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="l" second_extfidir="ol"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="close">
+        <location_hand digits="4" location="nail" side="palmar"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="stomach"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart" repetition_baseshift="o">
+        <circularmotion axis="l" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

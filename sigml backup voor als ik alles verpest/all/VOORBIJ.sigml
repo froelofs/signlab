@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VOORBIJ">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ObEj"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat"/>
+        <handconfig handshape="flat" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="o" palmor="l"/>
+        <handconfig extfidir="or" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="thumbside"/>
+        <location_hand location="pinkyside"/>
+      </handconstellation>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig extfidir="ol" second_extfidir="l"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

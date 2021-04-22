@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERTALEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v@tal"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger23spread" second_handshape="finger23" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="u" second_extfidir="ur" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="palm"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="l" curve_size="small" direction="u"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" palmor="u" second_extfidir="uo" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="r" curve_size="small" direction="d"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig palmor="u"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="midjoint" side="palmar"/>
+          <location_hand digits="2" location="nail"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OM_DE_TWEE_MAANDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Omvema"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="l" second_extfidir="il"/>
+      <handconfig palmor="ur" second_palmor="r"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="left_at">
+        <location_hand digits="3" location="tip"/>
+      </location_bodyarm>
+      <circularmotion axis="ol"/>
+      <circularmotion axis="ol" end="d" size="small" start="u"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

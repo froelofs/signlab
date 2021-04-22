@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MATERIAAL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mAtea"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="r"/>
+        <wristmotion motion="swinging"/>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

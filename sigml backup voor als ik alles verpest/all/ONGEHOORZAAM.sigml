@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONGEHOORZAAM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmmmmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="earlobe" second_location="cheek" second_side="right_at" side="right_at">
+        <location_hand digits="2" location="nail" side="left_beside"/>
+      </location_bodyarm>
+      <directedmotion curve="l" curve_size="small" direction="o" fast="true" size="small"/>
+      <directedmotion curve="r" curve_size="small" direction="i" fast="true" size="small"/>
+      <directedmotion curve="l" curve_size="small" direction="o" fast="true" size="small"/>
+      <directedmotion curve="r" curve_size="small" direction="i" fast="true" size="small"/>
+      <directedmotion curve="l" curve_size="small" direction="o" fast="true" size="small"/>
+      <directedmotion curve="r" curve_size="small" direction="i" fast="true" size="small"/>
+      <directedmotion curve="l" curve_size="small" direction="o" fast="true" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

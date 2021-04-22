@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VIJFENNEGENTIG_95">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vE_if@nnex@tIx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="out"/>
+        <handconfig extfidir="ul" palmor="l" second_extfidir="u"/>
+        <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="or"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="m"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig bend5="dblhooked" handshape="flat" thumbpos="across"/>
+      <handconfig extfidir="do"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <directedmotion direction="r"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

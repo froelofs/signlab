@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BLANK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bAN"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" thumbpos="opposed"/>
+      <handconfig extfidir="il" second_extfidir="ul"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="touch" location="eyes" second_location="cheek" second_side="left_at" side="left_at">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" curve_size="small" direction="do" size="small" slow="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinchall" mainbend="bent"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

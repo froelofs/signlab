@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BOEF">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="buf"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="left_at"/>
+      <tgt_motion>
+        <directedmotion direction="i" size="small"/>
+        <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="left_at">
+          <location_hand digits="1" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

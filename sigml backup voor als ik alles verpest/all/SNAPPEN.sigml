@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SNAPPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="fA:n"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="right_at">
+        <location_hand digits="3" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="d"/>
+          <tgt_motion slow="true">
+            <changeposture/>
+            <handconfig palmor="l" second_palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="chest" second_location="stomach" second_side="right_at">
+          <location_hand digits="3" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
