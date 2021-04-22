@@ -14,20 +14,22 @@ def main(sentence):
     # ? toevoegen
 
     foundSigns = {}
-    sentence.replace("><","> <")
-    sentence = sentence.split(" ")
+    sentence = [token.replace("><","> <") for token in sentence]
+    sentence =  " ".join(sentence).split()
     tags = []
 
     for sign in sentence:
-        if sign contains "<" and does not contain "/":
+        if "<" in sign and "/" not in sign:
             opentag = sign.strip("<", ">")
-            opentag = convert(opentag) # tag = "shoulder_movement movement='UL'"
+            # opentag = convert(opentag) # tag = "shoulder_movement movement='UL'"
             tags.append(opentag)
+            print("This sign contains '<' and not '/': ", sign)
             continue
-        if sign contains "/":
+        if "/" in sign:
             closetag = sign.strip("</", ">")
-            closetag = convert(closetag) # tag = "shoulder_movement movement='UL'"
+            # closetag = convert(closetag) # tag = "shoulder_movement movement='UL'"
             tags.remove(closetag)
+            print("This sign contains '/': ", sign)
             continue
         if newDict[sign]:
             print("SiGML found:", newDict[sign])
@@ -35,24 +37,24 @@ def main(sentence):
         else:
             print("Could not find entry for", sign)
 
-    sigml = make_sigml(foundsigns)
-    playsigml(sigml)
+    # sigml = make_sigml(foundsigns)
+    # playsigml(sigml)
 
-    def make_sigml(foundsigns):
-        sigml = '<?xml version="1.0" encoding="UTF-8"?><sigml>'
-        for key, value in foundsigns.items():
-            for line in lees(value[0]):
-                negeer eerste twee regels en laatste
-                if value[1]:
-                    for elke tags:
-                        if check of er al iets in de tier zit:
-                            if not mouthing_tier or facialexpr_tier:
-                                overwrite
-                            else:
-                                bijvoegen aan tier (met par)
-                sigml += line
-        sigml += '</sigml>'
-        return sigml
+    # def make_sigml(foundsigns):
+    #     sigml = '<?xml version="1.0" encoding="UTF-8"?><sigml>'
+    #     for key, value in foundsigns.items():
+    #         for line in lees(value[0]):
+    #             negeer eerste twee regels en laatste
+    #             if value[1]:
+    #                 for elke tags:
+    #                     if check of er al iets in de tier zit:
+    #                         if not mouthing_tier or facialexpr_tier:
+    #                             overwrite
+    #                         else:
+    #                             bijvoegen aan tier (met par)
+    #             sigml += line
+    #     sigml += '</sigml>'
+    #     return sigml
 
 
     def convert(inputtag):
@@ -63,9 +65,6 @@ def main(sentence):
             if value == tag:
                 return key + "='" + value + "'" # "shoulder_movement movement='UL'"
         return None
-
-
-
 
     #Example: <st_ul></st_ul> = shoulder_tier -> shoulder_movement -> UL
     nonmans = {
@@ -96,8 +95,6 @@ def main(sentence):
                             "T06", "T07", "T08", "T09", "T10", "T11", "T12", "T13", "T14", "T15", "T16", "T17"]
         }
     }
-
-
 
 
 if __name__ == '__main__':
