@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONMIDDELLIJK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="nyyyy"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" second_handshape="finger23" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ol" second_extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several" second_repetition="fromstart_several">
+        <directedmotion direction="d" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

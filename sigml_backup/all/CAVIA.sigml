@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="CAVIA">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kavia"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" mainbend="round"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="dr"/>
+        <handconfig extfidir="do" palmor="u" second_extfidir="or"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="wristback" side="palmar"/>
+        <location_hand location="thumbside"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <par_motion>
+            <directedmotion curve="u" direction="or" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig palmor="dl"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="touch">
+            <location_hand digits="3" location="tip"/>
+            <location_hand digits="5" location="midjoint" side="right_beside"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

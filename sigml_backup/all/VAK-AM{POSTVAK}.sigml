@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VAK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="out"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="d" second_extfidir="o"/>
+        <handconfig extfidir="ur" palmor="d" second_palmor="dl"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+        <location_bodyarm location="shoulders" second_location="shoulders" second_side="left_at"/>
+      </split_location>
+      <par_motion>
+        <directedmotion direction="o" fast="true" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+          <handconfig extfidir="o" palmor="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

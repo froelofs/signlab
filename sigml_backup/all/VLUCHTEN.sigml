@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VLUCHTEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vYx"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="fist" thumbpos="across"/>
+        <handconfig handshape="flat" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="u" palmor="dl" second_palmor="l"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="neck" side="right_at"/>
+        <location_bodyarm location="chest"/>
+      </split_location>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="l" fast="true" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="out"/>
+            <handconfig extfidir="ul" palmor="d" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="base" side="dorsal"/>
+          <location_hand location="wristback" side="palmar"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

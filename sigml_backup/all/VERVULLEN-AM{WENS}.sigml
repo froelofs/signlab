@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERVULLEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="close">
+        <location_hand digits="3" location="base" side="palmar"/>
+        <location_hand digits="3" location="nail" side="dorsal"/>
+        <location_bodyarm contact="touch" location="shoulders" second_location="chest" second_side="left_at">
+          <location_hand location="pinkyside"/>
+        </location_bodyarm>
+      </handconstellation>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="u"/>
+          <nomotion/>
+        </split_motion>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

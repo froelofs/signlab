@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PARAPLU">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="papu"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="ol" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="5" location="base" side="right_beside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <split_motion>
+        <par_motion>
+          <directedmotion direction="u"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <directedmotion direction="d" size="small"/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="CHIPS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Sips"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="pinchall" mainbend="bent"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent" second_thumbpos="opposed" thumbpos="opposed"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d"/>
+        <handconfig extfidir="or" palmor="r" second_extfidir="o"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="palmar"/>
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="ui"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="uo" palmor="l"/>
+            </tgt_motion>
+          </par_motion>
+          <location_bodyarm contact="close" location="lips">
+            <location_hand digits="2" location="tip"/>
+          </location_bodyarm>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

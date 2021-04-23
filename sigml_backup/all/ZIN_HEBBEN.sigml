@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZIN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zIn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="ui"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin" second_location="neck" second_side="right_at" side="right_at">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <directedmotion direction="l" size="small"/>
+          <handconstellation contact="touch"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

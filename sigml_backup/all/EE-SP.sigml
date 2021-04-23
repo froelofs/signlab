@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="EE">
+      <sign_nonmanual>
+          <mouthing_tier>
+              <mouth_picture picture="@@" speed="0.8"/>
+          </mouthing_tier>
+          <body_tier>
+              <body_movement movement="ST"/>
+          </body_tier>
+          <facialexpr_tier/>
+      </sign_nonmanual>
+        <sign_manual>
+            <handconfig  handshape="flat" mainbend="dblhooked" thumbenclosed="true" thumbpos="across"/>
+            <handconfig extfidir="uuo" second_extfidir="u"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders" side="right_at"/>
+            <directedmotion direction="r"/>
+        </sign_manual>
+    </hamgestural_sign>
+</sigml>

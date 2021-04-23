@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GRIEP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xri:p"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="ceeall"/>
+      <handconfig extfidir="l" second_extfidir="il"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="touch" location="shoulders"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="d" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

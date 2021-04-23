@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HECHTEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hExt@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <split_handconfig>
+          <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+          <handconfig handshape="flat"/>
+        </split_handconfig>
+        <split_handconfig>
+          <handconfig extfidir="l" palmor="dl" second_extfidir="dl"/>
+          <handconfig extfidir="or" palmor="d" second_extfidir="r"/>
+        </split_handconfig>
+        <handconstellation contact="touch">
+          <location_hand location="handback"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+        <directedmotion direction="or" size="small"/>
+      </sign_manual>
+      <sign_manual>
+        <split_handconfig>
+          <handconfig handshape="pinch12open" second_handshape="pinch12open" second_mainbend="bent"/>
+          <handconfig handshape="flat"/>
+        </split_handconfig>
+        <split_handconfig>
+          <handconfig extfidir="ol" palmor="dl"/>
+          <handconfig extfidir="or" palmor="d" second_extfidir="r"/>
+        </split_handconfig>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="base" side="dorsal"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+        <tgt_motion>
+          <circularmotion axis="ol" size="small" start="r"/>
+          <handconstellation contact="touch">
+            <location_hand location="handback"/>
+            <location_hand digits="2" location="tip"/>
+          </handconstellation>
+        </tgt_motion>
+        <tgt_motion>
+          <circularmotion axis="ol" size="small" start="r"/>
+          <handconstellation contact="touch">
+            <location_hand location="wristback" side="dorsal"/>
+            <location_hand digits="2" location="tip"/>
+          </handconstellation>
+        </tgt_motion>
+        <circularmotion axis="ol" size="small" start="r"/>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

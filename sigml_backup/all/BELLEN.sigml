@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BELLEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bbEl"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig bend4="dblhooked" handshape="finger23spread" specialfingers="45" thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="cheek" side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="o" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" palmor="l" second_extfidir="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

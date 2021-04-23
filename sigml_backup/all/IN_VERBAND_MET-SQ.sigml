@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERBAND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open"/>
+      <split_handconfig>
+        <handconfig extfidir="uol" palmor="d"/>
+        <handconfig extfidir="or" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <seq_motion>
+          <directedmotion direction="o" size="small"/>
+          <directedmotion direction="i" size="small"/>
+        </seq_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

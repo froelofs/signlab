@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HIER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hiR"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="neck" second_location="neck" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="d" halt="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="dol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

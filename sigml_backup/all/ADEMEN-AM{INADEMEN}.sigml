@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="INADEMEN">
+      <sign_nonmanual>
+          <mouthing_tier>
+              <mouth_picture picture="AAA" speed="1"/>
+          </mouthing_tier>
+          <body_tier>
+              <body_movement movement="SI"/>
+          </body_tier>
+          <head_tier>
+              <shoulder_movement movement="NU"/>
+          </head_tier>
+          <facialexpr_tier>
+              <eye_gaze movement="UP"/>
+              <eye_brows movement="DN"/>
+              <eye_lids movement="TB"/>
+          </facialexpr_tier>
+      </sign_nonmanual>
+        <sign_manual>
+            <handconfig handshape="finger2345" thumbpos="out"/>
+            <handconfig extfidir="l" second_extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm contact="touch" location="chest" second_location="stomach"/>
+            <par_motion>
+                <directedmotion direction="o"/>
+                <directedmotion curve="u" direction="uo" slow="true"/>
+            </par_motion>
+        </sign_manual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LUSTEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lYs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_ceeopening="slack" second_handshape="cee12" second_mainbend="bent" thumbpos="opposed"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="eyebrows">
+        <location_hand digits="2" location="nail"/>
+      </location_bodyarm>
+      <seq_motion fused="true">
+        <par_motion>
+          <directedmotion curve="d" curve_size="small" direction="do" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinch12" mainbend="bent"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <directedmotion direction="o"/>
+      </seq_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

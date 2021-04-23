@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MOGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mA"/>
+      </mouthing_tier>
+      <head_tier>
+        <head_movement movement="NO"/>
+      </head_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l" second_palmor="ul"/>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="midjoint"/>
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="r" fast="true" size="small"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="o" palmor="u" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

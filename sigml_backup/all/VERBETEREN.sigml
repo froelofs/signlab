@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERBETEREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bet@r"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="u" size="small"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="l" palmor="r" second_extfidir="ul" second_palmor="dr"/>
+        </tgt_motion>
+      </par_motion>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig palmor="d"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="u" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ul" palmor="dr" second_palmor="r"/>
+        </tgt_motion>
+      </par_motion>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig palmor="d"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="u" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ul" palmor="r" second_extfidir="u"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

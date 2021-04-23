@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MOETEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mut"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="d" fast="true"/>
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig extfidir="o" second_extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

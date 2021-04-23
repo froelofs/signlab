@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERKLAPPEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pff"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="touch" location="underchin">
+        <location_hand digits="3" location="nail"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion curve="u" direction="do" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out" thumbpos="opposed"/>
+          <handconfig extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHOON">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="son"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="tip"/>
+        <location_hand digits="2" location="tip"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="u" direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2345" thumbpos="out"/>
+          <handconfig extfidir="u" palmor="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="NIER">
+      <sign_nonmanual>
+          <mouthing_tier>
+              <mouth_picture picture="niR" speed="1"/>
+          </mouthing_tier>
+          <shoulder_tier>
+              <shoulder_movement movement="UR"/>
+          </shoulder_tier>
+          <facialexpr_tier>
+              <eye_gaze movement="RD"/>
+              <eye_brows movement="RB"/>
+              <eye_lids movement="WB"/>
+          </facialexpr_tier>
+      </sign_nonmanual>
+        <sign_manual>
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <handconfig extfidir="l"/>
+            <handconfig palmor="u"/>
+            <location_bodyarm contact="touch" location="belowstomach" side="right_at"/>
+            <par_motion>
+                <directedmotion direction="i" size="big"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig extfidir="ol"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+    </hamgestural_sign>
+</sigml>

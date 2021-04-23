@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WINKEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vINYl"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="u" second_extfidir="or"/>
+        <handconfig extfidir="uo" palmor="ur" second_extfidir="ol"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_beside" side="right_at"/>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="left_at" side="left_at"/>
+      </split_location>
+      <split_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="il"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" palmor="r" second_extfidir="ui" second_palmor="dr"/>
+          </tgt_motion>
+        </par_motion>
+        <nomotion/>
+      </split_motion>
+      <split_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="or"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="uo" palmor="u" second_extfidir="or"/>
+          </tgt_motion>
+        </par_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="i"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="r" palmor="l" second_extfidir="ui" second_palmor="dl"/>
+          </tgt_motion>
+        </par_motion>
+      </split_motion>
+      <split_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="il"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" palmor="r" second_extfidir="ui" second_palmor="dr"/>
+          </tgt_motion>
+        </par_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="ol"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" palmor="u" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+      </split_motion>
+      <split_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="or"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="uo" palmor="u" second_extfidir="or"/>
+          </tgt_motion>
+        </par_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="ir"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="r" palmor="l" second_extfidir="ui" second_palmor="dl"/>
+          </tgt_motion>
+        </par_motion>
+      </split_motion>
+      <split_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="il"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" palmor="r" second_extfidir="ui" second_palmor="dr"/>
+          </tgt_motion>
+        </par_motion>
+        <nomotion/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

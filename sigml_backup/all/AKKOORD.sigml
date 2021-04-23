@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AKKOORD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pEm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="dl" second_palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="1" location="tip"/>
+        <location_hand digits="1" location="tip"/>
+        <location_bodyarm contact="close" location="shoulders"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

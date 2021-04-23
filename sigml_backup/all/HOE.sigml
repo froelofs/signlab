@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HOE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="T16" speed="0.7"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+        <eye_brows movement="FU" speed="0.8"/>
+        <eye_lids movement="SB" speed="0.8"/>
+        <eye_gaze direction="AD" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="cee12open" opposedfinger="4" specialfingers="4" bend2="111" bend3="111" bend5="111"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="i" second_palmor="ul"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion speed="2">
+          <changeposture/>
+          <handconfig handshape="pinch12open" opposedfinger="4" specialfingers="4" bend2="111" bend3="111"  bend5="111"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

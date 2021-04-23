@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LAND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lAn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="shoulders">
+        <location_hand location="thumbside"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion direction="or" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ol" second_extfidir="o"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

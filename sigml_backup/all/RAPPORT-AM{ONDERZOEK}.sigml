@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RAPPORT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ApO"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="l"/>
+        <handconfig extfidir="or" palmor="ur" second_palmor="r"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="armextended" location="neck"/>
+        <location_bodyarm location="shoulders" second_location="chest" second_side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="di" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="dl" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="stomach" second_location="chest" second_side="right_at">
+          <location_hand location="handback"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BROEDER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bud@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="ul" second_extfidir="ur"/>
+        <handconfig extfidir="u" palmor="u" second_extfidir="ul"/>
+      </split_handconfig>
+      <location_bodyarm contact="close" location="ear" side="right_at">
+        <location_hand digits="3" location="base" side="palmar"/>
+      </location_bodyarm>
+      <split_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ui" palmor="ul" second_extfidir="ur"/>
+        </tgt_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo" palmor="ur" second_extfidir="ul"/>
+        </tgt_motion>
+      </split_motion>
+      <split_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo" second_extfidir="ur"/>
+        </tgt_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ui" second_extfidir="ul"/>
+        </tgt_motion>
+      </split_motion>
+      <split_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ui" second_extfidir="ur"/>
+        </tgt_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo" second_extfidir="ul"/>
+        </tgt_motion>
+      </split_motion>
+      <split_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo" second_extfidir="ur"/>
+        </tgt_motion>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ui" second_extfidir="ul"/>
+        </tgt_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

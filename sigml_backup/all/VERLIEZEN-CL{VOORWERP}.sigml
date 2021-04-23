@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERLIEZEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vlis"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="d"/>
+      <handconfig palmor="d" second_palmor="dr"/>
+      <location_bodyarm contact="touch" location="stomach" second_location="stomach" second_side="right_at">
+        <location_hand digits="2" location="midjoint" side="left_beside"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="ur" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+            <handconfig extfidir="dl" palmor="l" second_extfidir="ol"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="chest" side="right_at"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="d"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="l" palmor="ur" second_extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WAKKER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAkY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12" mainbend="round"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="nose" second_location="cheek" second_side="right_at" side="right_at"/>
+      <tgt_motion fast="true">
+        <changeposture/>
+        <handconfig handshape="finger2" thumbpos="opposed"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

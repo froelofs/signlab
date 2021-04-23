@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OPLOSSEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="OpOs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open" mainbend="bent"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d" second_palmor="dl"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="u" direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="or" palmor="dl" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

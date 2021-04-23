@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RENNEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="C02"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="l" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

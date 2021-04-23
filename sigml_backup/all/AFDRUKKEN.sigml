@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AFDRUKKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AfdY:k"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="chest" side="right_at"/>
+      <directedmotion curve="d" curve_size="small" direction="l"/>
+      <directedmotion curve="u" direction="r"/>
+      <directedmotion curve="d" curve_size="small" direction="l"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WASSEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAss"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="fist"/>
+        <handconfig handshape="fist"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="d" second_extfidir="ul"/>
+        <handconfig extfidir="r" palmor="u" second_extfidir="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="4" location="midjoint" side="dorsal"/>
+        <location_hand digits="4" location="midjoint" side="dorsal"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="o" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

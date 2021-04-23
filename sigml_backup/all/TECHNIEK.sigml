@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TECHNIEK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="tEni"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="l" palmor="d" second_extfidir="ol" second_palmor="dr"/>
+        <handconfig extfidir="o" palmor="r" second_extfidir="or"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="palm"/>
+        <location_hand digits="2" location="tip"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="r" curve_size="big" direction="d" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand location="palm"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

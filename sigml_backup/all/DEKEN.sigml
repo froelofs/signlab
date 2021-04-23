@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="DEKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="de@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="chest"/>
+      <par_motion>
+        <directedmotion curve="u" direction="ui"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

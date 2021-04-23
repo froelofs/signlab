@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HOUDING">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hA_udIN"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" mainbend="bent" thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="shoulders" side="right_at">
+        <location_hand digits="3" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="d"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig palmor="l" second_palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="chest" side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

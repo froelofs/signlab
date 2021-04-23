@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LAAT_MAAR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lama"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="neck" second_location="neck" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="dl" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="bent" second_thumbpos="out"/>
+          <handconfig extfidir="l" palmor="d" second_extfidir="dl"/>
+        </tgt_motion>
+      </par_motion>
+      <nomotion/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

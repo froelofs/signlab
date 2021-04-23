@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONGELUK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bAm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist"/>
+      <handconfig extfidir="u" second_extfidir="ur"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_beside" side="right_beside"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="ul" rest="true"/>
+          <tgt_motion rest="true">
+            <changeposture/>
+            <handconfig extfidir="u" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="midjoint" side="dorsal"/>
+          <location_hand digits="3" location="midjoint" side="dorsal"/>
+          <location_bodyarm contact="close" location="shoulders" second_location="neck"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="JAS_AANTREKKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="a:n"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" second_handshape="fist" second_thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="chest" second_side="right_at" side="right_at">
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <directedmotion curve="r" direction="l"/>
+        <handconstellation contact="touch">
+          <location_hand digits="5" location="base" side="dorsal"/>
+          <location_hand digits="5" location="base" side="dorsal"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

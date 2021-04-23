@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LOLLY">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lOli"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="lips">
+        <location_hand digits="1" location="tip"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart">
+        <directedmotion direction="do"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

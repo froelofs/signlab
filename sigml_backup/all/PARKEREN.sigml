@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PARKEREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pAe"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="ol" second_extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chest"/>
+      <directedmotion direction="o" size="small"/>
+      <directedmotion curve="r" direction="or" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Op"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="out"/>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo" second_palmor="dl"/>
+        <handconfig extfidir="or" palmor="u" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="3" location="base" side="palmar"/>
+        <location_hand digits="3" location="base" side="palmar"/>
+      </handconstellation>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="d"/>
+          <nomotion/>
+        </split_motion>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

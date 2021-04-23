@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WATERVAL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vatvAl"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="bent" second_thumbpos="out"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shouldertop" side="right_beside"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="do" size="big"/>
+        <fingerplay/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+          <handconfig extfidir="do" second_extfidir="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

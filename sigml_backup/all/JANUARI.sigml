@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="JANUARI">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="jAnvari"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true">
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent" second_thumbpos="across" thumbpos="opposed"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l" second_extfidir="l"/>
+        <handconfig extfidir="r" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm location="shoulders"/>
+      </handconstellation>
+      <circularmotion axis="i" size="small"/>
+      <circularmotion axis="i" size="small"/>
+      <circularmotion axis="i" size="small" start="d"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

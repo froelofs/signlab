@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BELOVEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="b@lov@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chin">
+        <location_hand digits="23" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="uo"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="head" side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

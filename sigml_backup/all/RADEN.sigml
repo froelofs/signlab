@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RADEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rad@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d" second_palmor="dr"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="ur" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SLANK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="sAN"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig palmor="ul"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at" side="right_at"/>
+      <par_motion>
+        <directedmotion curve="l" curve_size="small" direction="d" slow="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l" second_palmor="dl"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

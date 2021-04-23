@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BONEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bon@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="finger2" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="r" second_extfidir="uo"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+        <location_bodyarm contact="close" location="shoulders"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="or" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" palmor="l" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="tip"/>
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </handconstellation>
+      </tgt_motion>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="il" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ul" palmor="d" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="midjoint" side="right_beside"/>
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </handconstellation>
+      </tgt_motion>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="or" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" palmor="l" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="tip"/>
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

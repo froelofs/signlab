@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KRANT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kAn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <directedmotion curve="u" direction="r" size="big"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

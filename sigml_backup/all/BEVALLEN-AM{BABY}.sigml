@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEVALLEN_BABY">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vvv"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" thumbpos="out"/>
+      <handconfig extfidir="do"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="chest"/>
+      </handconstellation>
+      <par_motion>
+        <directedmotion curve="d" direction="o"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

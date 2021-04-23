@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEOORDELEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="odel"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true" outofphase="true">
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close"/>
+      <split_motion>
+        <seq_motion>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+        </seq_motion>
+        <seq_motion>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+          <directedmotion direction="u" size="small"/>
+          <directedmotion direction="d" size="small"/>
+        </seq_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AFHOUDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d" second_palmor="dl"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      </handconstellation>
+      <directedmotion direction="or" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RECHT_HEBBEN_OP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="EOp"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="2" location="midjoint"/>
+        <location_hand digits="5" location="tip"/>
+      </handconstellation>
+      <tgt_motion>
+        <directedmotion curve="d" curve_size="small" direction="do"/>
+        <handconstellation contact="touch">
+          <location_hand digits="4" location="midjoint"/>
+          <location_hand digits="5" location="base"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

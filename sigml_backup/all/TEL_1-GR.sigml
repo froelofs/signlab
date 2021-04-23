@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="TEL_1”&gt;">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="l" second_extfidir="uo"/>
+                <handconfig extfidir="ur" palmor="r" second_extfidir="r" second_palmor="ur"/>
+            </split_handconfig>
+            <location_bodyarm location="shoulders"/>
+            <split_motion>
+                <par_motion>
+                    <directedmotion direction="l"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2" thumbpos="across"/>
+                        <handconfig extfidir="ul" palmor="l" second_extfidir="o"/>
+                        <location_hand contact="touch">
+                            “2” location="tip"&gt;
+                            <location_hand digits="2" location="tip"/>
+                        </location_hand>
+                    </tgt_motion>
+                </par_motion>
+                <nomotion/>
+            </split_motion>
+            <rpt_motion repetition="fromstart">
+                <split_motion>
+                    <directedmotion direction="r" size="small" speed="1.2"/>
+                    <nomotion/>
+                </split_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="RB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

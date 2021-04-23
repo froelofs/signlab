@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZELFVERTROUWEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zEffetA_uY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
+        <handconfig extfidir="l"/>
+        <handconfig palmor="d"/>
+        <location_bodyarm contact="touch" location="shoulders" second_location="chest" side="right_at">
+          <location_hand digits="1" location="tip"/>
+        </location_bodyarm>
+        <par_motion>
+          <directedmotion curve="u" direction="o"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" palmor="l" second_extfidir="o"/>
+          </tgt_motion>
+        </par_motion>
+      </sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="pinch12open"/>
+        <handconfig extfidir="u"/>
+        <handconfig palmor="l"/>
+        <handconstellation contact="close">
+          <location_bodyarm contact="close" location="shoulders"/>
+        </handconstellation>
+        <par_motion>
+          <directedmotion direction="o"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="COMPUTER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kOmpjut@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig ceeopening="slack" handshape="ceeall"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="d" second_extfidir="ul"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <split_location>
+        <location_hand contact="touch" location="wristback" side="right_beside">
+          <location_hand location="wristback" side="palmar"/>
+        </location_hand>
+        <location_bodyarm location="chest" second_location="stomach"/>
+      </split_location>
+      <directedmotion direction="il" size="small"/>
+      <directedmotion direction="or" size="small"/>
+      <directedmotion direction="il" size="small"/>
+      <directedmotion direction="or" size="small"/>
+      <directedmotion direction="il" size="small"/>
+      <directedmotion direction="or" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

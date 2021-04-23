@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="DIT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="it"/>
+      </mouthing_tier>
+    <facialexpr_tier>
+        <eye_brows movement="RB"/>
+    </facialexpr_tier>
+    <head_tier>
+        <head_movement movement="NF"/>
+    </head_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ol" second_extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" side="right_at"/>
+      <directedmotion direction="d" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AAN_ZIJN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="a:n"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="ol" second_extfidir="do"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="head" side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="finger2345" thumbpos="opposed"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

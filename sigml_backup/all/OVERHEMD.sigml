@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OVERHEMD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ovE"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="dl" second_palmor="l"/>
+      <location_bodyarm contact="touch" location="neck" second_location="shoulders" second_side="right_at">
+        <location_hand digits="1" location="nail" side="left_beside"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="dr" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinch12" mainbend="bent"/>
+            <handconfig extfidir="ol" palmor="l" second_extfidir="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="right_at">
+          <location_hand digits="2" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NOG_NIET">
+    <sign_nonmanual>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SH"/>
+          <head_movement movement="SH"/>
+          <head_movement movement="SH"/>
+        </head_par>
+      </head_tier>
+      <mouthing_tier>
+        <mouth_picture picture="nOni"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="ul"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

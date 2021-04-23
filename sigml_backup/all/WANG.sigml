@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WANG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAN"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l" second_palmor="ul"/>
+      <location_bodyarm contact="touch" location="cheek" side="right_at">
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <nomotion/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

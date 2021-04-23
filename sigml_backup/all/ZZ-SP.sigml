@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZZ">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zzz"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <directedmotion direction="r" size="small"/>
+      <directedmotion direction="dl" size="small"/>
+      <directedmotion direction="r" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BAARD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bat"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="ceeall"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="ul" second_palmor="l"/>
+      <location_bodyarm contact="touch" location="cheek" side="right_at">
+        <location_hand digits="5" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" curve_size="small" direction="dl" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="u" second_palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="chin">
+          <location_hand digits="5" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

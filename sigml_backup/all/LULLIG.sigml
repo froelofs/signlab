@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LULLIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+      <mouthing_par>
+        <mouth_gesture movement="L26" speed="0.7"/>
+        <mouth_gesture movement="J03" speed="0.6"/>
+        <mouth_gesture movement="T04" speed="0.3"/>
+      </mouthing_par>
+      </mouthing_tier>
+      <head_tier>
+      <head_par>
+        <head_movement movement="TR" speed="0.7"/>
+        <head_movement movement="NB" speed="0.7"/>
+      </head_par>
+      </head_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="FU" speed="0.7"/>
+        <eye_lids movement="SB" speed="0.7"/>
+      </facial_expr_par>
+      </facialexpr_tier>
+      <eyegaze_tier>
+        <eye_gaze direction="AD" speed="0.7"/>
+      </eyegaze_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin">
+        <location_hand digits="2" location="midjoint" side="left_beside"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <directedmotion direction="i" fast="true"/>
+          <handconstellation contact="touch"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

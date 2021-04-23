@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PROBEREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pobe"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="nose" side="right_at"/>
+      <wristmotion motion="twisting"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
