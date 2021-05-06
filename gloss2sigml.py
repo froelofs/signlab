@@ -36,6 +36,7 @@ nonmans = {
     }
 }
 
+# Converts the user input nonmanual to the correct SiGML naming conventions
 def convert(inputtag):
     '''TODO: complex nonmans ook bij split, toevoegen aan dict'''
     [tier, tag] = inputtag.split("_")
@@ -44,7 +45,6 @@ def convert(inputtag):
         nonmans[tier]
     except:
         print("Tier '"+ tier + "' could not be found")
-        # return None
 
     search =  nonmans[tier]
     # Checks whether the tag exists in the tier and if so returns the converted tag
@@ -54,21 +54,23 @@ def convert(inputtag):
                 return key + "='" + val + "'" # e.g. "shoulder_movement movement='UL'"
     
     print("Tag '"+ tag + "' could not be found in combination with tier '"+ tier + "'")
-    # return None
 
-def tagsToSiGML(signsWithTags):
+# Inserts the necessary syntax to execute the user input nonmanuals
+def tagsToSiGML(signsWithTags, parFace = True, parMouth = False):
     signNonmans = {}
     for key in signsWithTags.keys():
-        # for value in foundsigns[key]:
         tags = signsWithTags[key]
         
-        faceTags = ['<' + tag + '>' for tag in tags if ("eye_brows" or "eye_lids" or "nose") in tag]
-        mouthTags = ['<' + tag + '>' for tag in tags if "mouth" in tag]
-        shoulderTags = ['<' + tag + '>' for tag in tags if "shoulder" in tag]
-        headTags = ['<' + tag + '>' for tag in tags if "head" in tag]
-        bodyTags = ['<' + tag + '>' for tag in tags if "body" in tag]
-        eyeGazeTags = ['<' + tag + '>' for tag in tags if ("eye_gaze" or "eye_par") in tag]
+        # Inserts the necessary xml tags and groups the user input nonmanuals by tier
+        faceTags = ['<' + tag + '/>' for tag in tags if ("eye_brows" or "eye_lids" or "nose") in tag]
+        mouthTags = ['<' + tag + '/>' for tag in tags if "mouth" in tag]
+        shoulderTags = ['<' + tag + '/>' for tag in tags if "shoulder" in tag]
+        headTags = ['<' + tag + '/>' for tag in tags if "head" in tag]
+        bodyTags = ['<' + tag + '/>' for tag in tags if "body" in tag]
+        eyeGazeTags = ['<' + tag + '/>' for tag in tags if ("eye_gaze" or "eye_par") in tag]
 
+
+        # Adds tier syntax to the user input nonmanuals per tier and gathers the tiers in one string
         if(len(tags)):
             nonmanSiGML = '<sign_nonmanual>'
             if(len(shoulderTags)):
@@ -79,12 +81,20 @@ def tagsToSiGML(signsWithTags):
                 nonmanSiGML += '<head_tier>' + ''.join(headTags) + '</head_tier>'
             if(len(eyeGazeTags)):
                 nonmanSiGML += '<eyegaze_tier>' + ''.join(eyeGazeTags) + '</eyegaze_tier>'
-            # Nonmanuals in the facial expression tier are articulated simultaneously instead of sequentially
             if(len(faceTags)):
                 nonmanSiGML += '<facialexpr_tier>' + '<facial_expr_par>' + ''.join(faceTags) 
                 nonmanSiGML += '</facial_expr_par>' + '</facialexpr_tier>'
+                # Facial nonmanuals are executed simultaneously by default, but can be executed sequentially
+                if not parFace:
+                    nonmanSiGML = nonmanSiGML.replace('<facial_expr_par>','')
+                    nonmanSiGML = nonmanSiGML.replace('</facial_expr_par>','')
             if(len(mouthTags)):
-                nonmanSiGML += '<mouthing_tier>' + ''.join(mouthTags) + '</mouthing_tier>'
+                # Mouthing nonmanuals are executed sequentially by default, but can be executed simultaneously
+                if parMouth:
+                    nonmanSiGML += '<mouthing_tier>' + '<mouthing_par>' + ''.join(mouthTags)
+                    nonmanSiGML += '</mouthing_par>' +  '</mouthing_tier>'
+                else:
+                    nonmanSiGML += '<mouthing_tier>' + ''.join(mouthTags) + '</mouthing_tier>'
             nonmanSiGML += '</sign_nonmanual>'
             signNonmans[key] = nonmanSiGML
         else:
@@ -92,52 +102,70 @@ def tagsToSiGML(signsWithTags):
     
     return signNonmans
 
-
+# Converts the signs and any user input nonmanuals into SiGML
 def makeSiGML(signNonmans):
     sigml = '<?xml version="1.0" encoding="UTF-8"?><sigml>'
     print(signNonmans)
+
+    # Loops over each sign in the input sentence and any nonmanuals the user added to them
     for sign, nonmanuals in signNonmans.items():
 
         filename = "sigml/all/" + sign
         print("file: ", filename)
         sigmlFile = open(filename, "r")
 
-        # nonman = False
-
+        # Loops over each line in the file and adapts the nonmanual section as necessary
         for line in sigmlFile:
             cleanline = line.strip()
-            if not (cleanline.startswith('<?xml') or cleanline.startswith('<sigml>') or cleanline.startswith('</sigml>')):
+            # if not (cleanline.startswith('<?xml') or cleanline.startswith('<sigml>') or cleanline.startswith('</sigml>')):
+            if not ('<?xml' in cleanline or '<sigml>' in cleanline or '</sigml>' in cleanline):
+                # print('nonmanuals: ', nonmanuals, cleanline)
                 if cleanline == '<sign_nonmanual>':
                     nonmanuals = nonmanuals.replace('<sign_nonmanual>','')
                     nonmanuals = nonmanuals.replace('</sign_nonmanual>','')
-                elif nonmanuals and ('_tier' in cleanline):
-                    if not '/' in cleanline:
-                        print(nonmanuals)                       
-                        if 'facial' in cleanline:
-                            print('face:', cleanline)
-                            end = nonmanuals.find('</facial_expr_par>')
-                            insertion = nonmanuals[:end]
-                        else:
-                            end = nonmanuals.find(cleanline.replace('<', '</'))
-                            if end > -1:
-                                if 'mouth' in cleanline:
-                                    print('mouth:', cleanline)
-                                    insertion = nonmanuals[:end]
-                                else:
-                                    print('other:', cleanline)
-                                    insertion = nonmanuals[:end+len(cleanline)+1]
-                        sigml += insertion
-                        nonmanuals = nonmanuals.replace(insertion, '')
-                    else:
-                        if 'facial' in cleanline and cleanline in nonmanuals:
-                            nonmanuals = nonmanuals.replace(cleanline, '')
-                        elif 'mouth' in cleanline:
-                            nonmanuals = nonmanuals.replace(cleanline, '')
-                        sigml += cleanline
-                else:
                     sigml += cleanline
-                print('nonmanuals: ', nonmanuals)
-        sigml +='\n'             
+                elif nonmanuals and ('_tier' in cleanline):
+                    # Executes if the file line is the closing tag of a nonmanual tier
+                    if '/' in cleanline:
+                        end = nonmanuals.find(cleanline)
+                        # Executes if the tier is found in the user input nonmanuals
+                        if end != -1:
+                            # Inserts the remaining user input nonmanuals before the closing tag of the mouthing tier
+                            if 'mouth' in cleanline:
+                                sigml += nonmanuals
+                                nonmanuals = ''
+                            # Inserts all of the user input nonmanuals of the current tier 
+                            else:
+                                insertion = nonmanuals[:end+len(cleanline)]
+                                nonmanuals = nonmanuals.replace(insertion, '')
+                                sigml += insertion
+                        # Executes if the tier is not found in the user input nonmanuals
+                        else:
+                            sigml += cleanline
+                        nonmanuals = nonmanuals.replace(cleanline,'')
+                    # Executes if the file line is the opening tag of a nonmanual tier
+                    else:
+                        end = nonmanuals.find(cleanline)
+                        # Executes if the closing tag is found in the user input nonmanuals
+                        if end != -1:
+                            # Inserts the remaining user input nonmanuals of the previous tiers
+                            insertion = nonmanuals[:end]
+                            nonmanuals = nonmanuals.replace(insertion, '')
+                            sigml += insertion
+                        sigml += cleanline
+                        nonmanuals = nonmanuals.replace(cleanline,'')
+                # Inserts the remaining user input nonmanuals before the start of the manual part of the sign
+                elif cleanline == '<sign_manual>':
+                    sigml += nonmanuals
+                    sigml += cleanline
+                else:
+                    # Removes duplicate nonmanuals from user input nonmanuals
+                    if cleanline in nonmanuals:
+                        nonmanuals.replace(cleanline,'')
+                    sigml += cleanline
+            else:
+                print('Did not pass check: ', cleanline)
+    sigml += '</sigml>' + '\n'             
     
     #                     if tag in cleanline:
     #                         if not mouthing_tier or facialexpr_tier:
@@ -210,5 +238,5 @@ if __name__ == '__main__':
     # else:
     #     userInput = lines[0].strip("\n").split(" ")
     # main(sys.argv[1:])
-    # main('U <HT_NO><FT_RB> ETEN KLAAR </FT_RB>HEBBEN</HT_NO>')
-    main('U <HT_NO><FT_RB><MT_L01> ETEN </FT_RB></HT_NO></MT_L01>')
+    main('U <HT_NO><FT_RB> ETEN KLAAR </FT_RB>HEBBEN</HT_NO>')
+    # main('U <HT_NO><FT_RB><MT_L01> ETEN </FT_RB></HT_NO></MT_L01>')
