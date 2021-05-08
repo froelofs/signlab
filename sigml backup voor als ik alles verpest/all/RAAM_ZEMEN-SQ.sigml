@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZEMEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="raammmzzem@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig extfidir="ol" second_extfidir="ul"/>
+        <handconfig palmor="d"/>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="tip"/>
+          <location_hand digits="2" location="tip"/>
+          <location_bodyarm location="head"/>
+        </handconstellation>
+        <par_motion>
+          <directedmotion direction="r"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <par_motion>
+          <directedmotion direction="d" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="o"/>
+          </tgt_motion>
+        </par_motion>
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="l"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="ol"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="tip"/>
+            <location_hand digits="2" location="tip"/>
+          </handconstellation>
+        </tgt_motion>
+      </sign_manual>
+      <sign_manual>
+        <handconfig handshape="fist" thumbpos="across"/>
+        <handconfig extfidir="u"/>
+        <handconfig palmor="d"/>
+        <location_bodyarm contact="close" location="head" side="right_at"/>
+        <rpt_motion repetition="fromstart" repetition_baseshift="r">
+          <directedmotion direction="d"/>
+        </rpt_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

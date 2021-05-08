@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEWIJS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="b@vE_is"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" thumbpos="out"/>
+        <handconfig handshape="flat" thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="uo" palmor="u" second_extfidir="ol"/>
+        <handconfig extfidir="or" palmor="u"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="234" location="midjoint" side="palmar"/>
+        <location_hand digits="3" side="dorsal"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="d" fast="true" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="ol"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="touch">
+            <location_hand digits="234" location="midjoint" side="palmar"/>
+            <location_hand digits="3" side="dorsal"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

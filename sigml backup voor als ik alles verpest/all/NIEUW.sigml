@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="NIEUW">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="niw"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="fist"/>
+        <handconfig extfidir="ul" palmor="l" second_extfidir="uo"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

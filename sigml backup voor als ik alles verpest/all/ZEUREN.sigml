@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZEUREN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="z22222222222222"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="chin">
+        <location_hand digits="2" location="midjoint" side="left_beside"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="o" size="small" slow="true"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

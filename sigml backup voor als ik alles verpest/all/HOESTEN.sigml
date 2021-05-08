@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HOESTEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hust@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="uo" second_extfidir="ul"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="neck"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="ui" fast="true" size="small"/>
+      </rpt_motion>
+      <directedmotion direction="do" rest="true" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

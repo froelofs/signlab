@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SCHEUR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="s222"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="neck" second_location="neck" second_side="right_at"/>
+      <tgt_motion>
+        <directedmotion direction="di" size="big" zigzag_size="small" zigzag_style="zigzag"/>
+        <location_bodyarm contact="close" location="chest" second_location="chest" second_side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

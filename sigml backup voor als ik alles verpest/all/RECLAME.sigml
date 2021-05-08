@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RECLAME">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="r@klAm@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="ul"/>
+      <handconstellation contact="close"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="o"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

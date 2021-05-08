@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="VIDEOBELLEN">
+        <sign_manual both_hands="true" lr_symm="true">
+            <split_handconfig>
+                <handconfig handshape="finger2345" thumbpos="out"/>
+                <handconfig handshape="pinchall" second_handshape="fist" second_thumbpos="out"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="u" palmor="ul" second_extfidir="ol" second_palmor="l"/>
+                <handconfig extfidir="o" palmor="r" second_palmor="ur"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="shoulders"/>
+                <location_bodyarm location="shoulders" side="left_beside"/>
+            </split_location>
+            <split_motion>
+                <rpt_motion repetition="fromstart">
+                    <wristmotion motion="swinging" size="big"/>
+                </rpt_motion>
+                <nomotion/>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_gesture movement="L23"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TR"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UL"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SL"/>
+            </head_tier>
+            <facialexpr_tier postsynchronization="lasts_longer">
+                <eye_gaze movement="LD"/>
+                <eye_brows movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

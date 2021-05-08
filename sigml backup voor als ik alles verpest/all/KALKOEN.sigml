@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KALKOEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kAkun"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" second_handshape="finger2345" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="dl"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="underchin">
+        <location_hand location="handback"/>
+      </location_bodyarm>
+      <fingerplay/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

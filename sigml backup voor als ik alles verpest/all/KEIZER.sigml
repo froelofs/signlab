@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KEIZER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kE_iz@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion curve="d" curve_size="small" direction="or" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="dr"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

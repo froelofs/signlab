@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERTROUWD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vtOw"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" mainbend="round"/>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="d"/>
+        <handconfig extfidir="r" palmor="u" second_extfidir="dr"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="4" location="base" side="palmar"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <directedmotion direction="d" slow="true"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OVER_VIJF_UUR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="o:vE_if"/>
+        <mouth_gesture movement="L06"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="il"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+      <circularmotion axis="o"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

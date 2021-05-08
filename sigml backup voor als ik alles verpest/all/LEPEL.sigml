@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LEPEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lep@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="ul" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chin" side="right_at">
+        <location_hand digits="2" location="base"/>
+      </location_bodyarm>
+      <par_motion>
+        <circularmotion axis="l" end="ul" size="small" start="l"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ul" palmor="l" second_extfidir="l"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

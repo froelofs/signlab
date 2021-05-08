@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KLETSEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="A:fff"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true">
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="o"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" side="left_at"/>
+      </handconstellation>
+      <wristmotion motion="twisting" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

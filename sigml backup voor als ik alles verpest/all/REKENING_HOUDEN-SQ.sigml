@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="REKENING">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mmmmmm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l" second_extfidir="u" second_palmor="dl"/>
+        <handconfig extfidir="or" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="3" location="midjoint" side="right_beside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <split_motion>
+            <par_motion>
+              <directedmotion direction="d" fast="true"/>
+              <tgt_motion>
+                <changeposture/>
+                <handconfig extfidir="ol" palmor="l"/>
+              </tgt_motion>
+            </par_motion>
+            <nomotion/>
+          </split_motion>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="midjoint" side="right_beside"/>
+            <location_hand digits="3" location="midjoint" side="right_beside"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

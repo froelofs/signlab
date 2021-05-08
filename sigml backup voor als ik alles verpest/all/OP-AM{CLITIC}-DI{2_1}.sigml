@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Op"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="armextended" location="shoulders" second_location="chest"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="i"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ul" palmor="dr" second_extfidir="ui"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

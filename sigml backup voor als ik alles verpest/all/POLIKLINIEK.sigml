@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="POLIKLINIEK">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+            <handconfig palmor="dr" second_palmor="d"/>
+            <split_location>
+                <location_hand contact="touch" location="tip"/>
+                <location_bodyarm location="chest" second_location="shoulders"/>
+            </split_location>
+            <split_motion>
+                <rpt_motion repetition="fromstart">
+                    <par_motion>
+                        <directedmotion direction="o"/>
+                        <tgt_motion>
+                            <changeposture/>
+                            <handconfig extfidir="uo" palmor="dl"/>
+                        </tgt_motion>
+                    </par_motion>
+                </rpt_motion>
+                <nomotion/>
+            </split_motion>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="ceeall" second_handshape="finger2345" second_thumbpos="out"/>
+                <split_handconfig>
+                    <handconfig extfidir="o" palmor="l"/>
+                    <handconfig extfidir="o" palmor="r"/>
+                </split_handconfig>
+            </tgt_motion>
+            <directedmotion direction="r" size="small"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="poliii" speed="1"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <shoulder_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="RB"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

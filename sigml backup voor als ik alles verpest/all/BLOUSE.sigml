@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BLOUSE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="blus"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="l" tense="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinch12open" mainbend="bent"/>
+            <handconfig extfidir="ul" palmor="l"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="base" side="dorsal"/>
+          <location_hand digits="5" location="base" side="palmar"/>
+        </handconstellation>
+      </tgt_motion>
+      <split_motion>
+        <par_motion>
+          <directedmotion direction="d" size="small"/>
+          <fingerplay/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ul" second_extfidir="l"/>
+          </tgt_motion>
+        </par_motion>
+        <par_motion>
+          <directedmotion direction="d" size="small"/>
+          <fingerplay/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ur" palmor="l" second_extfidir="ir"/>
+          </tgt_motion>
+        </par_motion>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="TWIJFELEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+      <mouthing_par>
+        <mouth_picture picture="mmmmmmmm"/>
+        <mouth_gesture movement="L31" speed="0.8"/>
+      </mouthing_par>
+      </mouthing_tier>
+      <facialexpr_tier>
+        <eye_brows movement="RB"/>
+        <eye_lids movement="WB"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d"/>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
+        <location_bodyarm contact="close" location="chest" second_location="chest" second_side="left_at" side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <split_motion>
+          <seq_motion>
+            <directedmotion direction="d" size="small"/>
+            <directedmotion direction="u" size="small"/>
+            <directedmotion direction="d" size="small"/>
+            <directedmotion direction="u" size="small"/>
+            <directedmotion direction="d" size="small"/>
+          </seq_motion>
+          <seq_motion>
+            <directedmotion direction="u" size="small"/>
+            <directedmotion direction="d" size="small"/>
+            <directedmotion direction="u" size="small"/>
+            <directedmotion direction="d" size="small"/>
+            <directedmotion direction="u" size="small"/>
+          </seq_motion>
+        </split_motion>
+        <split_location>
+          <location_bodyarm contact="close" location="chest" second_location="chest" second_side="right_at" side="right_at"/>
+          <location_bodyarm contact="close" location="chest" second_location="chest" second_side="left_at" side="left_at"/>
+        </split_location>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

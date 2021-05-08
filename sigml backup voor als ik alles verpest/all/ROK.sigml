@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ROK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rOk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="opposed" thumbpos="out"/>
+      <handconfig extfidir="dl" second_extfidir="do"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="stomach" side="right_at">
+        <location_hand digits="2" location="base" side="left_beside"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="or" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="do" palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="belowstomach" side="right_beside"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

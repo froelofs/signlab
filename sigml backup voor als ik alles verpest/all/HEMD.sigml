@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HEMD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hEm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ui" second_extfidir="il"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="neck" side="left_at">
+        <location_hand digits="2" location="nail" side="left_beside"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" direction="r" slow="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+            <handconfig extfidir="ui"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="neck" side="right_at">
+          <location_hand digits="2" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

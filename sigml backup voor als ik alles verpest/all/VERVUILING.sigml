@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERVUILING">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v@v9jlIN"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <handconfig bend4="bent" handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+        <handconfig extfidir="ul" second_extfidir="il"/>
+        <handconfig palmor="r" second_palmor="ur"/>
+        <location_bodyarm contact="touch" location="neck" side="left_at">
+          <location_hand digits="4" location="tip"/>
+        </location_bodyarm>
+        <rpt_motion repetition="fromstart">
+          <directedmotion curve="u" direction="uo" size="small"/>
+        </rpt_motion>
+      </sign_manual>
+      <sign_manual>
+        <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+        <handconfig extfidir="o" second_extfidir="ol"/>
+        <handconfig palmor="d"/>
+        <location_bodyarm location="chest" second_location="chest" side="left_at"/>
+        <par_motion>
+          <directedmotion curve="r" direction="r" slow="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="o"/>
+          </tgt_motion>
+        </par_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

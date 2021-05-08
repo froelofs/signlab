@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ORGANISATIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Oxazai"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="l" second_palmor="ul"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="o" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

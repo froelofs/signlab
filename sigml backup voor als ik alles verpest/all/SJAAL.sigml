@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="SJAAL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Sal"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="fist" thumbpos="across"/>
+        <handconfig handshape="fist" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="u" palmor="d" second_palmor="dl"/>
+        <handconfig extfidir="r" palmor="r"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="neck" second_location="shoulders" second_side="right_at" side="right_at">
+          <location_hand location="palm"/>
+        </location_bodyarm>
+        <location_bodyarm contact="touch" location="shoulders" second_location="chest">
+          <location_hand digits="3" location="midjoint" side="dorsal"/>
+        </location_bodyarm>
+      </split_location>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="r" direction="l" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+            <handconfig extfidir="l" palmor="l" second_extfidir="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="close" location="neck" second_location="shoulders" second_side="left_at">
+          <location_hand location="handback"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

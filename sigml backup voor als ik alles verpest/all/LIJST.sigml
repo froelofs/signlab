@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LIJST">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="lEs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig ceeopening="slack" handshape="cee12"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="o" palmor="l" second_palmor="dl"/>
+        <handconfig extfidir="or" palmor="r" second_extfidir="uo" second_palmor="ur"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm location="neck"/>
+        <location_bodyarm location="shoulders" second_location="chest" second_side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <directedmotion direction="d"/>
+        <handconstellation contact="close">
+          <location_hand location="pinkyside"/>
+          <location_hand digits="12" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

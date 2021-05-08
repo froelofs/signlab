@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BENEDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ned@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="l" second_extfidir="dl"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <directedmotion direction="d" size="small"/>
+          <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="left_at"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

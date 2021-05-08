@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERLEDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="v@led@"/>
+      </mouthing_tier>
+      <head_tier>
+        <head_movement movement="TL" speed="0.3"/>
+      </head_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shouldertop" side="right_at"/>
+      <rpt_motion repetition="fromstart_several"><par_motion>
+        <directedmotion curve="u"  direction="i" size="big"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+          <handconfig extfidir="u" palmor="u" second_palmor="ul"/>
+          <location_bodyarm location="ear" side="right_beside" />
+        </tgt_motion>
+      </par_motion></rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

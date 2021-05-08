@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ZOEKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zuk@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" second_handshape="finger23spread" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="nose"/>
+      <directedmotion direction="or" fast="true" size="small"/>
+      <directedmotion direction="ol" fast="true" size="small"/>
+      <directedmotion direction="or" fast="true" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

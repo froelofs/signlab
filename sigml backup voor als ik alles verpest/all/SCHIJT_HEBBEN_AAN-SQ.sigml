@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ONVERSCHILLIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="T12"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="or" second_extfidir="do"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="chest" second_location="stomach" second_side="right_at" side="right_at"/>
+      <tgt_motion>
+        <directedmotion direction="do" fast="true" halt="true"/>
+        <location_bodyarm location="stomach" second_location="belowstomach" second_side="right_beside" side="right_beside"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="AUTOMATISCHE">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="d" second_extfidir="uol"/>
+                <handconfig extfidir="or" palmor="u" second_palmor="ur"/>
+            </split_handconfig>
+            <split_location>
+                <location_hand contact="close" location="thumbball">
+                    <location_hand digits="5" location="base"/>
+                </location_hand>
+                <location_bodyarm location="chest" second_location="chest" second_side="right_at"/>
+            </split_location>
+        <rpt_motion repetition="fromstart_several">
+        <split_motion>
+          <circularmotion axis="uir" size="small"/>
+          <no_motion/>
+        </split_motion>
+      </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="Atomati"/>
+            </mouthing_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>
+ 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VERONTSCHULDIGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ekskys"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <directedmotion direction="l" size="small"/>
+          <handconstellation contact="touch">
+            <location_hand digits="2" location="midjoint" side="dorsal"/>
+            <location_hand digits="2" location="midjoint" side="dorsal"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AMSTERDAM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Ammst@dAm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <handconstellation contact="close">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_bodyarm contact="close" location="chin"/>
+      </handconstellation>
+      <tgt_motion>
+        <directedmotion direction="o" fast="true" size="small"/>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="d" fast="true" size="small"/>
+        <handconstellation contact="close">
+          <location_hand digits="2" location="midjoint" side="right_beside"/>
+          <location_hand digits="2" location="midjoint" side="right_beside"/>
+        </handconstellation>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="o" fast="true" size="small"/>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="d" fast="true" size="small"/>
+        <handconstellation contact="close">
+          <location_hand digits="2" location="midjoint" side="right_beside"/>
+          <location_hand digits="2" location="midjoint" side="right_beside"/>
+        </handconstellation>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="o" fast="true" size="small"/>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

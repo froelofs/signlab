@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="LAAG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="la:x"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="uo" second_extfidir="ol"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="neck" second_location="neck" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="d" slow="true"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" second_extfidir="ol"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

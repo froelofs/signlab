@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VASTENPERIODE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L30"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="lips" side="left_at">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="r" direction="r"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="l" second_palmor="ul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="lips" side="right_at">
+          <location_hand digits="2" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

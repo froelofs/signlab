@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PAUZE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pAz"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="right_beside"/>
+        <location_hand digits="3" location="midjoint" side="right_beside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <directedmotion direction="d" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

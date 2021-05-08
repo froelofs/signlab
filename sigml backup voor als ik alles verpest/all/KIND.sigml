@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KIND">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kIn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+      <directedmotion direction="d" halt="true"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

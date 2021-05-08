@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MENS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mEs"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="l" second_extfidir="il"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="right_at">
+        <location_hand digits="3" location="tip"/>
+      </location_bodyarm>
+      <directedmotion direction="d" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

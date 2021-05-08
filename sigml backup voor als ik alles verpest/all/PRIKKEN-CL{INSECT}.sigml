@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PRIKKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ppI"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig handshape="fist"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_palmor="dl"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="close" location="shoulders"/>
+        <location_bodyarm location="shoulders" second_location="chest" second_side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <directedmotion direction="dl" fast="true"/>
+        <handconstellation contact="touch">
+          <location_hand location="wristback" side="right_beside"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+      <directedmotion direction="ur" fast="true" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

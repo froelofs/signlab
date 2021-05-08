@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="PEER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="per"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="opposed"/>
+      <handconfig extfidir="ui"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head">
+        <location_hand digits="3" location="base"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" curve_size="small" direction="o"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="pinchall" mainbend="bent"/>
+            <handconfig extfidir="u" palmor="u"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="neck"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

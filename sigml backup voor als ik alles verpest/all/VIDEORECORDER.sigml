@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="VIDEORECORDER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vido:rcOd"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="finger23" second_handshape="finger23" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+        <handconfig extfidir="o"/>
+        <handconfig palmor="d"/>
+        <location_bodyarm contact="close" location="chest"/>
+        <split_motion>
+          <circularmotion axis="u" size="small" start="r"/>
+          <circularmotion axis="u" size="small" start="r"/>
+        </split_motion>
+      </sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="round" second_thumbpos="opposed" thumbpos="opposed"/>
+        <handconfig extfidir="u" second_extfidir="ol"/>
+        <handconfig palmor="d"/>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="tip"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+        <par_motion>
+          <directedmotion direction="r" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" second_extfidir="o"/>
+          </tgt_motion>
+        </par_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

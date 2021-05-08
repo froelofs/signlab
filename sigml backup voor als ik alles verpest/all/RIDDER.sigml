@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="RIDDER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rId@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="hooked"/>
+        <handconfig handshape="fist" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l" second_extfidir="uo"/>
+        <handconfig extfidir="ur" palmor="d" second_extfidir="r"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+        <location_bodyarm contact="close" location="shoulders"/>
+      </split_location>
+      <rpt_motion repetition="fromstart_several" second_repetition="fromstart_several">
+        <directedmotion direction="o" halt="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

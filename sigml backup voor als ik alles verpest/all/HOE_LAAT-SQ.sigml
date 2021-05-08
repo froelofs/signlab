@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HOE_LAAT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="huuuulat"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual>
+        <split_handconfig>
+          <handconfig handshape="finger2345" second_handshape="flat" thumbpos="out"/>
+          <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+        </split_handconfig>
+        <split_handconfig>
+          <handconfig extfidir="u" palmor="u"/>
+          <handconfig extfidir="or" palmor="d" second_extfidir="dr"/>
+        </split_handconfig>
+        <split_location>
+          <location_bodyarm location="shoulders" second_location="chest" side="right_at"/>
+          <location_bodyarm location="stomach" second_location="chest"/>
+        </split_location>
+        <fingerplay/>
+      </sign_manual>
+      <sign_manual>
+        <split_handconfig>
+          <handconfig handshape="finger2" thumbpos="across"/>
+          <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+        </split_handconfig>
+        <split_handconfig>
+          <handconfig extfidir="ul" palmor="d" second_extfidir="uo" second_palmor="dl"/>
+          <handconfig extfidir="or" palmor="d"/>
+        </split_handconfig>
+        <split_location>
+          <location_bodyarm location="shoulders" second_location="chest" side="right_at"/>
+          <location_bodyarm location="stomach" second_location="chest"/>
+        </split_location>
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="do" size="small"/>
+            <tgt_motion>
+              <changeposture/>
+              <handconfig extfidir="o" second_extfidir="ol"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="touch">
+            <location_hand location="wristback" side="dorsal"/>
+            <location_hand digits="2" location="tip"/>
+          </handconstellation>
+        </tgt_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

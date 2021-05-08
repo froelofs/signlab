@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KRAMP">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kAm"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <split_handconfig>
+        <handconfig handshape="finger2" mainbend="hooked" thumbpos="across"/>
+        <handconfig handshape="finger2" mainbend="hooked" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="dl" palmor="l"/>
+        <handconfig extfidir="ur" palmor="r"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+        <location_bodyarm contact="close" location="chest" second_location="chest" side="left_at"/>
+      </handconstellation>
+      <split_motion>
+        <directedmotion direction="ur" fast="true" halt="true" size="small"/>
+        <directedmotion direction="dl" fast="true" halt="true" size="small"/>
+      </split_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

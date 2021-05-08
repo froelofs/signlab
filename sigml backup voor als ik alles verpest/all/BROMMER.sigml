@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BROMMER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bOm@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="fist" thumbpos="across"/>
+      <split_handconfig>
+        <handconfig extfidir="ol" second_extfidir="do"/>
+        <handconfig extfidir="u" second_extfidir="or"/>
+      </split_handconfig>
+      <handconfig palmor="d"/>
+      <rpt_motion repetition="fromstart_several">
+        <split_motion>
+          <par_motion>
+            <directedmotion direction="o" fast="true" size="small"/>
+            <tgt_motion fast="true">
+              <changeposture/>
+              <handconfig extfidir="u" second_extfidir="ol"/>
+            </tgt_motion>
+          </par_motion>
+          <nomotion/>
+        </split_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

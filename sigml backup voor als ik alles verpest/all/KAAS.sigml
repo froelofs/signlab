@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KAAS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kas"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="u" second_extfidir="o" second_palmor="ul"/>
+        <handconfig extfidir="or" palmor="u" second_extfidir="uo" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="midjoint" side="palmar"/>
+        <location_hand digits="5" location="midjoint" side="dorsal"/>
+        <location_bodyarm location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <tgt_motion>
+        <split_motion>
+          <directedmotion direction="di" size="small"/>
+          <nomotion/>
+        </split_motion>
+        <handconstellation contact="touch">
+          <location_hand location="thumbball"/>
+          <location_hand digits="2" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

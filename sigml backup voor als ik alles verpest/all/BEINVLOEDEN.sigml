@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BEINVLOEDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Invlut"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2345" thumbpos="out"/>
+        <handconfig handshape="flat" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="base" side="dorsal"/>
+        <location_hand digits="2" location="base" side="palmar"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="or" size="small">
+          <location_hand contact="touch" location="handback"/>
+        </circularmotion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

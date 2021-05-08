@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ROTTERDAM">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="OtA"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="ol"/>
+      <handconfig palmor="l"/>
+      <handconstellation contact="close">
+        <location_hand digits="3" location="tip" side="palmar"/>
+        <location_hand digits="3" location="tip" side="palmar"/>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+      </handconstellation>
+      <tgt_motion>
+        <directedmotion direction="ol"/>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="tip"/>
+          <location_hand digits="3" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

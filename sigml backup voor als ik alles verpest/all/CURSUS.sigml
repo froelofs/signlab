@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="CURSUS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kYzY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="uo" second_extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="l" fast="true" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ul" palmor="ul" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

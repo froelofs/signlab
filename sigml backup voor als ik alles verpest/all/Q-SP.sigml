@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="Q">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="N"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2"/>
+      <handconfig extfidir="do"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

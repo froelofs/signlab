@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="HELIKOPTER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="helikOp@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ul"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm location="head" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <wristmotion motion="stircw" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

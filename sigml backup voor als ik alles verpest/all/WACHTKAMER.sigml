@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WACHTKAMER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vAxkam@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <sign_manual both_hands="true" lr_symm="true">
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+        <handconfig extfidir="ol"/>
+        <handconfig palmor="d"/>
+        <handconstellation contact="close"/>
+        <rpt_motion repetition="fromstart">
+          <directedmotion direction="d" fast="true" size="small"/>
+        </rpt_motion>
+      </sign_manual>
+      <sign_manual>
+        <handconfig handshape="finger2345" thumbpos="out"/>
+        <handconfig extfidir="ol"/>
+        <handconfig palmor="d"/>
+        <par_motion>
+          <circularmotion axis="d" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ol" second_extfidir="o"/>
+          </tgt_motion>
+        </par_motion>
+      </sign_manual>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

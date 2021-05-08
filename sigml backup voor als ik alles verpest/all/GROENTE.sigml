@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="GROENTE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xrunt@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger23" thumbpos="across"/>
+        <handconfig handshape="finger23" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+        <location_hand digits="2" location="midjoint" side="palmar"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="ir" size="small" start="l"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

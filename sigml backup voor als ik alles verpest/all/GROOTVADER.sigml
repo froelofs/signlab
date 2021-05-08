@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="OPA">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="o:pppa"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="lips">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <directedmotion curve="l" direction="d" size="small"/>
+        <location_bodyarm contact="touch" location="underchin" second_location="lips">
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <tgt_motion>
+        <directedmotion direction="d" size="small"/>
+        <location_bodyarm contact="touch" location="chin">
+          <location_hand digits="2" location="nail" side="palmar"/>
+        </location_bodyarm>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="o" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="u" palmor="u" second_extfidir="uo"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

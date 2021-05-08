@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="POSTZEGEL">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="pppOse"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
+        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ul" palmor="dr" second_extfidir="il"/>
+        <handconfig extfidir="or" palmor="r" second_extfidir="r" second_palmor="ur"/>
+      </split_handconfig>
+      <split_location>
+        <location_bodyarm contact="touch" location="nostrils" second_location="lips">
+          <location_hand digits="1" location="tip"/>
+        </location_bodyarm>
+        <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="left_at"/>
+      </split_location>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="d" curve_size="small" direction="do"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="fist"/>
+            <handconfig extfidir="o" palmor="l" second_extfidir="ol"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="3" location="base" side="palmar"/>
+          <location_hand digits="1" location="tip"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

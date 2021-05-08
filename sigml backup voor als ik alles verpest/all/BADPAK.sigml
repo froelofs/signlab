@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BADPAK">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bApAk"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2" mainbend="hooked" thumbpos="across"/>
+      <handconfig extfidir="il" second_extfidir="l"/>
+      <handconfig palmor="r"/>
+      <location_bodyarm contact="touch" location="stomach" second_location="chest" second_side="right_at">
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" direction="ui"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="il" palmor="dr" second_extfidir="ul" second_palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="shoulders" second_location="shoulders" second_side="right_at">
+          <location_hand digits="2" location="midjoint" side="dorsal"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

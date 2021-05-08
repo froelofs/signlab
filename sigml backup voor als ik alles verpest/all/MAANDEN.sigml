@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MAANDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mand@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="l" second_palmor="ul"/>
+      <location_bodyarm contact="close" location="eyes" second_location="cheek" second_side="right_at" side="right_at">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <directedmotion direction="l" fast="true" size="small"/>
+        <handconstellation contact="touch"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

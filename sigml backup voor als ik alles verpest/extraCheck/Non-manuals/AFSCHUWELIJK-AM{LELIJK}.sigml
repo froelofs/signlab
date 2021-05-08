@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="AFSCHUWELIJK">
+    <sign_nonmanual/>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="touch" location="underchin">
+        <location_hand digits="2" location="midjoint"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="r" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

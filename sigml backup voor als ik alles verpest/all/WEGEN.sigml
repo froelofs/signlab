@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WEGEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vex@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="u" second_palmor="ul"/>
+      <handconstellation contact="close">
+        <location_bodyarm location="chest" second_location="shoulders"/>
+      </handconstellation>
+      <tgt_motion>
+        <split_motion>
+          <seq_motion>
+            <directedmotion direction="d" size="small"/>
+            <directedmotion direction="u"/>
+            <directedmotion direction="d"/>
+            <directedmotion direction="u"/>
+            <directedmotion direction="d" size="small"/>
+          </seq_motion>
+          <seq_motion>
+            <directedmotion direction="u" size="small"/>
+            <directedmotion direction="d"/>
+            <directedmotion direction="u"/>
+            <directedmotion direction="d"/>
+            <directedmotion direction="u" size="small"/>
+          </seq_motion>
+        </split_motion>
+        <handconstellation contact="close"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

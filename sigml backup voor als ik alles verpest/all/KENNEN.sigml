@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KENNEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kEn"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="head" side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig extfidir="ul" palmor="l" second_extfidir="uo"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MELDEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mEl"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="hooked"/>
+      <handconfig extfidir="u" second_extfidir="ui"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="touch" location="chin" second_location="lips">
+        <location_hand digits="2" location="midjoint" side="dorsal"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="o" size="big"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="o" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="armextended" location="chin" second_location="neck"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

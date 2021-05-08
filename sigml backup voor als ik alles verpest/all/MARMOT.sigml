@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="MARMOT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="mAmO"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" mainbend="round" second_handshape="flat"/>
+        <handconfig handshape="flat" second_handshape="flat" second_mainbend="round"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="o" palmor="d"/>
+        <handconfig extfidir="o" palmor="u" second_palmor="ur"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="3" location="nail" side="palmar"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several" second_repetition="fromstart_several">
+        <tgt_motion fast="true">
+          <changeposture/>
+          <handconfig handshape="flat" mainbend="round"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
