@@ -12,7 +12,7 @@ function startPose() {
 
 //Adapts the page to the chosen display option
 function changeFunc(myRadio) {
-  console.log("radio value: " + myRadio.value);
+  console.log("translation display: " + myRadio.value);
   if (myRadio.value == "avatar") {
     document.getElementById("avatar").style.display = 'inline-block';
     document.getElementById("videos").style.display = 'none';
@@ -103,6 +103,7 @@ function callbackSent(response) {
     // startPose();
     //Simulates the avatar display option being clicked
     changeFunc(document.getElementById("avatarDisplay"));
+    console.log("autocomplete suggestions: ", sentOptions);
   }
 }
 

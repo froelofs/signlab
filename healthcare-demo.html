@@ -89,16 +89,15 @@
                     <div class="mb-3 row align-items-start no-gutters">
                       <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label">Text replaced by javascript based on current input language</label>
                       <div class="col-sm">
-                        <select id="inputLanguageForm" class="form-select" aria-label="Default select example" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
-                          <option  selected value="English">English</option>
+                        <select id="inputLanguageForm" class="form-select" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
+                          <option selected value="English">English</option>
                           <option value="Nederlands">Nederlands</option>
                         </select>
                       </div>
                       <div class="col-sm-4"></div>
                     </div>
 
-
-                    <!-- This button exists so that the ZonMw scripts know that the avatar option is active -->
+                    <!-- This button exists so that the ZonMw scripts know that the demo option is active -->
                     <input type="radio" id="avatarDisplay" name="display" value="demo" class="undisplayed" checked>
 
                     <form autocomplete="off">
@@ -106,8 +105,6 @@
                         <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
                       </div>
                     </form>
-
-
 
                     <div id="minutesBox" class="varBox">
                      <label for="minutes" style="display: inline-block;">Number of minutes:</label>
