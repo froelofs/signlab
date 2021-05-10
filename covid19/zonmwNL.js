@@ -101,6 +101,7 @@ function callbackSent(response) {
     // startPose();
     //Simulates the avatar display option being clicked
     changeFunc(document.getElementById("avatarDisplay"));
+    console.log("available avatar sentences: ", sentOptions);
   }
 }
 
