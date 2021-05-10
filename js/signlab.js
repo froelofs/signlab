@@ -111,7 +111,6 @@ function changeLanguage(language, onload=false) {
   var js = document.createElement("script");
 
   js.type = "text/javascript";
-  console.log("selected value: ", language);
   // Loads the correct file and sets the paths for the corresponding dicts and changes the flag
   if (language == "Nederlands"){
     js.src = "covid19/zonmwNL.js";
