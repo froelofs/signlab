@@ -2,9 +2,14 @@
 <sigml>
   <hamgestural_sign gloss="VERDRIETIG">
     <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="@dit"/>
+      <mouthing_tier fitpicturetomanual="true">
+      <mouthing_par>
+        <mouth_gesture movement="sad" speed="0.5"/>
+      </mouthing_par>
       </mouthing_tier>
+      <extra_tier>
+        <extra_movement movement="OAQ"/>
+      </extra_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
