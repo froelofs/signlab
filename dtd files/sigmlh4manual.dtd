@@ -454,7 +454,7 @@ the corresponding angle codes:
     opposed     44
 Note, however, that this type of thumbpos may imply bending
 attributes for thumb joints 2 and 3 (e.g. "across"),
-while the second type using angle codes does not.  
+while the second type using angle codes does not.
 Each angle code is a digit in the range 0..4 (i.e. min..max).
 The first describes the angle between the thumb and the extended
 index finger: 0 for parallel and 4 for maximally extended.
@@ -634,7 +634,7 @@ HamNoSys 4 definition.
 <!-- Locations. -->
 
 <!--
-A basic location is used to identify a single location. 
+A basic location is used to identify a single location.
 (For a double-handed sign, this may resolve to two separate
 locations.)
 
@@ -1018,7 +1018,7 @@ happens.
 
 <!--
 The dynamicsize_attribs refers to the dynamics of the circular
-motion. 
+motion.
 If a zigzag is present, it is assumed to be of constant size and
 perpendicular to the plane of the circle.
 -->
