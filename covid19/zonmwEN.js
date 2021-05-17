@@ -75,7 +75,11 @@ var videoOptions;
 function callbackVideo(response) {
  jsonVideo = response;
  videoOptions = Object.keys(jsonVideo);
- options = videoOptions;
+ //Does not default to video dictionary in demo version
+ if (typeof vidPath === 'undefined'){
+  console.log("Demo version inactive, defaulting to video options");
+  options = videoOptions;
+ }
 }
 
 // Retrieves the dict of sentences with video links
@@ -103,7 +107,8 @@ function callbackSent(response) {
     // startPose();
     //Simulates the avatar display option being clicked
     changeFunc(document.getElementById("avatarDisplay"));
-    console.log("available avatar sentences: ", sentOptions);
+    console.log("Demo version active, defaulting to avatar options");
+    options = sentOptions;
   }
 }
 
