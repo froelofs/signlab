@@ -126,7 +126,7 @@ function changeLanguage(language, onload=false) {
     // sentPath = "covid19/json/sentencesDictEN.json";
     // vidPath = "covid19/json/videoDictEN.json";
     // varPath = "covid19/json/variableDictEN.json";
-    js.src = "covid19/zonmwEN.js";
+    js.src = "covid19/zonmwDemoEN.js";
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
     document.getElementById('selectExplain').textContent="Input language: ";
   }
