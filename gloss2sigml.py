@@ -78,10 +78,13 @@ complexNonManuals = {
 # Converts the user input nonmanual to the correct SiGML naming conventions
 def convert(inputtag):
     '''TODO: complex nonmans ook bij split, toevoegen aan dict'''
+    complexNonManuals[inputtag]
+        
+    search = {}
     [tier, tag] = inputtag.split("_")
     # Checks whether the given tier exists
     try:
-        nonmans[tier]
+        search = nonmans[tier]
     except:
         print("Tier '"+ tier + "' could not be found")
 
@@ -278,4 +281,5 @@ if __name__ == '__main__':
     #     userInput = lines[0].strip("\n").split(" ")
     # main(sys.argv[1:])
     main('U <HT_NO><FT_RB> ETEN KLAAR </FT_RB>HEBBEN</HT_NO>')
+    main('U <EM_SADNESS> ETEN KLAAR </EM_SADNESS> HEBBEN')
     # main('U <HT_NO><FT_RB><MT_L01> ETEN </FT_RB></HT_NO></MT_L01>')

@@ -349,7 +349,7 @@ function changeVideo(url) {
         }
         // Sends sigml to avatar
         else{
-          entry = "zonmw/" + entry;
+          // entry = "zonmw/" + entry;
           playURL(entry);
           document.getElementById("replayButton").setAttribute("name", entry);
           document.getElementById("replayButton").style.display = 'inline-block';
