@@ -4,7 +4,7 @@
     <sign_nonmanual>
       <head_tier>
        <head_par>
-        <head_movement movement="NF"/>
+        <head_movement movement="NF" amount="0.5"/>
         <head_movement movement="TR"/>
        </head_par>
       </head_tier>

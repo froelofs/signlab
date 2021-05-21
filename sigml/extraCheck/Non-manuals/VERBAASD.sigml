@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
   <hamgestural_sign gloss="VERBAASD">
-    <sign_nonmanual/>
+    <sign_nonmanual>
+      <mouthing_tier>
+      <mouthing_par>
+        <mouth_gesture movement="T02" speed="0.5" amount="1.2"/>
+      </mouthing_par>
+      </mouthing_tier>
+      <head_tier>
+      <head_par>
+        <head_movement movement="TR" speed="0.7"/>
+        <head_movement movement="PB" speed="0.7"/>
+      </head_par>
+      </head_tier>
+      <body_tier>
+        <body_movement movement="TB"/>
+      </body_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="RB" speed="0.7" amount="1.3"/>
+        <eye_lids movement="WB" speed="0.7"/>
+      </facial_expr_par>
+      </facialexpr_tier>
+      <eyegaze_tier>
+        <eye_gaze direction="AD" speed="0.7"/>
+      </eyegaze_tier>
+    </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist" thumbpos="across"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="u" second_palmor="ul"/>
-      <location_bodyarm contact="close" location="nose" second_location="cheek" second_side="right_at"/>
+      <handconfig extfidir="u" second_extfidir="uo"/>
+      <handconfig palmor="ld" />
+      <location_bodyarm contact="close" location="ear" second_location="shouldertop" side="right_beside"/>
       <tgt_motion>
         <changeposture/>
         <handconfig handshape="finger2" thumbpos="opposed"/>

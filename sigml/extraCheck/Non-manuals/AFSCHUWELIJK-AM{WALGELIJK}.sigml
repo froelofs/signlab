@@ -3,8 +3,29 @@
   <hamgestural_sign gloss="AFSCHUWELIJK">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture movement="T05"/>
+      <mouthing_par>
+        <mouth_gesture movement="D01" speed="0.5"/>
+        <mouth_gesture movement="L29" speed="0.5"/>
+      </mouthing_par>
       </mouthing_tier>
+      <head_tier>
+      <head_par>
+        <head_movement movement="TR" speed="0.7"/>
+        <head_movement movement="PB" speed="0.7"/>
+      </head_par>
+      </head_tier>
+      <body_tier>
+        <body_movement movement="TB"/>
+      </body_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="FU" speed="0.7"/>
+        <eye_lids movement="SB" speed="0.7"/>
+      </facial_expr_par>
+      </facialexpr_tier>
+      <eyegaze_tier>
+        <eye_gaze direction="AD" speed="0.7"/>
+      </eyegaze_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" thumbpos="out"/>

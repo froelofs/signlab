@@ -29,7 +29,7 @@
       <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_thumbpos="across" thumbpos="across"/>
       <handconfig extfidir="ul"/>
       <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="chin">
+      <location_bodyarm contact="close" location="chin" second_location="nose">
         <location_hand digits="2" location="midjoint" side="left_beside"/>
       </location_bodyarm>
       <rpt_motion repetition="fromstart_several">
