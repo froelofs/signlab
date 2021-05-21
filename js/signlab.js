@@ -117,7 +117,7 @@ function changeLanguage(language, onload=false) {
     // sentPath = "covid19/json/sentencesDictNL.json";
     // vidPath = "covid19/json/videoDictNL.json";
     // varPath = "covid19/json/variableDictNL.json";
-    js.src = "covid19/zonmwDemoNL.js";
+    js.src = "js/zonmwDemoNL.js";
     document.getElementById('mySiGML').placeholder = 'Vul hier een zin of trefwoorden in';
     document.getElementById('selectExplain').textContent="Invoertaal: ";
   }
@@ -126,7 +126,7 @@ function changeLanguage(language, onload=false) {
     // sentPath = "covid19/json/sentencesDictEN.json";
     // vidPath = "covid19/json/videoDictEN.json";
     // varPath = "covid19/json/variableDictEN.json";
-    js.src = "covid19/zonmwDemoEN.js";
+    js.src = "js/zonmwDemoEN.js";
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
     document.getElementById('selectExplain').textContent="Input language: ";
   }
