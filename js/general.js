@@ -194,6 +194,7 @@ $('.timepicker').timepicker({
     bar += '<div class="collapse navbar-collapse" id="navbarResponsive">';
     bar += '<ul class="navbar-nav ml-auto" role="tablist">';
     bar += '<li class="nav-item"><a class="nav-link" href="index.html" id="AboutNav">Welcome</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="grammar.html" id="GrammarNav">SL Grammar</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="translate.html" id="TranslateNav">Avatar Translation</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
@@ -213,8 +214,8 @@ $('.timepicker').timepicker({
 
 // Checks which page the user is on and returns navbar ID
 function getPage(){
-  allTabs = ['AboutNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
-  sections = ['About', 'Translate', 'Translator', 'People', 'Publications', 'Projects'];
+  allTabs = ['AboutNav', 'GrammarNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
+  sections = ['About', 'Grammar', 'Translate', 'Translator', 'People', 'Publications', 'Projects'];
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
       return allTabs[j];
