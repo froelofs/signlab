@@ -5,7 +5,7 @@ from copy import deepcopy
 from newDict import newDict
 import re
 
-
+#Contains all the simple nonmanuals
 #Example: <st_ul></st_ul> = shoulder_tier -> shoulder_movement -> UL
 nonmans = {
     "ST" : {
@@ -36,13 +36,55 @@ nonmans = {
     }
 }
 
+#Contains all the complex nonmanuals
+complexNonManuals = {
+    "emotions": {
+        "sadness": ["head_movement movement='NF' amount='0.5'", "head_movement movement='TR'", 
+                    "mouth_gesture movement='L31' speed='0.6'", "eye_brows movement='FU'", "eye_lids movement='SB'" ],
+        "fear": ['mouth_gesture movement="L31"', 'head_movement movement="TR" speed="0.7"', 'head_movement movement="NF" amount="0.6"', 
+                 'body_movement movement="TB"', 'body_movement movement="TR" amount="0.6"', 'shoulder_movement movement="HB"',
+                 'eye_brows movement="FU" speed="0.7" amount="0.4"', 'eye_lids movement="WB" speed="0.7"', 'eye_gaze direction="AD" speed="0.7"'], # geen par bij mouth
+        "disgust": ["mouth_gesture movement='D01' speed='0.5'", "mouth_gesture movement='L29' speed='0.5'", 
+                    'head_movement movement="TR" speed="0.7"', 'head_movement movement="PB" speed="0.7"', 
+                    'body_movement movement="TB"', 'eye_brows movement="FU" speed="0.7"', 'eye_lids movement="SB" speed="0.7"', 
+                    'eye_gaze direction="AD" speed="0.7"'],
+        "anger": ['mouth_gesture movement="L30"', 'head_movement movement="TR" speed="0.7"', 'head_movement movement="NF" amount="0.6"',
+                  'body_movement movement="TR" amount="0.6"', 'eye_brows movement="FU"', 'eye_lids movement="SB"', 'eye_gaze direction="AD" speed="0.7"'],
+        "surprise": ['mouth_gesture movement="T02" speed="0.5" amount="1.2"', 'head_movement movement="TR" speed="0.7"',
+                      'head_movement movement="PB" speed="0.7', 'body_movement movement="TB"', 'eye_brows movement="RB" speed="0.7" amount="1.3"', 
+                      'eye_lids movement="WB" speed="0.7"', 'eye_gaze direction="AD" speed="0.7"'],
+        "happiness_1": ['avatar_morph name="smlc" amount="1.0" timing="x s l - m l x"', 'avatar_morph name="eee" amount="0.3" timing="x m t - m t"', 
+                  "eye_lids movement='SB'", "nose movement='WR'", 'head_movement movement="TR" amount="0.7"'], # glimlach met beetje tanden, geen andere mond movement
+        "happiness_2": ['avatar_morph name="smlc" amount="1.0" timing="x 0.2 t - 0.2 t x"', 'eye_brows movement="RB"', 'head_movement movement="NF"'] # lach vanaf begin gaat over in mouth picture
+    },
+    "epistemicState": {
+        "ignorant": ['mouth_gesture movement="L31" speed="0.8"', 'eye_brows movement="RB" speed="0.6"', 'eye_lids movement="WB" speed="0.6"',
+                     'shoulder_movement movement="UB"'],
+        "doubtful": [],
+        "knowledgable": [],
+        "sceptical": []
+    },
+    "grammaticalMarkers": {
+        "questionmarkEyebrowsRaised": ["extra_movement movement='OAQ'"],
+        "questionmarkEyebrowsFurrowed": ["extra_movement movement='CAQ'"],
+        "promiseMarker": ["extra_movement movement='PRM'"],
+        "topicMarker": [],
+        "focusMarker": [],
+        "confirmation": ["head_movement movement'NO'"],
+        "negation": ["head_movement movement'SH'"]
+    }
+}
+
 # Converts the user input nonmanual to the correct SiGML naming conventions
 def convert(inputtag):
     '''TODO: complex nonmans ook bij split, toevoegen aan dict'''
+    complexNonManuals[inputtag]
+        
+    search = {}
     [tier, tag] = inputtag.split("_")
     # Checks whether the given tier exists
     try:
-        nonmans[tier]
+        search = nonmans[tier]
     except:
         print("Tier '"+ tier + "' could not be found")
 
@@ -239,4 +281,5 @@ if __name__ == '__main__':
     #     userInput = lines[0].strip("\n").split(" ")
     # main(sys.argv[1:])
     main('U <HT_NO><FT_RB> ETEN KLAAR </FT_RB>HEBBEN</HT_NO>')
+    main('U <EM_SADNESS> ETEN KLAAR </EM_SADNESS> HEBBEN')
     # main('U <HT_NO><FT_RB><MT_L01> ETEN </FT_RB></HT_NO></MT_L01>')

@@ -111,20 +111,22 @@ function changeLanguage(language, onload=false) {
   var js = document.createElement("script");
 
   js.type = "text/javascript";
-  // Loads the correct file and sets the paths for the corresponding dicts and changes the flag
+  // Loads the correct file and sets the paths for the corresponding dicts
   if (language == "Nederlands"){
-    js.src = "covid19/zonmwNL.js";
-    sentPath = "covid19/json/sentencesDictNL.json";
-    vidPath = "covid19/json/videoDictNL.json";
-    varPath = "covid19/json/variableDictNL.json";
+    // js.src = "covid19/zonmwNL.js";
+    // sentPath = "covid19/json/sentencesDictNL.json";
+    // vidPath = "covid19/json/videoDictNL.json";
+    // varPath = "covid19/json/variableDictNL.json";
+    js.src = "js/zonmwDemoNL.js";
     document.getElementById('mySiGML').placeholder = 'Vul hier een zin of trefwoorden in';
     document.getElementById('selectExplain').textContent="Invoertaal: ";
   }
   else{
-    js.src = "covid19/zonmwEN.js";
-    sentPath = "covid19/json/sentencesDictEN.json";
-    vidPath = "covid19/json/videoDictEN.json";
-    varPath = "covid19/json/variableDictEN.json";
+    // js.src = "covid19/zonmwEN.js";
+    // sentPath = "covid19/json/sentencesDictEN.json";
+    // vidPath = "covid19/json/videoDictEN.json";
+    // varPath = "covid19/json/variableDictEN.json";
+    js.src = "js/zonmwDemoEN.js";
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
     document.getElementById('selectExplain').textContent="Input language: ";
   }
