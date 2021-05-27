@@ -9,7 +9,10 @@
         <head_movement movement="NF" speed="0.7"/>
       </head_tier>
       <facialexpr_tier>
-        <eye_gaze movement="DN" /><eye_brows movement="FU" /><eye_lids movement="SB" /></facialexpr_tier>
+        <eye_gaze movement="DN"/>
+        <eye_brows movement="FU"/>
+        <eye_lids movement="SB"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
       <handconfig handshape="finger23" second_handshape="finger23spread" second_mainbend="round" second_thumbpos="across" thumbpos="across"/>

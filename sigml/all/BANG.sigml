@@ -4,7 +4,32 @@
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="bAN"/>
+        <mouth_gesture movement="L31"/>
       </mouthing_tier>
+      <head_tier>
+      <head_par>
+        <head_movement movement="TR" speed="0.7"/>
+        <head_movement movement="NF" amount="0.6"/>
+      </head_par>
+      </head_tier>
+      <body_tier>
+       <body_par>
+        <body_movement movement="TB"/>
+        <body_movement movement="TR" amount="0.6"/>
+       </body_par>
+      </body_tier>
+      <shoulder_tier>
+        <shoulder_movement movement="HB"/>
+      </shoulder_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="FU" speed="0.7" amount="0.4"/>
+        <eye_lids movement="WB" speed="0.7"/>
+      </facial_expr_par>
+      </facialexpr_tier>
+      <eyegaze_tier>
+        <eye_gaze direction="AD" speed="0.7"/>
+      </eyegaze_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist"/>
