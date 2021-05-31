@@ -35,33 +35,30 @@ function changeFunc(myRadio) {
     document.getElementById("replayButton").style.display = 'none';
     options = videoOptions;
   }
-  else if (myRadio.value == "demo"){
-    options = sentOptions;
-  }
 }
 
 // Path settings for demo version
-var urlSent;
-if (typeof sentPath === 'undefined'){
-  urlSent = "json/sentencesDictNL.json";
-}
-else{
-  urlSent = sentPath;
-}
-var urlVid;
-if (typeof vidPath === 'undefined'){
-  urlVid = "json/videoDictNL.json";
-}
-else{
-  urlVid = vidPath;
-}
-var urlVar;
-if (typeof varPath === 'undefined'){
-  urlVar = "json/variableDictNL.json";
-}
-else{
-  urlVar = varPath;
-}
+// var urlSent;
+// if (typeof sentPath === 'undefined'){
+//   urlSent = "json/sentencesDictNL.json";
+// }
+// else{
+//   urlSent = sentPath;
+// }
+// var urlVid;
+// if (typeof vidPath === 'undefined'){
+//   urlVid = "json/videoDictNL.json";
+// }
+// else{
+//   urlVid = vidPath;
+// }
+// var urlVar;
+// if (typeof varPath === 'undefined'){
+//   urlVar = "json/variableDictNL.json";
+// }
+// else{
+//   urlVar = varPath;
+// }
 
 // Stores the default setting for autocomplete suggestions
 var options;
@@ -73,21 +70,17 @@ var videoOptions;
 function callbackVideo(response) {
  jsonVideo = response;
  videoOptions = Object.keys(jsonVideo);
- //Does not default to video dictionary in demo version
- if (typeof vidPath === 'undefined'){
-  console.log("Demo version inactive, defaulting to video options");
-  options = videoOptions;
- }
+ options = videoOptions;
 }
 
 // Retrieves the dict of sentences with video links
 $.ajax({
- url: urlVid,
+ url: "json/videoDictNL.json",
  global: false,
  success: function(data) {
   callbackVideo(data);
  },
- error: function(xhr, error){
+ error: function(_xhr, error){
   console.log(error);
  }
 });
@@ -99,23 +92,15 @@ var sentOptions;
 function callbackSent(response) {
   jsonSent = response;
   sentOptions = Object.keys(jsonSent);
-  // Special case for demo
-  if (typeof sentPath !== 'undefined'){
-    // Executes the startpose
-    // startPose();
-    //Simulates the avatar display option being clicked
-    changeFunc(document.getElementById("avatarDisplay"));
-    console.log("available avatar sentences: ", sentOptions);
-  }
 }
 
 // Retrieves the dict of sentences with SiGML translations
 $.ajax({
- url: urlSent,
+ url: "json/sentencesDictNL.json",
  success: function (data) {
   callbackSent(data);
  },
- error: function(xhr, error){
+ error: function(_xhr, error){
   console.log(error);
  }
 });
@@ -130,12 +115,12 @@ function callbackVar(response) {
 
 // Retrieves the dict of sentences with variables for the avatar
 $.ajax({
- url: urlVar,
+ url: "json/variableDictNL.json",
  global: false,
  success: function(data) {
   callbackVar(data);
  },
- error: function(xhr, error){
+ error: function(_xhr, error){
   console.log(error);
  }
 });
@@ -193,17 +178,15 @@ $( function() {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
-    select: function( event, ui ){
+    select: function( _event, ui ){
       if (ui.item != null){
+        //Resets the replay button
+        document.getElementById("replayButton").style.display = 'none';
+        document.getElementById("replayButton").setAttribute("name", "");
+
         document.getElementById('mySiGML').value = text;
         console.log("selected: " + ui.item.value);
-        // Check for demo version active
-        if (typeof sentPath === 'undefined'){
-          var text = checkText(ui.item.value);
-        }
-        else{
-          var text = checkText(ui.item.value, -1, "alertMainTran");
-        }
+        var text = checkText(ui.item.value);
         if (text == false){
          console.log("variable detected");
          variable = true;

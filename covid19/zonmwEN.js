@@ -43,27 +43,27 @@ function changeFunc(myRadio) {
 }
 
 // Path settings for demo version
-var urlSent;
-if (typeof sentPath === 'undefined'){
-  urlSent = "json/sentencesDictEN.json";
-}
-else{
-  urlSent = sentPath;
-}
-var urlVid;
-if (typeof vidPath === 'undefined'){
-  urlVid = "json/videoDictEN.json";
-}
-else{
-  urlVid = vidPath;
-}
-var urlVar;
-if (typeof varPath === 'undefined'){
-  urlVar = "json/variableDictEN.json";
-}
-else{
-  urlVar = varPath;
-}
+// var urlSent;
+// if (typeof sentPath === 'undefined'){
+//   urlSent = "json/sentencesDictEN.json";
+// }
+// else{
+//   urlSent = sentPath;
+// }
+// var urlVid;
+// if (typeof vidPath === 'undefined'){
+//   urlVid = "json/videoDictEN.json";
+// }
+// else{
+//   urlVid = vidPath;
+// }
+// var urlVar;
+// if (typeof varPath === 'undefined'){
+//   urlVar = "json/variableDictEN.json";
+// }
+// else{
+//   urlVar = varPath;
+// }
 
 // Stores the default setting for autocomplete suggestions
 var options;
@@ -75,16 +75,12 @@ var videoOptions;
 function callbackVideo(response) {
  jsonVideo = response;
  videoOptions = Object.keys(jsonVideo);
- //Does not default to video dictionary in demo version
- if (typeof vidPath === 'undefined'){
-  console.log("Demo version inactive, defaulting to video options");
-  options = videoOptions;
- }
+ options = videoOptions;
 }
 
 // Retrieves the dict of sentences with video links
 $.ajax({
- url: urlVid,
+ url: "json/videoDictEN.json",
  global: false,
  success: function(data) {
   callbackVideo(data);
@@ -101,20 +97,11 @@ var sentOptions;
 function callbackSent(response) {
   jsonSent = response;
   sentOptions = Object.keys(jsonSent);
-  // Special case for demo
-  if (typeof sentPath !== 'undefined'){
-    // Executes the startpose
-    // startPose();
-    //Simulates the avatar display option being clicked
-    changeFunc(document.getElementById("avatarDisplay"));
-    console.log("Demo version active, defaulting to avatar options");
-    options = sentOptions;
-  }
 }
 
 // Retrieves the dict of sentences with SiGML translations
 $.ajax({
- url: urlSent,
+ url: "json/sentencesDictEN.json",
  success: function (data) {
   callbackSent(data);
  },
@@ -133,7 +120,7 @@ function callbackVar(response) {
 
 // Retrieves the dict of sentences with variables for the avatar
 $.ajax({
- url: urlVar,
+ url: "json/variableDictEN.json",
  global: false,
  success: function(data) {
   callbackVar(data);
@@ -196,17 +183,14 @@ $( function() {
       autocompSugg = customFilter(options, request.term);
       response(autocompSugg);
     },
-    select: function( event, ui ){
+    select: function( _event, ui ){
+      //Resets the replay button
+      document.getElementById("replayButton").style.display = 'none';
+      document.getElementById("replayButton").setAttribute("name", "");
       if (ui.item != null){
         document.getElementById('mySiGML').value = text;
         console.log("selected: " + ui.item.value);
-        // Check for demo version active
-        if (typeof sentPath === 'undefined'){
-          var text = checkText(ui.item.value);
-        }
-        else{
-          var text = checkText(ui.item.value, -1, "alertMainTran");
-        }
+        var text = checkText(ui.item.value);
         if (text == false){
          console.log("variable detected");
          variable = true;
@@ -443,7 +427,6 @@ function toSiGML(text,alert="alertZonMwTran"){
         alertMessage("info", "There is currently no translation available for this sentence, but you can send it to us via the suggestions box on this page",alert);
       }
       else{
-        // entry = "zonmw/" + entry;
         playURL(entry);
         document.getElementById("replayButton").setAttribute("name", entry);
         document.getElementById("replayButton").style.display = 'inline-block';

@@ -109,15 +109,12 @@ function changeVideo(url) {
       },
       select: function( event, ui ){
         if (ui.item != null){
-          document.getElementById('mySiGML').value = text;
+          //Resets the replay button
+          document.getElementById("replayButton").style.display = 'none';
+          document.getElementById("replayButton").setAttribute("name", "");
+          // document.getElementById('mySiGML').value = text;
           console.log("selected: " + ui.item.value);
-          // Check for demo version active
-          if (typeof sentPath === 'undefined'){
-            var text = checkText(ui.item.value);
-          }
-          else{
-            var text = checkText(ui.item.value, -1, "alertMainTran");
-          }
+          var text = checkText(ui.item.value);
           if (text == false){
            console.log("variable detected");
            variable = true;
