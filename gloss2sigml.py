@@ -39,21 +39,21 @@ nonmans = {
 #Contains all the complex nonmanuals
 complexNonManuals = {
     "emotions": {
-        "sadness": ["head_movement movement='NF' amount='0.5'", "head_movement movement='TR'", 
+        "sadness": ["head_movement movement='NF' amount='0.5'", "head_movement movement='TR'",
                     "mouth_gesture movement='L31' speed='0.6'", "eye_brows movement='FU'", "eye_lids movement='SB'" ],
-        "fear": ['mouth_gesture movement="L31"', 'head_movement movement="TR" speed="0.7"', 'head_movement movement="NF" amount="0.6"', 
+        "fear": ['mouth_gesture movement="L31"', 'head_movement movement="TR" speed="0.7"', 'head_movement movement="NF" amount="0.6"',
                  'body_movement movement="TB"', 'body_movement movement="TR" amount="0.6"', 'shoulder_movement movement="HB"',
                  'eye_brows movement="FU" speed="0.7" amount="0.4"', 'eye_lids movement="WB" speed="0.7"', 'eye_gaze direction="AD" speed="0.7"'], # geen par bij mouth
-        "disgust": ["mouth_gesture movement='D01' speed='0.5'", "mouth_gesture movement='L29' speed='0.5'", 
-                    'head_movement movement="TR" speed="0.7"', 'head_movement movement="PB" speed="0.7"', 
-                    'body_movement movement="TB"', 'eye_brows movement="FU" speed="0.7"', 'eye_lids movement="SB" speed="0.7"', 
+        "disgust": ["mouth_gesture movement='D01' speed='0.5'", "mouth_gesture movement='L29' speed='0.5'",
+                    'head_movement movement="TR" speed="0.7"', 'head_movement movement="PB" speed="0.7"',
+                    'body_movement movement="TB"', 'eye_brows movement="FU" speed="0.7"', 'eye_lids movement="SB" speed="0.7"',
                     'eye_gaze direction="AD" speed="0.7"'],
         "anger": ['mouth_gesture movement="L30"', 'head_movement movement="TR" speed="0.7"', 'head_movement movement="NF" amount="0.6"',
                   'body_movement movement="TR" amount="0.6"', 'eye_brows movement="FU"', 'eye_lids movement="SB"', 'eye_gaze direction="AD" speed="0.7"'],
         "surprise": ['mouth_gesture movement="T02" speed="0.5" amount="1.2"', 'head_movement movement="TR" speed="0.7"',
-                      'head_movement movement="PB" speed="0.7', 'body_movement movement="TB"', 'eye_brows movement="RB" speed="0.7" amount="1.3"', 
+                      'head_movement movement="PB" speed="0.7', 'body_movement movement="TB"', 'eye_brows movement="RB" speed="0.7" amount="1.3"',
                       'eye_lids movement="WB" speed="0.7"', 'eye_gaze direction="AD" speed="0.7"'],
-        "happiness_1": ['avatar_morph name="smlc" amount="1.0" timing="x s l - m l x"', 'avatar_morph name="eee" amount="0.3" timing="x m t - m t"', 
+        "happiness_1": ['avatar_morph name="smlc" amount="1.0" timing="x s l - m l x"', 'avatar_morph name="eee" amount="0.3" timing="x m t - m t"',
                   "eye_lids movement='SB'", "nose movement='WR'", 'head_movement movement="TR" amount="0.7"'], # glimlach met beetje tanden, geen andere mond movement
         "happiness_2": ['avatar_morph name="smlc" amount="1.0" timing="x 0.2 t - 0.2 t x"', 'eye_brows movement="RB"', 'head_movement movement="NF"'] # lach vanaf begin gaat over in mouth picture
     },
@@ -79,7 +79,7 @@ complexNonManuals = {
 def convert(inputtag):
     '''TODO: complex nonmans ook bij split, toevoegen aan dict'''
     complexNonManuals[inputtag]
-        
+
     search = {}
     [tier, tag] = inputtag.split("_")
     # Checks whether the given tier exists
@@ -94,7 +94,7 @@ def convert(inputtag):
         for val in search[key]:
             if val == tag:
                 return key + "='" + val + "'" # e.g. "shoulder_movement movement='UL'"
-    
+
     print("Tag '"+ tag + "' could not be found in combination with tier '"+ tier + "'")
 
 # Inserts the necessary syntax to execute the user input nonmanuals
@@ -102,7 +102,7 @@ def tagsToSiGML(signsWithTags, parFace = True, parMouth = False):
     signNonmans = {}
     for key in signsWithTags.keys():
         tags = signsWithTags[key]
-        
+
         # Inserts the necessary xml tags and groups the user input nonmanuals by tier
         faceTags = ['<' + tag + '/>' for tag in tags if ("eye_brows" or "eye_lids" or "nose") in tag]
         mouthTags = ['<' + tag + '/>' for tag in tags if "mouth" in tag]
@@ -124,7 +124,7 @@ def tagsToSiGML(signsWithTags, parFace = True, parMouth = False):
             if(len(eyeGazeTags)):
                 nonmanSiGML += '<eyegaze_tier>' + ''.join(eyeGazeTags) + '</eyegaze_tier>'
             if(len(faceTags)):
-                nonmanSiGML += '<facialexpr_tier>' + '<facial_expr_par>' + ''.join(faceTags) 
+                nonmanSiGML += '<facialexpr_tier>' + '<facial_expr_par>' + ''.join(faceTags)
                 nonmanSiGML += '</facial_expr_par>' + '</facialexpr_tier>'
                 # Facial nonmanuals are executed simultaneously by default, but can be executed sequentially
                 if not parFace:
@@ -141,7 +141,7 @@ def tagsToSiGML(signsWithTags, parFace = True, parMouth = False):
             signNonmans[key] = nonmanSiGML
         else:
             signNonmans[key] = ''
-    
+
     return signNonmans
 
 # Converts the signs and any user input nonmanuals into SiGML
@@ -176,7 +176,7 @@ def makeSiGML(signNonmans):
                             if 'mouth' in cleanline:
                                 sigml += nonmanuals
                                 nonmanuals = ''
-                            # Inserts all of the user input nonmanuals of the current tier 
+                            # Inserts all of the user input nonmanuals of the current tier
                             else:
                                 insertion = nonmanuals[:end+len(cleanline)]
                                 nonmanuals = nonmanuals.replace(insertion, '')
@@ -207,8 +207,8 @@ def makeSiGML(signNonmans):
                     sigml += cleanline
             else:
                 print('Did not pass check: ', cleanline)
-    sigml += '</sigml>' + '\n'             
-    
+    sigml += '</sigml>' + '\n'
+
     #                     if tag in cleanline:
     #                         if not mouthing_tier or facialexpr_tier:
     #                             overwrite
@@ -235,7 +235,7 @@ def main(sentence):
     # ? toevoegen
 
     foundSigns = {}
-    
+
     sentence = sentence.replace(">","> ")
     sentence = sentence.replace("<"," <")
     sentence = sentence.split()
@@ -257,7 +257,7 @@ def main(sentence):
             # print("This sign contains '/': ", sign)
             continue
         else:
-            try: 
+            try:
                 newDict[sign]
             except:
                 print("Could not find entry for", sign)
@@ -265,10 +265,10 @@ def main(sentence):
             currenttags = deepcopy(tags)
             foundSigns[newDict[sign]] = currenttags
     print("found files and converted tags: ", foundSigns)
-    
+
     nonmans = tagsToSiGML(foundSigns)
     sigml = makeSiGML(nonmans)
-    
+
     # print()
     print(sigml)
     # playsigml(sigml)
@@ -280,6 +280,6 @@ if __name__ == '__main__':
     # else:
     #     userInput = lines[0].strip("\n").split(" ")
     # main(sys.argv[1:])
-    main('U <HT_NO><FT_RB> ETEN KLAAR </FT_RB>HEBBEN</HT_NO>')
-    main('U <EM_SADNESS> ETEN KLAAR </EM_SADNESS> HEBBEN')
+    main('JIJ GOED SLAPEN JIJ PALM_OMHOOG')
+    # main('U <EM_SADNESS> ETEN KLAAR </EM_SADNESS> HEBBEN')
     # main('U <HT_NO><FT_RB><MT_L01> ETEN </FT_RB></HT_NO></MT_L01>')
