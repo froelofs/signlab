@@ -1,4 +1,6 @@
 {
+    "eval: afgelopen": "sigmlsentences/afgelopen_7_dagen.sigml",
+    "eval: coronauitslag": "sigmlsentences/Corona_uitslag_negatief.sigml",
     "Over": "sigmlsentences/Over.sigml",
     "Ik": "sigmlsentences/Ik.sigml",
     "U": "sigmlsentences/U.sigml",

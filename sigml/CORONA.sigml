@@ -1,0 +1,46 @@
+<hamgestural_sign gloss="CORONA">
+  <sign_manual both_hands="true" lr_symm="true">
+    <split_handconfig>
+      <handconfig handshape="fist"/>
+      <handconfig handshape="fist" thumbpos="across" />
+    </split_handconfig>
+    <split_handconfig>
+      <handconfig extfidir="uo" palmor="d" second_extfidir="ul" second_palmor="dr" />
+      <handconfig extfidir="or" palmor="d" second_palmor="r" />
+    </split_handconfig>
+    <split_location>
+      <location_bodyarm location="chest" second_location="chest" side="left_at" />
+      <location_hand contact="close" location="thumbball">
+        <location_hand digits="1" location="midjoint" />
+        </location_hand>
+    </split_location>
+    <split_motion>
+      <par_motion>
+        <directedmotion direction="r" size="small" />
+        <tgt_motion>
+          <changeposture />
+          <handconfig handshape="finger2345" thumbpos="out" />
+          <handconfig extfidir="ur" palmor="l" second_extfidir="u" />
+          <location_hand digits="2" />
+        </tgt_motion>
+      </par_motion>
+      <nomotion />
+    </split_motion>
+  </sign_manual>
+  <sign_nonmanual>
+    <mouthing_tier>
+      <mouth_picture picture="oro" speed="1"/>
+      <mouth_gesture movement="T05" speed="1.4"/>
+    </mouthing_tier>
+    <body_tier>
+      <body_movement movement="ST" />
+    </body_tier>
+    <head_tier>
+      <head_movement movement="ND" amount="0.5"/>
+    </head_tier>
+    <facialexpr_tier>
+      <eye_gaze movement="DN" amount="0.3"/>
+      <eye_brows movement="DN" />
+    </facialexpr_tier>
+  </sign_nonmanual>
+</hamgestural_sign>

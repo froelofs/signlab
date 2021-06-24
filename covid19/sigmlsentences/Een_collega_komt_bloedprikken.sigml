@@ -19,7 +19,7 @@
           </facialexpr_tier>
       </sign_nonmanual>
   </hamgestural_sign>
-    <hamgestural_sign gloss="COLLEGA">
+    <hamgestural_sign gloss="COLLEGA" duration="1.2">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" second_mainbend="hooked" second_thumbpos="opposed" thumbpos="opposed"/>
             <handconfig extfidir="ul" second_extfidir="ui"/>
@@ -27,7 +27,7 @@
             <location_bodyarm contact="close" location="shouldertop" second_location="shoulders" side="left_at">
                 <location_hand location="thumbside"/>
             </location_bodyarm>
-            <rpt_motion repetition="fromstart_several">
+            <rpt_motion repetition="tofroto">
                 <directedmotion direction="i" speed="1.2" size="small"/>
             </rpt_motion>
         </sign_manual>

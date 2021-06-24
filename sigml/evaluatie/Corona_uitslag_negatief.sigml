@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sigml>
-    <hamgestural_sign gloss="JIJ">
+    <hamgestural_sign gloss="JIJ" duration="0.6">
     <sign_manual>
       <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
       <handconfig extfidir="uuo"/>
@@ -19,7 +19,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-    <hamgestural_sign gloss="CORONA">
+    <hamgestural_sign gloss="CORONA" timescale="0.4" duration="1.5">
       <sign_manual both_hands="true" lr_symm="true">
         <split_handconfig>
           <handconfig handshape="fist"/>
@@ -87,13 +87,11 @@
           <directedmotion direction="d" size="small"/>
           <directedmotion direction="u" size="small"/>
           <directedmotion direction="d" size="small"/>
-          <directedmotion direction="u" size="small"/>
         </seq_motion>
         <seq_motion>
           <directedmotion direction="u" size="small"/>
           <directedmotion direction="d" size="small"/>
           <directedmotion direction="u" size="small"/>
-          <directedmotion direction="d" size="small"/>
         </seq_motion>
       </split_motion>
     </sign_manual>
@@ -147,138 +145,6 @@
             </head_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-  <hamgestural_sign gloss="PAUZEGEBAAR">
-    <sign_nonmanual>
-      <facialexpr_tier>
-        <eye_lids movement="BB" />
-      </facialexpr_tier>
-    </sign_nonmanual>
-      <sign_manual both_hands="true" lr_symm="true" speed="2">
-        <handconfig handshape="fist" thumbpos="opposed"/>
-        <handconfig extfidir="ol" second_extfidir="uo"/>
-        <handconfig palmor="l" second_palmor="dl"/>
-        <handconstellation contact="touch">
-          <location_hand digits="3" location="midjoint" side="dorsal"/>
-          <location_hand digits="3" location="midjoint" side="dorsal"/>
-          <location_bodyarm contact="close" location="stomach" />
-        </handconstellation>
-        <nomotion/>
-        <nomotion/>
-      </sign_manual>
-    </hamgestural_sign>
-  <hamgestural_sign gloss="BETEKENIS">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="btek@"/>
-      </mouthing_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm location="shoulders" side="right_at"/>
-      <wristmotion motion="swinging" size="small"/>
-    </sign_manual>
-  </hamgestural_sign>
-    <hamgestural_sign gloss="WAARSCHIJNLIJK">
-        <sign_manual both_hands="true" lr_symm="true">
-            <handconfig handshape="finger2345" thumbpos="out"/>
-            <handconfig extfidir="uo" second_extfidir="o"/>
-            <handconfig palmor="d" second_palmor="dl"/>
-            <location_bodyarm location="shoulders"/>
-            <wristmotion motion="twisting" />
-        </sign_manual>
-        <sign_nonmanual>
-            <mouthing_tier>
-                <mouth_picture picture="wAwAly" speed="0.8"/>
-            </mouthing_tier>
-            <body_tier>
-                <body_movement movement="TF" amount="0.3"/>
-            </body_tier>
-            <shoulder_tier>
-                <shoulder_movement movement="UB"/>
-            </shoulder_tier>
-            <head_tier>
-                <head_movement movement="TL"/>
-            </head_tier>
-            <facialexpr_tier>
-            <facial_expr_par>
-                <eye_gaze movement="UP" amount="0.5"/>
-                <eye_brows movement="RB"/>
-            </facial_expr_par>
-            </facialexpr_tier>
-        </sign_nonmanual>
-    </hamgestural_sign>
-    <hamgestural_sign gloss="JIJ">
-    <sign_manual>
-      <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
-      <handconfig extfidir="uuo"/>
-      <handconfig palmor="ddl"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
-      <par_motion>
-        <directedmotion direction="o" size="small"/>
-      </par_motion>
-    </sign_manual>
-        <sign_nonmanual>
-            <mouthing_tier>
-                <mouth_gesture movement="L23"/>
-            </mouthing_tier>
-            <body_tier>
-                <body_movement movement="ST"/>
-            </body_tier>
-            <head_tier>
-                <head_movement movement="NU"/>
-            </head_tier>
-            <facialexpr_tier>
-                <eye_brows movement="RB"/>
-            </facialexpr_tier>
-        </sign_nonmanual>
-    </hamgestural_sign>
-    <hamgestural_sign gloss="CORONA">
-        <sign_manual both_hands="true" lr_symm="true">
-            <handconfig bend1="bent" handshape="flat" second_handshape="flat" second_thumbpos="out" thumbpos="out"/>
-            <handconfig extfidir="ol" second_extfidir="d"/>
-            <handconfig palmor="l" second_palmor="dl"/>
-            <location_bodyarm approx_location="true" contact="close" location="chest" side="right_at">
-                <location_hand digits="5" location="tip"/>
-            </location_bodyarm>
-            <wristmotion motion="nodding"/>
-        </sign_manual>
-        <sign_nonmanual>
-            <mouthing_tier>
-                <mouth_picture picture="oro" speed="1"/>
-                <mouth_gesture movement="T05" speed="1.4"/>
-            </mouthing_tier>
-            <body_tier>
-                <body_movement movement="ST"/>
-            </body_tier>
-            <facialexpr_tier/>
-        </sign_nonmanual>
-    </hamgestural_sign>
-  <hamgestural_sign gloss="HEBBEN_NIET">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="hEp"/>
-      </mouthing_tier>
-      <head_tier>
-        <head_movement movement="SH"/>
-      </head_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent" second_thumbpos="out"/>
-      <handconfig extfidir="ul" second_extfidir="u"/>
-      <handconfig palmor="l"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at"/>
-      <par_motion>
-        <directedmotion curve="u" direction="do"/>
-        <tgt_motion>
-          <changeposture/>
-          <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
-          <handconfig extfidir="ol" palmor="u" second_extfidir="uo"/>
-        </tgt_motion>
-      </par_motion>
-    </sign_manual>
-  </hamgestural_sign>
 <hamgestural_sign gloss='STANDAARD_POSE'>
        <sign_manual both_hands='true' lr_symm='true'>
 		<handconfig extfidir='dl' /> <handconfig palmor='l' />

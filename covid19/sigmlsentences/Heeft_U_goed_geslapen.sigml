@@ -12,7 +12,10 @@
   </sign_manual>
       <sign_nonmanual>
           <mouthing_tier>
-              <mouth_gesture movement="L23"/>
+        <mouthing_par>
+          <avatar_morph name="smlc" amount="0.7" timing="x s l - m l x"/>
+          <avatar_morph name="eee" amount="0.3" timing="x m t - m t"/>
+        </mouthing_par>
           </mouthing_tier>
           <body_tier>
               <body_movement movement="ST"/>
@@ -21,34 +24,40 @@
               <head_movement movement="NU"/>
           </head_tier>
           <facialexpr_tier>
-              <eye_brows movement="RB"/>
+              <eye_brows movement="RB" amount="0.8"/>
           </facialexpr_tier>
       </sign_nonmanual>
   </hamgestural_sign>
-  <hamgestural_sign gloss="GOED">
+  <hamgestural_sign gloss="GOED" speed="1.8">
     <sign_nonmanual>
       <mouthing_tier>
+        <avatar_morph name="smlc" amount="0.7" timing="x 0.2 t - 0.2 t x"/>
         <mouth_picture picture="Ud"/>
       </mouthing_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="RB" amount="1.5"/>
+      </facial_expr_par>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="fist" second_handshape="fist" second_thumbpos="out"/>
-      <handconfig extfidir="uo" second_extfidir="ol"/>
+      <handconfig handshape="fist" second_handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="u" second_extfidir="ol"/>
       <handconfig palmor="l"/>
       <location_bodyarm contact="close" location="shoulders" second_location="shoulders" side="right_at"/>
     </sign_manual>
   </hamgestural_sign>
   <hamgestural_sign gloss="SLAPEN">
-    <sign_nonmanual>
-      <facialexpr_tier>
-      <facial_expr_par>
-        <eye_brows movement="RB" speed="0.6"/>
-        <eye_lids movement="WB" speed="0.6"/>
-      </facial_expr_par>
-      </facialexpr_tier>
+<sign_nonmanual>
+          <head_tier>
+              <head_movement movement="TR"/>
+          </head_tier>
       <mouthing_tier>
         <mouth_picture picture="sa:p@"/>
       </mouthing_tier>
+          <facialexpr_tier>
+              <eye_lids movement="CB"/>
+          </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="flat"/>
