@@ -2,10 +2,12 @@
 <sigml>
     <hamgestural_sign gloss="JIJ" duration="0.6">
     <sign_manual>
-      <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+      <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2"
+        second_thumbpos="across" thumbpos="across"/>
       <handconfig extfidir="uuo"/>
       <handconfig palmor="ddl"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <location_bodyarm contact="close" location="shoulders"
+        second_location="shoulders" second_side="right_at"/>
       <par_motion>
         <directedmotion direction="o" size="small"/>
       </par_motion>
@@ -26,11 +28,13 @@
           <handconfig handshape="fist" thumbpos="across" />
         </split_handconfig>
         <split_handconfig>
-          <handconfig extfidir="uo" palmor="d" second_extfidir="ul" second_palmor="dr" />
+          <handconfig extfidir="uo" palmor="d" second_extfidir="ul"
+            second_palmor="dr" />
           <handconfig extfidir="or" palmor="d" second_palmor="r" />
         </split_handconfig>
         <split_location>
-          <location_bodyarm location="chest" second_location="chest" side="left_at" />
+          <location_bodyarm location="chest" second_location="chest"
+            side="left_at" />
           <location_hand contact="close" location="thumbball">
             <location_hand digits="1" location="midjoint" />
             </location_hand>
@@ -98,10 +102,12 @@
   </hamgestural_sign>
     <hamgestural_sign gloss="UITSLAG">
         <sign_manual>
-            <handconfig handshape="finger2" mainbend="hooked" second_handshape="finger2" second_mainbend="round"/>
+            <handconfig handshape="finger2" mainbend="hooked"
+              second_handshape="finger2" second_mainbend="round"/>
             <handconfig extfidir="ur"/>
             <handconfig palmor="u"/>
-            <location_bodyarm location="cheek" second_location="shouldertop" second_side="right_beside"/>
+            <location_bodyarm location="cheek" second_location="shouldertop"
+              second_side="right_beside"/>
             <tgt_motion>
                 <changeposture/>
                 <handconfig extfidir="l" palmor="l"/>
@@ -131,7 +137,8 @@
             <handconfig handshape="finger2" thumbpos="across"/>
             <handconfig extfidir="l"/>
             <handconfig palmor="l"/>
-            <location_bodyarm contact="close" location="underchin" side="left_beside"/>
+            <location_bodyarm contact="close" location="underchin"
+              side="left_beside"/>
             <rpt_motion repetition="tofroto">
                 <directedmotion direction="r" size="small"/>
             </rpt_motion>
@@ -149,7 +156,8 @@
        <sign_manual both_hands='true' lr_symm='true'>
 		<handconfig extfidir='dl' /> <handconfig palmor='l' />
 		<handconfig handshape='fist' thumbpos='across' />
-		<location_bodyarm contact='touch' location='belowstomach' side='right_beside'>
+		<location_bodyarm contact='touch' location='belowstomach'
+      side='right_beside'>
 			<location_hand digits='1' />
 		</location_bodyarm>
 	</sign_manual>

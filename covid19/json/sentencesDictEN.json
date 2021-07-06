@@ -1,5 +1,6 @@
 {
-    "Welkom": "sigmlsentences/welkom.sigml",
+    "The COVID-19 test came back negative.": "sigmlsentences/Corona_uitslag_negatief.sigml",
+    "Have you had a Corona test in the past 7 days?": "sigmlsentences/afgelopen_7_dagen.sigml",
     "I": "sigmlsentences/Ik.sigml",
     "You": "sigmlsentences/U.sigml",
     "More": "sigmlsentences/Meer.sigml",
