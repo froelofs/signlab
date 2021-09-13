@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="COEVORDEN">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="opposed" thumbpos="opposed"/>
+            <handconfig extfidir="ul" second_extfidir="u"/>
+            <handconfig palmor="d" second_palmor="ur"/>
+            <location_bodyarm contact="close" location="headtop">
+                <location_hand digits="2" location="tip"/>
+            </location_bodyarm>
+            <par_motion>
+                <directedmotion curve="r" direction="o"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="fist" thumbpos="across"/>
+                    <handconfig extfidir="u" palmor="l" second_extfidir="ul"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="kuvo:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="UP"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

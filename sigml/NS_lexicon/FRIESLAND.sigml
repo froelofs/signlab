@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="FRIESLAND">
+        <sign_manual>
+            <handconfig handshape="cee12open"/>
+            <handconfig extfidir="l" second_extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="chin" second_location="chin" second_side="right_at"/>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="cee12open"/>
+                <handconfig extfidir="ol" palmor="l" second_extfidir="o"/>
+                <location_bodyarm location="shoulders" side="right_at"/>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="fri:slA:nd" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

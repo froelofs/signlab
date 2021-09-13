@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="RIDDERKERK1">
+        <sign_manual>
+            <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="hooked"/>
+            <handconfig extfidir="uo"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="chest" second_location="shoulders" side="right_at"/>
+            <par_motion>
+                <directedmotion direction="o"/>
+                <circularmotion axis="o" size="small"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger2" mainbend="hooked"/>
+                    <handconfig extfidir="o" palmor="u" second_palmor="l"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ridar" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RR"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="RIDDERKERK2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2345" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="ul" palmor="d" second_palmor="dl"/>
+                <handconfig extfidir="ur" palmor="d"/>
+            </split_handconfig>
+            <location_bodyarm location="shoulders" second_location="shouldertop"/>
+            <directedmotion direction="dl" size="small"/>
+            <par_motion>
+                <directedmotion direction="u"/>
+                <directedmotion direction="d"/>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ke:rk" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

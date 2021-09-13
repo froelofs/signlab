@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="WADDINXVEEN-B">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig bend3="bent" bend4="bent" handshape="finger2345" thumbpos="out"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="l" second_palmor="dl"/>
+            <split_location>
+                <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+                <location_hand contact="touch" digits="3" location="tip">
+                    <location_hand digits="3" location="tip"/>
+                </location_hand>
+            </split_location>
+            <directedmotion direction="u" slow="true"/>
+            <rpt_motion repetition="fromstart">
+                <directedmotion direction="d" slow="true"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="vadigkzve:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="RB"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

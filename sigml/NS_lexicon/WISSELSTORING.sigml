@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="WISSELSTORING1">
+        <sign_manual both_hands="true">
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <handconfig extfidir="o" second_extfidir="ol"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="chest"/>
+            <rpt_motion repetition="fromstart">
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger2" thumbpos="across"/>
+                    <handconfig extfidir="o" palmor="d" second_extfidir="or"/>
+                </tgt_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="wisEl" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="NF"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="WISSELSTORING2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger23spread" thumbpos="across"/>
+            <handconfig extfidir="l" second_extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm contact="close" location="chest"/>
+            <split_motion>
+                <par_motion>
+                    <directedmotion direction="l"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger23" thumbpos="across"/>
+                        <handconfig extfidir="l"/>
+                        <location_bodyarm contact="close" location="chest"/>
+                    </tgt_motion>
+                </par_motion>
+                <par_motion>
+                    <directedmotion direction="r"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger23" thumbpos="across"/>
+                        <handconfig extfidir="r"/>
+                        <location_bodyarm location="chest" second_location="chest" side="left_at"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="torig" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="OMROEP_BERICHT">
+        <sign_manual>
+            <handconfig handshape="fist" second_handshape="pinchall" second_mainbend="round"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="ul"/>
+            <location_bodyarm location="headtop" second_location="head" second_side="right_beside" side="right_at"/>
+            <rpt_motion repetition="fromstart_several">
+                <par_motion>
+                    <directedmotion direction="il" size="small"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2345" second_handshape="finger2345" second_thumbpos="opposed" thumbpos="opposed"/>
+                        <handconfig extfidir="u" palmor="d" second_extfidir="il"/>
+                        <location_bodyarm location="head" side="right_at"/>
+                    </tgt_motion>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="omrup" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RU"/>
+                <eye_brows movement="RB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

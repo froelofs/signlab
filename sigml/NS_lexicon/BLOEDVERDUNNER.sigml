@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="BLOEDVERDUNNER1">
+        <sign_manual both_hands="true" lr_symm="true">
+            <split_handconfig>
+                <handconfig handshape="flat" thumbpos="out"/>
+                <handconfig handshape="flat" second_handshape="finger2345" thumbpos="out"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="l" palmor="l" second_extfidir="ul"/>
+                <handconfig extfidir="ur" palmor="r" second_extfidir="o"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm contact="close" location="chest" second_location="shoulders"/>
+                <location_bodyarm location="shoulders" second_location="shoulders" side="left_at"/>
+            </split_location>
+            <split_motion>
+                <par_motion>
+                    <directedmotion direction="d" size="big"/>
+                    <fingerplay/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="bent" second_thumbpos="out" thumbpos="opposed"/>
+                        <location_bodyarm contact="close" location="stomach" side="right_at"/>
+                    </tgt_motion>
+                </par_motion>
+                <nomotion/>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="blo:d" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="BLOEDVERDUNNER2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" second_handshape="pinchall" thumbpos="opposed"/>
+            <handconfig extfidir="o" second_extfidir="ol"/>
+            <handconfig palmor="u"/>
+            <split_location>
+                <location_bodyarm location="chest" second_location="chest" second_side="right_at"/>
+                <location_hand contact="touch" digits="5" location="tip">
+                    <location_hand digits="5" location="tip"/>
+                </location_hand>
+            </split_location>
+            <par_motion>
+                <directedmotion direction="r"/>
+                <fingerplay/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="fist" second_handshape="pinchall"/>
+                    <handconfig extfidir="o" palmor="ul" second_extfidir="ol"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="verdun" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

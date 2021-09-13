@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="ZWARTRIJDEN1">
+        <sign_manual>
+            <handconfig handshape="finger2345" thumbpos="out"/>
+            <handconfig extfidir="ul" second_extfidir="u"/>
+            <handconfig palmor="l" second_palmor="dl"/>
+            <location_bodyarm location="head" second_location="head" side="right_at"/>
+            <wristmotion motion="swinging"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="swart" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RI"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="ZWARTRIJDEN2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <handconfig extfidir="l"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="shoulders"/>
+            <par_motion>
+                <directedmotion direction="o"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger2" thumbpos="across"/>
+                    <handconfig extfidir="l" palmor="l" second_extfidir="ol"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="rE:s" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

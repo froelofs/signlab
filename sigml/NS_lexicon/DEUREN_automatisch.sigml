@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="DEUREN_AUTOMATISCH">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <split_location>
+                <location_bodyarm location="shouldertop" second_location="shouldertop" side="right_at"/>
+                <location_hand contact="touch" digits="5" location="tip">
+                    <location_hand digits="5" location="tip"/>
+                </location_hand>
+            </split_location>
+            <par_motion>
+                <directedmotion direction="r" tense="true"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat"/>
+                    <handconfig extfidir="u" palmor="u"/>
+                </tgt_motion>
+            </par_motion>
+            <directedmotion direction="l" tense="true"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_gesture movement="L14"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

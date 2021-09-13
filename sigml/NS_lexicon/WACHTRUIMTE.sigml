@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="WACHTRUIMTE1">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" second_handshape="flat" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="chest" second_location="shoulders"/>
+            <rpt_motion repetition="fromstart">
+                <directedmotion direction="d" size="small"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="vaSt" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="WACHTRUIMTE2">
+        <sign_manual>
+            <handconfig handshape="finger2345" second_handshape="flat" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders" second_location="chest"/>
+            <par_motion>
+                <circularmotion axis="d" slow="true"/>
+                <directedmotion direction="o" size="small"/>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ramte" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="NU"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

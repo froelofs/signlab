@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="SCHIJNDEL">
+        <sign_manual>
+            <handconfig handshape="fist" second_handshape="pinchall" second_mainbend="round"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="ul"/>
+            <location_bodyarm location="headtop" second_location="head" second_side="right_beside" side="right_at"/>
+            <rpt_motion repetition="fromstart">
+                <par_motion>
+                    <directedmotion direction="il" size="small"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="flat" second_handshape="flat" second_thumbpos="opposed" thumbpos="opposed"/>
+                        <handconfig extfidir="u" palmor="d" second_extfidir="il"/>
+                        <location_bodyarm location="head" side="right_at"/>
+                    </tgt_motion>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="Se:ndel" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TL"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RI"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

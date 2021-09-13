@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="MEPPEL">
+        <sign_manual>
+            <handconfig handshape="flat" thumbpos="opposed"/>
+            <handconfig extfidir="ul" second_extfidir="u"/>
+            <handconfig palmor="r" second_palmor="dr"/>
+            <location_bodyarm contact="close" location="head" second_location="shouldertop" second_side="right_beside" side="right_at"/>
+            <rpt_motion repetition="fromstart_several">
+                <par_motion>
+                    <directedmotion direction="u"/>
+                    <directedmotion direction="d" fast="true"/>
+                    <tgt_motion fast="true">
+                        <changeposture/>
+                        <handconfig contactkind="tip" contactpair="12" handshape="flat" mainbend="bent" thumbpos="opposed"/>
+                    </tgt_motion>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="mepal" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

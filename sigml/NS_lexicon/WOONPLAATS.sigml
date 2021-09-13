@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="WOONPLAATS">
+        <sign_manual>
+            <handconfig handshape="cee12open" second_handshape="pinch12open" second_mainbend="bent"/>
+            <handconfig extfidir="u" second_extfidir="ur"/>
+            <handconfig palmor="ul" second_palmor="u"/>
+            <location_bodyarm location="shoulders" side="right_at"/>
+            <par_motion>
+                <directedmotion direction="i"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="cee12open" second_handshape="pinch12open" second_mainbend="bent"/>
+                    <location_bodyarm location="teeth" side="right_at"/>
+                </tgt_motion>
+            </par_motion>
+            <par_motion>
+                <directedmotion curve="u" direction="do"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="cee12open" second_handshape="pinch12open" second_mainbend="bent"/>
+                    <handconfig extfidir="o" palmor="l" second_extfidir="or"/>
+                    <location_bodyarm location="chest" side="right_at"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="wonpla:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="UITVALLEN">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" thumbpos="across"/>
+            <handconfig extfidir="ol" second_extfidir="uo"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders"/>
+            <par_motion>
+                <directedmotion direction="d"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger2345" thumbpos="opposed"/>
+                    <handconfig extfidir="do" palmor="dl" second_palmor="d"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="utvala" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="NF"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

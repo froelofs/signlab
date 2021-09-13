@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="VOLGENS_DIENSTREGELING1">
+        <sign_manual both_hands="true">
+            <handconfig handshape="fist" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="u" palmor="l" second_extfidir="ol"/>
+                <handconfig extfidir="or" palmor="r" second_palmor="dr"/>
+            </split_handconfig>
+            <split_location>
+                <location_hand contact="touch" digits="1" location="midjoint">
+                    <location_hand digits="2" location="base"/>
+                </location_hand>
+                <location_bodyarm contact="close" location="shoulders"/>
+            </split_location>
+            <par_motion>
+                <directedmotion direction="o"/>
+                <directedmotion direction="do" slow="true"/>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="vO:l" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="NF"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="VOLGENS_DIENSTREGELING2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" second_handshape="fist" thumbpos="opposed"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="dl"/>
+            <location_bodyarm contact="close" location="shoulders"/>
+            <tgt_motion>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="fist" second_handshape="fist" thumbpos="opposed"/>
+                    <handconfig extfidir="o" palmor="dl"/>
+                </tgt_motion>
+                <split_location>
+                    <location_hand contact="touch" digits="1" location="tip">
+                        <location_hand digits="1" location="tip"/>
+                    </location_hand>
+                    <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="left_at"/>
+                </split_location>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="tE:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="VOLGENS_DIENSTREGELING3">
+        <sign_manual both_hands="true">
+            <split_handconfig>
+                <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across"/>
+                <handconfig handshape="fist"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="l" palmor="d" second_extfidir="ol"/>
+                <handconfig extfidir="r" palmor="d"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="shoulders" second_location="chest" second_side="right_at"/>
+                <location_bodyarm location="chest" second_location="stomach"/>
+            </split_location>
+            <rpt_motion repetition="fromstart_several">
+                <split_motion>
+                    <directedmotion direction="dl" size="small"/>
+                    <nomotion/>
+                </split_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="E:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="VOLGENS_DIENSTREGELING4">
+        <sign_manual both_hands="true" lr_symm="true">
+            <split_handconfig>
+                <handconfig handshape="flat" mainbend="round" second_handshape="flat" second_mainbend="bent" second_thumbpos="out"/>
+                <handconfig handshape="flat" thumbpos="out"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="u" palmor="l" second_extfidir="uo"/>
+                <handconfig extfidir="ur" palmor="r" second_extfidir="r"/>
+            </split_handconfig>
+            <split_location>
+                <location_hand contact="touch" digits="2" location="midjoint">
+                    <location_hand digits="5" location="midjoint"/>
+                </location_hand>
+                <location_bodyarm location="shoulders"/>
+            </split_location>
+            <split_motion>
+                <seq_motion>
+                    <directedmotion curve="d" curve_size="big" direction="d" size="small"/>
+                    <directedmotion curve="u" direction="di" size="small"/>
+                    <directedmotion curve="u" direction="di" size="small"/>
+                </seq_motion>
+                <nomotion/>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="regal" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RL"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

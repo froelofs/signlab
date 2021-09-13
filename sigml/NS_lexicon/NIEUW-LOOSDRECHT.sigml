@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="NIEUW-LOOSDRECHT1">
+        <sign_manual>
+            <handconfig handshape="finger2" mainbend="hooked"/>
+            <handconfig extfidir="ol" second_extfidir="ui"/>
+            <handconfig palmor="dr"/>
+            <location_bodyarm contact="close" location="shouldertop" second_location="head" second_side="right_at" side="right_at"/>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2" second_mainbend="round" second_thumbpos="out" thumbpos="out"/>
+                <handconfig extfidir="uo" palmor="ul"/>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ni:w" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="NIEUW-LOOSDRECHT2">
+        <sign_manual>
+            <handconfig handshape="flat"/>
+            <handconfig extfidir="ui"/>
+            <handconfig palmor="u"/>
+            <location_bodyarm location="shouldertop" second_location="head" second_side="right_beside" side="right_at"/>
+            <par_motion>
+                <directedmotion curve="u" direction="u" slow="true"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+                    <handconfig extfidir="uo" palmor="u"/>
+                    <location_bodyarm location="shouldertop" second_location="shouldertop" second_side="left_at"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="losrESt" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="HOLTEN">
+        <sign_manual>
+            <handconfig handshape="fist" second_handshape="ceeall" thumbpos="across"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="nose"/>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="fist" second_handshape="ceeall" thumbpos="across"/>
+                <handconfig extfidir="l"/>
+                <location_bodyarm location="nose"/>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="olten" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RR"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="LE"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

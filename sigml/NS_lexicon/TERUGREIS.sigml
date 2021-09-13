@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="TERUGREIS1">
+        <sign_manual>
+            <handconfig handshape="pinch12open" second_handshape="cee12open"/>
+            <handconfig extfidir="l" second_extfidir="ul"/>
+            <handconfig palmor="dl"/>
+            <location_bodyarm contact="close" location="shouldertop" side="right_at"/>
+            <par_motion>
+                <directedmotion direction="o" size="big"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="pinch12open" second_handshape="cee12open"/>
+                    <handconfig extfidir="uo" palmor="l" second_extfidir="ol" second_palmor="d"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="tarag" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RR"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RI"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="TERUGREIS2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+            <handconfig extfidir="ol"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm contact="close" location="shoulders"/>
+            <par_motion>
+                <directedmotion direction="o" size="big"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+                    <handconfig extfidir="ol"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="rE:s" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RR"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

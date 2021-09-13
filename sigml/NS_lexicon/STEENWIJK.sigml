@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="STEENWIJK1">
+        <sign_manual both_hands="true">
+            <handconfig handshape="fist" thumbpos="across"/>
+            <split_handconfig>
+                <handconfig extfidir="uo" palmor="l" second_extfidir="ol" second_palmor="ul"/>
+                <handconfig extfidir="or" palmor="d" second_palmor="dl"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+                <location_bodyarm location="chest"/>
+            </split_location>
+            <rpt_motion repetition="fromstart">
+                <split_motion>
+                    <par_motion>
+                        <directedmotion direction="il"/>
+                        <tgt_motion>
+                            <changeposture/>
+                            <handconfig handshape="fist" thumbpos="across"/>
+                            <handconfig extfidir="uo" palmor="ul" second_extfidir="l"/>
+                            <location_hand contact="close" location="handback">
+                                <location_hand location="palm"/>
+                            </location_hand>
+                        </tgt_motion>
+                    </par_motion>
+                    <nomotion/>
+                </split_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ste:n" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="TL"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="STEENWIJK2">
+        <sign_manual>
+            <handconfig handshape="finger2345" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="chest"/>
+            <rpt_motion repetition="fromstart">
+                <circularmotion axis="d"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="wE:k" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="MAARTENSDIJK">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2" thumbpos="opposed"/>
+            <handconfig extfidir="ul"/>
+            <handconfig palmor="dr"/>
+            <split_location>
+                <location_bodyarm location="headtop" second_location="headtop" side="right_at"/>
+                <location_hand contact="touch" digits="2" location="tip">
+                    <location_hand digits="2" location="tip"/>
+                </location_hand>
+            </split_location>
+            <split_motion>
+                <par_motion>
+                    <directedmotion curve="r" direction="d" size="big"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="pinch12" mainbend="bent"/>
+                        <handconfig extfidir="o" palmor="ul" second_extfidir="do"/>
+                        <location_bodyarm location="chest" second_location="stomach"/>
+                    </tgt_motion>
+                </par_motion>
+                <par_motion>
+                    <directedmotion curve="l" direction="d"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="pinch12" mainbend="bent"/>
+                        <handconfig extfidir="o" palmor="ur" second_extfidir="do"/>
+                        <location_bodyarm location="chest" second_location="stomach" second_side="right_at" side="left_at"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ma:rsedE:k" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>
