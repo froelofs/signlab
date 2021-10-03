@@ -1,3 +1,4 @@
+// variable so flags can be set an passed on to the php call
 var flag = "";
 
 //Adapts the page to the chosen option
@@ -60,11 +61,14 @@ function callPython(text, alertID) {
       alertMessage("error", 'Oops, something went wrong', alertID);
     }
     else {
-      output = result.output.split(";");
-      if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
+      console.log("Request was a success! Output: ", result);
+      // output = result.output.split(";");
+      // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
+      output = result.output;
+      if(output.slice(0,5) == "<?xml"){
         if (flag == "explain"){
           parent = document.querySelector('#explText');
-          console.log(output);
+          console.log("explain:", output);
           //Ensures newlines and tabs in output are displayed in div
           var pre = document.createElement("pre");
           pre.appendChild(document.createTextNode(output));
@@ -74,15 +78,19 @@ function callPython(text, alertID) {
           parent.append(pre);
         }
         else{
-          console.log(output[1]);
-          console.log(output[2]);
-          playText(output[2].trim());
-          document.getElementById("replayButtonTut").setAttribute("name", output[2].trim());
+          // console.log("0:", output[0]);
+          // console.log("1:" , output[1]);
+          // console.log("SiGML: ", output[2]);
+          // playText(output[2].trim(),1);
+          playText(output.trim());
+          // document.getElementById('output').value =  output[2].trim();
+          document.getElementById('output').value =  output.trim();
+          document.getElementById("replayButtonTut").setAttribute("name", output.trim());
           document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary");
         }
       }
       else{
-        console.log(output);
+        console.log("Output has an unexpected format: ", output);
         alertMessage("error", output, alertID);
       }
       if (flags.length == 2){
@@ -92,7 +100,7 @@ function callPython(text, alertID) {
     showBusyState(false);
     }
   }
-  function onError(xhr, error) {
+  function onError(_xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
     showBusyState(false);
     alertMessage("error", 'Oops, something went wrong', alertID);
@@ -101,8 +109,6 @@ function callPython(text, alertID) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
 }
-
-
 
 //Changes the javascript file loaded depending on the chosen language
 function changeLanguage(language, onload=false) {
@@ -113,19 +119,11 @@ function changeLanguage(language, onload=false) {
   js.type = "text/javascript";
   // Loads the correct file and sets the paths for the corresponding dicts
   if (language == "Nederlands"){
-    // js.src = "covid19/zonmwNL.js";
-    // sentPath = "covid19/json/sentencesDictNL.json";
-    // vidPath = "covid19/json/videoDictNL.json";
-    // varPath = "covid19/json/variableDictNL.json";
     js.src = "js/zonmwDemoNL.js";
     document.getElementById('mySiGML').placeholder = 'Vul hier een zin of trefwoorden in';
     document.getElementById('selectExplain').textContent="Invoertaal: ";
   }
   else{
-    // js.src = "covid19/zonmwEN.js";
-    // sentPath = "covid19/json/sentencesDictEN.json";
-    // vidPath = "covid19/json/videoDictEN.json";
-    // varPath = "covid19/json/variableDictEN.json";
     js.src = "js/zonmwDemoEN.js";
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
     document.getElementById('selectExplain').textContent="Input language: ";

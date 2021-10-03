@@ -7,7 +7,7 @@ if (empty($_REQUEST['input'])) {
 	$error="Please specify some input";
 } else {
 	// Start command execution
-	$command=dirname(__FILE__)."/main.py";
+	$command=dirname(__FILE__)."/main_new.py";
 	$pipedesc=array(
 		"0"=>array("pipe", "r"),
 		"1"=>array("pipe", "w"),

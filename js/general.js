@@ -199,6 +199,7 @@ $('.timepicker').timepicker({
     bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
     bar += '</ul>';
     bar += '</div>';
     bar += '</div>';
@@ -208,14 +209,14 @@ $('.timepicker').timepicker({
 
     // gets current page to add active tag
     var id = getPage();
-    console.log(id);
+    console.log("navbar id", id);
     $("#" + id).addClass("active");
   });
 
 // Checks which page the user is on and returns navbar ID
 function getPage(){
-  allTabs = ['AboutNav', 'GrammarNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav'];
-  sections = ['About', 'Grammar', 'Translate', 'Translator', 'People', 'Publications', 'Projects'];
+  allTabs = ['AboutNav', 'GrammarNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav', 'PlaygroundNav'];
+  sections = ['About', 'Grammar', 'Translate', 'Translator', 'People', 'Publications', 'Projects', 'Playground'];
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
       return allTabs[j];

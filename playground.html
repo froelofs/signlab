@@ -47,7 +47,7 @@
 </head>
 
 
-<body id="page-top">
+<body id="page-top" onload="CWASA.init();">
 
 <div id="page-container" class="bg-light">
 <div id="content-wrap">
@@ -57,52 +57,94 @@
 <!-- Navigation-->
 <div id="nav-placeholder"></div>
 
-
-<!--================================================================-->
-
-<!-- Translate -->
-
-<section class="projects-section bg-light fadeIn" id="Translate">
-  <div class="container-fluid" id="disclaimerAvatar">
+<section class="projects-section bg-light fadeIn" id="Playground">
+  <div id="avatarTranslator" class="container-fluid" style="width: 80%;">
         <!-- Challenge Row-->
         <div class="row align-items-start no-gutters mb-4 mb-lg-5">
             <!-- Column for info -->
-            <div class="col-12 col-md order-2">
-                <div class="project-text pb-1 w-100 my-auto text-left no-top-padding textDIV">
-                    <h5>Text-to-sign translation using animated avatars</h5>
+            <div class="col-12 col-md-4">
+                <!-- CWA signing avatar panel 0 -->
+                <!--================================================================-->
+                <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+                <span id="avatar" class="CWASAAvatar av0" style="width: 400px;"></span>
+                <div class="project-text pb-1 w-100 my-auto no-top-padding small text-center text-black-50">
                     <p class="mb-4">
-                      We are developing tools to translate text into sign language using animated avatars. Such tools have several potential applications. They could support communication between deaf and hearing people in situations where human sign language interpreters cannot be employed, they could give sign language users easier access to written and spoken information, and they could help people in learning sign language.
+                      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>.
                     </p>
-                    <h5>Cautionary note</h5>
-                    <p>
-                      We should emphasise that, to support face-to-face interaction between deaf and hearing people, a qualified human sign language interpreter should, whenever available, always be preferred over a machine translation system. Still, it is worth investigating the extent to which a machine translation system making use of avatar technology can be of help in situations in which a human interpreter cannot be employed or for purposes other than supporting face-to-face interaction, such as providing access to information or providing support in learning sign language.
-                   </p>
-                    <h5>A case study: text-to-sign translation for COVID-19 healthcare</h5>
-                    <p class="mb-4">
-                      It is challenging for healthcare professionals to communicate with Deaf patients <b><a href="https://doi.org/10.1016/S0140-6736(11)61143-4" target="_blank">(Felllinger, Holzinger and Pollard, 2012)</a></b>, even more so in times of COVID-19 <b><a href="https://doi.org/10.1001/jamaoto.2020.1705" target="_blank">(Mckee, Moran and Zazove, 2020)</a></b>. Sign language interpreters cannot always enter hospitals and clinics, facemasks make lipreading impossible <b><a href="https://doi.org/10.1136/bmj.m2372" target="_blank">(Grote and Izagaren,2020)</a></b> and interpreting via videorelay is not always viable. Building on the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>, we are developing a tool which translates sentences that are frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign Language of the Netherlans (NGT). Click on the button below to see a demo of this tool.
-                    </p>
-                    <div class="mb-4">
-                      <!-- <button type="button" class="btn btn-info" onclick="removeDisclaimer(); startPose();">Go to demo</button> -->
-                      <a class="btn btn-primary" href="healthcare-demo.html" role="button">Go to demo</a>
-                    </div>
-                   <h5>Additional resources for healthcare professionals</h5>
-                   <p>
-                     Useful advice for health care professionals about communicating with deaf patients can be found on the
-                     <a href="https://www.wattelt.org/corona/" target="_blank">Wat Telt!</a> website. This website also contains a video teaching you fifteen signs that could help you in communicating with deaf patients. Would you like to learn more? Sign up for a <b><a href="https://www.rino.nl/cursus/hulpverlening-dove-en-slechthorende-patinten" target="_blank">two-day course on providing assistance to deaf and hard of hearing patients at RINO</a></b>. This course is taught by Dr. Anika Smeijers (Amsterdam Medical Centre), Prof. Onno Crasborn (Radboud University Nijmegen) and Roos Wattel (<a href="https://www.wattelt.org/" target="_blank">Wat Telt!</a>).
-                   </p>
                 </div>
+                <!--================================================================-->
             </div>
 
-            <!-- Column for GIF -->
-            <div class="col-12 col-md-5 order-1 order-md-12 avatarGIF ml-md-5">
-              <img src="htmlvideos/demo.gif" class="img-fluid" alt="Avatar signing 'YOU CURIOUS AUTOMATIC SIGN LANGUAGE TRANSLATION?'">
+            <!-- Column for input -->
+            <div class="col-12 col-md-3">
+              <div class="pb-1 w-100 my-auto text-left playgroundTextDIV" style="margin-left: 20px; margin-right: 20px;">
+              <div id="alertPlayground" class="alertBox"></div>
+
+                    <form autocomplete="off">
+                      <div id="autocomp" class="autocomplete" style="max-width:400px;">
+                        <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
+                      </div>
+                    </form>
+                    <br>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');"/>
+                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(1);' />
+                    <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name,1)">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+                     <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+                    <br>
+                    <br>
+                    <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px">Current sign: </label>
+                    <input id="outputGloss" class="txtGloss av0" value="none" type="text">
+                    <br>
+
+              <!-- </span> -->
+              </div>
+
+
+              <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
+              <div class="undisplayed" style="text-align: center;">
+                    <span style="font-size: 90%;" >
+                      Sign/Frame:
+                      <input id="mySF" class="txtSF" value="0/0" type="text" />
+                      &nbsp;
+                      Gloss:
+                      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+                      &nbsp;
+                      FPS:
+                      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+                    </span>
+              </div>
+              <div style="text-align: center;">
+                  <!-- FR: I've made the following status log field invisible, if you comment it out completely the avatar doesn't work anymore -->
+                  <textarea id="myStatusLog"  class="statusLog undisplayed" rows="6">
+                  </textarea>
+              </div>
+              <br>
+
+
+              <!-- SToCA applet element panel -->
+              <!--================================================================-->
+              <div class="SToCA" tyle="text-align: center;"></div>
+              <!--================================================================-->
+
             </div>
+
+            <!-- Column for SiGML output -->
+            <div class="col-12 col-md-5 playgroundTextDIV" style=" margin:0px;">
+              <textarea id="output" class="explSiGML" style="margin-left:0px; padding-left: 0;"
+              placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
+            </div>
+         
           </div>
     </div>
 
 </section>
 
-<!--================================================================-->
+
 <!-- Footer-->
 <footer class="footer bg-white small text-center text-black-50">
   <div style="line-height:150%;">
@@ -112,8 +154,8 @@
   </div>
 </footer>
 
-</div>
 
+</div>
 
 <!-- Javascripts -->
 
