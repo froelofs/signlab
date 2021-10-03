@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="BEILEN">
+        <sign_manual both_hands="true">
+            <handconfig handshape="fist" second_handshape="finger2" second_mainbend="hooked"/>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="ul"/>
+                <handconfig extfidir="o" palmor="ur"/>
+            </split_handconfig>
+            <location_bodyarm location="stomach"/>
+            <split_motion>
+                <par_motion>
+                    <circularmotion axis="i" start="l"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig extfidir="ol" palmor="d" second_extfidir="o"/>
+                        <location_bodyarm location="chest" second_location="stomach"/>
+                    </tgt_motion>
+                </par_motion>
+                <nomotion/>
+            </split_motion>
+            <split_motion>
+                <nomotion/>
+                <par_motion>
+                    <circularmotion axis="o" start="dr"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig extfidir="or" palmor="d" second_extfidir="o"/>
+                        <location_bodyarm location="chest"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="bE:la" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

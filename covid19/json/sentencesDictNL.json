@@ -1,4 +1,6 @@
 {
+    "Heeft U de afgelopen 7 dagen een Corontest gehad?": "sigmlsentences/afgelopen_7_dagen.sigml",
+    "De COVID-19 test is negatief.": "sigmlsentences/Corona_uitslag_negatief.sigml",
     "Over": "sigmlsentences/Over.sigml",
     "Ik": "sigmlsentences/Ik.sigml",
     "U": "sigmlsentences/U.sigml",

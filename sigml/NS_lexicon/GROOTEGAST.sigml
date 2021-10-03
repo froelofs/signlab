@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="GROOTEGAST">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat"/>
+            <handconfig extfidir="o" second_extfidir="do"/>
+            <handconfig palmor="d"/>
+            <split_location>
+                <location_hand contact="touch" location="thumbside">
+                    <location_hand location="thumbside"/>
+                </location_hand>
+                <location_bodyarm contact="close" location="stomach"/>
+            </split_location>
+            <par_motion>
+                <directedmotion direction="u" slow="true"/>
+                <tgt_motion>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="flat"/>
+                        <handconfig extfidir="o" palmor="d" second_extfidir="uo"/>
+                    </tgt_motion>
+                    <split_location>
+                        <location_hand contact="touch" location="thumbside">
+                            <location_hand location="thumbside"/>
+                        </location_hand>
+                        <location_bodyarm location="headtop" second_location="nostrils"/>
+                    </split_location>
+                </tgt_motion>
+            </par_motion>
+            <par_motion>
+                <directedmotion direction="d" slow="true"/>
+                <tgt_motion>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="flat"/>
+                        <handconfig extfidir="o"/>
+                    </tgt_motion>
+                    <split_location>
+                        <location_hand contact="touch" location="thumbside">
+                            <location_hand location="thumbside"/>
+                        </location_hand>
+                        <location_bodyarm location="chest"/>
+                    </split_location>
+                </tgt_motion>
+            </par_motion>
+            <directedmotion direction="r"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="grotgast" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="NU"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

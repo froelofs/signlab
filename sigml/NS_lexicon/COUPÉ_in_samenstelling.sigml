@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="COUP�_IN_SAMENSTELLING">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" second_handshape="flat" second_mainbend="bent"/>
+            <handconfig extfidir="ol"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="shoulders"/>
+            <directedmotion direction="d" halt="true"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ku:pe" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="SB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

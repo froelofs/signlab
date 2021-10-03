@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="DEFECT">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" thumbpos="across"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d" second_palmor="dr"/>
+            <split_location>
+                <location_bodyarm location="shoulders"/>
+                <location_hand contact="touch" location="thumbside">
+                    <location_hand location="thumbside"/>
+                </location_hand>
+            </split_location>
+            <directedmotion direction="u" size="small"/>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="fist" thumbpos="across"/>
+                <handconfig extfidir="o" palmor="l"/>
+                <location_bodyarm location="shoulders" side="right_at"/>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="defa:kt" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="SB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

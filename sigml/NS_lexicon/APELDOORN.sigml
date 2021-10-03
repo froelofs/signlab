@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="APELDOORN1">
+        <sign_manual>
+            <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="l" second_extfidir="il"/>
+            <handconfig palmor="d" second_palmor="r"/>
+            <location_bodyarm contact="close" location="shoulders"/>
+            <par_motion>
+                <directedmotion curve="d" curve_size="big" direction="u"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig extfidir="ul" palmor="l"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="a:pa" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="NU"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="APELDOORN2">
+        <sign_manual both_hands="true">
+            <split_handconfig>
+                <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2"/>
+                <handconfig handshape="flat"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="d" second_extfidir="ol"/>
+                <handconfig extfidir="r" palmor="d"/>
+            </split_handconfig>
+            <split_location>
+                <location_hand contact="touch" location="handback">
+                    <location_hand digits="2" location="tip"/>
+                </location_hand>
+                <location_bodyarm location="chest"/>
+            </split_location>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="do:r" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="NF"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

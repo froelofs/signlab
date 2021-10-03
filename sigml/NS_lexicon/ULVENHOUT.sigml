@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="ULVENHOUT1">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="ceeall" second_handshape="flat" second_thumbpos="opposed"/>
+            <handconfig extfidir="ul" second_extfidir="u"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm contact="touch" location="eyes" side="right_at">
+                <location_hand digits="1" location="tip"/>
+            </location_bodyarm>
+            <rpt_motion repetition="fromstart_several">
+                <directedmotion direction="o" size="small"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ulvan" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TF"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <facialexpr_tier>
+                <eye_brows movement="RB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="ULVENHOUT2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" thumbpos="across"/>
+            <handconfig extfidir="uo" second_extfidir="ol"/>
+            <handconfig palmor="d"/>
+            <location_hand contact="touch" digits="2" location="nail" side="palmar">
+                <location_hand digits="2" location="nail" side="palmar"/>
+            </location_hand>
+            <rpt_motion repetition="fromstart_several">
+                <directedmotion direction="r" fast="true" size="small"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="o:t" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

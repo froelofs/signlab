@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="INLICHTINGEN">
+        <sign_manual>
+            <handconfig handshape="finger2" mainbend="hooked" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+            <handconfig extfidir="uo"/>
+            <handconfig palmor="u"/>
+            <location_bodyarm location="shouldertop" second_location="head" second_side="right_at" side="right_at"/>
+            <rpt_motion repetition="fromstart_several">
+                <directedmotion direction="di"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="latinge" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RR"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="TR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD"/>
+                <eye_brows movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

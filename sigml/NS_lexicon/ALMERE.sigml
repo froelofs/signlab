@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="ALMERE1">
+        <sign_manual>
+            <handconfig handshape="flat"/>
+            <handconfig extfidir="ur" second_extfidir="uo"/>
+            <handconfig palmor="u"/>
+            <location_bodyarm location="headtop" second_location="shouldertop" second_side="right_beside" side="right_beside"/>
+            <par_motion>
+                <directedmotion direction="d"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat"/>
+                    <handconfig extfidir="o" palmor="l" second_extfidir="ul"/>
+                    <location_bodyarm location="shoulders" side="left_at"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="a:l" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="RL"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="ALMERE2">
+        <sign_manual>
+            <handconfig handshape="flat"/>
+            <handconfig extfidir="o" second_extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="shoulders" side="left_at"/>
+            <par_motion>
+                <directedmotion direction="r" size="big"/>
+                <fingerplay/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+                    <handconfig extfidir="or" palmor="d" second_extfidir="uo"/>
+                    <location_bodyarm location="shoulders" side="right_beside"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="mei:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TF"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

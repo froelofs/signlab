@@ -3,16 +3,16 @@
   <hamgestural_sign gloss="DAAROM">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="daOm"/>
+        <mouth_picture picture="da:Ro:m" speed="1.2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist" thumbpos="across"/>
-      <handconfig extfidir="ol" second_extfidir="uo"/>
-      <handconfig palmor="ul"/>
-      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
-      <rpt_motion repetition="fromstart">
-        <circularmotion axis="ol" fast="true" size="small"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="neck" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="uo" size="small" />
       </rpt_motion>
     </sign_manual>
   </hamgestural_sign>

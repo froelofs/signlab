@@ -26,32 +26,15 @@
   <hamgestural_sign gloss="LATER">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="lat@"/>
+        <mouth_picture picture="latY"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="flat"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="head" side="right_at"/>
-      <par_motion>
-        <directedmotion direction="o" fast="true" size="small"/>
-        <tgt_motion fast="true">
-          <changeposture/>
-          <handconfig extfidir="u" second_extfidir="uo"/>
-        </tgt_motion>
-      </par_motion>
-      <tgt_motion fast="true">
-        <changeposture/>
-        <handconfig extfidir="u"/>
-      </tgt_motion>
-      <par_motion>
-        <directedmotion direction="o" fast="true" size="small"/>
-        <tgt_motion fast="true">
-          <changeposture/>
-          <handconfig extfidir="uo"/>
-        </tgt_motion>
-      </par_motion>
+      <handconfig handshape="flat" mainbend="bent"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shouldertop" second_location="chest" side="right_beside"/>
+      <directedmotion curve="u" direction="o"/>
     </sign_manual>
   </hamgestural_sign>
     <hamgestural_sign gloss="TERUG">
@@ -72,7 +55,7 @@
         </sign_manual>
         <sign_nonmanual>
             <mouthing_tier>
-                <mouth_picture picture="t@" speed="0.6"/>
+                <mouth_picture picture="tOro:x"/>
             </mouthing_tier>
             <body_tier>
                 <body_movement movement="ST"/>

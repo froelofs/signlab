@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="BAVEL1">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="ceeall"/>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="l"/>
+                <handconfig extfidir="o" palmor="r"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="chest" side="right_at"/>
+                <location_bodyarm location="shoulders" side="left_at"/>
+            </split_location>
+            <rpt_motion repetition="reverse">
+                <tgt_motion>
+                    <tgt_motion>
+                        <changeposture/>
+                        <split_handconfig>
+                            <handconfig extfidir="o" palmor="l"/>
+                            <handconfig extfidir="o" palmor="r"/>
+                        </split_handconfig>
+                    </tgt_motion>
+                    <split_location>
+                        <location_bodyarm location="shoulders" side="right_at"/>
+                        <location_bodyarm location="chest" side="left_at"/>
+                    </split_location>
+                </tgt_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ba:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TR"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="BAVEL2">
+        <sign_manual>
+            <handconfig handshape="fist" second_handshape="fist" second_thumbpos="opposed" thumbpos="out"/>
+            <handconfig extfidir="l"/>
+            <handconfig palmor="d" second_palmor="dr"/>
+            <location_bodyarm contact="touch" location="chest">
+                <location_hand digits="1" location="tip"/>
+            </location_bodyarm>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="fist" thumbpos="out"/>
+                <handconfig extfidir="l" palmor="l" second_extfidir="uo"/>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="vel" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

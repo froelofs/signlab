@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="EMMELOORD">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="finger2345" thumbpos="out"/>
+            <handconfig extfidir="l" second_extfidir="ol"/>
+            <handconfig palmor="l"/>
+            <split_location>
+                <location_bodyarm contact="close" location="chest" second_location="chest" second_side="right_at"/>
+                <location_bodyarm contact="close" location="stomach" second_location="stomach" side="left_at"/>
+            </split_location>
+            <split_motion>
+                <par_motion>
+                    <directedmotion direction="ui"/>
+                    <directedmotion curve="u" curve_size="big" direction="i" fast="true"/>
+                    <tgt_motion fast="true">
+                        <changeposture/>
+                        <handconfig extfidir="l" palmor="dl"/>
+                    </tgt_motion>
+                </par_motion>
+                <par_motion>
+                    <directedmotion curve="u" curve_size="big" direction="ui" fast="true" size="big"/>
+                    <tgt_motion fast="true">
+                        <changeposture/>
+                        <handconfig extfidir="r" palmor="r" second_palmor="dr"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="emElO:r" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_brows movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

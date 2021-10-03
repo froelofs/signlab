@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="VERGEZELD-DOOR">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="shoulders" side="right_at"/>
+            <split_motion>
+                <par_motion>
+                    <directedmotion curve="u" direction="l"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="fist" thumbpos="out"/>
+                        <handconfig extfidir="o" palmor="l"/>
+                        <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+                    </tgt_motion>
+                </par_motion>
+                <par_motion>
+                    <directedmotion curve="u" direction="r"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="fist" thumbpos="out"/>
+                        <handconfig extfidir="o" palmor="r"/>
+                        <location_bodyarm location="shoulders"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

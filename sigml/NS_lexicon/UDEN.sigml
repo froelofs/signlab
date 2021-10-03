@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="UDEN">
+        <sign_manual>
+            <handconfig handshape="cee12" mainbend="bent"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="l" second_palmor="ul"/>
+            <location_bodyarm contact="touch" location="neck" second_location="underchin" second_side="left_beside" side="left_at">
+                <location_hand digits="2" location="tip"/>
+            </location_bodyarm>
+            <directedmotion curve="d" direction="r" size="big"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="udan" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="NU"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

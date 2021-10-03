@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="HUISREGEL1">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" thumbpos="out"/>
+            <handconfig extfidir="u" second_extfidir="ul"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders"/>
+            <directedmotion direction="l" size="small"/>
+            <par_motion>
+                <directedmotion direction="d" size="small"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat" thumbpos="across"/>
+                    <handconfig extfidir="o" palmor="l"/>
+                    <location_bodyarm location="chest" side="right_beside"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ais" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="HUISREGEL2">
+        <sign_manual both_hands="true">
+            <handconfig handshape="flat"/>
+            <split_handconfig>
+                <handconfig extfidir="do" palmor="dl" second_extfidir="dl"/>
+                <handconfig extfidir="u" palmor="d"/>
+            </split_handconfig>
+            <location_bodyarm location="shoulders"/>
+            <split_motion>
+                <par_motion>
+                    <directedmotion curve="d" direction="ul"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="flat"/>
+                        <handconfig extfidir="l" palmor="d"/>
+                        <location_hand contact="touch" location="handback">
+                            <location_hand digits="2" location="midjoint"/>
+                        </location_hand>
+                    </tgt_motion>
+                </par_motion>
+                <nomotion/>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="re:gal" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TR"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="BREDA">
+        <sign_manual>
+            <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="hooked" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="ul"/>
+            <location_bodyarm contact="close" location="shouldertop" second_location="head" second_side="right_beside" side="right_at"/>
+            <rpt_motion repetition="fromstart_several">
+                <par_motion>
+                    <directedmotion direction="i"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="hooked" second_thumbpos="out" thumbpos="opposed"/>
+                        <handconfig extfidir="il" palmor="d"/>
+                        <location_bodyarm contact="touch" location="neck" second_location="shouldertop" second_side="right_at" side="right_at">
+                            <location_hand digits="3" location="tip"/>
+                        </location_bodyarm>
+                    </tgt_motion>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="breda" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -150,7 +150,7 @@ def makeSiGML(nonmanualsToAdd):
                             if 'mouth' in cleanline:
                                 sigml += nonmanuals
                                 nonmanuals = ''
-                            # Inserts all of the user input nonmanuals of the current tier 
+                            # Inserts all of the user input nonmanuals of the current tier
                             else:
                                 insertion = nonmanuals[:end+len(cleanline)]
                                 nonmanuals = nonmanuals.replace(insertion, '')
@@ -245,7 +245,7 @@ def main(sentence):
             continue
         # Checks the dictionary for an entry matching the input sign 
         else:
-            try: 
+            try:
                 newDict[sign]
             except:
                 print("Could not find entry for:", sign)

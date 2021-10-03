@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+    <hamgestural_sign gloss="VOOR">
+    <sign_manual>
+      <handconfig handshape="finger2" mainbend="bent" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="uo"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="close" location="chest"  second_side="right_beside"/>
+      <par_motion>
+        <directedmotion direction="o" size="small"/>
+      </par_motion>
+    </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="fOO"/>
+            </mouthing_tier>
+            <facialexpr_tier>
+            <facial_expr_par>
+                <eye_brows movement="RB"/>
+                <eye_gaze movement="LD" amount="0.3"/>
+            </facial_expr_par>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

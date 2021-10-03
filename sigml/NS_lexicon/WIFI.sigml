@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="WIFI">
+        <sign_manual both_hands="true">
+            <split_handconfig>
+                <handconfig handshape="finger2345" thumbpos="across"/>
+                <handconfig handshape="finger2" thumbpos="across"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="u" palmor="d"/>
+                <handconfig extfidir="u" palmor="r" second_palmor="dr"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm contact="close" location="shouldertop" second_location="head" second_side="right_at" side="right_at"/>
+                <location_hand contact="close" location="palm">
+                    <location_hand digits="2" location="tip"/>
+                </location_hand>
+            </split_location>
+            <split_motion>
+                <wristmotion motion="swinging" size="small"/>
+                <nomotion/>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="wifi" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="STOPTREIN-B1">
+        <sign_manual>
+            <handconfig handshape="flat" second_handshape="flat" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="chest" second_location="chest" side="right_at"/>
+            <rpt_motion repetition="continue_several">
+                <directedmotion curve="u" direction="o" size="small"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="to:p" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    <hamgestural_sign gloss="STOPTREIN-B2">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="flat" second_handshape="finger2345" thumbpos="out"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="shoulders" second_location="chest"/>
+            <rpt_motion repetition="fromstart">
+                <circularmotion axis="l" size="small"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="trE:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>
