@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>SignLab Amsterdam NS demo</title>
+
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Access-Control-Allow-Methods" content="GET">
+<meta http-equiv="Access-Control-Allow-Methods" content="POST">
+
+<!-- Meta tag to make the website responsive to different types of devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Icon -->
+<link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
+
+<!-- =============================================== -->
+<!-- Fonts -->
+
+<!-- Fonts for grayscale theme -->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+<!-- =============================================== -->
+<!-- CSS files -->
+
+<!-- CSS for Jquery autocomplete and tooltips -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Timepicker css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+<!-- CSS for question circle -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- CSS file for bootstrap grayscale theme -->
+<link rel="stylesheet" href="css/grayscalestyles.css">
+<!-- CSS file for flag icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css">
+<!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
+<link rel="stylesheet" href="css/cwasa-reduced.css">
+<!-- CSS file for bootstrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body id="page-top" onload="CWASA.init();">
+
+<div id="page-container" class="bg-light">
+<div id="content-wrap">
+<!--================================================================-->
+
+<!-- Navigation-->
+<div id="nav-placeholder"></div>
+
+<!--================================================================-->
+
+<!-- Translate -->
+
+<section class="projects-section bg-light fadeIn" id="Translator">
+  <div id="avatarTranslator" class="container-fluid" style="width: 100%;">
+        <!-- Challenge Row-->
+        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+            <!-- Column for info -->
+            <div class="col-12 col-md-5">
+                <!-- CWA signing avatar panel 0 -->
+                <!--================================================================-->
+                <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+                <span id="avatar" class="CWASAAvatar av0" style="margin-top: 20px;"></span>
+                <div class="project-text pb-1 w-100 my-auto no-top-padding small text-center text-black-50">
+                    <p class="mb-4">
+                      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>.
+                    </p>
+                </div>
+                <!--================================================================-->
+            </div>
+
+            <!-- Column for input -->
+            <div class="col-12 col-md">
+              <div class="pb-1 w-100 my-auto text-left no-top-padding textDIV">
+              <div id="alertMainTran" class="alertBox"></div>
+
+                    <div class="mb-3 row align-items-start no-gutters">
+                      <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label">Text replaced by javascript based on current input language</label>
+                      <div class="col-sm">
+                        <select id="inputLanguageForm" class="form-select" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
+                          <option selected value="English">English</option>
+                          <option value="Nederlands">Nederlands</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-4"></div>
+                    </div>
+
+                    <form autocomplete="off">
+                      <div id="autocomp" class="autocomplete" style="max-width:400px;">
+                        <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
+                      </div>
+                    </form>
+
+                    <div id="trainTypeBox" class="varBox">
+                      <label id="trainType" for="trainType" style="display: inline-block;"></label>
+                      <select name="trainType" id="trainTypeInput">
+                        <option value="intercity">Intercity</option>
+                        <option value="sprinter">Sprinter</option>
+                      </select>
+                    </div>
+
+                    <div id="platformBox" class="varBox">
+                     <label id="platform" for="platform" style="display: inline-block;"></label>
+                     <select name="platform" id="platformInput">
+                        <option value="1">1</option>
+                        <option value="1a">1a</option>
+                        <option value="1b">1b</option>
+                        <option value="11">11</option>
+                        <option value="15">15</option>
+                      </select>
+                    </div>
+
+                    <div id="departTimeBox" class="md-form varBox">
+                      <label id="time" for="time" style="display: inline-block;"></label>
+                      <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
+                    </div>
+
+                    <div id="waitTimeBox" class="varBox">
+                      <label id="waitTime" for="waitTime" style="display: inline-block;"></label>
+                      <select name="waitTime" id="waitOptions">
+                      </select>
+                    </div>
+                    
+                    <div id="interStationBox1" class="varBox">
+                      <label id="interStation1" for="interStation1" style="display: inline-block;"></label>
+                      <select name="interStation1" id="interStationOptions1">
+                      </select>
+                    </div>
+
+                    <div id="interStationBox2" class="varBox">
+                      <label id="interStation2" for="interStation2" style="display: inline-block;"></label>
+                      <select name="interStation2" id="interStationOptions2">
+                      </select>
+                    </div>
+
+                    <div id="interStationBox3" class="varBox">
+                      <label id="interStation3" for="interStation3" style="display: inline-block;"></label>
+                      <select name="interStation3" id="interStationOptions3">
+                      </select>
+                    </div>
+
+                    <div id="interStationBox4" class="varBox">
+                      <label id="interStation4" for="interStation4" style="display: inline-block;"></label>
+                      <select name="interStation4" id="interStationOptions4">
+                      </select>
+                    </div>
+                    
+                    <div id="endStationBox" class="varBox">
+                      <label id="endStation" for="endStation" style="display: inline-block;"></label>
+                      <select name="endStation" id="endStationOptions">
+                      </select>
+                    </div>
+                    
+                    <input type="submit" value="OK" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, 
+                    document.getElementById('trainTypeInput').value,
+                    document.getElementById('platformInput').value,
+                    document.getElementById('timeInput').value,
+                    document.getElementById('waitOptions').value,
+                    document.getElementById('interStationOptions1').value,
+                    document.getElementById('interStationOptions2').value,
+                    document.getElementById('interStationOptions3').value,
+                    document.getElementById('interStationOptions4').value,
+                    document.getElementById('endStationOptions').value);">
+                    
+                    <br>
+                    <br>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("mySiGML").value, "alertMainTran");'/>
+                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+                    <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <label id="speedLabel" for="speedAdj" style="display: inline-block;"></label>
+                     <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+                    <br>
+                    <br>
+                    <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px"></label>
+                    <input id="outputGloss" class="txtGloss av0" value="none" type="text">
+                    <br>
+
+              <!-- </span> -->
+              </div>
+
+              <!-- NOTE: display: none. If you comment it out completely the avatar doesn't work anymore -->
+              <div style="text-align: center; display: none;">
+                    <span style="font-size: 90%;" >
+                      Sign/Frame:
+                      <input id="mySF" class="txtSF" value="0/0" type="text" />
+                      &nbsp;
+                      Gloss:
+                      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
+                      &nbsp;
+                      FPS:
+                      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
+                    </span>
+              </div>
+              <div style="text-align: center; display: none;" >
+                  <!-- NOTE: display: none. If you comment it out completely the avatar doesn't work anymore -->
+                  <textarea id="myStatusLog"  class="statusLog" rows="6">
+                  </textarea>
+              </div>
+              <br>
+
+
+              <!-- SToCA applet element panel -->
+              <!--================================================================-->
+              <div class="SToCA" tyle="text-align: center;"></div>
+              <!--================================================================-->
+
+
+
+            </div>
+
+            <!-- Column for info -->
+            <div class="col-12 col-md-1">
+            </div>
+          </div>
+    </div>
+
+</section>
+
+<!--================================================================-->
+
+<!-- Footer-->
+<footer class="footer bg-white small text-center text-black-50">
+  <div style="line-height:150%;">
+    <br>&copy;2020 SignLab Amsterdam
+    <br>
+    <i class="bi bi-envelope"></i>: signlab.amsterdam@gmail.com
+  </div>
+</footer>
+
+
+</div>
+
+
+
+<!-- Javascripts -->
+
+<!-- Jquery JS is loaded in the beginning, see above -->
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+//Solves naming conflicts between jquery ui and bootstrap
+  $.widget.bridge('uitooltip', $.ui.tooltip);
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+<!-- Grayscale theme JS-->
+<script type="text/javascript" src="js/grayscalescript.js"></script>
+<!-- Javascript for smooth scrolling-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- script for timepicker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+<!-- script for generating avatar animations -->
+<script type="text/javascript" src="cwa/allcsa.js"> </script>
+
+
+<!-- =============================================== -->
+
+<!-- script for communication with and set up of the avatar -->
+<script language="javascript" type="text/javascript" src="js/avatar.js"></script>
+<!-- script for shared functions across all pages -->
+<script language="javascript" type="text/javascript" src="js/general.js"></script>
+<!-- script specific to main page -->
+<script language="javascript" type="text/javascript" src="js/signlab.js"></script>
+</div>
+</body>
+</html>

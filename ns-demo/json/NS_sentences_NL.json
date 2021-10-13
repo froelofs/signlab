@@ -1,0 +1,7 @@
+{
+    "Beste reizigers, de *treinType* naar *eindStation* van *vertrekTijd* rijdt niet.": "sigmlsentences/afgelopen_7_dagen.sigml",
+    "De *treinType* naar *tussenStation*, *tussenStation*, *tussenStation*, *tussenStation* en *eindStation* van *vertrekTijd* vertrekt over *wachtTijd* van spoor *spoorNr*.": "sigmlsentences/Corona_uitslag_negatief.sigml",
+    "Herhaling. De *treinType* naar *eindStation* van *vertrekTijd* rijdt via een andere route.": "sigmlsentences/afgelopen_7_dagen.sigml",
+    "Beste reizigers, de *treinType* naar *tussenStation*, *tussenStation*, *tussenStation*, *tussenStation* en *eindStation* stopt niet op tussengelegen stations.": "sigmlsentences/afgelopen_7_dagen.sigml",
+    "Beste reizigers, de *treinType* naar *eindStation* vertrekt van spoor *spoorNr*.": "sigmlsentences/afgelopen_7_dagen.sigml"
+ }
