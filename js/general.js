@@ -199,7 +199,7 @@ $('.timepicker').timepicker({
     bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
+    // bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
     bar += '</ul>';
     bar += '</div>';
     bar += '</div>';
