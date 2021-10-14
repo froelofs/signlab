@@ -1,79 +1,57 @@
-//changes the source of the embedded video
-function changeVideo(url) {
-    var frame=document.getElementById("videoHolder");
-    var clone=frame.cloneNode(true);
-    clone.setAttribute('src',url);
-    frame.parentNode.replaceChild(clone,frame);
-  }
-  
-  function startPose() {
-    playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
-  }
-      
- // Stores the autocomplete suggestions
- var options;
- //Stores the sigml translations corresponding to the suggestions
- var jsonSent;
+// Stores the autocomplete suggestions
+var options;
+//Stores the sigml translations corresponding to the suggestions
+var jsonSent;
 
-  
-  // Stores the necessities for autcomplete suggestions and the dict of sentences for the avatar
-  function callbackSent(response) {
-    jsonSent = response;
-    options = Object.keys(jsonSent);
-  }
+// Stores the the global language json file name
+var urlName = globalVar.signlabUrl;
+
+function startPose() {
+  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
+}
+
+// Stores the necessities for autcomplete suggestions and the dict of sentences for the avatar
+function callbackSent(response) {
+  jsonSent = response;
+  options = Object.keys(jsonSent);
+}
   
   // Retrieves the dict of sentences with SiGML translations
   $.ajax({
-   url: "json/NS_sentences_EN.json",
-   success: function (data) {
+    url: urlName,
+    success: function (data) {
     callbackSent(data);
-   },
-   error: function(xhr, error){
+    },
+    error: function(xhr, error){
     console.log(error);
-   }
+    }
   });
   
-  //Stores the sigml translations corresponding to the completed variable sentences
-  var jsonVariable;
   
-  // Stores the dict of sentences with variables for the avatar
-  function callbackVar(response) {
-   jsonVariable = response;
-   varOptions = Object.keys(jsonVariable);
-  }
+  // DICTS VERWIJDERD DUS WERKT NIET
+  // //Stores the sigml translations corresponding to the completed variable sentences
+  // var jsonVariable;
   
-  // Retrieves the dict of sentences with variables for the avatar
-  $.ajax({
-   url: "json/variableDictEN.json",
-   global: false,
-   success: function(data) {
-    callbackVar(data);
-   },
-   error: function(xhr, error){
-    console.log(error);
-   }
-  });
+  // // Stores the dict of sentences with variables for the avatar
+  // function callbackVar(response) {
+  //  jsonVariable = response;
+  //  varOptions = Object.keys(jsonVariable);
+  // }
+  
+  // // Retrieves the dict of sentences with variables for the avatar
+  // $.ajax({
+  //  url: "json/variableDictEN.json",
+  //  global: false,
+  //  success: function(data) {
+  //   callbackVar(data);
+  //  },
+  //  error: function(xhr, error){
+  //   console.log(error);
+  //  }
+  // });
   
   // Keeps track of whether the dict with sentences with variables needs to be called
   var variable = false;
-  
-  //Adapts the base video according to the time of day
-  function checkToD() {
-    var partofday = new Date().getHours();
-    if (partofday < 12) {
-        link = "https://www.youtube-nocookie.com/embed/gsFNU0RL8nI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=gsFNU0RL8nI";
-      } else if (partofday < 18) {
-        link = "https://www.youtube-nocookie.com/embed/XficFZU4PCY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=XficFZU4PCY";
-      } else {
-        link = "https://www.youtube-nocookie.com/embed/TYFSHlIdYxY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=TYFSHlIdYxY";
-      }
-    changeVideo(link);
-  }
-  
-  $(window).on("load", function(){
-    checkToD();
-    // setTimeout(startPose, 1000);
-  } );
   
   //Stores suggestions returned by autocomplete so user input can be checked against it
   var autocompSugg = [];
@@ -85,7 +63,7 @@ function changeVideo(url) {
       arrayOfTerms = terms.split(" ");
       punctuation = ["?",",",".",";",":","/"];
       arrayOfTerms.forEach(function (term) {
-        if (punctuation.includes(term)) {
+        if(punctuation.includes(term)) {
           var matcher = new RegExp("\\" + term, "i");
         }
         else{
@@ -136,12 +114,15 @@ function changeVideo(url) {
   //Checks whether the input sentence contains a variable and needs additional input from the user
   function checkText(text,trainTypeValue=-1, platformInputValue=-1, timeInputValue=-1, waitOptionsValue=-1, interStationOptions1Value=-1,
     interStationOptions2Value=-1, interStationOptions3Value=-1, interStationOptions4Value=-1, endStationOptionsValue=-1,alert="alertMainTran"){
-    // Makes all the variable boxes invisible
+    
+      // Makes all the variable boxes invisible
     elements = [...document.getElementsByClassName('varBox')];
     elements.forEach(function(element){
       element.style.display = 'none';
     });
-  
+
+    console.log('signlab lang= ', globalVar.lang);
+    
     console.log("text: " + text);
     text = text.toString();
     var trainType = "*trainType*"
@@ -164,11 +145,7 @@ function changeVideo(url) {
     // If no value has been given for the variable: the appropiate box is shown to ask for input, else: replace the value within the text
     if(text.includes(trainType)){
       trainTypeBox.style.display = "block";
-      if(trainTypeValue == -1){
-        alertMessage("info", "Pick a train type to fill in the blank", alert);
-      } else{
-        text = text.replaceAll(trainType,trainTypeValue);
-      }
+      trainTypeValue == -1 ? alertMessage("info", "Pick a train type to fill in the blank", alert) : text = text.replaceAll(trainType,trainTypeValue);
     }
 
     if(text.includes(platformNr)){
@@ -206,30 +183,12 @@ function changeVideo(url) {
       interStationBox2.style.display = "block";
       interStationBox3.style.display = "block";
       interStationBox4.style.display = "block";
-      if(interStationOptions1Value == -1){
-        console.log("no inter 1 station detected");
-      } else{
-        text = text.replace(interStation,interStationOptions1Value);
-      }
-
-      if(interStationOptions2Value == -1){
-        console.log("no inter 2 station detected");
-      } else{
-        text = text.replace(interStation,interStationOptions2Value);
-      }
-
-      if(interStationOptions3Value == -1){
-        console.log("no inter 3 station detected");
-      } else{
-        text = text.replace(interStation,interStationOptions3Value);
-      }
-
-      if(interStationOptions4Value == -1){
-        console.log("no inter 4 station detected");
-      } else{
-        text = text.replace(interStation,interStationOptions4Value);
-      }
-
+      
+      interStationOptions1Value == -1 ? console.log("no inter 1 station detected") : text = text.replace(interStation,interStationOptions1Value);
+      interStationOptions2Value == -1 ? console.log("no inter 2 station detected") : text = text.replace(interStation,interStationOptions2Value);
+      interStationOptions3Value == -1 ? console.log("no inter 3 station detected") : text = text.replace(interStation,interStationOptions3Value);
+      interStationOptions4Value == -1 ? console.log("no inter 4 station detected") : text = text.replace(interStation,interStationOptions4Value);
+      
       if(text.includes("None")){
         text = text.replaceAll("None, ", "");
         text = text.replaceAll("None", "");
@@ -243,13 +202,9 @@ function changeVideo(url) {
 
     if(text.includes(endStation)){
       endStationBox.style.display = "block";
-      if(endStationOptionsValue == -1){
-        alertMessage("info", "Pick an end station to fill in the blank", alert);
-      } else{
-        console.log("kies een station detected");
-        text = text.replaceAll(endStation,endStationOptionsValue);
-      }
+      endStationOptionsValue == -1 ? alertMessage("info", "Pick an end station to fill in the blank", alert) : text = text.replaceAll(endStation,endStationOptionsValue);
     }
+
     console.log("completed sentence: " + text);
     document.getElementById('mySiGML').value = text;
     document.getElementById("play").setAttribute("class", "btn btn-primary");

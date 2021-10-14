@@ -1,40 +1,12 @@
 // variable so flags can be set an passed on to the php call
 var flag = "";
+var globalVar={
+  signlabUrl: "json/NS_sentences_EN.json"
+};
 
-//Adapts the page to the chosen option
-function changeDisplay(myRadio) {
-  console.log("display: " + myRadio);
-  if (myRadio.value == "fingerspell") {
-  	document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    flag = "spell";
-  }
-  else if (myRadio.value == "freestyle") {
-  	document.getElementById("replayButton").setAttribute("class", "btn btn-primary undisplayed");
-    flag = "";
-  }
-  else if (myRadio.value == "explain") {
-    document.getElementById("avatarTut").setAttribute("class", "undisplayed");
-    document.getElementById("speedAdjTut").setAttribute("class", "undisplayed");
-    document.getElementById("outputGlossTut").setAttribute("class", "undisplayed");
-    document.getElementById("glossLabelTut").style.display = 'none';
-    document.getElementById("speedLabelTut").style.display = 'none';
-    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary undisplayed");
-    document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed");
-    flag = "explain";
-  }
-  else if (myRadio.value == "explAva") {
-    document.getElementById("avatarTut").setAttribute("class", "CWASAAvatar av1");
-    document.getElementById("speedAdjTut").setAttribute("class", "CWASASpeed av1");
-    document.getElementById("outputGlossTut").setAttribute("class", "txtGloss av1");
-    document.getElementById("glossLabelTut").style.display = 'inline-block';
-    document.getElementById("speedLabelTut").style.display = 'inline-block';
-    document.getElementById("stopButtonTut").setAttribute("class", "btn btn-primary displayed av1");
-    document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary undisplayed av1");
-    flag = "explain,";
-  }
-}
-
-///Makes an ajax call to the python script (by way of a php wrapper)
+/**
+ * Makes an ajax call to the python script (by way of a php wrapper)
+ */
 function callPython(text, alertID) {
   showBusyState();
   //Adds a flag to the input if applicable
@@ -55,6 +27,7 @@ function callPython(text, alertID) {
     success : onSuccess,
     error : onError,
   });
+
   function onSuccess(result) {
     if (result.errorcode) {
       console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
@@ -62,8 +35,6 @@ function callPython(text, alertID) {
     }
     else {
       console.log("Request was a success! Output: ", result);
-      // output = result.output.split(";");
-      // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
       output = result.output;
       if(output.slice(0,5) == "<?xml"){
         if (flag == "explain"){
@@ -78,12 +49,7 @@ function callPython(text, alertID) {
           parent.append(pre);
         }
         else{
-          // console.log("0:", output[0]);
-          // console.log("1:" , output[1]);
-          // console.log("SiGML: ", output[2]);
-          // playText(output[2].trim(),1);
           playText(output.trim());
-          // document.getElementById('output').value =  output[2].trim();
           document.getElementById('output').value =  output.trim();
           document.getElementById("replayButtonTut").setAttribute("name", output.trim());
           document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary");
@@ -100,27 +66,31 @@ function callPython(text, alertID) {
     showBusyState(false);
     }
   }
+
   function onError(_xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
     showBusyState(false);
     alertMessage("error", 'Oops, something went wrong', alertID);
   }
+
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
   }
 }
 
+
 //Changes the javascript file loaded depending on the chosen language
 function changeLanguage(language, onload=false) {
-  // Creates a script element so that the ZonMw script can be loaded in the correct language
   var head = document.getElementsByTagName('head')[0];
   var js = document.createElement("script");
+
+  // Creates a script element so that the ZonMw script can be loaded in the correct language
   var interStationsArray = ["None", "Zwolle", "Groningen", "Deventer"]
   var endStationsArray = ["Zwolle", "Groningen", "Deventer"]
 
-  js.type = "text/javascript";
   // Loads the correct file and sets the paths for the corresponding dicts
   if (language == "Nederlands"){
+    globalVar.signlabUrl ="json/NS_sentences_NL.json";
     var waitElementsArray = ["enkele minuten", "ongeveer 5 minuten", "ongeveer 35 minuten", "ongeveer anderhalf uur", "een nog onbekende tijd"];
     document.getElementById('trainType').innerHTML = 'Treintype: ';
     document.getElementById('platform').innerHTML = 'Spoornummer: ';
@@ -133,12 +103,12 @@ function changeLanguage(language, onload=false) {
     document.getElementById('interStation2').innerHTML = 'Tussenstation 2: ';
     document.getElementById('interStation3').innerHTML = 'Tussenstation 3: ';
     document.getElementById('interStation4').innerHTML = 'Tussenstation 4: ';
-    js.src = "js/NS_sentences_NL.js";
     document.getElementById('mySiGML').placeholder = 'Vul hier een zin of trefwoorden in';
     document.getElementById('selectExplain').textContent="Invoertaal: ";
   }
   else{
     var waitElementsArray = ["a few minutes", "approximately 5 minutes", "approximately 35 minutes", "approximately 1.5 hours", "an unknown timeframe"];
+    globalVar.signlabUrl ="json/NS_sentences_EN.json";
     document.getElementById('trainType').innerHTML = 'Train type: ';
     document.getElementById('platform').innerHTML = 'Platform number: ';
     document.getElementById('time').innerHTML = 'Departure time: ';
@@ -150,11 +120,13 @@ function changeLanguage(language, onload=false) {
     document.getElementById('interStation2').innerHTML = 'Intermediate station 2: ';
     document.getElementById('interStation3').innerHTML = 'Intermediate station 3: ';
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4: ';
-    js.src = "js/NS_sentences_EN.js";
     document.getElementById('mySiGML').placeholder = 'Enter a sentence or keywords here';
     document.getElementById('selectExplain').textContent="Input language: ";
   }
+  js.type = "text/javascript";
+  js.src = "js/NS_sentences.js";
   head.appendChild(js);
+
   console.log("language: " + language);
   
   var waitSelect = document.getElementById('waitOptions');
