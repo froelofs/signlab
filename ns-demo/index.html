@@ -82,25 +82,32 @@
               <div id="alertMainTran" class="alertBox"></div>
 
                     <div class="mb-3 row align-items-start no-gutters">
-                      <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label">Text replaced by javascript based on current input language</label>
+                      <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label"></label>
                       <div class="col-sm">
                         <select id="inputLanguageForm" class="form-select" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
                           <option selected value="English">English</option>
                           <option value="Nederlands">Nederlands</option>
                         </select>
                       </div>
-                      <div class="col-sm-4"></div>
                     </div>
+                    <br>
 
-                    <form autocomplete="off">
-                      <div id="autocomp" class="autocomplete" style="max-width:400px;">
-                        <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
+                    <div class="mb-3 row align-items-start no-gutters">
+                      <div id="sentenceText"></div>
+                      <br><div></div>
+                      <div id="sentenceInput"></div>
+                    </div>
+                    
+                    <div id="sentenceBox">
+                      <br>
+                      <div id="sentenceOptionsText"></div>
+                      <select name="sentences" id="sentenceOptions" class="col-lg-5 selectpicker sentenceOptions" onchange="changeSentence(this.value);">
+                      </select>
                       </div>
-                    </form>
-
+                    <br>
                     <div id="trainTypeBox" class="varBox">
                       <label id="trainType" for="trainType" style="display: inline-block;"></label>
-                      <select name="trainType" id="trainTypeInput">
+                      <select class="selectpicker" name="trainType" id="trainTypeInput">
                         <option value="intercity">Intercity</option>
                         <option value="sprinter">Sprinter</option>
                       </select>
@@ -108,7 +115,7 @@
 
                     <div id="platformBox" class="varBox">
                      <label id="platform" for="platform" style="display: inline-block;"></label>
-                     <select name="platform" id="platformInput">
+                     <select class="selectpicker" name="platform" id="platformInput">
                         <option value="1">1</option>
                         <option value="1a">1a</option>
                         <option value="1b">1b</option>
@@ -124,41 +131,41 @@
 
                     <div id="waitTimeBox" class="varBox">
                       <label id="waitTime" for="waitTime" style="display: inline-block;"></label>
-                      <select name="waitTime" id="waitOptions">
+                      <select class="selectpicker" name="waitTime" id="waitOptions">
                       </select>
                     </div>
                     
                     <div id="interStationBox1" class="varBox">
                       <label id="interStation1" for="interStation1" style="display: inline-block;"></label>
-                      <select name="interStation1" id="interStationOptions1">
+                      <select class="selectpicker" name="interStation1" id="interStationOptions1">
                       </select>
                     </div>
 
                     <div id="interStationBox2" class="varBox">
                       <label id="interStation2" for="interStation2" style="display: inline-block;"></label>
-                      <select name="interStation2" id="interStationOptions2">
+                      <select class="selectpicker" name="interStation2" id="interStationOptions2">
                       </select>
                     </div>
 
                     <div id="interStationBox3" class="varBox">
                       <label id="interStation3" for="interStation3" style="display: inline-block;"></label>
-                      <select name="interStation3" id="interStationOptions3">
+                      <select class="selectpicker" name="interStation3" id="interStationOptions3">
                       </select>
                     </div>
 
                     <div id="interStationBox4" class="varBox">
                       <label id="interStation4" for="interStation4" style="display: inline-block;"></label>
-                      <select name="interStation4" id="interStationOptions4">
+                      <select class="selectpicker" name="interStation4" id="interStationOptions4">
                       </select>
                     </div>
                     
                     <div id="endStationBox" class="varBox">
                       <label id="endStation" for="endStation" style="display: inline-block;"></label>
-                      <select name="endStation" id="endStationOptions">
+                      <select class="selectpicker" name="endStation" id="endStationOptions">
                       </select>
                     </div>
                     
-                    <input type="submit" value="OK" style="display: inline-block;" onclick="checkText(document.getElementById('mySiGML').value, 
+                    <input class="varBox" id="okBox" type="submit" value="OK" style="display: inline-block;" onclick="replaceText(document.getElementById('sentenceOptions').value, 
                     document.getElementById('trainTypeInput').value,
                     document.getElementById('platformInput').value,
                     document.getElementById('timeInput').value,
@@ -171,7 +178,7 @@
                     
                     <br>
                     <br>
-                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("mySiGML").value, "alertMainTran");'/>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("sentences").value, "alertMainTran");'/>
                     <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
                     <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
                     <br>
@@ -260,31 +267,40 @@
 </script>
 
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="bootstrap-themes/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap-themes/bootstrap.min.js"></script>
 
+<!-- Bootstrap select -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
 <!-- Grayscale theme JS-->
-<script type="text/javascript" src="js/grayscalescript.js"></script>
+<script type="text/javascript" src="bootstrap-themes/grayscalescript.js"></script>
 <!-- Javascript for smooth scrolling-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- script for timepicker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
 <!-- script for generating avatar animations -->
 <script type="text/javascript" src="cwa/allcsa.js"> </script>
-
-
 <!-- =============================================== -->
+
+<!-- JSON scripts for sentences -->
+<script type="text/javascript" src="json/json_sentences_English.json"></script>
+<script type="text/javascript" src="json/json_sentences_Nederlands.json"></script>
+
 
 <!-- script for communication with and set up of the avatar -->
 <script language="javascript" type="text/javascript" src="js/avatar.js"></script>
 <!-- script for shared functions across all pages -->
 <script language="javascript" type="text/javascript" src="js/general.js"></script>
 <!-- script specific to main page -->
-<script language="javascript" type="text/javascript" src="js/signlab.js"></script>
-<!-- script for languages
-<script language="javascript" type="text/javascript" src="js/NS_sentences_EN.js"></script>-->
+<script language="javascript" type="text/javascript" src="js/index.js"></script>
+<!-- script specific to the sentences -->
+<script type="text/javascript" src="js/sentences.js"></script>
+
 </div>
 </body>
 </html>

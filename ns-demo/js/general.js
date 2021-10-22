@@ -88,6 +88,15 @@ $('.timepicker').timepicker({
     autoclose: true,
   });
 
+  /**
+   * Makes all the variable boxes invisible
+   */
+   function makeVarBoxInvisible(){
+    elements = [...document.getElementsByClassName('varBox')];
+    elements.forEach(function(element){
+      element.style.display = 'none';
+    });
+  }
 
   function adaptTime(time,language="EN"){
     console.log("input time: " + time);
