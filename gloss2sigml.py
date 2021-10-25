@@ -3,6 +3,7 @@ from newDict import newDict
 #import sys
 from nonmanuals import simpleNonmanuals
 from nonmanuals import complexNonmanuals
+import xml.etree.ElementTree as ET
 
 
 # Converts the user input nonmanual to the correct SiGML naming conventions
@@ -15,7 +16,7 @@ def convert(inputtag):
         simpleNonmanuals[tier]
     # Searches for the tier in the complex nonmanuals when an exception occurs
     except Exception:
-        print("Searching in complex nonmanuals")
+        #print("Searching in complex nonmanuals")
         # Loops over the complex nonmanuals to search for a matching tier
         for category in complexNonmanuals.keys():
             # Checks whether the tier matches the first two letters of a category
@@ -31,7 +32,7 @@ def convert(inputtag):
             return search[tag.lower()]
     # Searches for the tier in the simple nonmanuals when no exception occurs
     else:
-        print("Searching in simple nonmanuals")
+        #print("Searching in simple nonmanuals")
         search = simpleNonmanuals[tier]
         # Checks whether the tag exists in the tier and if so returns the converted tag
         for key in search.keys():
@@ -176,7 +177,6 @@ def makeSiGML(nonmanualsToAdd):
                             sigml += insertion
                         # Executes if the opening tag is not found in the user input nonmanuals
                         else:
-                            print(cleanline)
                             # Retrieves the closing tag of the previous nonmanual tier
                             prevTierIndex = nonmansOrder.index(cleanline[0] + "/" + cleanline[1:]) - 1
                             previousTier = nonmansOrder[prevTierIndex]
@@ -264,8 +264,11 @@ def main(sentence):
     return sigml
 
 if __name__ == '__main__':
-    print("output sigml: ", main('U <EM_SADNESSI> ETEN KLAAR </EM_SADNESSI> <FT_RB> HEBBEN </FT_RB>'))
+    #print("output sigml: ", main('U <EM_SADNESSI> ETEN KLAAR </EM_SADNESSI> <FT_RB> HEBBEN </FT_RB>'))
     # print("output sigml: ", main('U <EM_FEAR> ETEN </EM_FEAR> KLAAR <FT_RB> HEBBEN </FT_RB>'))
     # print("output sigml: ", main('U <FT_RB> ETEN KLAAR </FT_RB> HEBBEN'))
     # print("output sigml: ", main('<FT_RR> ETEN </FT_RR>'))
     #print("output sigml: ", main(sys.argv[1]))
+    output = ET.fromstring(main('U <FT_RB> ETEN KLAAR </FT_RB> HEBBEN'))
+    ET.indent(output)
+    print("output sigml: \n" , ET.tostring(output, encoding='unicode'))
