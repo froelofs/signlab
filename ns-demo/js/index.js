@@ -13,6 +13,7 @@ var globalVar={
 var interStationsArray = ["None", "Zwolle", "Groningen", "Deventer"]
 var endStationsArray = ["Zwolle", "Groningen", "Deventer"]
 
+
 trainTypeBox = document.getElementById('trainTypeBox');
 platformBox = document.getElementById('platformBox');
 departTimeBox = document.getElementById('departTimeBox');
@@ -22,9 +23,6 @@ interStationBox2 = document.getElementById('interStationBox2')
 interStationBox3 = document.getElementById('interStationBox3')
 interStationBox4 = document.getElementById('interStationBox4')
 endStationBox = document.getElementById('endStationBox')
-
-
-platformNr = document.getElementById
 
 var urlName = "json/json_sentences_" + globalVar.lang + ".json";
 
@@ -144,7 +142,7 @@ function replaceText(text,trainTypeValue=-1, platformInputValue=-1, timeInputVal
 function changeLanguage(language){
   // Update global language
   globalVar.lang = language;
-  
+
   if(globalVar.lang == "Nederlands"){
     globalVar.trainType = "treinType"
     globalVar.platformNr = "spoorNr"
@@ -188,7 +186,7 @@ function refreshBoxes(currentSentence){
  */
 function startUp(language) {
   urlName = "json/json_sentences_" + language + ".json";
-  
+ 
   
   $.getJSON(urlName, function(json) {
     createDropdown(Object.keys(json), 'sentenceOptions');
@@ -243,7 +241,8 @@ function startUp(language) {
   createDropdown(interStationsArray, 'interStationOptions3');
   createDropdown(interStationsArray, 'interStationOptions4');
   createDropdown(endStationsArray, 'endStationOptions');
-  
+  document.querySelector('button[data-id="endStationOptions"]').title = endStationsArray[0];
+  $('.selectpicker').selectpicker('refresh');
 }
 
 /**

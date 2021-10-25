@@ -66,33 +66,49 @@ function startPose() {
   //   }
   // });
 
+  var jsonData;
+  var jsonKeys;
 
+  function callBack(json){
+    jsonData = json;
+    jsonKeys = Object.keys(jsonData);
+  }
+
+  $.getJSON(urlName, function(json) {
+    callBack(json);
+  });
   
   /**
    * // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
    * @param {*} text 
    * @param {*} alert 
    */
-  function toSiGML(text,alert="alertMainTran"){
+  function toSiGML(text, alert="alertMainTran"){
     console.log("input: " + text);
-      // Checks the variable sentences dict for translation
-      if (variable == true){
-        entry = jsonVariable[text];
-        variable = false;
-      }
-      // Checks regular sentences dict for translation
-      else{
-        entry = jsonSent[text];
-      }
-      // Alerts user if sentence has no corresponding translation
-      if (entry == undefined) {
-        alertMessage("info", "There is currently no translation available for this sentence.",alert);
-      }
-      // Sends sigml to avatar
-      else{
+      if (text.includes(globalVar.trainType) || text.includes(globalVar.platformNr) || text.includes(globalVar.departTime) || text.includes(globalVar.waitTime) 
+        || text.includes(globalVar.endStation)){
+          if(globalVar.lang=="Nederlands"){
+            alertMessage("info", "Vul eerst alle variabelen in.", alert);
+          } else {
+            alertMessage("info", "Please fill in the variables.", alert);
+          }
+      } else{
+        // Checks regular sentences dict for translation
+        entry = document.querySelector('button[data-id="sentenceOptions"]').title;
+        console.log(entry);
+        sigml = jsonData[entry];
+        console.log(sigml);
+      } if (entry == undefined) {
+        if(globalVar.lang=="Nederlands"){
+          alertMessage("info", "Er is momenteel geen vertaling beschikbaar voor deze zin.", alert);
+        } else {
+          alertMessage("info", "There is currently no translation available for this sentence.", alert);
+        }
+      } else{
+        // Sends sigml to avatar
         // entry = "zonmw/" + entry;
-        playURL(entry);
-        document.getElementById("replayButton").setAttribute("name", entry);
+        playURL(sigml);
+        document.getElementById("replayButton").setAttribute("name", sigml);
         document.getElementById("replayButton").style.display = 'inline-block';
         document.getElementById("play").setAttribute("class", "btn btn-primary no-click-button");
       }
