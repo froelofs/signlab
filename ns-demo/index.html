@@ -93,9 +93,9 @@
                     <br>
 
                     <div class="mb-3 row align-items-start no-gutters">
-                      <div id="sentenceText"></div>
-                      <br><div></div>
-                      <div id="sentenceInput"></div>
+                      <div id="sentenceText" style="display: block"></div>
+                      <br>
+                      <div id="sentenceInput" style="display: block"></div>
                     </div>
                     
                     <div id="sentenceBox">
@@ -165,7 +165,7 @@
                       </select>
                     </div>
                     
-                    <input class="varBox" id="okBox" type="submit" value="OK" style="display: inline-block;" onclick="replaceText(document.getElementById('sentenceOptions').value, 
+                    <input class="varBox" id="okBox" type="submit" value="OK" style="display: block;" onclick="replaceText(document.getElementById('sentenceOptions').value, 
                     document.getElementById('trainTypeInput').value,
                     document.getElementById('platformInput').value,
                     document.getElementById('timeInput').value,
@@ -178,7 +178,7 @@
                     
                     <br>
                     <br>
-                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("sentences").value, "alertMainTran");'/>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("sentenceOptions").value, "alertMainTran");'/>
                     <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
                     <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
                     <br>
