@@ -107,14 +107,6 @@ $('.timepicker').timepicker({
 
     var partOfDay = new Date().getHours();
 
-    // Rounds the minutes to the nearest option
-    if (minutes.charAt(1) == "1" || minutes.charAt(1) == "2"){
-     minutes = minutes.charAt(0) + "0";
-    }
-    else if (minutes.charAt(1) == "3" || minutes.charAt(1) == "4"){
-     minutes = minutes.charAt(0) + "5";
-    }
-
     var dayPart = "";
 
     //Translates the time according to the language the page is set to
