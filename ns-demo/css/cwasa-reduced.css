@@ -227,6 +227,10 @@ body.busy::before {
   display: none;
 }
 
+#yellow{
+  color: yellow;
+}
+
 #sentenceInput{
   background-color: #e4edf8;
   border-width: 0.5em;

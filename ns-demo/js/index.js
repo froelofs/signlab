@@ -161,7 +161,6 @@ function changeLanguage(language){
   startUp(language);
 }
 
-
 /**
  * Changes the chosen sentence text
  * @param {*} text 
@@ -172,10 +171,27 @@ function changeLanguage(language){
   refreshBoxes(currentSentence);
 }
 
+/**
+ * Changes the colors of the variables in the chosen sentence text
+ * @param {*} sent 
+ */
+function changeColors(sent){
+  sent.includes(globalVar.trainType) ? sent = sent.replaceAll(globalVar.trainType, '<span style= "color: orange;">' + globalVar.trainType + '</span>') : console.log('no trainType');
+  sent.includes(globalVar.platformNr) ? sent = sent.replaceAll(globalVar.platformNr, '<span style= "color: orange;">' + globalVar.platformNr + '</span>') : console.log('no platformNr');
+  sent.includes(globalVar.departTime) ? sent = sent.replaceAll(globalVar.departTime, '<span style= "color: orange;">' + globalVar.departTime + '</span>') : console.log('no departTime');
+  sent.includes(globalVar.waitTime) ? sent = sent.replaceAll(globalVar.waitTime, '<span style= "color: orange;">' + globalVar.waitTime + '</span>') : console.log('no waitTime');
+  sent.includes(globalVar.interStation) ? sent = sent.replaceAll(globalVar.interStation, '<span style= "color: orange;">' + globalVar.interStation + '</span>') : console.log('no interStation');
+  sent.includes(globalVar.endStation) ? sent = sent.replaceAll(globalVar.endStation, '<span style= "color: orange;">' + globalVar.endStation + '</span>') : console.log('no endStation');
+ 
+  document.getElementById('sentenceInput').innerHTML = sent;
+}
+
+
 function refreshBoxes(currentSentence){
   makeVarBoxInvisible();
   displayVarBox(currentSentence);
   document.getElementById('sentenceInput').innerHTML = currentSentence;
+  changeColors(currentSentence);
   document.querySelector('button[data-id="sentenceOptions"]').title = currentSentence;
   $('.selectpicker').selectpicker('refresh');
 }
