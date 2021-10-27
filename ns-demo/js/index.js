@@ -7,7 +7,8 @@ var globalVar={
   waitTime: "waitTime",
   interStation: "interStation",
   endStation: "endStation",
-  currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing."
+  currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
+  urlName: "json/json_sentences_English.json"
 };
 
 var interStationsArray = ["None", "Zwolle", "Groningen", "Deventer"]
@@ -24,10 +25,8 @@ interStationBox3 = document.getElementById('interStationBox3')
 interStationBox4 = document.getElementById('interStationBox4')
 endStationBox = document.getElementById('endStationBox')
 
-var urlName = "json/json_sentences_" + globalVar.lang + ".json";
-
 // Call startUp() once
-startUp(globalVar.lang);
+startUp();
 
 
 /**
@@ -62,8 +61,6 @@ function displayVarBox(text){
   if(text.includes(globalVar.endStation)){
     endStationBox.style.display = "block";
   }
-
-  document.getElementById('okBox').style.display = "block";
 }
 
 
@@ -131,7 +128,7 @@ function replaceText(text,trainTypeValue=-1, platformInputValue=-1, timeInputVal
   }
 
   console.log("completed sentence: " + text);
-  document.getElementById('sentenceInput').innerHTML = text;
+  document.getElementById('currSentence').innerHTML = text;
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
@@ -158,7 +155,7 @@ function changeLanguage(language){
     globalVar.interStation = "interStation"
     globalVar.endStation = "endStation"
   }
-  startUp(language);
+  startUp();
 }
 
 /**
@@ -167,7 +164,7 @@ function changeLanguage(language){
  */
  function changeSentence(currentSentence){
   globalVar.currentSentence = currentSentence;
-  document.getElementById('sentenceInput').innerHTML = globalVar.currentSentence;
+  document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
   refreshBoxes(currentSentence);
 }
 
@@ -183,14 +180,14 @@ function changeColors(sent){
   sent.includes(globalVar.interStation) ? sent = sent.replaceAll(globalVar.interStation, '<span style= "color: orange;">' + globalVar.interStation + '</span>') : console.log('no interStation');
   sent.includes(globalVar.endStation) ? sent = sent.replaceAll(globalVar.endStation, '<span style= "color: orange;">' + globalVar.endStation + '</span>') : console.log('no endStation');
  
-  document.getElementById('sentenceInput').innerHTML = sent;
+  document.getElementById('currSentence').innerHTML = sent;
 }
 
 
 function refreshBoxes(currentSentence){
   makeVarBoxInvisible();
   displayVarBox(currentSentence);
-  document.getElementById('sentenceInput').innerHTML = currentSentence;
+  
   changeColors(currentSentence);
   document.querySelector('button[data-id="sentenceOptions"]').title = currentSentence;
   $('.selectpicker').selectpicker('refresh');
@@ -200,19 +197,20 @@ function refreshBoxes(currentSentence){
  * Changes the varBox names and creates dropdown menu's, depending on the chosen language
  * @param {*} language 
  */
-function startUp(language) {
-  urlName = "json/json_sentences_" + language + ".json";
+function startUp() {
+  globalVar.urlName = "json/json_sentences_" + globalVar.lang + ".json";
  
   
-  $.getJSON(urlName, function(json) {
+  $.getJSON(globalVar.urlName, function(json) {
     createDropdown(Object.keys(json), 'sentenceOptions');
     globalVar.currentSentence = Object.keys(json)[0];
+    document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
     refreshBoxes(globalVar.currentSentence);
   });
 
 
-  if (language == "Nederlands"){
-    console.log('lang', language)
+  if (globalVar.lang == "Nederlands"){
+    console.log('lang', globalVar.lang)
     var waitElementsArray = ["enkele minuten", "ongeveer 5 minuten", "ongeveer 35 minuten", "ongeveer anderhalf uur", "een nog onbekende tijd"];
 
     document.getElementById('trainType').innerHTML = 'Treintype: ';
@@ -226,13 +224,13 @@ function startUp(language) {
     document.getElementById('interStation2').innerHTML = 'Tussenstation 2: ';
     document.getElementById('interStation3').innerHTML = 'Tussenstation 3: ';
     document.getElementById('interStation4').innerHTML = 'Tussenstation 4: ';
-    document.getElementById('sentenceText').innerHTML = 'Gekozen zin: ';
-    
-    document.getElementById('sentenceOptionsText').innerHTML = 'Verander zin: ';
-    document.getElementById('selectExplain').textContent="Invoertaal: ";
+    document.getElementById('selectExplain').innerHTML ='<b> 1. </b> Selecteer de invoertaal ';
+    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Verander huidige keuze ';
+    document.getElementById('currSentenceLabel').innerHTML = '<u>Huidige keuze: </u>';
+    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen en speel af ';
   }
   else {
-    console.log('lang', language)
+    console.log('lang', globalVar.lang)
     var waitElementsArray = ["a few minutes", "approximately 5 minutes", "approximately 35 minutes", "approximately 1.5 hours", "an unknown timeframe"];
 
     document.getElementById('trainType').innerHTML = 'Train type: ';
@@ -246,9 +244,10 @@ function startUp(language) {
     document.getElementById('interStation2').innerHTML = 'Intermediate station 2: ';
     document.getElementById('interStation3').innerHTML = 'Intermediate station 3: ';
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4: ';
-    document.getElementById('sentenceText').innerHTML = 'Chosen sentence: ';
-    document.getElementById('sentenceOptionsText').innerHTML = 'Change sentence: ';
-    document.getElementById('selectExplain').textContent="Input language: ";
+    document.getElementById('selectExplain').innerHTML = '<b> 1. </b> Select input language ';
+    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Change sentence ';
+    document.getElementById('currSentenceLabel').innerHTML = '<u>Current sentence: </u>';
+    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values and play ';
   }
   
   createDropdown(waitElementsArray, 'waitOptions');
