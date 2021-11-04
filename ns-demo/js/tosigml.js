@@ -23,6 +23,18 @@ function startPose() {
    * @param {*} alert 
    */
   function toSiGML(text, alert="alertMainTran"){
+    text = text.replaceAll("-", "");
+    text = text.replaceAll(/interStation/g, "");
+    text = text.replaceAll(/\d{1}/g, " ");
+    text = text.replaceAll(/\,/g, " ");
+    
+    if ((globalVar.interStation1 === "-" || globalVar.interStation1 === "interStation1") && (globalVar.interStation2 === "-" || globalVar.interStation2 === "interStation2") && (globalVar.interStation3 === "-" || globalVar.interStation3 === "interStation3") && (globalVar.interStation4 === "-" || globalVar.interStation4 === "interStation4")){
+      text = text.replace(/and/, "");
+    }
+    
+    // Straks verplaatsen naar de 'else' hieronder
+    document.getElementById('currSentence').innerHTML = '<b>' + text + '</b>';
+    
     console.log("input: " + text);
       if (text.includes(globalVar.trainType) || text.includes(globalVar.platformNr) || text.includes(globalVar.departTime) || text.includes(globalVar.waitTime) 
         || text.includes(globalVar.endStation)){

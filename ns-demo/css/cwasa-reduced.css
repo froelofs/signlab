@@ -93,8 +93,6 @@
     font-family: sans-serif;  font-size: 0.9em;  width: 6em;
 }
 
-.displayed { }
-
 .undisplayed { display: none; }
 
 /* Busy state */
