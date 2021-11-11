@@ -1,21 +1,6 @@
-
 function startPose() {
   playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
-}
- 
-// var jsonData;
-// var jsonKeys;
-
-// function callBack(json){
-//   jsonData = json;
-//   jsonKeys = Object.keys(jsonData);
-// }
-
-
-  // $.getJSON(globalVar.urlName, function(json) {
-  //   callBack(json);
-  // });
-  
+} 
   
   /**
    * // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
@@ -23,28 +8,21 @@ function startPose() {
    * @param {*} alert 
    */
   function toSiGML(text, alert="alertMainTran"){
+    console.log('text ', text);
     text = text.replaceAll("-", "");
-    text = text.replaceAll(/interStation/g, "");
-    text = text.replaceAll(/\d{1}/g, " ");
+    text = text.replaceAll(/interStation\d{1}/g, "");
+    text = text.replaceAll(/\d{1}[A-Za-z]/g, " ");
     text = text.replaceAll(/\,/g, " ");
+    text = text.replaceAll(/\'/g, "");
     
     if ((globalVar.interStation1 === "-" || globalVar.interStation1 === "interStation1") && (globalVar.interStation2 === "-" || globalVar.interStation2 === "interStation2") && (globalVar.interStation3 === "-" || globalVar.interStation3 === "interStation3") && (globalVar.interStation4 === "-" || globalVar.interStation4 === "interStation4")){
       text = text.replace(/and/, "");
     }
-    
-    // Straks verplaatsen naar de 'else' hieronder
+
     document.getElementById('currSentence').innerHTML = '<b>' + text + '</b>';
     
     console.log("input: " + text);
-      if (text.includes(globalVar.trainType) || text.includes(globalVar.platformNr) || text.includes(globalVar.departTime) || text.includes(globalVar.waitTime) 
-        || text.includes(globalVar.endStation)){
-          if(globalVar.lang=="Nederlands"){
-            alertMessage("info", "Vul eerst alle variabelen in.", alert);
-          } else {
-            alertMessage("info", "Please fill in the variables.", alert);
-          }
-      } else{
-        // Checks regular sentences dict for translation
+    // Checks regular sentences dict for translation
         entry = document.querySelector('button[data-id="sentenceOptions"]').title;
         
         if (entry == undefined) {
@@ -64,5 +42,5 @@ function startPose() {
           });
         }
     }
-  }
+  
   

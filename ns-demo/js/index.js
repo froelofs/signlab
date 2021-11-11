@@ -160,7 +160,6 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} language 
  */
  function startUp(currentSentence, changeSent) {
-  console.log('bool: ', changeSent);
   train_n=1;
   platform_n=1;
   depart_n=1;
@@ -169,7 +168,6 @@ function updateGlobalVariables(name, oldValue){
   globalVar.urlName = "json/json_sentences_" + globalVar.lang + ".json";
  
   if(changeSent){
-    console.log('changesent true ', currentSentence);
     document.getElementById('currSentence').innerHTML = currentSentence;
     resetBoxes(currentSentence);
     colorKeywords(currentSentence);
@@ -310,7 +308,6 @@ function changeLanguage(language){
  * @param {*} text 
  */
  function changeSentence(currentSentence){
-   console.log('in sent');
    resetGlobalVariables();
    startUp(currentSentence, true);
 }
