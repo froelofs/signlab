@@ -166,7 +166,7 @@ function updateGlobalVariables(name, oldValue){
   wait_n=1;
   end_n=1;
   globalVar.urlName = "json/json_sentences_" + globalVar.lang + ".json";
- 
+
   if(changeSent){
     document.getElementById('currSentence').innerHTML = currentSentence;
     resetBoxes(currentSentence);
@@ -190,7 +190,8 @@ function updateGlobalVariables(name, oldValue){
     document.querySelector('button[data-id="sentenceOptions"]').title = globalVar.currentSentence;
     document.querySelector('button[data-id="endStationOptions"]').title = endStationsArray[0];
     $('.selectpicker').selectpicker('refresh');
-    
+  }).fail(function() {
+    console.log("Could not get JSON file");
   });
   }
   // Save initial dropdown menu values temporarily
@@ -298,6 +299,7 @@ function resetGlobalVariables(){
  */
 function changeLanguage(language){
   // Update global language
+  console.log('language after change ', language);
   globalVar.lang = language;
   resetGlobalVariables();
   startUp(globalVar.currentSentence, false);
@@ -373,7 +375,7 @@ function createDropdown(elements, id){
  */
 $(window).on("load", function(){
   if (document.getElementById('Translator')) {
-    changeLanguage(true);
+    changeLanguage(globalVar.lang);
   }
 
 } );
