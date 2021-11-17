@@ -28,6 +28,8 @@ var departTemp;
 var waitTimeTemp;
 var endStationTemp;
 
+var oldStationInt;
+
 var interStationsArray = ["-", "Zwolle", "Groningen", "Deventer"]
 var endStationsArray = ["Zwolle", "Groningen", "Deventer"]
 
@@ -122,20 +124,30 @@ function updateGlobalVariables(name, oldValue){
   }
   // Add invisible numbers to the intermediate station names such that their position is recognized
   else if(name.match(/interStation\d{1}/)){
+    var stationInt;
+
     if (name === "interStation1"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">1</span>' + newValue;
+      oldStationInt = 1;
+      stationInt = 1;
       globalVar.interStation1 = newValue;
     } else if (name === "interStation2"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">2</span>' + newValue;
+      oldStationInt = 2;
+      stationInt = 2;
       globalVar.interStation2 = newValue;
     } else if (name === "interStation3"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">3</span>' + newValue;
+      oldStationInt = 3;
+      stationInt = 3;
       globalVar.interStation3 = newValue;
     } else if (name === "interStation4"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">4</span>' + newValue;
+      oldStationInt = 4;
+      stationInt = 4;
       globalVar.interStation4 = newValue;
     }
-    globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, newValueInter);
+    if(oldValue.match(/interStation\d{1}/)){
+      globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, '<span style="color: ' + backgroundColor + ';">' + stationInt + '</span>' + newValue);
+    } else {
+      globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace('<span style="color: ' + backgroundColor + ';">' + oldStationInt + '</span>' + oldValue, '<span style="color: ' + backgroundColor + ';">' + stationInt + '</span>' + newValue);
+    }
   } else {
     globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, newValue);
   }
@@ -176,11 +188,11 @@ function updateGlobalVariables(name, oldValue){
     createDropdown(Object.keys(json), 'sentenceOptions');
     globalVar.currentSentence = Object.keys(json)[0];
     
-    createDropdown(waitElementsArray, 'waitOptions');
-    createDropdown(interStationsArray, 'interStationOptions1');
-    createDropdown(interStationsArray, 'interStationOptions2');
-    createDropdown(interStationsArray, 'interStationOptions3');
-    createDropdown(interStationsArray, 'interStationOptions4');
+    createDropdown(waitElementsArray, 'waitTimeOptions');
+    createDropdown(interStationsArray, 'interStation1Options');
+    createDropdown(interStationsArray, 'interStation2Options');
+    createDropdown(interStationsArray, 'interStation3Options');
+    createDropdown(interStationsArray, 'interStation4Options');
     createDropdown(endStationsArray, 'endStationOptions');
 
     document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
@@ -196,9 +208,9 @@ function updateGlobalVariables(name, oldValue){
   }
   // Save initial dropdown menu values temporarily
     trainTemp =  document.getElementById('trainTypeOptions').value;
-    platformTemp =  document.getElementById('platformOptions').value;
+    platformTemp =  document.getElementById('platformNrOptions').value;
     departTemp =  document.getElementById('departTimeInput').value;
-    waitTimeTemp =  document.getElementById('waitOptions').value;
+    waitTimeTemp =  document.getElementById('waitTimeOptions').value;
     endStationTemp =  document.getElementById('endStationOptions').value;
   
   if (globalVar.lang == "Nederlands"){
@@ -324,11 +336,11 @@ function colorKeywords(currentSentence){
   if(currentSentence.includes(globalVar.trainType)){
     currentSentence = currentSentence.replace(globalVar.trainType, '<span style="color: orange;">' + document.getElementById('trainTypeOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.platformNr)){
-    currentSentence = currentSentence.replace(globalVar.platformNr, '<span style="color: orange;">' + document.getElementById('platformOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.platformNr, '<span style="color: orange;">' + document.getElementById('platformNrOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.departTime)){
     currentSentence = currentSentence.replace(globalVar.departTime, '<span style="color: orange;">' + document.getElementById('departTimeInput').value + '</span>');
   } if (currentSentence.includes(globalVar.waitTime)){
-    currentSentence = currentSentence.replace(globalVar.waitTime, '<span style="color: orange;">' + document.getElementById('waitOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.waitTime, '<span style="color: orange;">' + document.getElementById('waitTimeOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.endStation)){
     currentSentence = currentSentence.replace(globalVar.endStation, '<span style="color: orange;">' + document.getElementById('endStationOptions').value + '</span>');
   }
