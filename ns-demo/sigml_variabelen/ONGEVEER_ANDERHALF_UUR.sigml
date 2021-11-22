@@ -1,0 +1,88 @@
+
+  <hamgestural_sign gloss="ONGEVEER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ONve"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm location="shoulders" second_location="chest" second_side="right_at" side="right_at"/>
+      <wristmotion motion="twisting"/>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="EEN_1">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="en"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="HALF">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="hAf"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" thumbpos="across"/>
+        <handconfig handshape="flat" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l" second_extfidir="ul"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand digits="2" location="base" side="dorsal"/>
+        <location_hand location="pinkyside"/>
+        <location_bodyarm contact="close" location="shoulders" second_location="chest"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion curve="u" curve_size="small" direction="di" size="small"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="ul" second_extfidir="uo"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="touch">
+          <location_hand digits="2" location="base" side="dorsal"/>
+          <location_hand digits="5" location="midjoint" side="right_beside"/>
+        </handconstellation>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="UUR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Ur"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="fist" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand location="wristback" side="dorsal"/>
+        <location_hand digits="2" location="tip" />
+      </handconstellation>
+      <wristmotion motion="nodding" speed="0.9"/>
+    </sign_manual>
+  </hamgestural_sign>

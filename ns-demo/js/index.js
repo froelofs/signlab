@@ -12,7 +12,7 @@ var globalVar={
   endStation: "endStation",
   currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
   currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
-  urlName: "json/json_sentences_English.json"
+  urlName: "sentences_English"
 };
 
 var train_n = 1;
@@ -30,8 +30,8 @@ var endStationTemp;
 
 var oldStationInt;
 
-var interStationsArray = ["-", "Zwolle", "Groningen", "Deventer"]
-var endStationsArray = ["Zwolle", "Groningen", "Deventer"]
+var interStationsArray = ["-", "Zwolle", "Maastricht", "Deventer"]
+var endStationsArray = ["Zwolle", "Maastricht", "Deventer"]
 
 trainTypeBox = document.getElementById('trainTypeBox');
 platformBox = document.getElementById('platformBox');
@@ -177,14 +177,14 @@ function updateGlobalVariables(name, oldValue){
   depart_n=1;
   wait_n=1;
   end_n=1;
-  globalVar.urlName = "json/json_sentences_" + globalVar.lang + ".json";
+  globalVar.urlName = "sentences_" + globalVar.lang;
 
   if(changeSent){
     document.getElementById('currSentence').innerHTML = currentSentence;
     resetBoxes(currentSentence);
     colorKeywords(currentSentence);
   } else {
-    $.getJSON(globalVar.urlName, function(json) {
+    $.getJSON("json/" + globalVar.urlName + ".json", function(json) {
     createDropdown(Object.keys(json), 'sentenceOptions');
     globalVar.currentSentence = Object.keys(json)[0];
     
@@ -311,7 +311,6 @@ function resetGlobalVariables(){
  */
 function changeLanguage(language){
   // Update global language
-  console.log('language after change ', language);
   globalVar.lang = language;
   resetGlobalVariables();
   startUp(globalVar.currentSentence, false);

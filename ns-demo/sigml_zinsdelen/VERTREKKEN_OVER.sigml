@@ -1,0 +1,68 @@
+
+  <hamgestural_sign gloss="VERTREKKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="p"/>
+      </mouthing_tier>
+	<facialexpr_tier>
+	<eye_gaze movement="AD" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="l"/>
+        <handconfig extfidir="ilrd" palmor="i" second_extfidir="our" location="chest"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand location="pinkyside"/>
+	<location_hand location="wristback"/>
+      </handconstellation>
+      <tgt_motion>
+        <par_motion>
+	<directedmotion direction="d" size="medium" speed="5"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig handshape="flat"/>
+            <handconfig extfidir="oddl"/>
+	</tgt_motion>
+        </par_motion>
+      </tgt_motion>
+	
+	<tgt_motion>
+	<par_motion>
+		<directedmotion direction="u" size="medium" speed="1"/>
+	<tgt_motion>
+		<changeposture/>
+            	<handconfig handshape="flat"/>
+	        <handconfig extfidir="odl" second_extfidir="uuuodorll" /> />
+	</tgt_motion>
+	</par_motion>
+	</tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="OVER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ov@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+

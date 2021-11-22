@@ -1,0 +1,46 @@
+
+    <hamgestural_sign gloss="SPRINTER">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="ul" palmor="dl" second_extfidir="o" second_palmor="dl"/>
+                <handconfig extfidir="ul" palmor="ur" second_extfidir="or" second_palmor="r"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="shoulders" second_location="chest" second_side="right_at"/>
+                <location_hand contact="touch" digits="2" location="midjoint">
+                    <location_hand digits="2" location="midjoint"/>
+                </location_hand>
+            </split_location>
+            <split_motion>
+                <par_motion>
+                    <directedmotion direction="or"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="fist" thumbpos="out"/>
+                        <handconfig extfidir="o" palmor="l"/>
+                    </tgt_motion>
+                </par_motion>
+                <par_motion>
+                    <directedmotion direction="i"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="fist" thumbpos="out"/>
+                        <handconfig extfidir="u" palmor="r" second_extfidir="uo"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="Spri:tar" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>
