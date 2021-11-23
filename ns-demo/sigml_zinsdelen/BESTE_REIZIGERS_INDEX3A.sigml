@@ -53,7 +53,8 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <head_tier>
-                <head_movement movement="NF"/>
+                <head_movement movement="NF" speed="1.2"/>
+                <head_movement movement="NB" amount="0.2"/>
             </head_tier>
             <facialexpr_tier>
                 <eye_gaze movement="DN"/>

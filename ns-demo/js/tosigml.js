@@ -15,8 +15,24 @@ var json_sent;
 var json_var;
 
 function splitSentence(sentencePart, variable, sentenceArray){
-  
-
+  console.log('sent part split ', sentencePart);
+  var regex_platform = /(\d{1,2})([a-z])/;
+  if(variable.match(regex_platform)){
+    var number = platformVar.replace(regex_platform, '$1');
+    var letter = platformVar.replace(regex_platform, '$2');
+    sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
+    sentenceArray.push(number, letter);
+    return sentenceArray, "";
+  }
+  var regex_departTime = /(\d{1,2})\:(\d{2})/;
+  if(variable.match(regex_departTime)){
+    var hour = departVar.replace(regex_departTime, '$1');
+    var minutes = departVar.replace(regex_departTime, '$2');
+    sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
+    sentenceArray.push(hour, minutes);
+    sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
+    return sentenceArray, sentencePart;
+  }
   // First word has no space before
   if(sentenceArray.length === 0){
     sentenceArray.push(sentencePart.substring(0, sentencePart.indexOf(variable)-1));
@@ -33,7 +49,7 @@ function splitSentence(sentencePart, variable, sentenceArray){
 function getSigmlVariables(entry, variableArray){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS WERKT NIET ivm vervanging vd waardes
-  
+
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
     variableArray.push(trainVar);
@@ -78,7 +94,7 @@ function getSigmlVariables(entry, variableArray){
     platformVar = document.getElementById('platformNrOptions').value;
     platformVar = platformVar.replaceAll(/\'/g, "");
     variableArray.push(platformVar);
-  }
+    }
   return variableArray;
 }
 
@@ -121,12 +137,12 @@ async function getSiGML(sentenceArray){
       if(!el.match(/\d+/) == null){
         console.log('platformNr, time or space');
       } else {
-        console.log('json el sent: ', json_sent[el]);
+        console.log('json sent: ', json_sent[el]);
         let data = await getSiGMLContent(json_sent[el]);
         tempString += data;
       }
     } else if (json_var[el] !== undefined){
-        console.log('json el var: ', json_var[el]);
+        console.log('json var: ', json_var[el]);
         let data = await getSiGMLContent(json_var[el]);
         tempString += data;
     } else {
@@ -158,7 +174,7 @@ function makeReadableAndShow(fullSentence){
     fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
-    fullSentence = fullSentence.replaceAll(/(\d{1})+([Zwolle|Maastricht|Deventer])(\d{1})?/g, " $2");
+    fullSentence = fullSentence.replaceAll(/(\d{1})+(Zwolle|Maastricht|Deventer)(\d{1})?/g, " $2");
     if(fullSentence.match(/to\d*\s*and?/)){ // Remove weird to ... and construction (interstations)
       fullSentence = fullSentence.replace(/to\d*\s*and?/, 'to');
     }

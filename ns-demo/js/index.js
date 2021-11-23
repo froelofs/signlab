@@ -228,8 +228,8 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('interStation3').innerHTML = 'Tussenstation 3 (optioneel): ';
     document.getElementById('interStation4').innerHTML = 'Tussenstation 4 (optioneel): ';
     document.getElementById('selectExplain').innerHTML ='<b> 1. </b> Selecteer de invoertaal ';
-    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Verander huidige keuze ';
-    document.getElementById('currSentenceLabel').innerHTML = '<u>Huidige keuze: </u>';
+    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Selecteer omroepbericht ';
+    document.getElementById('currSentenceLabel').innerHTML = '<u>Huidig omroepbericht: </u>';
     document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen en speel af ';
   }
   else {
@@ -248,7 +248,7 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('interStation3').innerHTML = 'Intermediate station 3 (optional): ';
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4 (optional): ';
     document.getElementById('selectExplain').innerHTML = '<b> 1. </b> Select input language ';
-    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Change sentence ';
+    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Select sentence ';
     document.getElementById('currSentenceLabel').innerHTML = '<u>Current sentence: </u>';
     document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values and play ';
   }

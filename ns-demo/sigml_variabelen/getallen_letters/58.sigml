@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<sigml>
-  <hamgestural_sign gloss="NEGENENVIJFTIG_59">
+
+  <hamgestural_sign gloss="ACHTENVIJFTIG_58">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="nex@@nvE_iftIx"/>
+        <mouth_picture picture="Axt@nvE_iftIx"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="out"/>
+      <handconfig handshape="finger23spread" thumbpos="out"/>
       <handconfig extfidir="ul" second_extfidir="u"/>
       <handconfig palmor="l"/>
       <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
@@ -26,4 +25,3 @@
       </par_motion>
     </sign_manual>
   </hamgestural_sign>
-</sigml>
