@@ -161,7 +161,6 @@ function updateGlobalVariables(name, oldValue){
 
   // Remove space before invisible numbers
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
-
   console.log("completed sentence: " + globalVar.currentSentence); // => gaat naar toSiGML
   document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
   document.getElementById("play").setAttribute("class", "btn btn-primary");

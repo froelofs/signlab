@@ -11,6 +11,8 @@ var inter2Var;
 var inter3Var;
 var inter4Var;
 var endVar;
+var json_sent;
+var json_var;
 
 function splitSentence(sentencePart, variable, sentenceArray){
   
@@ -30,47 +32,49 @@ function splitSentence(sentencePart, variable, sentenceArray){
 
 function getSigmlVariables(entry, variableArray){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
-  if(entry.includes(globalVar.trainType)){
+  // GLOBALVARS WERKT NIET ivm vervanging vd waardes
+  
+  if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
     variableArray.push(trainVar);
   }
-  if(entry.includes(globalVar.interStation1)){
+  if(entry.includes("interStation1") || entry.includes("tussenStation1")){
     inter1Var = document.getElementById('interStation1Options').value;
     if(!inter1Var === "-"){
       variableArray.push(inter1Var);
     }
   }
-  if(entry.includes(globalVar.interStation2)){
+  if(entry.includes("interStation2") || entry.includes("tussenStation2")){
     inter2Var = document.getElementById('interStation2Options').value;
     if(!inter2Var === "-"){
       variableArray.push(inter2Var);
     }
   }
-  if(entry.includes(globalVar.interStation3)){
+  if(entry.includes("interStation3") || entry.includes("tussenStation3")){
     inter3Var = document.getElementById('interStation3Options').value;
     if(!inter3Var === "-"){
       variableArray.push(inter3Var);
     }
   }
-  if(entry.includes(globalVar.interStation4)){
+  if(entry.includes("interStation4") || entry.includes("tussenStation4")){
     inter4Var = document.getElementById('interStation4Options').value;
     if(!inter4Var === "-"){
       variableArray.push(inter4Var);
     }
   }
-  if(entry.includes(globalVar.endStation)){
+  if(entry.includes("endStation") || entry.includes("eindStation")){
     endVar = document.getElementById('endStationOptions').value;
     variableArray.push(endVar);
   }
-  if(entry.includes(globalVar.departTime)){
+  if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput').value;
     variableArray.push(departVar);
   }
-  if(entry.includes(globalVar.waitTime)){
+  if(entry.includes("waitTime") || entry.includes("wachtTijd")){
     waitVar = document.getElementById('waitTimeOptions').value;
     variableArray.push(waitVar);
   }
-  if(entry.includes(globalVar.platformNr)){
+  if(entry.includes("platformNr") || entry.includes("spoorNr")){
     platformVar = document.getElementById('platformNrOptions').value;
     platformVar = platformVar.replaceAll(/\'/g, "");
     variableArray.push(platformVar);
@@ -78,47 +82,93 @@ function getSigmlVariables(entry, variableArray){
   return variableArray;
 }
 
-async function getInnerSiGML(el){
+function callbackVar(data_var){
+  json_var = data_var;
+}
+
+function callbackSent(data_sent){
+  json_sent = data_sent;
+}
+
+$.getJSON("json/variables.json", function(data_var){
+  callbackVar(data_var);
+}).fail(function() {
+  console.log("Could not get SiGML variable JSON file");
+});
+
+$.getJSON("json/split_" + globalVar.urlName + ".json", function(data_sent){
+  callbackSent(data_sent);
+}).fail(function() {
+  console.log("Could not get split SiGML sentence JSON file");
+});
+
+
+async function getSiGMLContent(el){
   let response = await fetch(el);
   let data = await response.text();
   return data;
 }
 
-async function getJSONPhrases(sentenceArray){
+async function getSiGML(sentenceArray){
   var tempString = '<?xml version="1.0" encoding="utf-8"?><sigml>';
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
   const [lastItem] = sentenceArray.slice(-1);
   
-  $.getJSON("json/split_" + globalVar.urlName + ".json", async function(json_sentence) {
-    for(const el of sentenceArray){
-      console.log('el: ', json_sentence[el]);
-      if(typeof json_sentence[el] !== "undefined"){
-        //$.getJSON("json/variables.json", async function(json_variable) {
-          // REMOVE WHEN NUMBERS WORK
-          if(!el.match(/\d+/) == null){
-            console.log('platformNr, time or space');
-          } else {
-            try{
-              let data = await getInnerSiGML(json_sentence[el]);
-              tempString += data;
-              if(el == lastItem){
-                tempString += '</sigml>';
-              }
-            } catch {
-              console.log('no var');
-            }
-          }
-    // Undefined AND last element ends the sequence
-    } else if (el == lastItem){
+  for(const el of sentenceArray){
+    if(json_sent[el] !== undefined){
+      // REMOVE WHEN NUMBERS WORK
+      if(!el.match(/\d+/) == null){
+        console.log('platformNr, time or space');
+      } else {
+        console.log('json el sent: ', json_sent[el]);
+        let data = await getSiGMLContent(json_sent[el]);
+        tempString += data;
+      }
+    } else if (json_var[el] !== undefined){
+        console.log('json el var: ', json_var[el]);
+        let data = await getSiGMLContent(json_var[el]);
+        tempString += data;
+    } else {
+      console.log('both undefined');
+    }
+    if (el == lastItem){
       tempString += '</sigml>';
     }
   }
   //console.log('tempString final: ', tempString);
   playText(tempString);
-}).fail(function() {
-  console.log("Could not get split SiGML sent JSON file");
-});
+}
+
+function checkUndefined(definition, alert="alertMainTran"){
+  if (definition == undefined) {
+    if(globalVar.lang=="Nederlands"){
+      alertMessage("info", "Er is momenteel geen vertaling beschikbaar voor deze zin.", alert);
+    } else {
+      alertMessage("info", "There is currently no translation available for this sentence.", alert);
+    }
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function makeReadableAndShow(fullSentence){
+    fullSentence = fullSentence.replaceAll("-", "");
+    fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
+    fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
+    fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
+    fullSentence = fullSentence.replaceAll(/(\d{1})+([Zwolle|Maastricht|Deventer])(\d{1})?/g, " $2");
+    if(fullSentence.match(/to\d*\s*and?/)){ // Remove weird to ... and construction (interstations)
+      fullSentence = fullSentence.replace(/to\d*\s*and?/, 'to');
+    }
+    if(fullSentence.match(/naar\d\s*en/)){
+      fullSentence = fullSentence.replace(/naar\d\s*en/, 'naar');
+    }
+    document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
+    // Remove interpunction for splitting purposes (later)
+    fullSentence = fullSentence.replaceAll(/\./g, "");
+    return fullSentence;
 }
 
   /**
@@ -126,58 +176,33 @@ async function getJSONPhrases(sentenceArray){
    * @param {*} text 
    * @param {*} alert 
    */
-  function toSiGML(fullSentence, alert="alertMainTran"){
+  function getSentenceArray(fullSentence){
     var variableArray = [];
     var sentenceArray = [];
 
-    // Alleen voor de show
-    fullSentence = fullSentence.replaceAll("-", "");
-    fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
-    fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
-    fullSentence = fullSentence.replaceAll(/(\d{1})([A-Za-z])/g, " $2");
-    // Komma is nodig omdat die overblijven na interstations
-    fullSentence = fullSentence.replaceAll(/[\,\']/g, "");
-    // Remove weird to .... and construction when no intermediate stations are found
-    if(fullSentence.match(/to\s\s+and/)){
-      fullSentence = fullSentence.replace(/to\s\s+and/, 'to');
-    }
-    if(fullSentence.match(/naar\s\s+en/)){
-      fullSentence = fullSentence.replace(/naar\s\s+en/, 'naar');
-    }
-
-    // Show final sentence in bold
-    document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
-    
-    // Remove interpunction + start with the whole sentence (and split later)
-    fullSentence = fullSentence.replaceAll(/\./g, "");
-    var sentencePart = fullSentence;
-    
+    // Initally, sentencePart includes the whole (polished) sentence
+    var sentencePart = makeReadableAndShow(fullSentence);
     console.log("input: " + sentencePart);
-        entry = document.querySelector('button[data-id="sentenceOptions"]').title;
-        console.log('entry ', entry);
-        if (entry == undefined) {
-          if(globalVar.lang=="Nederlands"){
-            alertMessage("info", "Er is momenteel geen vertaling beschikbaar voor deze zin.", alert);
-          } else {
-            alertMessage("info", "There is currently no translation available for this sentence.", alert);
-          }
-        } else {
-          variableArray = getSigmlVariables(entry, variableArray);
-          console.log('var array ', variableArray);
-          // Split sentence around variables in array
-          for(const vars of variableArray){
-            sentenceArray, sentencePart = splitSentence(sentencePart, vars, sentenceArray);
-          }
-          // Push last element
-          if(!sentencePart == ""){
-            sentenceArray.push(sentencePart);
-          }
-          
-          console.log('sentence array final: ', sentenceArray);
 
-          getJSONPhrases(sentenceArray);
-        }
+    entry = document.querySelector('button[data-id="sentenceOptions"]').title;
+    console.log('entry ', entry);
+
+    if(!checkUndefined(entry)){    
+      variableArray = getSigmlVariables(entry, variableArray);
+      console.log('var array ', variableArray);
+      // Split sentence around variables in array
+      for(const vars of variableArray){
+        sentenceArray, sentencePart = splitSentence(sentencePart, vars, sentenceArray);
+      }
+      // Push last element
+      if(!sentencePart == ""){
+        sentenceArray.push(sentencePart);
+      }  
+      console.log('sentence array final: ', sentenceArray);
+      getSiGML(sentenceArray);
     }
+  }
+  
   
 
   

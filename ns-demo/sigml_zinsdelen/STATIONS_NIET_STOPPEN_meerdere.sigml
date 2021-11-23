@@ -56,7 +56,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="STOPPEN_meerdere">
+    <hamgestural_sign gloss="NIET_STOPPEN_meerdere">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
             <handconfig extfidir="oulo"/>

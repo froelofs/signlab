@@ -23,29 +23,29 @@
       </handconstellation>
       <tgt_motion>
         <par_motion>
-	<directedmotion direction="d" size="medium" speed="5"/>
+	        <directedmotion direction="d" size="medium" speed="5"/>
           <tgt_motion>
             <changeposture/>
             <handconfig handshape="flat"/>
             <handconfig extfidir="oddl"/>
-	</tgt_motion>
-        </par_motion>
-      </tgt_motion>
-	
-	<tgt_motion>
-	<par_motion>
-		<directedmotion direction="u" size="medium" speed="1"/>
-	<tgt_motion>
-		<changeposture/>
+	        </tgt_motion>
+            </par_motion>
+          </tgt_motion>
+	        <tgt_motion>
+	          <par_motion>
+		          <directedmotion direction="u" size="medium" speed="1"/>
+	        <tgt_motion>
+		        <changeposture/>
             	<handconfig handshape="flat"/>
-	        <handconfig extfidir="odl" second_extfidir="uuuodorll" /> />
-	</tgt_motion>
-	</par_motion>
-	</tgt_motion>
+	            <handconfig extfidir="odl" second_extfidir="uuuodorll" /> />
+	        </tgt_motion>
+	          </par_motion>
+	        </tgt_motion>
     </sign_manual>
   </hamgestural_sign>
 
-    <hamgestural_sign gloss="SPOOR_PERRON">
+
+    <hamgestural_sign gloss="SPOOR_perron">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
             <handconfig extfidir="oor"/>

@@ -1,3 +1,23 @@
+  <hamgestural_sign gloss="OVER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ov@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
 
   <hamgestural_sign gloss="ONGEVEER">
     <sign_nonmanual>
@@ -27,6 +47,7 @@
       <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
     </sign_manual>
   </hamgestural_sign>
+  
   <hamgestural_sign gloss="MINUTEN">
     <sign_nonmanual>
       <mouthing_tier>
@@ -41,4 +62,3 @@
       <wristmotion motion="swinging" size="small"/>
     </sign_manual>
   </hamgestural_sign>
-

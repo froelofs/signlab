@@ -122,7 +122,7 @@
                     <div class="mb-3 row align-items-start no-gutters">
                       <div id="variablesLabel" style="display: block"></div>
                     </div>
-                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("currSentence").innerText, "alertMainTran");'/>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
                     <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
                     <!-- <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">-->
                     <br>
@@ -138,7 +138,7 @@
                     <div id="platformBox" class="varBox leftSpace">
                      <label id="platform" for="platform" style="display: inline-block"></label>
                      <select class="selectpicker" name="platformNr" id="platformNrOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name);">
-                      <!-- NUMBERS 1-4 INTERFERE WITH INTERMEDIATE STATION NRS-->
+                      <!-- NUMBERS 1-4 INTERFERE WITH INTERMEDIATE STATION NRS vandaar de '' er omheen-->
                         <option value="'5'">'5'</option>
                         <option value="'1a'">'1a'</option>
                         <option value="'1b'">'1b'</option>

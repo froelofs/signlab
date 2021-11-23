@@ -37,3 +37,17 @@
     </sign_manual>
   </hamgestural_sign>
 
+  <hamgestural_sign gloss="LATER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="latY"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shouldertop" second_location="chest" side="right_beside"/>
+      <directedmotion curve="u" direction="o" fast="true"/>
+    </sign_manual>
+  </hamgestural_sign>
