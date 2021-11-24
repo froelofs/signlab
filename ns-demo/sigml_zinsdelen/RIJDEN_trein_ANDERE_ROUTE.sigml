@@ -58,7 +58,7 @@
         <tgt_motion>
           <changeposture/>
             <handconfig extfidir="ooul" palmor="d"/>
-            <location_bodyarm contact="close" location="head"/>
+            <location_bodyarm contact="close" location="head" side="right_at"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>
