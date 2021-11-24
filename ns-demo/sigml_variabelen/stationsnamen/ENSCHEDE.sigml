@@ -1,0 +1,48 @@
+<hamgestural_sign gloss="ENSCHEDE">
+        <sign_manual both_hands="true">
+            <split_handconfig>
+                <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
+                <handconfig handshape="flat"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="o" palmor="d" second_extfidir="do"/>
+                <handconfig extfidir="r" palmor="d" second_extfidir="dr"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="shoulders"/>
+                <location_bodyarm location="chest" side="right_at"/>
+            </split_location>
+            <rpt_motion repetition="fromstart_several">
+                <split_motion>
+                    <par_motion>
+                        <directedmotion direction="di" size="small"/>
+                        <directedmotion direction="i"/>
+                        <tgt_motion>
+                            <changeposture/>
+                            <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
+                            <handconfig extfidir="o"/>
+                        </tgt_motion>
+                    </par_motion>
+                    <nomotion/>
+                </split_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="E:SE:de" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UB"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="NF"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

@@ -11,7 +11,8 @@ var inter2Var;
 var inter3Var;
 var inter4Var;
 var endVar;
-var json_sent;
+var json_sent_NL;
+var json_sent_EN;
 var json_var;
 
 function splitSentence(sentencePart, variable, sentenceArray){
@@ -103,8 +104,12 @@ function callbackVar(data_var){
   json_var = data_var;
 }
 
-function callbackSent(data_sent){
-  json_sent = data_sent;
+function callbackSent_NL(data_sent){
+  json_sent_NL = data_sent;
+}
+
+function callbackSent_EN(data_sent){
+  json_sent_EN = data_sent;
 }
 
 $.getJSON("json/variables.json", function(data_var){
@@ -113,10 +118,16 @@ $.getJSON("json/variables.json", function(data_var){
   console.log("Could not get SiGML variable JSON file");
 });
 
-$.getJSON("json/split_" + globalVar.urlName + ".json", function(data_sent){
-  callbackSent(data_sent);
+$.getJSON("json/split_sentences_Nederlands.json", function(data_sent_NL){
+  callbackSent_NL(data_sent_NL);
 }).fail(function() {
-  console.log("Could not get split SiGML sentence JSON file");
+  console.log("Could not get split SiGML sentence NL JSON file");
+});
+
+$.getJSON("json/split_sentences_English.json", function(data_sent_EN){
+  callbackSent_EN(data_sent_EN);
+}).fail(function() {
+  console.log("Could not get split SiGML sentence EN JSON file");
 });
 
 
@@ -127,19 +138,21 @@ async function getSiGMLContent(el){
 }
 
 async function getSiGML(sentenceArray){
+  console.log('gloalval urlname ', globalVar.urlName);
   var tempString = '<?xml version="1.0" encoding="utf-8"?><sigml>';
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
   const [lastItem] = sentenceArray.slice(-1);
   
   for(const el of sentenceArray){
-    if(json_sent[el] !== undefined){
-      // REMOVE WHEN NUMBERS WORK
-      if(!el.match(/\d+/) == null){
-        console.log('platformNr, time or space');
+    if(json_sent_NL[el] !== undefined || json_sent_EN[el] !== undefined){
+      if(globalVar.lang === "Nederlands"){
+        console.log('json sent NL: ', json_sent_NL[el]);
+        let data = await getSiGMLContent(json_sent_NL[el]);
+        tempString += data;
       } else {
-        console.log('json sent: ', json_sent[el]);
-        let data = await getSiGMLContent(json_sent[el]);
+        console.log('json sent EN: ', json_sent_EN[el]);
+        let data = await getSiGMLContent(json_sent_EN[el]);
         tempString += data;
       }
     } else if (json_var[el] !== undefined){
@@ -179,8 +192,8 @@ function makeReadableAndShow(fullSentence){
     if(fullSentence.match(/to\d*\s*and?/)){ // Remove weird to ... and construction (interstations)
       fullSentence = fullSentence.replace(/to\d*\s*and?/, 'to');
     }
-    if(fullSentence.match(/naar\d\s*en/)){
-      fullSentence = fullSentence.replace(/naar\d\s*en/, 'naar');
+    if(fullSentence.match(/naar\d*\s*en/)){
+      fullSentence = fullSentence.replace(/naar\d*\s*en/, 'naar');
     }
     document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
     // Remove interpunction for splitting purposes (later)

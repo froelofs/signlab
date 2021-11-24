@@ -5,11 +5,11 @@
             <handconfig extfidir="o" second_extfidir="uo"/>
             <handconfig palmor="l"/>
             <location_bodyarm location="chest" second_location="chest" side="right_at"/>
-            <directedmotion direction="o" ellipse_direction="h" slow="false" zigzag_size="small" zigzag_style="wavy"/>
+            <directedmotion direction="o" ellipse_direction="h" speed="0.8" zigzag_size="small" zigzag_style="wavy"/>
         </sign_manual>
         <sign_nonmanual>
             <mouthing_tier>
-                <mouth_gesture movement="C01"/>
+                <mouth_gesture movement="C01" speed="0.7"/>
             </mouthing_tier>
             <body_tier>
                 <body_movement movement="ST"/>

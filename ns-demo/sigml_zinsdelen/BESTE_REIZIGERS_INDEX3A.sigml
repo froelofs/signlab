@@ -69,26 +69,26 @@
             <handconfig ceeopening="slack" handshape="cee12open" second_handshape="finger2" second_thumbpos="opposed"/>
             <handconfig extfidir="or"/>
             <handconfig palmor="l"/>
-            <location_bodyarm location="head" side="right_beside"/>
+            <location_bodyarm location="head" side="right_at"/>
         	<tgt_motion>
                 	<directedmotion direction="u" size="small" slow="false"/>
-	                <location_bodyarm location="chest" side="right_beside"/>
+	                <location_bodyarm location="chest" side="right_at"/>
 	       	</tgt_motion>
 		<tgt_motion>
 			<directedmotion direction="u" size="small" slow="false"/>
-			<location_bodyarm location="shouldertop" side="right_beside"/>
+			<location_bodyarm location="shouldertop" side="right_at"/>
 		</tgt_motion>
 		<tgt_motion>
 			<directedmotion direction="u" size="small" slow="false"/>
-			<location_bodyarm location="chest" side="right_beside"/>
+			<location_bodyarm location="chest" side="right_at"/>
                 </tgt_motion>
 		<tgt_motion>
 			<directedmotion direction="u" size="small" slow="false"/>
-			<location_bodyarm location="shoulders" side="right_beside"/>
+			<location_bodyarm location="shoulders" side="right_at"/>
 		</tgt_motion>
 		<tgt_motion>
 			<directedmotion direction="u" size="small" slow="false"/>
-			<location_bodyarm location="chest" side="right_beside"/>
+			<location_bodyarm location="chest" side="right_at"/>
                 </tgt_motion>
         </sign_manual>
         <sign_nonmanual>

@@ -31,7 +31,7 @@ var endStationTemp;
 var oldStationInt;
 
 var interStationsArray = ["-", "Zwolle", "Maastricht", "Deventer"]
-var endStationsArray = ["Zwolle", "Maastricht", "Deventer"]
+var endStationsArray = ["Almelo", "Nijmegen", "Enschede"]
 
 trainTypeBox = document.getElementById('trainTypeBox');
 platformBox = document.getElementById('platformBox');
@@ -106,6 +106,14 @@ function updateGlobalVariables(name, oldValue){
   // Update global var in 1st iteration (because of the auto-fill)
   oldValue = updateGlobalVariables(name, oldValue);
 
+  console.log('oldval: ', oldValue);
+  console.log('newval: ', newValue);
+  console.log('name: ', name);
+  console.log('global inter 1: ', globalVar.interStation1);
+  console.log('global inter 2: ', globalVar.interStation2);
+  console.log('global inter 3: ', globalVar.interStation3);
+  console.log('global inter 4: ', globalVar.interStation4);
+
   globalVar.currentSentence = currentSentence.replace(oldValue, newValue);
 
   boxBackground = document.getElementById('currSentenceBox');
@@ -119,6 +127,7 @@ function updateGlobalVariables(name, oldValue){
   }
   // Add invisible numbers to the intermediate station names such that their position is recognized
   else if(name.match(/interStation\d{1}/)){
+    console.log('match inter');
     var stationInt;
 
     if (name === "interStation1"){
@@ -138,7 +147,7 @@ function updateGlobalVariables(name, oldValue){
       stationInt = 4;
       globalVar.interStation4 = newValue;
     }
-    if(oldValue.match(/interStation\d{1}/)){
+    if(oldValue.match(/interStation\d{1}/) || oldValue.match(/tussenStation\d{1}/)){
       globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, '<span style="color: ' + backgroundColor + ';">' + stationInt + '</span>' + newValue);
     } else {
       globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace('<span style="color: ' + backgroundColor + ';">' + oldStationInt + '</span>' + oldValue, '<span style="color: ' + backgroundColor + ';">' + stationInt + '</span>' + newValue);
@@ -223,7 +232,7 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('interStation4').innerHTML = 'Tussenstation 4 (optioneel): ';
     document.getElementById('selectExplain').innerHTML ='<b> 1. </b> Selecteer de invoertaal ';
     document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Selecteer omroepbericht ';
-    document.getElementById('currSentenceLabel').innerHTML = '<b>Huidig omroepbericht: </b>';
+    document.getElementById('currSentenceLabel').innerHTML = '<b><u>Huidig omroepbericht: </u></b>';
     document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen ';
   }
   else {
@@ -243,7 +252,7 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4 (optional): ';
     document.getElementById('selectExplain').innerHTML = '<b> 1. </b> Select input language ';
     document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Select sentence ';
-    document.getElementById('currSentenceLabel').innerHTML = '<b>Current sentence: </b>';
+    document.getElementById('currSentenceLabel').innerHTML = '<b><u>Current sentence: </u></b>';
     document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values ';
   }
     
