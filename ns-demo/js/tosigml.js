@@ -15,7 +15,6 @@ var json_sent;
 var json_var;
 
 function splitSentence(sentencePart, variable, sentenceArray){
-  console.log('sent part split ', sentencePart);
   var regex_platform = /(\d{1,2})([a-z])/;
   if(variable.match(regex_platform)){
     var number = platformVar.replace(regex_platform, '$1');
@@ -29,7 +28,7 @@ function splitSentence(sentencePart, variable, sentenceArray){
     var hour = departVar.replace(regex_departTime, '$1');
     var minutes = departVar.replace(regex_departTime, '$2');
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
-    sentenceArray.push(hour, minutes);
+    sentenceArray.push(hour, ":", minutes);
     sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
     return sentenceArray, sentencePart;
   }
@@ -49,32 +48,34 @@ function splitSentence(sentencePart, variable, sentenceArray){
 function getSigmlVariables(entry, variableArray){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS WERKT NIET ivm vervanging vd waardes
+  console.log('entry: ', entry);
+  console.log('array: ', variableArray);
 
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
     variableArray.push(trainVar);
   }
-  if(entry.includes("interStation1") || entry.includes("tussenStation1")){
+  if(entry.includes("interStation1,") || entry.includes("tussenStation1")){
     inter1Var = document.getElementById('interStation1Options').value;
-    if(!inter1Var === "-"){
+    if(inter1Var !== "-"){
       variableArray.push(inter1Var);
     }
   }
   if(entry.includes("interStation2") || entry.includes("tussenStation2")){
     inter2Var = document.getElementById('interStation2Options').value;
-    if(!inter2Var === "-"){
+    if(inter2Var !== "-"){
       variableArray.push(inter2Var);
     }
   }
   if(entry.includes("interStation3") || entry.includes("tussenStation3")){
     inter3Var = document.getElementById('interStation3Options').value;
-    if(!inter3Var === "-"){
+    if(inter3Var !== "-"){
       variableArray.push(inter3Var);
     }
   }
   if(entry.includes("interStation4") || entry.includes("tussenStation4")){
     inter4Var = document.getElementById('interStation4Options').value;
-    if(!inter4Var === "-"){
+    if(inter4Var !== "-"){
       variableArray.push(inter4Var);
     }
   }
@@ -174,7 +175,7 @@ function makeReadableAndShow(fullSentence){
     fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
-    fullSentence = fullSentence.replaceAll(/(\d{1})+(Zwolle|Maastricht|Deventer)(\d{1})?/g, " $2");
+    fullSentence = fullSentence.replaceAll(/(\d{1})+(Zwolle|Maastricht|Deventer)(\d{1})?/g, " $2 ");
     if(fullSentence.match(/to\d*\s*and?/)){ // Remove weird to ... and construction (interstations)
       fullSentence = fullSentence.replace(/to\d*\s*and?/, 'to');
     }

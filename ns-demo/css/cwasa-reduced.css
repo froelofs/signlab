@@ -223,33 +223,28 @@ body.busy::before {
 
 .varBox{
   display: none;
+  position: relative;
+  width: 97%;
+  height: 4%;
+  left: 3%;
+  text-align: left;
 }
 
-#yellow{
-  color: yellow;
-}
-
-#currSentence{
+.currSentenceBox{
+  background-color: #e4edf8;
   border-width: 0.5em;
   border-radius: 0.5em;
   padding: 1em;
   font-style: italic;
   display: block;
-  text-align: left;
-}
-
-#currSentenceBox{
-  background-color: #e4edf8;
 }
 
 [data-id="sentenceOptions"]{
   background: #A3B8D2;
 }
 
-.leftSpace{
-  position: relative;
-  width: 97%;
-  left: 3%;
+select.form-control{
+  display: inline-block
 }
 
 .no-top-padding{

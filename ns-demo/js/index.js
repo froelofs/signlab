@@ -103,13 +103,8 @@ function updateGlobalVariables(name, oldValue){
  */
  function replaceText(currentSentence, newValue, oldValue, name){
   // Krijgt globale vars mee vanuit index.html
-  console.log('oldValue voor ', oldValue);
   // Update global var in 1st iteration (because of the auto-fill)
   oldValue = updateGlobalVariables(name, oldValue);
-
-  console.log('oldValue: ', oldValue);
-  console.log('newValue: ', newValue);
-  
 
   globalVar.currentSentence = currentSentence.replace(oldValue, newValue);
 
@@ -161,7 +156,6 @@ function updateGlobalVariables(name, oldValue){
 
   // Remove space before invisible numbers
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
-  console.log("completed sentence: " + globalVar.currentSentence); // => gaat naar toSiGML
   document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
@@ -229,8 +223,8 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('interStation4').innerHTML = 'Tussenstation 4 (optioneel): ';
     document.getElementById('selectExplain').innerHTML ='<b> 1. </b> Selecteer de invoertaal ';
     document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Selecteer omroepbericht ';
-    document.getElementById('currSentenceLabel').innerHTML = '<u>Huidig omroepbericht: </u>';
-    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen en speel af ';
+    document.getElementById('currSentenceLabel').innerHTML = '<b>Huidig omroepbericht: </b>';
+    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen ';
   }
   else {
     console.log('lang', globalVar.lang)
@@ -249,8 +243,8 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4 (optional): ';
     document.getElementById('selectExplain').innerHTML = '<b> 1. </b> Select input language ';
     document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Select sentence ';
-    document.getElementById('currSentenceLabel').innerHTML = '<u>Current sentence: </u>';
-    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values and play ';
+    document.getElementById('currSentenceLabel').innerHTML = '<b>Current sentence: </b>';
+    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values ';
   }
     
     

@@ -15,6 +15,16 @@
     "approximately 1.5 hours": "sigml_variabelen/wachttijden/OVER_ONGEVEER_1_UUR_30_MINUTEN.sigml",
     "an unknown timeframe": "sigml_variabelen/wachttijden/EEN_NOG_ONBEKENDE_TIJD.sigml",
     "0": "sigml_variabelen/getallen_letters/0.sigml",
+    "00": "sigml_variabelen/getallen_letters/00.sigml",
+    "01": "sigml_variabelen/getallen_letters/01.sigml",
+    "02": "sigml_variabelen/getallen_letters/02.sigml",
+    "03": "sigml_variabelen/getallen_letters/03.sigml",
+    "04": "sigml_variabelen/getallen_letters/04.sigml",
+    "05": "sigml_variabelen/getallen_letters/05.sigml",
+    "06": "sigml_variabelen/getallen_letters/06.sigml",
+    "07": "sigml_variabelen/getallen_letters/07.sigml",
+    "08": "sigml_variabelen/getallen_letters/08.sigml",
+    "09": "sigml_variabelen/getallen_letters/09.sigml",
     "1": "sigml_variabelen/getallen_letters/1.sigml",
     "2": "sigml_variabelen/getallen_letters/2.sigml",
     "3": "sigml_variabelen/getallen_letters/3.sigml",
@@ -74,8 +84,8 @@
     "57": "sigml_variabelen/getallen_letters/57.sigml",
     "58": "sigml_variabelen/getallen_letters/58.sigml",
     "59": "sigml_variabelen/getallen_letters/59.sigml",
-    "00": "sigml_variabelen/getallen_letters/00.sigml",
     "a": "sigml_variabelen/getallen_letters/A.sigml",
     "b": "sigml_variabelen/getallen_letters/B.sigml",
-    "C": "sigml_variabelen/getallen_letters/C.sigml"
+    "C": "sigml_variabelen/getallen_letters/C.sigml",
+    ":": "sigml_variabelen/getallen_letters/PUNT.sigml"
 }

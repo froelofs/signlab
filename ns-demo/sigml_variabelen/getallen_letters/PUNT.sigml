@@ -1,0 +1,15 @@
+  <hamgestural_sign gloss="PUNT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L17"/>
+        <mouth_gesture movement="T04"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shouldertop" side="right_at"/>
+      <directedmotion direction="o" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
