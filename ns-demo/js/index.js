@@ -108,11 +108,6 @@ function updateGlobalVariables(name, oldValue){
 
   console.log('oldval: ', oldValue);
   console.log('newval: ', newValue);
-  console.log('name: ', name);
-  console.log('global inter 1: ', globalVar.interStation1);
-  console.log('global inter 2: ', globalVar.interStation2);
-  console.log('global inter 3: ', globalVar.interStation3);
-  console.log('global inter 4: ', globalVar.interStation4);
 
   globalVar.currentSentence = currentSentence.replace(oldValue, newValue);
 
@@ -127,7 +122,6 @@ function updateGlobalVariables(name, oldValue){
   }
   // Add invisible numbers to the intermediate station names such that their position is recognized
   else if(name.match(/interStation\d{1}/)){
-    console.log('match inter');
     var stationInt;
 
     if (name === "interStation1"){

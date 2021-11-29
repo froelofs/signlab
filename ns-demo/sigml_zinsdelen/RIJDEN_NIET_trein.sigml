@@ -21,3 +21,37 @@
             <facialexpr_tier/>
         </sign_nonmanual>
     </hamgestural_sign>
+
+    <hamgestural_sign gloss="NIET">
+    <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_gesture movement="L31" speed="1.2"/>
+            </mouthing_tier>
+            <head_tier>
+                <head_movement movement="SH" speed="1.4"/>
+            </head_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true">
+        <split_handconfig>
+            <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+            <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+        </split_handconfig>
+        <split_handconfig>
+            <handconfig extfidir="u" second_extfidir="ulll"/>
+            <handconfig extfidir="u" second_extfidir="urrr"/>
+        </split_handconfig>
+        <split_handconfig>
+            <handconfig palmor="r"/>
+            <handconfig palmor="l"/>
+        </split_handconfig>
+        <location_bodyarm contact="close" location="chest" side="right_at"/>
+        <tgt_motion>
+          <changeposture/>
+            <split_handconfig>
+                <handconfig extfidir="u" palmor="l" second_extfidir="ur"/>
+                <handconfig extfidir="u" palmor="r" second_extfidir="ul"/>
+            </split_handconfig>
+        </tgt_motion>
+    </sign_manual>
+    </hamgestural_sign>
+

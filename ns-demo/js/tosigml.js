@@ -183,12 +183,27 @@ function checkUndefined(definition, alert="alertMainTran"){
   }
 }
 
+function getInterStationsArray(){
+    regex_string = "(";
+    const [lastItem] = interStationsArray.slice(-1);
+    for (const el of interStationsArray){
+      if(el !== "-"){
+        regex_string = regex_string + el;
+        if(el !== lastItem){
+          regex_string = regex_string + "\|";
+        }
+      }
+    }
+    regex_string = regex_string + ")";
+    return regex_string;
+}
+
 function makeReadableAndShow(fullSentence){
     fullSentence = fullSentence.replaceAll("-", "");
     fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
-    fullSentence = fullSentence.replaceAll(/(\d{1})+(Zwolle|Maastricht|Deventer)(\d{1})?/g, " $2 ");
+    fullSentence = fullSentence.replaceAll(new RegExp("(\\d{1})+" + getInterStationsArray() +"(\\d{1})?", "g"), " $2 ");
     if(fullSentence.match(/to\d*\s*and?/)){ // Remove weird to ... and construction (interstations)
       fullSentence = fullSentence.replace(/to\d*\s*and?/, 'to');
     }
