@@ -61,7 +61,7 @@
 <!-- Translate -->
 
 <section class="projects-section bg-light fadeIn" id="Translator">
-  <div id="avatarTranslator" class="container-fluid" style="width: 100%;">
+  <div class="container-fluid" id="avatarTranslator" style="width: 100%;">
     <!-- Challenge Row-->
     <div class="row align-items-start no-gutters mb-4 mb-lg-5">
       <!-- Column for info -->
@@ -69,12 +69,10 @@
                 <!-- CWA signing avatar panel 0 -->
                 <!--================================================================-->
                 <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-                <span id="avatar" class="CWASAAvatar av0" style="margin-top: 20px;"></span>
-                <div class="project-text pb-1 w-100 my-auto no-top-padding small text-center text-black-50">
-                    <p class="mb-4">
-                      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>.
-                    </p>
-                </div>
+                
+                <span class="CWASAAvatar av0" id="avatar"></span>
+                    <input class="av0 txtGloss subtitles mb-4" id="outputGloss" value="" type="text" readonly="readonly"></input>
+                    <br>
                     <input type="button" class="btn btn-primary" id="play" value="Play" onclick='getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
                     <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
                     <!-- <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">-->
@@ -82,10 +80,10 @@
                     <br>
                     <label id="speedLabel" for="speedAdj" style="display: inline-block;"></label>
                     <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
-                    <br>
-                    <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px"></label>
-                    <input id="outputGloss" class="txtGloss av0" value="none" type="text">
-                    <br>
+                    <!-- <br>
+                    <label id="glossLabel" for="outputGloss" style="display: inline-block; margin-right: 7px"></label>
+                    <input id="outputGloss" class="txtGloss av0" value="-" type="text">
+                    <br> -->
                 <!--================================================================-->
       </div>
 
@@ -209,27 +207,6 @@
                   </div>
                 </div>
 
-              <!-- NOTE: display: none. If you comment it out completely the avatar doesn't work anymore -->
-              <div style="text-align: center; display: none;">
-                    <span style="font-size: 90%;" >
-                      Sign/Frame:
-                      <input id="mySF" class="txtSF" value="0/0" type="text" />
-                      &nbsp;
-                      Gloss:
-                      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
-                      &nbsp;
-                      FPS:
-                      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
-                    </span>
-              </div>
-              <div style="text-align: center; display: none;" >
-                  <!-- NOTE: display: none. If you comment it out completely the avatar doesn't work anymore -->
-                  <textarea id="myStatusLog"  class="statusLog" rows="6">
-                  </textarea>
-              </div>
-              <br>
-
-
               <!-- SToCA applet element panel -->
               <!--================================================================-->
               <div class="SToCA" tyle="text-align: center;"></div>
@@ -246,6 +223,9 @@
 <!-- Footer-->
 <footer class="footer bg-white small text-center text-black-50">
   <div style="line-height:150%;">
+    <div class="project-text pb-1 w-100 my-auto no-top-padding text-center text-black-50" style="font-size: medium;">
+      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>
+    </div>
     <br>&copy;2020 SignLab Amsterdam
     <br>
     <i class="bi bi-envelope"></i>: signlab.amsterdam@gmail.com
@@ -254,8 +234,6 @@
 
 
 </div>
-
-
 
 <!-- Javascripts -->
 

@@ -218,7 +218,6 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('time').innerHTML = 'Vertrektijd: ';
     document.getElementById('waitTime').innerHTML = 'Wachttijd: ';
     document.getElementById('speedLabel').innerHTML = 'Snelheid: ';
-    document.getElementById('glossLabel').innerHTML = 'Huidig gebaar: ';
     document.getElementById('endStation').innerHTML = 'Eindstation: ';
     document.getElementById('interStation1').innerHTML = 'Tussenstation 1 (optioneel): ';
     document.getElementById('interStation2').innerHTML = 'Tussenstation 2 (optioneel): ';
@@ -238,7 +237,6 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('time').innerHTML = 'Departure time: ';
     document.getElementById('waitTime').innerHTML = 'Waiting time: ';
     document.getElementById('speedLabel').innerHTML = 'Speed: ';
-    document.getElementById('glossLabel').innerHTML = 'Current sign: ';
     document.getElementById('endStation').innerHTML = 'End station: ';
     document.getElementById('interStation1').innerHTML = 'Intermediate station 1 (optional): ';
     document.getElementById('interStation2').innerHTML = 'Intermediate station 2 (optional): ';

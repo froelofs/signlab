@@ -1,5 +1,5 @@
 
-    <hamgestural_sign gloss="STATION1">
+    <hamgestural_sign gloss="STATIONS1">
         <sign_manual>
             <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_mainbend="hooked" thumbpos="out"/>
             <handconfig extfidir="u" second_extfidir="ul"/>
@@ -29,7 +29,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="STATION_meerdere">
+    <hamgestural_sign gloss="STATIONS2">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
             <handconfig extfidir="l"/>
@@ -56,7 +56,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="NIET_STOPPEN_meerdere">
+    <hamgestural_sign gloss="STOPPEN NIET">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
             <handconfig extfidir="oulo"/>

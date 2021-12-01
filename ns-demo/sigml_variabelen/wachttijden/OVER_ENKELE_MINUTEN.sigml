@@ -19,7 +19,7 @@
     </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="EEN_PAAR">
+  <hamgestural_sign gloss="EEN PAAR">
     <sign_nonmanual>
       <mouthing_tier>
 	<mouth_gesture movement="C01" speed="1.7"/>

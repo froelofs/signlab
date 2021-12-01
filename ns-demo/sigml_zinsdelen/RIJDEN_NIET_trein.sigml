@@ -1,6 +1,6 @@
 
     
-    <hamgestural_sign gloss="RIJDEN_NIET_trein">
+    <hamgestural_sign gloss="RIJDEN NIET">
         <sign_manual both_hands="true">
             <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
             <handconfig extfidir="o" second_extfidir="uo"/>

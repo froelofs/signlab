@@ -45,7 +45,7 @@
   </hamgestural_sign>
 
 
-    <hamgestural_sign gloss="SPOOR_perron">
+    <hamgestural_sign gloss="SPOOR">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
             <handconfig extfidir="oor"/>
