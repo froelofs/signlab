@@ -1,5 +1,4 @@
-
-    <hamgestural_sign gloss="SPRINTER">
+   <hamgestural_sign gloss="SPRINTER">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig handshape="fist" thumbpos="out"/>
             <split_handconfig>
@@ -14,7 +13,7 @@
             </split_location>
             <split_motion>
                 <par_motion>
-                    <directedmotion direction="or"/>
+                    <directedmotion direction="o" fast="true"/>
                     <tgt_motion>
                         <changeposture/>
                         <handconfig handshape="fist" thumbpos="out"/>
@@ -22,7 +21,7 @@
                     </tgt_motion>
                 </par_motion>
                 <par_motion>
-                    <directedmotion direction="i"/>
+                    <directedmotion direction="i" fast="true"/>
                     <tgt_motion>
                         <changeposture/>
                         <handconfig handshape="fist" thumbpos="out"/>
@@ -31,12 +30,14 @@
                 </par_motion>
             </split_motion>
         </sign_manual>
+
         <sign_nonmanual>
             <mouthing_tier>
-                <mouth_picture picture="Spri:tar" speed="1.2"/>
+                <mouth_gesture movement="L15" speed="0.8"/>
+                <mouth_picture picture="sptAA" speed="1.9"/>
             </mouthing_tier>
             <body_tier>
-                <body_movement movement="TB"/>
+                <body_movement movement="TB" amount="0.5"/>
             </body_tier>
             <head_tier>
                 <head_movement movement="ND"/>

@@ -57,7 +57,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="REIZIGERS2">
+    <hamgestural_sign gloss="REIZIGERS2" timescale="0.7" duration="1">
         <sign_manual>
             <handconfig ceeopening="slack" handshape="cee12open" second_handshape="finger2" second_thumbpos="opposed"/>
             <handconfig extfidir="oou"/>
@@ -89,6 +89,10 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
+    <hamgestural_sign gloss="">
+        <sign_manual>
+        </sign_manual>
+    </hamgestural_sign>
     <hamgestural_sign gloss="">
         <sign_manual>
         </sign_manual>

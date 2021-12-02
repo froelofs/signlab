@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="TWAALF_12">
+  <hamgestural_sign gloss="TWAALF_12" timescale="0.9" duration="0.7">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="wa:lf"/>

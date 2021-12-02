@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="VIJFTIEN_15">
+  <hamgestural_sign gloss="VIJFTIEN_15" timescale="0.9" duration="1.3">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vE_iftin"/>

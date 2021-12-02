@@ -1,7 +1,7 @@
   <hamgestural_sign gloss="DRIEENDERTIG_33">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="dRi@ndERt@x"/>
+        <mouth_picture picture="dRi@ndERt@x" speed="2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

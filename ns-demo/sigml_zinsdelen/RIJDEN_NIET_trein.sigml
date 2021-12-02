@@ -22,7 +22,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="NIET">
+    <hamgestural_sign gloss="RIJDEN NIET">
     <sign_nonmanual>
             <mouthing_tier>
                 <mouth_gesture movement="L31" speed="1.2"/>

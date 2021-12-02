@@ -1,7 +1,7 @@
   <hamgestural_sign gloss="ZEVENENDERTIG_37">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="zev@@ndERtIx"/>
+        <mouth_picture picture="zev@@ndERtIx" speed="2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

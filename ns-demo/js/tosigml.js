@@ -29,7 +29,7 @@ function splitSentence(sentencePart, variable, sentenceArray){
     var hour = departVar.replace(regex_departTime, '$1');
     var minutes = departVar.replace(regex_departTime, '$2');
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
-    sentenceArray.push(hour, ":", minutes);
+    sentenceArray.push("tijd", hour, ":", minutes);
     sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
     return sentenceArray, sentencePart;
   }
@@ -138,7 +138,7 @@ async function getSiGMLContent(el){
 }
 
 async function getSiGML(sentenceArray){
-  console.log('gloalval urlname ', globalVar.urlName);
+  var tijdArray = [];
   var tempString = '<?xml version="1.0" encoding="utf-8"?><sigml>';
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
@@ -155,12 +155,24 @@ async function getSiGML(sentenceArray){
         let data = await getSiGMLContent(json_sent_EN[el]);
         tempString += data;
       }
-    } else if (json_var[el] !== undefined){
+    } else if (json_var[el] !== undefined && !tijdArray.includes(el)){
         console.log('json var: ', json_var[el]);
         let data = await getSiGMLContent(json_var[el]);
         tempString += data;
+    } else if(el == "tijd"){
+      el_index = sentenceArray.indexOf(el);
+      tijdArray = [sentenceArray[el_index+1], sentenceArray[el_index+2], sentenceArray[el_index+3]];
+      let tijd = sentenceArray[el_index+1] + sentenceArray[el_index+2] + sentenceArray[el_index+3];
+      for(i=1; i<=3; i++){
+        let data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
+        var regex_sigml = /\<hamgestural\_sign\sgloss\=\"(\w*)\"/;
+        if(data.match(regex_sigml)){
+          data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '"');
+        }
+        tempString += data;
+      }
     } else {
-      console.log('both undefined');
+      console.log('Both undefined or element skipped: ', el);
     }
     if (el == lastItem){
       tempString += '</sigml>';

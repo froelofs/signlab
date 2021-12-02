@@ -1,7 +1,7 @@
   <hamgestural_sign gloss="DERTIG_30">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="dERtIx"/>
+        <mouth_picture picture="dERtIx" speed="1.2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

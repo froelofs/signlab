@@ -1,7 +1,7 @@
   <hamgestural_sign gloss="NEGENENTWINTIG_29">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="nex@@ntvInt@x"/>
+        <mouth_picture picture="nex@@ntvInt@x" speed="2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

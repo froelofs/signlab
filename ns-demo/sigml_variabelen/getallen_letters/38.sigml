@@ -1,7 +1,7 @@
   <hamgestural_sign gloss="ACHTENDERTIG_38">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="Axt@ndERtIx"/>
+        <mouth_picture picture="Axt@ndERtIx" speed="2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

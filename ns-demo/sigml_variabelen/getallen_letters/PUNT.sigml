@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="PUNT">
+  <hamgestural_sign gloss="PUNT" timescale="0.9" duration="0.8">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="L17"/>

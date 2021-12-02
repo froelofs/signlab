@@ -2,7 +2,7 @@
   <hamgestural_sign gloss="NEGENENVIJFTIG_59">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="nex@@nvE_iftIx"/>
+        <mouth_picture picture="nex@@nvE_iftIx" speed="2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>

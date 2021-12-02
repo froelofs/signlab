@@ -1,5 +1,5 @@
 
-  <hamgestural_sign gloss="ELF_11">
+  <hamgestural_sign gloss="ELF_11" timescale="0.9" duration="0.7">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="@lf"/>
