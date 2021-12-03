@@ -160,6 +160,7 @@ async function getSiGML(sentenceArray){
         let data = await getSiGMLContent(json_var[el]);
         tempString += data;
     } else if(el == "tijd"){
+      // Change gloss into hh:mm format
       el_index = sentenceArray.indexOf(el);
       tijdArray = [sentenceArray[el_index+1], sentenceArray[el_index+2], sentenceArray[el_index+3]];
       let tijd = sentenceArray[el_index+1] + sentenceArray[el_index+2] + sentenceArray[el_index+3];
@@ -175,6 +176,7 @@ async function getSiGML(sentenceArray){
       console.log('Both undefined or element skipped: ', el);
     }
     if (el == lastItem){
+      tempString += '<hamgestural_sign gloss=""><sign_manual both_hands="true" lr_symm="true"><handconfig handshape="fist" thumbpos="across" /><handconfig extfidir="dl" /><handconfig palmor="l" /><location_bodyarm contact="touch" location="belowstomach" side="right_beside"><location_hand digits="1" /></location_bodyarm></sign_manual><sign_nonmanual><head_tier><head_movement movement="PB" /></head_tier><body_tier><body_movement movement="ST" /></body_tier><facialexpr_tier><eye_brows movement="RB" /><eye_lids movement="WB" /></facialexpr_tier></sign_nonmanual></hamgestural_sign>';
       tempString += '</sigml>';
     }
   }
