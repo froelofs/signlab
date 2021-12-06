@@ -30,14 +30,13 @@
                 </par_motion>
             </split_motion>
         </sign_manual>
-
         <sign_nonmanual>
             <mouthing_tier>
                 <mouth_gesture movement="L15" speed="0.8"/>
-                <mouth_picture picture="sptAA" speed="1.9"/>
+                <mouth_picture picture="ptAA" speed="1.9"/>
             </mouthing_tier>
             <body_tier>
-                <body_movement movement="TB" amount="0.5"/>
+                <body_movement movement="TB" amount="0.3"/>
             </body_tier>
             <head_tier>
                 <head_movement movement="ND"/>

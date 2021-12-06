@@ -1,16 +1,15 @@
-
     <hamgestural_sign gloss="SPOOR">
         <sign_manual>
-            <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
-            <handconfig extfidir="oor"/>
+            <handconfig handshape="cee12" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="oooorrd"/>
             <handconfig palmor="d"/>
-            <location_bodyarm location="shoulders" side="right_at"/>
+            <location_bodyarm location="shouldertop" side="right_beside" second_location="chest" second_side="right_at"/>
             <par_motion>
                 <directedmotion direction="oolo" size="big"/>
                 <tgt_motion>
                     <changeposture/>
-                    <handconfig handshape="flat" second_handshape="flat" second_mainbend="round" second_thumbpos="opposed" thumbpos="out"/>
-                    <handconfig extfidir="oor"/>
+                    <handconfig handshape="cee12" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
+                    <handconfig extfidir="oooorrd"/>
                 </tgt_motion>
             </par_motion>
         </sign_manual>
