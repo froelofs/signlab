@@ -22,7 +22,7 @@
     </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="VIJF_5">
+  <hamgestural_sign gloss="VIJF">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="vE_if"/>

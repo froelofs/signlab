@@ -1,11 +1,16 @@
-    <hamgestural_sign gloss="SPOOR">
+    <hamgestural_sign gloss="">
+      <sign_manual>
+      </sign_manual>
+    </hamgestural_sign>
+  
+  <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
         <sign_manual>
             <handconfig handshape="cee12" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
             <handconfig extfidir="oooorrd"/>
             <handconfig palmor="d"/>
             <location_bodyarm location="shouldertop" side="right_beside" second_location="chest" second_side="right_at"/>
             <par_motion>
-                <directedmotion direction="oolo" size="big"/>
+                <directedmotion direction="oolo" />
                 <tgt_motion>
                     <changeposture/>
                     <handconfig handshape="cee12" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
@@ -15,7 +20,7 @@
         </sign_manual>
         <sign_nonmanual>
             <mouthing_tier>
-                <mouth_picture picture="pO:r" speed="1.2"/>
+                <mouth_picture picture="sspO:O:r" speed="1.2"/>
             </mouthing_tier>
             <body_tier>
                 <body_movement movement="ST"/>

@@ -1,5 +1,5 @@
 
-    <hamgestural_sign gloss="STATIONS1">
+    <hamgestural_sign gloss="TUSSENGELEGEN STATIONS">
         <sign_manual>
             <handconfig handshape="finger2" mainbend="round" second_handshape="finger2" second_mainbend="hooked" thumbpos="out"/>
             <handconfig extfidir="u" second_extfidir="ul"/>
@@ -29,7 +29,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="STATIONS2">
+    <hamgestural_sign gloss="TUSSENGELEGEN STATIONS">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
             <handconfig extfidir="l"/>
@@ -56,7 +56,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="STOPPEN NIET">
+    <hamgestural_sign gloss="STOPT NIET">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
             <handconfig extfidir="oulo"/>
@@ -83,7 +83,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="STOPPEN NIET">
+    <hamgestural_sign gloss="STOPT NIET">
     <sign_nonmanual>
             <mouthing_tier>
                 <mouth_gesture movement="L31" speed="1.2"/>

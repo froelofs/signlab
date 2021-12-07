@@ -24,7 +24,7 @@
 	    </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="REIZIGERS1" timescale="0.6" duration="1">
+    <hamgestural_sign gloss="REIZIGERS" timescale="0.6" duration="1">
         <sign_manual both_hands="true" lr_symm="true">
             <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
             <handconfig extfidir="ol"/>
@@ -57,7 +57,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="REIZIGERS2" timescale="0.7" duration="1">
+    <hamgestural_sign gloss="REIZIGERS" timescale="0.7" duration="1">
         <sign_manual>
             <handconfig ceeopening="slack" handshape="cee12open" second_handshape="finger2" second_thumbpos="opposed"/>
             <handconfig extfidir="oou"/>

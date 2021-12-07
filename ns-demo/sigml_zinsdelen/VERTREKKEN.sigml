@@ -8,13 +8,13 @@
       </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="VERTREKKEN">
-    <sign_nonmanual>
+  <hamgestural_sign gloss="VERTREKT">
+  <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="p"/>
       </mouthing_tier>
 	<facialexpr_tier>
-	<eye_gaze movement="AD" speed="0.8"/>
+	<eye_gaze movement="AD" speed="0.7"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -23,30 +23,21 @@
         <handconfig handshape="flat"/>
       </split_handconfig>
       <split_handconfig>
-        <handconfig extfidir="ol" palmor="l"/>
-        <handconfig extfidir="ilrd" palmor="i" second_extfidir="our" location="chest"/>
+        <handconfig extfidir="dduo" palmor="dl"/>
+        <handconfig extfidir="ildr" palmor="di" second_extfidir="our"/>
       </split_handconfig>
-      <handconstellation contact="close">
-        <location_hand location="pinkyside"/>
-	<location_hand location="wristback"/>
-      </handconstellation>
-      <tgt_motion>
-        <par_motion>
-	        <directedmotion direction="d" size="medium" speed="5"/>
-          <tgt_motion>
-            <changeposture/>
-            <handconfig handshape="flat"/>
-            <handconfig extfidir="oddl"/>
-	        </tgt_motion>
-            </par_motion>
-          </tgt_motion>
+      <location_bodyarm location="belowstomach" side="right_beside"/>
 	        <tgt_motion>
 	          <par_motion>
 		          <directedmotion direction="u" size="medium" speed="1"/>
 	        <tgt_motion>
-		        <changeposture/>
+      <changeposture/>
+        <handconstellation contact="close">
+          <location_hand location="palm"/>
+	        <location_hand location="wristback"/>
+        </handconstellation>
             	<handconfig handshape="flat"/>
-	            <handconfig extfidir="odl" second_extfidir="uuuodorll" /> />
+	            <handconfig extfidir="ool" second_extfidir="uuo" />
 	        </tgt_motion>
 	          </par_motion>
 	        </tgt_motion>

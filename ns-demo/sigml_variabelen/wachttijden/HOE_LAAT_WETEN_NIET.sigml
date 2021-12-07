@@ -3,7 +3,7 @@
       </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="HOE LAAT?">
+  <hamgestural_sign gloss="OVER EEN NOG">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="huuuulat"/>
@@ -56,7 +56,7 @@
   </hamgestural_sign>
   <?xml version="1.0" encoding="UTF-8"?>
 
-  <hamgestural_sign gloss="WETEN NIET">
+  <hamgestural_sign gloss="ONBEKENDE TIJD">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="L31"/>

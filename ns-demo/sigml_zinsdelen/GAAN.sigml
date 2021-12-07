@@ -14,7 +14,7 @@
         <tgt_motion>
           <changeposture/>
           <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
-          <handconfig extfidir="uu" palmor="ddl" second_extfidir="uur" second_palmor="ulll"/>
+          <handconfig extfidir="uu" palmor="dl" second_extfidir="uur" second_palmor="ul"/>
           <location_bodyarm contact="close" location="head" side="right_beside" second_location="neck" second_side="right_beside"/>
         </tgt_motion>
       </par_motion>

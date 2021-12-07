@@ -1,5 +1,5 @@
 
-    <hamgestural_sign gloss="RIJDEN">
+    <hamgestural_sign gloss="RIJDT VIA EEN">
         <sign_manual both_hands="true">
             <handconfig handshape="flat" second_handshape="flat" second_thumbpos="out"/>
             <handconfig extfidir="o" second_extfidir="uo"/>
