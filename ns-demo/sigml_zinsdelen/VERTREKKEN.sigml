@@ -1,11 +1,13 @@
 
   <hamgestural_sign gloss="">
-      <sign_nonmanual>
-        <facialexpr_tier>
-          <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	        <eye_lids movement="BB" speed="0.8"/>
-        </facialexpr_tier>
-      </sign_nonmanual>
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	      <eye_lids movement="BB" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
   </hamgestural_sign>
   
   <hamgestural_sign gloss="VERTREKT">

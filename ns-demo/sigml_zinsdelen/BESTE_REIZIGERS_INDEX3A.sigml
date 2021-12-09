@@ -10,17 +10,16 @@
             </tgt_motion>
         </sign_manual>
         <sign_nonmanual>
-
-        <mouthing_tier>
-            <mouth_picture picture="bbsYY"/>
-        </mouthing_tier>
-		<body_tier>
-			<body_movement movement='ST' />
-		</body_tier>
-		<facialexpr_tier>
-			<eye_brows movement='RB' />
-			<eye_lids movement='WB' />
-		</facialexpr_tier>
+            <mouthing_tier>
+                <mouth_picture picture="bbsYY"/>
+            </mouthing_tier>
+		    <body_tier>
+			    <body_movement movement='ST' />
+		    </body_tier>
+		    <facialexpr_tier>
+			    <eye_brows movement='RB' />
+			    <eye_lids movement='WB' />
+		    </facialexpr_tier>
 	    </sign_nonmanual>
     </hamgestural_sign>
 
@@ -64,8 +63,8 @@
             <handconfig palmor="il"/>
             <location_bodyarm location="head" second_location="neck" side="right_at"/>
         	<tgt_motion>
-                	<directedmotion direction="u" size="small" slow="false"/>
-	                <location_bodyarm location="chest" side="right_at" second_location="neck"/>
+                <directedmotion direction="u" size="small" slow="false"/>
+	            <location_bodyarm location="chest" side="right_at" second_location="neck"/>
 	       	</tgt_motion>
 		<tgt_motion>
 			<directedmotion direction="u" size="small" slow="false"/>
@@ -89,14 +88,16 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="">
-        <sign_manual>
-        </sign_manual>
-    </hamgestural_sign>
-    <hamgestural_sign gloss="">
-        <sign_manual>
-        </sign_manual>
-    </hamgestural_sign>
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	      <eye_lids movement="BB" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
     
     <hamgestural_sign gloss="DE">
     <sign_nonmanual>
