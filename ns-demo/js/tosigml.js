@@ -14,14 +14,16 @@ var endVar;
 var json_sent_NL;
 var json_sent_EN;
 var json_var;
+var n_telhand;
 
-function splitSentence(sentencePart, variable, sentenceArray){
+function splitSentence(sentencePart, variable, sentenceArray, stationsArray){
   var regex_platform = /(\d{1,2})([a-z])/;
   if(variable.match(regex_platform)){
     var number = platformVar.replace(regex_platform, '$1');
     var letter = platformVar.replace(regex_platform, '$2');
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
     sentenceArray.push(number, letter);
+    // Platform is always the last variable. Skipping sentence part here is necessary
     return sentenceArray, "";
   }
   var regex_departTime = /(\d{1,2})\:(\d{2})/;
@@ -33,6 +35,7 @@ function splitSentence(sentencePart, variable, sentenceArray){
     sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
     return sentenceArray, sentencePart;
   }
+
   // First word has no space before
   if(sentenceArray.length === 0){
     sentenceArray.push(sentencePart.substring(0, sentencePart.indexOf(variable)-1));
@@ -40,17 +43,28 @@ function splitSentence(sentencePart, variable, sentenceArray){
     // Skip space before non-first words/parts
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
   }
-  sentenceArray.push(variable);
+  if(stationsArray.length > 1 && stationsArray.includes(variable)){
+    console.log('in if stationsarray');
+    sentenceArray.push("telhand"+ n_telhand + "");
+    n_telhand+=1;
+    sentenceArray.push(variable);
+    
+  } else {
+    console.log('in else stationsarray');
+    sentenceArray.push(variable);
+  }
+
   sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
-  
+  console.log('sentencearray splitsentence ', sentenceArray);
   return sentenceArray, sentencePart;
 }
 
-function getSigmlVariables(entry, variableArray){
+function getSigmlVariables(entry, variableArray, stationsArray){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS WERKT NIET ivm vervanging vd waardes
   console.log('entry: ', entry);
-  console.log('array: ', variableArray);
+  console.log('var array: ', variableArray);
+  console.log('station array: ', stationsArray);
 
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
@@ -60,29 +74,34 @@ function getSigmlVariables(entry, variableArray){
     inter1Var = document.getElementById('interStation1Options').value;
     if(inter1Var !== "-"){
       variableArray.push(inter1Var);
+      stationsArray.push(inter1Var);
     }
   }
   if(entry.includes("interStation2") || entry.includes("tussenStation2")){
     inter2Var = document.getElementById('interStation2Options').value;
     if(inter2Var !== "-"){
       variableArray.push(inter2Var);
+      stationsArray.push(inter2Var);
     }
   }
   if(entry.includes("interStation3") || entry.includes("tussenStation3")){
     inter3Var = document.getElementById('interStation3Options').value;
     if(inter3Var !== "-"){
       variableArray.push(inter3Var);
+      stationsArray.push(inter3Var);
     }
   }
   if(entry.includes("interStation4") || entry.includes("tussenStation4")){
     inter4Var = document.getElementById('interStation4Options').value;
     if(inter4Var !== "-"){
       variableArray.push(inter4Var);
+      stationsArray.push(inter4Var);
     }
   }
   if(entry.includes("endStation") || entry.includes("eindStation")){
     endVar = document.getElementById('endStationOptions').value;
     variableArray.push(endVar);
+    stationsArray.push(endVar);
   }
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput').value;
@@ -96,8 +115,8 @@ function getSigmlVariables(entry, variableArray){
     platformVar = document.getElementById('platformNrOptions').value;
     platformVar = platformVar.replaceAll(/\'/g, "");
     variableArray.push(platformVar);
-    }
-  return variableArray;
+  }
+  return variableArray, stationsArray;
 }
 
 function callbackVar(data_var){
@@ -238,6 +257,8 @@ function makeReadableAndShow(fullSentence){
   function getSentenceArray(fullSentence){
     var variableArray = [];
     var sentenceArray = [];
+    var stationsArray = [];
+    n_telhand = 1;
 
     // Initally, sentencePart includes the whole (polished) sentence
     var sentencePart = makeReadableAndShow(fullSentence);
@@ -247,14 +268,17 @@ function makeReadableAndShow(fullSentence){
     console.log('entry ', entry);
 
     if(!checkUndefined(entry)){    
-      variableArray = getSigmlVariables(entry, variableArray);
+      variableArray, stationsArray = getSigmlVariables(entry, variableArray, stationsArray);
       console.log('var array ', variableArray);
+      console.log('stations array ', stationsArray);
       // Split sentence around variables in array
       for(const vars of variableArray){
-        sentenceArray, sentencePart = splitSentence(sentencePart, vars, sentenceArray);
+        sentenceArray, sentencePart = splitSentence(sentencePart, vars, sentenceArray, stationsArray);
       }
+      n_telhand = 1;
       // Push last element
       if(!sentencePart == ""){
+        console.log('sentence part rest: ', sentencePart);
         sentenceArray.push(sentencePart);
       }  
       console.log('sentence array final: ', sentenceArray);
