@@ -51,7 +51,7 @@
                 <mouth_picture picture="a:me:lo:" speed="1.2"/>
             </mouthing_tier>
             <body_tier>
-                <body_movement movement="TB"/>
+                <body_movement movement="TB" amount="0.3"/>
             </body_tier>
             <facialexpr_tier/>
         </sign_nonmanual>

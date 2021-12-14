@@ -22,7 +22,7 @@
     </sign_manual>
   </hamgestural_sign>
 
-   <hamgestural_sign gloss="DRIE">
+   <hamgestural_sign>
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="dRi"/>
