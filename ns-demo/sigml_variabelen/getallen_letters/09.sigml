@@ -22,7 +22,7 @@
     </sign_manual>
   </hamgestural_sign>
 
-    <hamgestural_sign>
+  <hamgestural_sign gloss="">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="nex@"/>

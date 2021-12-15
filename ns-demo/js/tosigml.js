@@ -44,18 +44,15 @@ function splitSentence(sentencePart, variable, sentenceArray, stationsArray){
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
   }
   if(stationsArray.length > 1 && stationsArray.includes(variable)){
-    console.log('in if stationsarray');
     sentenceArray.push("telhand"+ n_telhand + "");
     n_telhand+=1;
     sentenceArray.push(variable);
     
   } else {
-    console.log('in else stationsarray');
     sentenceArray.push(variable);
   }
 
   sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
-  console.log('sentencearray splitsentence ', sentenceArray);
   return sentenceArray, sentencePart;
 }
 
@@ -237,11 +234,11 @@ function makeReadableAndShow(fullSentence){
     fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
     fullSentence = fullSentence.replaceAll(new RegExp("(\\d{1})+" + getInterStationsArray() +"(\\d{1})?", "g"), " $2 ");
-    if(fullSentence.match(/to\d*\s*and?/)){ // Remove weird to ... and construction (interstations)
-      fullSentence = fullSentence.replace(/to\d*\s*and?/, 'to');
+    if(fullSentence.match(/to\d*\s*(and)?/)){ // Remove weird to ... and construction (interstations)
+      fullSentence = fullSentence.replace(/to\d*\s*(and)?/, 'to ');
     }
-    if(fullSentence.match(/naar\d*\s*en/)){
-      fullSentence = fullSentence.replace(/naar\d*\s*en/, 'naar');
+    if(fullSentence.match(/naar\d*\s*(en)?/)){
+      fullSentence = fullSentence.replace(/naar\d*\s*(en)?/, 'naar ');
     }
     document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
     // Remove interpunction for splitting purposes (later)
@@ -278,7 +275,6 @@ function makeReadableAndShow(fullSentence){
       n_telhand = 1;
       // Push last element
       if(!sentencePart == ""){
-        console.log('sentence part rest: ', sentencePart);
         sentenceArray.push(sentencePart);
       }  
       console.log('sentence array final: ', sentenceArray);
