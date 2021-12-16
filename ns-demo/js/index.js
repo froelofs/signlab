@@ -30,8 +30,8 @@ var endStationTemp;
 
 var oldStationInt;
 
-var interStationsArray = ["-", "Zwolle", "Maastricht", "Deventer", "Arnhem", "Schiedam", "Utrecht Centraal"]
-var endStationsArray = ["Almelo", "Nijmegen", "Enschede"]
+var interStationsArray = ["-", "Zwolle", "Maastricht", "Deventer"]
+var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Arnhem", "Schiedam", "Utrecht Centraal"]
 
 trainTypeBox = document.getElementById('trainTypeBox');
 platformBox = document.getElementById('platformBox');
