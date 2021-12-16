@@ -1,4 +1,13 @@
-
+ <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	      <eye_lids movement="BB" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
     
     <hamgestural_sign gloss="RIJDT NIET">
         <sign_manual both_hands="true">
@@ -22,7 +31,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="RIJDT NIET">
+    <hamgestural_sign gloss="RIJDT NIET" timescale=".8" duration="1.3">
     <sign_nonmanual>
             <mouthing_tier>
                 <mouth_gesture movement="L31" speed="1.2"/>

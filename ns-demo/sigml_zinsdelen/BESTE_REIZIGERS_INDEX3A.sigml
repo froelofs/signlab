@@ -1,4 +1,14 @@
 
+<hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <facialexpr_tier>
+	        <eye_lids movement="BB" speed="1.2"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+    
     <hamgestural_sign gloss="BESTE" timescale="0.7" duration="1">
         <sign_manual>
             <handconfig handshape="fist" thumbpos="out"/>
