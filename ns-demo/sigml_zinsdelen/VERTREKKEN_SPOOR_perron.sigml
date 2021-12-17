@@ -44,9 +44,18 @@
 	          </par_motion>
 	        </tgt_motion>
     </sign_manual>
-   
   </hamgestural_sign>
 
+  <hamgestural_sign gloss="" timescale=".5" duration="0.9">
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	      <eye_lids movement="BB" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
 
    <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
         <sign_manual>

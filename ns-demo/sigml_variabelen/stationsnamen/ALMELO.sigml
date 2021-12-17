@@ -52,6 +52,7 @@
             </mouthing_tier>
             <body_tier>
                 <body_movement movement="TB" amount="0.3"/>
+                <body_movement movement="TF" amount="0.001"/>
             </body_tier>
             <facialexpr_tier/>
         </sign_nonmanual>

@@ -31,7 +31,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="RIJDT NIET" timescale=".8" duration="1.3">
+    <hamgestural_sign gloss="RIJDT NIET">
     <sign_nonmanual>
             <mouthing_tier>
                 <mouth_gesture movement="L31" speed="1.2"/>
