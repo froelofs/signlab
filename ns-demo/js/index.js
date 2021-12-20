@@ -374,6 +374,32 @@ function createDropdown(elements, id){
  
 }
 
+function compare(input){
+  var check = null;
+  $.ajax({
+   'async': false,
+   'global': false,
+   'url': "json/check.json",
+   'dataType': "json",
+   'success': function(data) {
+    check = data;
+   }
+  });
+
+  for (key in check){
+   if(input == check[key]){
+    check = true;
+    break;
+   }
+  }
+
+  if (check == true){
+   document.getElementById("checkPage").style.display = "none";
+  }
+  else{
+   alertMessage("error","This password is incorrect","pwdAlert");
+  }
+}
 
 /**
  * Changes language when translator menu is clicked

@@ -53,6 +53,16 @@
 <div id="content-wrap">
 <!--================================================================-->
 
+<div id="pwdAlert"></div>
+
+<div id="checkPage">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%; text-align: center; color: white;">
+   <label for="pwd" style="display: inline-block; text-align: center;">Password: </label>
+   <input type="password" id="pwd" style="display: inline-block; margin-right: 5px; margin-left: 5px;" onkeydown="if(event.keyCode == 13){event.preventDefault();compare(document.getElementById('pwd').value);}">
+   <input type="submit" onclick="compare(document.getElementById('pwd').value);" style="display: inline-block;">
+  </div>
+</div>
+
 <!-- Navigation-->
 <div id="nav-placeholder"></div>
 
@@ -64,6 +74,8 @@
   <div class="container-fluid" id="avatarTranslator" style="width: 100%;">
     <!-- Challenge Row-->
     <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+      <div class="col-12" style="font-size: larger; background-color: rgb(241, 205, 205);">WORK IN PROGRESS, PLEASE DO NOT SHARE</div>
+      <br><br>
       <!-- Column for info -->
       <div class="col-12 col-md-5">
                 <!-- CWA signing avatar panel 0 -->
