@@ -49,7 +49,7 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <shoulder_tier>
-                <shoulder_movement movement="UR"/>
+                <shoulder_movement movement="UR" speed="0.6"/>
             </shoulder_tier>
             <head_tier>
                 <head_movement movement="ND"/>

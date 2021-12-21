@@ -1,7 +1,7 @@
 <hamgestural_sign gloss="NAAR">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="xa:a:"/>
+        <mouth_picture picture="xa:a:" speed="1.5"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -20,3 +20,11 @@
       </par_motion>
     </sign_manual>
   </hamgestural_sign>
+
+<hamgestural_sign gloss="" timescale=".2" duration="1.2">
+  <sign_manual>
+      <handconfig extfidir="uul" second_extfidir="ul"/>
+      <handconfig palmor="drr"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+  </sign_manual>
+</hamgestural_sign>

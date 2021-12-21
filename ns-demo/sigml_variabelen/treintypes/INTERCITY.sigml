@@ -20,7 +20,7 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <facialexpr_tier>
-                <eye_gaze movement="RD"/>
+                <eye_gaze movement="RD" amount="0.33"/>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
