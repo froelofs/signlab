@@ -87,7 +87,11 @@
                     <input class="av0 txtGloss subtitles mb-4" id="outputGloss" value="" type="text" readonly="readonly"></input>
                     <br>
                     <input type="button" class="btn btn-primary" id="play" value="Play" onclick='getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
-                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
+                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
+                    <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" />
+                    <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" />
+                    <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
+                    <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/>
                     <!-- <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">-->
                     <br>
                     <br>

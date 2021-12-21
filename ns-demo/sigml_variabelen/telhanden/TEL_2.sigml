@@ -1,5 +1,5 @@
 
-  <hamgestural_sign gloss="">
+  <hamgestural_sign gloss="" timescale="0.4" duration="1.2">
     <sign_nonmanual>
       <facialexpr_tier>
         <eye_brows movement="RB" amount="0.7" speed="0.8"/>

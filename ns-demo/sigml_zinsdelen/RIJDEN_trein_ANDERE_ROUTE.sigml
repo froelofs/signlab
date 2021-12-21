@@ -52,6 +52,11 @@
       <mouthing_tier>
         <mouth_picture picture="ruut@"/>
       </mouthing_tier>
+      <facialexpr_tier>
+        <eye_gaze direction="DN" amount="0.6"/>
+        <eye_gaze direction="RD" amount="0.5"/>
+        <eye_gaze direction="RU" amount="0.3"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
     <split_handconfig>

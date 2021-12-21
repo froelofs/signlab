@@ -402,11 +402,28 @@ function compare(input){
 }
 
 /**
+ * Enable play button when 'stop' is clicked
+ */
+function makePlayClickable(){
+  console.log('in playclick');
+  document.getElementById("play").setAttribute("class", "btn btn-primary");
+}
+
+/**
  * Changes language when translator menu is clicked
  */
 $(window).on("load", function(){
   if (document.getElementById('Translator')) {
     changeLanguage(globalVar.lang);
   }
-
+  // Disable the play button when 'pause' or 'resume' is clicked
+  document.getElementById('pause').addEventListener('click', function(){ 
+    console.log('in playnonclick');
+    document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
+  });
+  document.getElementById('resume').addEventListener('click', function(){ 
+    console.log('in playnonclick');
+    document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
+  });
+  
 } );
