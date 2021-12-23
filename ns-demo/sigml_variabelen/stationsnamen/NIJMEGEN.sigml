@@ -1,0 +1,34 @@
+    <hamgestural_sign gloss="NIJMEGEN">
+        <sign_manual>
+            <handconfig handshape="finger23spread" mainbend="round" second_handshape="finger23spread" thumbpos="across"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+            <par_motion>
+                <directedmotion direction="r" ellipse_direction="v" size="small" zigzag_style="wavy"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger23spread" mainbend="round" second_handshape="finger23spread" thumbpos="across"/>
+                    <handconfig extfidir="o" palmor="d" second_extfidir="or"/>
+                    <location_bodyarm location="shoulders" side="right_beside"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="nEme:ge" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TL" speed="0.5"/>
+                <body_movement movement="TR" amount="0.01"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SR" amount="0.8" speed="0.5"/>
+                <head_movement movement="SL" amount="0.01"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN" amount="0.6"/>
+                <eye_lids movement="SB" amount="0.5"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

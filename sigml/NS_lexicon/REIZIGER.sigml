@@ -34,7 +34,7 @@
     </hamgestural_sign>
     <hamgestural_sign gloss="REIZIGER2">
         <sign_manual>
-            <handconfig ceeopening="slack" handshape="cee12" second_handshape="finger2" second_thumbpos="opposed"/>
+            <handconfig ceeopening="slack" handshape="cee12open" second_handshape="finger2" second_thumbpos="opposed"/>
             <handconfig extfidir="or"/>
             <handconfig palmor="l"/>
             <location_bodyarm location="head" side="right_beside"/>

@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="en">
+<!-- class="notranslate", translate="no", name="google" content="notranslate" => to prevent automatic translation, which breaks functionality -->
+<html lang="en" class="notranslate" translate="no">
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="google" content="notranslate" />
 
 <title>SignLab Amsterdam NS demo</title>
 
@@ -51,6 +53,16 @@
 <div id="content-wrap">
 <!--================================================================-->
 
+<div id="pwdAlert"></div>
+
+<div id="checkPage">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%; text-align: center; color: white;">
+   <label for="pwd" style="display: inline-block; text-align: center;">Password: </label>
+   <input type="password" id="pwd" style="display: inline-block; margin-right: 5px; margin-left: 5px;" onkeydown="if(event.keyCode == 13){event.preventDefault();compare(document.getElementById('pwd').value);}">
+   <input type="submit" onclick="compare(document.getElementById('pwd').value);" style="display: inline-block;">
+  </div>
+</div>
+
 <!-- Navigation-->
 <div id="nav-placeholder"></div>
 
@@ -59,179 +71,168 @@
 <!-- Translate -->
 
 <section class="projects-section bg-light fadeIn" id="Translator">
-  <div id="avatarTranslator" class="container-fluid" style="width: 100%;">
-        <!-- Challenge Row-->
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-            <!-- Column for info -->
-            <div class="col-12 col-md-5">
+  <div class="container-fluid" id="avatarTranslator" style="width: 100%;">
+    <!-- Challenge Row-->
+    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+      <div class="col-12" style="font-size: larger; background-color: rgb(241, 205, 205);">WORK IN PROGRESS, PLEASE DO NOT SHARE</div>
+      <br><br>
+      <!-- Column for info -->
+      <div class="col-12 col-md-5">
                 <!-- CWA signing avatar panel 0 -->
                 <!--================================================================-->
                 <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-                <span id="avatar" class="CWASAAvatar av0" style="margin-top: 20px;"></span>
-                <div class="project-text pb-1 w-100 my-auto no-top-padding small text-center text-black-50">
-                    <p class="mb-4">
-                      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>.
-                    </p>
-                </div>
-                <!--================================================================-->
-            </div>
-
-            <!-- Column for input -->
-            <div class="col-12 col-md">
-              <div class="pb-1 w-100 my-auto text-left no-top-padding textDIV">
-              <div id="alertMainTran" class="alertBox"></div>
-
-                    <div class="mb-3 row align-items-start no-gutters">
-                      <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label"></label>
-                      <div class="col-sm">
-                        <select id="inputLanguageForm" class="form-select" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
-                          <option selected value="English">English</option>
-                          <option value="Nederlands">Nederlands</option>
-                        </select>
-                      </div>
-                    </div>
+                
+                <span class="CWASAAvatar av0" id="avatar"></span>
                     <br>
-
-                    <div class="mb-3 row align-items-start no-gutters">
-                      <div id="sentenceText" style="display: block"></div>
-                      <br>
-                      <div id="sentenceInput" style="display: block"></div>
-                    </div>
-                    
-                    <div id="sentenceBox">
-                      <br>
-                      <div id="sentenceOptionsText"></div>
-                      <select name="sentences" id="sentenceOptions" class="col-lg-5 selectpicker sentenceOptions" onchange="changeSentence(this.value);">
-                      </select>
-                      </div>
+                    <input class="av0 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
                     <br>
-                    <div id="trainTypeBox" class="varBox">
-                      <label id="trainType" for="trainType" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="trainType" id="trainTypeInput">
-                        <option value="intercity">Intercity</option>
-                        <option value="sprinter">Sprinter</option>
-                      </select>
-                    </div>
-
-                    <div id="platformBox" class="varBox">
-                     <label id="platform" for="platform" style="display: inline-block;"></label>
-                     <select class="selectpicker" name="platform" id="platformInput">
-                        <option value="1">1</option>
-                        <option value="1a">1a</option>
-                        <option value="1b">1b</option>
-                        <option value="11">11</option>
-                        <option value="15">15</option>
-                      </select>
-                    </div>
-
-                    <div id="departTimeBox" class="md-form varBox">
-                      <label id="time" for="time" style="display: inline-block;"></label>
-                      <input id="timeInput" type="text" class="form-control timepicker" style="width: 100px; display:inline-block;">
-                    </div>
-
-                    <div id="waitTimeBox" class="varBox">
-                      <label id="waitTime" for="waitTime" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="waitTime" id="waitOptions">
-                      </select>
-                    </div>
-                    
-                    <div id="interStationBox1" class="varBox">
-                      <label id="interStation1" for="interStation1" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="interStation1" id="interStationOptions1">
-                      </select>
-                    </div>
-
-                    <div id="interStationBox2" class="varBox">
-                      <label id="interStation2" for="interStation2" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="interStation2" id="interStationOptions2">
-                      </select>
-                    </div>
-
-                    <div id="interStationBox3" class="varBox">
-                      <label id="interStation3" for="interStation3" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="interStation3" id="interStationOptions3">
-                      </select>
-                    </div>
-
-                    <div id="interStationBox4" class="varBox">
-                      <label id="interStation4" for="interStation4" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="interStation4" id="interStationOptions4">
-                      </select>
-                    </div>
-                    
-                    <div id="endStationBox" class="varBox">
-                      <label id="endStation" for="endStation" style="display: inline-block;"></label>
-                      <select class="selectpicker" name="endStation" id="endStationOptions">
-                      </select>
-                    </div>
-                    
-                    <input class="varBox" id="okBox" type="submit" value="OK" style="display: block;" onclick="replaceText(document.getElementById('sentenceOptions').value, 
-                    document.getElementById('trainTypeInput').value,
-                    document.getElementById('platformInput').value,
-                    document.getElementById('timeInput').value,
-                    document.getElementById('waitOptions').value,
-                    document.getElementById('interStationOptions1').value,
-                    document.getElementById('interStationOptions2').value,
-                    document.getElementById('interStationOptions3').value,
-                    document.getElementById('interStationOptions4').value,
-                    document.getElementById('endStationOptions').value);">
-                    
-                    <br>
-                    <br>
-                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='toSiGML(document.getElementById("sentenceOptions").value, "alertMainTran");'/>
-                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML();' />
-                    <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">
-                    <br>
-                    <br>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
+                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
+                    <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" />
+                    <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" />
+                    <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
+                    <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/>
+                    <!-- <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">-->
                     <br>
                     <br>
                     <label id="speedLabel" for="speedAdj" style="display: inline-block;"></label>
-                     <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
-                    <br>
-                    <br>
-                    <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px"></label>
-                    <input id="outputGloss" class="txtGloss av0" value="none" type="text">
-                    <br>
+                    <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+                    <!-- <br>
+                    <label id="glossLabel" for="outputGloss" style="display: inline-block; margin-right: 7px"></label>
+                    <input id="outputGloss" class="txtGloss av0" value="-" type="text">
+                    <br> -->
+                <!--================================================================-->
+      </div>
 
-              <!-- </span> -->
+            <!-- Column for input -->
+      <div class="col-12 col-md">
+        <div class="pb-1 w-100 my-auto text-left no-top-padding textDIV">
+          <div id="alertMainTran" class="alertBox">
+          </div>
+                    
+          <hr>
+          <div class="mb-3 row no-gutters">
+            <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label"></label>
+              <div class="col-sm">
+                <select id="inputLanguageForm" class="form-select" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
+                  <option selected value="English">English</option>
+                  <option value="Nederlands">Nederlands</option>
+                </select>
               </div>
+          </div>
+                    
+                   
+          <hr>
+          <div class="mb-3 row align-items-start no-gutters">
+            <div class="col-lg" id="sentenceOptionsLabel"></div>
+          </div>
+          <div class="mb-3 row align-items-start no-gutters">
+            <select class="col-lg selectpicker sentenceOptions" name="sentences" id="sentenceOptions"  onchange="changeSentence(this.value);"></select>
+            <br>
+          </div>
+          <br>
+                      
+          <div class="currSentenceBox" id="currSentenceBox">
+            <div class="ml-1 mb-3 row align-items-start no-gutters">
+            <br>
+              <div class="col-form-label" id="currSentenceLabel" style="display: block"></div>
+            </div>
+            <div class="ml-1 mb-3 row align-items-start no-gutters">
+              <div class="col-lg" id="currSentence" style="display: block"></div>
+            </div>
+          </div>
+          <hr>
+          <div id="variablesLabel" style="display: block"></div>
+                    
+          
+                <div class="varBox row align-items-start no-gutters" id="trainTypeBox">
+                  <div class="form-inline">
+                    <label class="ml-1 col-md-4" id="trainType" for="trainType" style="display: inline-block"></label>
+                    <select class="selectpicker col-md-4" name="trainType" id="trainTypeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name);">
+                      <option value="intercity">Intercity</option>
+                      <option value="sprinter">Sprinter</option>
+                    </select>
+                  </div>
+                </div>
 
-              <!-- NOTE: display: none. If you comment it out completely the avatar doesn't work anymore -->
-              <div style="text-align: center; display: none;">
-                    <span style="font-size: 90%;" >
-                      Sign/Frame:
-                      <input id="mySF" class="txtSF" value="0/0" type="text" />
-                      &nbsp;
-                      Gloss:
-                      <input id="myGloss" class="txtGloss" value="[none]" type="text" />
-                      &nbsp;
-                      FPS:
-                      <input id="myFPS" class="txtFPS" value="00.00" type="text" />
-                    </span>
-              </div>
-              <div style="text-align: center; display: none;" >
-                  <!-- NOTE: display: none. If you comment it out completely the avatar doesn't work anymore -->
-                  <textarea id="myStatusLog"  class="statusLog" rows="6">
-                  </textarea>
-              </div>
-              <br>
+                <div class="varBox row align-items-start no-gutters" id="platformBox">
+                  <div class="form-inline">
+                    <label class="ml-1 col-md-4" id="platform" for="platform" style="display: inline-block"></label>
+                    <select class="selectpicker col-md-4" name="platformNr" id="platformNrOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name);">
+                    <!-- NUMBERS 1-4 INTERFERE WITH INTERMEDIATE STATION NRS vandaar de '' er omheen -->
+                      <option value="'5'">'5'</option>
+                      <option value="'1a'">'1a'</option>
+                      <option value="'1b'">'1b'</option>
+                      <option value="'11'">'11'</option>
+                      <option value="'15'">'15'</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="varBox row align-items-start no-gutters" id="departTimeBox">
+                  <div class="form-inline">
+                    <label class="ml-1 col-md-4" id="time" for="time" style="display: inline-block"></label>
+                    <input class="form-control timepicker ml-3 col-md-2" name="departTime" id="departTimeInput" type="text" style="width: 100px; display:inline-block;">
+                  </div>
+                </div>
 
+                <div class="varBox row align-items-start no-gutters" id="waitTimeBox">
+                  <div class="form-inline">
+                      <label class="ml-1 col-md-4" id="waitTime" for="waitTime" style="display: inline-block"></label>
+                      <select class="selectpicker col-md-4" name="waitTime" id="waitTimeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name);">
+                      </select>
+                  </div>
+                </div>
+                
+                <div class="varBox row align-items-start no-gutters" id="interStationBox1">
+                  <div class="form-inline">
+                      <label class="ml-1 col-md-4" id="interStation1" for="interStation1" style="display: inline-block"></label>
+                      <select class="selectpicker col-md-4" name="interStation1" id="interStation1Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name);">
+                      </select>
+                  </div>
+                </div>
+
+                <div class="varBox row align-items-start no-gutters" id="interStationBox2">
+                  <div class="form-inline">
+                      <label class="ml-1 col-md-4" id="interStation2" for="interStation2" style="display: inline-block"></label>
+                      <select class="selectpicker col-md-4" name="interStation2" id="interStation2Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name);">
+                      </select>
+                  </div>
+                </div>
+
+                <div class="varBox row align-items-start no-gutters" id="interStationBox3">
+                  <div class="form-inline">
+                      <label class="ml-1 col-md-4" id="interStation3" for="interStation3" style="display: inline-block"></label>
+                      <select class="selectpicker col-md-4" name="interStation3" id="interStation3Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name);">
+                      </select>
+                  </div>
+                </div>
+
+                <div class="varBox row align-items-start no-gutters" id="interStationBox4">
+                  <div class="form-inline">
+                      <label class="ml-1 col-md-4" id="interStation4" for="interStation4" style="display: inline-block"></label>
+                      <select class="selectpicker col-md-4" name="interStation4" id="interStation4Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name);">
+                      </select>
+                  </div>
+                </div>
+                  
+                <div class="varBox row align-items-start no-gutters" id="endStationBox">
+                  <div class="form-inline">
+                      <label class="ml-1 col-md-4" id="endStation" for="endStation" style="display: inline-block"></label>
+                      <select class="selectpicker col-md-4" name="endStation" id="endStationOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name);">
+                      </select>
+                  </div>
+                </div>
 
               <!-- SToCA applet element panel -->
               <!--================================================================-->
               <div class="SToCA" tyle="text-align: center;"></div>
               <!--================================================================-->
-
-
-
-            </div>
-
-            <!-- Column for info -->
-            <div class="col-12 col-md-1">
-            </div>
-          </div>
+      
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
 
 <!--================================================================-->
@@ -239,6 +240,9 @@
 <!-- Footer-->
 <footer class="footer bg-white small text-center text-black-50">
   <div style="line-height:150%;">
+    <div class="project-text pb-1 w-100 my-auto no-top-padding text-center text-black-50" style="font-size: medium;">
+      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>
+    </div>
     <br>&copy;2020 SignLab Amsterdam
     <br>
     <i class="bi bi-envelope"></i>: signlab.amsterdam@gmail.com
@@ -247,8 +251,6 @@
 
 
 </div>
-
-
 
 <!-- Javascripts -->
 
@@ -287,11 +289,6 @@
 <script type="text/javascript" src="cwa/allcsa.js"> </script>
 <!-- =============================================== -->
 
-<!-- JSON scripts for sentences -->
-<script type="text/javascript" src="json/json_sentences_English.json"></script>
-<script type="text/javascript" src="json/json_sentences_Nederlands.json"></script>
-
-
 <!-- script for communication with and set up of the avatar -->
 <script language="javascript" type="text/javascript" src="js/avatar.js"></script>
 <!-- script for shared functions across all pages -->
@@ -299,7 +296,7 @@
 <!-- script specific to main page -->
 <script language="javascript" type="text/javascript" src="js/index.js"></script>
 <!-- script specific to the sentences -->
-<script type="text/javascript" src="js/sentences.js"></script>
+<script type="text/javascript" src="js/tosigml.js"></script>
 
 </div>
 </body>

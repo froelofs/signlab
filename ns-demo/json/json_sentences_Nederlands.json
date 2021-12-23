@@ -1,7 +1,0 @@
-{
-    "Beste reizigers, de treinType naar eindStation van vertrekTijd rijdt niet.": "sigml_test_zinnen/REIZIGER_NIET_RIJDEN_TREIN.sigml",
-    "De treinType naar tussenStation, tussenStation, tussenStation, tussenStation en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.": "sigml_test_zinnen/VERTREKKEN_SPOOR.sigml",
-    "Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.": "sigml_test_zinnen/RIJDEN_TREIN_ANDERE_ROUTE.sigml",
-    "Beste reizigers, de treinType naar tussenStation, tussenStation, tussenStation, tussenStation en eindStation stopt niet op tussengelegen stations.": "sigml_test_zinnen/NIET_STOP_STATION.sigml",
-    "Beste reizigers, de treinType naar eindStation vertrekt van spoor spoorNr.": "sigml_test_zinnen/REIZIGER_VERTREKKEN_SPOOR.sigml"
-}

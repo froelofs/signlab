@@ -3,6 +3,7 @@ from newDict import newDict
 #import sys
 from nonmanuals import simpleNonmanuals
 from nonmanuals import complexNonmanuals
+import xml.etree.ElementTree as ET
 
 
 # Converts the user input nonmanual to the correct SiGML naming conventions
@@ -15,7 +16,7 @@ def convert(inputtag):
         simpleNonmanuals[tier]
     # Searches for the tier in the complex nonmanuals when an exception occurs
     except Exception:
-        print("Searching in complex nonmanuals")
+        #print("Searching in complex nonmanuals")
         # Loops over the complex nonmanuals to search for a matching tier
         for category in complexNonmanuals.keys():
             # Checks whether the tier matches the first two letters of a category
@@ -31,7 +32,7 @@ def convert(inputtag):
             return search[tag.lower()]
     # Searches for the tier in the simple nonmanuals when no exception occurs
     else:
-        print("Searching in simple nonmanuals")
+        #print("Searching in simple nonmanuals")
         search = simpleNonmanuals[tier]
         # Checks whether the tag exists in the tier and if so returns the converted tag
         for key in search.keys():
@@ -176,16 +177,26 @@ def makeSiGML(nonmanualsToAdd):
                             sigml += insertion
                         # Executes if the opening tag is not found in the user input nonmanuals
                         else:
-                            print(cleanline)
                             # Retrieves the closing tag of the previous nonmanual tier
+                            #print(cleanline[0] + "/" + cleanline[1:])
                             prevTierIndex = nonmansOrder.index(cleanline[0] + "/" + cleanline[1:]) - 1
                             previousTier = nonmansOrder[prevTierIndex]
                             end = nonmanuals.find(previousTier)
-                            # Inserts the user input nonmanuals of the previous tiers that were not found
-                            # in the SiGML of the sign
-                            insertion = nonmanuals[:end + len(previousTier)]
-                            nonmanuals = nonmanuals.replace(insertion, '')
-                            sigml += insertion
+                            count = prevTierIndex - 1
+                            while(end == -1):
+                                previousTier = nonmansOrder[count]
+                                end = nonmanuals.find(previousTier)
+                                count -= 1
+                                if count < 0:
+                                    break
+                            #print("stuff: ", nonmanuals[:end])
+                            if end > -1:
+                                # Inserts the user input nonmanuals of the previous tiers that were not found
+                                # in the SiGML of the sign
+                                insertion = nonmanuals[:end + len(previousTier)]
+                                #print("insertion: ", insertion)
+                                nonmanuals = nonmanuals.replace(insertion, '')
+                                sigml += insertion
                         sigml += cleanline
                         nonmanuals = nonmanuals.replace(cleanline,'')
                 # Inserts the remaining user input nonmanuals before the start of the manual part of the sign
@@ -261,11 +272,18 @@ def main(sentence):
     simpleNonmanuals = tagsToSiGML(foundSigns)
     sigml = makeSiGML(simpleNonmanuals)
 
+    #print(sigml)
     return sigml
 
 if __name__ == '__main__':
-    print("output sigml: ", main('U <EM_SADNESSI> ETEN KLAAR </EM_SADNESSI> <FT_RB> HEBBEN </FT_RB>'))
+    #print("output sigml: ", main('U <EM_SADNESSI> ETEN KLAAR </EM_SADNESSI> <FT_RB> HEBBEN </FT_RB>'))
     # print("output sigml: ", main('U <EM_FEAR> ETEN </EM_FEAR> KLAAR <FT_RB> HEBBEN </FT_RB>'))
     # print("output sigml: ", main('U <FT_RB> ETEN KLAAR </FT_RB> HEBBEN'))
     # print("output sigml: ", main('<FT_RR> ETEN </FT_RR>'))
     #print("output sigml: ", main(sys.argv[1]))
+    inputString = "U <ST_UL> ETEN KLAAR </ST_UL> HEBBEN"
+    #inputString = 'U <ET_HD> ETEN KLAAR </ET_HD> HEBBEN'
+    #inputString = 'U ETEN KLAAR HEBBEN'
+    output = ET.fromstring(main(inputString))
+    ET.indent(output)
+    print("output sigml: \n" , ET.tostring(output, encoding='unicode'))
