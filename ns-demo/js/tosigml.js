@@ -193,7 +193,7 @@ async function getSiGML(sentenceArray){
       console.log('Both undefined or element skipped: ', el);
     }
     if (el == lastItem){
-      tempString += '<hamgestural_sign gloss="" timescale=".7" duration="1.2"><sign_manual both_hands="true" lr_symm="true"><handconfig handshape="fist" thumbpos="across" /><handconfig extfidir="dl" /><handconfig palmor="l" /><location_bodyarm contact="touch" location="belowstomach" side="right_beside"><location_hand digits="1" /></location_bodyarm></sign_manual><sign_nonmanual><body_tier><body_movement movement="ST" /></body_tier><facialexpr_tier><eye_brows movement="RB" amount="0.6" /><eye_lids movement="BB" /></facialexpr_tier></sign_nonmanual></hamgestural_sign>';
+      tempString += '<hamgestural_sign gloss="" timescale=".7" duration="1.2"><sign_manual both_hands="true" lr_symm="true"><handconfig handshape="fist" thumbpos="across" /><handconfig extfidir="dl" /><handconfig palmor="l" /><location_bodyarm contact="touch" location="belowstomach" side="right_beside"><location_hand digits="1" /></location_bodyarm></sign_manual><sign_nonmanual><mouthing_tier><mouthing_par><avatar_morph name="smlc" amount="0.7" timing="x s l - m l x"/><avatar_morph name="eee" amount="0.3" timing="x m t - m t"/></mouthing_par></mouthing_tier><body_tier><body_movement movement="ST" /></body_tier><head_tier><head_movement movement="NU" amount="0.4"/></head_tier><facialexpr_tier><eye_brows movement="RB" amount="0.6" /><eye_lids movement="BB" /></facialexpr_tier></sign_nonmanual></hamgestural_sign>';
       tempString += '</sigml>';
     }
   }

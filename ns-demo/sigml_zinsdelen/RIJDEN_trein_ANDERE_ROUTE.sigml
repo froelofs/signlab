@@ -9,7 +9,7 @@
     </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="RIJDT VIA EEN" timescale="0.6" duration="1.3">
+  <hamgestural_sign gloss="RIJDT VIA EEN" timescale="0.9" duration="1.3">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="C06" amount="1.5" speed="1.2"/>
@@ -30,7 +30,7 @@
       <handconfig palmor="l"/>
       <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
       <rpt_motion repetition="fromstart_several">
-        <circularmotion axis="l" size="small"/>
+        <circularmotion axis="l" size="small" speed="2.8"/>
       </rpt_motion>
     </sign_manual>
   </hamgestural_sign>
