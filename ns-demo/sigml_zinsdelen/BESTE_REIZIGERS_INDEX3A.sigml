@@ -1,5 +1,5 @@
 
-  <hamgestural_sign gloss="BESTE REIZIGERS" timescale="0.6" duration="1.1">
+  <hamgestural_sign gloss="HALLO" timescale="0.6" duration="1.1">
     <sign_nonmanual>
             <mouthing_tier>
               <mouthing_par>
@@ -21,7 +21,7 @@
     </sign_manual>
   </hamgestural_sign>
 
-  <hamgestural_sign gloss="BESTE REIZIGERS" timescale="0.6" duration="1.1">
+  <hamgestural_sign gloss="HALLO" timescale="0.6" duration="1.1">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="Alo:"/>
