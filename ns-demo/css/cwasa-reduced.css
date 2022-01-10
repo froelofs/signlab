@@ -28,12 +28,6 @@
 	font-size: 1em;  font-weight: bold;
 	text-align: center;  color: #E33;  width: 4.5em;
 }
-.txtGloss {
-  /* font-family: monospace;   */
-	font-size: 1em; 
-	text-align: left;  width: 10em;
-}
-
 .divCtrlPanel {
 	position: relative;
     margin: 0px; border: 1px solid; padding: 1ex;
@@ -223,33 +217,41 @@ body.busy::before {
 
 .varBox{
   display: none;
+  position: relative;
+  width: 97%;
+  height: 4%;
+  left: 3%;
+  text-align: left;
 }
 
-#yellow{
-  color: yellow;
-}
-
-#currSentence{
+.currSentenceBox{
+  background-color: #e4edf8;
   border-width: 0.5em;
   border-radius: 0.5em;
   padding: 1em;
   font-style: italic;
   display: block;
-  text-align: left;
 }
 
-#currSentenceBox{
+.subtitles{
+  position: relative;
   background-color: #e4edf8;
+  z-index: 100;
+  height: 2em;
+  width: 70%;
+  font-size: 1.5em;
+  bottom: 0;
+  align-content: center;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 [data-id="sentenceOptions"]{
   background: #A3B8D2;
 }
 
-.leftSpace{
-  position: relative;
-  width: 97%;
-  left: 3%;
+select.form-control{
+  display: inline-block
 }
 
 .no-top-padding{

@@ -1,0 +1,14 @@
+
+  <hamgestural_sign gloss="EEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="en"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>

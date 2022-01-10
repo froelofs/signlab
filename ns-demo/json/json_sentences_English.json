@@ -1,7 +1,0 @@
-{
-    "Dear passengers, the trainType to endStation from departTime is not departing.": "sigml_test_zinnen/REIZIGER_NIET_RIJDEN_TREIN.sigml",
-    "The trainType to interStation1, interStation2, interStation3, interStation4 and endStation from departTime departs in waitTime from platform platformNr.": "sigml_test_zinnen/VERTREKKEN_SPOOR.sigml",
-    "Repetition. The trainType to endStation from departTime runs through another route.": "sigml_test_zinnen/RIJDEN_TREIN_ANDERE_ROUTE.sigml",
-    "Dear passengers, the trainType to interStation1, interStation2, interStation3, interStation4 and endStation does not stop at intermediate stations.": "sigml_test_zinnen/NIET_STOP_STATION.sigml",
-    "Dear passengers, the trainType to endStation departs from platform platformNr.": "sigml_test_zinnen/REIZIGER_VERTREKKEN_SPOOR.sigml"
-}

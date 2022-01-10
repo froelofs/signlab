@@ -1,0 +1,14 @@
+{
+    "Dear passengers the": "sigml_zinsdelen/BESTE_REIZIGERS_INDEX3A.sigml",
+    "to": "sigml_zinsdelen/GAAN.sigml",
+    "from": "sigml_zinsdelen/UUR.sigml",
+    " is not departing": "sigml_zinsdelen/RIJDEN_NIET_trein.sigml",
+    "and": "sigml_zinsdelen/LEEG.sigml",
+    "departs in": "sigml_zinsdelen/VERTREKKEN.sigml",
+    "from platform": "sigml_zinsdelen/SPOOR_perron.sigml",
+    "Repetition The": "sigml_zinsdelen/DIT_HERHALING.sigml",
+    "The": "sigml_zinsdelen/INDEX3A.sigml",
+    " runs through another route": "sigml_zinsdelen/RIJDEN_trein_ANDERE_ROUTE.sigml",
+    " does not stop at intermediate stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
+    "departs from platform": "sigml_zinsdelen/VERTREKKEN_SPOOR_perron.sigml"
+}

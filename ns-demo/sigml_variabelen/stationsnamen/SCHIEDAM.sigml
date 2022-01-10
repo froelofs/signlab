@@ -1,0 +1,32 @@
+    <hamgestural_sign gloss="SCHIEDAM">
+        <sign_manual>
+            <handconfig handshape="cee12" mainbend="round" second_handshape="finger2" second_thumbpos="out"/>
+            <handconfig extfidir="o" second_extfidir="ol"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm contact="touch" location="chin" second_location="underchin" second_side="right_at">
+                <location_hand digits="1" location="midjoint"/>
+            </location_bodyarm>
+            <rpt_motion repetition="fromstart_several">
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig extfidir="uo"/>
+                    <location_bodyarm location="chin"/>
+                </tgt_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="Sie:dam" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR" speed="0.6"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="NU"/>
+            </head_tier>
+            <facialexpr_tier/>
+        </sign_nonmanual>
+    </hamgestural_sign>

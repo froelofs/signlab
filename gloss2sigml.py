@@ -178,14 +178,25 @@ def makeSiGML(nonmanualsToAdd):
                         # Executes if the opening tag is not found in the user input nonmanuals
                         else:
                             # Retrieves the closing tag of the previous nonmanual tier
+                            #print(cleanline[0] + "/" + cleanline[1:])
                             prevTierIndex = nonmansOrder.index(cleanline[0] + "/" + cleanline[1:]) - 1
                             previousTier = nonmansOrder[prevTierIndex]
                             end = nonmanuals.find(previousTier)
-                            # Inserts the user input nonmanuals of the previous tiers that were not found
-                            # in the SiGML of the sign
-                            insertion = nonmanuals[:end + len(previousTier)]
-                            nonmanuals = nonmanuals.replace(insertion, '')
-                            sigml += insertion
+                            count = prevTierIndex - 1
+                            while(end == -1):
+                                previousTier = nonmansOrder[count]
+                                end = nonmanuals.find(previousTier)
+                                count -= 1
+                                if count < 0:
+                                    break
+                            #print("stuff: ", nonmanuals[:end])
+                            if end > -1:
+                                # Inserts the user input nonmanuals of the previous tiers that were not found
+                                # in the SiGML of the sign
+                                insertion = nonmanuals[:end + len(previousTier)]
+                                #print("insertion: ", insertion)
+                                nonmanuals = nonmanuals.replace(insertion, '')
+                                sigml += insertion
                         sigml += cleanline
                         nonmanuals = nonmanuals.replace(cleanline,'')
                 # Inserts the remaining user input nonmanuals before the start of the manual part of the sign
@@ -261,6 +272,7 @@ def main(sentence):
     simpleNonmanuals = tagsToSiGML(foundSigns)
     sigml = makeSiGML(simpleNonmanuals)
 
+    #print(sigml)
     return sigml
 
 if __name__ == '__main__':
@@ -269,6 +281,9 @@ if __name__ == '__main__':
     # print("output sigml: ", main('U <FT_RB> ETEN KLAAR </FT_RB> HEBBEN'))
     # print("output sigml: ", main('<FT_RR> ETEN </FT_RR>'))
     #print("output sigml: ", main(sys.argv[1]))
-    output = ET.fromstring(main('U <FT_RB> ETEN KLAAR </FT_RB> HEBBEN'))
+    inputString = "U <ST_UL> ETEN KLAAR </ST_UL> HEBBEN"
+    #inputString = 'U <ET_HD> ETEN KLAAR </ET_HD> HEBBEN'
+    #inputString = 'U ETEN KLAAR HEBBEN'
+    output = ET.fromstring(main(inputString))
     ET.indent(output)
     print("output sigml: \n" , ET.tostring(output, encoding='unicode'))

@@ -1,0 +1,44 @@
+
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	      <eye_lids movement="BB" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="VAN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Ur"/>
+      </mouthing_tier>
+      <body_tier>
+        <body_movement movement="ST"/>
+      </body_tier>
+      <head_tier>
+        <head_movement movement="NB" amount="0.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_gaze movement="DN"/>
+        <eye_brows movement="RB"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="fist" thumbpos="across"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand location="wristback" side="dorsal"/>
+        <location_hand digits="2" location="tip" />
+      </handconstellation>
+      <wristmotion motion="nodding" speed="0.9"/>
+    </sign_manual>
+  </hamgestural_sign>

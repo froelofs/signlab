@@ -1,0 +1,43 @@
+
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	      <eye_lids movement="BB" speed="0.8"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+  
+  <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
+        <sign_manual>
+            <handconfig handshape="cee12" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="oooorrd"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shouldertop" side="right_beside" second_location="chest" second_side="right_at"/>
+            <par_motion>
+                <directedmotion direction="oolo" />
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="cee12" second_handshape="flat" second_thumbpos="out" thumbpos="opposed"/>
+                    <handconfig extfidir="oooorrd"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="sspO:O:r" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SL"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="RB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

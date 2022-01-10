@@ -1,0 +1,35 @@
+    <hamgestural_sign gloss="MAASTRICHT">
+        <sign_manual>
+            <handconfig handshape="flat" thumbpos="across"/>
+            <handconfig extfidir="o"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="chest" second_location="chest" second_side="left_at"/>
+            <par_motion>
+                <directedmotion direction="r" size="big"/>
+                <wristmotion motion="nodding" size="small"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="flat" thumbpos="across"/>
+                    <handconfig extfidir="o" palmor="d" second_extfidir="or"/>
+                    <location_bodyarm location="chest" side="right_beside"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="ma:striS" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TL" speed="0.65"/>
+                <body_movement movement="TR" amount="0.01"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SR" speed="0.7"/>
+                <head_movement movement="SL" amount="0.01"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD" amount="0.7" speed="0.5"/>
+                <eye_gaze movement="RU" amount="0.01"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

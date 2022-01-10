@@ -1,0 +1,26 @@
+
+    <hamgestural_sign gloss="INTERCITY">
+        <sign_manual>
+            <handconfig handshape="finger2" specialfingers="5"/>
+            <handconfig extfidir="uo" second_extfidir="u"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="ceeall" second_handshape="flat" second_thumbpos="out"/>
+                <handconfig extfidir="u" palmor="d" second_extfidir="uo"/>
+                <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+            </tgt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="i:se:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RD" amount="0.33"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
