@@ -15,6 +15,16 @@
       <mouthing_tier>
         <mouth_picture picture="Ur"/>
       </mouthing_tier>
+      <body_tier>
+        <body_movement movement="ST"/>
+      </body_tier>
+      <head_tier>
+        <head_movement movement="SL"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_gaze movement="DN"/>
+        <eye_brows movement="RB"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <split_handconfig>
