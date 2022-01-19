@@ -78,7 +78,6 @@ def tagsToSiGML(signsWithTags, parFace = True, parMouth = False):
         eyeGazeTags = ['<' + tag + '/>' for tag in tags if ("eye_gaze" or "eye_par") in tag]
         avatarMorphTags = ['<' + tag + '/>' for tag in tags if "avatar_morph" in tag]
 
-
         # Adds tier syntax to the user input nonmanuals per tier and gathers the tiers in one string
         if(len(tags)):
             nonmanualsSiGML = '<sign_nonmanual>'
@@ -118,7 +117,6 @@ nonmansOrder = ["</shoulder_tier>", "</body_tier>", "</head_tier>","</eyegaze_ti
 # Converts the signs and any user input nonmanuals into SiGML
 def makeSiGML(nonmanualsToAdd):
     sigml = '<?xml version="1.0" encoding="UTF-8"?><sigml>'
-    print("nonmanuals to add:", nonmanualsToAdd)
 
     # Loops over each sign in the input sentence and any nonmanuals the user added to them
     for sign, nonmanuals in nonmanualsToAdd.items():
@@ -133,7 +131,6 @@ def makeSiGML(nonmanualsToAdd):
             # Executes if the line does not contain formatting information
             if not ('<?xml' in cleanline or '<sigml>' in cleanline or '</sigml>' in cleanline):
                 # print('nonmanuals: ', nonmanuals, cleanline)
-
                 # If the sign already contains nonmanuals the opening and closing tags of the nonmanual
                 # section are removed from the SiGML of the nonmnanuals to be added
                 if cleanline == '<sign_nonmanual>':
@@ -277,13 +274,10 @@ def main(sentence):
 
 if __name__ == '__main__':
     #print("output sigml: ", main('U <EM_SADNESSI> ETEN KLAAR </EM_SADNESSI> <FT_RB> HEBBEN </FT_RB>'))
-    # print("output sigml: ", main('U <EM_FEAR> ETEN </EM_FEAR> KLAAR <FT_RB> HEBBEN </FT_RB>'))
-    # print("output sigml: ", main('U <FT_RB> ETEN KLAAR </FT_RB> HEBBEN'))
-    # print("output sigml: ", main('<FT_RR> ETEN </FT_RR>'))
     #print("output sigml: ", main(sys.argv[1]))
-    inputString = "U <ST_UL> ETEN KLAAR </ST_UL> HEBBEN"
-    #inputString = 'U <ET_HD> ETEN KLAAR </ET_HD> HEBBEN'
-    #inputString = 'U ETEN KLAAR HEBBEN'
+    inputString = "U <MT_T17> ETEN KLAAR </MT_T17> HEBBEN"
+    #inputString = "U <EM_SADNESSI> ETEN KLAAR <EM_SADNESSI> HEBBEN"
     output = ET.fromstring(main(inputString))
     ET.indent(output)
     print("output sigml: \n" , ET.tostring(output, encoding='unicode'))
+    #print(main(inputString))
