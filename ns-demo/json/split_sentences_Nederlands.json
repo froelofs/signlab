@@ -1,6 +1,7 @@
 {
     "Beste reizigers de": "sigml_zinsdelen/BESTE_REIZIGERS_INDEX3A.sigml",
     "naar": "sigml_zinsdelen/GAAN.sigml",
+    "naar ": "sigml_zinsdelen/GAAN.sigml",
     "van": "sigml_zinsdelen/UUR.sigml",
     " rijdt niet": "sigml_zinsdelen/RIJDEN_NIET_trein.sigml",
     "en": "sigml_zinsdelen/LEEG.sigml",

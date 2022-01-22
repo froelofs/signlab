@@ -12,7 +12,8 @@ var globalVar={
   endStation: "endStation",
   currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
   currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
-  urlName: "sentences_English"
+  urlName: "sentences_English",
+  sigmlText: ''
 };
 
 var train_n = 1;
@@ -30,8 +31,9 @@ var endStationTemp;
 
 var oldStationInt;
 
-var interStationsArray = ["-", "Zwolle", "Maastricht", "Deventer"]
-var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Arnhem", "Schiedam", "Utrecht Centraal"]
+// Inter en end array moeten verschillende stations bevatten anders krijg je fouten (kleine bug)
+var interStationsArray = ["-", "Zwolle", "Arnhem", "Deventer", "Breda"]
+var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Maastricht", "Schiedam", "Utrecht Centraal"]
 
 trainTypeBox = document.getElementById('trainTypeBox');
 platformBox = document.getElementById('platformBox');
@@ -49,15 +51,6 @@ var departTimeInputChange;
 
 // Call startUp() once
 startUp(globalVar.currentSentence, false);
-
-
-
-/**
- * Returns the variable indexes of a specific sentence, for replacement purposes
- */
-// function getIndex(varName){
-//   return globalVar.currentSentenceColored.indexOf(varName) != -1 ? varIndex = globalVar.currentSentenceColored.indexOf(varName) : -1;
-// }
 
 
 $(departTimeInput).on("change", function(){
@@ -405,7 +398,6 @@ function compare(input){
  * Enable play button when 'stop' is clicked
  */
 function makePlayClickable(){
-  console.log('in playclick');
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
@@ -418,11 +410,9 @@ $(window).on("load", function(){
   }
   // Disable the play button when 'pause' or 'resume' is clicked
   document.getElementById('pause').addEventListener('click', function(){ 
-    console.log('in playnonclick');
     document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
   });
   document.getElementById('resume').addEventListener('click', function(){ 
-    console.log('in playnonclick');
     document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
   });
   

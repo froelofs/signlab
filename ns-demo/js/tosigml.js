@@ -1,7 +1,3 @@
-// KAN WEG?? NIET GEBRUIKT NU
-function startPose() {
-  playText("<?xml version='1.0' encoding='UTF-8'?><sigml><hamgestural_sign gloss='STANDARD_POSE'><sign_manual both_hands='true' lr_symm='true'><handconfig extfidir='dl' /> <handconfig palmor='l' /><handconfig handshape='fist' thumbpos='across' /><location_bodyarm contact='touch' location='belowstomach' side='right_beside'><location_hand digits='1' /></location_bodyarm></sign_manual><sign_nonmanual></sign_nonmanual></hamgestural_sign></sigml>");
-} 
 
 var trainVar;
 var platformVar;
@@ -16,6 +12,8 @@ var json_sent_NL;
 var json_sent_EN;
 var json_var;
 var n_telhand;
+
+// const delay = ms => new Promise(res => setTimeout(res, ms));
 
 function splitSentence(sentencePart, variable, sentenceArray, stationsArray){
   var regex_platform = /(\d{1,2})([a-z])/;
@@ -147,7 +145,6 @@ $.getJSON("json/split_sentences_English.json", function(data_sent_EN){
   console.log("Could not get split SiGML sentence EN JSON file");
 });
 
-
 async function getSiGMLContent(el){
   let response = await fetch(el);
   let data = await response.text();
@@ -197,8 +194,9 @@ async function getSiGML(sentenceArray){
       tempString += '</sigml>';
     }
   }
-  //console.log('tempString final: ', tempString);
+  
   playText(tempString);
+  globalVar.sigmlText = tempString;
 }
 
 function checkUndefined(definition, alert="alertMainTran"){
