@@ -157,17 +157,21 @@ async function getSiGML(sentenceArray){
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
   const [lastItem] = sentenceArray.slice(-1);
-  
+  // if(sentenceArray[0].match(/(Herhaling)/)){
+  //       console.log('match');
+  //       document.getElementById('repetitionBar').style.display = "inline-block";
+  //     }
   for(const el of sentenceArray){
     if(json_sent_NL[el] !== undefined || json_sent_EN[el] !== undefined){
+      var data;
       if(globalVar.lang === "Nederlands"){
         console.log('json sent NL: ', json_sent_NL[el]);
-        let data = await getSiGMLContent(json_sent_NL[el]);
+        data = await getSiGMLContent(json_sent_NL[el]);
         tempString += data;
       } else {
         console.log('json sent EN: ', json_sent_EN[el]);
-        let data = await getSiGMLContent(json_sent_EN[el]);
-        tempString += data;
+        data = await getSiGMLContent(json_sent_EN[el]);
+        tempString += data; 
       }
     } else if (json_var[el] !== undefined && !tijdArray.includes(el)){
         console.log('json var: ', json_var[el]);
@@ -177,9 +181,14 @@ async function getSiGML(sentenceArray){
       // Change gloss into hh:mm format
       el_index = sentenceArray.indexOf(el);
       tijdArray = [sentenceArray[el_index+1], sentenceArray[el_index+2], sentenceArray[el_index+3]];
-      let tijd = sentenceArray[el_index+1] + sentenceArray[el_index+2] + sentenceArray[el_index+3];
+      var tijd = sentenceArray[el_index+1] + sentenceArray[el_index+2] + sentenceArray[el_index+3];
       for(i=1; i<=3; i++){
-        let data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
+        if(sentenceArray[el_index+3]==="00"){
+          data = await getSiGMLContent(json_var[sentenceArray[el_index+1]]);
+          i+=2;
+        } else {
+          data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
+        }
         var regex_sigml = /\<hamgestural\_sign\sgloss\=\"(\w*)\"/;
         if(data.match(regex_sigml)){
           data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '"');
@@ -194,7 +203,7 @@ async function getSiGML(sentenceArray){
       tempString += '</sigml>';
     }
   }
-  
+ 
   playText(tempString);
   globalVar.sigmlText = tempString;
 }
@@ -259,6 +268,7 @@ function makeReadableAndShow(fullSentence){
     // Initally, sentencePart includes the whole (polished) sentence
     var sentencePart = makeReadableAndShow(fullSentence);
     console.log("input: " + sentencePart);
+    // document.getElementById('outputSentence').value = sentencePart;
 
     entry = document.querySelector('button[data-id="sentenceOptions"]').title;
     console.log('entry ', entry);

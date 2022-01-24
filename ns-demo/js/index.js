@@ -13,7 +13,8 @@ var globalVar={
   currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
   currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
   urlName: "sentences_English",
-  sigmlText: ''
+  sigmlText: '',
+  playFinished: false
 };
 
 var train_n = 1;
@@ -308,8 +309,9 @@ function changeLanguage(language){
  * @param {*} text 
  */
  function changeSentence(currentSentence){
-   resetGlobalVariables();
-   startUp(currentSentence, true);
+  document.getElementById('repetitionBar').style.display = "none";
+  resetGlobalVariables();
+  startUp(currentSentence, true);
 }
   
 function resetBoxes(currentSentence){

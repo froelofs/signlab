@@ -10,7 +10,9 @@
       <handconfig extfidir="u"/>
       <handconfig palmor="u"/>
       <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at" side="right_at"/>
-      <wristmotion motion="swinging"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="r" speed="1.9" size="small"/>
+      </rpt_motion>
     </sign_manual>
   </hamgestural_sign>
 

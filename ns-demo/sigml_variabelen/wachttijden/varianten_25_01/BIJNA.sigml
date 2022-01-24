@@ -1,0 +1,15 @@
+<hamgestural_sign gloss="BIJNA">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L17" speed="0.7"/>
+        <mouth_picture picture="e:na" speed="1.6"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="flat" thumbpos="in" second_thumbpos="out"/>
+      <handconfig extfidir="ol" second_extfidir="uo"/>
+      <handconfig palmor="d" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_at" second_location="chest" second_side="right_at"/>
+      <wristmotion motion="twisting" size="small" speed="1.6"/>
+    </sign_manual>
+  </hamgestural_sign>

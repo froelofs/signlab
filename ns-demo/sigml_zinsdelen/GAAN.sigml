@@ -1,3 +1,4 @@
+
 <hamgestural_sign gloss="NAAR">
     <sign_nonmanual>
       <mouthing_tier>
@@ -8,14 +9,14 @@
       <handconfig handshape="finger2" thumbpos="across"/>
       <handconfig extfidir="uul" second_extfidir="ull"/>
       <handconfig palmor="drr"/>
-      <location_bodyarm contact="close" location="shoulders" side="right"/>
+      <location_bodyarm contact="close" location="chest" side="right"/>
       <par_motion>
         <directedmotion direction="ur" speed="2"/>
         <tgt_motion>
           <changeposture/>
           <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
-          <handconfig extfidir="uu" palmor="dl" second_extfidir="uur" second_palmor="ull"/>
-          <location_bodyarm contact="close" location="head" side="right_beside" second_location="neck" second_side="right_beside"/>
+          <handconfig extfidir="u" palmor="dl" second_extfidir="uur" second_palmor="ull"/>
+          <location_bodyarm contact="close" location="head" side="right_beside" second_location="chest" second_side="right_at"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>

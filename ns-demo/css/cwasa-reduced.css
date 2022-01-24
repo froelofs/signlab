@@ -233,17 +233,33 @@ body.busy::before {
   display: block;
 }
 
-.subtitles{
+.subtitlesRep{
   position: relative;
   background-color: #e4edf8;
   z-index: 100;
   height: 2em;
-  width: 70%;
+  width: 80%;
   font-size: 1.5em;
   bottom: 0;
   align-content: center;
   text-align: center;
   text-transform: uppercase;
+}
+
+.subtitles{
+  position: relative;
+  background-color: #e4edf8;
+  z-index: 100;
+  height: 2em;
+  width: 80%;
+  font-size: 1.5em;
+  bottom: 0;
+  align-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: auto;
+  white-space: initial;
+  word-break: break-word
 }
 
 [data-id="sentenceOptions"]{

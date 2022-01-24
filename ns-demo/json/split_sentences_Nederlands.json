@@ -1,15 +1,15 @@
 {
-    "Beste reizigers de": "sigml_zinsdelen/BESTE_REIZIGERS_INDEX3A.sigml",
-    "naar": "sigml_zinsdelen/GAAN.sigml",
-    "naar ": "sigml_zinsdelen/GAAN.sigml",
-    "van": "sigml_zinsdelen/UUR.sigml",
+    "Hallo de": "sigml_zinsdelen/BESTE_REIZIGERS_INDEX3A.sigml",
+    "naar": "sigml_zinsdelen/LEEG.sigml",
+    "naar ": "sigml_zinsdelen/LEEG.sigml",
+    "van": "sigml_zinsdelen/VAN.sigml",
     " rijdt niet": "sigml_zinsdelen/RIJDEN_NIET_trein.sigml",
     "en": "sigml_zinsdelen/LEEG.sigml",
     "vertrekt over": "sigml_zinsdelen/VERTREKKEN.sigml",
-    "van spoor": "sigml_zinsdelen/SPOOR_perron.sigml",
-    "Herhaling De": "sigml_zinsdelen/DIT_HERHALING.sigml",
+    "van spoor": "sigml_zinsdelen/INDEX3B_SPOOR_perron.sigml",
+    "Herhaling De": "sigml_zinsdelen/INDEX3A.sigml",
     "De": "sigml_zinsdelen/INDEX3A.sigml",
     " rijdt via een andere route": "sigml_zinsdelen/RIJDEN_trein_ANDERE_ROUTE.sigml",
     " stopt niet op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
-    "vertrekt van spoor": "sigml_zinsdelen/VERTREKKEN_SPOOR_perron.sigml"
+    "vertrekt van spoor": "sigml_zinsdelen/VERTREKKEN_INDEX3B_SPOOR_perron.sigml"
 }
