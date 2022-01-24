@@ -28,7 +28,7 @@
       </mouthing_tier>
     </sign_nonmanual>
       <sign_manual>
-        <handconfig handshape="flat" thumbpos="out"/>
+        <handconfig handshape="flat" second_handshape="finger2345" thumbpos="out"/>
         <handconfig extfidir="u" second_extfidir="ul"/>
         <handconfig palmor="r"/>
         <location_bodyarm location="shoulders" side="right_at"/>

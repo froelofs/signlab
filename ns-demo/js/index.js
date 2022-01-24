@@ -1,6 +1,6 @@
 // Global variable for the language (default: English)
 var globalVar={
-  lang: "English",
+  lang: "Nederlands",
   trainType: "trainType",
   platformNr: "platformNr",
   departTime: "departTime",

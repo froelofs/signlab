@@ -2,7 +2,7 @@
   <hamgestural_sign gloss="VIJFENVIJFTIG">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="vE_if@nvE_iftIx" speed="2"/>
+        <mouth_picture picture="vE_ifE_iftI" speed="1.6"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
