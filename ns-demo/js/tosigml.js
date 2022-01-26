@@ -243,10 +243,10 @@ function makeReadableAndShow(fullSentence){
     fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
     fullSentence = fullSentence.replaceAll(new RegExp("(\\d{1})+" + getInterStationsArray() +"(\\d{1})?", "g"), " $2 ");
-    if(fullSentence.match(/to\d*\s*(and)?/)){ // Remove weird to ... and construction (interstations)
+    if(globalVar.lang==="English" && fullSentence.match(/to\d*\s*(and)?/)){ // Remove weird to ... and construction (interstations)
       fullSentence = fullSentence.replace(/to\d*\s*(and)?/, 'to ');
     }
-    if(fullSentence.match(/naar\d*\s*(en)?/)){
+    if(globalVar.lang==="Nederlands" && fullSentence.match(/naar\d*\s*(en)?/)){
       fullSentence = fullSentence.replace(/naar\d*\s*(en)?/, 'naar ');
     }
     document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';

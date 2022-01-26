@@ -10,6 +10,6 @@
     "Herhaling De": "sigml_zinsdelen/INDEX3A.sigml",
     "De": "sigml_zinsdelen/INDEX3A.sigml",
     " rijdt via een andere route": "sigml_zinsdelen/RIJDEN_trein_ANDERE_ROUTE.sigml",
-    " sto pt niet op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
+    " stopt niet op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
     "vertrekt van spoor": "sigml_zinsdelen/VERTREKKEN_INDEX3B_SPOOR_perron.sigml"
 }
