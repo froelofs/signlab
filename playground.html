@@ -80,6 +80,24 @@
               <div class="pb-1 w-100 my-auto text-left playgroundTextDIV" style="margin-left: 20px; margin-right: 20px;">
               <div id="alertPlayground" class="alertBox"></div>
 
+              <div class="input-group">
+                <select class="custom-select" id="shouldermovement">
+                  <option selected>Select a shoulder movement to add to the sign...</option>
+                  <option value="<UL>">UL_left_shoulder_raised</option>
+                  <option value="<UR>">UR_right_shoulder_raised</option>
+                  <option value="<UB>">UB_both_shoulders_raised</option>
+                  <option value="<HL>">HL_left_shoulder_hunched_forward</option>
+                  <option value="<HR>">HR_right_shoulder_hunched_forward</option>
+                  <option value="<HB>">HB_both_shoulders_hunched_forward</option>
+                  <option value="<SL>">SL_left_shoulder_shrugging_up_and_down</option>
+                  <option value="<SR>">SR_right_shoulder_shrugging_up_and_down</option>
+                  <option value="<SB>">SB_both_shoulders_shrugging_up_and_down</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value">Add Nonmanual</button>
+                </div>
+              </div>
+
                     <form autocomplete="off">
                       <div id="autocomp" class="autocomplete" style="max-width:400px;">
                         <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
@@ -136,7 +154,7 @@
             <!-- Column for SiGML output -->
             <div class="col-12 col-md-5 playgroundTextDIV" style=" margin:0px;">
               <textarea id="output" class="explSiGML" style="margin-left:0px; padding-left: 0;"
-              placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
+              placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
             </div>
          
           </div>
