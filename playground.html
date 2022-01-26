@@ -80,9 +80,9 @@
               <div class="pb-1 w-100 my-auto text-left playgroundTextDIV" style="margin-left: 20px; margin-right: 20px;">
               <div id="alertPlayground" class="alertBox"></div>
 
-              <div class="input-group">
+              <div class="input-group" style="margin: 10px; margin-left: 0;">
                 <select class="custom-select" id="shouldermovement">
-                  <option selected>Select a shoulder movement to add to the sign...</option>
+                  <option selected>Select a shoulder movement to add to the sign</option>
                   <option value="<UL>">UL_left_shoulder_raised</option>
                   <option value="<UR>">UR_right_shoulder_raised</option>
                   <option value="<UB>">UB_both_shoulders_raised</option>
@@ -94,7 +94,7 @@
                   <option value="<SB>">SB_both_shoulders_shrugging_up_and_down</option>
                 </select>
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value">Add Nonmanual</button>
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value">Add</button>
                 </div>
               </div>
 
