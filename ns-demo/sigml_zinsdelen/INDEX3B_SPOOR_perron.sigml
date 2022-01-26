@@ -35,19 +35,18 @@
     </sign_manual>
   </hamgestural_sign>
 
-
-  <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
+    <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
         <sign_manual>
-            <handconfig handshape="cee12" mainbent="hooked" thumbpos="opposed"/>
-            <handconfig extfidir="oorr" second_exfidir="d"/>
+            <handconfig handshape="cee12" mainbent="bent" thumbpos="opposed"/>
+            <handconfig extfidir="ooorri" second_exfidir="d"/>
             <handconfig palmor="d"/>
-            <location_bodyarm location="chest" side="right_beside" second_location="chest" second_side="right_at"/>
+            <location_bodyarm location="chest" side="right_beside" second_location="stomach" second_side="right_at"/>
             <par_motion>
-                <directedmotion direction="ooul" size="large" fast="true"/>
+                <directedmotion direction="ooulio" size="large" fast="true"/>
                 <tgt_motion>
                     <changeposture/>
                     <handconfig handshape="cee12" thumbpos="opposed"/>
-                    <handconfig extfidir="oorr" second_extfidir="odu"/>
+                    <handconfig extfidir="oorro" second_extfidir="odu"/>
                 </tgt_motion>
             </par_motion>
         </sign_manual>
@@ -59,13 +58,13 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <head_tier>
-                <head_movement movement="SL" amount="0.5" speed="0.5"/>
+                <head_movement movement="SL" amount="0.9" speed="0.5"/>
             </head_tier>
             <facialexpr_tier>
                 <facial_expr_par>
                     <eye_lids movement="SB" amount="0.5"/>
                     <eye_gaze direction="RD" />
-                    <eye_brows movement="RB"/>
+                    <eye_brows movement="RB" />
                 </facial_expr_par>
                 <facial_expr_par>
                     <eye_gaze direction="LD" amount="0.2" speed="0.5"/>

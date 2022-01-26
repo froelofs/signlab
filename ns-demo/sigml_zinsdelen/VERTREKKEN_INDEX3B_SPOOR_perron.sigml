@@ -107,18 +107,18 @@
   </hamgestural_sign>
 
 
-  <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
+    <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
         <sign_manual>
             <handconfig handshape="cee12" mainbent="hooked" thumbpos="opposed"/>
-            <handconfig extfidir="oorr" second_exfidir="d"/>
+            <handconfig extfidir="ooorri" second_exfidir="d"/>
             <handconfig palmor="d"/>
-            <location_bodyarm location="chest" side="right_beside" second_location="chest" second_side="right_at"/>
+            <location_bodyarm location="chest" side="right_beside" second_location="stomach" second_side="right_at"/>
             <par_motion>
-                <directedmotion direction="ooul" size="large" fast="true"/>
+                <directedmotion direction="ooulio" size="large" fast="true"/>
                 <tgt_motion>
                     <changeposture/>
                     <handconfig handshape="cee12" thumbpos="opposed"/>
-                    <handconfig extfidir="oorr" second_extfidir="odu"/>
+                    <handconfig extfidir="oorro" second_extfidir="odu"/>
                 </tgt_motion>
             </par_motion>
         </sign_manual>
@@ -126,7 +126,7 @@
             <mouthing_tier>
                 <mouth_picture picture="sspO:O:r" speed="1.2"/>
             </mouthing_tier>
-            <body_tier>
+            <body_tier>2
                 <body_movement movement="ST"/>
             </body_tier>
             <head_tier>

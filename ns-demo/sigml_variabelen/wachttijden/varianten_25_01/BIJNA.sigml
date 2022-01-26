@@ -7,9 +7,9 @@
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" second_handshape="flat" thumbpos="in" second_thumbpos="out"/>
-      <handconfig extfidir="ol" second_extfidir="uo"/>
+      <handconfig extfidir="old" second_extfidir="uo"/>
       <handconfig palmor="d" second_palmor="dl"/>
-      <location_bodyarm contact="close" location="shoulders" side="right_at" second_location="chest" second_side="right_at"/>
+      <location_bodyarm contact="close" location="stomach" side="right_at" second_location="chest" second_side="right_at"/>
       <wristmotion motion="twisting" size="small" speed="1.6"/>
     </sign_manual>
   </hamgestural_sign>

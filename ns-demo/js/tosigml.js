@@ -57,7 +57,7 @@ function splitSentence(sentencePart, variable, sentenceArray, stationsArray){
 
 function getSigmlVariables(entry, variableArray, stationsArray){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
-  // GLOBALVARS WERKT NIET ivm vervanging vd waardes
+  // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
   console.log('entry: ', entry);
   console.log('var array: ', variableArray);
   console.log('station array: ', stationsArray);
@@ -157,10 +157,10 @@ async function getSiGML(sentenceArray){
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
   const [lastItem] = sentenceArray.slice(-1);
-  // if(sentenceArray[0].match(/(Herhaling)/)){
-  //       console.log('match');
-  //       document.getElementById('repetitionBar').style.display = "inline-block";
-  //     }
+  if(sentenceArray[0].match(/(Herhaling)/)){
+        console.log('match');
+        document.getElementById('repetitionBar').style.display = "inline-block";
+      }
   for(const el of sentenceArray){
     if(json_sent_NL[el] !== undefined || json_sent_EN[el] !== undefined){
       var data;
@@ -203,7 +203,8 @@ async function getSiGML(sentenceArray){
       tempString += '</sigml>';
     }
   }
- 
+  globalVar.playing = true;
+  globalVar.playFinished = false;
   playText(tempString);
   globalVar.sigmlText = tempString;
 }

@@ -3,6 +3,11 @@
       <mouthing_tier>
         <mouth_picture picture="xa:a:" speed="1.5"/>
       </mouthing_tier>
+      <facialexpr_tier>
+        <eye_lids movement="SB"/>
+        <eye_gaze direction="LU" amount="0.3"/>
+        <eye_gaze direction="RD" amount="0.3"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>

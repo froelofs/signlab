@@ -1,5 +1,10 @@
 
+
+  
   <hamgestural_sign gloss="HALLO" timescale="0.6" duration="1.1">
+    <player_settings>
+  <camera_location cx="0.00" cy="0.50" r="4.50" theta="30.0" phi="40.0" fov="30.0"/>
+</player_settings>
     <sign_nonmanual>
             <mouthing_tier>
               <mouthing_par>

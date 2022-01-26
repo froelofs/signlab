@@ -81,17 +81,16 @@
                 <!-- CWA signing avatar panel 0 -->
                 <!--================================================================-->
                 <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-                <input class="av0 subtitlesRep col-mb-5" id="repetitionBar" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
-                    
+                  
                 <span class="CWASAAvatar av0" id="avatar"></span>
-                    <br>
                     <!--<input class="av0 subtitles col-mb-5" id="outputSentence" value="" type="text" readonly="readonly"></input>-->
+                    <input class="av0 subtitlesRep col-mb-5" id="repetitionBar" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
                     <input class="av0 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
                     <br>
-                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
+                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick='makePlayNonClickable(); getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
                     <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
-                    <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" />
-                    <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" />
+                    <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable();'/>
+                    <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable();'/>
                     <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
                     <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/>
                     <!-- <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name)">-->

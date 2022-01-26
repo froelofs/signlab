@@ -1,20 +1,25 @@
-<hamgestural_sign gloss="NAAR" timescale="0.7" duration="0.9">
+  <hamgestural_sign gloss="NAAR" timescale="0.7" duration="0.9">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="xa:a:" speed="1.5"/>
       </mouthing_tier>
+      <facialexpr_tier>
+        <eye_lids movement="SB"/>
+        <eye_gaze direction="LU" amount="0.3"/>
+        <eye_gaze direction="RD" amount="0.4"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
       <handconfig extfidir="uul" second_extfidir="ull"/>
       <handconfig palmor="drr"/>
-      <location_bodyarm contact="close" location="chest" side="right"/>
+      <location_bodyarm contact="close" location="shoulders" side="right"/>
       <par_motion>
         <directedmotion direction="ur" speed="2"/>
         <tgt_motion>
           <changeposture/>
           <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
-          <handconfig extfidir="ur" palmor="dl" second_extfidir="uur" second_palmor="ull"/>
+          <handconfig extfidir="uor" palmor="d" second_extfidir="d" second_palmor="d"/>
           <location_bodyarm contact="close" location="shoulders" side="right_beside" second_location="shoulders" second_side="right_beside"/>
         </tgt_motion>
       </par_motion>

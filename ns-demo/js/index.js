@@ -14,7 +14,8 @@ var globalVar={
   currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
   urlName: "sentences_English",
   sigmlText: '',
-  playFinished: false
+  playFinished: false,
+  playing: false
 };
 
 var train_n = 1;
@@ -310,6 +311,8 @@ function changeLanguage(language){
  */
  function changeSentence(currentSentence){
   document.getElementById('repetitionBar').style.display = "none";
+  // Disable play button when previous animation is still playing
+  globalVar.playing ? makePlayNonClickable() : -1;
   resetGlobalVariables();
   startUp(currentSentence, true);
 }
@@ -369,6 +372,10 @@ function createDropdown(elements, id){
  
 }
 
+/**
+ * Password function first page
+ * @param {} input 
+ */
 function compare(input){
   var check = null;
   $.ajax({
@@ -403,6 +410,10 @@ function makePlayClickable(){
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
+function makePlayNonClickable(){
+  document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
+}
+
 /**
  * Changes language when translator menu is clicked
  */
@@ -410,12 +421,4 @@ $(window).on("load", function(){
   if (document.getElementById('Translator')) {
     changeLanguage(globalVar.lang);
   }
-  // Disable the play button when 'pause' or 'resume' is clicked
-  document.getElementById('pause').addEventListener('click', function(){ 
-    document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
-  });
-  document.getElementById('resume').addEventListener('click', function(){ 
-    document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
-  });
-  
 } );

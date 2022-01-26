@@ -1,5 +1,4 @@
-<sigml>
-  <hamgestural_sign gloss="BINNEN">
+<hamgestural_sign gloss="BINNEN">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="L17" speed="1.2"/>
@@ -10,14 +9,14 @@
       <handconfig handshape="flat" mainbend="bent"/>
       <handconfig extfidir="o"/>
       <handconfig palmor="iol"/>
-<directedmotion direction="o" size="small" fast="true"/>
-      <location_bodyarm contact="close" location="shoulders" second_location="stomach" second_side="front" side="front"/>
-      <tgt_motion>
-        <directedmotion direction="i" size="medium" fast="true"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="stomach" second_side="right_at" side="right_at"/>
+      <rpt_motion repetition="fromstart">
+<tgt_motion>
+        <directedmotion direction="i" size="small" speed="3.5"/>
       </tgt_motion>
+</rpt_motion>
     </sign_manual>
   </hamgestural_sign>
-</sigml>
 
  <hamgestural_sign gloss="EEN PAAR">
     <sign_nonmanual>
