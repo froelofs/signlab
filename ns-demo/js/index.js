@@ -1,6 +1,6 @@
 // Global variable for the language (default: English)
 var globalVar={
-  lang: "English",
+  lang: "Nederlands",
   trainType: "trainType",
   platformNr: "platformNr",
   departTime: "departTime",
@@ -12,7 +12,10 @@ var globalVar={
   endStation: "endStation",
   currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
   currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
-  urlName: "json/json_sentences_English.json"
+  urlName: "sentences_English",
+  sigmlText: '',
+  playFinished: false,
+  playing: false
 };
 
 var train_n = 1;
@@ -28,8 +31,11 @@ var departTemp;
 var waitTimeTemp;
 var endStationTemp;
 
-var interStationsArray = ["-", "Zwolle", "Groningen", "Deventer"]
-var endStationsArray = ["Zwolle", "Groningen", "Deventer"]
+var oldStationInt;
+
+// Inter en end array moeten verschillende stations bevatten anders krijg je fouten (kleine bug)
+var interStationsArray = ["-", "Zwolle", "Arnhem", "Deventer", "Breda"]
+var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Maastricht", "Schiedam", "Utrecht Centraal"]
 
 trainTypeBox = document.getElementById('trainTypeBox');
 platformBox = document.getElementById('platformBox');
@@ -47,15 +53,6 @@ var departTimeInputChange;
 
 // Call startUp() once
 startUp(globalVar.currentSentence, false);
-
-
-
-/**
- * Returns the variable indexes of a specific sentence, for replacement purposes
- */
-// function getIndex(varName){
-//   return globalVar.currentSentenceColored.indexOf(varName) != -1 ? varIndex = globalVar.currentSentenceColored.indexOf(varName) : -1;
-// }
 
 
 $(departTimeInput).on("change", function(){
@@ -101,13 +98,11 @@ function updateGlobalVariables(name, oldValue){
  */
  function replaceText(currentSentence, newValue, oldValue, name){
   // Krijgt globale vars mee vanuit index.html
-  console.log('oldValue voor ', oldValue);
   // Update global var in 1st iteration (because of the auto-fill)
   oldValue = updateGlobalVariables(name, oldValue);
 
-  console.log('oldValue: ', oldValue);
-  console.log('newValue: ', newValue);
-  
+  console.log('oldval: ', oldValue);
+  console.log('newval: ', newValue);
 
   globalVar.currentSentence = currentSentence.replace(oldValue, newValue);
 
@@ -122,20 +117,30 @@ function updateGlobalVariables(name, oldValue){
   }
   // Add invisible numbers to the intermediate station names such that their position is recognized
   else if(name.match(/interStation\d{1}/)){
+    var stationInt;
+
     if (name === "interStation1"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">1</span>' + newValue;
+      oldStationInt = 1;
+      stationInt = 1;
       globalVar.interStation1 = newValue;
     } else if (name === "interStation2"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">2</span>' + newValue;
+      oldStationInt = 2;
+      stationInt = 2;
       globalVar.interStation2 = newValue;
     } else if (name === "interStation3"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">3</span>' + newValue;
+      oldStationInt = 3;
+      stationInt = 3;
       globalVar.interStation3 = newValue;
     } else if (name === "interStation4"){
-      newValueInter = '<span style="color:' + backgroundColor + ';">4</span>' + newValue;
+      oldStationInt = 4;
+      stationInt = 4;
       globalVar.interStation4 = newValue;
     }
-    globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, newValueInter);
+    if(oldValue.match(/interStation\d{1}/) || oldValue.match(/tussenStation\d{1}/)){
+      globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, '<span style="color: ' + backgroundColor + ';">' + stationInt + '</span>' + newValue);
+    } else {
+      globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace('<span style="color: ' + backgroundColor + ';">' + oldStationInt + '</span>' + oldValue, '<span style="color: ' + backgroundColor + ';">' + stationInt + '</span>' + newValue);
+    }
   } else {
     globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(oldValue, newValue);
   }
@@ -149,8 +154,6 @@ function updateGlobalVariables(name, oldValue){
 
   // Remove space before invisible numbers
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
-
-  console.log("completed sentence: " + globalVar.currentSentence); // => gaat naar toSiGML
   document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
@@ -160,29 +163,27 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} language 
  */
  function startUp(currentSentence, changeSent) {
-  console.log('bool: ', changeSent);
   train_n=1;
   platform_n=1;
   depart_n=1;
   wait_n=1;
   end_n=1;
-  globalVar.urlName = "json/json_sentences_" + globalVar.lang + ".json";
- 
+  globalVar.urlName = "sentences_" + globalVar.lang;
+
   if(changeSent){
-    console.log('changesent true ', currentSentence);
     document.getElementById('currSentence').innerHTML = currentSentence;
     resetBoxes(currentSentence);
     colorKeywords(currentSentence);
   } else {
-    $.getJSON(globalVar.urlName, function(json) {
+    $.getJSON("json/" + globalVar.urlName + ".json", function(json) {
     createDropdown(Object.keys(json), 'sentenceOptions');
     globalVar.currentSentence = Object.keys(json)[0];
     
-    createDropdown(waitElementsArray, 'waitOptions');
-    createDropdown(interStationsArray, 'interStationOptions1');
-    createDropdown(interStationsArray, 'interStationOptions2');
-    createDropdown(interStationsArray, 'interStationOptions3');
-    createDropdown(interStationsArray, 'interStationOptions4');
+    createDropdown(waitElementsArray, 'waitTimeOptions');
+    createDropdown(interStationsArray, 'interStation1Options');
+    createDropdown(interStationsArray, 'interStation2Options');
+    createDropdown(interStationsArray, 'interStation3Options');
+    createDropdown(interStationsArray, 'interStation4Options');
     createDropdown(endStationsArray, 'endStationOptions');
 
     document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
@@ -192,14 +193,15 @@ function updateGlobalVariables(name, oldValue){
     document.querySelector('button[data-id="sentenceOptions"]').title = globalVar.currentSentence;
     document.querySelector('button[data-id="endStationOptions"]').title = endStationsArray[0];
     $('.selectpicker').selectpicker('refresh');
-    
+  }).fail(function() {
+    console.log("Could not get JSON file");
   });
   }
   // Save initial dropdown menu values temporarily
     trainTemp =  document.getElementById('trainTypeOptions').value;
-    platformTemp =  document.getElementById('platformOptions').value;
+    platformTemp =  document.getElementById('platformNrOptions').value;
     departTemp =  document.getElementById('departTimeInput').value;
-    waitTimeTemp =  document.getElementById('waitOptions').value;
+    waitTimeTemp =  document.getElementById('waitTimeOptions').value;
     endStationTemp =  document.getElementById('endStationOptions').value;
   
   if (globalVar.lang == "Nederlands"){
@@ -211,16 +213,15 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('time').innerHTML = 'Vertrektijd: ';
     document.getElementById('waitTime').innerHTML = 'Wachttijd: ';
     document.getElementById('speedLabel').innerHTML = 'Snelheid: ';
-    document.getElementById('glossLabel').innerHTML = 'Huidig gebaar: ';
     document.getElementById('endStation').innerHTML = 'Eindstation: ';
     document.getElementById('interStation1').innerHTML = 'Tussenstation 1 (optioneel): ';
     document.getElementById('interStation2').innerHTML = 'Tussenstation 2 (optioneel): ';
     document.getElementById('interStation3').innerHTML = 'Tussenstation 3 (optioneel): ';
     document.getElementById('interStation4').innerHTML = 'Tussenstation 4 (optioneel): ';
     document.getElementById('selectExplain').innerHTML ='<b> 1. </b> Selecteer de invoertaal ';
-    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Verander huidige keuze ';
-    document.getElementById('currSentenceLabel').innerHTML = '<u>Huidige keuze: </u>';
-    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen en speel af ';
+    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Selecteer omroepbericht ';
+    document.getElementById('currSentenceLabel').innerHTML = '<b><u>Huidig omroepbericht: </u></b>';
+    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Selecteer variabelen ';
   }
   else {
     console.log('lang', globalVar.lang)
@@ -231,16 +232,15 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('time').innerHTML = 'Departure time: ';
     document.getElementById('waitTime').innerHTML = 'Waiting time: ';
     document.getElementById('speedLabel').innerHTML = 'Speed: ';
-    document.getElementById('glossLabel').innerHTML = 'Current sign: ';
     document.getElementById('endStation').innerHTML = 'End station: ';
     document.getElementById('interStation1').innerHTML = 'Intermediate station 1 (optional): ';
     document.getElementById('interStation2').innerHTML = 'Intermediate station 2 (optional): ';
     document.getElementById('interStation3').innerHTML = 'Intermediate station 3 (optional): ';
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4 (optional): ';
     document.getElementById('selectExplain').innerHTML = '<b> 1. </b> Select input language ';
-    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Change sentence ';
-    document.getElementById('currSentenceLabel').innerHTML = '<u>Current sentence: </u>';
-    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values and play ';
+    document.getElementById('sentenceOptionsLabel').innerHTML = '<b> 2. </b> Select sentence ';
+    document.getElementById('currSentenceLabel').innerHTML = '<b><u>Current sentence: </u></b>';
+    document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values ';
   }
     
     
@@ -310,9 +310,11 @@ function changeLanguage(language){
  * @param {*} text 
  */
  function changeSentence(currentSentence){
-   console.log('in sent');
-   resetGlobalVariables();
-   startUp(currentSentence, true);
+  document.getElementById('repetitionBar').style.display = "none";
+  // Disable play button when previous animation is still playing
+  globalVar.playing ? makePlayNonClickable() : -1;
+  resetGlobalVariables();
+  startUp(currentSentence, true);
 }
   
 function resetBoxes(currentSentence){
@@ -325,11 +327,11 @@ function colorKeywords(currentSentence){
   if(currentSentence.includes(globalVar.trainType)){
     currentSentence = currentSentence.replace(globalVar.trainType, '<span style="color: orange;">' + document.getElementById('trainTypeOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.platformNr)){
-    currentSentence = currentSentence.replace(globalVar.platformNr, '<span style="color: orange;">' + document.getElementById('platformOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.platformNr, '<span style="color: orange;">' + document.getElementById('platformNrOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.departTime)){
     currentSentence = currentSentence.replace(globalVar.departTime, '<span style="color: orange;">' + document.getElementById('departTimeInput').value + '</span>');
   } if (currentSentence.includes(globalVar.waitTime)){
-    currentSentence = currentSentence.replace(globalVar.waitTime, '<span style="color: orange;">' + document.getElementById('waitOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.waitTime, '<span style="color: orange;">' + document.getElementById('waitTimeOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.endStation)){
     currentSentence = currentSentence.replace(globalVar.endStation, '<span style="color: orange;">' + document.getElementById('endStationOptions').value + '</span>');
   }
@@ -370,13 +372,53 @@ function createDropdown(elements, id){
  
 }
 
+/**
+ * Password function first page
+ * @param {} input 
+ */
+function compare(input){
+  var check = null;
+  $.ajax({
+   'async': false,
+   'global': false,
+   'url': "json/check.json",
+   'dataType': "json",
+   'success': function(data) {
+    check = data;
+   }
+  });
+
+  for (key in check){
+   if(input == check[key]){
+    check = true;
+    break;
+   }
+  }
+
+  if (check == true){
+   document.getElementById("checkPage").style.display = "none";
+  }
+  else{
+   alertMessage("error","This password is incorrect","pwdAlert");
+  }
+}
+
+/**
+ * Enable play button when 'stop' is clicked
+ */
+function makePlayClickable(){
+  document.getElementById("play").setAttribute("class", "btn btn-primary");
+}
+
+function makePlayNonClickable(){
+  document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
+}
 
 /**
  * Changes language when translator menu is clicked
  */
 $(window).on("load", function(){
   if (document.getElementById('Translator')) {
-    changeLanguage(true);
+    changeLanguage(globalVar.lang);
   }
-
 } );

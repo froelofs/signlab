@@ -1,0 +1,16 @@
+  <hamgestural_sign gloss="ZEVENTIEN" timescale="0.9" duration="1.3">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zev@tin"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="out"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="chest" second_location="chest" second_side="right_at"/>
+      <rpt_motion repetition="fromstart">
+        <circularmotion axis="l" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>

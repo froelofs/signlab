@@ -1,0 +1,13 @@
+ <hamgestural_sign gloss="DRIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="dRi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>

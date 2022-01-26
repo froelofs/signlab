@@ -1,0 +1,7 @@
+{
+    "Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.": "sigml_zinsdelen/REIZIGER_NIET_RIJDEN_TREIN.sigml",
+    "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.": "sigml_zinsdelen/VERTREKKEN_SPOOR.sigml",
+    "Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.": "sigml_zinsdelen/RIJDEN_TREIN_ANDERE_ROUTE.sigml",
+    "Hallo, de treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation stopt niet op tussengelegen stations.": "sigml_zinsdelen/NIET_STOP_STATION.sigml",
+    "Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.": "sigml_zinsdelen/REIZIGER_VERTREKKEN_SPOOR.sigml"
+}

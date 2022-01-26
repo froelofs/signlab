@@ -1,0 +1,16 @@
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Alo:"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="oor"/>
+      <handconfig palmor="d"/>
+        <location_bodyarm location="shoulders" side="right_beside" second_location="chest" second_side="right_beside"/>/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="d" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>

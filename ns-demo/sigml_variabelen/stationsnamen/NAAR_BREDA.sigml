@@ -1,0 +1,69 @@
+    <hamgestural_sign gloss="NAAR" timescale="0.7" duration="0.9">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xa:a:" speed="1.5"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+            <eye_lids movement="SB"/>
+            <eye_gaze direction="LD" amount="0.3"/>
+            <eye_gaze direction="RU" amount="0.4"/>
+        </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="uul" second_extfidir="ull"/>
+      <handconfig palmor="drr"/>
+      <location_bodyarm contact="close" location="shoulders" side="right"/>
+      <par_motion>
+        <directedmotion direction="ur" speed="2"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+          <handconfig extfidir="uu" palmor="dl" second_extfidir="uur" second_palmor="ull"/>
+          <location_bodyarm contact="close" location="head" side="right_beside" second_location="neck" second_side="front"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+    </hamgestural_sign>
+   
+    <hamgestural_sign gloss="BREDA">
+        <sign_manual>
+            <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="hooked" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="ul"/>
+            <location_bodyarm contact="close" location="shouldertop" second_location="head" second_side="right_beside" side="right_at"/>
+            <rpt_motion repetition="fromstart_several">
+                <par_motion>
+                    <directedmotion direction="i"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="hooked" second_thumbpos="out" thumbpos="opposed"/>
+                        <handconfig extfidir="il" palmor="d"/>
+                        <location_bodyarm contact="touch" location="neck" second_location="shouldertop" second_side="right_at" side="right_at">
+                            <location_hand digits="3" location="tip"/>
+                        </location_bodyarm>
+                    </tgt_motion>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="breda" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR" speed="0.6"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SR"/>
+            </head_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+                    <eye_gaze movement="RD" amount="0.55"/>
+                    <eye_lids movement="TB" amount="0.15"/>
+                </facial_expr_par>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
