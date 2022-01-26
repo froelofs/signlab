@@ -48,9 +48,10 @@ function callPython(text, alertID) {
     inputPython = text;
   }
   $.ajax({
-    url : 'pythonCall.php',
+    // url : 'pythonCall.php',
+    url: "https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue=" + inputPython,
     type : 'POST',
-    data: {"input": inputPython},
+    // data: {"input": inputPython},
     dataType: "json",
     success : onSuccess,
     error : onError,
