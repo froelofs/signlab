@@ -52,7 +52,7 @@ function callPython(text, alertID) {
     url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
     type : 'POST',
     // data: {"input": inputPython},
-    dataType: "json",
+    // dataType: "json",
     success : onSuccess,
     error : onError,
   });
