@@ -203,7 +203,7 @@ async function getSiGML(sentenceArray){
       tempString += '</sigml>';
     }
   }
-  console.log('tempString: ', tempString);
+  //console.log('tempString: ', tempString);
   globalVar.playing = true;
   globalVar.playFinished = false;
   playText(tempString);

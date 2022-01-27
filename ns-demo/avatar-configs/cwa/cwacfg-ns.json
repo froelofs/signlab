@@ -1,0 +1,37 @@
+{
+    "description"     : "========  CWASA installation configuration data  ========",
+  
+    "jasBase"         : "https://signlab/cwasa/uva2020/",
+    "jasVersionTag"   : "uva2020",
+  
+    "sigmlBase"       : "sigml",
+    "avJARBase"		  : "avatars-ns",
+    "avJSONBase"      : "avjson",
+    "useAvatarJARs"   : true,
+  
+    "animgenFPS"      : 30,
+  
+    "avs" : [
+      "anna", "marc", "francoise"
+    ],
+  
+    "avsfull" : [
+      "anna",
+      "beatrice", "candy", "darshan", "francoise", "genie", "luna",
+      "marc", "max", "monkey", "otis", "robotboy", "siggi"
+    ],
+  
+    "avSettings" : [
+      {
+        "description":      "Default if client configuration is missing or restricted",
+        "width":            384,
+        "height":           320,
+        "avList":           "avs",
+        "initAv":           "francoise",
+        "allowFrameSteps":  true,
+        "initSiGMLURL":     "iTakeMug.sigml",
+        "allowSiGMLText":   true
+      }
+    ]
+  }
+  
