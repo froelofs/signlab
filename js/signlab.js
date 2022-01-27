@@ -54,6 +54,8 @@ function callPython(text, alertID) {
     type : 'POST',
     // data: {"input": inputPython},
     // dataType: "json",
+    dataType: "jsonp",
+    crossDomain: true,
     success : onSuccess,
     error : onError,
   });
