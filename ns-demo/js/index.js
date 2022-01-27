@@ -14,6 +14,7 @@ var globalVar={
   currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
   urlName: "sentences_English",
   sigmlText: '',
+  playButtonClicked: false,
   playFinished: false,
   playing: false
 };
@@ -407,10 +408,12 @@ function compare(input){
  * Enable play button when 'stop' is clicked
  */
 function makePlayClickable(){
+  globalVar.playButtonClicked = false;
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
 function makePlayNonClickable(){
+  globalVar.playButtonClicked = true;
   document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
 }
 

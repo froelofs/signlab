@@ -179,14 +179,15 @@ $('.timepicker').timepicker({
    return time;
   }
 
+ 
   $(function(){
     // creates navbar in JS
     var bar = '';
     bar += '<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">';
     bar += '<div class="container-fluid" style="width: 83%; margin-top: 0px;">';
     bar += '<a class="navbar-brand" href="index.html">';
-    bar += '<img src="images/hand-icon.png" height="25">';
-    bar += 'SignLab Amsterdam';
+    bar += '<img src="images/Xbreed_logo_tr.png" height="25">';
+    // bar += 'SignLab Amsterdam';
     bar += '</a>';
     bar += '<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">';
     bar += 'Menu';
@@ -200,7 +201,8 @@ $('.timepicker').timepicker({
     bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="media.html" id="MediaNav">Media</a></li>';
+    // bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
     bar += '</ul>';
     bar += '</div>';
     bar += '</div>';
@@ -216,8 +218,8 @@ $('.timepicker').timepicker({
 
 // Checks which page the user is on and returns navbar ID
 function getPage(){
-  allTabs = ['AboutNav', 'GrammarNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav', 'PlaygroundNav'];
-  sections = ['About', 'Grammar', 'Translate', 'Translator', 'People', 'Publications', 'Projects', 'Playground'];
+  allTabs = ['AboutNav', 'GrammarNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav', 'MediaNav', 'PlaygroundNav'];
+  sections = ['About', 'Grammar', 'Translate', 'Translator', 'People', 'Publications', 'Projects', 'Media', 'Playground'];
   for (j = 0; j < sections.length; j++) {
     if (document.getElementById(sections[j])) {
       return allTabs[j];
