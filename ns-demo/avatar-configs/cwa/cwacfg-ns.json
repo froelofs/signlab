@@ -5,7 +5,7 @@
     "jasVersionTag"   : "uva2020",
   
     "sigmlBase"       : "sigml",
-    "avJARBase"		  : "avatars-ns",
+    "avJARBase"		    : "avatars-ns",
     "avJSONBase"      : "avjson",
     "useAvatarJARs"   : true,
   

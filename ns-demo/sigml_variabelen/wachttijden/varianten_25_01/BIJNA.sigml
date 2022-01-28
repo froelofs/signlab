@@ -2,14 +2,17 @@
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="L17" speed="0.7"/>
-        <mouth_picture picture="e:na" speed="1.6"/>
+        <mouth_picture picture="e:na" speed="2"/>
       </mouthing_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" second_handshape="flat" thumbpos="in" second_thumbpos="out"/>
-      <handconfig extfidir="old" second_extfidir="uo"/>
-      <handconfig palmor="d" second_palmor="dl"/>
-      <location_bodyarm contact="close" location="stomach" side="right_at" second_location="chest" second_side="right_at"/>
-      <wristmotion motion="twisting" size="small" speed="1.6"/>
+      <handconfig extfidir="ulold" second_extfidir="uo"/>
+      <handconfig palmor="duol" second_palmor="dll"/>
+      <location_bodyarm contact="close" location="chest" side="front" second_location="chest" second_side="front"/>
+      <par_motion>
+        <wristmotion motion="twisting" size="medium" speed="1.4"/>
+        <wristmotion motion="twisting" size="large" speed="1.2"/>
+      </par_motion>
     </sign_manual>
   </hamgestural_sign>

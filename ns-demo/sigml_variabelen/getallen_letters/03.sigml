@@ -4,8 +4,14 @@
             <mouth_picture picture="u:" speed="0.9"/>
             <mouth_gesture movement="T01" speed="1.2"/>
         </mouthing_tier>
+        <head_tier>
+	        <head_movement movement="SL" amount="0.7"/>
+        </head_tier>
         <facialexpr_tier>
+          <facial_expr_par>
             <eye_brows movement="RB"/>
+	          <eye_gaze movement="LE" amount="0.6"/>
+          </facial_expr_par>
         </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -27,6 +33,15 @@
       <mouthing_tier>
         <mouth_picture picture="dRi"/>
       </mouthing_tier>
+        <head_tier>
+	        <head_movement movement="SL" amount="0.7"/>
+        </head_tier>
+        <facialexpr_tier>
+          <facial_expr_par>
+            <eye_brows movement="RB"/>
+	          <eye_gaze movement="LE" amount="0.6"/>
+          </facial_expr_par>
+        </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>

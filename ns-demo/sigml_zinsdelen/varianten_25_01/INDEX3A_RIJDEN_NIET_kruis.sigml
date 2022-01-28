@@ -15,13 +15,12 @@
         <head_par>
           <head_movement movement="SR"/>
           <head_movement movement="SR"/>
-          <head_movement movement="SR"/>
         </head_par>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
          <eye_lids movement="SB" />
-         <eye_gaze direction="RD"/>
+         <eye_gaze direction="RD" amount="0.6"/>
         </facial_expr_par>
        </facialexpr_tier>
     </sign_nonmanual>
@@ -46,7 +45,10 @@
         </facial_expr_par>
       </facialexpr_tier>
       <head_tier>
-        <head_movement movement="SH" speed="0.1"/>
+        <head_par>
+          <head_movement movement="SL" amount="0.7"/>
+          <head_movement movement="SH" speed="0.1"/>
+        </head_par>
       </head_tier>
     </sign_nonmanual>
     <sign_manual>

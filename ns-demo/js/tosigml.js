@@ -38,18 +38,11 @@ function splitSentence(sentencePart, variable, sentenceArray, stationsArray){
   // First word has no space before
   if(sentenceArray.length === 0){
     sentenceArray.push(sentencePart.substring(0, sentencePart.indexOf(variable)-1));
-  } else { 
+  } else {
     // Skip space before non-first words/parts
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
   }
-  if(stationsArray.length > 1 && stationsArray.includes(variable)){
-    sentenceArray.push("telhand"+ n_telhand + "");
-    n_telhand+=1;
-    sentenceArray.push(variable);
-    
-  } else {
-    sentenceArray.push(variable);
-  }
+  sentenceArray.push(variable);
 
   sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
   return sentenceArray, sentencePart;
@@ -115,6 +108,10 @@ function getSigmlVariables(entry, variableArray, stationsArray){
   return variableArray, stationsArray;
 }
 
+function callbackTijd(data_var){
+  json_var_tijd = data_var;
+}
+
 function callbackVar(data_var){
   json_var = data_var;
 }
@@ -126,6 +123,12 @@ function callbackSent_NL(data_sent){
 function callbackSent_EN(data_sent){
   json_sent_EN = data_sent;
 }
+
+$.getJSON("json/hele_uren.json", function(data_var){
+  callbackTijd(data_var);
+}).fail(function() {
+  console.log("Could not get SiGML tijd JSON file");
+});
 
 $.getJSON("json/variables.json", function(data_var){
   callbackVar(data_var);
@@ -184,7 +187,7 @@ async function getSiGML(sentenceArray){
       var tijd = sentenceArray[el_index+1] + sentenceArray[el_index+2] + sentenceArray[el_index+3];
       for(i=1; i<=3; i++){
         if(sentenceArray[el_index+3]==="00"){
-          data = await getSiGMLContent(json_var[sentenceArray[el_index+1]]);
+          data = await getSiGMLContent(json_var_tijd[sentenceArray[el_index+1]]);
           i+=2;
         } else {
           data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
@@ -199,6 +202,8 @@ async function getSiGML(sentenceArray){
       console.log('Both undefined or element skipped: ', el);
     }
     if (el == lastItem){
+      // Extra pauze en eindpose toevoegen
+      tempString += '<hamgestural_sign gloss=""><sign_nonmanual><facialexpr_tier><eye_brows movement="RB" amount="0.7" speed="0.8"/><eye_lids movement="BB" speed="0.8"/></facialexpr_tier></sign_nonmanual><sign_manual holdover="true"></sign_manual></hamgestural_sign>';
       tempString += '<hamgestural_sign gloss="" timescale=".7" duration="1.2"><sign_manual both_hands="true" lr_symm="true"><handconfig handshape="fist" thumbpos="across" /><handconfig extfidir="dl" /><handconfig palmor="l" /><location_bodyarm contact="touch" location="belowstomach" side="right_beside"><location_hand digits="1" /></location_bodyarm></sign_manual><sign_nonmanual><body_tier><body_movement movement="ST" /></body_tier><head_tier><head_movement movement="NU" amount="0.4"/></head_tier><facialexpr_tier><eye_brows movement="RB" amount="0.6" /><eye_lids movement="BB" /></facialexpr_tier></sign_nonmanual></hamgestural_sign>';
       tempString += '</sigml>';
     }

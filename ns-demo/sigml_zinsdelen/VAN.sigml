@@ -1,6 +1,10 @@
   <hamgestural_sign gloss="">
     <sign_nonmanual>
+      <head_tier>
+	      <head_movement movement="SL" amount="0.7"/>
+      </head_tier>
       <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
         <eye_brows movement="RB" amount="0.7" speed="1.2"/>
       </facialexpr_tier>
     </sign_nonmanual>
@@ -14,6 +18,12 @@
         <mouth_picture picture="fA:" speed="1.5"/>
         <mouth_gesture movement="L28" amount="0.8" speed="1.4"/>
       </mouthing_tier>
+      <head_tier>
+        <head_movement movement="SL" amount="0.7"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="flat" second_handshape="flat" second_thumbpos="halfout" thumbpos="out"/>

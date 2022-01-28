@@ -1,9 +1,14 @@
-
   <hamgestural_sign gloss="ELF" timescale="0.9" duration="0.7">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="@lf"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="0.7"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist" thumbpos="out"/>
@@ -12,7 +17,7 @@
       <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
       <tgt_motion>
         <changeposture/>
-        <handconfig palmor="ul"/>
+        <handconfig extfidir="uool" palmor="ul"/>
       </tgt_motion>
     </sign_manual>
   </hamgestural_sign>

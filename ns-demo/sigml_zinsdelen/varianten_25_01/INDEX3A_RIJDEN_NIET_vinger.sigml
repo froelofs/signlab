@@ -15,13 +15,12 @@
         <head_par>
           <head_movement movement="SR"/>
           <head_movement movement="SR"/>
-          <head_movement movement="SR"/>
         </head_par>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
          <eye_lids movement="SB" />
-         <eye_gaze direction="RD"/>
+         <eye_gaze direction="RD" amount="0.6"/>
         </facial_expr_par>
        </facialexpr_tier>
     </sign_nonmanual>
@@ -46,7 +45,10 @@
         </facial_expr_par>
       </facialexpr_tier>
       <head_tier>
-        <head_movement movement="SH" speed="0.1"/>
+        <head_par>
+          <head_movement movement="SL" amount="0.7"/>
+          <head_movement movement="SH" speed="0.1"/>
+        </head_par>
       </head_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -60,24 +62,24 @@
     </sign_manual>
   </hamgestural_sign>
 
-    <hamgestural_sign gloss="RIJDT NIET">
+  <hamgestural_sign gloss="RIJDT NIET" timescale="0.7" duration="1.1">
         <sign_manual>
             <handconfig handshape="finger2" thumbpos="across"/>
-            <handconfig extfidir="ul" second_extfidir="ui"/>
-            <handconfig palmor="l"/>
-            <location_bodyarm contact="close" location="chest" second_location="shouldertop" second_side="left_at"/>
+            <handconfig extfidir="ll" second_extfidir="ull"/>
+            <handconfig palmor="r"/>
+            <location_bodyarm contact="close" location="stomach" second_location="shoulders" second_side="left_at" side="front"/>
             <par_motion>
-                <directedmotion curve="d" curve_size="small" direction="l" fast="true"/>
+                <directedmotion curve="u" curve_size="small" direction="l" fast="true" speed="5"/>
                 <tgt_motion>
                     <changeposture/>
-                    <handconfig extfidir="ur" palmor="ur" second_extfidir="ui"/>
-                    <location_bodyarm location="stomach" second_location="shouldertop" side="right_beside"/>
+                    <handconfig extfidir="ur" palmor="l" second_extfidir="u"/>
+                    <location_bodyarm location="shouldertop" second_location="shoulders" side="front" second_side="right_at"/>
                 </tgt_motion>
             </par_motion>
         </sign_manual>
         <sign_nonmanual>
             <head_tier>
-                <head_movement movement="SH"/>
+                <head_movement movement="SH" speed="0.1"/>
             </head_tier>
             <mouthing_tier>
                 <mouth_picture picture="Nai" speed="1.2"/>
@@ -91,4 +93,6 @@
                 <eye_lids movement="SB"/>
             </facialexpr_tier>
         </sign_nonmanual>
-    </hamgestural_sign>
+  </hamgestural_sign>
+
+  
