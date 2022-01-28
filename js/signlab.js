@@ -37,7 +37,7 @@ function changeDisplay(myRadio) {
 ///Makes an ajax call to the python script (by way of a php wrapper)
 function callPython(text, alertID) {
   showBusyState();
-  console.log("text" + text);
+  console.log("text: " + text);
   //Adds a flag to the input if applicable
   flags = flag.split(",");
   flag = flags[0];
@@ -53,8 +53,8 @@ function callPython(text, alertID) {
     url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
     type : 'POST',
     // data: {"input": inputPython},
-    // dataType: "json",
-    dataType: "jsonp",
+    dataType: "json",
+    //dataType: "jsonp",
     crossDomain: true,
     success : onSuccess,
     error : onError,
