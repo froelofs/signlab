@@ -19,7 +19,7 @@
       <handconfig handshape="finger2" thumbpos="across"/>
       <handconfig extfidir="ul" second_extfidir="l"/>
       <handconfig palmor="drr"/>
-      <location_bodyarm contact="close" location="chest" side="right" second_location="stomach" second_side="front"/>
+      <location_bodyarm contact="close" location="chest" side="right" second_location="chest" second_side="front"/>
       <par_motion>
         <directedmotion direction="ur" speed="2"/>
         <tgt_motion>

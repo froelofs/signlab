@@ -4,6 +4,12 @@
         <mouth_gesture movement="L17" speed="0.7"/>
         <mouth_picture picture="e:na" speed="2"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="0.7"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" second_handshape="flat" thumbpos="in" second_thumbpos="out"/>

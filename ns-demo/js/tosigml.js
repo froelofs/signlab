@@ -59,6 +59,11 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     trainVar = document.getElementById('trainTypeOptions').value;
     variableArray.push(trainVar);
   }
+  if(entry.includes("endStation") || entry.includes("eindStation")){
+    endVar = document.getElementById('endStationOptions').value;
+    variableArray.push(endVar);
+    stationsArray.push(endVar);
+  }
   if(entry.includes("interStation1,") || entry.includes("tussenStation1")){
     inter1Var = document.getElementById('interStation1Options').value;
     if(inter1Var !== "-"){
@@ -87,11 +92,7 @@ function getSigmlVariables(entry, variableArray, stationsArray){
       stationsArray.push(inter4Var);
     }
   }
-  if(entry.includes("endStation") || entry.includes("eindStation")){
-    endVar = document.getElementById('endStationOptions').value;
-    variableArray.push(endVar);
-    stationsArray.push(endVar);
-  }
+  
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput').value;
     variableArray.push(departVar);
