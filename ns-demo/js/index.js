@@ -206,7 +206,6 @@ function updateGlobalVariables(name, oldValue){
     endStationTemp =  document.getElementById('endStationOptions').value;
   
   if (globalVar.lang == "Nederlands"){
-    console.log('lang', globalVar.lang)
     var waitElementsArray = ["enkele minuten", "ongeveer 5 minuten", "ongeveer 35 minuten", "ongeveer anderhalf uur", "een nog onbekende tijd"];
 
     document.getElementById('trainType').innerHTML = 'Treintype: ';
