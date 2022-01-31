@@ -34,7 +34,7 @@ var endStationTemp;
 
 var oldStationInt;
 
-// Inter en end array moeten verschillende stations bevatten anders krijg je fouten (kleine bug)
+// Inter en end array moeten verschillende stations bevatten anders worden ze op elkaars plek ingevuld (kleine bug)
 var interStationsArray = ["-", "Zwolle", "Arnhem", "Deventer", "Breda"]
 var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Maastricht", "Schiedam", "Utrecht Centraal"]
 
