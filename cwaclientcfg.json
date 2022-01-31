@@ -7,6 +7,7 @@
       "height":           320,
       "avList":           "avsfull",
       "initAv":           "francoise",
+      "ambIdle":          false,
       "allowSiGMLText":   true,
       "description":      "avatar for translation page"
     },
