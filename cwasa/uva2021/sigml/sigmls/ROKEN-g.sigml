@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ROKEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="rok"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u" second_palmor="ul"/>
+      <location_bodyarm contact="touch" location="lips" side="right_at">
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <directedmotion direction="or" fast="true" size="small"/>
+          <location_bodyarm contact="close" location="lips" side="right_at">
+            <location_hand digits="2" location="nail" side="palmar"/>
+          </location_bodyarm>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

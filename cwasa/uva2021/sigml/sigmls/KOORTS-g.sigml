@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="KOORTS">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="kors"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent"/>
+      <handconfig extfidir="il" second_extfidir="i"/>
+      <handconfig palmor="d" second_palmor="dr"/>
+      <location_bodyarm contact="touch" location="cheek">
+        <location_hand digits="3" location="midjoint" side="dorsal"/>
+      </location_bodyarm>
+      <nomotion/>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>
