@@ -59,6 +59,7 @@ startUp(globalVar.currentSentence, false);
 $(departTimeInput).on("change", function(){
   departTimeInputChange = departTimeInput.value;
   replaceText(globalVar.currentSentence, departTimeInputChange, /\d{1,2}\:\d{2}/, globalVar.departTime);
+  globalVar.playing ? makePlayNonClickable() : -1;
 })
 
 function updateGlobalVariables(name, oldValue){
@@ -98,6 +99,9 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} name 
  */
  function replaceText(currentSentence, newValue, oldValue, name){
+   console.log(globalVar.playing);
+  globalVar.playing ? makePlayNonClickable() : -1;
+
   // Krijgt globale vars mee vanuit index.html
   // Update global var in 1st iteration (because of the auto-fill)
   oldValue = updateGlobalVariables(name, oldValue);
@@ -156,7 +160,6 @@ function updateGlobalVariables(name, oldValue){
   // Remove space before invisible numbers
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
   document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
-  document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
 /**
