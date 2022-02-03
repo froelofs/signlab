@@ -1,4 +1,3 @@
-
     <hamgestural_sign gloss="ZWOLLE">
         <sign_manual>
             <handconfig handshape="finger23spread" thumbpos="across"/>
@@ -24,11 +23,17 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <head_tier>
-                <head_movement movement="NU"/>
+                <head_par>
+                    <head_movement movement="NU"/>
+                    <head_movement movement="SL" amount="1.5"/>
+                </head_par>
             </head_tier>
             <facialexpr_tier>
-                <eye_gaze movement="DN"/>
-                <eye_lids movement="SB"/>
+                <facial_expr_par>
+                    <eye_gaze movement="DN"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
+                    <eye_lids movement="SB" amount="0.6"/>
+                </facial_expr_par>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

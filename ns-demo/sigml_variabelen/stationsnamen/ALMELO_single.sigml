@@ -56,10 +56,12 @@
                 <body_movement movement="TF" amount="0.001"/>
             </body_tier>
             <head_tier>
-                <head_movement movement="SL" amount="0.7"/>
+                <head_movement movement="SL" amount="1.5"/>
             </head_tier>
             <facialexpr_tier>
+                <eye_gaze movement="UP" amount="0.8"/>
                 <eye_gaze movement="LE" amount="0.6"/>
+                <eye_gaze movement="RI" amount="0.6" speed="0.6"/>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

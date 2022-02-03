@@ -40,7 +40,7 @@
         </mouthing_tier>
       <head_tier>
         <head_par>
-          <head_movement movement="SL" amount="0.7"/>
+          <head_movement movement="SL" amount="1.5"/>
           <head_movement movement="SH" amount="0.7"/>
         </head_par>
       </head_tier>

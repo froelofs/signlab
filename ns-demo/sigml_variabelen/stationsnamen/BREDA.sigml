@@ -31,11 +31,13 @@
             </shoulder_tier>
             <head_tier>
                 <head_movement movement="SR"/>
+                <head_movement movement="SL" amount="1.5"/>
             </head_tier>
             <facialexpr_tier>
                 <facial_expr_par>
                     <eye_gaze movement="RD" amount="0.55"/>
                     <eye_lids movement="TB" amount="0.15"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
                 </facial_expr_par>
             </facialexpr_tier>
         </sign_nonmanual>

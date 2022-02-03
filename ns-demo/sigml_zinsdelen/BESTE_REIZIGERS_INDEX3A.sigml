@@ -10,11 +10,7 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <head_tier>
-              <head_par>
-                <head_movement movement="SL" amount="0.7"/>
-                <head_movement movement="NU" amount="0.4"/>
-                <head_movement movement="LI"/>
-              </head_par>
+              <head_movement movement="SL" amount="1.5"/>
             </head_tier>
             <facialexpr_tier>
                 <eye_gaze movement="LE" amount="0.6"/>
@@ -31,10 +27,7 @@
         <mouth_picture picture="Alo:"/>
       </mouthing_tier>
       <head_tier>
-        <head_par>
-          <head_movement movement="LI"/>
-          <head_movement movement="SL" amount="0.7"/>
-        </head_par>
+        <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <eye_gaze movement="LE" amount="0.6"/>
@@ -60,7 +53,7 @@
     <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_movement movement="SL" amount="0.7"/>
+        <head_movement movement="SL" amount="0.8"/>
       </head_tier>
       <facialexpr_tier>
         <eye_brows movement="RB" amount="0.7" speed="0.8"/>
@@ -76,7 +69,7 @@
     <sign_nonmanual>
       <head_tier>
         <head_par>
-          <head_movement movement="SR"/>
+          <head_movement movement="SR" speed="0.5"/>
           <head_movement movement="SR"/>
         </head_par>
       </head_tier>

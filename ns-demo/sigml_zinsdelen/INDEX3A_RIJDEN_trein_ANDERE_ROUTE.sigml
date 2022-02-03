@@ -1,8 +1,14 @@
  <hamgestural_sign gloss="">
     <sign_nonmanual>
+      <head_tier>
+	      <head_movement movement="SL" amount="0.8"/>
+      </head_tier>
       <facialexpr_tier>
-        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	      <eye_lids movement="BB" speed="0.8"/>
+        <facial_expr_par>
+          <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+	        <eye_lids movement="BB" speed="0.8"/>
+          <eye_gaze movement="LE" amount="0.6"/>
+        </facial_expr_par>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
@@ -13,7 +19,7 @@
     <sign_nonmanual>
       <head_tier>
         <head_par>
-          <head_movement movement="SR"/>
+          <head_movement movement="SR" speed="0.5"/>
           <head_movement movement="SR"/>
         </head_par>
       </head_tier>
@@ -43,9 +49,13 @@
           <eye_lids movement="SB" amount="0.8"/>
           <eye_gaze direction="RD" amount="0.5"/>
         </facial_expr_par>
+        <eye_gaze movement="LE" amount="0.6"/>
       </facialexpr_tier>
       <head_tier>
-        <head_movement movement="TL" amount="0.5"/>
+        <head_par>
+          <head_movement movement="TL" amount="0.5"/>
+          <head_movement movement="SL" amount="1.5"/>
+        </head_par>
       </head_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -64,6 +74,12 @@
       <mouthing_tier>
         <mouth_picture picture="AdYrY"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist" thumbpos="out"/>
@@ -83,11 +99,15 @@
       <mouthing_tier>
         <mouth_picture picture="ruut@"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
       <facialexpr_tier>
         <eye_gaze direction="DN" amount="0.6"/>
         <eye_gaze direction="RD" amount="0.5"/>
         <eye_gaze direction="RU" amount="0.3"/>
       </facialexpr_tier>
+      <eye_gaze movement="LE" amount="0.6"/>
     </sign_nonmanual>
     <sign_manual>
     <split_handconfig>

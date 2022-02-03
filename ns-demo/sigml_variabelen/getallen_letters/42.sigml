@@ -4,7 +4,7 @@
         <mouth_picture picture="twe@nfeRt@x" speed="2"/>
       </mouthing_tier>
       <head_tier>
-	      <head_movement movement="SL" amount="0.7"/>
+	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
 	      <eye_gaze movement="LE" amount="0.6"/>
