@@ -38,16 +38,6 @@ var oldStationInt;
 var interStationsArray = ["-", "Zwolle", "Arnhem", "Deventer", "Breda"]
 var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Maastricht", "Schiedam", "Utrecht Centraal"]
 
-trainTypeBox = document.getElementById('trainTypeBox');
-platformBox = document.getElementById('platformBox');
-departTimeBox = document.getElementById('departTimeBox');
-waitTimeBox = document.getElementById('waitTimeBox');
-interStationBox1 = document.getElementById('interStationBox1')
-interStationBox2 = document.getElementById('interStationBox2')
-interStationBox3 = document.getElementById('interStationBox3')
-interStationBox4 = document.getElementById('interStationBox4')
-endStationBox = document.getElementById('endStationBox')
-
 var departTimeInput = document.getElementById('departTimeInput');
 // departTimeInput = departTimeInput.value;
 var departTimeInputChange;
@@ -55,7 +45,7 @@ var departTimeInputChange;
 $(departTimeInput).on("change", function(){
   departTimeInputChange = departTimeInput.value;
   replaceText(globalVar.currentSentence, departTimeInputChange, /\d{1,2}\:\d{2}/, globalVar.departTime);
-  globalVar.playing ? makePlayNonClickable() : -1;
+  globalVar.playing ? makePlayNonClickable(av) : -1;
 })
 
 function updateGlobalVariables(name, oldValue){
@@ -94,9 +84,9 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} oldValue 
  * @param {*} name 
  */
- function replaceText(currentSentence, newValue, oldValue, name){
+ function replaceText(currentSentence, newValue, oldValue, name, av){
    console.log(globalVar.playing);
-  globalVar.playing ? makePlayNonClickable() : -1;
+  globalVar.playing ? makePlayNonClickable(av) : -1;
 
   // Krijgt globale vars mee vanuit index.html
   // Update global var in 1st iteration (because of the auto-fill)
@@ -107,7 +97,7 @@ function updateGlobalVariables(name, oldValue){
 
   globalVar.currentSentence = currentSentence.replace(oldValue, newValue);
 
-  boxBackground = document.getElementById('currSentenceBox');
+  boxBackground = document.getElementById('currSentenceBox_' + av);
   backgroundColor = window.getComputedStyle(boxBackground).backgroundColor;
   if(name === "departTime"){
     if (currentSentence.includes(globalVar.departTime)){
@@ -120,19 +110,19 @@ function updateGlobalVariables(name, oldValue){
   else if(name.match(/interStation\d{1}/)){
     var stationInt;
 
-    if (name === "interStation1"){
+    if (name === "interStation1_" + av){
       oldStationInt = 1;
       stationInt = 1;
       globalVar.interStation1 = newValue;
-    } else if (name === "interStation2"){
+    } else if (name === "interStation2_" + av){
       oldStationInt = 2;
       stationInt = 2;
       globalVar.interStation2 = newValue;
-    } else if (name === "interStation3"){
+    } else if (name === "interStation3_" + av){
       oldStationInt = 3;
       stationInt = 3;
       globalVar.interStation3 = newValue;
-    } else if (name === "interStation4"){
+    } else if (name === "interStation4_" + av){
       oldStationInt = 4;
       stationInt = 4;
       globalVar.interStation4 = newValue;
@@ -155,14 +145,14 @@ function updateGlobalVariables(name, oldValue){
 
   // Remove space before invisible numbers
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
-  document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
+  document.getElementById('currSentence_' + av).innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
 }
 
 /**
  * Changes the varBox names and creates dropdown menu's, depending on the chosen language
  * @param {*} language 
  */
- function startUp(currentSentence, changeSent) {
+ function startUp(currentSentence, changeSent, av) {
   train_n=1;
   platform_n=1;
   depart_n=1;
@@ -171,72 +161,57 @@ function updateGlobalVariables(name, oldValue){
   globalVar.urlName = "sentences_" + globalVar.lang;
 
   if(changeSent){
-    document.getElementById('currSentence').innerHTML = currentSentence;
-    resetBoxes(currentSentence);
-    colorKeywords(currentSentence);
+    document.getElementById('currSentence_' + av + '').innerHTML = currentSentence;
+    resetBoxes(currentSentence, av);
+    colorKeywords(currentSentence, av);
   } else {
     $.getJSON("json/" + globalVar.urlName + ".json", function(json) {
-    createDropdown(Object.keys(json), 'sentenceOptions');
+    createDropdown(Object.keys(json), 'sentenceOptions_' + av);
     globalVar.currentSentence = Object.keys(json)[0];
     
-    createDropdown(waitElementsArray, 'waitTimeOptions');
-    createDropdown(interStationsArray, 'interStation1Options');
-    createDropdown(interStationsArray, 'interStation2Options');
-    createDropdown(interStationsArray, 'interStation3Options');
-    createDropdown(interStationsArray, 'interStation4Options');
-    createDropdown(endStationsArray, 'endStationOptions');
+    createDropdown(waitElementsArray, 'waitTimeOptions_' + av);
+    createDropdown(interStationsArray, 'interStation1Options_' + av);
+    createDropdown(interStationsArray, 'interStation2Options_' + av);
+    createDropdown(interStationsArray, 'interStation3Options_' + av);
+    createDropdown(interStationsArray, 'interStation4Options_' + av);
+    createDropdown(endStationsArray, 'endStationOptions_' + av);
 
-    document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
-    resetBoxes(globalVar.currentSentence);
-    colorKeywords(globalVar.currentSentence);
-
-    document.querySelector('button[data-id="sentenceOptions"]').title = globalVar.currentSentence;
-    document.querySelector('button[data-id="endStationOptions"]').title = endStationsArray[0];
+    document.getElementById('currSentence_' + av + '').innerHTML = globalVar.currentSentence;
+    resetBoxes(globalVar.currentSentence, av);
+    colorKeywords(globalVar.currentSentence, av);
+    document.querySelector('button[data-id="sentenceOptions_'+ av + '"]').title = globalVar.currentSentence;
+    document.querySelector('button[data-id="endStationOptions_' + av + '"]').title = endStationsArray[0];
     $('.selectpicker').selectpicker('refresh');
   }).fail(function() {
     console.log("Could not get JSON file");
   });
   }
   // Save initial dropdown menu values temporarily
-    trainTemp =  document.getElementById('trainTypeOptions').value;
-    platformTemp =  document.getElementById('platformNrOptions').value;
-    departTemp =  document.getElementById('departTimeInput').value;
-    waitTimeTemp =  document.getElementById('waitTimeOptions').value;
-    endStationTemp =  document.getElementById('endStationOptions').value;
+    trainTemp =  document.getElementById('trainTypeOptions_' + av).value;
+    platformTemp =  document.getElementById('platformNrOptions_' + av).value;
+    departTemp =  document.getElementById('departTimeInput_' + av).value;
+    waitTimeTemp =  document.getElementById('waitTimeOptions_' + av).value;
+    endStationTemp =  document.getElementById('endStationOptions_' + av).value;
   
     var waitElementsArray = ["enkele minuten", "ongeveer 5 minuten", "ongeveer 35 minuten", "ongeveer anderhalf uur", "een nog onbekende tijd"];
-
-    document.getElementById('trainType').innerHTML = 'Treintype: ';
-    document.getElementById('platform').innerHTML = 'Spoornummer: ';
-    document.getElementById('time').innerHTML = 'Vertrektijd: ';
-    document.getElementById('waitTime').innerHTML = 'Wachttijd: ';
-    document.getElementById('speedLabel').innerHTML = 'Snelheid: ';
-    document.getElementById('endStation').innerHTML = 'Eindstation: ';
-    document.getElementById('interStation1').innerHTML = 'Tussenstation 1 (optioneel): ';
-    document.getElementById('interStation2').innerHTML = 'Tussenstation 2 (optioneel): ';
-    document.getElementById('interStation3').innerHTML = 'Tussenstation 3 (optioneel): ';
-    document.getElementById('interStation4').innerHTML = 'Tussenstation 4 (optioneel): ';
-    document.getElementById('currSentenceLabel').innerHTML = '<b><u>Huidig omroepbericht: </u></b>';
 }
 
 /**
  * Displays the variable boxes
  * @param {*} text 
  */
-function displayVarBox(text){
-  
-  text.includes(globalVar.trainType) ? trainTypeBox.style.display = "block" : -1;
-  text.includes(globalVar.platformNr) ? platformBox.style.display = "block" : -1;
-  text.includes(globalVar.departTime) ? departTimeBox.style.display = "block" : -1;
-  text.includes(globalVar.waitTime) ? waitTimeBox.style.display = "block" : -1;
-  text.includes(globalVar.interStation1) ? interStationBox1.style.display = "block" : -1;
-  text.includes(globalVar.interStation2) ? interStationBox2.style.display = "block" : -1;
-  text.includes(globalVar.interStation3) ? interStationBox3.style.display = "block" : -1;
-  text.includes(globalVar.interStation4) ? interStationBox4.style.display = "block" : -1;
-  text.includes(globalVar.endStation) ? endStationBox.style.display = "block" : -1;
+function displayVarBox(text, av){
+
+  text.includes(globalVar.trainType) ? document.getElementById('trainTypeBox_' + av).style.display = "block" : -1;
+  text.includes(globalVar.platformNr) ? document.getElementById('platformBox_' + av).style.display = "block" : -1;
+  text.includes(globalVar.departTime) ? document.getElementById('departTimeBox_' + av).style.display = "block" : -1;
+  text.includes(globalVar.waitTime) ? document.getElementById('waitTimeBox_' + av).style.display = "block" : -1;
+  text.includes(globalVar.interStation1) ? document.getElementById('interStationBox1_' + av).style.display = "block" : -1;
+  text.includes(globalVar.interStation2) ? document.getElementById('interStationBox2_' + av).style.display = "block" : -1;
+  text.includes(globalVar.interStation3) ? document.getElementById('interStationBox3_' + av).style.display = "block" : -1;
+  text.includes(globalVar.interStation4) ? document.getElementById('interStationBox4_' + av).style.display = "block" : -1;
+  text.includes(globalVar.endStation) ? document.getElementById('endStationBox_' + av).style.display = "block" : -1;
 }
-
-
 
 /**
  * 
@@ -258,31 +233,31 @@ function resetGlobalVariables(){
  * Changes the chosen sentence text
  * @param {*} text 
  */
- function changeSentence(currentSentence){
-  document.getElementById('repetitionBar').style.display = "none";
+ function changeSentence(currentSentence, av){
+  document.getElementById('repetitionBar_' + av).style.display = "none";
   // Disable play button when previous animation is still playing
-  globalVar.playing ? makePlayNonClickable() : -1;
+  globalVar.playing ? makePlayNonClickable(av) : -1;
   resetGlobalVariables();
-  startUp(currentSentence, true);
+  startUp(currentSentence, true, av);
 }
   
-function resetBoxes(currentSentence){
-  makeVarBoxInvisible();
-  displayVarBox(currentSentence);
+function resetBoxes(currentSentence, av){
+  makeVarBoxInvisible(av);
+  displayVarBox(currentSentence, av);
 }
 
-function colorKeywords(currentSentence){
+function colorKeywords(currentSentence, av){
   // Color keywords
   if(currentSentence.includes(globalVar.trainType)){
-    currentSentence = currentSentence.replace(globalVar.trainType, '<span style="color: orange;">' + document.getElementById('trainTypeOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.trainType, '<span style="color: orange;">' + document.getElementById('trainTypeOptions_' + av).value + '</span>');
   } if (currentSentence.includes(globalVar.platformNr)){
-    currentSentence = currentSentence.replace(globalVar.platformNr, '<span style="color: orange;">' + document.getElementById('platformNrOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.platformNr, '<span style="color: orange;">' + document.getElementById('platformNrOptions_' + av).value + '</span>');
   } if (currentSentence.includes(globalVar.departTime)){
-    currentSentence = currentSentence.replace(globalVar.departTime, '<span style="color: orange;">' + document.getElementById('departTimeInput').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.departTime, '<span style="color: orange;">' + document.getElementById('departTimeInput_' + av).value + '</span>');
   } if (currentSentence.includes(globalVar.waitTime)){
-    currentSentence = currentSentence.replace(globalVar.waitTime, '<span style="color: orange;">' + document.getElementById('waitTimeOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.waitTime, '<span style="color: orange;">' + document.getElementById('waitTimeOptions_' + av).value + '</span>');
   } if (currentSentence.includes(globalVar.endStation)){
-    currentSentence = currentSentence.replace(globalVar.endStation, '<span style="color: orange;">' + document.getElementById('endStationOptions').value + '</span>');
+    currentSentence = currentSentence.replace(globalVar.endStation, '<span style="color: orange;">' + document.getElementById('endStationOptions_' + av).value + '</span>');
   }
   currentSentence.includes(globalVar.interStation1) ? currentSentence = currentSentence.replaceAll(globalVar.interStation1, '<span style="color: orange;">' + globalVar.interStation1 + '</span>') : -1;
   currentSentence.includes(globalVar.interStation2) ? currentSentence = currentSentence.replaceAll(globalVar.interStation2, '<span style="color: orange;">' + globalVar.interStation2 + '</span>') : -1;
@@ -290,17 +265,17 @@ function colorKeywords(currentSentence){
   currentSentence.includes(globalVar.interStation4) ? currentSentence = currentSentence.replaceAll(globalVar.interStation4, '<span style="color: orange;">' + globalVar.interStation4 + '</span>') : -1;
   
   globalVar.currentSentenceColored = currentSentence;
-  document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored;
+  document.getElementById('currSentence_' + av + '').innerHTML = globalVar.currentSentenceColored;
  
   // Reset default box values
-  $("select[name=interStation1]").val("-");
-  $("select[name=interStation1]").selectpicker("refresh");
-  $("select[name=interStation2]").val("-");
-  $("select[name=interStation2]").selectpicker("refresh");
-  $("select[name=interStation3]").val("-");
-  $("select[name=interStation3]").selectpicker("refresh");
-  $("select[name=interStation4]").val("-");
-  $("select[name=interStation4]").selectpicker("refresh");
+  $("select[name=interStation1" + av + "]").val("-");
+  $("select[name=interStation1" + av + "]").selectpicker("refresh");
+  $("select[name=interStation1" + av + "]").val("-");
+  $("select[name=interStation2" + av + "]").selectpicker("refresh");
+  $("select[name=interStation1" + av + "]").val("-");
+  $("select[name=interStation3" + av + "]").selectpicker("refresh");
+  $("select[name=interStation1" + av + "]").val("-");
+  $("select[name=interStation4" + av + "]").selectpicker("refresh");
 
 }
 
@@ -336,14 +311,12 @@ function compare(input){
     check = data;
    }
   });
-
   for (key in check){
    if(input == check[key]){
     check = true;
     break;
    }
   }
-
   if (check == true){
    document.getElementById("checkPage").style.display = "none";
   }
@@ -355,14 +328,14 @@ function compare(input){
 /**
  * Enable play button when 'stop' is clicked
  */
-function makePlayClickable(){
+function makePlayClickable(av){
   globalVar.playButtonClicked = false;
-  document.getElementById("play").setAttribute("class", "btn btn-primary");
+  document.getElementById("play_" + av).setAttribute("class", "btn btn-primary");
 }
 
-function makePlayNonClickable(){
+function makePlayNonClickable(av){
   globalVar.playButtonClicked = true;
-  document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
+  document.getElementById("play_" + av).setAttribute("class", "no-click-button btn btn-primary");
 }
 
 /**
@@ -370,7 +343,11 @@ function makePlayNonClickable(){
  */
 $(window).on("load", function(){
   if (document.getElementById('Translator')) {
-    resetGlobalVariables();
-    startUp(globalVar.currentSentence, false);
+    resetGlobalVariables('av0');
+    startUp(globalVar.currentSentence, false, 'av0');
+    resetGlobalVariables('av1');
+    startUp(globalVar.currentSentence, false, 'av1');
+    resetGlobalVariables('av2');
+    startUp(globalVar.currentSentence, false, 'av2');
   }
 } );

@@ -72,21 +72,20 @@
     <!-- Challenge Row-->
     <div class="row align-items-start no-gutters">
 
-      <!-- =================================== AVATAR 1 COLUMN =================================== -->
+      <!-- =================================== AVATAR 0 COLUMN =================================== -->
       <div class="col-sm pr-2">
           <span class="CWASAAvatar av0" id="avatar"></span>
-          <input class="av0 subtitlesRep col-mb-5" id="repetitionBar" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
+          <input class="av0 subtitlesRep col-mb-5" id="repetitionBar_av0" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
           <input class="av0 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
           <br>
-          <input type="button" class="btn btn-primary" id="play" value="Play" onclick='makePlayNonClickable(); getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
-          <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
-          <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable();'/>
-          <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable();'/>
+          <input type="button" class="btn btn-primary" id="play_av0" value="Play" onclick='makePlayNonClickable("av0"); getSentenceArray(document.getElementById("currSentence_av0").innerText, "av0");'/>
+          <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable("av0");' />
+          <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable("av0");'/>
+          <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable("av0");'/>
           <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
           <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/>
           <br>
           <br>
-          <label id="speedLabel" for="speedAdj" style="display: inline-block;"></label>
           <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
 
           <div class="mb-3 row align-items-start no-gutters">
@@ -94,34 +93,28 @@
           </div>
           
           <div class="mb-3 row align-items-start no-gutters">
-            <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions"  onchange="changeSentence(this.value);"></select>
+            <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av0"  onchange="changeSentence(this.value, 'av0');"></select>
           </div>
           
-          <div class="currSentenceBox" id="currSentenceBox">
+          <div class="currSentenceBox" id="currSentenceBox_av0">
             <div class="ml-1 mb-3 row align-items-start no-gutters">
-              <br>
-              <div class="col-form-label" id="currSentenceLabel" style="display: block"></div>
-            </div>
-            <div class="ml-1 mb-3 row align-items-start no-gutters">
-              <div class="col-sm" id="currSentence" style="display: block"></div>
+              <div class="col-sm" id="currSentence_av0" style="display: block"></div>
             </div>
           </div>
 
           <div id="variablesLabel" style="display: block"></div>
-                <div class="varBox row align-items-start no-gutters" id="trainTypeBox">
+                <div class="varBox_av0 row align-items-start no-gutters" id="trainTypeBox_av0">
                   <div class="form-inline">
-                    <label class="" id="trainType" for="trainType" style="display: inline-block"></label>
-                    <select class="selectpicker" name="trainType" id="trainTypeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name);">
+                    <select class="selectpicker" name="trainType" id="trainTypeOptions_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name, 'av0');">
                       <option value="intercity">Intercity</option>
                       <option value="sprinter">Sprinter</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="platformBox">
+                <div class="varBox_av0 row align-items-start no-gutters" id="platformBox_av0">
                   <div class="form-inline">
-                    <label class="" id="platform" for="platform" style="display: inline-block"></label>
-                    <select class="selectpicker" name="platformNr" id="platformNrOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name);">
+                    <select class="selectpicker" name="platformNr" id="platformNrOptions_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name, 'av0');">
                       <option value="'5'">'5'</option>
                       <option value="'1a'">'1a'</option>
                       <option value="'1b'">'1b'</option>
@@ -131,112 +124,98 @@
                   </div>
                 </div>
                 
-                <div class="varBox row align-items-start no-gutters" id="departTimeBox">
+                <div class="varBox_av0 row align-items-start no-gutters" id="departTimeBox_av0">
                   <div class="form-inline">
-                    <label class="" id="time" for="time" style="display: inline-block"></label>
-                    <input class="form-control timepicker" name="departTime" id="departTimeInput" type="text" style="width: 100px; display:inline-block;">
+                    <input class="form-control timepicker" name="departTime" id="departTimeInput_av0" type="text" style="width: 100px; display:inline-block;">
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="waitTimeBox">
+                <div class="varBox_av0 row align-items-start no-gutters" id="waitTimeBox_av0">
                   <div class="form-inline">
-                      <label class="" id="waitTime" for="waitTime" style="display: inline-block"></label>
-                      <select class="selectpicker" name="waitTime" id="waitTimeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name);">
+                      <select class="selectpicker" name="waitTime" id="waitTimeOptions_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name, 'av0');">
                       </select>
                   </div>
                 </div>
                 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox1">
+                <div class="varBox_av0 row align-items-start no-gutters" id="interStationBox1_av0">
                   <div class="form-inline">
-                      <label class="" id="interStation1" for="interStation1" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation1" id="interStation1Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name);">
+                      <select class="selectpicker" name="interStation1_av0" id="interStation1Options_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name, 'av0');">
                       </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox2">
+                <div class="varBox_av0 row align-items-start no-gutters" id="interStationBox2_av0">
                   <div class="form-inline">
-                      <label class="" id="interStation2" for="interStation2" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation2" id="interStation2Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name);">
+                      <select class="selectpicker" name="interStation2_av0" id="interStation2Options_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name, 'av0');">
                       </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox3">
+                <div class="varBox_av0 row align-items-start no-gutters" id="interStationBox3_av0">
                   <div class="form-inline">
-                      <label class="" id="interStation3" for="interStation3" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation3" id="interStation3Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name);">
+                      <select class="selectpicker" name="interStation3_av0" id="interStation3Options_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name, 'av0');">
                       </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox4">
+                <div class="varBox_av0 row align-items-start no-gutters" id="interStationBox4_av0">
                   <div class="form-inline">
-                      <label class="" id="interStation4" for="interStation4" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation4" id="interStation4Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name);">
+                      <select class="selectpicker" name="interStation4_av0" id="interStation4Options_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name, 'av0');">
                       </select>
                   </div>
                 </div>
                   
-                <div class="varBox row align-items-start no-gutters" id="endStationBox">
+                <div class="varBox_av0 row align-items-start no-gutters" id="endStationBox_av0">
                   <div class="form-inline">
-                      <label class="" id="endStation" for="endStation" style="display: inline-block"></label>
-                      <select class="selectpicker" name="endStation" id="endStationOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name);">
+                      <select class="selectpicker" name="endStation" id="endStationOptions_av0" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name, 'av0');">
                       </select>
                   </div>
                 </div>
           </div>
 
-       <!-- =================================== AVATAR 2 COLUMN =================================== -->
+       <!-- =================================== AVATAR 1 COLUMN =================================== -->
         <div class="col-sm pr-2">
             <span class="CWASAAvatar av1" id="avatar"></span>
-            <input class="av1 subtitlesRep col-mb-5" id="repetitionBar" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
+            <input class="av1 subtitlesRep col-mb-5" id="repetitionBar_av1" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
             <input class="av1 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
             <br>
-            <input type="button" class="btn btn-primary" id="play" value="Play" onclick='makePlayNonClickable(); getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
-            <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
-            <input type="button" class="bttnSuspend av1 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable();'/>
-            <input type="button" class="bttnResume av1 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable();'/>
+            <input type="button" class="btn btn-primary" id="play_av1" value="Play" onclick='makePlayNonClickable("av1"); getSentenceArray(document.getElementById("currSentence_av1").innerText, "av1");'/>
+            <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable("av1");' />
+            <input type="button" class="bttnSuspend av1 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable("av1");'/>
+            <input type="button" class="bttnResume av1 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable("av1");'/>
             <input type="button" class="bttnPrevF av1 btn btn-primary" value="Frame -1"/>
             <input type="button" class="bttnNextF av1 btn btn-primary" value="Frame +1"/>
             <br>
             <br>
-            <label id="speedLabel" for="speedAdj" style="display: inline-block;"></label>
-            <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+            <span id="speedAdj" class="CWASASpeed av1" style="margin-bottom:5px"></span>
 
           <div class="mb-3 row align-items-start no-gutters">
             <div class="col-sm" id="sentenceOptionsLabel"></div>
           </div>
         
           <div class="mb-3 row align-items-start no-gutters">
-            <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions"  onchange="changeSentence(this.value);"></select>
+            <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av1"  onchange="changeSentence(this.value, 'av1');"></select>
           </div>
           
-          <div class="currSentenceBox" id="currSentenceBox">
+          <div class="currSentenceBox" id="currSentenceBox_av1">
             <div class="ml-1 mb-3 row align-items-start no-gutters">
-              <br>
-              <div class="col-form-label" id="currSentenceLabel" style="display: block"></div>
-            </div>
-            <div class="ml-1 mb-3 row align-items-start no-gutters">
-              <div class="col-sm" id="currSentence" style="display: block"></div>
+              <div class="col-sm" id="currSentence_av1" style="display: block"></div>
             </div>
           </div>
         
           <div id="variablesLabel" style="display: block"></div>
-                <div class="varBox row align-items-start no-gutters" id="trainTypeBox">
+                <div class="varBox_av1 row align-items-start no-gutters" id="trainTypeBox_av1">
                   <div class="form-inline">
-                    <label class="" id="trainType" for="trainType" style="display: inline-block"></label>
-                    <select class="selectpicker" name="trainType" id="trainTypeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name);">
+                    <select class="selectpicker" name="trainType" id="trainTypeOptions_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name, 'av1');">
                       <option value="intercity">Intercity</option>
                       <option value="sprinter">Sprinter</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="platformBox">
+                <div class="varBox_av1 row align-items-start no-gutters" id="platformBox_av1">
                   <div class="form-inline">
-                    <label class="" id="platform" for="platform" style="display: inline-block"></label>
-                    <select class="selectpicker" name="platformNr" id="platformNrOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name);">
+                    <select class="selectpicker" name="platformNr" id="platformNrOptions_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name, 'av1');">
                       <option value="'5'">'5'</option>
                       <option value="'1a'">'1a'</option>
                       <option value="'1b'">'1b'</option>
@@ -246,112 +225,98 @@
                   </div>
                 </div>
                 
-                <div class="varBox row align-items-start no-gutters" id="departTimeBox">
+                <div class="varBox_av1 row align-items-start no-gutters" id="departTimeBox_av1">
                   <div class="form-inline">
-                    <label class="" id="time" for="time" style="display: inline-block"></label>
-                    <input class="form-control timepicker" name="departTime" id="departTimeInput" type="text" style="width: 100px; display:inline-block;">
+                    <input class="form-control timepicker" name="departTime" id="departTimeInput_av1" type="text" style="width: 100px; display:inline-block;">
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="waitTimeBox">
+                <div class="varBox_av1 row align-items-start no-gutters" id="waitTimeBox_av1">
                   <div class="form-inline">
-                      <label class="" id="waitTime" for="waitTime" style="display: inline-block"></label>
-                      <select class="selectpicker" name="waitTime" id="waitTimeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name);">
+                      <select class="selectpicker" name="waitTime" id="waitTimeOptions_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name, 'av1');">
                       </select>
                   </div>
                 </div>
                 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox1">
+                <div class="varBox_av1 row align-items-start no-gutters" id="interStationBox1_av1">
                   <div class="form-inline">
-                      <label class="" id="interStation1" for="interStation1" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation1" id="interStation1Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name);">
+                      <select class="selectpicker" name="interStation1_av1" id="interStation1Options_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name, 'av1');">
                       </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox2">
+                <div class="varBox_av1 row align-items-start no-gutters" id="interStationBox2_av1">
                   <div class="form-inline">
-                      <label class="" id="interStation2" for="interStation2" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation2" id="interStation2Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name);">
+                      <select class="selectpicker" name="interStation2_av1" id="interStation2Options_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name, 'av1');">
                       </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox3">
+                <div class="varBox_av1 row align-items-start no-gutters" id="interStationBox3_av1">
                   <div class="form-inline">
-                      <label class="" id="interStation3" for="interStation3" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation3" id="interStation3Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name);">
+                      <select class="selectpicker" name="interStation3_av1" id="interStation3Options_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name, 'av1');">
                       </select>
                   </div>
                 </div>
 
-                <div class="varBox row align-items-start no-gutters" id="interStationBox4">
+                <div class="varBox_av1 row align-items-start no-gutters" id="interStationBox4_av1">
                   <div class="form-inline">
-                      <label class="" id="interStation4" for="interStation4" style="display: inline-block"></label>
-                      <select class="selectpicker" name="interStation4" id="interStation4Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name);">
+                      <select class="selectpicker" name="interStation4_av1" id="interStation4Options_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name, 'av1');">
                       </select>
                   </div>
                 </div>
                   
-                <div class="varBox row align-items-start no-gutters" id="endStationBox">
+                <div class="varBox_av1 row align-items-start no-gutters" id="endStationBox_av1">
                   <div class="form-inline">
-                      <label class="" id="endStation" for="endStation" style="display: inline-block"></label>
-                      <select class="selectpicker" name="endStation" id="endStationOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name);">
+                      <select class="selectpicker" name="endStation" id="endStationOptions_av1" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name, 'av1');">
                       </select>
                   </div>
                 </div>
           </div>
 
-      <!-- =================================== AVATAR 3 COLUMN =================================== -->
+      <!-- =================================== AVATAR 2 COLUMN =================================== -->
       <div class="col-sm">
         <span class="CWASAAvatar av2" id="avatar"></span>
-        <input class="av2 subtitlesRep col-mb-5" id="repetitionBar" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
+        <input class="av2 subtitlesRep col-mb-5" id="repetitionBar_av2" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
         <input class="av2 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
         <br>
-        <input type="button" class="btn btn-primary" id="play" value="Play" onclick='makePlayNonClickable(); getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
-        <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
-        <input type="button" class="bttnSuspend av2 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable();'/>
-        <input type="button" class="bttnResume av2 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable();'/>
+        <input type="button" class="btn btn-primary av2" id="play_av2" value="Play" onclick='makePlayNonClickable("av2"); getSentenceArray(document.getElementById("currSentence_av2").innerText, "av2");'/>
+        <input type="button" class="btn btn-primary av2" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable("av2");' />
+        <input type="button" class="bttnSuspend av2 btn btn-primary" id="pause" value="Pause" onclick='makePlayNonClickable("av2");'/>
+        <input type="button" class="bttnResume av2 btn btn-primary" id="resume" value="Resume" onclick='makePlayNonClickable("av2");'/>
         <input type="button" class="bttnPrevF av2 btn btn-primary" value="Frame -1"/>
         <input type="button" class="bttnNextF av2 btn btn-primary" value="Frame +1"/>
         <br>
         <br>
-        <label id="speedLabel" for="speedAdj" style="display: inline-block;"></label>
-        <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+        <span id="speedAdj" class="CWASASpeed av2" style="margin-bottom:5px"></span>
 
         <div class="mb-3 row align-items-start no-gutters">
           <div class="col-sm" id="sentenceOptionsLabel"></div>
         </div>
         
         <div class="mb-3 row align-items-start no-gutters">
-          <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions"  onchange="changeSentence(this.value);"></select>
+          <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av2"  onchange="changeSentence(this.value, 'av2');"></select>
         </div>
         
-        <div class="currSentenceBox" id="currSentenceBox">
+        <div class="currSentenceBox" id="currSentenceBox_av2">
           <div class="ml-1 mb-3 row align-items-start no-gutters">
-            <br>
-            <div class="col-form-label" id="currSentenceLabel" style="display: block"></div>
-          </div>
-          <div class="ml-1 mb-3 row align-items-start no-gutters">
-            <div class="col-sm" id="currSentence" style="display: block"></div>
+            <div class="col-sm" id="currSentence_av2" style="display: block"></div>
           </div>
         </div>
 
         <div id="variablesLabel" style="display: block"></div>
-              <div class="varBox row align-items-start no-gutters" id="trainTypeBox">
+              <div class="varBox_av2 row align-items-start no-gutters" id="trainTypeBox_av2">
                 <div class="form-inline">
-                  <label class="" id="trainType" for="trainType" style="display: inline-block"></label>
-                  <select class="selectpicker" name="trainType" id="trainTypeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name);">
+                  <select class="selectpicker" name="trainType" id="trainTypeOptions_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.trainType, this.name, 'av2');">
                     <option value="intercity">Intercity</option>
                     <option value="sprinter">Sprinter</option>
                   </select>
                 </div>
               </div>
 
-              <div class="varBox row align-items-start no-gutters" id="platformBox">
+              <div class="varBox_av2 row align-items-start no-gutters" id="platformBox_av2">
                 <div class="form-inline">
-                  <label class="" id="platform" for="platform" style="display: inline-block"></label>
-                  <select class="selectpicker" name="platformNr" id="platformNrOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name);">
+                  <select class="selectpicker" name="platformNr" id="platformNrOptions_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.platformNr, this.name, 'av2');">
                     <option value="'5'">'5'</option>
                     <option value="'1a'">'1a'</option>
                     <option value="'1b'">'1b'</option>
@@ -361,57 +326,50 @@
                 </div>
               </div>
               
-              <div class="varBox row align-items-start no-gutters" id="departTimeBox">
+              <div class="varBox_av2 row align-items-start no-gutters" id="departTimeBox_av2">
                 <div class="form-inline">
-                  <label class="" id="time" for="time" style="display: inline-block"></label>
-                  <input class="form-control timepicker" name="departTime" id="departTimeInput" type="text" style="width: 100px; display:inline-block;">
+                  <input class="form-control timepicker" name="departTime" id="departTimeInput_av2" type="text" style="width: 100px; display:inline-block;">
                 </div>
               </div>
 
-              <div class="varBox row align-items-start no-gutters" id="waitTimeBox">
+              <div class="varBox_av2 row align-items-start no-gutters" id="waitTimeBox_av2">
                 <div class="form-inline">
-                    <label class="" id="waitTime" for="waitTime" style="display: inline-block"></label>
-                    <select class="selectpicker" name="waitTime" id="waitTimeOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name);">
+                    <select class="selectpicker" name="waitTime" id="waitTimeOptions_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.waitTime, this.name, 'av2');">
                     </select>
                 </div>
               </div>
               
-              <div class="varBox row align-items-start no-gutters" id="interStationBox1">
+              <div class="varBox_av2 row align-items-start no-gutters" id="interStationBox1_av2">
                 <div class="form-inline">
-                    <label class="" id="interStation1" for="interStation1" style="display: inline-block"></label>
-                    <select class="selectpicker" name="interStation1" id="interStation1Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name);">
+                    <select class="selectpicker" name="interStation1_av2" id="interStation1Options_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation1, this.name, 'av2');">
                     </select>
                 </div>
               </div>
 
-              <div class="varBox row align-items-start no-gutters" id="interStationBox2">
+              <div class="varBox_av2 row align-items-start no-gutters" id="interStationBox2_av2">
                 <div class="form-inline">
-                    <label class="" id="interStation2" for="interStation2" style="display: inline-block"></label>
-                    <select class="selectpicker" name="interStation2" id="interStation2Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name);">
+                    <select class="selectpicker" name="interStation2_av2" id="interStation2Options_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation2, this.name, 'av2');">
                     </select>
                 </div>
               </div>
 
-              <div class="varBox row align-items-start no-gutters" id="interStationBox3">
+              <div class="varBox_av2 row align-items-start no-gutters" id="interStationBox3_av2">
                 <div class="form-inline">
-                    <label class="" id="interStation3" for="interStation3" style="display: inline-block"></label>
-                    <select class="selectpicker" name="interStation3" id="interStation3Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name);">
+                    <select class="selectpicker" name="interStation3_av2" id="interStation3Options_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation3, this.name, 'av2');">
                     </select>
                 </div>
               </div>
 
-              <div class="varBox row align-items-start no-gutters" id="interStationBox4">
+              <div class="varBox_av2 row align-items-start no-gutters" id="interStationBox4_av2">
                 <div class="form-inline">
-                    <label class="" id="interStation4" for="interStation4" style="display: inline-block"></label>
-                    <select class="selectpicker" name="interStation4" id="interStation4Options" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name);">
+                    <select class="selectpicker" name="interStation4_av2" id="interStation4Options_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.interStation4, this.name, 'av2');">
                     </select>
                 </div>
               </div>
                 
-              <div class="varBox row align-items-start no-gutters" id="endStationBox">
+              <div class="varBox_av2 row align-items-start no-gutters" id="endStationBox_av2">
                 <div class="form-inline">
-                    <label class="" id="endStation" for="endStation" style="display: inline-block"></label>
-                    <select class="selectpicker" name="endStation" id="endStationOptions" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name);">
+                    <select class="selectpicker" name="endStation" id="endStationOptions_av2" onchange="replaceText(globalVar.currentSentence, this.value, globalVar.endStation, this.name, 'av2');">
                     </select>
                 </div>
               </div>

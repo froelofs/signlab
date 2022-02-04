@@ -72,39 +72,39 @@ function pushInterVars(variableArray, stationsArray, first){
   return variableArray, stationsArray;
 }
 
-function getSigmlVariables(entry, variableArray, stationsArray){
+function getSigmlVariables(entry, variableArray, stationsArray, av){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
   var andersomZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
 
   if(entry.includes("trainType") || entry.includes("treinType")){
-    trainVar = document.getElementById('trainTypeOptions').value;
+    trainVar = document.getElementById('trainTypeOptions_' + av).value;
     variableArray.push(trainVar);
   }
   if(entry !== andersomZin){
     if(entry.includes("endStation") || entry.includes("eindStation")){
-      endVar = document.getElementById('endStationOptions').value;
+      endVar = document.getElementById('endStationOptions_' + av).value;
       variableArray.push(endVar);
       stationsArray.push(endVar);
     }
   }
   if(entry.includes("interStation1,") || entry.includes("tussenStation1")){
-    interVarArray[0] = document.getElementById('interStation1Options').value;
+    interVarArray[0] = document.getElementById('interStation1Options_' + av).value;
   }
   if(entry.includes("interStation2") || entry.includes("tussenStation2")){
-    interVarArray[1] = document.getElementById('interStation2Options').value;
+    interVarArray[1] = document.getElementById('interStation2Options_' + av).value;
   }
   if(entry.includes("interStation3") || entry.includes("tussenStation3")){
-    interVarArray[2] = document.getElementById('interStation3Options').value;
+    interVarArray[2] = document.getElementById('interStation3Options_' + av).value;
   }
   if(entry.includes("interStation4") || entry.includes("tussenStation4")){
-    interVarArray[3] = document.getElementById('interStation4Options').value;
+    interVarArray[3] = document.getElementById('interStation4Options_' + av).value;
     
   }
   if(entry === andersomZin){
     console.log('andersom');
     if(entry.includes("endStation") || entry.includes("eindStation")){
-      endVar = document.getElementById('endStationOptions').value;
+      endVar = document.getElementById('endStationOptions_' + av).value;
       if(interVarArray[0] === "-" && interVarArray[1]==="-" && interVarArray[2]==="-" && interVarArray[3]==="-"){
         variableArray.push(endVar);
         stationsArray.push(endVar);
@@ -119,11 +119,11 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     variableArray, stationsArray = pushInterVars(variableArray, stationsArray, false)
   }
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
-    departVar = document.getElementById('departTimeInput').value;
+    departVar = document.getElementById('departTimeInput_' + av).value;
     variableArray.push(departVar);
   }
   if(entry.includes("waitTime") || entry.includes("wachtTijd")){
-    waitVar = document.getElementById('waitTimeOptions').value;
+    waitVar = document.getElementById('waitTimeOptions_' + av).value;
     if(waitVar === "een nog onbekende tijd"){
       console.log('waitTime: ', waitVar);
     } else {
@@ -131,7 +131,7 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     }
   }
   if(entry.includes("platformNr") || entry.includes("spoorNr")){
-    platformVar = document.getElementById('platformNrOptions').value;
+    platformVar = document.getElementById('platformNrOptions_' + av).value;
     platformVar = platformVar.replaceAll(/\'/g, "");
     if(waitVar === "een nog onbekende tijd"){
       onbekendeTijd = true;
@@ -190,7 +190,7 @@ async function getSiGMLContent(el){
   return data;
 }
 
-async function getSiGML(sentenceArray){
+async function getSiGML(sentenceArray, av){
   var tijdArray = [];
   var tempString = '<?xml version="1.0" encoding="utf-8"?><sigml>\n';
   // Remove empty elements in array
@@ -210,7 +210,7 @@ async function getSiGML(sentenceArray){
   const [lastItem] = sentenceArray.slice(-1);
   if(sentenceArray[0].match(/(Herhaling)/)){
         console.log('Match herhaling');
-        document.getElementById('repetitionBar').style.display = "inline-block";
+        document.getElementById('repetitionBar_' + av).style.display = "inline-block";
       }
   for(const el of sentenceArray){
     if(json_sent_NL[el] !== undefined || json_sent_EN[el] !== undefined){
@@ -260,10 +260,11 @@ async function getSiGML(sentenceArray){
       tempString += '</sigml>';
     }
   }
-  // console.log('tempString: ', tempString);
   globalVar.playing = true;
   globalVar.playFinished = false;
-  playText(tempString);
+  // av should be a number only for playText function
+  avTemp = av.replace(/(av)(\d{1})/, '$2');
+  playText(tempString, avTemp);
   globalVar.sigmlText = tempString;
 }
 
@@ -296,7 +297,7 @@ function getInterStationsArray(){
     return regex_string;
 }
 
-function makeReadableAndShow(fullSentence){
+function makeReadableAndShow(fullSentence, av){
     fullSentence = fullSentence.replaceAll("-", "");
     fullSentence = fullSentence.replaceAll(/\s\./g, ".");
     fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
@@ -309,7 +310,7 @@ function makeReadableAndShow(fullSentence){
     if(globalVar.lang==="Nederlands" && fullSentence.match(/naar\d*\s*(en)?/)){
       fullSentence = fullSentence.replace(/naar\d*\s*(en)?/, 'naar ');
     }
-    document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
+    document.getElementById('currSentence_' + av).innerHTML = '<b>' + fullSentence + '</b>';
     // Remove interpunction for splitting purposes (later)
     fullSentence = fullSentence.replaceAll(/\./g, "");
     return fullSentence;
@@ -320,22 +321,22 @@ function makeReadableAndShow(fullSentence){
    * @param {*} text 
    * @param {*} alert 
    */
-  function getSentenceArray(fullSentence){
+  function getSentenceArray(fullSentence, av){
     var variableArray = [];
     var sentenceArray = [];
     var stationsArray = [];
     n_telhand = 1;
 
     // Initally, sentencePart includes the whole (polished) sentence
-    var sentencePart = makeReadableAndShow(fullSentence);
+    var sentencePart = makeReadableAndShow(fullSentence, av);
     console.log("input: " + sentencePart);
     // document.getElementById('outputSentence').value = sentencePart;
 
-    entry = document.querySelector('button[data-id="sentenceOptions"]').title;
+    entry = document.querySelector('button[data-id="sentenceOptions_'+ av + '"]').title;
     console.log('entry ', entry);
 
     if(!checkUndefined(entry)){    
-      variableArray, stationsArray = getSigmlVariables(entry, variableArray, stationsArray);
+      variableArray, stationsArray = getSigmlVariables(entry, variableArray, stationsArray, av);
       console.log('var array ', variableArray);
       console.log('stations array ', stationsArray);
       // Split sentence around variables in array
@@ -347,7 +348,7 @@ function makeReadableAndShow(fullSentence){
       if(!sentencePart == ""){
         sentenceArray.push(sentencePart);
       }
-      getSiGML(sentenceArray);
+      getSiGML(sentenceArray, av);
     }
   }
   
