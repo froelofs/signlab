@@ -328,16 +328,13 @@ function compare(input){
  * Enable play button when 'stop' is clicked
  */
 function makePlayClickable(av){
-  console.log('stopButton clicked');
   globalVar.playButtonClicked[av] = false;
-  console.log('playButtonClicked na makePlayClickable() ', globalVar.playButtonClicked);
   document.getElementById("play_av" + av).setAttribute("class", "btn btn-primary");
   CWASA.stopSiGML(av);
 }
 
 function makePlayNonClickable(av){
   globalVar.playButtonClicked[av] = true;
-  console.log('playButtonClicked na makePlayClickable() ', globalVar.playButtonClicked);
   document.getElementById("play_av" + av).setAttribute("class", "no-click-button btn btn-primary");
 }
 

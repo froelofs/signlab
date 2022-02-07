@@ -39,16 +39,17 @@
     </sign_manual>
   </hamgestural_sign>
 
+ 
   <hamgestural_sign gloss="RIJDT NIET" timescale="0.9" duration="1.2">
     <sign_nonmanual>
       <mouthing_tier>
-            <mouth_picture picture="Nai" speed="1.2"/>
-            <mouth_gesture movement="L31" amount="0.6" speed="1"/>
+            <mouth_picture picture="Nai" speed="1"/>
+            <mouth_gesture movement="L31" amount="0.6" speed="0.8"/>
         </mouthing_tier>
       <head_tier>
         <head_par>
+          <head_movement movement="SH" amount="0.6" speed="0.1"/>
           <head_movement movement="SL" amount="1.5"/>
-          <head_movement movement="SH" amount="0.7"/>
         </head_par>
       </head_tier>
       <facialexpr_tier>

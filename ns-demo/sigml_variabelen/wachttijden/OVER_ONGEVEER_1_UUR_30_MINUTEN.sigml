@@ -62,10 +62,10 @@
     </sign_manual>
   </hamgestural_sign>
 
-  <hamgestural_sign gloss="1 UUR EN">
+   <hamgestural_sign gloss="1 UUR EN DERTIG">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="nu:r"/>
+        <mouth_picture picture="nu:rdERtI:"/>
       </mouthing_tier>
       <head_tier>
 	      <head_movement movement="SL" amount="1.5"/>
@@ -79,33 +79,20 @@
       <handconfig handshape="finger2" thumbpos="across"/>
       <handconfig extfidir="u" second_extfidir="uul"/>
       <handconfig palmor="il"/>
-      <location_bodyarm contact="close" location="neck"/>
-      <circularmotion axis="i" start="r"/>
-    </sign_manual>
-  </hamgestural_sign>
-
-  <hamgestural_sign gloss="DERTIG">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="dERtIx"/>
-      </mouthing_tier>
-      <head_tier>
-	      <head_movement movement="SL" amount="1.5"/>
-      </head_tier>
-      <facialexpr_tier>
-	      <eye_gaze movement="LE" amount="0.6"/>
-      </facialexpr_tier>
-    </sign_nonmanual>
-    <sign_manual>
+      <location_bodyarm contact="close" location="shouldertop"/>
+      <circularmotion axis="o" start="l"/>
+<tgt_motion>
+<changeposture/>
       <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
-      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig extfidir="uul" second_extfidir="u"/>
       <handconfig palmor="l"/>
       <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+</tgt_motion>
       <par_motion>
         <directedmotion direction="r"/>
         <tgt_motion>
           <changeposture/>
-          <handconfig extfidir="or"/>
+          <handconfig extfidir="ur"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>
