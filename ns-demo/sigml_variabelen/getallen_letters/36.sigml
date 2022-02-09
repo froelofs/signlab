@@ -17,7 +17,7 @@
       <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
       <tgt_motion>
         <changeposture/>
-        <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+        <handconfig mainbend="round" exempteddigits="234" bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
         <handconfig extfidir="ul" palmor="l" second_extfidir="u"/>
         <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
       </tgt_motion>

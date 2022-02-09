@@ -1,7 +1,7 @@
   <hamgestural_sign gloss="TWEE">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="ve"/>
+        <mouth_picture picture="tveee"/>
       </mouthing_tier>
       <head_tier>
 	      <head_movement movement="SL" amount="1.5"/>

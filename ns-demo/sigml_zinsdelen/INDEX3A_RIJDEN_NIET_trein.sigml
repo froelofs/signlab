@@ -57,7 +57,7 @@
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="pinch12" ceeopening="tight"/>
+      <handconfig handshape="flat" mainbend="round" bend2="hooked" bend3="dblhooked" bend4="dblhooked" bend5="dblhooked" thumbenclosed="false"/>
       <handconfig extfidir="u"/>
       <handconfig palmor="d"/>
       <location_bodyarm contact="close" location="head" side="right_at"/>

@@ -15,7 +15,7 @@
         </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-        <handconfig handshape="ceeall"/>
+        <handconfig handshape="ceeall" ceeopening="tight"/>
         <handconfig extfidir="u"/>
         <handconfig palmor="l"/>
         <location_bodyarm location="shoulders" side="right_at"/>

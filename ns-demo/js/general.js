@@ -92,7 +92,7 @@ $('.timepicker').timepicker({
    * Makes all the variable boxes invisible
    */
    function makeVarBoxInvisible(av){
-    elements = [...document.getElementsByClassName('varBox_' + av)];
+    elements = [...document.getElementsByClassName('varBox_av' + av)];
     elements.forEach(function(element){
       element.style.display = 'none';
     });

@@ -17,7 +17,7 @@
         </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-        <handconfig handshape="ceeall"/>
+        <handconfig handshape="ceeall" ceeopening="tight"/>
         <handconfig extfidir="u"/>
         <handconfig palmor="l"/>
         <location_bodyarm location="shoulders" side="right_at"/>
@@ -31,10 +31,9 @@
 	        <location_bodyarm location="shoulders" side="right_beside"/>
         </tgt_motion>
         <tgt_motion>
-            <directedmotion direction="o" size="small" fast="true"/>
+            <directedmotion direction="i" size="small" fast="true"/>
         </tgt_motion>  
         <tgt_motion>
-	        <location_bodyarm location="shoulders" side="right_beside"/>
         </tgt_motion>   
     </sign_manual>
   </hamgestural_sign>

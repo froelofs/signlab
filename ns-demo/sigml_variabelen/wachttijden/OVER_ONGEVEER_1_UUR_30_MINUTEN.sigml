@@ -81,13 +81,13 @@
       <handconfig palmor="il"/>
       <location_bodyarm contact="close" location="shouldertop"/>
       <circularmotion axis="o" start="l"/>
-<tgt_motion>
-<changeposture/>
-      <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+    <tgt_motion>
+    <changeposture/>
+      <handconfig mainbend="round" exempteddigits="234" bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
       <handconfig extfidir="uul" second_extfidir="u"/>
       <handconfig palmor="l"/>
       <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
-</tgt_motion>
+    </tgt_motion>
       <par_motion>
         <directedmotion direction="r"/>
         <tgt_motion>

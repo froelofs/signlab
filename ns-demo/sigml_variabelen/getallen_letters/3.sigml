@@ -1,7 +1,7 @@
  <hamgestural_sign gloss="DRIE">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_picture picture="dRi"/>
+        <mouth_picture picture="dRi:"/>
       </mouthing_tier>
       <head_tier>
 	      <head_movement movement="SL" amount="1.5"/>
