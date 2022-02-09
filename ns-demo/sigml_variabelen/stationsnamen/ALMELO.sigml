@@ -5,26 +5,28 @@
             <mouth_picture picture="xa:a:" speed="1.5"/>
         </mouthing_tier>
         <facialexpr_tier>
-            <eye_lids movement="SB"/>
-            <eye_gaze direction="LD" amount="0.3"/>
-            <eye_gaze direction="RU" amount="0.4"/>
+            <facial_expr_par>
+                <eye_lids movement="SB" amount="0.6"/>
+            </facial_expr_par>
+                <eye_gaze movement="LE" amount="0.6"/>
+                <eye_gaze direction="RU" amount="0.2"/>
         </facialexpr_tier>
         <head_tier>
-            <head_movement movement="TR" amount="0.2"/>
+            <head_movement movement="SL" amount="1.5"/>
         </head_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="ul" second_extfidir="ull"/>
+      <handconfig extfidir="ul" second_extfidir="l"/>
       <handconfig palmor="drr"/>
-      <location_bodyarm contact="close" location="shoulders" side="right"/>
+      <location_bodyarm contact="close" location="chest" side="right" second_location="chest" second_side="front"/>
       <par_motion>
         <directedmotion direction="ur" speed="2"/>
         <tgt_motion>
           <changeposture/>
           <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
           <handconfig extfidir="uu" palmor="d" second_extfidir="d" second_palmor="d"/>
-          <location_bodyarm contact="close" location="head" side="front" second_location="neck" second_side="right_at"/>
+          <location_bodyarm contact="close" location="head" side="front" second_location="head" second_side="right_at"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>
@@ -64,8 +66,8 @@
                         <changeposture/>
                         <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="opposed" thumbpos="out"/>
                         <split_handconfig>
-                            <handconfig extfidir="ul" palmor="d" second_extfidir="o"/>
-                            <handconfig extfidir="ur" palmor="d" second_extfidir="o"/>
+                            <handconfig extfidir="ul" palmor="d" second_extfidir="uo"/>
+                            <handconfig extfidir="ur" palmor="d" second_extfidir="uo"/>
                         </split_handconfig>
                     </tgt_motion>
                     <split_location>
@@ -86,6 +88,13 @@
                 <body_movement movement="TB" amount="0.3"/>
                 <body_movement movement="TF" amount="0.001"/>
             </body_tier>
-            <facialexpr_tier/>
+            <head_tier>
+                <head_movement movement="SL" amount="1.5"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="UP" amount="0.8"/>
+                <eye_gaze movement="LE" amount="0.6"/>
+                <eye_gaze movement="RI" amount="0.6" speed="0.6"/>
+            </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

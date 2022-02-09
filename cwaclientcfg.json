@@ -7,6 +7,8 @@
       "height":           320,
       "avList":           "avsfull",
       "initAv":           "francoise",
+      "initCamera":       [0, 0.40, 2,  5, 19, 30, -1, -1],
+      "ambIdle":          false,
       "allowSiGMLText":   true,
       "description":      "avatar for translation page"
     },
@@ -28,5 +30,8 @@
       "allowSiGMLText":   true,
       "description":      "avatar 2 on SiGML page"
     }
+   
   ]
 }
+
+

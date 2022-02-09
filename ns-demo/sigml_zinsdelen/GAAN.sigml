@@ -3,6 +3,12 @@
       <mouthing_tier>
         <mouth_picture picture="xa:a:" speed="1.5"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
@@ -14,7 +20,7 @@
         <tgt_motion>
           <changeposture/>
           <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
-          <handconfig extfidir="uo" palmor="d" second_extfidir="d" second_palmor="d"/>
+          <handconfig extfidir="uo" palmor="d" second_extfidir="du" second_palmor="d"/>
           <location_bodyarm contact="close" location="shoulders" side="right_beside" second_location="chest" second_side="right_beside"/>
         </tgt_motion>
       </par_motion>

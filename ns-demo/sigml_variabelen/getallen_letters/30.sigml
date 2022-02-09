@@ -3,17 +3,23 @@
       <mouthing_tier>
         <mouth_picture picture="dERtIx" speed="1.2"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
-      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig mainbend="round" exempteddigits="234" bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="uul" second_extfidir="u"/>
       <handconfig palmor="l"/>
       <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
       <par_motion>
         <directedmotion direction="r"/>
         <tgt_motion>
           <changeposture/>
-          <handconfig extfidir="or"/>
+          <handconfig extfidir="ur"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>

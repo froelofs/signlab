@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="WIJ">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Amal"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="bent" second_thumbpos="across" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="touch" location="shoulders" second_location="chest">
+        <location_hand digits="2" location="tip"/>
+      </location_bodyarm>
+      <par_motion>
+        <directedmotion curve="l" curve_size="big" direction="o"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="d" second_extfidir="do"/>
+        </tgt_motion>
+      </par_motion>
+      <par_motion>
+        <directedmotion curve="r" curve_size="big" direction="i"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="l" palmor="d"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

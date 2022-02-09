@@ -1,19 +1,24 @@
 <hamgestural_sign gloss="NAAR" timescale="0.7" duration="0.9">
     <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="xa:a:" speed="1.5"/>
-      </mouthing_tier>
+        <head_tier>
+	        <head_movement movement="SL" amount="1.5"/>
+        </head_tier>
+        <mouthing_tier>
+            <mouth_picture picture="xa:a:" speed="1.5"/>
+        </mouthing_tier>
         <facialexpr_tier>
-            <eye_lids movement="SB"/>
+            <facial_expr_par>
+                <eye_lids movement="SB" amount="0.6"/>
+            </facial_expr_par>
             <eye_gaze direction="LU" amount="0.3"/>
             <eye_gaze direction="RD" amount="0.4"/>
         </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
-      <handconfig extfidir="uul" second_extfidir="ull"/>
+        <handconfig extfidir="ul" second_extfidir="l"/>
       <handconfig palmor="drr"/>
-      <location_bodyarm contact="close" location="shoulders" side="right"/>
+        <location_bodyarm contact="close" location="chest" side="right" second_location="stomach" second_side="front"/>
       <par_motion>
         <directedmotion direction="ur" speed="2"/>
         <tgt_motion>
@@ -26,7 +31,7 @@
     </sign_manual>
   </hamgestural_sign>
     
-    <hamgestural_sign gloss="ENSCHEDE">
+  <hamgestural_sign gloss="ENSCHEDE">
         <sign_manual both_hands="true">
             <split_handconfig>
                 <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
@@ -40,7 +45,7 @@
                 <location_bodyarm location="shouldertop"/>
                 <location_bodyarm location="chest" side="right_at"/>
             </split_location>
-            <rpt_motion repetition="fromstart_several">
+            <rpt_motion repetition="fromstart">
                 <split_motion>
                     <par_motion>
                         <directedmotion direction="di" size="small"/>
@@ -63,14 +68,21 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <shoulder_tier>
-                <shoulder_movement movement="UB" speed="0.6"/>/>
+                <shoulder_movement movement="UB" speed="0.7" amount="0.5"/>
             </shoulder_tier>
             <head_tier>
-                <head_movement movement="NF"/>
+                <head_movement movement="NF" speed="0.5" amount="0.4"/>
+                <head_par>
+                    <head_movement movement="NB" speed="0.7" amount="0.1"/>
+                    <head_movement movement="SL" amount="1.5" speed="0.6"/>
+                </head_par>
             </head_tier>
             <facialexpr_tier>
-                <eye_gaze movement="DN"/>
-                <eye_lids movement="SB"/>
+                <facial_expr_par>
+                    <eye_gaze movement="DN" speed="0.7"/>
+                    <eye_lids movement="SB"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
+                </facial_expr_par>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

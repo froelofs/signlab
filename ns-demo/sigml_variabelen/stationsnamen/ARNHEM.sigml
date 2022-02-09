@@ -18,11 +18,17 @@
             <mouthing_tier>
                 <mouth_picture picture="a:rnE:m" speed="1.2"/>
             </mouthing_tier>
+            <head_tier>
+	            <head_movement movement="SL" amount="1.5"/>
+            </head_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+                    <eye_gaze movement="DN" amount="0.55"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
+                </facial_expr_par>
+            </facialexpr_tier>
             <body_tier>
                 <body_movement movement="ST"/>
             </body_tier>
-            <facialexpr_tier>
-                <eye_gaze movement="DN" amount="0.55"/>
-            </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

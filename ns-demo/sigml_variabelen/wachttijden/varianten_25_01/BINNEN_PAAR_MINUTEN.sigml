@@ -1,9 +1,15 @@
-<hamgestural_sign gloss="BINNEN">
+
+  <hamgestural_sign gloss="BINNEN" timescale="0.45" duration="1.4">
     <sign_nonmanual>
       <mouthing_tier>
-        <mouth_gesture movement="L17" speed="1.2"/>
-        <mouth_picture picture="enen" speed="1.3"/>
+        <mouth_picture picture="enen" speed="0.2"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="flat" mainbend="bent"/>
@@ -11,15 +17,19 @@
       <handconfig palmor="iol"/>
       <location_bodyarm contact="close" location="shoulders" second_location="stomach" second_side="right_at" side="right_at"/>
       <rpt_motion repetition="fromstart">
-<tgt_motion>
-        <directedmotion direction="i" size="small" speed="3.5"/>
+      <tgt_motion>
+        <directedmotion direction="i" size="small" speed="2"/>
       </tgt_motion>
-</rpt_motion>
+      </rpt_motion>
     </sign_manual>
   </hamgestural_sign>
 
+
  <hamgestural_sign gloss="EEN PAAR">
     <sign_nonmanual>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
       <mouthing_tier>
 	      <mouth_gesture movement="C01" amount="0.4" speed="1.7"/>
         <mouth_picture picture="pa:" speed="1.8"/>
@@ -46,6 +56,12 @@
       <mouthing_tier>
         <mouth_picture picture="minyt@"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>

@@ -1,0 +1,23 @@
+  <hamgestural_sign gloss="HALLO" timescale="0.6" duration="1.1">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Alo:"/>
+      </mouthing_tier>
+      <head_tier>
+        <head_par>
+          <head_movement movement="LI"/>
+          <head_movement movement="SL" amount="1.5"/>
+        </head_par>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+      <sign_manual>
+        <handconfig handshape="flat" second_handshape="finger2345" thumbpos="out"/>
+        <handconfig extfidir="uu" second_extfidir="uul"/>
+        <handconfig palmor="r"/>
+        <location_bodyarm location="shoulders" side="right_at"/>
+        <directedmotion curve="u" size="large" direction="ur" slow="false"/>
+      </sign_manual>
+  </hamgestural_sign>

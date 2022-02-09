@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="BETER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="bet@"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="pinch12open"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="neck" side="right_at"/>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="uo" fast="true"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="u" palmor="d"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm location="head" side="right_at"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

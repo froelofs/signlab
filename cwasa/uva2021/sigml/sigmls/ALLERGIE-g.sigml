@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="ALLERGIE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="aExi"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="hooked"/>
+        <handconfig handshape="flat" second_handshape="finger2345" second_thumbpos="out"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="l"/>
+        <handconfig extfidir="o" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="touch">
+        <location_hand location="handback"/>
+        <location_hand digits="3" location="tip"/>
+        <location_bodyarm location="chest" second_location="shoulders"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="i" fast="true" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

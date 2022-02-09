@@ -1,0 +1,28 @@
+ <hamgestural_sign gloss="NUL" timescale="0.6" duration="1">
+    <sign_nonmanual>
+        <mouthing_tier>
+            <mouth_picture picture="u:" speed="0.9"/>
+            <mouth_gesture movement="T01" speed="1.2"/>
+        </mouthing_tier>
+        <head_tier>
+	        <head_movement movement="SL" amount="1.5"/>
+        </head_tier>
+        <facialexpr_tier>
+          <facial_expr_par>
+            <eye_brows movement="RB"/>
+	        <eye_gaze movement="LE" amount="0.6"/>
+          </facial_expr_par>
+        </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+        <handconfig handshape="ceeall"/>
+        <handconfig extfidir="u"/>
+        <handconfig palmor="l"/>
+        <location_bodyarm location="shoulders" second_location="shoulders" second_side="front" side="right_at"/>
+        <tgt_motion>
+          <rpt_motion repetition="fromstart">
+            <directedmotion direction="r" speed="1.9" size="small" fast="true"/>
+          </rpt_motion>
+        </tgt_motion>       
+    </sign_manual>
+  </hamgestural_sign>

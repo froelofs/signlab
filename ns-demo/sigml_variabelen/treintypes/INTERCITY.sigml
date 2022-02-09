@@ -13,6 +13,9 @@
             </tgt_motion>
         </sign_manual>
         <sign_nonmanual>
+            <head_tier>
+                <head_movement movement="SL" amount="0.8"/>
+            </head_tier>
             <mouthing_tier>
                 <mouth_picture picture="i:se:" speed="1.2"/>
             </mouthing_tier>

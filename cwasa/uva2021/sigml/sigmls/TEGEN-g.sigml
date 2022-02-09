@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="TEGEN">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig handshape="fist" thumbpos="across"/>
+            <handconfig extfidir="u" second_extfidir="uo"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm contact="close" location="shoulders" side="right_at"/>
+            <directedmotion direction="o" halt="true"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="teS@" speed="1"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_brows movement="RB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -3,11 +3,17 @@
       <mouthing_tier>
         <mouth_picture picture="tIn"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" thumbpos="out"/>
       <handconfig extfidir="u"/>
       <handconfig palmor="d"/>
-      <location_bodyarm location="shoulders" side="right_beside"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
     </sign_manual>
   </hamgestural_sign>

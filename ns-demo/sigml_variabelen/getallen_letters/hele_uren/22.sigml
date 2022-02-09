@@ -1,0 +1,22 @@
+  <hamgestural_sign gloss="TWEEENTWINTIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="twetwIntI" speed="1.6"/>
+      </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" mainbend="round" exempteddigits="23" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="r" speed="1.9" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
