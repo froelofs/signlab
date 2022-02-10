@@ -53,7 +53,7 @@ function callPython(text, alertID) {
     url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
     type : 'POST',
     // data: {"input": inputPython},
-    dataType: "json",
+    //dataType: "json",
     //dataType: "jsonp",
     crossDomain: true,
     success : onSuccess,
@@ -149,3 +149,24 @@ function removeDisclaimer(){
   document.getElementById("TranslateNav").setAttribute("class","nav-link active");
   console.log(document.getElementById("TranslateNav").className);
 }
+
+function addNonmanuals(elementID){
+  textElement = document.getElementById('mySiGML');
+
+  // Retrieves the indices of the start and end of the selected text
+  startSelect = textElement.selectionStart;
+  endSelect = textElement.selectionEnd;
+
+  selectedGlosses = textElement.value.substr(startSelect, endSelect - startSelect);
+  // document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value
+  console.log("selected glosses: " + selectedGlosses);
+
+  // Retrieves the opening tag of the selected nonmanual and creates the corresponding closing tag
+  openTag = document.getElementById(elementID).value;
+  closeTag = openTag.slice(0,1) + "/" + openTag.slice(1);
+  
+  // Adds the nonmanual tags to the selected glosses
+  insertion =  openTag + selectedGlosses + closeTag;
+  text = textElement.value;
+  textElement.value = text.slice(0,startSelect) + insertion + text.slice(endSelect); 
+ }
