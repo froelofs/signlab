@@ -70,7 +70,9 @@
 <section class="projects-section bg-light fadeIn" id="Translator">
   <div class="container-fluid" id="avatarTranslator" style="width: 100%;">
     <!-- Challenge Row-->
-    <div class="row align-items-start no-gutters">
+    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+      <div class="col-12" id="currTopic" style="font-size: larger; background-color: rgb(255, 220, 104);"></div>
+        
 
       <!-- =================================== AVATAR 0 COLUMN =================================== -->
       <div class="col-sm pr-2">
@@ -94,8 +96,12 @@
           
           <div class="mb-3 row align-items-start no-gutters">
             <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av0"  onchange="changeSentence(this.value, 0);">
-              <option>Hallo, IA0 treinType naar eindStation IA0 vertrekt van IB0 spoor spoorNr.</option>
-              <option>Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.</option>
+              <option id="Ondertiteling"></option>
+              <option id="Indexen">Hallo, IA0 treinType naar eindStation IA0 vertrekt van IB0 spoor spoorNr.</option>
+              <option id="VERTREKKEN OVER ENKELE MINUTEN">Hallo, de treinType naar eindStation vertrekt bijna van spoor spoorNr.</option>
+              <option id="VERTREKKEN OVER ONBEKENDE TIJD">De treinType naar tussenStation1 en eindStation van vertrekTijd vertrekt van spoor spoorNr. Wanneer? Nog geen idee.</option>
+              <option id="Tijdsaanduiding">15:31_dubbel</option>
+
               <option>De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.</option>
               <option>Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.</option>
               <option>Hallo, de treinType naar eindStation stopt niet op tussengelegen stations tussenStation1, tussenStation2, tussenStation3, tussenStation4.</option>
@@ -202,7 +208,12 @@
         
           <div class="mb-3 row align-items-start no-gutters">
             <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av1"  onchange="changeSentence(this.value, 1);">
-              <option>Hallo, IA1 treinType naar eindStation IA1 vertrekt van IB1 spoor spoorNr.</option>
+              <option id="Ondertiteling"></option>
+              <option id="Indexen">Hallo, IA1 treinType naar eindStation IA1 vertrekt van IB1 spoor spoorNr.</option>
+              <option id="VERTREKKEN OVER ENKELE MINUTEN">Hallo, de treinType naar eindStation vertrekt binnen een paar minuten van spoor spoorNr.</option>
+              <option id="VERTREKKEN OVER EEN NOG ONBEKENDE TIJD">De treinType naar tussenStation1 en eindStation van vertrekTijd vertrekt van spoor spoorNr. Wanneer? Weet ik nog niet.</option>
+              <option id="Tijdsaanduiding">15:31_babyO</option>
+
               <option>Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.</option>
               <option>De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.</option>
               <option>Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.</option>
@@ -310,7 +321,12 @@
         
         <div class="mb-3 row align-items-start no-gutters">
           <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av2"  onchange="changeSentence(this.value, 2);">
-            <option>Hallo, IA2 treinType IA2 naar eindStation IA2 vertrekt van IB2 spoor spoorNr IB2_.</option>
+            <option id="Ondertiteling"></option>
+            <option id="Indexen">Hallo, IA2 treinType IA2 naar eindStation IA2 vertrekt van IB2 spoor_s 5_s IB2_.</option>
+            <option id="VERTREKKEN OVER ENKELE MINUTEN">Hallo, de treinType naar eindStation gaat bijna weg van spoor spoorNr.</option>
+            <option id="VERTREKKEN OVER EEN NOG ONBEKENDE TIJD">De treinType naar eindStation van vertrekTijd vertrekt van spoor spoorNr. De tijd is nog niet duidelijk.</option>
+            <option id="Tijdsaanduiding">15:31_vinger</option>
+
             <option>Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.</option>
             <option>De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.</option>
             <option>Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.</option>

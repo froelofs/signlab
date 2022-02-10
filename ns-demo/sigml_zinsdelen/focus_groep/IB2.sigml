@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="">
+  <hamgestural_sign gloss="" timescale=".7" duration="1">
     <sign_nonmanual>
       <head_tier>
           <head_movement movement="SL" amount="1.5"/>
@@ -15,6 +15,6 @@
       <handconfig extfidir="od" second_extfidir="uo"/>
       <handconfig palmor="d"/>
       <location_bodyarm contact="close" location="chest" second_location="stomach" side="right_beside" second_side="right_beside"/>
-      <directedmotion direction="dr" size="small" fast="true" speed="2"/>
+      <directedmotion direction="dr" size="small" fast="true"/>
     </sign_manual>
   </hamgestural_sign>

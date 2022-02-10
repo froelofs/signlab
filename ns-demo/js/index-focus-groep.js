@@ -175,6 +175,8 @@ function updateGlobalVariables(name, oldValue){
 
   if(changeSent){
     document.getElementById('currSentence_av' + av + '').innerHTML = currentSentence;
+    dropdown = document.getElementById('sentenceOptions_av' + av + '');
+    document.getElementById('currTopic').innerHTML = dropdown.options[dropdown.selectedIndex].id;
     resetBoxes(currentSentence, av);
     colorKeywords(currentSentence, av);
   } else {
