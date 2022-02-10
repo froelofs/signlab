@@ -1,20 +1,20 @@
+
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_movement movement="SL" amount="0.8"/>
+	      <head_movement movement="SL" amount="0.8"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
           <eye_brows movement="RB" amount="0.7" speed="0.8"/>
 	        <eye_lids movement="BB" speed="0.8"/>
-          <eye_gaze movement="LE" amount="0.6"/>
         </facial_expr_par>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
     </sign_manual>
   </hamgestural_sign>
-  
+
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
@@ -26,7 +26,7 @@
       <facialexpr_tier>
         <facial_expr_par>
          <eye_lids movement="SB" />
-         <eye_gaze direction="RD" amount="0.6"/>
+         <eye_gaze direction="RD"/>
         </facial_expr_par>
        </facialexpr_tier>
     </sign_nonmanual>
@@ -39,39 +39,44 @@
     </sign_manual>
   </hamgestural_sign>
 
- 
-  <hamgestural_sign gloss="RIJDT NIET" timescale="0.9" duration="1.2">
-    <sign_nonmanual>
+  <hamgestural_sign gloss="VERTREKT">
+  <sign_nonmanual>
       <mouthing_tier>
-            <mouth_picture picture="Nai" speed="1"/>
-            <mouth_gesture movement="L31" amount="0.6" speed="0.8"/>
-        </mouthing_tier>
+        <mouth_picture picture="p"/>
+      </mouthing_tier>
       <head_tier>
-        <head_par>
-          <head_movement movement="SH" amount="0.6" speed="0.1"/>
-          <head_movement movement="SL" amount="1.5"/>
-        </head_par>
+	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
-	      <eye_gaze movement="LE" amount="0.6"/>
+        <facial_expr_par>
+	        <eye_gaze movement="AD" speed="0.7"/>
+          <eye_gaze movement="LE" amount="0.6"/>
+        </facial_expr_par>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-      <handconfig handshape="flat" mainbend="round" bend2="hooked" bend3="dblhooked" bend4="dblhooked" bend5="dblhooked" thumbenclosed="false"/>
-      <handconfig extfidir="u"/>
-      <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="head" side="right_at"/>
-      <par_motion>
-        <directedmotion direction="dl" size="large"/>
-        <directedmotion direction="dl" size="large"/>
-      </par_motion>
-      <par_motion>
-        <directedmotion direction="u" size="medium"/>
-        <directedmotion direction="u" size="small"/>
-      </par_motion>
-      <par_motion>
-        <directedmotion direction="dr" size="large"/>
-        <directedmotion direction="dr" size="large"/>
-      </par_motion>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="dduo" palmor="dl"/>
+        <handconfig extfidir="ildr" palmor="di" second_extfidir="our"/>
+      </split_handconfig>
+      <location_bodyarm location="belowstomach" side="right_beside"/>
+	        <tgt_motion>
+	          <par_motion>
+		          <directedmotion direction="u" size="medium" speed="1"/>
+	        <tgt_motion>
+      <changeposture/>
+        <handconstellation contact="close">
+          <location_hand location="palm"/>
+	        <location_hand location="wristback"/>
+        </handconstellation>
+            	<handconfig handshape="flat"/>
+	            <handconfig extfidir="ool" second_extfidir="uuo" />
+	        </tgt_motion>
+	          </par_motion>
+	        </tgt_motion>
     </sign_manual>
   </hamgestural_sign>

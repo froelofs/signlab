@@ -7,7 +7,6 @@
         <facial_expr_par>
           <eye_brows movement="RB" amount="0.7" speed="0.8"/>
 	        <eye_lids movement="BB" speed="0.8"/>
-          <eye_gaze movement="LE" amount="0.6"/>
         </facial_expr_par>
       </facialexpr_tier>
     </sign_nonmanual>

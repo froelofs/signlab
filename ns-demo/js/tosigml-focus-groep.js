@@ -19,8 +19,7 @@ function splitSentence(sentencePart, variable, sentenceArray){
     var letter = platformVar.replace(regex_platform, '$2');
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
     sentenceArray.push(number, letter);
-    // Platform is always the last variable. Skipping sentence part here is necessary
-    return sentenceArray, "";
+    return sentenceArray, sentencePart;
   }
   var regex_departTime = /(\d{1,2})\:(\d{2})/;
   if(variable.match(regex_departTime)){
@@ -78,10 +77,27 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
   // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
   var andersomZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
 
+  if(entry.includes("IA0")){
+    variableArray.push("IA0");
+  }
+
+  if(entry.includes("IA1")){
+    variableArray.push("IA1");
+  }
+
+  if(entry.includes("IA2")){
+    variableArray.push("IA2");
+  }
+
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions_av' + av).value;
     variableArray.push(trainVar);
   }
+
+  if(entry.includes("IA2")){
+    variableArray.push("IA2");
+  }
+
   if(entry !== andersomZin){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions_av' + av).value;
@@ -119,6 +135,19 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
   } else {
     variableArray, stationsArray = pushInterVars(variableArray, stationsArray, false)
   }
+
+  if(entry.includes("IA0")){
+    variableArray.push("IA0");
+  }
+
+  if(entry.includes("IA1")){
+    variableArray.push("IA1");
+  }
+
+  if(entry.includes("IA2")){
+    variableArray.push("IA2");
+  }
+
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput_av' + av).value;
     variableArray.push(departVar);
@@ -131,6 +160,19 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
       variableArray.push(waitVar);
     }
   }
+
+  if(entry.includes("IB0")){
+    variableArray.push("IB0");
+  }
+
+  if(entry.includes("IB1")){
+    variableArray.push("IB1");
+  }
+
+  if(entry.includes("IB2")){
+    variableArray.push("IB2");
+  }
+
   if(entry.includes("platformNr") || entry.includes("spoorNr")){
     platformVar = document.getElementById('platformNrOptions_av' + av).value;
     platformVar = platformVar.replaceAll(/\'/g, "");
@@ -142,6 +184,11 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
       variableArray.push(platformVar);
     }
   }
+
+  if(entry.includes("IB2_")){
+    variableArray.push("IB2_");
+  }
+
   return variableArray, stationsArray;
 }
 
@@ -209,6 +256,7 @@ async function getSiGML(sentenceArray, av){
   }
   console.log('Sentence array final: ', sentenceArray);
   const [lastItem] = sentenceArray.slice(-1);
+  console.log('last ', lastItem);
   if(sentenceArray[0].match(/(Herhaling)/)){
         console.log('Match herhaling');
         document.getElementById('repetitionBar_av' + av).style.display = "inline-block";
@@ -261,6 +309,7 @@ async function getSiGML(sentenceArray, av){
       tempStrings[av] += '</sigml>';
     }
   }
+  console.log('sigml ', tempStrings[av]);
   globalVar.playing[av] = true;
   globalVar.playFinished[av] = false;
   globalVar.sigmlText[av] = tempStrings[av];

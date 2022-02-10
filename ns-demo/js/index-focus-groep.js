@@ -10,8 +10,8 @@ var globalVar={
   interStation3: "interStation3",
   interStation4: "interStation4",
   endStation: "endStation",
-  currentSentence: ["Dear passengers, the trainType to endStation from departTime is not departing.", "Dear passengers, the trainType to endStation from departTime is not departing.", "Dear passengers, the trainType to endStation from departTime is not departing."],
-  currentSentenceColored: ["Dear passengers, the trainType to endStation from departTime is not departing.", "Dear passengers, the trainType to endStation from departTime is not departing.", "Dear passengers, the trainType to endStation from departTime is not departing."],
+  currentSentence: [document.getElementById('sentenceOptions_av0').value, document.getElementById('sentenceOptions_av1').value, document.getElementById('sentenceOptions_av2').value],
+  currentSentenceColored: [document.getElementById('sentenceOptions_av0').value, document.getElementById('sentenceOptions_av1').value, document.getElementById('sentenceOptions_av2').value],
   urlName: "sentences_English",
   sigmlText: ["", "", ""],
   globalAv: 0,
@@ -100,7 +100,7 @@ function updateGlobalVariables(name, oldValue){
  */
  function replaceText(currentSentence, newValue, oldValue, name, av){
   globalVar.playing[av] ? makePlayNonClickable(av) : -1;
-  console.log('oldval 1: ', oldValue);
+
   // Krijgt globale vars mee vanuit index.html
   // Update global var in 1st iteration (because of the auto-fill)
   oldValue = updateGlobalVariables(name, oldValue);
@@ -179,9 +179,10 @@ function updateGlobalVariables(name, oldValue){
     colorKeywords(currentSentence, av);
   } else {
     $.getJSON("json/" + globalVar.urlName + ".json", function(json) {
-    createDropdown(Object.keys(json), 'sentenceOptions_av' + av);
-    globalVar.currentSentence[av] = Object.keys(json)[0];
-    
+    //createDropdown(Object.keys(json), 'sentenceOptions_av' + av);
+    //globalVar.currentSentence[av] = Object.keys(json)[0];
+    globalVar.currentSentence[av] = document.getElementById('sentenceOptions_av' + av).value;
+
     createDropdown(waitElementsArray, 'waitTimeOptions_av' + av);
     createDropdown(interStationsArray, 'interStation1Options_av' + av);
     createDropdown(interStationsArray, 'interStation2Options_av' + av);
