@@ -1,14 +1,11 @@
-
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-	      <head_movement movement="SL" amount="0.8"/>
+        <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
-        <facial_expr_par>
-          <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	        <eye_lids movement="BB" speed="0.8"/>
-        </facial_expr_par>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+        <eye_lids movement="BB" speed="1"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
@@ -39,7 +36,7 @@
             </body_tier>
             <head_tier>
                 <head_movement movement="TR" amount="0.1" speed="0.1"/>
-                <head_movement movement="SL" amount="1.4" speed="0.1"/>
+                <head_movement movement="SL" amount="1.5" speed="0.1"/>
             </head_tier>
             <facialexpr_tier>
                 <facial_expr_par>

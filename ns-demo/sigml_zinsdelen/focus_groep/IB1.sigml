@@ -1,10 +1,7 @@
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_par>
-          <head_movement movement="SR" speed="0.8"/>
-          <head_movement movement="SR"/>
-        </head_par>
+          <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
