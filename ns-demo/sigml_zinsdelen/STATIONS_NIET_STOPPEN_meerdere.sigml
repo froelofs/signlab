@@ -3,8 +3,7 @@
       <head_tier>
         <head_movement movement="SL" amount="1.5"/>
       </head_tier>
-      <facialexpr_tier>
-        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+<facialexpr_tier>
         <eye_lids movement="BB" speed="1"/>
       </facialexpr_tier>
     </sign_nonmanual>
@@ -132,7 +131,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-<hamgestural_sign gloss="STOPT NIET" timescale="0.8" duration="1.1">
+<hamgestural_sign gloss="STOPT NIET" timescale="0.7" duration="1.1">
         <sign_manual holdover="true">
             <handconfig handshape="finger2" thumbpos="across"/>
             <handconfig extfidir="ul" second_extfidir="ull"/>
@@ -163,7 +162,7 @@
             <facialexpr_tier>
                 <facial_expr_par>
 	                <eye_gaze movement="LE" amount="0.6"/>
-                    <eye_gaze movement="DN"/>
+                    <eye_gaze movement="DN" amount="0.6"/>
                 </facial_expr_par>
                 <eye_brows movement="RB"/>
                 <eye_lids movement="SB"/>

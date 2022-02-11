@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="">
+  <hamgestural_sign gloss="" timescale="1" duration="1.06">
     <sign_nonmanual>
       <head_tier>
         <head_movement movement="SL" amount="1.5"/>
@@ -32,7 +32,6 @@
     </sign_manual>
   </hamgestural_sign>
 
- 
   <hamgestural_sign gloss="RIJDT NIET" timescale="0.9" duration="1.2">
     <sign_nonmanual>
       <mouthing_tier>

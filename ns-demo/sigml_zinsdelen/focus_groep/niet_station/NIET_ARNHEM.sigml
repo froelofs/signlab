@@ -26,7 +26,7 @@
             </head_tier>
             <facialexpr_tier>
                 <facial_expr_par>
-                    <eye_gaze movement="DN" amount="0.55"/>
+                    <eye_gaze movement="DN" amount="0.3"/>
                     <eye_gaze movement="LE" amount="0.6"/>
                 </facial_expr_par>
             </facialexpr_tier>
