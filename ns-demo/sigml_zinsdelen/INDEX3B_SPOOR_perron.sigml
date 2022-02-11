@@ -62,7 +62,7 @@
             <facialexpr_tier>
                 <facial_expr_par>
                     <eye_lids movement="SB" amount="0.5"/>
-                    <eye_gaze direction="RD" />
+                    <eye_gaze direction="RD" amount="0.5"/>
                     <eye_brows movement="RB" />
                 </facial_expr_par>
             </facialexpr_tier>

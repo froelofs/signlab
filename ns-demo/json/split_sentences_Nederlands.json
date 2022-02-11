@@ -11,6 +11,9 @@
     "De": "sigml_zinsdelen/INDEX3A.sigml",
     " rijdt via een andere route": "sigml_zinsdelen/INDEX3A_RIJDEN_trein_ANDERE_ROUTE.sigml",
     "stopt niet op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
+    "stopt niet op": "sigml_zinsdelen/focus_groep/NIET_STOPPEN_meerdere.sigml",
+    "schuin_stopt niet op tussengelegen stations": "sigml_zinsdelen/focus_groep/schuin_STATIONS_NIET_STOPPEN_meerdere.sigml",
+    "hoek_stopt niet op tussengelegen stations": "sigml_zinsdelen/focus_groep/hoek_STATIONS_NIET_STOPPEN_meerdere.sigml",
     "vertrekt van": "sigml_zinsdelen/VERTREKKEN.sigml",
     "vertrekt van spoor": "sigml_zinsdelen/INDEX3A_VERTREKKEN_INDEX3B_SPOOR_perron.sigml",
     "vertrekt bijna van spoor": "sigml_zinsdelen/focus_groep/INDEX3A_VERTREKKEN_BIJNA_INDEX3B_SPOOR_perron.sigml",
@@ -24,4 +27,5 @@
     "15:31_dubbel": "sigml_zinsdelen/focus_groep/15u31_dubbel.sigml",
     "15:31_babyO": "sigml_zinsdelen/focus_groep/15u31_babyO.sigml",
     "15:31_vinger": "sigml_zinsdelen/focus_groep/15u31_vinger.sigml"
+
 }

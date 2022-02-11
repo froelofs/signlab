@@ -21,6 +21,9 @@
       <mouthing_tier>
         <mouth_picture picture="tej"/>
       </mouthing_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <split_handconfig>
@@ -93,6 +96,9 @@
       <mouthing_tier>
         <mouth_picture picture="d9YelI"/>
       </mouthing_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true">
       <handconfig handshape="pinchall"/>

@@ -27,10 +27,9 @@
             <facialexpr_tier>
                 <facial_expr_par>
                     <eye_lids movement="SB" amount="0.5"/>
-                    <eye_gaze direction="RD" />
+                    <eye_gaze direction="RD" amount="0.5"/>
                     <eye_brows movement="RB" />
                 </facial_expr_par>
-                    <eye_gaze direction="LU" amount="0.4" speed="0.5"/>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
