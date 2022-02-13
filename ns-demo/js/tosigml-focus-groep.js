@@ -73,6 +73,7 @@ function pushInterVars(variableArray, stationsArray, first){
 }
 
 function getSigmlVariables(entry, variableArray, stationsArray, av){
+
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
   var andersomZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
@@ -173,14 +174,14 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
     variableArray.push("IB2");
   }
 
-  if(entry.includes("niet_Arnhem")){
-    variableArray.push("niet_Arnhem");
-  }
-
   if(entry.includes("niet_Breda")){
     variableArray.push("niet_Breda");
   }
 
+  if(entry.includes("niet_Arnhem")){
+    variableArray.push("niet_Arnhem");
+  }
+  
   if(entry.includes("niet_Deventer")){
     variableArray.push("niet_Deventer");
   }
@@ -255,6 +256,10 @@ async function getSiGMLContent(el){
 }
 
 async function getSiGML(sentenceArray, av){
+  var regex_sigml = new RegExp(/\<hamgestural\_sign\sgloss\=\"(\w*\s?\:?\w*\s?\w*\s?)(\>)?\"/, "g");
+  globalVar.glossArray = [[]];
+  globalVar.doneGloss = [[]];
+  var tempStringsArray = [[]];
   var tijdArray = [];
   tempStrings[av] = '<?xml version="1.0" encoding="utf-8"?><sigml>\n';
   tempStrings[av] += '<hamgestural_sign gloss="" timescale="0.6" duration="1.1"><sign_manual holdover="true"></sign_manual><sign_nonmanual><mouthing_tier><mouthing_par><avatar_morph name="smlc" amount="0.7" speed="0.4" timing="x s l - m l x"/><avatar_morph name="eee" amount="0.3" speed="0.4" timing="x m t - m t"/></mouthing_par></mouthing_tier><body_tier><body_movement movement="ST"/></body_tier><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><facial_expr_par><eye_gaze movement="LE" amount="0.6"/><eye_brows movement="RB"/></facial_expr_par></facialexpr_tier></sign_nonmanual></hamgestural_sign>\n';
@@ -273,7 +278,6 @@ async function getSiGML(sentenceArray, av){
   }
   console.log('Sentence array final: ', sentenceArray);
   const [lastItem] = sentenceArray.slice(-1);
-  console.log('last ', lastItem);
   if(sentenceArray[0].match(/(Herhaling)/)){
         console.log('Match herhaling');
         document.getElementById('repetitionBar_av' + av).style.display = "inline-block";
@@ -285,15 +289,24 @@ async function getSiGML(sentenceArray, av){
         console.log('json sent NL: ', json_sent_NL[el]);
         data = await getSiGMLContent(json_sent_NL[el]);
         tempStrings[av] += data;
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
       } else {
         console.log('json sent EN: ', json_sent_EN[el]);
         data = await getSiGMLContent(json_sent_EN[el]);
         tempString += data; 
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
       }
     } else if (json_var[el] !== undefined && !tijdArray.includes(el)){
         console.log('json var: ', json_var[el]);
         let data = await getSiGMLContent(json_var[el]);
         tempStrings[av] += data;
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
     } else if(el == "tijd"){
       // Change gloss into hh:mm format
       el_index = sentenceArray.indexOf(el);
@@ -306,11 +319,14 @@ async function getSiGML(sentenceArray, av){
         } else {
           data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
         }
-        var regex_sigml = /\<hamgestural\_sign\sgloss\=\"(\w*)\"/;
+        
         if(data.match(regex_sigml)){
-          data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '"');
+          data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '>"');
         }
         tempStrings[av] += data;
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
       }
     } else {
       if(el===" "){
@@ -331,6 +347,35 @@ async function getSiGML(sentenceArray, av){
   globalVar.playing[av] = true;
   globalVar.playFinished[av] = false;
   globalVar.sigmlText[av] = tempStrings[av];
+
+  // tempStringsArray[av] is hetzelfde als tempStrings[av], alleen in array vorm zodat je er doorheen kan itereren
+  if(av === 0){
+    for(const elm of tempStringsArray[av]){
+      glossMatches = elm.matchAll(regex_sigml);
+      for(const match of glossMatches){
+        if(match[1] != null){
+          if(match[1].length != 0){
+            globalVar.glossArray[av].push(match[1]);
+          }
+        }
+      }
+    }
+
+    globalVar.glossArray[av] = globalVar.glossArray[av].join(' ');
+    regex_dubbele_tijd = /(\d{1,2}\:\d{2})\s\d{1,2}\:\d{2}\s\d{1,2}\:\d{2}/
+    if(globalVar.glossArray[av].match(regex_dubbele_tijd)){
+      globalVar.glossArray[av] = globalVar.glossArray[av].replace(regex_dubbele_tijd, '$1');
+    }
+    regex_hoekje = /(\d{1,2}\:\d{2})\>/
+    if(globalVar.glossArray[av].match(regex_hoekje)){
+      globalVar.glossArray[av] = globalVar.glossArray[av].replace(regex_hoekje, '$1');
+    }
+    globalVar.glossArrayColor[av] = globalVar.glossArray[av];
+    document.getElementById('outputLong').innerHTML = globalVar.glossArray[av];
+  }
+  
+  globalVar.globalAv = av;
+  console.log('globalav ', globalVar.globalAv);
   playText(tempStrings[av], av);
 }
 

@@ -49,8 +49,8 @@
 .CWASAAvatar {
 	display: inline-block;
 	background: #A3B8D2;
-  max-width: 600px;
-	width: 95%;
+  max-width: 700px;
+	width: 100%;
   height: 500px;
 	border: 0px;
   padding: 0px;
@@ -251,7 +251,7 @@ body.busy::before {
   background-color: #e4edf8;
   z-index: 100;
   height: 2em;
-  width: 80%;
+  width: 100%;
   font-size: 1.5em;
   bottom: 0;
   align-content: center;
@@ -280,13 +280,29 @@ body.busy::before {
   background-color: #e4edf8;
   z-index: 100;
   height: 2em;
-  width: 95%;
+  width: 100%;
   font-size: 1.5em;
   bottom: 0;
   align-content: center;
   text-align: center;
   text-transform: uppercase;
   overflow: auto;
+  white-space: initial;
+  word-break: break-word
+}
+
+.subtitlesLong{
+  position: relative;
+  background-color: #e4edf8;
+  z-index: 100;
+  height: auto;
+  width: 100%;
+  font-size: 1.5em;
+  bottom: 0;
+  align-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: visible;
   white-space: initial;
   word-break: break-word
 }

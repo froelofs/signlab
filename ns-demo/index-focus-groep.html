@@ -78,7 +78,8 @@
       <div class="col-sm pr-2">
           <span class="CWASAAvatar av0" id="avatar"></span>
           <input class="av0 subtitlesRep col-mb-5" id="repetitionBar_av0" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
-          <input class="av0 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
+          <div class="av0 subtitlesLong col-mb-5" id="outputLong" style="display: none"></div>
+          <input class="av0 txtGloss subtitles0 col-mb-5" id="outputGloss" value="" type="text" readonly="readonly" style="display: block"></input>
           <br>
           <input type="button" class="btn btn-primary" id="play_av0" value="Play" onclick='makePlayNonClickable(0); getSentenceArray(document.getElementById("currSentence_av0").innerText, 0);'/>
           <input type="button" class="bttnStop btn btn-primary" value="Stop" onclick='makePlayClickable(0)'/>
@@ -97,9 +98,9 @@
           <div class="mb-3 row align-items-start no-gutters">
             <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av0"  onchange="changeSentence(this.value, 0);">
               <option id="_"></option>
+              <option id="Ondertiteling">Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.</option>
               <option id="Snelheid avatar">Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.</option>
               <option id="Indexen">Hallo, IA0 treinType naar eindStation IA0 vertrekt van IB0 spoor spoorNr.</option>
-              <option id="Ondertiteling">ONDERTITELING</option>
               <option id="DE TREIN VERTREKT OVER ENKELE MINUTEN">De treinType vertrekt bijna van spoor spoorNr.</option>
               <option id="DE TREIN VERTREKT OVER EEN NOG ONBEKENDE TIJD">Wanneer? Nog geen idee.</option>
               <option id="DE TREIN STOPT NIET OP TUSSENGELEGEN STATIONS">Hallo, de treinType naar eindStation schuin_stopt niet op tussengelegen stations niet_Breda, niet_Arnhem, niet_Zwolle.</option>
@@ -198,7 +199,7 @@
         <div class="col-sm pr-2">
             <span class="CWASAAvatar av1" id="avatar"></span>
             <input class="av1 subtitlesRep col-mb-5" id="repetitionBar_av1" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
-            <input class="av1 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
+            <input class="av1 txtGloss subtitles0 col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
             <br>
             <input type="button" class="btn btn-primary" id="play_av1" value="Play" onclick='makePlayNonClickable(1); getSentenceArray(document.getElementById("currSentence_av1").innerText, 1);'/>
             <input type="button" class="bttnStop btn btn-primary" value="Stop" onclick='makePlayClickable(1)'/>
@@ -217,9 +218,9 @@
           <div class="mb-3 row align-items-start no-gutters">
             <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av1"  onchange="changeSentence(this.value, 1);">
               <option id="_"></option>
+              <option id="Ondertiteling">Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.</option>
               <option id="Snelheid avatar">Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.</option>
               <option id="Indexen">Hallo, IA1 treinType naar eindStation IA1 vertrekt van IB1 spoor spoorNr.</option>
-              <option id="Ondertiteling">ONDERTITELING</option>
               <option id="DE TREIN VERTREKT OVER ENKELE MINUTEN">De treinType vertrekt binnen een paar minuten van spoor spoorNr.</option>
               <option id="DE TREIN VERTREKT OVER EEN NOG ONBEKENDE TIJD">Wanneer? Weet ik nog niet.</option>
               <option id="STOPPEN TUSSENGELEGEN STATIONS">Hallo, de treinType naar eindStation hoek_stopt niet op tussengelegen stations niet_Breda, niet_Arnhem, niet_Zwolle.</option>
@@ -318,7 +319,8 @@
       <div class="col-sm">
         <span class="CWASAAvatar av2" id="avatar"></span>
         <input class="av2 subtitlesRep col-mb-5" id="repetitionBar_av2" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
-        <input class="av2 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
+        <div class="av0 subtitlesLong col-mb-5" id="outputLong_nocurrent" style="display: none"></div>
+        <input class="av2 txtGloss subtitles0 col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
         <br>
         <input type="button" class="btn btn-primary av2" id="play_av2" value="Play" onclick='makePlayNonClickable(2); getSentenceArray(document.getElementById("currSentence_av2").innerText, 2);'/>
         <input type="button" class="bttnStop btn btn-primary" value="Stop" onclick='makePlayClickable(2)'/>
@@ -337,18 +339,23 @@
         <div class="mb-3 row align-items-start no-gutters">
           <select class="col-sm selectpicker sentenceOptions" name="sentences" id="sentenceOptions_av2"  onchange="changeSentence(this.value, 2);">
             <option id="_"></option>
+            <option id="Ondertiteling">Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.</option>
             <option id="Snelheid avatar">Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.</option>
             <option id="Indexen">Hallo, IA2 treinType IA2 naar eindStation IA2 vertrekt van IB2 spoor_s 5_s IB2_.</option>
-            <option id="Ondertiteling">ONDERTITELING</option>
             <option id="DE TREIN VERTREKT OVER ENKELE MINUTEN">De treinType gaat bijna weg van spoor spoorNr.</option>
             <option id="DE TREIN VERTREKT OVER EEN NOG ONBEKENDE TIJD">De tijd is nog niet duidelijk.</option>
             <option id="STOPPEN TUSSENGELEGEN STATIONS">Hallo, de treinType naar eindStation stopt niet op niet_Arnhem, niet_Breda, niet_Zwolle.</option>
             <option id="Tijdsaanduiding">15:31_vinger</option>
-            <option id="Pauzes 1">Hallo 67, de treinType 3 naar eindStation 3 van vertrekTijd 53 rijdt niet.</option>
-            <option id="Pauzes 2">De treinType 3 naar eindStation 3 van vertrekTijd 53 vertrekt 5s over wachtTijd 5s van spoor spoorNr.</option>
-            <option id="Pauzes 3">Herhaling. De treinType 3 naar eindStation 3 van vertrekTijd 53 rijdt via een 3 andere route.</option>
-            <option id="Pauzes 4">Hallo 67, de treinType 3 naar eindStation 53 stopt niet 5s op tussenStation1, tussenStation2, tussenStation3, tussenStation4.</option>
+            <option id="Pauzes 1a">Hallo 67, de treinType 3 naar eindStation 3 van vertrekTijd 53 rijdt niet.</option>
+            <option id="Pauzes 2a">De treinType 3 naar eindStation 3 van vertrekTijd 53 vertrekt 5s over wachtTijd 5s van spoor spoorNr.</option>
+            <option id="Pauzes 3a">Herhaling. De treinType 3 naar eindStation 3 van vertrekTijd 53 rijdt via een 3 andere route.</option>
+            <option id="Pauzes 4a">Hallo 67, de treinType 3 naar eindStation 53 stopt niet 5s op tussenStation1, tussenStation2, tussenStation3, tussenStation4.</option>
             
+            <option id="Pauzes 1b">Hallo 268, de treinType 12 naar eindStation 12 van vertrekTijd 212 rijdt niet.</option>
+            <option id="Pauzes 2b">De treinType 12 naar eindStation 12 van vertrekTijd 212 vertrekt 22 over wachtTijd 22 van spoor spoorNr.</option>
+            <option id="Pauzes 3b">Herhaling. De treinType 12 naar eindStation 12 van vertrekTijd 212 rijdt via een 12 andere route.</option>
+            <option id="Pauzes 4b">Hallo 268, de treinType 12 naar eindStation 212 stopt niet 22 op tussenStation1, tussenStation2, tussenStation3, tussenStation4.</option>
+
             <option>Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.</option>
             <option>De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.</option>
             <option>Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.</option>

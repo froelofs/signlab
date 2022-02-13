@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="SPOOR" timescale=".8" duration="1">
+  <hamgestural_sign gloss="VAN SPOOR" timescale=".8" duration="1">
         <sign_manual>
             <handconfig handshape="cee12" ceeopening="slack" thumbpos="opposed"/>
             <handconfig extfidir="oooorrd"/> second_exfidir="d"/>

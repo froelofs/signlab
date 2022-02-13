@@ -3,15 +3,15 @@
       <head_tier>
         <head_movement movement="SL" amount="1.5"/>
       </head_tier>
-<facialexpr_tier>
-        <eye_lids movement="BB" speed="1"/>
+      <facialexpr_tier>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
     </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="VAN" timescale="0.8" duration="1.2">
+  <hamgestural_sign gloss="VAN" timescale="0.6" duration="1.1">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="fA:" speed="1.5"/>

@@ -5,7 +5,7 @@
       </head_tier>
       <facialexpr_tier>
         <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-        <eye_lids movement="BB" speed="1"/>
+        <eye_lids movement="BB"/>
         <eye_gaze movement="LE" amount="0.6"/>
       </facialexpr_tier>
     </sign_nonmanual>

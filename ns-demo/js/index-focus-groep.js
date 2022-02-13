@@ -17,7 +17,11 @@ var globalVar={
   globalAv: 0,
   playButtonClicked: [false, false, false],
   playFinished: [false, false, false],
-  playing: [false, false, false]
+  playing: [false, false, false],
+  glossArray: [[]],
+  glossArrayColor: [[]],
+  doneGloss: [[]],
+  ondertiteling: false
 };
 
 var train_n = 1;
@@ -177,6 +181,23 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('currSentence_av' + av + '').innerHTML = currentSentence;
     dropdown = document.getElementById('sentenceOptions_av' + av + '');
     document.getElementById('currTopic').innerHTML = dropdown.options[dropdown.selectedIndex].id;
+    if(dropdown.options[dropdown.selectedIndex].id === "Ondertiteling"){
+      globalVar.ondertiteling = true;
+      document.getElementById('outputLong').style.display = "block";
+      document.getElementById('outputGloss').style.display = "none";
+      if(av === 2){
+        document.getElementById('outputLong_nocurrent').style.display = "block";
+        document.getElementById('outputLong_nocurrent').innerHTML = "Hallo, de intercity naar Almelo vertrekt van spoor 5.";
+      } else {
+        document.getElementById('outputLong_nocurrent').style.display = "none";
+        document.getElementById('outputLong_nocurrent').innerHTML = "";
+      }
+    } else {
+      globalVar.ondertiteling = false;
+      document.getElementById('outputLong_nocurrent').style.display = "none";
+      document.getElementById('outputLong').style.display = "none";
+      document.getElementById('outputGloss').style.display = "block";
+    }
     resetBoxes(currentSentence, av);
     colorKeywords(currentSentence, av);
   } else {

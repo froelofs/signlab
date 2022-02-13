@@ -21,7 +21,7 @@
     </sign_manual>
   </hamgestural_sign>
 
-    <hamgestural_sign gloss="15:31" timescale="0.9" duration="0.8">
+  <hamgestural_sign gloss="15:31" timescale="0.75" duration="0.8">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_gesture movement="L17"/>
@@ -36,14 +36,20 @@
     </sign_nonmanual>
     <sign_manual>
       <handconfig mainbend="bent" handshape="cee12" second_handshape="pinch12" ceeopening="tight" thumbpos="across" />
-      <handconfig extfidir="uuo"/>
+      <handconfig extfidir="uu"/>
       <handconfig palmor="d"/>
      <location_bodyarm contact="close" location="shouldertop" second_location="chest" side="front" second_side="right_at" />
-       <directedmotion direction="o" size="small"/>
+    <par_motion>
+      <directedmotion direction="o" size="small" fast="true" speed="2"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="uuo"/>
+        </tgt_motion>
+    </par_motion>
     </sign_manual>
   </hamgestural_sign>
 
-    <hamgestural_sign gloss="15:31">
+  <hamgestural_sign gloss="15:31">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="en@ndERtIx" speed="2"/>

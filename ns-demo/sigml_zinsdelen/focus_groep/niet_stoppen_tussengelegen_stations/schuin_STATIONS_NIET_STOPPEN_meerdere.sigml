@@ -4,7 +4,7 @@
         <head_movement movement="SL" amount="1.5"/>
       </head_tier>
 <facialexpr_tier>
-        <eye_lids movement="BB" speed="1"/>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
@@ -68,7 +68,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-    <hamgestural_sign gloss="TUSSENGELEGEN STATIONS">
+    <hamgestural_sign gloss="">
         <sign_manual>
             <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
             <handconfig extfidir="l"/>
@@ -131,7 +131,7 @@
         </sign_nonmanual>
     </hamgestural_sign>
 
-<hamgestural_sign gloss="STOPT NIET" timescale="0.7" duration="1.1">
+<hamgestural_sign gloss="" timescale="0.7" duration="1.1">
         <sign_manual holdover="true">
             <handconfig handshape="finger2" thumbpos="across"/>
             <handconfig extfidir="ul" second_extfidir="ull"/>

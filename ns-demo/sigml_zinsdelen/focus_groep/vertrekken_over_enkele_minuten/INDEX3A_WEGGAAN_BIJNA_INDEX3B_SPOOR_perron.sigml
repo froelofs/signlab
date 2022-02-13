@@ -5,7 +5,7 @@
         <head_movement movement="SL" amount="1.5"/>
       </head_tier>
 <facialexpr_tier>
-        <eye_lids movement="BB" speed="1"/>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
@@ -89,7 +89,7 @@
         <head_movement movement="SL" amount="1.5"/>
       </head_tier>
 <facialexpr_tier>
-        <eye_lids movement="BB" speed="1"/>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
