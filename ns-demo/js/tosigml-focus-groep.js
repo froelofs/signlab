@@ -319,9 +319,14 @@ async function getSiGML(sentenceArray, av){
         } else {
           data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
         }
+        regex_haakjes = new RegExp(/\<hamgestural\_sign\sgloss\=\"(\w*\s?\:?\w*\s?\w*\s?)\>\"(\>)?/, "g");
         
-        if(data.match(regex_sigml)){
+        if (data.match(regex_sigml)){
           data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '>"');
+        }
+        
+        if(data.match(regex_haakjes)){
+          data = data.replaceAll(regex_sigml, '<hamgestural_sign gloss="' + tijd + '"');
         }
         tempStrings[av] += data;
         if(av === 0){
