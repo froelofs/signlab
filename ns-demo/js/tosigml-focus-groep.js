@@ -380,7 +380,6 @@ async function getSiGML(sentenceArray, av){
   }
   
   globalVar.globalAv = av;
-  console.log('globalav ', globalVar.globalAv);
   playText(tempStrings[av], av);
 }
 
