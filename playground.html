@@ -59,69 +59,149 @@
 
 <section class="projects-section bg-light fadeIn" id="Playground">
   <div id="avatarTranslator" class="container-fluid" style="width: 80%;">
-        <!-- Challenge Row-->
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-            <!-- Column for info -->
-            <div class="col-12 col-md-4">
-                <!-- CWA signing avatar panel 0 -->
-                <!--================================================================-->
-                <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-                <!-- <span id="avatar" class="CWASAAvatar av0" style="width: 400px;"></span> -->
-                <div class="project-text pb-1 w-100 my-auto no-top-padding small text-center text-black-50">
-                    <p class="mb-4">
-                      Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>.
-                    </p>
-                </div>
-                <!--================================================================-->
+    <!-- Text input row-->
+    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+          <!-- Column for input -->
+          <div class="col-12">
+          <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
+            <div id="alertPlayground" class="alertBox"></div>
+
+            <form autocomplete="off">
+              <!-- <div id="autocomp" class="autocomplete" style="max-width:400px;"> -->
+                <div id="autocomp" class="autocomplete"></div>
+                <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
+              </div>
+            </form>
+
+            <!-- Shoulder movement nonmanual selection -->
+            <div class="input-group" style="margin-top: 10px;">
+              <select class="custom-select" id="shouldermovement">
+                <option selected>Select a shoulder movement to add to the selected signs</option>
+                <option value="<UL>">UL_left_shoulder_raised</option>
+                <option value="<UR>">UR_right_shoulder_raised</option>
+                <option value="<UB>">UB_both_shoulders_raised</option>
+                <option value="<HL>">HL_left_shoulder_hunched_forward</option>
+                <option value="<HR>">HR_right_shoulder_hunched_forward</option>
+                <option value="<HB>">HB_both_shoulders_hunched_forward</option>
+                <option value="<SL>">SL_left_shoulder_shrugging_up_and_down</option>
+                <option value="<SR>">SR_right_shoulder_shrugging_up_and_down</option>
+                <option value="<SB>">SB_both_shoulders_shrugging_up_and_down</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('shouldermovement')">Add</button>
+              </div>
+            </div>
+            
+            <!-- Body movement nonmanual selection -->
+            <div class="input-group" style="margin-top: 10px;">
+              <select class="custom-select" id="bodymovement">
+                <option selected>Select a body movement to add to the selected signs</option>
+                <option value="<RL>">RL_rotated_left</option>
+                <option value="<RR>">RR_rotated_right</option>
+                <option value="<TL>">TL_tilted_left</option>
+                <option value="<TR>">TR_tilted_right</option>
+                <option value="<TF>">TF_tilted_forwards</option>
+                <option value="<TB>">TB_tilted_backwards</option>
+                <option value="<SI>">SI_sigh</option>
+                <option value="<HE>">HE_heave</option>
+                <option value="<ST>">ST_straight</option>
+                <option value="<RD>">RD_round</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('bodymovement')">Add</button>
+              </div>
             </div>
 
-            <!-- Column for input -->
-            <div class="col-12 col-md-3">
-              <div class="pb-1 w-100 my-auto text-left playgroundTextDIV" style="margin-left: 20px; margin-right: 20px;">
-              <div id="alertPlayground" class="alertBox"></div>
-
-              <div class="input-group" style="margin: 10px; margin-left: 0;">
-                <select class="custom-select" id="shouldermovement">
-                  <option selected>Select a shoulder movement to add to the sign</option>
-                  <option value="<UL>">UL_left_shoulder_raised</option>
-                  <option value="<UR>">UR_right_shoulder_raised</option>
-                  <option value="<UB>">UB_both_shoulders_raised</option>
-                  <option value="<HL>">HL_left_shoulder_hunched_forward</option>
-                  <option value="<HR>">HR_right_shoulder_hunched_forward</option>
-                  <option value="<HB>">HB_both_shoulders_hunched_forward</option>
-                  <option value="<SL>">SL_left_shoulder_shrugging_up_and_down</option>
-                  <option value="<SR>">SR_right_shoulder_shrugging_up_and_down</option>
-                  <option value="<SB>">SB_both_shoulders_shrugging_up_and_down</option>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value">Add</button>
-                </div>
+            <!-- Head movement nonmanual selection -->
+            <div class="input-group" style="margin-top: 10px;">
+              <select class="custom-select" id="headmovement">
+                <option selected>Select a head movement to add to the selected signs</option>
+                <option value="<NO>">NO_nodding_up_and_down</option>
+                <option value="<SH>">SH_shaking_left_and_right</option>
+                <option value="<SR>">SR_turned_right</option>
+                <option value="<SL>">SL_turned_left</option>
+                <option value="<TR>">TR_tilted_right</option>
+                <option value="<TL>">TL_tilted_left </option>
+                <option value="<NF>">NF_tilted_forward</option>
+                <option value="<NB>">NB_tilted_back </option>
+                <option value="<PF>">PF_pushed_forward</option>
+                <option value="<PB>">PB_pushed_backward</option>
+                <option value="<LI>">LI_head_movement_linked_to_eye_gaze</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('headmovement')">Add</button>
               </div>
+            </div>
 
-                    <form autocomplete="off">
-                      <div id="autocomp" class="autocomplete" style="max-width:400px;">
-                        <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
-                      </div>
-                    </form>
-                    <br>
-                    <input type="button" class="btn btn-primary" id="play" value="Play" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');"/>
-                    <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(1);' />
-                    <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name,1)">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
-                     <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
-                    <br>
-                    <br>
-                    <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px">Current sign: </label>
-                    <input id="outputGloss" class="txtGloss av0" value="none" type="text">
-                    <br>
-
-              <!-- </span> -->
+            <!-- Eye gaze direction nonmanual selection -->
+            <div class="input-group" style="margin-top: 10px;">
+              <select class="custom-select" id="eyegazedirection">
+                <option selected>Select an eye gaze direction to add to the selected signs</option>
+                <option value="<AD>">AD_towards_addressee</option>
+                <option value="<FR>">FR_far</option>
+                <option value="<HD>">HD_towards_the_signer_s_own_hands</option>
+                <option value="<HI>">HI_towards_the_signer_s_own_dominant_hand</option>
+                <option value="<HC>">HC_towards_the_signer_s_own_non_dominant_hand</option>
+                <option value="<UP>">UP_up </option>
+                <option value="<DN>">DN_down</option>
+                <option value="<LE>">LE_left</option>
+                <option value="<RI>">RI_right</option>
+                <option value="<NO>">NO_no_target_unfocussed</option>
+                <option value="<RO>">RO_rolling_eyes</option>
+                <option value="<LU>">LU_left_up</option>
+                <option value="<LD>">LD_left_down</option>
+                <option value="<RU>">RU_right_up</option>
+                <option value="<RD>">RD_right_down</option>
+              </select>
+              <div class="input-group-append">
+                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyegazedirection')">Add</button>
               </div>
+            </div>
 
+        </div>
+    </div>
+
+    <!-- SiGML and Avatar row -->
+    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+
+      <!-- Column for SiGML output -->
+      <div class="col-12 col-md-5 playgroundTextDIV" style=" margin:0px;">
+        <textarea id="output" class="explSiGML" style="margin-left:0px; padding-left: 0;"
+        placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
+      </div>
+
+      <!-- Column for avatar -->
+      <div class="col-12 col-md-7">
+        <!-- CWA signing avatar panel 0 -->
+        <!--================================================================-->
+        <!-- <div class="CWASAPanel av0" align="center" ></div> -->
+        <!-- <span id="avatar" class="CWASAAvatar av0" style="width: 400px;"></span> -->
+        <div class="project-text pb-1 w-100 my-auto no-top-padding small text-center text-black-50">
+          <p class="mb-4">
+           Powered by the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>.
+          </p>
+        </div>
+        <!--================================================================-->
+        <br>
+        <input type="button" class="btn btn-primary" id="play" value="Play" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');"/>
+        <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(1);' />
+        <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name,1)">
+        <br>
+        <br>
+        <br>
+        <br>
+        <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+        <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+        <br>
+        <br>
+        <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px">Current sign: </label>
+        <input id="outputGloss" class="txtGloss av0" value="none" type="text">
+        <br>
+      </div>            
+              <!-- Invoer boven breedte van de pagina, linksonder sigml output en rechtsonder de avatar 
+                voor complexe nonmanuals ook per categorie een dropdown
+              genereer knop naast inputveld
+            zoals ns demo knoppen voor pauze, resume en frames -->
 
               <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
               <div class="undisplayed" style="text-align: center;">
@@ -143,23 +223,13 @@
               </div>
               <br>
 
-
               <!-- SToCA applet element panel -->
               <!--================================================================-->
               <div class="SToCA" tyle="text-align: center;"></div>
               <!--================================================================-->
-
-            </div>
-
-            <!-- Column for SiGML output -->
-            <div class="col-12 col-md-5 playgroundTextDIV" style=" margin:0px;">
-              <textarea id="output" class="explSiGML" style="margin-left:0px; padding-left: 0;"
-              placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
-            </div>
-         
-          </div>
     </div>
-
+            
+  </div>
 </section>
 
 
