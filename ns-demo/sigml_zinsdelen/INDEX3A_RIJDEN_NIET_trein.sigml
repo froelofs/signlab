@@ -1,14 +1,10 @@
-<hamgestural_sign gloss="">
+  <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_movement movement="SL" amount="0.8"/>
+        <head_movement movement="SL" amount="1.5"/>
       </head_tier>
-      <facialexpr_tier>
-        <facial_expr_par>
-          <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	        <eye_lids movement="BB" speed="0.8"/>
-          <eye_gaze movement="LE" amount="0.6"/>
-        </facial_expr_par>
+<facialexpr_tier>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
@@ -18,10 +14,7 @@
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_par>
-          <head_movement movement="SR" speed="0.5"/>
-          <head_movement movement="SR"/>
-        </head_par>
+          <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
@@ -39,7 +32,6 @@
     </sign_manual>
   </hamgestural_sign>
 
- 
   <hamgestural_sign gloss="RIJDT NIET" timescale="0.9" duration="1.2">
     <sign_nonmanual>
       <mouthing_tier>

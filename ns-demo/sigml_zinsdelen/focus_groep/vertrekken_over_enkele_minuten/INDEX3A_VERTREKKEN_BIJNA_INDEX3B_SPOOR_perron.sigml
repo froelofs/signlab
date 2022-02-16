@@ -1,33 +1,26 @@
-
-  <hamgestural_sign gloss="">
+  
+  <hamgestural_sign gloss="" timescale="0.4" duration="1">
     <sign_nonmanual>
       <head_tier>
-	      <head_movement movement="SL" amount="0.8"/>
+        <head_movement movement="SL" amount="1.5"/>
       </head_tier>
-      <facialexpr_tier>
-        <facial_expr_par>
-          <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	        <eye_lids movement="BB" speed="0.8"/>
-          <eye_gaze movement="LE" amount="0.6"/>
-        </facial_expr_par>
+<facialexpr_tier>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
     </sign_manual>
   </hamgestural_sign>
-
+  
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_par>
-          <head_movement movement="SR" speed="0.5"/>
-          <head_movement movement="SR"/>
-        </head_par>
+          <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
          <eye_lids movement="SB" />
-         <eye_gaze direction="RD"/>
+         <eye_gaze direction="RD" amount="0.6"/>
         </facial_expr_par>
        </facialexpr_tier>
     </sign_nonmanual>
@@ -40,7 +33,7 @@
     </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="VERTREKT VAN">
+  <hamgestural_sign gloss="VERTREKT">
   <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="p"/>
@@ -76,26 +69,48 @@
     </sign_manual>
   </hamgestural_sign>
 
-  <hamgestural_sign gloss="" timescale="0.5" duration="1.2">
+  <hamgestural_sign gloss="BIJNA">
     <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L17" speed="0.7"/>
+        <mouth_picture picture="e:na" speed="2"/>
+      </mouthing_tier>
       <head_tier>
-	      <head_movement movement="SL" amount="0.8"/>
+	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
-	    <eye_lids movement="BB" speed="0.8"/>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="flat" thumbpos="in" second_thumbpos="out"/>
+      <handconfig extfidir="ulold" second_extfidir="uo"/>
+      <handconfig palmor="duol" second_palmor="dll"/>
+      <location_bodyarm contact="close" location="chest" side="front" second_location="chest" second_side="front"/>
+      <par_motion>
+        <wristmotion motion="twisting" size="medium" speed="1.4"/>
+        <wristmotion motion="twisting" size="large" speed="1.2"/>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+   <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+<facialexpr_tier>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
     </sign_manual>
-  </hamgestural_sign>  
+  </hamgestural_sign>
 
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_par>
-          <head_movement movement="SR" speed="0.5"/>
-          <head_movement movement="SR"/>
-        </head_par>
+          <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
@@ -112,9 +127,8 @@
       <directedmotion direction="dr" size="small"/>
     </sign_manual>
   </hamgestural_sign>
-
- 
-  <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
+  
+  <hamgestural_sign gloss="VAN SPOOR" timescale=".7" duration="1.2">
         <sign_manual>
             <handconfig handshape="cee12" ceeopening="slack" thumbpos="opposed"/>
             <handconfig extfidir="oooorrd"/> second_exfidir="d"/>
@@ -138,15 +152,14 @@
             </body_tier>
             <head_tier>
                 <head_movement movement="TR" amount="0.1" speed="0.1"/>
-                <head_movement movement="SL" amount="1.4" speed="0.1"/>
+                <head_movement movement="SL" amount="1.5" speed="0.1"/>
             </head_tier>
             <facialexpr_tier>
                 <facial_expr_par>
                     <eye_lids movement="SB" amount="0.5"/>
-                    <eye_gaze direction="RD" />
+                    <eye_gaze direction="RD" amount="0.5"/>
                     <eye_brows movement="RB" />
                 </facial_expr_par>
-                    <eye_gaze direction="LU" amount="0.4" speed="0.5"/>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

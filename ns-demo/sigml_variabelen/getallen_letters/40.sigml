@@ -19,7 +19,7 @@
         <directedmotion direction="r"/>
         <tgt_motion>
           <changeposture/>
-          <handconfig extfidir="ur"/>
+          <handconfig extfidir="uur"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>

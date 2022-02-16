@@ -19,8 +19,7 @@ function splitSentence(sentencePart, variable, sentenceArray){
     var letter = platformVar.replace(regex_platform, '$2');
     sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
     sentenceArray.push(number, letter);
-    // Platform is always the last variable. Skipping sentence part here is necessary
-    return sentenceArray, "";
+    return sentenceArray, sentencePart;
   }
   var regex_departTime = /(\d{1,2})\:(\d{2})/;
   if(variable.match(regex_departTime)){
@@ -74,14 +73,32 @@ function pushInterVars(variableArray, stationsArray, first){
 }
 
 function getSigmlVariables(entry, variableArray, stationsArray, av){
+
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
   var andersomZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
+
+  if(entry.includes("IA0")){
+    variableArray.push("IA0");
+  }
+
+  if(entry.includes("IA1")){
+    variableArray.push("IA1");
+  }
+
+  if(entry.includes("IA2")){
+    variableArray.push("IA2");
+  }
 
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions_av' + av).value;
     variableArray.push(trainVar);
   }
+
+  if(entry.includes("IA2")){
+    variableArray.push("IA2");
+  }
+
   if(entry !== andersomZin){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions_av' + av).value;
@@ -119,6 +136,19 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
   } else {
     variableArray, stationsArray = pushInterVars(variableArray, stationsArray, false)
   }
+
+  if(entry.includes("IA0")){
+    variableArray.push("IA0");
+  }
+
+  if(entry.includes("IA1")){
+    variableArray.push("IA1");
+  }
+
+  if(entry.includes("IA2")){
+    variableArray.push("IA2");
+  }
+
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput_av' + av).value;
     variableArray.push(departVar);
@@ -131,6 +161,35 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
       variableArray.push(waitVar);
     }
   }
+
+  if(entry.includes("IB0")){
+    variableArray.push("IB0");
+  }
+
+  if(entry.includes("IB1")){
+    variableArray.push("IB1");
+  }
+
+  if(entry.includes("IB2")){
+    variableArray.push("IB2");
+  }
+
+  if(entry.includes("niet_Breda")){
+    variableArray.push("niet_Breda");
+  }
+
+  if(entry.includes("niet_Arnhem")){
+    variableArray.push("niet_Arnhem");
+  }
+  
+  if(entry.includes("niet_Deventer")){
+    variableArray.push("niet_Deventer");
+  }
+
+  if(entry.includes("niet_Zwolle")){
+    variableArray.push("niet_Zwolle");
+  }
+
   if(entry.includes("platformNr") || entry.includes("spoorNr")){
     platformVar = document.getElementById('platformNrOptions_av' + av).value;
     platformVar = platformVar.replaceAll(/\'/g, "");
@@ -142,6 +201,11 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
       variableArray.push(platformVar);
     }
   }
+
+  if(entry.includes("IB2_")){
+    variableArray.push("IB2_");
+  }
+
   return variableArray, stationsArray;
 }
 
@@ -192,8 +256,13 @@ async function getSiGMLContent(el){
 }
 
 async function getSiGML(sentenceArray, av){
+  var regex_sigml = new RegExp(/\<hamgestural\_sign\sgloss\=\"(\w*\s?\:?\w*\s?\w*\s?)(\>)?\"/, "g");
+  globalVar.glossArray = [[]];
+  globalVar.doneGloss = [[]];
+  var tempStringsArray = [[]];
   var tijdArray = [];
   tempStrings[av] = '<?xml version="1.0" encoding="utf-8"?><sigml>\n';
+  tempStrings[av] += '<hamgestural_sign gloss="" timescale="0.6" duration="1.1"><sign_manual holdover="true"></sign_manual><sign_nonmanual><mouthing_tier><mouthing_par><avatar_morph name="smlc" amount="0.7" speed="0.4" timing="x s l - m l x"/><avatar_morph name="eee" amount="0.3" speed="0.4" timing="x m t - m t"/></mouthing_par></mouthing_tier><body_tier><body_movement movement="ST"/></body_tier><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><facial_expr_par><eye_gaze movement="LE" amount="0.6"/><eye_brows movement="RB"/></facial_expr_par></facialexpr_tier></sign_nonmanual></hamgestural_sign>\n';
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
   if(onbekendeTijd){
@@ -220,15 +289,24 @@ async function getSiGML(sentenceArray, av){
         console.log('json sent NL: ', json_sent_NL[el]);
         data = await getSiGMLContent(json_sent_NL[el]);
         tempStrings[av] += data;
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
       } else {
         console.log('json sent EN: ', json_sent_EN[el]);
         data = await getSiGMLContent(json_sent_EN[el]);
         tempString += data; 
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
       }
     } else if (json_var[el] !== undefined && !tijdArray.includes(el)){
         console.log('json var: ', json_var[el]);
         let data = await getSiGMLContent(json_var[el]);
         tempStrings[av] += data;
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
     } else if(el == "tijd"){
       // Change gloss into hh:mm format
       el_index = sentenceArray.indexOf(el);
@@ -241,11 +319,19 @@ async function getSiGML(sentenceArray, av){
         } else {
           data = await getSiGMLContent(json_var[sentenceArray[el_index+i]]);
         }
-        var regex_sigml = /\<hamgestural\_sign\sgloss\=\"(\w*)\"/;
-        if(data.match(regex_sigml)){
-          data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '"');
+        regex_haakjes = new RegExp(/\<hamgestural\_sign\sgloss\=\"(\w*\s?\:?\w*\s?\w*\s?)\>\"(\>)?/, "g");
+        
+        if (data.match(regex_sigml)){
+          data = data.replace(regex_sigml, '<hamgestural_sign gloss="' + tijd + '>"');
+        }
+        
+        if(data.match(regex_haakjes)){
+          data = data.replaceAll(regex_sigml, '<hamgestural_sign gloss="' + tijd + '"');
         }
         tempStrings[av] += data;
+        if(av === 0){
+          tempStringsArray[av].push(data);
+        }
       }
     } else {
       if(el===" "){
@@ -256,14 +342,44 @@ async function getSiGML(sentenceArray, av){
     }
     if (el == lastItem){
       // Extra pauze en eindpose toevoegen
-      tempStrings[av] += '<hamgestural_sign gloss=""><sign_nonmanual><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><eye_brows movement="RB" amount="0.7" speed="0.8"/><eye_lids movement="BB" speed="0.8"/><eye_gaze movement="LE" amount="0.6"/></facialexpr_tier></sign_nonmanual><sign_manual holdover="true"></sign_manual></hamgestural_sign>';
-      tempStrings[av] += '<hamgestural_sign gloss="" timescale=".8" duration="1.2"><sign_manual both_hands="true" lr_symm="true"><handconfig handshape="flat" thumbpos="across" /><split_handconfig><handconfig extfidir="ddl" palmor="l"/><handconfig extfidir="dr" palmor="r"/></split_handconfig><handconstellation contact="close"><location_hand location="palm" side="back"/><location_hand location="palm" side="palmar"/><location_bodyarm contact="close" location="belowstomach" second_location="belowstomach" side="right_at" second_side="front"/></handconstellation></sign_manual><sign_nonmanual><body_tier><body_movement movement="ST" /></body_tier><head_tier><head_par><head_movement movement="NU" amount="0.4"/><head_movement movement="SL" amount="1.5"/></head_par></head_tier><facialexpr_tier><facial_expr_par><eye_brows movement="RB" amount="0.6" /><eye_gaze movement="LE" amount="0.6"/><eye_lids movement="BB" /></facial_expr_par></facialexpr_tier></sign_nonmanual></hamgestural_sign>';
+      tempStrings[av] += '<hamgestural_sign gloss=""><sign_nonmanual><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><eye_brows movement="RB" amount="0.7" speed="0.8"/><eye_lids movement="BB" speed="0.8"/><eye_gaze movement="LE" amount="0.6"/></facialexpr_tier></sign_nonmanual><sign_manual holdover="true"></sign_manual></hamgestural_sign>\n';
+      tempStrings[av] += '<hamgestural_sign gloss="" timescale=".7" duration="1.4"><sign_manual both_hands="true" lr_symm="true"><handconfig handshape="flat" thumbpos="across" /><split_handconfig><handconfig extfidir="ddl" palmor="l"/><handconfig extfidir="dr" palmor="r"/></split_handconfig><handconstellation contact="close"><location_hand location="palm" side="back"/><location_hand location="palm" side="palmar"/><location_bodyarm contact="close" location="belowstomach" second_location="belowstomach" side="right_at" second_side="front"/></handconstellation></sign_manual><sign_nonmanual><body_tier><body_movement movement="ST" /></body_tier><head_tier><head_par><head_movement movement="NU" amount="0.4"/><head_movement movement="SL" amount="1.5"/></head_par></head_tier><facialexpr_tier><facial_expr_par><eye_brows movement="RB" amount="0.6" speed="0.5"/><eye_gaze movement="LE" amount="0.6"/><eye_lids movement="BB" /></facial_expr_par></facialexpr_tier></sign_nonmanual></hamgestural_sign>\n';
+      tempStrings[av] += '<hamgestural_sign gloss="" timescale=".9" duration="1.4"><sign_nonmanual><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><eye_gaze movement="LE" amount="0.6"/></facialexpr_tier></sign_nonmanual><sign_manual holdover="true"></sign_manual></hamgestural_sign>\n'
       tempStrings[av] += '</sigml>';
     }
   }
+  console.log('sigml ', tempStrings[av]);
   globalVar.playing[av] = true;
   globalVar.playFinished[av] = false;
   globalVar.sigmlText[av] = tempStrings[av];
+
+  // tempStringsArray[av] is hetzelfde als tempStrings[av], alleen in array vorm zodat je er doorheen kan itereren
+  if(av === 0){
+    for(const elm of tempStringsArray[av]){
+      glossMatches = elm.matchAll(regex_sigml);
+      for(const match of glossMatches){
+        if(match[1] != null){
+          if(match[1].length != 0){
+            globalVar.glossArray[av].push(match[1]);
+          }
+        }
+      }
+    }
+
+    globalVar.glossArray[av] = globalVar.glossArray[av].join(' ');
+    regex_dubbele_tijd = /(\d{1,2}\:\d{2})\s\d{1,2}\:\d{2}\s\d{1,2}\:\d{2}/
+    if(globalVar.glossArray[av].match(regex_dubbele_tijd)){
+      globalVar.glossArray[av] = globalVar.glossArray[av].replace(regex_dubbele_tijd, '$1');
+    }
+    regex_hoekje = /(\d{1,2}\:\d{2})\>/
+    if(globalVar.glossArray[av].match(regex_hoekje)){
+      globalVar.glossArray[av] = globalVar.glossArray[av].replace(regex_hoekje, '$1');
+    }
+    globalVar.glossArrayColor[av] = globalVar.glossArray[av];
+    document.getElementById('outputLong').innerHTML = globalVar.glossArray[av];
+  }
+  
+  globalVar.globalAv = av;
   playText(tempStrings[av], av);
 }
 

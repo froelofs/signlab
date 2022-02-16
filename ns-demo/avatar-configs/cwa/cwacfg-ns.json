@@ -24,10 +24,11 @@
     "avSettings" : [
       {
         "description":      "Default if client configuration is missing or restricted",
-        "width":            384,
+        "width":            380,
         "height":           320,
         "avList":           "avs",
         "initAv":           "francoise",
+        "initSpeed":        2,
         "allowFrameSteps":  true,
         "initSiGMLURL":     "iTakeMug.sigml",
         "allowSiGMLText":   true
