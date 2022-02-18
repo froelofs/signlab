@@ -68,7 +68,8 @@ function callPython(text, alertID) {
       console.log("Request was a success! Output: ", result);
       // output = result.output.split(";");
       // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
-      output = result.output;
+      //output = result.output;
+      output = result;
       if(output.slice(0,5) == "<?xml"){
         if (flag == "explain"){
           parent = document.querySelector('#explText');
@@ -152,12 +153,29 @@ function removeDisclaimer(){
 
 function addNonmanuals(elementID){
   textElement = document.getElementById('mySiGML');
+  text = textElement.value;
+
+  if(text ==""){
+    alertMessage("error", 'You can only add nonmanuals once you have entered at least one gloss', 'alertPlayground');
+    return;
+  }
 
   // Retrieves the indices of the start and end of the selected text
   startSelect = textElement.selectionStart;
+
+  if(startSelect == 0){
+    alertMessage("error", 'Please use your mouse to select at least one gloss', 'alertPlayground');
+    return;
+  }
   endSelect = textElement.selectionEnd;
 
+
   selectedGlosses = textElement.value.substr(startSelect, endSelect - startSelect);
+  if(textElement.value.substr(startSelect+1,0) != " " || textElement.value.substr(endSelect+1,0) != " "
+  || textElement.value.substr(startSelect+1,0) != "" || textElement.value.substr(endSelect+1,0) != ""){
+    alertMessage("error", 'Please use your mouse to select entire glosses', 'alertPlayground');
+    return;
+  }
   // document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value
   console.log("selected glosses: " + selectedGlosses);
 
@@ -167,6 +185,7 @@ function addNonmanuals(elementID){
   
   // Adds the nonmanual tags to the selected glosses
   insertion =  openTag + selectedGlosses + closeTag;
-  text = textElement.value;
+  
+
   textElement.value = text.slice(0,startSelect) + insertion + text.slice(endSelect); 
  }
