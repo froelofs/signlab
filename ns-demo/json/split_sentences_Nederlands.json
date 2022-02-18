@@ -11,6 +11,7 @@
     "De": "sigml_zinsdelen/INDEX3A.sigml",
     " rijdt via een andere route": "sigml_zinsdelen/INDEX3A_RIJDEN_trein_ANDERE_ROUTE.sigml",
     "stopt niet op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
+    " stopt niet op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
     "stopt niet op": "sigml_zinsdelen/focus_groep/niet_stoppen_tussengelegen_stations/NIET_STOPPEN_meerdere.sigml",
     "schuin_stopt niet op tussengelegen stations": "sigml_zinsdelen/focus_groep/niet_stoppen_tussengelegen_stations/schuin_STATIONS_NIET_STOPPEN_meerdere.sigml",
     "hoek_stopt niet op tussengelegen stations": "sigml_zinsdelen/focus_groep/niet_stoppen_tussengelegen_stations/hoek_STATIONS_NIET_STOPPEN_meerdere.sigml",

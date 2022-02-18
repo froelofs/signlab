@@ -1,4 +1,25 @@
-
+          <hamgestural_sign gloss="" timescale=".7" duration="1">
+    <sign_nonmanual>
+      <head_tier>
+          <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" speed="1.4"/>
+         <eye_gaze direction="LD" amount="0.6"/>
+        </facial_expr_par>
+       </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uol"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="left_at"/>
+      <directedmotion direction="dr" size="small" fast="true" speed="2"/>
+    </sign_manual>
+  </hamgestural_sign>
+    
+    
     <hamgestural_sign gloss="ZWOLLE">
         <sign_manual>
             <handconfig handshape="finger23spread" thumbpos="across"/>
@@ -27,6 +48,7 @@
                 <head_par>
                     <head_movement movement="NU"/>
                     <head_movement movement="SL" amount="1.5"/>
+                    <head_movement movement="SH" speed="0.7"/>
                 </head_par>
             </head_tier>
             <facialexpr_tier>

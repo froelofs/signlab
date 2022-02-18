@@ -77,6 +77,7 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
   var andersomZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
+  var andersomZinEN = "The trainType to interStation1, interStation2, interStation3, interStation4 and endStation from departTime departs in waitTime from platform platformNr.";
 
   if(entry.includes("IA0")){
     variableArray.push("IA0");
@@ -99,7 +100,7 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
     variableArray.push("IA2");
   }
 
-  if(entry !== andersomZin){
+  if(entry !== andersomZin && entry !== andersomZinEN){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions_av' + av).value;
       variableArray.push(endVar);
@@ -119,7 +120,7 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
     interVarArray[3] = document.getElementById('interStation4Options_av' + av).value;
     
   }
-  if(entry === andersomZin){
+  if(entry === andersomZin || entry === andersomZinEN){
     console.log('andersom');
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions_av' + av).value;
@@ -155,7 +156,7 @@ function getSigmlVariables(entry, variableArray, stationsArray, av){
   }
   if(entry.includes("waitTime") || entry.includes("wachtTijd")){
     waitVar = document.getElementById('waitTimeOptions_av' + av).value;
-    if(waitVar === "een nog onbekende tijd"){
+    if(waitVar === "een nog onbekende tijd" || waitVar === "an unknown timeframe"){
       console.log('waitTime: ', waitVar);
     } else {
       variableArray.push(waitVar);
@@ -271,6 +272,11 @@ async function getSiGML(sentenceArray, av){
       if(sentenceArray[i] === 'vertrekt over een nog onbekende tijd van spoor'){
         console.log('if true');
         sentenceArray[i] = sentenceArray[i].replace(sentenceArray[i], 'vertrekt van spoor');
+        onbekendeTijd = false;
+      }
+      if(sentenceArray[i] === 'departs in an unknown timeframe from platform'){
+        console.log('if true');
+        sentenceArray[i] = sentenceArray[i].replace(sentenceArray[i], 'departs from platform');
         onbekendeTijd = false;
       }
     }

@@ -276,7 +276,7 @@ body.busy::before {
   text-transform: uppercase;
   overflow: auto;
   white-space: initial;
-  word-break: break-word
+  word-break: break-word;
 }
 
 .subtitles0{
@@ -292,7 +292,7 @@ body.busy::before {
   text-transform: uppercase;
   overflow: auto;
   white-space: initial;
-  word-break: break-word
+  word-break: break-word;
 }
 
 .subtitlesLong{

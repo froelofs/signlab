@@ -1,6 +1,4 @@
-
-
-        <hamgestural_sign gloss="ARNHEM">
+  <hamgestural_sign gloss="ARNHEM">
         <sign_manual>
             <handconfig handshape="flat" mainbend="bent" second_handshape="flat"/>
             <handconfig extfidir="uo"/>
