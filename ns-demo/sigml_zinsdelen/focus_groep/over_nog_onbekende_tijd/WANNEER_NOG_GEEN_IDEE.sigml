@@ -62,9 +62,9 @@
 	    <eye_gaze movement="LE" amount="0.6"/>
       </facial_expr_par>
       </facialexpr_tier>
-<shoulder_tier>
-                <shoulder_movement movement="UB"/>
-            </shoulder_tier>
+      <shoulder_tier>
+        <shoulder_movement movement="UB"/>
+      </shoulder_tier>
     </sign_nonmanual>
     <sign_manual both_hands="true" lr_symm="true">
       <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>

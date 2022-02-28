@@ -30,7 +30,7 @@
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>
-
+   
 <hamgestural_sign gloss="STOPT NIET" timescale="0.7" duration="1.1">
         <sign_manual holdover="true">
             <handconfig handshape="finger2" thumbpos="across"/>
