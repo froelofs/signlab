@@ -69,14 +69,14 @@ function callPython(text, alertID) {
       // output = result.output.split(";");
       // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
       //output = result.output;
-      output = result;
-      if(output.slice(0,5) == "<?xml"){
-        if (flag == "explain"){
-          parent = document.querySelector('#explText');
+      output = result.indexOf("<?xml");
+      if(output >-1){
+        if (output >-1){
+          parent = document.querySelector('#mySiGML');
           console.log("explain:", output);
           //Ensures newlines and tabs in output are displayed in div
           var pre = document.createElement("pre");
-          pre.appendChild(document.createTextNode(output));
+          pre.appendChild(document.createTextNode(result.slice(output)));
           if (parent.childNodes.length != 0) {
             parent.removeChild(parent.childNodes[0]);
           }
@@ -152,7 +152,7 @@ function removeDisclaimer(){
 }
 
 function addNonmanuals(elementID){
-  textElement = document.getElementById('mySiGML');
+  textElement = document.getElementById(elementID);
   text = textElement.value;
 
   if(text ==""){
