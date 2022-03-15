@@ -47,10 +47,8 @@
         <mouth_picture picture="ONve"/>
       </mouthing_tier>
       <head_tier>
-	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
-	      <eye_gaze movement="LE" amount="0.6"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
