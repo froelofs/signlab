@@ -55,11 +55,11 @@
 .CWASAAvatar {
 	display: inline-block;
 	background: #A3B8D2;
-  max-width: 600px;
-	width: 80%;
+	width: 100%;
   height: 500px;
 	border: 0px;
   padding: 0px;
+  margin: 0;
 }
 
 .CWASAGUI {
@@ -126,8 +126,7 @@ body.busy::before {
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
-  width: 330px;
-  height: 480px;
+  width: 100%;
 }
 
 .inputBox{

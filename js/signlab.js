@@ -72,7 +72,7 @@ function callPython(text, alertID) {
       output = result.indexOf("<?xml");
       if(output >-1){
         if (output >-1){
-          parent = document.querySelector('#mySiGML');
+          parent = document.querySelector('#output');
           console.log("explain:", output);
           //Ensures newlines and tabs in output are displayed in div
           var pre = document.createElement("pre");
@@ -188,4 +188,16 @@ function addNonmanuals(elementID){
   
 
   textElement.value = text.slice(0,startSelect) + insertion + text.slice(endSelect); 
+ }
+
+function showNonmans(category){
+   
+  hiddenCategory = document.getElementById(category.value);
+  elements = document.getElementsByClassName("nonmanSelect");
+
+  for (let item of elements) {
+    item.style.display = "none";
+  }
+
+  hiddenCategory.style.display = "block";
  }
