@@ -93,9 +93,7 @@ $('.timepicker').timepicker({
    */
    function makeVarBoxInvisible(av){
     elements = [...document.getElementsByClassName('varBox_av' + av)];
-    console.log('els ', elements);
     elements.forEach(function(element){
-      console.log('el', element);
       element.style.display = 'none';
     });
   }

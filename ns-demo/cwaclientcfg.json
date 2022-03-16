@@ -8,6 +8,7 @@
       "avList":           "avsfull",
       "initAv":           "francoise",
       "ambIdle":          false,
+
       "initCamera":       [ 0, 0.43, 1.94, 18, 18, 30, -1, -1],
       "allowSiGMLText":   true,
       "description":      "avatar for translation page"
