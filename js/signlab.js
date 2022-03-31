@@ -232,15 +232,16 @@ $.ajax({
     console.log("terms: " + terms);
     arrayOfTerms = terms.split(" ");
     console.log("array: " + arrayOfTerms);
-    arrayOfTerms.forEach(function (term) {
-      var matcher = new RegExp(term, "i");
-      console.log("matcher: " + matcher);
-      array = $.grep(array, function (value) {
-        // console.log("label: "+value.label);
-        // console.log("value: "+value.value);
-        console.log("other value: "+ value);
-       return matcher.test(value.label || value.value || value);
-      });
+    term = arrayOfTerms[arrayOfTerms.length - 1];
+    var matcher = new RegExp(term, "i");
+    console.log("matcher: " + matcher);
+    array = $.grep(array, function (value) {
+      console.log("other value: "+ value);
+      return matcher.test(value.label || value.value || value);
+    });
+    array.forEach(function (term) {
+      console.log("match: "+ term);
+
     });
     return array;
   }
@@ -252,6 +253,7 @@ $.ajax({
     mustMatch: false,
     //Sets the autocomplete suggestions
     source: function (request, response){
+      textElement = document.getElementById("mySiGML");
       autocompSugg = customFilter(signOptions, request.term);
       response(autocompSugg);
     },
