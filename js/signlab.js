@@ -229,19 +229,12 @@ $.ajax({
  $( function() {
   // Defines the filter that searches the list of options for matches
   function customFilter(array, terms) {
-    console.log("terms: " + terms);
     arrayOfTerms = terms.split(" ");
-    console.log("array: " + arrayOfTerms);
     term = arrayOfTerms[arrayOfTerms.length - 1];
+    //Only selects the words that start with the term
     var matcher = new RegExp("^" + term, "i");
-    console.log("matcher: " + matcher);
     array = $.grep(array, function (value) {
-      console.log("other value: "+ value);
       return matcher.test(value.label || value.value || value);
-    });
-    array.forEach(function (term) {
-      console.log("match: "+ term);
-
     });
     return array;
   }
@@ -256,6 +249,7 @@ $.ajax({
       textElement = document.getElementById("mySiGML");
       autocompSugg = customFilter(signOptions, request.term);
       response(autocompSugg);
+      console.log("response: " + response);
     },
     select: function( event, ui ){
       if (ui.item != null){
