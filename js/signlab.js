@@ -245,7 +245,7 @@ $.ajax({
 
   // Activates the jquery autocomplete function when the user gives input
   $("#mySiGML").autocomplete({
-    appendTo: "##output",
+    appendTo: "#output",
     multiple: true,
     mustMatch: false,
     source: function (request, response){
