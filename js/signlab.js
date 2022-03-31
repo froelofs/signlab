@@ -259,11 +259,7 @@ $.ajax({
     },
     select: function( event, ui ){
       if (ui.item != null){
-        //Resets the replay button
-        document.getElementById("replayButton").style.display = 'none';
-        document.getElementById("replayButton").setAttribute("name", "");
         console.log("selected: " + ui.item.value);
-        document.getElementById("play").setAttribute("class", "btn btn-primary");
       }
     }
   });
@@ -274,3 +270,38 @@ $.ajax({
     ul.outerWidth(this.element.outerWidth());
   }
 });
+
+function makeClickable(elementID){
+  globalVar.playButtonClicked = false;
+  document.getElementById(elementID).setAttribute("class", "btn btn-primary");
+}
+
+function makeNonClickable(elementID){
+  globalVar.playButtonClicked = true;
+  document.getElementById(elementID).setAttribute("class", "no-click-button btn btn-primary");
+}
+
+function playSiGML(av=1){
+  makeClickable("pause");
+  makeClickable("resume");
+  makeNonClickable("play");
+  playText(document.getElementById("output").value,av);
+}
+
+function pause(){
+  makeNonClickable("play");
+  makeNonClickable("pause");
+  makeClickable("resume");
+}
+
+function resume(){
+  makeNonClickable("resume");
+  makeClickable("pause");
+}
+
+function stop(av=1){
+  makeNonClickable("resume");
+  makeNonClickable("pause");
+  makeClickable("play");
+  CWASA.stopSiGML(av);
+}

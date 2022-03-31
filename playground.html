@@ -68,12 +68,17 @@
 
             <form autocomplete="off">
               <!-- <div id="autocomp" class="autocomplete" style="max-width:400px;"> -->
-                <div id="autocomp" class="autocomplete"></div>
+              <div id="autocomp" class="autocomplete">
                 <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
               </div>
             </form>
-            <!-- 1ste kolom body, 2de kolom upperface, 3de kolom lowerface, 4de complex -->
-            Select a category to pick nonmanuals to add:
+            
+            <div>            
+              <input type="button" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
+            </div>
+          
+          <div style="margin-top: 5px;">
+          Select a category to pick nonmanuals to add:
           <div class="form-check">
             <input type="radio" id="bodyNonMan" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="bodyNonMan">Body</label>
             <input type="radio" id="upperFaceNonMan" value="upperFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="upperFaceNonMan">Upper Face</label>
@@ -363,6 +368,7 @@
               </div>
             </div>
           </div>
+        </div>
 
         </div>
     </div>
@@ -393,9 +399,12 @@
         </div>
         <!--================================================================-->
         <br>
-        <input type="button" class="btn btn-primary" id="play" value="Play" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');"/>
-        <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(1);' />
-        <input type="button" id="replayButton" class="btn btn-primary" style="display: none;" value="Replay" name="" onclick="playURL(document.getElementById('replayButton').name,1)">
+        <input type="button" class="btn btn-primary no-click-button" id="play" value="Play" onclick="playSiGML();"/>
+        <input type="button" class="btn btn-primary" value="Stop" onclick='stop()' />
+        <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='pause()'/>
+        <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='resume()'/>
+        <!-- <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
+        <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/> -->
         <br>
         <br>
         <br>
