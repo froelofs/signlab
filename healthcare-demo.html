@@ -62,6 +62,8 @@
   <div id="avatarTranslator" class="container-fluid" style="width: 100%;">
         <!-- Challenge Row-->
         <div class="row align-items-start no-gutters mb-4 mb-lg-5">
+          <div class="col-12 col-md-1"></div>
+
             <!-- Column for info -->
             <div class="col-12 col-md-5">
                 <!-- CWA signing avatar panel 0 -->
@@ -76,9 +78,11 @@
                 <!--================================================================-->
             </div>
 
+            <div class="col-12 col-md-1"></div>
+
             <!-- Column for input -->
-            <div class="col-12 col-md">
-              <div class="pb-1 w-100 my-auto text-left no-top-padding textDIV">
+            <div class="col-12 col-md-5">
+              <div class="pb-1 w-100 my-auto text-left textDIV" style="padding: 0;">
               <div id="alertMainTran" class="alertBox"></div>
               <!-- <span style="display:inline-block; vertical-align:top; margin-top: 20px; text-align: left;"> -->
 
@@ -97,8 +101,8 @@
                     <!-- This button exists so that the ZonMw scripts know that the demo option is active -->
                     <!-- <input type="radio" id="avatarDisplay" name="display" value="demo" class="undisplayed" checked> -->
 
-                    <form autocomplete="off">
-                      <div id="autocomp" class="autocomplete" style="max-width:400px;">
+                    <form autocomplete="off" style="max-width: 400px;">
+                      <div id="autocomp" class="autocomplete" style="padding: 0;">
                         <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter a sentence or keywords here" onkeydown="if(event.keyCode == 13){event.preventDefault();toSiGML(document.getElementById('mySiGML').value, 'alertMainTran');}"></textarea>
                       </div>
                     </form>
