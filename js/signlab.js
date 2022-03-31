@@ -152,7 +152,8 @@ function removeDisclaimer(){
 }
 
 function addNonmanuals(elementID){
-  textElement = document.getElementById(elementID);
+  // Retrieves the text enterd into the input field
+  textElement = document.getElementById("mySiGML");
   text = textElement.value;
 
   if(text ==""){
@@ -162,22 +163,15 @@ function addNonmanuals(elementID){
 
   // Retrieves the indices of the start and end of the selected text
   startSelect = textElement.selectionStart;
+  endSelect = textElement.selectionEnd;
+  console.log(startSelect + " " + endSelect);
 
-  if(startSelect == 0){
+  // Checks that a selection was made
+  selectedGlosses = textElement.value.substr(startSelect, endSelect - startSelect);
+  if(selectedGlosses.length ==0){
     alertMessage("error", 'Please use your mouse to select at least one gloss', 'alertPlayground');
     return;
   }
-  endSelect = textElement.selectionEnd;
-
-
-  selectedGlosses = textElement.value.substr(startSelect, endSelect - startSelect);
-  if(textElement.value.substr(startSelect+1,0) != " " || textElement.value.substr(endSelect+1,0) != " "
-  || textElement.value.substr(startSelect+1,0) != "" || textElement.value.substr(endSelect+1,0) != ""){
-    alertMessage("error", 'Please use your mouse to select entire glosses', 'alertPlayground');
-    return;
-  }
-  // document.getElementById('mySiGML').value = document.getElementById('mySiGML').value + document.getElementById('shouldermovement').value
-  console.log("selected glosses: " + selectedGlosses);
 
   // Retrieves the opening tag of the selected nonmanual and creates the corresponding closing tag
   openTag = document.getElementById(elementID).value;
@@ -201,3 +195,77 @@ function showNonmans(category){
 
   hiddenCategory.style.display = "block";
  }
+
+// Stores the autocomplete suggestions
+var signOptions;
+
+//Stores the sigml translations corresponding to the completed variable sentences
+var jsonAvailableSigns;
+  
+// Stores the dict of sentences with variables for the avatar
+function callbackSigns(response) {
+  jsonAvailableSigns = response;
+  signOptions = Object.keys(jsonAvailableSigns);
+  console.log(signOptions);
+}
+
+// Retrieves the dict of sentences with variables for the avatar
+$.ajax({
+ url: "newDict.json",
+ global: false,
+ success: function(data) {
+   console.log("hello");
+  callbackSigns(data);
+ },
+ error: function(xhr, error){
+  console.log("something is wrong: " + error);
+ }
+});
+
+ //Stores suggestions returned by autocomplete so user input can be checked against it
+ var autocompSugg = [];
+
+ // Defines the functions for autcomplete suggestions
+ $( function() {
+  // Defines the filter that searches the list of options for matches
+  function customFilter(array, terms) {
+    console.log("terms: " + terms);
+    arrayOfTerms = terms.split(" ");
+    console.log("array: " + arrayOfTerms);
+    arrayOfTerms.forEach(function (term) {
+      var matcher = new RegExp(term, "i");
+      console.log("matcher: ");
+      console.log(matcher);
+      array = $.grep(array, function (value) {
+       return matcher.test(value.label || value.value || value);
+      });
+    });
+    return array;
+  }
+
+  // Activates the jquery autocomplete function when the user gives input
+  $("#mySiGML").autocomplete({
+    appendTo: "##output",
+    multiple: true,
+    mustMatch: false,
+    source: function (request, response){
+      autocompSugg = customFilter(signOptions, request.term);
+      response(autocompSugg);
+    },
+    select: function( event, ui ){
+      if (ui.item != null){
+        //Resets the replay button
+        document.getElementById("replayButton").style.display = 'none';
+        document.getElementById("replayButton").setAttribute("name", "");
+        console.log("selected: " + ui.item.value);
+        document.getElementById("play").setAttribute("class", "btn btn-primary");
+      }
+    }
+  });
+
+  //Forces the width of the autcomplete menu to fit the input field's width
+  jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+    var ul = this.menu.element;
+    ul.outerWidth(this.element.outerWidth());
+  }
+});

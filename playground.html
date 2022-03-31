@@ -362,12 +362,26 @@
                 <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('grammatical')">Add</button>
               </div>
             </div>
-          
+          </div>
+
+
+          <div class="btn-group dropend">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropright
+            </button>
+            <ul class="dropdown-menu">
+              <li><button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Grammatical marker
+              </button></li>
+              
+            </ul>
           </div>
 
         </div>
     </div>
 
+    <!-- accordion menu voor non-manuals
+    vragteken met toelichting nonmanuals-->
     <!-- SiGML and Avatar row -->
     <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
@@ -376,9 +390,7 @@
         <textarea id="output" class="explSiGML" style="margin:0px; padding: 0;"
         placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
       </div>
-      <!-- Sigml + avatar samen even breed als nonman, avatar sigml dezelfde hoogte, avatar breder maar minder breed dan sigml
-      nonmans in kolommen dus niet op aparte rijen
-      met vinkjes simpel en complexe nonman zichtbaar maken
+      <!-- 
     1ste kolom body, 2de kolom upperface, 3de kolom lowerface, 4de complex + toggle voor elke kolom = toggle voor alles inklappen/uitklappen
   als overflow regelen niet lukt, dan maar 1 tegelijk overflow: auto; white-space: initial; word-break: break-word;
   Niet automatisch nieuwe line bij sigml output

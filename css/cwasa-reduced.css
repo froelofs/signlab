@@ -127,6 +127,7 @@ body.busy::before {
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
+  min-height: 500px;
 }
 
 .inputBox{
