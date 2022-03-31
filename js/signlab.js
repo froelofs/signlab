@@ -237,6 +237,9 @@ $.ajax({
       console.log("matcher: ");
       console.log(matcher);
       array = $.grep(array, function (value) {
+        console.log("label: "+value.label);
+        console.log("value: "+value.value);
+        console.log("other value: "+ value);
        return matcher.test(value.label || value.value || value);
       });
     });
