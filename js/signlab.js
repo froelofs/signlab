@@ -233,7 +233,7 @@ $.ajax({
     arrayOfTerms = terms.split(" ");
     console.log("array: " + arrayOfTerms);
     term = arrayOfTerms[arrayOfTerms.length - 1];
-    var matcher = new RegExp(term, "i");
+    var matcher = new RegExp("^" + term, "i");
     console.log("matcher: " + matcher);
     array = $.grep(array, function (value) {
       console.log("other value: "+ value);
