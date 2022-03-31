@@ -234,11 +234,10 @@ $.ajax({
     console.log("array: " + arrayOfTerms);
     arrayOfTerms.forEach(function (term) {
       var matcher = new RegExp(term, "i");
-      console.log("matcher: ");
-      console.log(matcher);
+      console.log("matcher: " + matcher);
       array = $.grep(array, function (value) {
-        console.log("label: "+value.label);
-        console.log("value: "+value.value);
+        // console.log("label: "+value.label);
+        // console.log("value: "+value.value);
         console.log("other value: "+ value);
        return matcher.test(value.label || value.value || value);
       });
@@ -251,6 +250,7 @@ $.ajax({
     appendTo: "#output",
     multiple: true,
     mustMatch: false,
+    //Sets the autocomplete suggestions
     source: function (request, response){
       autocompSugg = customFilter(signOptions, request.term);
       response(autocompSugg);
