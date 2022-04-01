@@ -66,6 +66,7 @@ function callPython(text, alertID) {
     }
     else {
       console.log("Request was a success! Output: ", result);
+      console.log("value inputPython: " + inputPython);
       // output = result.output.split(";");
       // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
       //output = result.output;
