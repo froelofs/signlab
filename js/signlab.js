@@ -236,7 +236,7 @@ function makeNonClickable(elementID){
   document.getElementById(elementID).setAttribute("class", "no-click-button btn btn-primary");
 }
 
-function playSiGML(av=1){
+function playSiGML(av=0){
   makeClickable("pause");
   makeClickable("resume");
   playText(document.getElementById("output").value,av);
@@ -253,7 +253,7 @@ function resume(){
   makeClickable("pause");
 }
 
-function stop(av=1){
+function stop(av=0){
   makeNonClickable("resume");
   makeNonClickable("pause");
   makeClickable("play");
