@@ -64,21 +64,22 @@
     <div class="row align-items-start text-center no-gutters mb-4 mb-lg-5">
       <!-- Column for input -->
       <div class="col-12">
-          <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
-            <div id="alertPlayground" class="alertBox"></div>
-
-            <form autocomplete="off">
-              <!-- <div id="autocomp" class="autocomplete" style="max-width:400px;"> -->
-              <div id="autocomp" class="autocomplete">
-                <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
-              </div>
-            </form>
-            
-            <div>            
-              <input type="button" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
+        <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
+          <div id="alertPlayground" class="alertBox"></div>
+          <form autocomplete="off">
+            <!-- <div id="autocomp" class="autocomplete" style="max-width:400px;"> -->
+            <div id="autocomp" class="autocomplete">
+            <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
             </div>
+          </form>
+        </div>    
+      </div>
+      
+      <div class="col-12 col-md-6">            
+        <input type="button" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
+      </div>
           
-          <div style="margin-top: 5px;">
+      <div class="col-12 col-md-6" style="margin-top: 5px;">
             Select a category to pick nonmanuals to add:
             <div class="form-check">
               <input type="radio" id="bodyNonMan" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="bodyNonMan">Body</label>
@@ -369,12 +370,10 @@
                 </div>
               </div>
             </div>
-          </div>
-
-        </div>
       </div>
-    </div>
 
+     
+    </div>
     <!-- SiGML and Avatar row -->
     <div class="row align-items-start no-gutters mb-4 mb-lg-5">
 
