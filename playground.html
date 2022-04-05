@@ -58,11 +58,12 @@
 <div id="nav-placeholder"></div>
 
 <section class="projects-section bg-light fadeIn" id="Playground">
-  <div id="avatarTranslator" class="container-fluid" style="width: 80%;">
+  <div id="avatarTranslator" class="container-fluid text-center" style="width: 80%;">
+    
     <!-- Text input row-->
-    <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-          <!-- Column for input -->
-          <div class="col-12">
+    <div class="row align-items-start text-center no-gutters mb-4 mb-lg-5">
+      <!-- Column for input -->
+      <div class="col-12">
           <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
             <div id="alertPlayground" class="alertBox"></div>
 
@@ -78,299 +79,300 @@
             </div>
           
           <div style="margin-top: 5px;">
-          Select a category to pick nonmanuals to add:
-          <div class="form-check">
-            <input type="radio" id="bodyNonMan" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="bodyNonMan">Body</label>
-            <input type="radio" id="upperFaceNonMan" value="upperFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="upperFaceNonMan">Upper Face</label>
-            <input type="radio" id="lowerFaceNonMan" value ="lowerFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="lowerFaceNonMan">Lower Face</label>
-            <input type="radio" id="complexNonMan" value ="complexNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="complexNonMan">Complex</label>
+            Select a category to pick nonmanuals to add:
+            <div class="form-check">
+              <input type="radio" id="bodyNonMan" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="bodyNonMan">Body</label>
+              <input type="radio" id="upperFaceNonMan" value="upperFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="upperFaceNonMan">Upper Face</label>
+              <input type="radio" id="lowerFaceNonMan" value ="lowerFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="lowerFaceNonMan">Lower Face</label>
+              <input type="radio" id="complexNonMan" value ="complexNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="complexNonMan">Complex</label>
+            </div>
+
+            <div id="bodyNonManuals" class="nonmanSelect" style="display:none;">
+              <!-- Shoulder movement nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="shouldermovement">
+                  <option selected>Select a shoulder movement to add to the selected signs</option>
+                  <option value="<UL>">UL_left_shoulder_raised</option>
+                  <option value="<UR>">UR_right_shoulder_raised</option>
+                  <option value="<UB>">UB_both_shoulders_raised</option>
+                  <option value="<HL>">HL_left_shoulder_hunched_forward</option>
+                  <option value="<HR>">HR_right_shoulder_hunched_forward</option>
+                  <option value="<HB>">HB_both_shoulders_hunched_forward</option>
+                  <option value="<SL>">SL_left_shoulder_shrugging_up_and_down</option>
+                  <option value="<SR>">SR_right_shoulder_shrugging_up_and_down</option>
+                  <option value="<SB>">SB_both_shoulders_shrugging_up_and_down</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('shouldermovement')">Add</button>
+                </div>
+              </div>
+              
+              <!-- Body movement nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="bodymovement">
+                  <option selected>Select a body movement to add to the selected signs</option>
+                  <option value="<RL>">RL_rotated_left</option>
+                  <option value="<RR>">RR_rotated_right</option>
+                  <option value="<TL>">TL_tilted_left</option>
+                  <option value="<TR>">TR_tilted_right</option>
+                  <option value="<TF>">TF_tilted_forwards</option>
+                  <option value="<TB>">TB_tilted_backwards</option>
+                  <option value="<SI>">SI_sigh</option>
+                  <option value="<HE>">HE_heave</option>
+                  <option value="<ST>">ST_straight</option>
+                  <option value="<RD>">RD_round</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('bodymovement')">Add</button>
+                </div>
+              </div>
+
+              <!-- Head movement nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="headmovement">
+                  <option selected>Select a head movement to add to the selected signs</option>
+                  <option value="<NO>">NO_nodding_up_and_down</option>
+                  <option value="<SH>">SH_shaking_left_and_right</option>
+                  <option value="<SR>">SR_turned_right</option>
+                  <option value="<SL>">SL_turned_left</option>
+                  <option value="<TR>">TR_tilted_right</option>
+                  <option value="<TL>">TL_tilted_left </option>
+                  <option value="<NF>">NF_tilted_forward</option>
+                  <option value="<NB>">NB_tilted_back </option>
+                  <option value="<PF>">PF_pushed_forward</option>
+                  <option value="<PB>">PB_pushed_backward</option>
+                  <option value="<LI>">LI_head_movement_linked_to_eye_gaze</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('headmovement')">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="upperFaceNonManuals" style="display:none;" class="nonmanSelect">
+              <!-- Eye gaze direction nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="eyegazedirection">
+                  <option selected>Select an eye gaze direction to add to the selected signs</option>
+                  <option value="<AD>">AD_towards_addressee</option>
+                  <option value="<FR>">FR_far</option>
+                  <option value="<HD>">HD_towards_the_signer_s_own_hands</option>
+                  <option value="<HI>">HI_towards_the_signer_s_own_dominant_hand</option>
+                  <option value="<HC>">HC_towards_the_signer_s_own_non_dominant_hand</option>
+                  <option value="<UP>">UP_up</option>
+                  <option value="<DN>">DN_down</option>
+                  <option value="<LE>">LE_left</option>
+                  <option value="<RI>">RI_right</option>
+                  <option value="<NO>">NO_no_target_unfocussed</option>
+                  <option value="<RO>">RO_rolling_eyes</option>
+                  <option value="<LU>">LU_left_up</option>
+                  <option value="<LD>">LD_left_down</option>
+                  <option value="<RU>">RU_right_up</option>
+                  <option value="<RD>">RD_right_down</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyegazedirection')">Add</button>
+                </div>
+              </div>
+
+              <!-- Eye brows nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="eyebrowmovement">
+                  <option selected>Select an eyebrow movement to add to the selected signs</option>
+                  <option value="<RB>">RB_both_eyebrows_raised</option>
+                  <option value="<RR>">RR_right_eyebrow_raised</option>
+                  <option value="<RL>">RL_left_eyebrow_raised</option>
+                  <option value="<FU>">FU_eye_brows_furrowed</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyebrowmovement')">Add</button>
+                </div>
+              </div>
+              
+              <!-- Eye lids nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="eyelidmovement">
+                  <option selected>Select an eyelid movement to add to the selected signs</option>
+                  <option value="<WB>">WB_wide_open_eyelids</option>
+                  <option value="<WR>">WR_wide_open_right_eyelid </option>
+                  <option value="<WL>">WL_wide_open_left_eyelid</option>
+                  <option value="<SB>">SB_narrowed_almost_closed_eyelids_slits</option>
+                  <option value="<SR>">SR_narrowed_almost_closed_right_eyelid </option>
+                  <option value="<SL>">SL_narrowed_almost_closed_left_eyelid</option>
+                  <option value="<CB>">CB_closed_eyelids</option>
+                  <option value="<CR>">CR_closed_right_eyelid</option>
+                  <option value="<CL>">CL_closed_left_eyelid</option>
+                  <option value="<TB>">TB_tightly_shut_eyelids</option>
+                  <option value="<TR>">TR_tightly_shut_right_eyelid </option>
+                  <option value="<TL>">TL_tightly_shut_left_eyelid</option>
+                  <option value="<BB>">BB_eye_blink_at_the_very_end_of_a_sign</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyelidmovement')">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="lowerFaceNonManuals" style="display:none;" class="nonmanSelect">  
+              <!-- Nose nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="nosemovement">
+                  <option selected>Select a nose movement to add to the selected signs</option>
+                  <option value="<WR>">WR_wrinkled_nose</option>
+                  <option value="<TW>">TW_twitching_nose</option>
+                  <option value="<WI>">WI_widened_nostrils</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('nosemovement')">Add</button>
+                </div>
+              </div>
+
+              <!-- Mouth gesture nonmanual selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="mouthgesture">
+                  <option selected>Select a mouth gesture to add to the selected signs</option>
+                  <option value="<D01>">D01_eee_sss </option>
+                  <option value="<D02>">D02_f</option>
+                  <option value="<D03>">D03_ef</option>
+                  <option value="<D04>">D04_af</option>
+                  <option value="<D05>">D05_clattering_teeth</option>
+                  <option value="<D06>">D06_clattering_teeth_with_raised_upper_lip</option>
+                  <option value="<D07>">D07_one_bite_resulting_in_closed_teeth</option>
+                  <option value="<D08>">D08_one_bite_lips_stretched_teeth_visible</option>
+                  <option value="<D09>">D09_teeth_on_lower_lip_open_almost_close_tongue_behind_upper_teeth</option>
+                  <option value="<J01>">J01_lower_jaw_moves_sideways_left_and_right</option>
+                  <option value="<J02>">J02_lower_jaw_chews_mouth_remains_closed</option>
+                  <option value="<J03>">J03_mouth_open_jaw_forward_teeth_visible</option>
+                  <option value="<J04>">J04_mouth_open_jaw_gagaga_at_pharynx</option>
+                  <option value="<L01>">L01_sh</option>
+                  <option value="<L02>">L02_prrr</option>
+                  <option value="<L03>">L03_pr</option>
+                  <option value="<L04>">L04_pursed_lips</option>
+                  <option value="<L05>">L05_o_oa_open_o</option>
+                  <option value="<L06>">L06_ooo_closed_o</option>
+                  <option value="<L07>">L07_oa</option>
+                  <option value="<L08>">L08_boam</option>
+                  <option value="<L09>">L09_bam</option>
+                  <option value="<L10>">L10_boa</option>
+                  <option value="<L11>">L11_ba</option>
+                  <option value="<L12>">L12_bee</option>
+                  <option value="<L13>">L13_pi</option>
+                  <option value="<L14>">L14_pch</option>
+                  <option value="<L15>">L15_bsss_bee</option>
+                  <option value="<L16>">L16_pf</option>
+                  <option value="<L17>">L17_p</option>
+                  <option value="<L18>">L18_p_p_p</option>
+                  <option value="<L19>">L19_phh</option>
+                  <option value="<L20>">L20_phh</option>
+                  <option value="<L21>">L21_ph</option>
+                  <option value="<L22>">L22_ph</option>
+                  <option value="<L23>">L23_mmm</option>
+                  <option value="<L24>">L24_mmm_while_holding_breath</option>
+                  <option value="<L25>">L25_m_m_m</option>
+                  <option value="<L26>">L26_one_side_of_upper_lip_raised</option>
+                  <option value="<L27>">L27_mouth_slightly_open_tongue_to_upper_close_lips_hidden</option>
+                  <option value="<L28>">L28_tongue_on_upper_lip_close_mouth_lips_hidden</option>
+                  <option value="<L29>">L29_lips_closed_hidden_mouth_corners_curved_down</option>
+                  <option value="<L30>">L30_lips_pursed_curved_down</option>
+                  <option value="<L31>">L31_lips_closed_corners_of_mouth_curved_down</option>
+                  <option value="<L32>">L32_mouth_slightly_open_blow_lips_vibrate_initially</option>
+                  <option value="<L33>">L33_mouth_open_close_sh_with_teeth_showing</option>
+                  <option value="<L34>">L34_lips_closed_stretched_strongly</option>
+                  <option value="<L35>">L35_blow_out_air_through_slightly_open_lips</option>
+                  <option value="<C01>">C01_puffed_cheeks</option>
+                  <option value="<C02>">C02_cheeks_and_lip_area_puffed</option>
+                  <option value="<C03>">C03_gradually_puffing_cheeks</option>
+                  <option value="<C04>">C04_one_cheek_puffed</option>
+                  <option value="<C05>">C05_one_cheek_puffed_while_briefly_blowing_out_air</option>
+                  <option value="<C06>">C06_one_cheek_puffed_briefly_blowing_air_cheek_pushed</option>
+                  <option value="<C07>">C07_cheeks_sucked_in</option>
+                  <option value="<C08>">C08_cheeks_sucked_in_sucking_in_air</option>
+                  <option value="<C09>">C09_tongue_pushed_visibly_into_cheek</option>
+                  <option value="<C10>">C10_tongue_repeatedly_pushes_into_cheek</option>
+                  <option value="<C11>">C11_one_cheek_puffed_blow_out_briefly_at_corner_several_times</option>
+                  <option value="<C12>">C12_lips_closed_tongue_pushed_behind_lower_lip</option>
+                  <option value="<C13>">C13_cheeks_slightly_in_jaw_down_blow_closed_lips_several_times</option>
+                  <option value="<T01>">T01_l</option>
+                  <option value="<T02>">T02_tip_of_tongue_slightly_protruding</option>
+                  <option value="<T03>">T03_l_l_l</option>
+                  <option value="<T04>">T04_tongue_sticks_out_briefly</option>
+                  <option value="<T05>">T05_a</option>
+                  <option value="<T06>">T06_tongue_sticking_out_repeatedly</option>
+                  <option value="<T07>">T07_lalala</option>
+                  <option value="<T08>">T08_alalal</option>
+                  <option value="<T09>">T09_als</option>
+                  <option value="<T10>">T10_lf</option>
+                  <option value="<T11>">T11_laf</option>
+                  <option value="<T12>">T12_tip_of_tongue_touches_one_corner_of_the_mouth</option>
+                  <option value="<T13>">T13_tongue_tip_between_lower_lip_lower_teeth_middle_tongue_showing</option>
+                  <option value="<T14>">T14_tip_of_tongue_is_protruded_and_moving_sidewards</option>
+                  <option value="<T15>">T15_oval_circling_movement_of_tongue_in_open_mouth</option>
+                  <option value="<T16>">T16_lips_pursed_with_tip_of_tongue_protruding</option>
+                  <option value="<T17>">T17_mouth_open_tongue_protrudes_briefly</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('mouthgesture')">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Complex nonmanuals -->
+            <div id="complexNonManuals" class="nonmanSelect" style="display:none;">
+              
+              <!-- emotion selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="emotions">
+                  <option selected>Select an emotion</option>
+                  <option value="<EM_SADNESS>">sadness</option>
+                  <option value="<EM_SADNESSI>">sadnessi</option>
+                  <option value="<EM_SADNESSM>">sadnessm</option>
+                  <option value="<EM_SADNESSF>">sadnessf</option>
+                  <option value="<EM_FEAR>">fear</option>
+                  <option value="<EM_DISGUST>">disgust</option>
+                  <option value="<EM_ANGER>">anger</option>
+                  <option value="<EM_SURPRISE>">surprise</option>
+                  <option value="<EM_HAPPINESS_1>">happiness_1</option>
+                  <option value="<EM_HAPPINESS2_>">happiness_2</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('emotions')">Add</button>
+                </div>
+              </div>
+
+              <!-- epistemic state selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="epistemic">
+                  <option selected>Select an epistemic state</option>
+                  <option value="<EP_IGNORANT>">ignorant</option>
+                  <option value="<EP_DOUBTFUL>">doubtful</option>
+                  <option value="<EP_KNOWLEDGEABLE>">knowleadgable</option>
+                  <option value="<EP_SCEPTICAL>">sceptical</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('epistemic')">Add</button>
+                </div>
+              </div>
+
+              <!-- grammatical marker selection -->
+              <div class="input-group" style="margin-top: 10px;">
+                <select class="custom-select" id="grammatical">
+                  <option selected>Select a grammatical marker</option>
+                  <option value="<GR_QUESTIONMARKEYEBROWSRAISED>">questionmarkEyebrowsRaised</option>
+                  <option value="<GR_QUESTIONMARKEYEBROWSFURROWED>">questionmarkEyebrowsFurrowed</option>
+                  <option value="<GR_TOPICMARKER>">topicMarker</option>
+                  <option value="<GR_FOCUSMARKER>">focusMarker</option>
+                  <option value="<GR_CONFIRMATION>">confirmation</option>
+                  <option value="<GR_NEGATION>">negation</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('grammatical')">Add</button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div id="bodyNonManuals" class="nonmanSelect" style="display:none;">
-            <!-- Shoulder movement nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="shouldermovement">
-                <option selected>Select a shoulder movement to add to the selected signs</option>
-                <option value="<UL>">UL_left_shoulder_raised</option>
-                <option value="<UR>">UR_right_shoulder_raised</option>
-                <option value="<UB>">UB_both_shoulders_raised</option>
-                <option value="<HL>">HL_left_shoulder_hunched_forward</option>
-                <option value="<HR>">HR_right_shoulder_hunched_forward</option>
-                <option value="<HB>">HB_both_shoulders_hunched_forward</option>
-                <option value="<SL>">SL_left_shoulder_shrugging_up_and_down</option>
-                <option value="<SR>">SR_right_shoulder_shrugging_up_and_down</option>
-                <option value="<SB>">SB_both_shoulders_shrugging_up_and_down</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('shouldermovement')">Add</button>
-              </div>
-            </div>
-            
-            <!-- Body movement nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="bodymovement">
-                <option selected>Select a body movement to add to the selected signs</option>
-                <option value="<RL>">RL_rotated_left</option>
-                <option value="<RR>">RR_rotated_right</option>
-                <option value="<TL>">TL_tilted_left</option>
-                <option value="<TR>">TR_tilted_right</option>
-                <option value="<TF>">TF_tilted_forwards</option>
-                <option value="<TB>">TB_tilted_backwards</option>
-                <option value="<SI>">SI_sigh</option>
-                <option value="<HE>">HE_heave</option>
-                <option value="<ST>">ST_straight</option>
-                <option value="<RD>">RD_round</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('bodymovement')">Add</button>
-              </div>
-            </div>
-
-            <!-- Head movement nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="headmovement">
-                <option selected>Select a head movement to add to the selected signs</option>
-                <option value="<NO>">NO_nodding_up_and_down</option>
-                <option value="<SH>">SH_shaking_left_and_right</option>
-                <option value="<SR>">SR_turned_right</option>
-                <option value="<SL>">SL_turned_left</option>
-                <option value="<TR>">TR_tilted_right</option>
-                <option value="<TL>">TL_tilted_left </option>
-                <option value="<NF>">NF_tilted_forward</option>
-                <option value="<NB>">NB_tilted_back </option>
-                <option value="<PF>">PF_pushed_forward</option>
-                <option value="<PB>">PB_pushed_backward</option>
-                <option value="<LI>">LI_head_movement_linked_to_eye_gaze</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('headmovement')">Add</button>
-              </div>
-            </div>
-          </div>
-
-          <div id="upperFaceNonManuals" style="display:none;" class="nonmanSelect">
-            <!-- Eye gaze direction nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="eyegazedirection">
-                <option selected>Select an eye gaze direction to add to the selected signs</option>
-                <option value="<AD>">AD_towards_addressee</option>
-                <option value="<FR>">FR_far</option>
-                <option value="<HD>">HD_towards_the_signer_s_own_hands</option>
-                <option value="<HI>">HI_towards_the_signer_s_own_dominant_hand</option>
-                <option value="<HC>">HC_towards_the_signer_s_own_non_dominant_hand</option>
-                <option value="<UP>">UP_up</option>
-                <option value="<DN>">DN_down</option>
-                <option value="<LE>">LE_left</option>
-                <option value="<RI>">RI_right</option>
-                <option value="<NO>">NO_no_target_unfocussed</option>
-                <option value="<RO>">RO_rolling_eyes</option>
-                <option value="<LU>">LU_left_up</option>
-                <option value="<LD>">LD_left_down</option>
-                <option value="<RU>">RU_right_up</option>
-                <option value="<RD>">RD_right_down</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyegazedirection')">Add</button>
-              </div>
-            </div>
-
-            <!-- Eye brows nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="eyebrowmovement">
-                <option selected>Select an eyebrow movement to add to the selected signs</option>
-                <option value="<RB>">RB_both_eyebrows_raised</option>
-                <option value="<RR>">RR_right_eyebrow_raised</option>
-                <option value="<RL>">RL_left_eyebrow_raised</option>
-                <option value="<FU>">FU_eye_brows_furrowed</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyebrowmovement')">Add</button>
-              </div>
-            </div>
-            
-            <!-- Eye lids nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="eyelidmovement">
-                <option selected>Select an eyelid movement to add to the selected signs</option>
-                <option value="<WB>">WB_wide_open_eyelids</option>
-                <option value="<WR>">WR_wide_open_right_eyelid </option>
-                <option value="<WL>">WL_wide_open_left_eyelid</option>
-                <option value="<SB>">SB_narrowed_almost_closed_eyelids_slits</option>
-                <option value="<SR>">SR_narrowed_almost_closed_right_eyelid </option>
-                <option value="<SL>">SL_narrowed_almost_closed_left_eyelid</option>
-                <option value="<CB>">CB_closed_eyelids</option>
-                <option value="<CR>">CR_closed_right_eyelid</option>
-                <option value="<CL>">CL_closed_left_eyelid</option>
-                <option value="<TB>">TB_tightly_shut_eyelids</option>
-                <option value="<TR>">TR_tightly_shut_right_eyelid </option>
-                <option value="<TL>">TL_tightly_shut_left_eyelid</option>
-                <option value="<BB>">BB_eye_blink_at_the_very_end_of_a_sign</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('eyelidmovement')">Add</button>
-              </div>
-            </div>
-          </div>
-
-          <div id="lowerFaceNonManuals" style="display:none;" class="nonmanSelect">  
-            <!-- Nose nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="nosemovement">
-                <option selected>Select a nose movement to add to the selected signs</option>
-                <option value="<WR>">WR_wrinkled_nose</option>
-                <option value="<TW>">TW_twitching_nose</option>
-                <option value="<WI>">WI_widened_nostrils</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('nosemovement')">Add</button>
-              </div>
-            </div>
-
-            <!-- Mouth gesture nonmanual selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="mouthgesture">
-                <option selected>Select a mouth gesture to add to the selected signs</option>
-                <option value="<D01>">D01_eee_sss </option>
-                <option value="<D02>">D02_f</option>
-                <option value="<D03>">D03_ef</option>
-                <option value="<D04>">D04_af</option>
-                <option value="<D05>">D05_clattering_teeth</option>
-                <option value="<D06>">D06_clattering_teeth_with_raised_upper_lip</option>
-                <option value="<D07>">D07_one_bite_resulting_in_closed_teeth</option>
-                <option value="<D08>">D08_one_bite_lips_stretched_teeth_visible</option>
-                <option value="<D09>">D09_teeth_on_lower_lip_open_almost_close_tongue_behind_upper_teeth</option>
-                <option value="<J01>">J01_lower_jaw_moves_sideways_left_and_right</option>
-                <option value="<J02>">J02_lower_jaw_chews_mouth_remains_closed</option>
-                <option value="<J03>">J03_mouth_open_jaw_forward_teeth_visible</option>
-                <option value="<J04>">J04_mouth_open_jaw_gagaga_at_pharynx</option>
-                <option value="<L01>">L01_sh</option>
-                <option value="<L02>">L02_prrr</option>
-                <option value="<L03>">L03_pr</option>
-                <option value="<L04>">L04_pursed_lips</option>
-                <option value="<L05>">L05_o_oa_open_o</option>
-                <option value="<L06>">L06_ooo_closed_o</option>
-                <option value="<L07>">L07_oa</option>
-                <option value="<L08>">L08_boam</option>
-                <option value="<L09>">L09_bam</option>
-                <option value="<L10>">L10_boa</option>
-                <option value="<L11>">L11_ba</option>
-                <option value="<L12>">L12_bee</option>
-                <option value="<L13>">L13_pi</option>
-                <option value="<L14>">L14_pch</option>
-                <option value="<L15>">L15_bsss_bee</option>
-                <option value="<L16>">L16_pf</option>
-                <option value="<L17>">L17_p</option>
-                <option value="<L18>">L18_p_p_p</option>
-                <option value="<L19>">L19_phh</option>
-                <option value="<L20>">L20_phh</option>
-                <option value="<L21>">L21_ph</option>
-                <option value="<L22>">L22_ph</option>
-                <option value="<L23>">L23_mmm</option>
-                <option value="<L24>">L24_mmm_while_holding_breath</option>
-                <option value="<L25>">L25_m_m_m</option>
-                <option value="<L26>">L26_one_side_of_upper_lip_raised</option>
-                <option value="<L27>">L27_mouth_slightly_open_tongue_to_upper_close_lips_hidden</option>
-                <option value="<L28>">L28_tongue_on_upper_lip_close_mouth_lips_hidden</option>
-                <option value="<L29>">L29_lips_closed_hidden_mouth_corners_curved_down</option>
-                <option value="<L30>">L30_lips_pursed_curved_down</option>
-                <option value="<L31>">L31_lips_closed_corners_of_mouth_curved_down</option>
-                <option value="<L32>">L32_mouth_slightly_open_blow_lips_vibrate_initially</option>
-                <option value="<L33>">L33_mouth_open_close_sh_with_teeth_showing</option>
-                <option value="<L34>">L34_lips_closed_stretched_strongly</option>
-                <option value="<L35>">L35_blow_out_air_through_slightly_open_lips</option>
-                <option value="<C01>">C01_puffed_cheeks</option>
-                <option value="<C02>">C02_cheeks_and_lip_area_puffed</option>
-                <option value="<C03>">C03_gradually_puffing_cheeks</option>
-                <option value="<C04>">C04_one_cheek_puffed</option>
-                <option value="<C05>">C05_one_cheek_puffed_while_briefly_blowing_out_air</option>
-                <option value="<C06>">C06_one_cheek_puffed_briefly_blowing_air_cheek_pushed</option>
-                <option value="<C07>">C07_cheeks_sucked_in</option>
-                <option value="<C08>">C08_cheeks_sucked_in_sucking_in_air</option>
-                <option value="<C09>">C09_tongue_pushed_visibly_into_cheek</option>
-                <option value="<C10>">C10_tongue_repeatedly_pushes_into_cheek</option>
-                <option value="<C11>">C11_one_cheek_puffed_blow_out_briefly_at_corner_several_times</option>
-                <option value="<C12>">C12_lips_closed_tongue_pushed_behind_lower_lip</option>
-                <option value="<C13>">C13_cheeks_slightly_in_jaw_down_blow_closed_lips_several_times</option>
-                <option value="<T01>">T01_l</option>
-                <option value="<T02>">T02_tip_of_tongue_slightly_protruding</option>
-                <option value="<T03>">T03_l_l_l</option>
-                <option value="<T04>">T04_tongue_sticks_out_briefly</option>
-                <option value="<T05>">T05_a</option>
-                <option value="<T06>">T06_tongue_sticking_out_repeatedly</option>
-                <option value="<T07>">T07_lalala</option>
-                <option value="<T08>">T08_alalal</option>
-                <option value="<T09>">T09_als</option>
-                <option value="<T10>">T10_lf</option>
-                <option value="<T11>">T11_laf</option>
-                <option value="<T12>">T12_tip_of_tongue_touches_one_corner_of_the_mouth</option>
-                <option value="<T13>">T13_tongue_tip_between_lower_lip_lower_teeth_middle_tongue_showing</option>
-                <option value="<T14>">T14_tip_of_tongue_is_protruded_and_moving_sidewards</option>
-                <option value="<T15>">T15_oval_circling_movement_of_tongue_in_open_mouth</option>
-                <option value="<T16>">T16_lips_pursed_with_tip_of_tongue_protruding</option>
-                <option value="<T17>">T17_mouth_open_tongue_protrudes_briefly</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('mouthgesture')">Add</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Complex nonmanuals -->
-          <div id="complexNonManuals" class="nonmanSelect" style="display:none;">
-            
-            <!-- emotion selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="emotions">
-                <option selected>Select an emotion</option>
-                <option value="<EM_SADNESS>">sadness</option>
-                <option value="<EM_SADNESSI>">sadnessi</option>
-                <option value="<EM_SADNESSM>">sadnessm</option>
-                <option value="<EM_SADNESSF>">sadnessf</option>
-                <option value="<EM_FEAR>">fear</option>
-                <option value="<EM_DISGUST>">disgust</option>
-                <option value="<EM_ANGER>">anger</option>
-                <option value="<EM_SURPRISE>">surprise</option>
-                <option value="<EM_HAPPINESS_1>">happiness_1</option>
-                <option value="<EM_HAPPINESS2_>">happiness_2</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('emotions')">Add</button>
-              </div>
-            </div>
-
-            <!-- epistemic state selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="epistemic">
-                <option selected>Select an epistemic state</option>
-                <option value="<EP_IGNORANT>">ignorant</option>
-                <option value="<EP_DOUBTFUL>">doubtful</option>
-                <option value="<EP_KNOWLEDGEABLE>">knowleadgable</option>
-                <option value="<EP_SCEPTICAL>">sceptical</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('epistemic')">Add</button>
-              </div>
-            </div>
-
-            <!-- grammatical marker selection -->
-            <div class="input-group" style="margin-top: 10px;">
-              <select class="custom-select" id="grammatical">
-                <option selected>Select a grammatical marker</option>
-                <option value="<GR_QUESTIONMARKEYEBROWSRAISED>">questionmarkEyebrowsRaised</option>
-                <option value="<GR_QUESTIONMARKEYEBROWSFURROWED>">questionmarkEyebrowsFurrowed</option>
-                <option value="<GR_TOPICMARKER>">topicMarker</option>
-                <option value="<GR_FOCUSMARKER>">focusMarker</option>
-                <option value="<GR_CONFIRMATION>">confirmation</option>
-                <option value="<GR_NEGATION>">negation</option>
-              </select>
-              <div class="input-group-append">
-                <button class="btn btn-primary" style="padding: 5px;" type="button" onclick="addNonmanuals('grammatical')">Add</button>
-              </div>
-            </div>
-          </div>
         </div>
-
-        </div>
+      </div>
     </div>
 
     <!-- SiGML and Avatar row -->
@@ -382,10 +384,13 @@
         placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
       </div>
       <!-- 
-  Tooltip met uitleg playground gebruik
-  Zoals op publications drop-down ipv tooltip: Korte instructie hoe de "sigml player werkt"
--->
+     Tooltip met uitleg playground gebruik
+     Zoals op publications drop-down ipv tooltip: Korte instructie hoe de "sigml player werkt"
+     -->
+
+     <!-- Lege kolom voor ruimte tussen sigml en avatar -->
       <div class="col-12 col-md-1"></div>
+
       <!-- Column for avatar -->
       <div class="col-12 col-md-5">
         <!-- CWA signing avatar panel 0 -->
