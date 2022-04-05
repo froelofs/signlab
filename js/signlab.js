@@ -227,12 +227,12 @@ $.ajax({
 });
 
 function makeClickable(elementID){
-  globalVar.playButtonClicked = false;
+  //globalVar.playButtonClicked = false;
   document.getElementById(elementID).setAttribute("class", "btn btn-primary");
 }
 
 function makeNonClickable(elementID){
-  globalVar.playButtonClicked = true;
+  //globalVar.playButtonClicked = true;
   document.getElementById(elementID).setAttribute("class", "no-click-button btn btn-primary");
 }
 
