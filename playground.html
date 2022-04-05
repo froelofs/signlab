@@ -67,18 +67,19 @@
         <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
           <div id="alertPlayground" class="alertBox"></div>
           <form autocomplete="off">
-            <!-- <div id="autocomp" class="autocomplete" style="max-width:400px;"> -->
             <div id="autocomp" class="autocomplete">
-            <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
+             <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
             </div>
           </form>
         </div>    
       </div>
-      
+
+      <!-- Column for make SiGML button -->
       <div class="col-12 col-md-6">            
         <input type="button" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
       </div>
-          
+      
+      <!-- Column for nonmanuals input -->
       <div class="col-12 col-md-6" style="margin-top: 5px;">
             Select a category to pick nonmanuals to add:
             <div class="form-check">

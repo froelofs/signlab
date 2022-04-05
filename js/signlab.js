@@ -202,7 +202,7 @@ $.ajax({
 
   // Activates the jquery autocomplete function when the user gives input
   $("#mySiGML").autocomplete({
-    appendTo: "#output",
+    appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
     //Sets the autocomplete suggestions
