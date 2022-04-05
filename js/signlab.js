@@ -239,7 +239,6 @@ function makeNonClickable(elementID){
 function playSiGML(av=1){
   makeClickable("pause");
   makeClickable("resume");
-  makeNonClickable("play");
   playText(document.getElementById("output").value,av);
 }
 
