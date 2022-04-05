@@ -382,8 +382,8 @@
         placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
       </div>
       <!-- 
-  Woord suggesties op basis van letters voor cursor, alleen matchen op begin van glosses
   Tooltip met uitleg playground gebruik
+  Zoals op publications drop-down ipv tooltip: Korte instructie hoe de "sigml player werkt"
 -->
       <div class="col-12 col-md-1"></div>
       <!-- Column for avatar -->
@@ -399,7 +399,7 @@
         </div>
         <!--================================================================-->
         <br>
-        <input type="button" class="btn btn-primary no-click-button" id="play" value="Play" onclick="playSiGML();"/>
+        <input type="button" class="btn btn-primary" id="play" value="Play" onclick="playSiGML();"/>
         <input type="button" class="btn btn-primary" value="Stop" onclick='stop()' />
         <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='pause()'/>
         <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='resume()'/>
@@ -417,10 +417,7 @@
         <input id="outputGloss" class="txtGloss av0" value="none" type="text">
         <br>
       </div>            
-              <!-- Invoer boven breedte van de pagina, linksonder sigml output en rechtsonder de avatar 
-                voor complexe nonmanuals ook per categorie een dropdown
-              genereer knop naast inputveld
-            zoals ns demo knoppen voor pauze, resume en frames -->
+              <!--  zoals ns demo knoppen voor pauze, resume en frames -->
 
               <!-- FR: I've made the following progress fields invisible, if you comment them out completely the avatar doesn't work anymore -->
               <div class="undisplayed" style="text-align: center;">
