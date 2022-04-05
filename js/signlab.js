@@ -35,77 +35,36 @@ function changeDisplay(myRadio) {
 }
 
 ///Makes an ajax call to the python script (by way of a php wrapper)
-function callPython(text, alertID) {
+function callPython(inputPython, alertID) {
   showBusyState();
-  console.log("text: " + text);
-  //Adds a flag to the input if applicable
-  flags = flag.split(",");
-  flag = flags[0];
-  console.log("flag: " + flag);
-  if (flag != ""){
-    inputPython = flag + " " + text;
-  }
-  else{
-    inputPython = text;
-  }
+  console.log("text: " + inputPython);
   $.ajax({
-    // url : 'pythonCall.php',
-    //url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
-    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="U"' ,
+    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
     type : 'POST',
-    // data: {"input": inputPython},
-    //dataType: "json",
-    //dataType: "jsonp",
     crossDomain: true,
     success : onSuccess,
     error : onError,
   });
   function onSuccess(result) {
-    if (result.errorcode) {
-      console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-      alertMessage("error", 'Oops, something went wrong', alertID);
+    console.log("Request was a success! Output: ", result);
+    console.log("value inputPython: " + inputPython);
+    output = result.indexOf("<?xml");
+    if(output >-1){
+      parent = document.querySelector('#output');
+      console.log("explain:", output);
+      //Ensures newlines and tabs in output are displayed in div
+      var pre = document.createElement("pre");
+      pre.appendChild(document.createTextNode(result.slice(output)));
+      if (parent.childNodes.length != 0) {
+        parent.removeChild(parent.childNodes[0]);
+      }
+      parent.append(pre);
     }
-    else {
-      console.log("Request was a success! Output: ", result);
-      console.log("value inputPython: " + inputPython);
-      // output = result.output.split(";");
-      // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
-      //output = result.output;
-      output = result.indexOf("<?xml");
-      if(output >-1){
-        if (output >-1){
-          parent = document.querySelector('#output');
-          console.log("explain:", output);
-          //Ensures newlines and tabs in output are displayed in div
-          var pre = document.createElement("pre");
-          pre.appendChild(document.createTextNode(result.slice(output)));
-          if (parent.childNodes.length != 0) {
-            parent.removeChild(parent.childNodes[0]);
-          }
-          parent.append(pre);
-        }
-        else{
-          // console.log("0:", output[0]);
-          // console.log("1:" , output[1]);
-          // console.log("SiGML: ", output[2]);
-          // playText(output[2].trim(),1);
-          playText(output.trim());
-          // document.getElementById('output').value =  output[2].trim();
-          document.getElementById('output').value =  output.trim();
-          document.getElementById("replayButtonTut").setAttribute("name", output.trim());
-          document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary");
-        }
-      }
-      else{
-        console.log("Output has an unexpected format: ", output);
-        alertMessage("error", output, alertID);
-      }
-      if (flags.length == 2){
-      	flag = flags[1];
-      	callPython(text, alertID);
-      }
+    else{
+      console.log("Output has an unexpected format: ", output);
+      alertMessage("error", output, alertID);
+    }
     showBusyState(false);
-    }
   }
   function onError(_xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
