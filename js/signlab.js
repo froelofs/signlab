@@ -51,7 +51,7 @@ function callPython(inputPython, alertID) {
     output = result.indexOf("<?xml");
     if(output >-1){
       parent = document.querySelector('#output');
-      console.log("explain:", output);
+      console.log("index xml opentag", output);
       //Ensures newlines and tabs in output are displayed in div
       var pre = document.createElement("pre");
       pre.appendChild(document.createTextNode(result.slice(output)));
@@ -73,6 +73,24 @@ function callPython(inputPython, alertID) {
   }
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
+  }
+}
+
+//Test functie
+function testCallPython(inputPython, alertID) {
+  console.log("text: " + inputPython);
+  $.ajax({
+    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
+    type : 'POST',
+    crossDomain: true,
+    success : onSuccess,
+    error : onError,
+  });
+  function onSuccess(result) {
+    console.log("Request was a success! Output: ", result);
+  }
+  function onError(_xhr, error) {
+    console.log ('Something went wrong. Error message: '+ error);
   }
 }
 
@@ -167,7 +185,6 @@ var jsonAvailableSigns;
 function callbackSigns(response) {
   jsonAvailableSigns = response;
   signOptions = Object.keys(jsonAvailableSigns);
-  console.log(signOptions);
 }
 
 // Retrieves the dict of sentences with variables for the avatar
@@ -175,7 +192,6 @@ $.ajax({
  url: "newDict.json",
  global: false,
  success: function(data) {
-   console.log("hello");
   callbackSigns(data);
  },
  error: function(xhr, error){
@@ -210,7 +226,6 @@ $.ajax({
       textElement = document.getElementById("mySiGML");
       autocompSugg = customFilter(signOptions, request.term);
       response(autocompSugg);
-      console.log("response: " + response);
     },
     select: function( event, ui ){
       if (ui.item != null){
