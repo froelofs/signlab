@@ -154,6 +154,12 @@ function addNonmanuals(elementID){
 
   // Retrieves the opening tag of the selected nonmanual and creates the corresponding closing tag
   openTag = document.getElementById(elementID).value;
+
+  // Makes sure a tag was selected
+  if(openTag.slice(0,6) == "Select"){
+    return;
+  }
+
   closeTag = openTag.slice(0,1) + "/" + openTag.slice(1);
   
   // Adds the nonmanual tags to the selected glosses
@@ -252,13 +258,13 @@ function makeNonClickable(elementID){
 }
 
 function playSiGML(av=0){
+  makeNonClickable("resume");
   makeClickable("pause");
-  makeClickable("resume");
+  makeClickable("stop");
   playText(document.getElementById("output").value,av);
 }
 
 function pause(){
-  makeNonClickable("play");
   makeNonClickable("pause");
   makeClickable("resume");
 }

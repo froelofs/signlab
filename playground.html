@@ -60,10 +60,10 @@
 <section class="projects-section bg-light fadeIn" id="Playground">
   <div id="avatarTranslator" class="container-fluid text-center" style="width: 80%;">
     
-    <!-- Text input row-->
+    <!-- Text input + nonmanuals row-->
     <div class="row align-items-start text-center no-gutters mb-4 mb-lg-5">
       <!-- Column for input -->
-      <div class="col-12">
+      <div class="col-12 col-md-8">
         <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
           <div id="alertPlayground" class="alertBox"></div>
           <form autocomplete="off">
@@ -75,14 +75,14 @@
       </div>
 
       <!-- Column for make SiGML button -->
-      <div class="col-12 col-md-6">            
+      <div class="col-12 col-md-4">            
         <input type="button" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
         <input type="button" class="btn btn-primary" value="Test SiGML" onclick="testCallPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
-      </div>
+      </div>  
       
       <!-- Column for nonmanuals input -->
       <div class="col-12 col-md-6" style="margin-top: 5px;">
-            Select a category to pick nonmanuals to add:
+            Nonmanual Categories:
             <div class="form-check">
               <input type="radio" id="bodyNonMan" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="bodyNonMan">Body</label>
               <input type="radio" id="upperFaceNonMan" value="upperFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="upperFaceNonMan">Upper Face</label>
@@ -94,7 +94,7 @@
               <!-- Shoulder movement nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="shouldermovement">
-                  <option selected>Select a shoulder movement to add to the selected signs</option>
+                  <option selected>Select a shoulder movement</option>
                   <option value="<UL>">UL_left_shoulder_raised</option>
                   <option value="<UR>">UR_right_shoulder_raised</option>
                   <option value="<UB>">UB_both_shoulders_raised</option>
@@ -113,7 +113,7 @@
               <!-- Body movement nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="bodymovement">
-                  <option selected>Select a body movement to add to the selected signs</option>
+                  <option selected>Select a body movement</option>
                   <option value="<RL>">RL_rotated_left</option>
                   <option value="<RR>">RR_rotated_right</option>
                   <option value="<TL>">TL_tilted_left</option>
@@ -133,7 +133,7 @@
               <!-- Head movement nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="headmovement">
-                  <option selected>Select a head movement to add to the selected signs</option>
+                  <option selected>Select a head movement</option>
                   <option value="<NO>">NO_nodding_up_and_down</option>
                   <option value="<SH>">SH_shaking_left_and_right</option>
                   <option value="<SR>">SR_turned_right</option>
@@ -156,7 +156,7 @@
               <!-- Eye gaze direction nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="eyegazedirection">
-                  <option selected>Select an eye gaze direction to add to the selected signs</option>
+                  <option selected>Select an eye gaze direction</option>
                   <option value="<AD>">AD_towards_addressee</option>
                   <option value="<FR>">FR_far</option>
                   <option value="<HD>">HD_towards_the_signer_s_own_hands</option>
@@ -181,7 +181,7 @@
               <!-- Eye brows nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="eyebrowmovement">
-                  <option selected>Select an eyebrow movement to add to the selected signs</option>
+                  <option selected>Select an eyebrow movement</option>
                   <option value="<RB>">RB_both_eyebrows_raised</option>
                   <option value="<RR>">RR_right_eyebrow_raised</option>
                   <option value="<RL>">RL_left_eyebrow_raised</option>
@@ -195,7 +195,7 @@
               <!-- Eye lids nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="eyelidmovement">
-                  <option selected>Select an eyelid movement to add to the selected signs</option>
+                  <option selected>Select an eyelid movement</option>
                   <option value="<WB>">WB_wide_open_eyelids</option>
                   <option value="<WR>">WR_wide_open_right_eyelid </option>
                   <option value="<WL>">WL_wide_open_left_eyelid</option>
@@ -220,7 +220,7 @@
               <!-- Nose nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="nosemovement">
-                  <option selected>Select a nose movement to add to the selected signs</option>
+                  <option selected>Select a nose movement</option>
                   <option value="<WR>">WR_wrinkled_nose</option>
                   <option value="<TW>">TW_twitching_nose</option>
                   <option value="<WI>">WI_widened_nostrils</option>
@@ -374,6 +374,20 @@
             </div>
       </div>
 
+      <!-- Column for extra space between the nonmanuals input and the explanation -->
+      <div class="col-12 col-md-1" style="margin-top: 5px;">
+        <a href="#collapseOne" data-toggle="collapse" class="collapsed" aria-hidden="true"> 
+          <i class="bi bi-info-circle align-text-bottom"></i></a>
+      </div>
+
+      <!-- Column for nonmanuals explanation -->
+      <div class="col-12 col-md-5" style="margin-top: 5px; padding-top: 15px;">
+        <div id="collapseOne" class="collapse">
+          <p style="max-width: fit-content;">Use the radio buttons to show the types of nonmanuals available in each category.
+            After choosing a nonmanual to add, select one or multiple glosses from the inputbox with your mouse 
+            and press the "add" button next to the nonmanual.</p>
+        </div>
+      </div>
      
     </div>
     <!-- SiGML and Avatar row -->
@@ -459,7 +473,7 @@
   <div style="line-height:150%;">
     <br>&copy;2020 SignLab Amsterdam
     <br>
-    <i class="bi bi-envelope"></i>: signlab.amsterdam@gmail.com
+    <i class="bi bi-envelope align-text-bottom"></i>: signlab.amsterdam@gmail.com
   </div>
 </footer>
 
