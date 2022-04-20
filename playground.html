@@ -53,22 +53,67 @@
 <div id="content-wrap">
 <!--================================================================-->
 
-
 <!-- Navigation-->
 <div id="nav-placeholder"></div>
 
 <section class="projects-section bg-light fadeIn" id="Playground">
   <div id="avatarTranslator" class="container-fluid text-center" style="width: 80%;">
     
+    <!-- Help row -->
+    <div class="row align-items-start text-center no-gutters mb-4 mb-lg-5">
+      
+      <!-- Help Icon -->
+      <div class="col-12 col-md-2" style="margin-top: 5px;">
+        <a href="#collapseOne" data-toggle="collapse" class="collapsed" aria-hidden="true"> 
+          <i class="bi bi-question-circle align-text-bottom"></i>Tool Help</p>
+        </a>
+          <a href="#collapseTwo" data-toggle="collapse" class="collapsed" aria-hidden="true"> 
+            <i class="bi bi-info-circle align-text-bottom"></i>Gloss Help
+          </a>
+      </div>
+
+      <!-- Column for explanations -->
+      <div class="col-12 col-md-10 text-left" style="margin-top: 5px; padding-top: 15px;">
+        
+        <!-- Tool explanation -->
+        <div id="collapseOne" class="collapse text-left">
+          <h4>How To Use The Tool:</h4>
+          <ol>
+            <li>Use the radio buttons to show the types of nonmanuals available in each category</li>
+            <li>Choose a nonmanual using one of the selection boxes</li>
+            <li>Select one or multiple glosses in the inputbox using your mouse</li>
+            <li>Press the "add" button next to your chosen nonmanual</li>
+          </ol>
+          <p>(Press "Tool Help" again to hide this explanation)</p>
+        </div>
+        
+        <!-- Gloss notation explanation -->
+        <div id="collapseTwo" class="collapse text-left">
+          <h4>How To Read The Gloss Notation:</h4>
+          <ul>
+            <li>GLOSS-SQ: sequential sign</li>
+            <li>GLOSS-{number_number}: directional verb</li>
+            <li>GLOSS-CL{classifier}: classifier (for signs that change depending on their context)</li>
+            <li>GLOSS-AM{clarification}: clears up gloss ambiguity</li>
+            <li>GLOSS-SP: indicates a sign used for a single letter (for spelling out words)</li>
+            <li>GLOSS-GR: indicates a sign used for grammatical purposes</li>
+          </ul>
+          <p>(Press "Gloss Help" again to hide this explanation)</p>
+        </div>
+      </div>
+
+    </div>
+
     <!-- Text input + nonmanuals row-->
     <div class="row align-items-start text-center no-gutters mb-4 mb-lg-5">
+
       <!-- Column for input -->
       <div class="col-12 col-md-8">
         <div class="pb-1 w-100 my-auto text-left playgroundTextDIV">
           <div id="alertPlayground" class="alertBox"></div>
           <form autocomplete="off">
             <div id="autocomp" class="autocomplete">
-             <textarea id="mySiGML" class="inputBox" rows="3" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
+             <textarea id="mySiGML" style="resize:vertical; min-height: 59.2px;" class="inputBox" placeholder="Enter sign glosses here" onkeydown="if(event.keyCode == 13){event.preventDefault();callPython(document.getElementById('mySiGML').value, 'alertPlayground');}"></textarea>
             </div>
           </form>
         </div>    
@@ -76,20 +121,25 @@
 
       <!-- Column for make SiGML button -->
       <div class="col-12 col-md-4">            
-        <input type="button" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
+        <input type="button" id="MakeSigmlBtn" class="btn btn-primary" value="Make SiGML" onclick="callPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
         <input type="button" class="btn btn-primary" value="Test SiGML" onclick="testCallPython(document.getElementById('mySiGML').value, 'alertPlayground');" />
-      </div>  
+      </div> 
       
-      <!-- Column for nonmanuals input -->
-      <div class="col-12 col-md-6" style="margin-top: 5px;">
-            Nonmanual Categories:
-            <div class="form-check">
-              <input type="radio" id="bodyNonMan" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="bodyNonMan">Body</label>
-              <input type="radio" id="upperFaceNonMan" value="upperFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="upperFaceNonMan">Upper Face</label>
-              <input type="radio" id="lowerFaceNonMan" value ="lowerFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="lowerFaceNonMan">Lower Face</label>
-              <input type="radio" id="complexNonMan" value ="complexNonManuals" name="nonMansAdd" onclick="showNonmans(this);"><label for="complexNonMan">Complex</label>
+      <!-- Column for nonmanuals category selection -->
+      <div class="col-12 col-md-4 text-left" style="margin-top: 5px;">
+        Nonmanual Categories:
+            <div class="form-check" style="padding-left: 0;">
+              <input type="radio" value="bodyNonManuals" name="nonMansAdd" onclick="showNonmans(this.value);"><label style="margin-left: 5px; margin-right: 10px;">Body</label>
+              <input type="radio" value="upperFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this.value);"><label style="margin-left: 5px; margin-right: 10px;">Upper Face</label>
+              <input type="radio" value="lowerFaceNonManuals" name="nonMansAdd" onclick="showNonmans(this.value);"><label style="margin-left: 5px; margin-right: 10px;">Lower Face</label>
+              <br>
+              <input type="radio" value="complexNonManuals" name="nonMansAdd" onclick="showNonmans(this.value);"><label style="margin-left: 5px; margin-right: 10px;">Complex</label>
+              <input type="radio" value="noNonManuals" name="nonMansAdd" onclick="showNonmans(this.value);"><label style="margin-left: 5px;">None</label>
             </div>
+      </div>
 
+      <!-- Column for nonmanuals input -->
+      <div class="col-12 col-md-8 text-left" style="margin-top: 5px;">
             <div id="bodyNonManuals" class="nonmanSelect" style="display:none;">
               <!-- Shoulder movement nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
@@ -233,7 +283,7 @@
               <!-- Mouth gesture nonmanual selection -->
               <div class="input-group" style="margin-top: 10px;">
                 <select class="custom-select" id="mouthgesture">
-                  <option selected>Select a mouth gesture to add to the selected signs</option>
+                  <option selected>Select a mouth gesture </option>
                   <option value="<D01>">D01_eee_sss </option>
                   <option value="<D02>">D02_f</option>
                   <option value="<D03>">D03_ef</option>
@@ -376,17 +426,6 @@
 
       <!-- Column for extra space between the nonmanuals input and the explanation -->
       <div class="col-12 col-md-1" style="margin-top: 5px;">
-        <a href="#collapseOne" data-toggle="collapse" class="collapsed" aria-hidden="true"> 
-          <i class="bi bi-info-circle align-text-bottom"></i></a>
-      </div>
-
-      <!-- Column for nonmanuals explanation -->
-      <div class="col-12 col-md-5" style="margin-top: 5px; padding-top: 15px;">
-        <div id="collapseOne" class="collapse">
-          <p style="max-width: fit-content;">Use the radio buttons to show the types of nonmanuals available in each category.
-            After choosing a nonmanual to add, select one or multiple glosses from the inputbox with your mouse 
-            and press the "add" button next to the nonmanual.</p>
-        </div>
       </div>
      
     </div>
@@ -398,9 +437,6 @@
         <textarea id="output" class="explSiGML" style="margin:0px; padding: 0;"
         placeholder="The generated SiGML code will appear here" onkeydown="if(event.keyCode == 13){event.preventDefault();playText(document.getElementById('output').value);}"></textarea>
       </div>
-      <!-- 
-     Zoals op publications drop-down ipv tooltip: Korte instructie hoe de "sigml player werkt"
-     -->
 
      <!-- Empty column for space between sigml en avatar -->
       <div class="col-12 col-md-1"></div>
@@ -417,24 +453,25 @@
           </p>
         </div>
         <!--================================================================-->
-        <br>
-        <input type="button" class="btn btn-primary" id="play" value="Play" onclick="playSiGML();"/>
-        <input type="button" class="btn btn-primary" value="Stop" onclick='stop()' />
-        <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='pause()'/>
-        <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='resume()'/>
-        <!-- <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
-        <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/> -->
-        <br>
-        <br>
-        <br>
-        <br>
-        <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
-        <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
-        <br>
-        <br>
-        <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px">Current sign: </label>
-        <input id="outputGloss" class="txtGloss av0" value="none" type="text">
-        <br>
+        
+        <!-- div for the buttons to control the avatar -->
+        <div>
+          <input type="button" class="btn btn-primary" id="play" value="Play" onclick="playSiGML();"/>
+          <input type="button" class="btn btn-primary" value="Stop" onclick='stop()' />
+          <input type="button" class="bttnSuspend av0 btn btn-primary" id="pause" value="Pause" onclick='pause()'/>
+          <input type="button" class="bttnResume av0 btn btn-primary" id="resume" value="Resume" onclick='resume()'/>
+          <!-- <input type="button" class="bttnPrevF av0 btn btn-primary" value="Frame -1"/>
+          <input type="button" class="bttnNextF av0 btn btn-primary" value="Frame +1"/> -->
+          <br>
+          <br>
+          <label id="speedLabel" for="speedAdj" style="display: inline-block;">Adjust speed: </label>
+          <span id="speedAdj" class="CWASASpeed av0" style="margin-bottom:5px"></span>
+          <br>
+          <br>
+          <label id="glossLabel"for="outputGloss" style="display: inline-block; margin-right: 7px">Current sign: </label>
+          <input id="outputGloss" class="txtGloss av0" value="none" type="text">
+          <br>
+        </div>
       </div>            
               <!--  zoals ns demo knoppen voor pauze, resume en frames -->
 
