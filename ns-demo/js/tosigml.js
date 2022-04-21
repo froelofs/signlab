@@ -232,6 +232,7 @@ async function getSiGML(sentenceArray){
   // NL zin als ondertiteling
   glossArray = document.getElementById('currSentenceBox').innerText;
   glossArray = glossArray.replace('Current sentence:', '').toUpperCase();
+  glossArray = glossArray.replace('Huidig omroepbericht:', '').toUpperCase();
   document.getElementById('outputLong').innerHTML = glossArray;
 
   const [lastItem] = sentenceArray.slice(-1);
