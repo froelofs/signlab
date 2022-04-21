@@ -384,7 +384,7 @@ async function getSiGML(sentenceArray, av){
     globalVar.glossArrayColor[av] = globalVar.glossArray[av];
     document.getElementById('outputLong').innerHTML = globalVar.glossArray[av];
   }
-  
+  // update current avatar
   globalVar.globalAv = av;
   playText(tempStrings[av], av);
 }

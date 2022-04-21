@@ -1,6 +1,6 @@
 // Global variable for the language (default: English)
 var globalVar={
-  lang: "Nederlands",
+  lang: "English",
   trainType: "trainType",
   platformNr: "platformNr",
   departTime: "departTime",
@@ -228,7 +228,7 @@ function updateGlobalVariables(name, oldValue){
   }
   else {
     console.log('lang', globalVar.lang)
-    var waitElementsArray = ["a few minutes", "approximately 5 minutes", "approximately 35 minutes", "approximately 1.5 hours", "an unknown timeframe"];
+    var waitElementsArray = ["a few minutes", "approximately 5 minutes", "approximately 35 minutes", "approximately 1.5 hours", "an unknown time"];
 
     document.getElementById('trainType').innerHTML = 'Train type: ';
     document.getElementById('platform').innerHTML = 'Platform number: ';
@@ -236,7 +236,7 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('waitTime').innerHTML = 'Waiting time: ';
     document.getElementById('speedLabel').innerHTML = 'Speed: ';
     document.getElementById('endStation').innerHTML = 'End station: ';
-    document.getElementById('interStation1').innerHTML = 'Intermediate station 1 (optional): ';
+    document.getElementById('interStation1').innerHTML = 'Intermediate station 1: ';
     document.getElementById('interStation2').innerHTML = 'Intermediate station 2 (optional): ';
     document.getElementById('interStation3').innerHTML = 'Intermediate station 3 (optional): ';
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4 (optional): ';

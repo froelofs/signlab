@@ -75,13 +75,32 @@ function pushInterVars(variableArray, stationsArray, first){
 function getSigmlVariables(entry, variableArray, stationsArray){
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
   // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
-  var andersomZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
+  var wachtZinBool, wachtZinENBool, stopZinBool, stopZinENBool = false;
+  var wachtZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
+  var wachtZinEN = "The trainType to interStation1, interStation2, interStation3, interStation4 and endStation of departTime departs in waitTime from platform platformNr.";
+
+  var stopZin = "Hallo, de treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation stopt niet op tussengelegen stations.";
+  var stopZinEN = "Hello, the trainType to interStation1, interStation2, interStation3, interStation4 and endStation does not stop at intermediate stations.";
+
+  if(entry === wachtZin){
+    entry = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt van spoor spoorNr over wachtTijd.";
+    wachtZinBool = true;
+  } else if(entry === wachtZinEN){
+    entry = "The trainType to interStation1, interStation2, interStation3, interStation4 and endStation of departTime departs from platform platformNr in waitTime.";
+    wachtZinENBool = true;
+  } else if(entry === stopZin){
+    entry = "Hallo, de treinType naar eindStation stopt niet op tussengelegen stations tussenStation1, tussenStation2, tussenStation3, tussenStation4."; 
+    stopZinBool = true;
+  } else if(entry === stopZinEN){
+    entry = "Hello, the trainType to endStation does not stop at intermediate stations interStation1, interStation2, interStation3, interStation4.";
+    stopZinENBool = true;
+  }
 
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
     variableArray.push(trainVar);
   }
-  if(entry !== andersomZin){
+  if(stopZinBool || stopZinENBool){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions').value;
       variableArray.push(endVar);
@@ -101,7 +120,7 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     interVarArray[3] = document.getElementById('interStation4Options').value;
     
   }
-  if(entry === andersomZin){
+  if(!stopZinBool && !stopZinENBool){
     console.log('andersom');
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions').value;
@@ -110,6 +129,7 @@ function getSigmlVariables(entry, variableArray, stationsArray){
         stationsArray.push(endVar);
       } else {
         variableArray, stationsArray = pushInterVars(variableArray, stationsArray, true)
+        // sngl betekent een single gebaar voor het station, dus niet al gekoppeld aan de NAAR beweging
         endVar = "sngl_" + endVar;
         variableArray.push(endVar);
         stationsArray.push(endVar);
@@ -122,23 +142,21 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     departVar = document.getElementById('departTimeInput').value;
     variableArray.push(departVar);
   }
-  if(entry.includes("waitTime") || entry.includes("wachtTijd")){
-    waitVar = document.getElementById('waitTimeOptions').value;
-    if(waitVar === "een nog onbekende tijd"){
-      console.log('waitTime: ', waitVar);
-    } else {
+  if(!wachtZinBool && !wachtZinENBool){
+    if(entry.includes("waitTime") || entry.includes("wachtTijd")){
+      waitVar = document.getElementById('waitTimeOptions').value;
       variableArray.push(waitVar);
     }
   }
   if(entry.includes("platformNr") || entry.includes("spoorNr")){
     platformVar = document.getElementById('platformNrOptions').value;
     platformVar = platformVar.replaceAll(/\'/g, "");
-    if(waitVar === "een nog onbekende tijd"){
-      onbekendeTijd = true;
-      variableArray.push(platformVar);
-      variableArray.push("over " + waitVar);
-    } else {
-      variableArray.push(platformVar);
+    variableArray.push(platformVar);
+    }
+  if(wachtZinBool || wachtZinENBool){
+    if(entry.includes("waitTime") || entry.includes("wachtTijd")){
+      waitVar = document.getElementById('waitTimeOptions').value;
+      variableArray.push(waitVar);
     }
   }
   return variableArray, stationsArray;
@@ -191,8 +209,12 @@ async function getSiGMLContent(el){
 }
 
 async function getSiGML(sentenceArray){
+  var regex_sigml = new RegExp(/\<hamgestural\_sign\sgloss\=\"(\w*\s?\:?\w*\s?\w*\s?)(\>)?\"/, "g");
   var tijdArray = [];
+  var glossArray = [];
   var tempString = '<?xml version="1.0" encoding="utf-8"?><sigml>\n';
+  // Automatically add smile to the start of every sentence
+  tempString += '<hamgestural_sign gloss="" timescale="0.6" duration="1.1"><sign_manual holdover="true"></sign_manual><sign_nonmanual><mouthing_tier><mouthing_par><avatar_morph name="smlc" amount="0.7" speed="0.4" timing="x s l - m l x"/><avatar_morph name="eee" amount="0.3" speed="0.4" timing="x m t - m t"/></mouthing_par></mouthing_tier><body_tier><body_movement movement="ST"/></body_tier><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><facial_expr_par><eye_gaze movement="LE" amount="0.6"/><eye_brows movement="RB"/></facial_expr_par></facialexpr_tier></sign_nonmanual></hamgestural_sign>\n';
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
   if(onbekendeTijd){
@@ -207,6 +229,11 @@ async function getSiGML(sentenceArray){
     
   }
   console.log('Sentence array final: ', sentenceArray);
+  // NL zin als ondertiteling
+  glossArray = document.getElementById('currSentenceBox').innerText;
+  glossArray = glossArray.replace('Current sentence:', '').toUpperCase();
+  document.getElementById('outputLong').innerHTML = glossArray;
+
   const [lastItem] = sentenceArray.slice(-1);
   if(sentenceArray[0].match(/(Herhaling)/)){
         console.log('Match herhaling');
@@ -263,8 +290,9 @@ async function getSiGML(sentenceArray){
   //console.log('tempString: ', tempString);
   globalVar.playing = true;
   globalVar.playFinished = false;
-  playText(tempString);
   globalVar.sigmlText = tempString;
+  playText(tempString);
+  
 }
 
 function checkUndefined(definition, alert="alertMainTran"){
