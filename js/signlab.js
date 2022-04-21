@@ -169,16 +169,22 @@ function addNonmanuals(elementID){
   textElement.value = text.slice(0,startSelect) + insertion + text.slice(endSelect); 
  }
 
+//  Sets the selected nonmanual category to visible and the others to invisible
 function showNonmans(category){
-   
-  hiddenCategory = document.getElementById(category.value);
   elements = document.getElementsByClassName("nonmanSelect");
 
+  // Loops over all the nonmanual selects and makes the invisible
   for (let item of elements) {
     item.style.display = "none";
   }
 
-  hiddenCategory.style.display = "block";
+  // Sets the the nonmanual select of the chosen category to visible
+  if(category != "noNonManuals"){
+    showCategory = document.getElementById(category);
+    showCategory.style.display = "block";
+  }
+  
+  
  }
 
 // Stores the autocomplete suggestions
@@ -248,12 +254,10 @@ $.ajax({
 });
 
 function makeClickable(elementID){
-  //globalVar.playButtonClicked = false;
   document.getElementById(elementID).setAttribute("class", "btn btn-primary");
 }
 
 function makeNonClickable(elementID){
-  //globalVar.playButtonClicked = true;
   document.getElementById(elementID).setAttribute("class", "no-click-button btn btn-primary");
 }
 
