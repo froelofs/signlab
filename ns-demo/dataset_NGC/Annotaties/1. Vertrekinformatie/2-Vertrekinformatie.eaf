@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2022-04-14T14:09:57+01:00" FORMAT="3.0" VERSION="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2022-04-18T13:25:18+01:00" FORMAT="3.0" VERSION="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
         <MEDIA_DESCRIPTOR MEDIA_URL="file:///C:/Users/User/Documents/RU/MSc2/NS Gebarenvideo's/1. Vertrekinformatie/Vertrekinformatie-2.mp4" MIME_TYPE="video/mp4" RELATIVE_MEDIA_URL="../../../../../../../Documents/RU/MSc2/NS Gebarenvideo's/1. Vertrekinformatie/Vertrekinformatie-2.mp4"/>
         <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:9811c6eb-c464-4611-9726-1e56c0269c48</PROPERTY>
@@ -371,7 +371,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a48" TIME_SLOT_REF1="ts7" TIME_SLOT_REF2="ts19">
-                <ANNOTATION_VALUE>DN RB</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>RD RB</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
@@ -381,7 +381,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a50" TIME_SLOT_REF1="ts30" TIME_SLOT_REF2="ts37">
-                <ANNOTATION_VALUE>FU SB DR</ANNOTATION_VALUE>
+                <ANNOTATION_VALUE>FU SB RD</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
