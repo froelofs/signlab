@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ANNOTATION_DOCUMENT AUTHOR="" DATE="2022-04-17T11:58:28+01:00"
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2022-04-22T23:54:28+01:00"
     FORMAT="3.0" VERSION="3.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
     <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
@@ -7,7 +7,7 @@
             MEDIA_URL="file:///C:/Users/User/Documents/RU/MSc2/NS Gebarenvideo's/3. Tussenstops (bijzin)/Tussenstops (bijzin)-21.mp4"
             MIME_TYPE="video/mp4" RELATIVE_MEDIA_URL="../../../../../../../Documents/RU/MSc2/NS Gebarenvideo's/3. Tussenstops (bijzin)/Tussenstops (bijzin)-21.mp4"/>
         <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:4a8eb44f-435b-47c5-95eb-6f9eb07077f4</PROPERTY>
-        <PROPERTY NAME="lastUsedAnnotationId">50</PROPERTY>
+        <PROPERTY NAME="lastUsedAnnotationId">51</PROPERTY>
     </HEADER>
     <TIME_ORDER>
         <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="612"/>
@@ -92,8 +92,8 @@
         <TIME_SLOT TIME_SLOT_ID="ts80" TIME_VALUE="11660"/>
         <TIME_SLOT TIME_SLOT_ID="ts81" TIME_VALUE="11660"/>
         <TIME_SLOT TIME_SLOT_ID="ts82" TIME_VALUE="11660"/>
-        <TIME_SLOT TIME_SLOT_ID="ts83" TIME_VALUE="12606"/>
-        <TIME_SLOT TIME_SLOT_ID="ts84" TIME_VALUE="12606"/>
+        <TIME_SLOT TIME_SLOT_ID="ts83" TIME_VALUE="12600"/>
+        <TIME_SLOT TIME_SLOT_ID="ts84" TIME_VALUE="12600"/>
         <TIME_SLOT TIME_SLOT_ID="ts85" TIME_VALUE="12606"/>
         <TIME_SLOT TIME_SLOT_ID="ts86" TIME_VALUE="12606"/>
         <TIME_SLOT TIME_SLOT_ID="ts87" TIME_VALUE="12606"/>
@@ -102,10 +102,12 @@
         <TIME_SLOT TIME_SLOT_ID="ts90" TIME_VALUE="14500"/>
         <TIME_SLOT TIME_SLOT_ID="ts91" TIME_VALUE="14500"/>
         <TIME_SLOT TIME_SLOT_ID="ts92" TIME_VALUE="14500"/>
-        <TIME_SLOT TIME_SLOT_ID="ts93" TIME_VALUE="16206"/>
-        <TIME_SLOT TIME_SLOT_ID="ts94" TIME_VALUE="16506"/>
-        <TIME_SLOT TIME_SLOT_ID="ts95" TIME_VALUE="16506"/>
-        <TIME_SLOT TIME_SLOT_ID="ts96" TIME_VALUE="16506"/>
+        <TIME_SLOT TIME_SLOT_ID="ts93" TIME_VALUE="14500"/>
+        <TIME_SLOT TIME_SLOT_ID="ts94" TIME_VALUE="14500"/>
+        <TIME_SLOT TIME_SLOT_ID="ts95" TIME_VALUE="16193"/>
+        <TIME_SLOT TIME_SLOT_ID="ts96" TIME_VALUE="16206"/>
+        <TIME_SLOT TIME_SLOT_ID="ts97" TIME_VALUE="16506"/>
+        <TIME_SLOT TIME_SLOT_ID="ts98" TIME_VALUE="16506"/>
     </TIME_ORDER>
     <TIER LINGUISTIC_TYPE_REF="default-lt" TIER_ID="Gloss">
         <ANNOTATION>
@@ -176,8 +178,14 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a12"
-                TIME_SLOT_REF1="ts84" TIME_SLOT_REF2="ts95">
-                <ANNOTATION_VALUE>STOPPEN-TUSSENGELEGEN-STATIONS</ANNOTATION_VALUE>
+                TIME_SLOT_REF1="ts84" TIME_SLOT_REF2="ts89">
+                <ANNOTATION_VALUE>STOPPEN-TOT</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a51"
+                TIME_SLOT_REF1="ts90" TIME_SLOT_REF2="ts95">
+                <ANNOTATION_VALUE>STATION.PL</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
     </TIER>
@@ -250,13 +258,13 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a26"
-                TIME_SLOT_REF1="ts86" TIME_SLOT_REF2="ts89">
+                TIME_SLOT_REF1="ts86" TIME_SLOT_REF2="ts91">
                 <ANNOTATION_VALUE>stopstopstop</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a27"
-                TIME_SLOT_REF1="ts90" TIME_SLOT_REF2="ts93">
+                TIME_SLOT_REF1="ts92" TIME_SLOT_REF2="ts96">
                 <ANNOTATION_VALUE>stations</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
@@ -330,13 +338,13 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a39"
-                TIME_SLOT_REF1="ts88" TIME_SLOT_REF2="ts91">
+                TIME_SLOT_REF1="ts88" TIME_SLOT_REF2="ts93">
                 <ANNOTATION_VALUE>stoppen</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a40"
-                TIME_SLOT_REF1="ts92" TIME_SLOT_REF2="ts94">
+                TIME_SLOT_REF1="ts94" TIME_SLOT_REF2="ts97">
                 <ANNOTATION_VALUE>tussengelegen stations</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
@@ -398,7 +406,7 @@
         </ANNOTATION>
         <ANNOTATION>
             <ALIGNABLE_ANNOTATION ANNOTATION_ID="a50"
-                TIME_SLOT_REF1="ts76" TIME_SLOT_REF2="ts96">
+                TIME_SLOT_REF1="ts76" TIME_SLOT_REF2="ts98">
                 <ANNOTATION_VALUE>stopt tot zutphen op alle tussengelegen stations</ANNOTATION_VALUE>
             </ALIGNABLE_ANNOTATION>
         </ANNOTATION>
