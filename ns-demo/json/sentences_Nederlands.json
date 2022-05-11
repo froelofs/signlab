@@ -1,7 +1,7 @@
 {
-    "Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.": "sigml_zinsdelen/LEEG.sigml",
-    "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.": "sigml_zinsdelen/LEEG.sigml",
-    "Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.": "sigml_zinsdelen/LEEG.sigml",
-    "Hallo, de treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation stopt niet op tussengelegen stations.": "sigml_zinsdelen/LEEG.sigml",
-    "Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.": "sigml_zinsdelen/LEEG.sigml"
+    "Hallo _xl0_ de treinType _s1_ naar eindStation _s2_ van vertrekTijd _l3_ rijdt niet.": "sigml_zinsdelen/LEEG.sigml",
+    "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ over wachtTijd _m5_ van spoor spoorNr.": "sigml_zinsdelen/LEEG.sigml",
+    "Herhaling. De treinType _s1_ naar eindStation _s2_ van vertrekTijd _l3_ rijdt via _s4_ een andere route.": "sigml_zinsdelen/LEEG.sigml",
+    "Hallo _xl0_ de treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ stopt niet _m3_ op tussengelegen stations.": "sigml_zinsdelen/LEEG.sigml",
+    "Hallo _xl0_ de treinType _s1_ naar eindStation _s2_ vertrekt _m3_ van spoor spoorNr.": "sigml_zinsdelen/LEEG.sigml"
 }

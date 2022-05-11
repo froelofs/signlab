@@ -1,0 +1,14 @@
+  <hamgestural_sign gloss="ACHT">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="Axx"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" thumbpos="out"/>
+      <handconfig extfidir="ul" second_extfidir="u"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>

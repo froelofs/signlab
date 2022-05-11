@@ -1,0 +1,17 @@
+  <hamgestural_sign gloss="DRIEENDERTIG" timescale="0.8" duration="1.1">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="dRidERtI" speed="1"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig mainbend="round" exempteddigits="234" bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shouldertop" second_location="shouldertop" second_side="left_at" side="right_beside"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="r" speed="1.9" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>

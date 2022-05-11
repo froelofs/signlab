@@ -1,19 +1,6 @@
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_movement movement="SL" amount="1.5"/>
-      </head_tier>
-<facialexpr_tier>
-        <eye_lids movement="BB"/>
-      </facialexpr_tier>
-    </sign_nonmanual>
-    <sign_manual holdover="true">
-    </sign_manual>
-  </hamgestural_sign>
-
-  <hamgestural_sign gloss="">
-    <sign_nonmanual>
-      <head_tier>
           <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>

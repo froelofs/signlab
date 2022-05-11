@@ -26,20 +26,6 @@
           </par_motion>
       </sign_manual>
   </hamgestural_sign>
-
-  <hamgestural_sign gloss="" timescale="1" duration="0.67">
-    <sign_nonmanual>
-      <head_tier>
-        <head_movement movement="SL" amount="1.5"/>
-      </head_tier>
-      <facialexpr_tier>
-        <eye_lids movement="BB"/>
-        <eye_gaze movement="LE" amount="0.6"/>
-      </facialexpr_tier>
-    </sign_nonmanual>
-    <sign_manual holdover="true">
-    </sign_manual>
-  </hamgestural_sign>
     
   <hamgestural_sign gloss="DE">
     <sign_nonmanual>

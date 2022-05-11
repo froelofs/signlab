@@ -1,4 +1,3 @@
-
 var trainVar;
 var platformVar;
 var departVar;
@@ -8,15 +7,26 @@ var endVar;
 var json_sent_NL;
 var json_sent_EN;
 var json_var;
-var n_telhand;
 var onbekendeTijd;
+
+function pushSentencePart(sentencePart, sentenceArray, value, variable){
+  var sentencePartSubstring = sentencePart.substring(value, sentencePart.indexOf(variable)-1)
+  regex_space = new RegExp(/\s+(\w+\s*\w*\s*\w*\s*\w*)\s*/);
+  if(sentencePartSubstring.match(regex_space)){
+    console.log('sent part b ', sentencePartSubstring);
+    sentencePartSubstring = sentencePartSubstring.replace(regex_space, '$1');
+    console.log('sent part b after ', sentencePartSubstring);
+  }
+
+  sentenceArray.push(sentencePartSubstring);
+}
 
 function splitSentence(sentencePart, variable, sentenceArray){
   var regex_platform = /(\d{1,2})([a-z])/;
   if(variable.match(regex_platform)){
     var number = platformVar.replace(regex_platform, '$1');
     var letter = platformVar.replace(regex_platform, '$2');
-    sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
+    pushSentencePart(sentencePart, sentenceArray, 1, variable);
     sentenceArray.push(number, letter);
     // Platform is always the last variable. Skipping sentence part here is necessary
     return sentenceArray, "";
@@ -25,23 +35,16 @@ function splitSentence(sentencePart, variable, sentenceArray){
   if(variable.match(regex_departTime)){
     var hour = departVar.replace(regex_departTime, '$1');
     var minutes = departVar.replace(regex_departTime, '$2');
-    sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
+    pushSentencePart(sentencePart, sentenceArray, 1, variable);
     sentenceArray.push("tijd", hour, ":", minutes);
     sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
     return sentenceArray, sentencePart;
   }
-
-  // First word has no space before
-  if(sentenceArray.length === 0){
-    sentenceArray.push(sentencePart.substring(0, sentencePart.indexOf(variable)-1));
-  } else {
-    // Skip space before non-first words/parts
-    sentenceArray.push(sentencePart.substring(1, sentencePart.indexOf(variable)-1));
-  }
+  pushSentencePart(sentencePart, sentenceArray, 0, variable);
   sentenceArray.push(variable);
 
-  var regex_naar = /(naar)\_(\w+)/;
-  var regex_single = /(sngl)\_(\w+)/;
+  var regex_naar = /(naar)\_(\w+)/; // for signs such as NAAR ALMELO
+  var regex_single = /(sngl)\_(\w+)/; // for signs such as ALMELO
   if (variable.match(regex_naar)){
     let tempVar = variable.replace(regex_naar, '$2');
     sentencePart = sentencePart.substring(sentencePart.indexOf(tempVar) + tempVar.length, sentencePart.length);
@@ -72,41 +75,72 @@ function pushInterVars(variableArray, stationsArray, first){
   return variableArray, stationsArray;
 }
 
+function enterPauzeVar(pauzeValue){
+  var pauzeVar = entry.match(pauzeValue)[0];
+  return pauzeVar;
+}
+
 function getSigmlVariables(entry, variableArray, stationsArray){
-  // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE
-  // GLOBALVARS GEBRUIKEN WERKT NIET ivm vervanging vd waardes
+  // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE (zin wordt opgesplitst na herkenning van de variabele, en als dat te vroeg of te laat gebeurt mis je dus zinsdelen of komen bepaalde delen dubbel voor)
+  // entry.includes(globalvar.x) WERKT NIET ivm vervanging vd waardes
   var wachtZinBool, wachtZinENBool, stopZinBool, stopZinENBool = false;
-  var wachtZin = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.";
-  var wachtZinEN = "The trainType to interStation1, interStation2, interStation3, interStation4 and endStation of departTime departs in waitTime from platform platformNr.";
+  let regex_pauze_0 = new RegExp(/\_(\w{1,2})0\_/);
+  let regex_pauze_1 = new RegExp(/\_(\w{1,2})1\_/);
+  let regex_pauze_2 = new RegExp(/\_(\w{1,2})2\_/);
+  let regex_pauze_3 = new RegExp(/\_(\w{1,2})3\_/);
+  let regex_pauze_4 = new RegExp(/\_(\w{1,2})4\_/);
+  let regex_pauze_5 = new RegExp(/\_(\w{1,2})5\_/);
 
-  var stopZin = "Hallo, de treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation stopt niet op tussengelegen stations.";
-  var stopZinEN = "Hello, the trainType to interStation1, interStation2, interStation3, interStation4 and endStation does not stop at intermediate stations.";
+  // HARD CODE dat de structuur van bepaalde zinnen verandert
+  var wachtZin = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ over wachtTijd _m5_ van spoor spoorNr.";
+  var wachtZinEN = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ in waitTime _m5_ from platform platformNr.";
 
+  var stopZin = "Hallo _xl0_, de treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ stopt niet _m3_ op tussengelegen stations.";
+  var stopZinEN = "Hello _xl0_, the trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ does not stop _m3_ at intermediate stations.";
+
+  console.log('entry sigml ', entry);
   if(entry === wachtZin){
-    entry = "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt van spoor spoorNr over wachtTijd.";
+    entry = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ van spoor spoorNr _m5_ over wachtTijd.";
     wachtZinBool = true;
   } else if(entry === wachtZinEN){
-    entry = "The trainType to interStation1, interStation2, interStation3, interStation4 and endStation of departTime departs from platform platformNr in waitTime.";
+    entry = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ from platform platformNr _m5_ in waitTime.";
     wachtZinENBool = true;
   } else if(entry === stopZin){
-    entry = "Hallo, de treinType naar eindStation stopt niet op tussengelegen stations tussenStation1, tussenStation2, tussenStation3, tussenStation4."; 
+    entry = "Hallo _xl0_, de treinType _s1_ naar eindStation _s2_ stopt niet _m3_ op tussengelegen stations tussenStation1, tussenStation2, tussenStation3, tussenStation4."; 
     stopZinBool = true;
   } else if(entry === stopZinEN){
-    entry = "Hello, the trainType to endStation does not stop at intermediate stations interStation1, interStation2, interStation3, interStation4.";
+    entry = "Hello _xl0_, the trainType _s1_ to endStation _s2_ does not stop _m3_ at intermediate stations interStation1, interStation2, interStation3, interStation4.";
     stopZinENBool = true;
+  }
+  
+  if(entry.match(regex_pauze_0)){
+    let pauzeVar = enterPauzeVar(regex_pauze_0);
+    variableArray.push(pauzeVar);
   }
 
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
     variableArray.push(trainVar);
   }
+
+  if(entry.match(regex_pauze_1)){
+    let pauzeVar = enterPauzeVar(regex_pauze_1);
+    variableArray.push(pauzeVar);
+  }
+
   if(stopZinBool || stopZinENBool){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions').value;
       variableArray.push(endVar);
       stationsArray.push(endVar);
     }
+
+    if(entry.match(regex_pauze_2)){
+      let pauzeVar = enterPauzeVar(regex_pauze_2);
+      variableArray.push(pauzeVar);
+    }
   }
+
   if(entry.includes("interStation1,") || entry.includes("tussenStation1")){
     interVarArray[0] = document.getElementById('interStation1Options').value;
   }
@@ -121,7 +155,6 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     
   }
   if(!stopZinBool && !stopZinENBool){
-    console.log('andersom');
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions').value;
       if(interVarArray[0] === "-" && interVarArray[1]==="-" && interVarArray[2]==="-" && interVarArray[3]==="-"){
@@ -135,31 +168,57 @@ function getSigmlVariables(entry, variableArray, stationsArray){
         stationsArray.push(endVar);
       }
     }
+    if(entry.match(regex_pauze_2)){
+      let pauzeVar = enterPauzeVar(regex_pauze_2);
+      variableArray.push(pauzeVar);
+    }
   } else {
     variableArray, stationsArray = pushInterVars(variableArray, stationsArray, false)
   }
+  
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput').value;
     variableArray.push(departVar);
   }
+
+  if(entry.match(regex_pauze_3)){
+    let pauzeVar = enterPauzeVar(regex_pauze_3);
+    variableArray.push(pauzeVar);
+  }
+
+  if(entry.match(regex_pauze_4)){
+    let pauzeVar = enterPauzeVar(regex_pauze_4);
+    variableArray.push(pauzeVar);
+  }
+
   if(!wachtZinBool && !wachtZinENBool){
     if(entry.includes("waitTime") || entry.includes("wachtTijd")){
       waitVar = document.getElementById('waitTimeOptions').value;
       variableArray.push(waitVar);
+    }
+    if(entry.match(regex_pauze_5)){
+      let pauzeVar = enterPauzeVar(regex_pauze_5);
+      variableArray.push(pauzeVar);
     }
   }
   if(entry.includes("platformNr") || entry.includes("spoorNr")){
     platformVar = document.getElementById('platformNrOptions').value;
     platformVar = platformVar.replaceAll(/\'/g, "");
     variableArray.push(platformVar);
+    }    
+  if(entry.match(regex_pauze_5)){
+      let pauzeVar = enterPauzeVar(regex_pauze_5);
+      variableArray.push(pauzeVar);
     }
   if(wachtZinBool || wachtZinENBool){
     if(entry.includes("waitTime") || entry.includes("wachtTijd")){
       waitVar = document.getElementById('waitTimeOptions').value;
       variableArray.push(waitVar);
     }
+
   }
-  return variableArray, stationsArray;
+  console.log('entry getsigml ', entry);
+  return variableArray, stationsArray, entry;
 }
 
 function callbackTijd(data_var){
@@ -215,28 +274,21 @@ async function getSiGML(sentenceArray){
   var tempString = '<?xml version="1.0" encoding="utf-8"?><sigml>\n';
   // Automatically add smile to the start of every sentence
   tempString += '<hamgestural_sign gloss="" timescale="0.6" duration="1.1"><sign_manual holdover="true"></sign_manual><sign_nonmanual><mouthing_tier><mouthing_par><avatar_morph name="smlc" amount="0.7" speed="0.4" timing="x s l - m l x"/><avatar_morph name="eee" amount="0.3" speed="0.4" timing="x m t - m t"/></mouthing_par></mouthing_tier><body_tier><body_movement movement="ST"/></body_tier><head_tier><head_movement movement="SL" amount="1.5"/></head_tier><facialexpr_tier><facial_expr_par><eye_gaze movement="LE" amount="0.6"/><eye_brows movement="RB"/></facial_expr_par></facialexpr_tier></sign_nonmanual></hamgestural_sign>\n';
+  
   // Remove empty elements in array
   sentenceArray = sentenceArray.filter(e=>e);
-  if(onbekendeTijd){
-    console.log('true');
-    for(i=0; i<sentenceArray.length; i++){
-      if(sentenceArray[i] === 'vertrekt over een nog onbekende tijd van spoor'){
-        console.log('if true');
-        sentenceArray[i] = sentenceArray[i].replace(sentenceArray[i], 'vertrekt van spoor');
-        onbekendeTijd = false;
-      }
-    }
-    
-  }
   console.log('Sentence array final: ', sentenceArray);
+  
   // NL zin als ondertiteling
   glossArray = document.getElementById('currSentenceBox').innerText;
   glossArray = glossArray.replace('Current sentence:', '').toUpperCase();
   glossArray = glossArray.replace('Huidig omroepbericht:', '').toUpperCase();
+  glossArray = glossArray.replaceAll(/(\_\w{1,2}\d{1}\_)/g, "");
   document.getElementById('outputLong').innerHTML = glossArray;
 
   const [lastItem] = sentenceArray.slice(-1);
-  if(sentenceArray[0].match(/(Herhaling)/)){
+  // Display repetition bar when word is recognized
+  if(sentenceArray[0].match(/(Herhaling)/) || sentenceArray[0].match(/(Repetition)/)){
         console.log('Match herhaling');
         document.getElementById('repetitionBar').style.display = "inline-block";
       }
@@ -276,9 +328,9 @@ async function getSiGML(sentenceArray){
       }
     } else {
       if(el===" "){
-        console.log('Undefined or element skipped: ', "/\s"); // Puur informatief dat je ziet dat het een spatie is
+        console.log('Undefined, skipped or time notation merged: ', "/\s"); // Puur informatief dat je ziet dat het een spatie is (dus geskipt)
       } else {
-        console.log('Undefined or element skipped: ', el);
+        console.log('Undefined, skipped or time notation merged: ', el);
       }
     }
     if (el == lastItem){
@@ -288,7 +340,6 @@ async function getSiGML(sentenceArray){
       tempString += '</sigml>';
     }
   }
-  //console.log('tempString: ', tempString);
   globalVar.playing = true;
   globalVar.playFinished = false;
   globalVar.sigmlText = tempString;
@@ -325,11 +376,12 @@ function getInterStationsArray(){
     return regex_string;
 }
 
-function makeReadableAndShow(fullSentence){
+function makeReadable(fullSentence){
     fullSentence = fullSentence.replaceAll("-", "");
+    //fullSentence = fullSentence.replaceAll(/(\_\w{1,2}\_)/g, "");
     fullSentence = fullSentence.replaceAll(/\s\./g, ".");
-    fullSentence = fullSentence.replaceAll(/interStation\d{1}/g, "");
-    fullSentence = fullSentence.replaceAll(/tussenStation\d{1}/g, "");
+    fullSentence = fullSentence.replaceAll(/(interStation)\d{1}/g, "");
+    fullSentence = fullSentence.replaceAll(/(tussenStation)\d{1}/g, "");
     fullSentence = fullSentence.replaceAll(/[\,\']/g, ""); // Comma check needed (interstations)
     fullSentence = fullSentence.replaceAll(new RegExp("(\\d{1})+" + getInterStationsArray() +"(\\d{1})?", "g"), " $2 ");
     if(globalVar.lang==="English" && fullSentence.match(/to\d*\s*(and)?/)){ // Remove weird to ... construction (interstations)
@@ -338,7 +390,7 @@ function makeReadableAndShow(fullSentence){
     if(globalVar.lang==="Nederlands" && fullSentence.match(/naar\d*\s*(en)?/)){
       fullSentence = fullSentence.replace(/naar\d*\s*(en)?/, 'naar ');
     }
-    document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
+    
     // Remove interpunction for splitting purposes (later)
     fullSentence = fullSentence.replaceAll(/\./g, "");
     return fullSentence;
@@ -353,28 +405,71 @@ function makeReadableAndShow(fullSentence){
     var variableArray = [];
     var sentenceArray = [];
     var stationsArray = [];
-    n_telhand = 1;
-
-    // Initally, sentencePart includes the whole (polished) sentence
-    var sentencePart = makeReadableAndShow(fullSentence);
-    console.log("input: " + sentencePart);
-    // document.getElementById('outputSentence').value = sentencePart;
-
+    
+    // entry: de zin met de lege variabelen (e.g. trainType), nodig voor herkenning vd variabelen
     entry = document.querySelector('button[data-id="sentenceOptions"]').title;
     console.log('entry ', entry);
 
-    if(!checkUndefined(entry)){    
-      variableArray, stationsArray = getSigmlVariables(entry, variableArray, stationsArray);
+    // entryWithValues: de zin met ingevulde variabelen, nodig voor koppelen van de juiste .sigml
+    var entryWithValues = makeReadable(fullSentence);
+    console.log("input: " + entryWithValues);
+    
+    // Show sentence in UI without pause tags
+    fullSentence = entryWithValues.replaceAll(/(\_\w{1,2}\d{1}\_)/g, "");
+    document.getElementById('currSentence').innerHTML = '<b>' + fullSentence + '</b>';
+
+    if(!checkUndefined(entry)){
+      // In getSigmlVariables wordt de zinsstructuur van entry ook aangepast waar nodig
+      variableArray, stationsArray, entry = getSigmlVariables(entry, variableArray, stationsArray);
+      entry = makeReadable(entry);
+      console.log('entry andersom ', entry);
+      // HARD CODE, omdat entryWithValues niet gebruikt kan worden ivm afwijkende structuur worden hier de variabelen handmatig in entry ingevoegd zodat deze variabelen wel herkend worden in de split functie
+      try{
+        entry = entry.replace('trainType', document.getElementById('trainTypeOptions').value);
+        entry = entry.replace('treinType', document.getElementById('trainTypeOptions').value);
+      } catch {}
+      try{
+        entry = entry.replace('platformNr', document.getElementById('platformNrOptions').value);
+        entry = entry.replace('spoorNr', document.getElementById('platformNrOptions').value);
+      } catch {}
+      try{
+        entry = entry.replace('endStation', document.getElementById('endStationOptions').value);
+        entry = entry.replace('eindStation', document.getElementById('endStationOptions').value);
+      } catch {}
+      try{
+        entry = entry.replace('departTime', document.getElementById('departTimeInput').value);
+        entry = entry.replace('vertrekTijd', document.getElementById('departTimeInput').value);
+      } catch {}
+      try{
+        entry = entry.replace('waitTime', document.getElementById('waitTimeOptions').value);
+        entry = entry.replace('wachtTijd', document.getElementById('waitTimeOptions').value);
+      } catch {}
+      try {
+        entry.replace('interStation1', document.getElementById('interStation1Options').value);
+        entry.replace('tussenStation1', document.getElementById('interStation1Options').value);
+      } catch {}
+      try {
+        entry.replace('interStation2', document.getElementById('interStation2Options').value);
+        entry.replace('tussenStation2', document.getElementById('interStation1Options').value);
+      } catch {}
+      try {
+        entry.replace('interStation3', document.getElementById('interStation3Options').value);
+        entry.replace('tussenStation3', document.getElementById('interStation1Options').value);
+      } catch {}
+      try {
+        entry.replace('interStation4', document.getElementById('interStation4Options').value);
+        entry.replace('tussenStation4', document.getElementById('interStation1Options').value);
+      } catch {}
+      console.log('entry na repl getsentarray ', entry);
       console.log('var array ', variableArray);
       console.log('stations array ', stationsArray);
       // Split sentence around variables in array
       for(const vars of variableArray){
-        sentenceArray, sentencePart = splitSentence(sentencePart, vars, sentenceArray, stationsArray);
+        sentenceArray, entry = splitSentence(entry, vars, sentenceArray, stationsArray);
       }
-      n_telhand = 1;
       // Push last element
-      if(!sentencePart == ""){
-        sentenceArray.push(sentencePart);
+      if(!entry == ""){
+        sentenceArray.push(entry);
       }
       getSiGML(sentenceArray);
     }

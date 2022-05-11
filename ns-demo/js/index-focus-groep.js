@@ -201,7 +201,7 @@ function updateGlobalVariables(name, oldValue){
     resetBoxes(currentSentence, av);
     colorKeywords(currentSentence, av);
   } else {
-    $.getJSON("json/" + globalVar.urlName + ".json", function(json) {
+    $.getJSON("json/focus_groep/" + globalVar.urlName + ".json", function(json) {
     //createDropdown(Object.keys(json), 'sentenceOptions_av' + av);
     //globalVar.currentSentence[av] = Object.keys(json)[0];
     globalVar.currentSentence[av] = document.getElementById('sentenceOptions_av' + av).value;

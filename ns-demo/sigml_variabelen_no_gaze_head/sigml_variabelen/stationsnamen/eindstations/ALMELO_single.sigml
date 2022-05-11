@@ -1,0 +1,65 @@
+
+<hamgestural_sign gloss="ALMELO">
+        <sign_manual both_hands="true">
+            <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="opposed" thumbpos="out"/>
+            <split_handconfig>
+                <handconfig extfidir="ul" palmor="dr"/>
+                <handconfig extfidir="ur" palmor="dl"/>
+            </split_handconfig>
+            <location_bodyarm location="head"/>
+            <par_motion>
+                <directedmotion direction="l"/>
+                <tgt_motion>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="opposed" thumbpos="out"/>
+                        <split_handconfig>
+                            <handconfig extfidir="ul" palmor="dr"/>
+                            <handconfig extfidir="ur" palmor="dl"/>
+                        </split_handconfig>
+                    </tgt_motion>
+                    <split_location>
+                        <location_bodyarm location="head"/>
+                        <location_hand contact="touch" digits="2" location="tip">
+                            <location_hand digits="2" location="tip"/>
+                        </location_hand>
+                    </split_location>
+                </tgt_motion>
+            </par_motion>
+            <par_motion>
+                <directedmotion curve="d" direction="d"/>
+                <tgt_motion>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="opposed" thumbpos="out"/>
+                        <split_handconfig>
+                            <handconfig extfidir="ul" palmor="d" second_extfidir="uo"/>
+                            <handconfig extfidir="ur" palmor="d" second_extfidir="uo"/>
+                        </split_handconfig>
+                    </tgt_motion>
+                    <split_location>
+                        <location_bodyarm location="shouldertop"/>
+                        <location_hand contact="touch" digits="2" location="tip">
+                            <location_hand digits="2" location="tip"/>
+                        </location_hand>
+                    </split_location>
+                </tgt_motion>
+            </par_motion>
+            <directedmotion curve="u" direction="r"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="a:me:lo:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB" amount="0.3"/>
+                <body_movement movement="TF" amount="0.001"/>
+            </body_tier>
+            
+            <facialexpr_tier>
+                <eye_gaze movement="UP" amount="0.3"/>
+                
+                <eye_gaze movement="RI" amount="0.1" speed="0.6"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

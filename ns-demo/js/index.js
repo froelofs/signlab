@@ -10,8 +10,8 @@ var globalVar={
   interStation3: "interStation3",
   interStation4: "interStation4",
   endStation: "endStation",
-  currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
-  currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
+  currentSentence: "",
+  currentSentenceColored: "",
   urlName: "sentences_English",
   sigmlText: '',
   playButtonClicked: false,
@@ -55,12 +55,20 @@ var departTimeInputChange;
 // Call startUp() once
 startUp(globalVar.currentSentence, false);
 
-
+// Directly change depart time in sentence when value is changed
 $(departTimeInput).on("change", function(){
   departTimeInputChange = departTimeInput.value;
   replaceText(globalVar.currentSentence, departTimeInputChange, /\d{1,2}\:\d{2}/, globalVar.departTime);
   globalVar.playing ? makePlayNonClickable() : -1;
 })
+
+function showSentence(currentSentence){
+  // Werkt wel, maar even weggehaald want tijdens het vaststellen van de te vertalen zinsdelen en variabelen worden de zinnen uit de current displayed sentence (currSentence) gehaald, anders staan de gekozen variabelen er niet in.
+  // De functie hieronder haalt de pause tags weg uit deze displayed sentence, maar deze heb je nodig om de pauzes te kunnen herkennen
+  //curSentReplace = currentSentence.replaceAll(/(\_\w{1,2}\d{1}\_)/g, "");
+  //document.getElementById('currSentence').innerHTML = curSentReplace;
+  document.getElementById('currSentence').innerHTML = currentSentence;
+}
 
 function updateGlobalVariables(name, oldValue){
     if(name === "trainType" && train_n===1){
@@ -99,7 +107,7 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} name 
  */
  function replaceText(currentSentence, newValue, oldValue, name){
-   console.log(globalVar.playing);
+  console.log(globalVar.playing);
   globalVar.playing ? makePlayNonClickable() : -1;
 
   // Krijgt globale vars mee vanuit index.html
@@ -120,7 +128,7 @@ function updateGlobalVariables(name, oldValue){
       globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\d{2}\:\d{2}/, departTimeInputChange);
     }
   }
-  // Add invisible numbers to the intermediate station names such that their position is recognized
+  // Add invisible numbers to the intermediate station names to ensure that their position within the sentence is recognized (especially important when two interstations have the same station name)
   else if(name.match(/interStation\d{1}/)){
     var stationInt;
 
@@ -158,12 +166,13 @@ function updateGlobalVariables(name, oldValue){
   name === "endStation" ? globalVar.endStation = newValue : -1;
 
   // Remove space before invisible numbers
+  
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
-  document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
+  showSentence(globalVar.currentSentenceColored)
 }
 
 /**
- * Changes the varBox names and creates dropdown menu's, depending on the chosen language
+ * Creates dropdown menu's and changes the varBox names, depending on the chosen language
  * @param {*} language 
  */
  function startUp(currentSentence, changeSent) {
@@ -175,7 +184,6 @@ function updateGlobalVariables(name, oldValue){
   globalVar.urlName = "sentences_" + globalVar.lang;
 
   if(changeSent){
-    document.getElementById('currSentence').innerHTML = currentSentence;
     resetBoxes(currentSentence);
     colorKeywords(currentSentence);
   } else {
@@ -190,10 +198,10 @@ function updateGlobalVariables(name, oldValue){
     createDropdown(interStationsArray, 'interStation4Options');
     createDropdown(endStationsArray, 'endStationOptions');
 
-    document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
     resetBoxes(globalVar.currentSentence);
     colorKeywords(globalVar.currentSentence);
 
+    // Set default values as titles in dropdown menus
     document.querySelector('button[data-id="sentenceOptions"]').title = globalVar.currentSentence;
     document.querySelector('button[data-id="endStationOptions"]').title = endStationsArray[0];
     $('.selectpicker').selectpicker('refresh');
@@ -201,7 +209,7 @@ function updateGlobalVariables(name, oldValue){
     console.log("Could not get JSON file");
   });
   }
-  // Save initial dropdown menu values temporarily
+    // Save initial dropdown values temporarily
     trainTemp =  document.getElementById('trainTypeOptions').value;
     platformTemp =  document.getElementById('platformNrOptions').value;
     departTemp =  document.getElementById('departTimeInput').value;
@@ -269,7 +277,7 @@ function displayVarBox(text){
 
 
 /**
- * 
+ * Resets the global variables to their default values
  * @param {*} language 
  */
 function resetGlobalVariables(){
@@ -298,11 +306,10 @@ function resetGlobalVariables(){
 
 
 /**
- * Activated when language toggle is clicked, globalVar is changed and startUp() function is called again
+ * Activated when language toggle is clicked, globalVar is updated and startUp() function is called again
  * @param {*} language 
  */
 function changeLanguage(language){
-  // Update global language
   globalVar.lang = language;
   resetGlobalVariables();
   startUp(globalVar.currentSentence, false);
@@ -319,7 +326,11 @@ function changeLanguage(language){
   resetGlobalVariables();
   startUp(currentSentence, true);
 }
-  
+
+/**
+ * Reset the variable boxes when a sentence is changed
+ * @param {} currentSentence 
+ */
 function resetBoxes(currentSentence){
   makeVarBoxInvisible();
   displayVarBox(currentSentence);
@@ -343,8 +354,9 @@ function colorKeywords(currentSentence){
   currentSentence.includes(globalVar.interStation3) ? currentSentence = currentSentence.replaceAll(globalVar.interStation3, '<span style="color: orange;">' + globalVar.interStation3 + '</span>') : -1;
   currentSentence.includes(globalVar.interStation4) ? currentSentence = currentSentence.replaceAll(globalVar.interStation4, '<span style="color: orange;">' + globalVar.interStation4 + '</span>') : -1;
   
+  // Update global var and remove pause tags
   globalVar.currentSentenceColored = currentSentence;
-  document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored;
+  showSentence(currentSentence);
  
   // Reset default box values
   $("select[name=interStation1]").val("-");

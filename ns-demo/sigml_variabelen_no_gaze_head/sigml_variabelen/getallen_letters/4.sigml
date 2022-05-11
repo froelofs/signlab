@@ -1,0 +1,14 @@
+ <hamgestural_sign gloss="VIER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vi:r"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>

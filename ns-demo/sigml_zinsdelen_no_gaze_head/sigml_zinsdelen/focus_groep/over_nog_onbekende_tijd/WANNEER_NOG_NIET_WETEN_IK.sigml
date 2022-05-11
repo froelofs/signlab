@@ -1,0 +1,140 @@
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+        
+      </head_tier>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+        <eye_lids movement="BB"/>
+        
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+  
+  <hamgestural_sign gloss="WANNEER">
+    <sign_nonmanual>
+        <head_tier>
+          <head_par>
+            <head_movement movement="NF" amount="0.4"/>
+            
+          </head_par>
+        </head_tier>
+      <mouthing_tier>
+        <mouth_picture picture="vAneeR"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="RB" speed="0.6"/>
+        <eye_lids movement="WB" speed="0.6"/>
+	      
+      </facial_expr_par>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u" second_palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="ur" />
+        <fingerplay/>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+    <hamgestural_sign gloss="NOG NIET">
+    <sign_nonmanual>
+      <head_tier>
+        <head_par>
+                    
+          <head_movement movement="SH"/>
+        </head_par>
+      </head_tier>
+      <mouthing_tier>
+        <mouth_picture picture="nOni"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="ul"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="WETEN" timescale="0.6" duration="1.3">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L31"/>
+      </mouthing_tier>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SH"/>
+          
+        </head_par>
+      </head_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm contact="touch" location="forehead" side="right_at">
+        <location_hand digits="3" location="nail" side="palmar"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="ur" size="small"/>
+          <tgt_motion fast="true">
+            <changeposture/>
+            <handconfig extfidir="ul" second_extfidir="u"/>
+          </tgt_motion>
+        </par_motion>
+        <handconstellation contact="close"/>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+    <hamgestural_sign gloss="IK">
+    <sign_nonmanual>
+      <head_tier>
+          
+      </head_tier>
+    <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="bent" second_handshape="flat" second_thumbpos="out"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" second_side="right_at">
+        <location_hand location="palm"/>
+      </location_bodyarm>
+      <tgt_motion>
+        <par_motion>
+          <directedmotion direction="i"/>
+          <tgt_motion>
+            <changeposture/>
+            <handconfig extfidir="l" palmor="or" second_extfidir="iul"/>
+          </tgt_motion>
+        </par_motion>
+        <location_bodyarm contact="touch" location="shoulders" second_location="chest">
+          <location_hand digits="3" location="tip"/>
+        </location_bodyarm>
+      </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>

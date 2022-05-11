@@ -1,0 +1,77 @@
+  <hamgestural_sign gloss="15:31" timescale="0.9" duration="1.3">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vE_iftin"/>
+      </mouthing_tier>
+      <head_tier>
+	      
+      </head_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="uo" second_extfidir="o"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <circularmotion axis="l" size="small"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+      <hamgestural_sign gloss="15:31" timescale="0.9" duration="0.8">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L17"/>
+        <mouth_gesture movement="T04"/>
+      </mouthing_tier>
+      <head_tier>
+	      
+      </head_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="across" exempteddigits="2"/>
+      <handconfig extfidir="o"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" side="front" second_side="front" />
+      <directedmotion direction="o" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+
+    <hamgestural_sign gloss="15:31">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="en@ndERtIx" speed="2"/>
+      </mouthing_tier>
+      <head_tier>
+	      
+      </head_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig mainbend="round" exempteddigits="234" bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+        <handconfig extfidir="ul" palmor="l" second_extfidir="u"/>
+        <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ur"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
