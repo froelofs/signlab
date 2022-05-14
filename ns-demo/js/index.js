@@ -63,10 +63,6 @@ $(departTimeInput).on("change", function(){
 })
 
 function showSentence(currentSentence){
-  // Werkt wel, maar even weggehaald want tijdens het vaststellen van de te vertalen zinsdelen en variabelen worden de zinnen uit de current displayed sentence (currSentence) gehaald, anders staan de gekozen variabelen er niet in.
-  // De functie hieronder haalt de pause tags weg uit deze displayed sentence, maar deze heb je nodig om de pauzes te kunnen herkennen
-  //curSentReplace = currentSentence.replaceAll(/(\_\w{1,2}\d{1}\_)/g, "");
-  //document.getElementById('currSentence').innerHTML = curSentReplace;
   document.getElementById('currSentence').innerHTML = currentSentence;
 }
 
@@ -253,8 +249,6 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('currSentenceLabel').innerHTML = '<b><u>Current sentence: </u></b>';
     document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values ';
   }
-    
-    
 }
 
 /**
@@ -262,7 +256,6 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} text 
  */
 function displayVarBox(text){
-  
   text.includes(globalVar.trainType) ? trainTypeBox.style.display = "block" : -1;
   text.includes(globalVar.platformNr) ? platformBox.style.display = "block" : -1;
   text.includes(globalVar.departTime) ? departTimeBox.style.display = "block" : -1;
@@ -273,8 +266,6 @@ function displayVarBox(text){
   text.includes(globalVar.interStation4) ? interStationBox4.style.display = "block" : -1;
   text.includes(globalVar.endStation) ? endStationBox.style.display = "block" : -1;
 }
-
-
 
 /**
  * Resets the global variables to their default values

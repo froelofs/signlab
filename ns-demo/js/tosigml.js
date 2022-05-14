@@ -2,33 +2,38 @@ var trainVar;
 var platformVar;
 var departVar;
 var waitVar;
-var interVarArray = ["-", "-", "-", "-"];
 var endVar;
 var json_sent_NL;
 var json_sent_EN;
 var json_var;
 var onbekendeTijd;
 
-function pushSentencePart(sentencePart, sentenceArray, value, variable){
-  var sentencePartSubstring = sentencePart.substring(value, sentencePart.indexOf(variable)-1)
-  regex_space = new RegExp(/\s+(\w+\s*\w*\s*\w*\s*\w*)\s*/);
-  if(sentencePartSubstring.match(regex_space)){
-    console.log('sent part b ', sentencePartSubstring);
-    sentencePartSubstring = sentencePartSubstring.replace(regex_space, '$1');
-    console.log('sent part b after ', sentencePartSubstring);
+function removeExtraSpaces(sentencePart){
+  // Deze regex haalt extra spaties voor en na zinsdelen weg zodat ze beter matchen met de split_sentence zinsdelen. Voor het laatste zinsdeel werkt dit echter niet altijd goed, soms staat er nog steeds een extra spatie voor. In split_sentences_English.json en split_sentences_Nederlands.json staat daarom bij de laatste zinsdelen ook een optie met extra spatie
+  // Waarschijnlijk gaat dit mis bij het pushen van het laatste element in getSentenceArray(), maar ik heb de fout nog niet gevonden
+  regex_space = new RegExp(/\W\s+(\w+\s*\w*\s*\w*\s*\w*)\s*/);
+  if(sentencePart.match(regex_space)){
+    sentencePart = sentencePart.replace(regex_space, '$1');
   }
+  return sentencePart;
+}
 
+function pushSentencePart(sentencePart, sentenceArray, value, variable){
+  console.log('sentence part bij push: ', sentencePart);
+  var sentencePartSubstring = sentencePart.substring(value, sentencePart.indexOf(variable)-1)
+  sentencePartSubstring = removeExtraSpaces(sentencePartSubstring);
+  console.log('sentence part substring: ', sentencePartSubstring);
   sentenceArray.push(sentencePartSubstring);
 }
 
 function splitSentence(sentencePart, variable, sentenceArray){
   var regex_platform = /(\d{1,2})([a-z])/;
   if(variable.match(regex_platform)){
+    console.log('match platform');
     var number = platformVar.replace(regex_platform, '$1');
     var letter = platformVar.replace(regex_platform, '$2');
     pushSentencePart(sentencePart, sentenceArray, 1, variable);
     sentenceArray.push(number, letter);
-    // Platform is always the last variable. Skipping sentence part here is necessary
     return sentenceArray, "";
   }
   var regex_departTime = /(\d{1,2})\:(\d{2})/;
@@ -40,9 +45,16 @@ function splitSentence(sentencePart, variable, sentenceArray){
     sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
     return sentenceArray, sentencePart;
   }
-  pushSentencePart(sentencePart, sentenceArray, 0, variable);
+
+  // First word has no space before
+  if(sentenceArray.length === 0){
+    pushSentencePart(sentencePart, sentenceArray, 0, variable);
+  } else {
+    pushSentencePart(sentencePart, sentenceArray, 1, variable);
+  }
   sentenceArray.push(variable);
 
+  // Vervang 'naar_stationsnaam' en 'single_stationsnaam' met alleen de stationsnaam zodat deze gematcht kan worden aan de stationsnaam uit de zin
   var regex_naar = /(naar)\_(\w+)/; // for signs such as NAAR ALMELO
   var regex_single = /(sngl)\_(\w+)/; // for signs such as ALMELO
   if (variable.match(regex_naar)){
@@ -57,9 +69,10 @@ function splitSentence(sentencePart, variable, sentenceArray){
     sentencePart = sentencePart.substring(sentencePart.indexOf(variable) + variable.length, sentencePart.length);
     return sentenceArray, sentencePart;
   }
+
 }
 
-function pushInterVars(variableArray, stationsArray, first){
+function pushInterVars(variableArray, stationsArray, first, interVarArray){
   for(i=0; i<interVarArray.length; i++){
     if(interVarArray[i] !== "-"){
       if(first){
@@ -80,7 +93,9 @@ function enterPauzeVar(pauzeValue){
   return pauzeVar;
 }
 
-function getSigmlVariables(entry, variableArray, stationsArray){
+function getSigmlVariables(entry, varArray, stationsArray){
+  let interVarArray = ["-", "-", "-", "-"];
+
   // VOLGORDE VAN TOEVEGEN AAN ARRAY IS VAN BELANG VOOR DE SPLIT FUNCTIE (zin wordt opgesplitst na herkenning van de variabele, en als dat te vroeg of te laat gebeurt mis je dus zinsdelen of komen bepaalde delen dubbel voor)
   // entry.includes(globalvar.x) WERKT NIET ivm vervanging vd waardes
   var wachtZinBool, wachtZinENBool, stopZinBool, stopZinENBool = false;
@@ -115,29 +130,29 @@ function getSigmlVariables(entry, variableArray, stationsArray){
   
   if(entry.match(regex_pauze_0)){
     let pauzeVar = enterPauzeVar(regex_pauze_0);
-    variableArray.push(pauzeVar);
+    varArray.push(pauzeVar);
   }
 
   if(entry.includes("trainType") || entry.includes("treinType")){
     trainVar = document.getElementById('trainTypeOptions').value;
-    variableArray.push(trainVar);
+    varArray.push(trainVar);
   }
 
   if(entry.match(regex_pauze_1)){
     let pauzeVar = enterPauzeVar(regex_pauze_1);
-    variableArray.push(pauzeVar);
+    varArray.push(pauzeVar);
   }
 
   if(stopZinBool || stopZinENBool){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions').value;
-      variableArray.push(endVar);
+      varArray.push(endVar);
       stationsArray.push(endVar);
     }
 
     if(entry.match(regex_pauze_2)){
       let pauzeVar = enterPauzeVar(regex_pauze_2);
-      variableArray.push(pauzeVar);
+      varArray.push(pauzeVar);
     }
   }
 
@@ -158,67 +173,65 @@ function getSigmlVariables(entry, variableArray, stationsArray){
     if(entry.includes("endStation") || entry.includes("eindStation")){
       endVar = document.getElementById('endStationOptions').value;
       if(interVarArray[0] === "-" && interVarArray[1]==="-" && interVarArray[2]==="-" && interVarArray[3]==="-"){
-        variableArray.push(endVar);
+        varArray.push(endVar);
         stationsArray.push(endVar);
       } else {
-        variableArray, stationsArray = pushInterVars(variableArray, stationsArray, true)
+        varArray, stationsArray = pushInterVars(varArray, stationsArray, true, interVarArray)
         // sngl betekent een single gebaar voor het station, dus niet al gekoppeld aan de NAAR beweging
         endVar = "sngl_" + endVar;
-        variableArray.push(endVar);
+        varArray.push(endVar);
         stationsArray.push(endVar);
       }
     }
     if(entry.match(regex_pauze_2)){
       let pauzeVar = enterPauzeVar(regex_pauze_2);
-      variableArray.push(pauzeVar);
+      varArray.push(pauzeVar);
     }
   } else {
-    variableArray, stationsArray = pushInterVars(variableArray, stationsArray, false)
+    varArray, stationsArray = pushInterVars(varArray, stationsArray, false, interVarArray)
   }
   
   if(entry.includes("departTime") || entry.includes("vertrekTijd")){
     departVar = document.getElementById('departTimeInput').value;
-    variableArray.push(departVar);
+    varArray.push(departVar);
   }
 
   if(entry.match(regex_pauze_3)){
     let pauzeVar = enterPauzeVar(regex_pauze_3);
-    variableArray.push(pauzeVar);
+    varArray.push(pauzeVar);
   }
 
   if(entry.match(regex_pauze_4)){
     let pauzeVar = enterPauzeVar(regex_pauze_4);
-    variableArray.push(pauzeVar);
+    varArray.push(pauzeVar);
   }
 
   if(!wachtZinBool && !wachtZinENBool){
     if(entry.includes("waitTime") || entry.includes("wachtTijd")){
       waitVar = document.getElementById('waitTimeOptions').value;
-      variableArray.push(waitVar);
+      varArray.push(waitVar);
     }
     if(entry.match(regex_pauze_5)){
       let pauzeVar = enterPauzeVar(regex_pauze_5);
-      variableArray.push(pauzeVar);
+      varArray.push(pauzeVar);
     }
   }
   if(entry.includes("platformNr") || entry.includes("spoorNr")){
     platformVar = document.getElementById('platformNrOptions').value;
     platformVar = platformVar.replaceAll(/\'/g, "");
-    variableArray.push(platformVar);
+    varArray.push(platformVar);
     }    
   if(entry.match(regex_pauze_5)){
       let pauzeVar = enterPauzeVar(regex_pauze_5);
-      variableArray.push(pauzeVar);
+      varArray.push(pauzeVar);
     }
   if(wachtZinBool || wachtZinENBool){
     if(entry.includes("waitTime") || entry.includes("wachtTijd")){
       waitVar = document.getElementById('waitTimeOptions').value;
-      variableArray.push(waitVar);
+      varArray.push(waitVar);
     }
-
   }
-  console.log('entry getsigml ', entry);
-  return variableArray, stationsArray, entry;
+  return varArray, stationsArray, entry;
 }
 
 function callbackTijd(data_var){
@@ -397,15 +410,18 @@ function makeReadable(fullSentence){
 }
 
   /**
-   * // Checks the dictionary for an entry that matches 'text' and sends the SiGML code to the avatar
-   * @param {*} text 
-   * @param {*} alert 
+   * Get the current sentence (entry), show it in the UI, get the variableArray and split the current sentence based on this array
+   * This function is activated once after clicking 'play'
+   * @param {*} fullSentence 
    */
   function getSentenceArray(fullSentence){
-    var variableArray = [];
-    var sentenceArray = [];
-    var stationsArray = [];
-    
+    let variableArray = []; // Only makes a copy, so length = 0 is necessary to really empty the contents
+    let sentenceArray = [];
+    let stationsArray = [];
+    variableArray.length = 0;
+    sentenceArray.length = 0;
+    stationsArray.length = 0;
+
     // entry: de zin met de lege variabelen (e.g. trainType), nodig voor herkenning vd variabelen
     entry = document.querySelector('button[data-id="sentenceOptions"]').title;
     console.log('entry ', entry);
@@ -421,45 +437,55 @@ function makeReadable(fullSentence){
     if(!checkUndefined(entry)){
       // In getSigmlVariables wordt de zinsstructuur van entry ook aangepast waar nodig
       variableArray, stationsArray, entry = getSigmlVariables(entry, variableArray, stationsArray);
-      entry = makeReadable(entry);
+      console.log('array after: ', variableArray);
       console.log('entry andersom ', entry);
       // HARD CODE, omdat entryWithValues niet gebruikt kan worden ivm afwijkende structuur worden hier de variabelen handmatig in entry ingevoegd zodat deze variabelen wel herkend worden in de split functie
       try{
         entry = entry.replace('trainType', document.getElementById('trainTypeOptions').value);
         entry = entry.replace('treinType', document.getElementById('trainTypeOptions').value);
+        console.log('entry train ', entry);
       } catch {}
       try{
         entry = entry.replace('platformNr', document.getElementById('platformNrOptions').value);
         entry = entry.replace('spoorNr', document.getElementById('platformNrOptions').value);
+        console.log('entry spoor ', entry);
       } catch {}
       try{
         entry = entry.replace('endStation', document.getElementById('endStationOptions').value);
         entry = entry.replace('eindStation', document.getElementById('endStationOptions').value);
+        console.log('entry end ', entry);
       } catch {}
       try{
         entry = entry.replace('departTime', document.getElementById('departTimeInput').value);
         entry = entry.replace('vertrekTijd', document.getElementById('departTimeInput').value);
+        console.log('entry depart ', entry);
       } catch {}
       try{
         entry = entry.replace('waitTime', document.getElementById('waitTimeOptions').value);
         entry = entry.replace('wachtTijd', document.getElementById('waitTimeOptions').value);
+        console.log('entry wait ', entry);
       } catch {}
       try {
-        entry.replace('interStation1', document.getElementById('interStation1Options').value);
-        entry.replace('tussenStation1', document.getElementById('interStation1Options').value);
+        entry = entry.replace('interStation1', document.getElementById('interStation1Options').value);
+        entry = entry.replace('tussenStation1', document.getElementById('interStation1Options').value);
+        console.log('entry inter1 ', entry);
       } catch {}
       try {
-        entry.replace('interStation2', document.getElementById('interStation2Options').value);
-        entry.replace('tussenStation2', document.getElementById('interStation1Options').value);
+        entry = entry.replace('interStation2', document.getElementById('interStation2Options').value);
+        entry = entry.replace('tussenStation2', document.getElementById('interStation2Options').value);
+        console.log('entry inter2 ', entry);
       } catch {}
       try {
-        entry.replace('interStation3', document.getElementById('interStation3Options').value);
-        entry.replace('tussenStation3', document.getElementById('interStation1Options').value);
+        entry = entry.replace('interStation3', document.getElementById('interStation3Options').value);
+        entry = entry.replace('tussenStation3', document.getElementById('interStation3Options').value);
+        console.log('entry inter3 ', entry);
       } catch {}
       try {
-        entry.replace('interStation4', document.getElementById('interStation4Options').value);
-        entry.replace('tussenStation4', document.getElementById('interStation1Options').value);
+        entry = entry.replace('interStation4', document.getElementById('interStation4Options').value);
+        entry = entry.replace('tussenStation4', document.getElementById('interStation4Options').value);
+        console.log('entry inter4 ', entry);
       } catch {}
+      entry = makeReadable(entry);
       console.log('entry na repl getsentarray ', entry);
       console.log('var array ', variableArray);
       console.log('stations array ', stationsArray);
@@ -469,6 +495,7 @@ function makeReadable(fullSentence){
       }
       // Push last element
       if(!entry == ""){
+        entry = removeExtraSpaces(entry);
         sentenceArray.push(entry);
       }
       getSiGML(sentenceArray);
