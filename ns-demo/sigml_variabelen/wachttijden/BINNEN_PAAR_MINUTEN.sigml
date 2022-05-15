@@ -23,7 +23,6 @@
     </sign_manual>
   </hamgestural_sign>
 
-
  <hamgestural_sign gloss="EEN PAAR">
     <sign_nonmanual>
       <head_tier>
@@ -41,7 +40,7 @@
     <sign_manual>
       <handconfig handshape="finger2345" second_handshape="finger2345" thumbpos="out"/>
       <handconfig extfidir="u"/>
-      <handconfig palmor="ul" second_palmor="u"/>
+      <handconfig palmor="ul" second_palmor="ur"/>
       <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
       <par_motion>
         <directedmotion direction="r" />

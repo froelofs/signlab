@@ -1,4 +1,4 @@
-// Global variable for the language (default: English)
+// Globale variabelen zodat je ze ook in andere javascript files kan gebruiken
 var globalVar={
   lang: "English",
   trainType: "trainType",

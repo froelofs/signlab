@@ -1,6 +1,6 @@
 {
     "Hello _xl0_ the trainType _s1_ to endStation _s2_ of departTime _l3_ is not departing.": "sigml_zinsdelen/LEEG.sigml",
-    "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ in waitTime _m5_ from platform platformNr.": "sigml_zinsdelen/LEEG.sigml",
+    "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ waitTime _m5_ from platform platformNr.": "sigml_zinsdelen/LEEG.sigml",
     "Repetition. The trainType _s1_ to endStation _s2_ of departTime _l3_ runs through _s4_ another route.": "sigml_zinsdelen/LEEG.sigml",
     "Hello _xl0_ the trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ does not stop _m3_ at intermediate stations.": "sigml_zinsdelen/LEEG.sigml",
     "Hello _xl0_ the trainType _s1_ to endStation _s2_ departs _m3_ from platform platformNr.": "sigml_zinsdelen/LEEG.sigml"

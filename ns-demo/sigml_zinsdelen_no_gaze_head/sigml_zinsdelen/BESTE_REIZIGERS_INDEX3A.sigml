@@ -3,12 +3,6 @@
       <mouthing_tier>
         <mouth_picture picture="Alo:"/>
       </mouthing_tier>
-      <head_tier>
-        
-      </head_tier>
-      <facialexpr_tier>
-        
-      </facialexpr_tier>
     </sign_nonmanual>
       <sign_manual>
         <handconfig handshape="flat" second_handshape="finger2345" thumbpos="out"/>
@@ -27,11 +21,8 @@
       </sign_manual>
   </hamgestural_sign>
     
-  <hamgestural_sign gloss="DE">
+  <hamgestural_sign gloss="DE" timescale="0.8" duration="0.9">
     <sign_nonmanual>
-      <head_tier>
-          
-      </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
          <eye_lids movement="SB" />
@@ -41,9 +32,8 @@
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
-      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig extfidir="o" second_extfidir="o"/>
       <handconfig palmor="d"/>
       <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
-      <directedmotion direction="dr" size="small"/>
     </sign_manual>
   </hamgestural_sign>

@@ -107,18 +107,18 @@ function getSigmlVariables(entry, varArray, stationsArray){
   let regex_pauze_5 = new RegExp(/\_(\w{1,2})5\_/);
 
   // HARD CODE dat de structuur van bepaalde zinnen verandert
-  var wachtZin = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ over wachtTijd _m5_ van spoor spoorNr.";
-  var wachtZinEN = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ in waitTime _m5_ from platform platformNr.";
+  var wachtZin = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ wachtTijd _m5_ van spoor spoorNr.";
+  var wachtZinEN = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ waitTime _m5_ from platform platformNr.";
 
   var stopZin = "Hallo _xl0_, de treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ stopt niet _m3_ op tussengelegen stations.";
   var stopZinEN = "Hello _xl0_, the trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ does not stop _m3_ at intermediate stations.";
 
   console.log('entry sigml ', entry);
   if(entry === wachtZin){
-    entry = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ van spoor spoorNr _m5_ over wachtTijd.";
+    entry = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ van spoor spoorNr _m5_ wachtTijd.";
     wachtZinBool = true;
   } else if(entry === wachtZinEN){
-    entry = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ from platform platformNr _m5_ in waitTime.";
+    entry = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ from platform platformNr _m5_ waitTime.";
     wachtZinENBool = true;
   } else if(entry === stopZin){
     entry = "Hallo _xl0_, de treinType _s1_ naar eindStation _s2_ stopt niet _m3_ op tussengelegen stations tussenStation1, tussenStation2, tussenStation3, tussenStation4."; 

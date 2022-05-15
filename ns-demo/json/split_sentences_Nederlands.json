@@ -5,7 +5,6 @@
     "naar ": "sigml_zinsdelen/LEEG.sigml",
     "van": "sigml_zinsdelen/VAN.sigml",
     "en": "sigml_zinsdelen/LEEG.sigml",
-    "over": "sigml_zinsdelen/OVER.sigml",
     "Herhaling De": "sigml_zinsdelen/INDEX3A.sigml",
     "De": "sigml_zinsdelen/INDEX3A.sigml",
     "de": "sigml_zinsdelen/INDEX3A.sigml",
@@ -14,10 +13,10 @@
     "rijdt via": "sigml_zinsdelen/INDEX3A_RIJDEN_trein.sigml",
     "een andere route": "sigml_zinsdelen/ANDERE_ROUTE.sigml",
     " een andere route": "sigml_zinsdelen/ANDERE_ROUTE.sigml",
-    "stopt niet": "sigml_zinsdelen/focus_groep/niet_stoppen_tussengelegen_stations/NIET_STOPPEN_meerdere.sigml",
-    "op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
-    " op tussengelegen stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
+    "stopt niet": "sigml_zinsdelen/INDEX3A_NIET_STOPPEN_meerdere.sigml",
+    "op tussengelegen stations": "sigml_zinsdelen/INDEX3A_STATIONS_NIET_STOPPEN_meerdere.sigml",
+    " op tussengelegen stations": "sigml_zinsdelen/INDEX3A_STATIONS_NIET_STOPPEN_meerdere.sigml",
     "vertrekt": "sigml_zinsdelen/INDEX3A_VERTREKKEN.sigml",
     "spoor": "sigml_zinsdelen/SPOOR_perron.sigml",
-    "van spoor": "sigml_zinsdelen/INDEX3B_SPOOR_perron.sigml"
+    "van spoor": "sigml_zinsdelen/SPOOR_perron_INDEX3B.sigml"
 }

@@ -1,4 +1,4 @@
-  <hamgestural_sign gloss="DE" timescale="0.8" duration="0.9">
+<hamgestural_sign gloss="" timescale="0.8" duration="0.9">
     <sign_nonmanual>
       <head_tier>
           <head_movement movement="SL" amount="1.5"/>
@@ -14,6 +14,6 @@
       <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
       <handconfig extfidir="o" second_extfidir="o"/>
       <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="chest" side="left_at" second_side="left_beside"/>
     </sign_manual>
   </hamgestural_sign>
