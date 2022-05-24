@@ -213,7 +213,7 @@ function updateGlobalVariables(name, oldValue){
     endStationTemp =  document.getElementById('endStationOptions').value;
   
   if (globalVar.lang == "Nederlands"){
-    var waitElementsArray = ["enkele minuten", "ongeveer 5 minuten", "ongeveer 35 minuten", "ongeveer anderhalf uur", "een nog onbekende tijd"];
+    var waitElementsArray = ["over enkele minuten", "over ongeveer 5 minuten", "over ongeveer 35 minuten", "over ongeveer anderhalf uur", "over een nog onbekende tijd"];
 
     document.getElementById('trainType').innerHTML = 'Treintype: ';
     document.getElementById('platform').innerHTML = 'Spoornummer: ';
@@ -232,7 +232,7 @@ function updateGlobalVariables(name, oldValue){
   }
   else {
     console.log('lang', globalVar.lang)
-    var waitElementsArray = ["a few minutes", "approximately 5 minutes", "approximately 35 minutes", "approximately 1.5 hours", "an unknown time"];
+    var waitElementsArray = ["in a few minutes", "in approximately 5 minutes", "in approximately 35 minutes", "in approximately 1.5 hours", "in an unknown time"];
 
     document.getElementById('trainType').innerHTML = 'Train type: ';
     document.getElementById('platform').innerHTML = 'Platform number: ';

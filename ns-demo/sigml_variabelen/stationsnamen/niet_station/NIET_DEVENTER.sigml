@@ -1,0 +1,40 @@
+
+    
+    <hamgestural_sign gloss="DEVENTER">
+        <sign_manual>
+            <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="hooked" thumbpos="opposed"/>
+            <handconfig extfidir="ul" second_extfidir="l"/>
+            <handconfig palmor="l" second_palmor="ul"/>
+            <location_bodyarm location="shoulders"/>
+            <tgt_motion>
+                <changeposture/>
+                <handconfig handshape="finger2" second_handshape="finger2" second_mainbend="hooked" thumbpos="opposed"/>
+                <location_bodyarm contact="touch" location="underchin" side="left_at">
+                    <location_hand digits="2" location="nail" side="palmar"/>
+                </location_bodyarm>
+            </tgt_motion>
+            <rpt_motion repetition="fromstart_several">
+                <directedmotion direction="o" fast="true" size="small"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="devEnto:" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_par>
+                    <head_movement movement="SH" speed="0.7"/>
+                    <head_movement movement="SL" amount="1.5"/>
+                </head_par>
+            </head_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+                    <eye_lids movement="WB" amount="0.6"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
+                </facial_expr_par>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

@@ -14,9 +14,9 @@
     "runs through": "sigml_zinsdelen/INDEX3A_RIJDEN_trein.sigml",
     "another route": "sigml_zinsdelen/ANDERE_ROUTE.sigml",
     " another route": "sigml_zinsdelen/ANDERE_ROUTE.sigml",
-    "does not stop": "sigml_zinsdelen/INDEX3A_NIET_STOPPEN_meerdere.sigml",
-    "at intermediate stations": "sigml_zinsdelen/INDEX3A_STATIONS_NIET_STOPPEN_meerdere.sigml",
-    " at intermediate stations": "sigml_zinsdelen/INDEX3A_STATIONS_NIET_STOPPEN_meerdere.sigml",
+    "does not stop": "sigml_zinsdelen/STOP_NIET.sigml",
+    "at intermediate stations": "sigml_zinsdelen/LEEG.sigml",
+    " at intermediate stations": "sigml_zinsdelen/LEEG.sigml",
     "departs": "sigml_zinsdelen/INDEX3A_VERTREKKEN.sigml",
     "platform": "sigml_zinsdelen/SPOOR_perron.sigml",
     "from platform": "sigml_zinsdelen/SPOOR_perron_INDEX3B.sigml"
