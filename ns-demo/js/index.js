@@ -34,7 +34,7 @@ var endStationTemp;
 
 var oldStationInt;
 
-// Inter en end array moeten verschillende stations bevatten anders worden ze op elkaars plek ingevuld (kleine bug)
+// Interstation array en endstation array moeten verschillende stations bevatten anders worden ze op elkaars plek ingevuld
 var interStationsArray = ["-", "Zwolle", "Arnhem", "Deventer", "Breda"]
 var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Maastricht", "Schiedam", "Utrecht Centraal"]
 
@@ -49,23 +49,32 @@ interStationBox4 = document.getElementById('interStationBox4')
 endStationBox = document.getElementById('endStationBox')
 
 var departTimeInput = document.getElementById('departTimeInput');
-// departTimeInput = departTimeInput.value;
 var departTimeInputChange;
 
-// Call startUp() once
+// Roep startUp() 1x aan in het begin
 startUp(globalVar.currentSentence, false);
 
-// Directly change depart time in sentence when value is changed
+// Verander de depart time direct als deze in de zin wordt aangepast
 $(departTimeInput).on("change", function(){
   departTimeInputChange = departTimeInput.value;
   replaceText(globalVar.currentSentence, departTimeInputChange, /\d{1,2}\:\d{2}/, globalVar.departTime);
   globalVar.playing ? makePlayNonClickable() : -1;
 })
 
+/**
+ * Weergeven van de gekozen zin in het curren sentence blok
+ * @param {*} currentSentence 
+ */
 function showSentence(currentSentence){
   document.getElementById('currSentence').innerHTML = currentSentence;
 }
 
+/**
+ * Update de globale variabelen. Doe dit maar 1x aan het begin (vandaar de train_n etc.)
+ * @param {*} name 
+ * @param {*} oldValue 
+ * @returns 
+ */
 function updateGlobalVariables(name, oldValue){
     if(name === "trainType" && train_n===1){
       globalVar.trainType = trainTemp;
@@ -96,7 +105,7 @@ function updateGlobalVariables(name, oldValue){
 }
 
 /**
- * Checks whether the input sentence contains a variable and needs additional input from the user
+ * Functie wordt aangeroepen als er een dropdown menu verandert (zie index.html). Functie verandert de huidige waarde met een nieuwe, incl. de oranje kleur
  * @param {*} currentSentence 
  * @param {*} newValue 
  * @param {*} oldValue 
@@ -162,14 +171,14 @@ function updateGlobalVariables(name, oldValue){
   name === "endStation" ? globalVar.endStation = newValue : -1;
 
   // Remove space before invisible numbers
-  
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
   showSentence(globalVar.currentSentenceColored)
 }
 
 /**
- * Creates dropdown menu's and changes the varBox names, depending on the chosen language
- * @param {*} language 
+ * Maak dropdown menu's (sentenceoptions en variabelen), afhankelijk van de array inhoud. En maak de labels voor de menu's
+ * @param {*} currentSentence 
+ * @param {*} changeSent 
  */
  function startUp(currentSentence, changeSent) {
   train_n=1;
@@ -268,7 +277,7 @@ function displayVarBox(text){
 }
 
 /**
- * Resets the global variables to their default values
+ * Reset de globale variabelen naar de default waarden, zodat deze aan het begin weer herkend kunnen worden als vars
  * @param {*} language 
  */
 function resetGlobalVariables(){
@@ -327,8 +336,11 @@ function resetBoxes(currentSentence){
   displayVarBox(currentSentence);
 }
 
+/**
+ * Maak de variabelen een oranje kleur door het plaatsen van een <span> en style in het betreffende zinsdeel
+ * @param {*} currentSentence 
+ */
 function colorKeywords(currentSentence){
-  // Color keywords
   if(currentSentence.includes(globalVar.trainType)){
     currentSentence = currentSentence.replace(globalVar.trainType, '<span style="color: orange;">' + document.getElementById('trainTypeOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.platformNr)){
@@ -345,7 +357,7 @@ function colorKeywords(currentSentence){
   currentSentence.includes(globalVar.interStation3) ? currentSentence = currentSentence.replaceAll(globalVar.interStation3, '<span style="color: orange;">' + globalVar.interStation3 + '</span>') : -1;
   currentSentence.includes(globalVar.interStation4) ? currentSentence = currentSentence.replaceAll(globalVar.interStation4, '<span style="color: orange;">' + globalVar.interStation4 + '</span>') : -1;
   
-  // Update global var and remove pause tags
+  // Update global var and show sentence
   globalVar.currentSentenceColored = currentSentence;
   showSentence(currentSentence);
  
@@ -362,7 +374,7 @@ function colorKeywords(currentSentence){
 }
 
 /**
- * Creates dropdown menus
+ * Create dropdown menus
  * @param {*} elements 
  * @param {*} selectType 
  */
@@ -379,7 +391,7 @@ function createDropdown(elements, id){
 }
 
 /**
- * Password function first page
+ * Password function first page (inactive)
  * @param {} input 
  */
 function compare(input){
@@ -417,6 +429,9 @@ function makePlayClickable(){
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
+/**
+ * Disable play button
+ */
 function makePlayNonClickable(){
   globalVar.playButtonClicked = true;
   document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");

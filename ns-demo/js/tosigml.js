@@ -9,9 +9,14 @@ var json_var;
 var onbekendeTijd;
 var n_telhand;
 
+/**
+ * Verwijder extra spaties voor en na zinsdelen weg zodat ze beter matchen met de split_sentence zinsdelen. Voor het laatste zinsdeel werkt dit echter niet altijd goed, soms staat er nog steeds een extra spatie voor.
+ * In split_sentences_English.json en split_sentences_Nederlands.json staat daarom bij de laatste zinsdelen ook een optie met extra spatie. Waarschijnlijk gaat dit mis bij het pushen van het laatste element in getSentenceArray(), maar ik heb de fout nog niet gevonden
+ * @param {*} sentencePart 
+ * @returns 
+ */
 function removeExtraSpaces(sentencePart) {
-  // Deze regex haalt extra spaties voor en na zinsdelen weg zodat ze beter matchen met de split_sentence zinsdelen. Voor het laatste zinsdeel werkt dit echter niet altijd goed, soms staat er nog steeds een extra spatie voor. In split_sentences_English.json en split_sentences_Nederlands.json staat daarom bij de laatste zinsdelen ook een optie met extra spatie
-  // Waarschijnlijk gaat dit mis bij het pushen van het laatste element in getSentenceArray(), maar ik heb de fout nog niet gevonden
+
   regex_space = new RegExp(/\W\s+(\w+\s*\w*\s*\w*\s*\w*)\s*/);
   if (sentencePart.match(regex_space)) {
     sentencePart = sentencePart.replace(regex_space, '$1');
@@ -19,6 +24,13 @@ function removeExtraSpaces(sentencePart) {
   return sentencePart;
 }
 
+/**
+ * Push sentence part to sentence array
+ * @param {*} sentencePart 
+ * @param {*} sentenceArray 
+ * @param {*} value 
+ * @param {*} variable 
+ */
 function pushSentencePart(sentencePart, sentenceArray, value, variable) {
   console.log('sentence part bij push: ', sentencePart);
   var sentencePartSubstring = sentencePart.substring(value, sentencePart.indexOf(variable) - 1);
@@ -37,6 +49,14 @@ function replaceStationName(regex, variable, sentencePart, sentenceArray){
   return sentenceArray, sentencePart;
 }
 
+/**
+ * Cut sentence in parts according to the detected variables
+ * @param {*} sentencePart 
+ * @param {*} variable 
+ * @param {*} sentenceArray 
+ * @param {*} stationsArray 
+ * @returns 
+ */
 function splitSentence(sentencePart, variable, sentenceArray, stationsArray) {
   var regex_platform = /(\d{1,2})([a-z])/;
   if (variable.match(regex_platform)) {
@@ -84,7 +104,7 @@ function splitSentence(sentencePart, variable, sentenceArray, stationsArray) {
   }
   sentenceArray.push(variable);
 
-  
+  // Tijdelijke vervanging van de stationsnaam in de zin door de stationsnaam met extra voorvoegsel, nodig voor herkenning van de naam
   var regex_naar = /(naar)\_(\w+)/; // for signs such as NAAR ALMELO
   var regex_single = /(sngl)\_(\w+)/; // for signs such as ALMELO
   var regex_niet = /(niet)\_(\w+)/; // for signs such as NIET_BREDA
@@ -100,6 +120,15 @@ function splitSentence(sentencePart, variable, sentenceArray, stationsArray) {
   }
 }
 
+/**
+ * Push interstation vars naar station en var arrays
+ * @param {*} variableArray 
+ * @param {*} stationsArray 
+ * @param {*} first 
+ * @param {*} interVarArray 
+ * @param {*} stopzinniet 
+ * @returns 
+ */
 function pushInterVars(variableArray, stationsArray, first, interVarArray, stopzinniet) {
   for (i = 0; i < interVarArray.length; i++) {
     if (interVarArray[i] !== "-") {
@@ -119,11 +148,23 @@ function pushInterVars(variableArray, stationsArray, first, interVarArray, stopz
   return variableArray, stationsArray;
 }
 
+/**
+ * Herkennen van de pauze vars (e.g. _m3_)
+ * @param {*} pauzeValue 
+ * @returns 
+ */
 function enterPauzeVar(pauzeValue) {
   var pauzeVar = entry.match(pauzeValue)[0];
   return pauzeVar;
 }
 
+/**
+ * Check of een variabele voorkomt in de zin, zo ja, push naar variable array
+ * @param {*} entry 
+ * @param {*} varArray 
+ * @param {*} stationsArray 
+ * @returns 
+ */
 function getSigmlVariables(entry, varArray, stationsArray) {
   let interVarArray = ["-", "-", "-", "-"];
   var wachtZinBool, wachtZinENBool, stopZinBool, stopZinENBool = false;
@@ -138,7 +179,7 @@ function getSigmlVariables(entry, varArray, stationsArray) {
   let regex_pauze_4 = new RegExp(/\_(\w{1,2})4\_/);
   let regex_pauze_5 = new RegExp(/\_(\w{1,2})5\_/);
 
-  // HARD CODE dat de structuur van bepaalde zinnen verandert
+  // HARD CODE dat de structuur van bepaalde zinnen verandert zoals besproken in focus groepen en co design
   var wachtZin = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ wachtTijd _m5_ van spoor spoorNr.";
   var wachtZinEN = "The trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ of departTime _l3_ departs _m4_ waitTime _m5_ from platform platformNr.";
 
@@ -289,6 +330,9 @@ function callbackSent_EN(data_sent) {
   json_sent_EN = data_sent;
 }
 
+/**
+ * Get data
+ */
 $.getJSON("json/hele_uren.json", function (data_var) {
   callbackTijd(data_var);
 }).fail(function () {
@@ -319,6 +363,10 @@ async function getSiGMLContent(el) {
   return data;
 }
 
+/**
+ * Match de sentence parts en variables met de sigml files, plak alle sigml achter elkaar en stuur deze naar avatar engine
+ * @param {*} sentenceArray 
+ */
 async function getSiGML(sentenceArray) {
   var regex_sigml = new RegExp(/\<hamgestural\_sign\sgloss\=\"(\w*\s?\:?\w*\s?\w*\s?)(\>)?\"/, "g");
   var tijdArray = [];
@@ -428,6 +476,11 @@ function getInterStationsArray() {
   return regex_string;
 }
 
+/**
+ * Vooral relevant voor het current sentence blok, haal niet-ingevulde interstation vars weg, haal vreemde interpunctie en spaties weg etc.
+ * @param {*} fullSentence 
+ * @returns 
+ */
 function makeReadable(fullSentence) {
   fullSentence = fullSentence.replaceAll("-", "");
   //fullSentence = fullSentence.replaceAll(/(\_\w{1,2}\_)/g, "");
@@ -449,7 +502,7 @@ function makeReadable(fullSentence) {
 }
 
 /**
- * Get the current sentence (entry), show it in the UI, get the variableArray and split the current sentence based on this array
+ * Get the current sentence (entry), show it in the UI, get the variableArray (getSigmlVariables()) and split the current sentence based on this array (splitSentence())
  * This function is activated once after clicking 'play'
  * @param {*} fullSentence 
  */
