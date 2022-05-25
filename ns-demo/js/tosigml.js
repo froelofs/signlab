@@ -1,3 +1,7 @@
+/**
+ * Alle stappen NADAT er op play wordt gedrukt, dus herkennen variabelen, splitten van de zin op basis van deze vars, sigml json data opvragen en koppelen aan zinsdelen/vars, etc.
+ */
+
 var trainVar;
 var platformVar;
 var departVar;

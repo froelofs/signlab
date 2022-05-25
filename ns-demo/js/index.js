@@ -1,3 +1,8 @@
+/**
+ * Alle stappen VOORDAT er op play wordt gedrukt. Dus aanmaken van alle dropdown menu's, kleuren van keywords, etc.
+ */
+
+
 // Globale variabelen zodat je ze ook in andere javascript files kan gebruiken
 var globalVar={
   lang: "English",
