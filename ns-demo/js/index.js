@@ -117,7 +117,6 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} name 
  */
  function replaceText(currentSentence, newValue, oldValue, name){
-  console.log(globalVar.playing);
   globalVar.playing ? makePlayNonClickable() : -1;
 
   // Krijgt globale vars mee vanuit index.html

@@ -36,10 +36,8 @@ function removeExtraSpaces(sentencePart) {
  * @param {*} variable 
  */
 function pushSentencePart(sentencePart, sentenceArray, value, variable) {
-  console.log('sentence part bij push: ', sentencePart);
   var sentencePartSubstring = sentencePart.substring(value, sentencePart.indexOf(variable) - 1);
   sentencePartSubstring = removeExtraSpaces(sentencePartSubstring);
-  console.log('sentence part substring: ', sentencePartSubstring);
   sentenceArray.push(sentencePartSubstring);
 }
 
@@ -64,7 +62,6 @@ function replaceStationName(regex, variable, sentencePart, sentenceArray){
 function splitSentence(sentencePart, variable, sentenceArray, stationsArray) {
   var regex_platform = /(\d{1,2})([a-z])/;
   if (variable.match(regex_platform)) {
-    console.log('match platform');
     var number = platformVar.replace(regex_platform, '$1');
     var letter = platformVar.replace(regex_platform, '$2');
     pushSentencePart(sentencePart, sentenceArray, 1, variable);
@@ -190,7 +187,6 @@ function getSigmlVariables(entry, varArray, stationsArray) {
   var stopZin = "Hallo _xl0_ de treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ stopt niet _m3_ op tussengelegen stations.";
   var stopZinEN = "Hello _xl0_ the trainType _s1_ to interStation1, interStation2, interStation3, interStation4 and endStation _s2_ does not stop _m3_ at intermediate stations.";
 
-  console.log('entry sigml ', entry);
   if (entry === wachtZin) {
     entry = "De treinType _s1_ naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation _s2_ van vertrekTijd _l3_ vertrekt _m4_ van spoor spoorNr _m5_ wachtTijd.";
     wachtZinBool = true;
@@ -393,7 +389,6 @@ async function getSiGML(sentenceArray) {
   const [lastItem] = sentenceArray.slice(-1);
   // Display repetition bar when word is recognized
   if (sentenceArray[0].match(/(Herhaling)/) || sentenceArray[0].match(/(Repetition)/)) {
-    console.log('Match herhaling');
     document.getElementById('repetitionBar').style.display = "inline-block";
   }
   for (const el of sentenceArray) {
@@ -534,58 +529,44 @@ function getSentenceArray(fullSentence) {
   if (!checkUndefined(entry)) {
     // In getSigmlVariables wordt de zinsstructuur van entry ook aangepast waar nodig
     variableArray, stationsArray, entry = getSigmlVariables(entry, variableArray, stationsArray);
-    console.log('array after: ', variableArray);
-    console.log('entry andersom ', entry);
     // HARD CODE, omdat entryWithValues niet gebruikt kan worden ivm afwijkende structuur worden hier de variabelen handmatig in entry ingevoegd zodat deze variabelen wel herkend worden in de split functie
     try {
       entry = entry.replace('trainType', document.getElementById('trainTypeOptions').value);
       entry = entry.replace('treinType', document.getElementById('trainTypeOptions').value);
-      console.log('entry train ', entry);
     } catch { }
     try {
       entry = entry.replace('platformNr', document.getElementById('platformNrOptions').value);
       entry = entry.replace('spoorNr', document.getElementById('platformNrOptions').value);
-      console.log('entry spoor ', entry);
     } catch { }
     try {
       entry = entry.replace('endStation', document.getElementById('endStationOptions').value);
       entry = entry.replace('eindStation', document.getElementById('endStationOptions').value);
-      console.log('entry end ', entry);
     } catch { }
     try {
       entry = entry.replace('departTime', document.getElementById('departTimeInput').value);
       entry = entry.replace('vertrekTijd', document.getElementById('departTimeInput').value);
-      console.log('entry depart ', entry);
     } catch { }
     try {
       entry = entry.replace('waitTime', document.getElementById('waitTimeOptions').value);
       entry = entry.replace('wachtTijd', document.getElementById('waitTimeOptions').value);
-      console.log('entry wait ', entry);
     } catch { }
     try {
       entry = entry.replace('interStation1', document.getElementById('interStation1Options').value);
       entry = entry.replace('tussenStation1', document.getElementById('interStation1Options').value);
-      console.log('entry inter1 ', entry);
     } catch { }
     try {
       entry = entry.replace('interStation2', document.getElementById('interStation2Options').value);
       entry = entry.replace('tussenStation2', document.getElementById('interStation2Options').value);
-      console.log('entry inter2 ', entry);
     } catch { }
     try {
       entry = entry.replace('interStation3', document.getElementById('interStation3Options').value);
       entry = entry.replace('tussenStation3', document.getElementById('interStation3Options').value);
-      console.log('entry inter3 ', entry);
     } catch { }
     try {
       entry = entry.replace('interStation4', document.getElementById('interStation4Options').value);
       entry = entry.replace('tussenStation4', document.getElementById('interStation4Options').value);
-      console.log('entry inter4 ', entry);
     } catch { }
     entry = makeReadable(entry);
-    console.log('entry na repl getsentarray ', entry);
-    console.log('var array ', variableArray);
-    console.log('stations array ', stationsArray);
     // Split sentence around variables in array
     for (const vars of variableArray) {
       sentenceArray, entry = splitSentence(entry, vars, sentenceArray, stationsArray);
