@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="TIJD_HEBBEN_WEL">
+        <sign_manual both_hands="true">
+            <split_handconfig>
+                <handconfig handshape="flat"/>
+                <handconfig handshape="fist"/>
+            </split_handconfig>
+            <split_handconfig>
+                <handconfig extfidir="ul" palmor="dr"/>
+                <handconfig extfidir="r" palmor="d" second_extfidir="o"/>
+            </split_handconfig>
+            <split_location>
+                <location_bodyarm location="chest" second_location="shoulders"/>
+                <location_bodyarm location="chest" second_location="stomach"/>
+            </split_location>
+            <split_motion>
+                <par_motion>
+                    <directedmotion direction="o"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="flat"/>
+                        <handconfig extfidir="ol" palmor="d"/>
+                        <location_hand contact="close" location="wristback" second_location="handback">
+                            <location_hand digits="5" location="tip"/>
+                        </location_hand>
+                    </tgt_motion>
+                </par_motion>
+                <nomotion/>
+            </split_motion>
+            <rpt_motion repetition="fromstart_several">
+                <split_motion>
+                    <tgt_motion fast="true">
+                        <changeposture/>
+                        <handconfig handshape="flat"/>
+                        <handconfig extfidir="uo" palmor="d" second_extfidir="l"/>
+                    </tgt_motion>
+                    <nomotion/>
+                </split_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="tE" speed="0.8"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="NO"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

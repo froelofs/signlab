@@ -50,10 +50,11 @@ function callPython(text, alertID) {
   }
   $.ajax({
     // url : 'pythonCall.php',
-    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
+    //url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
+    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="U"' ,
     type : 'POST',
     // data: {"input": inputPython},
-    dataType: "json",
+    //dataType: "json",
     //dataType: "jsonp",
     crossDomain: true,
     success : onSuccess,
@@ -66,16 +67,18 @@ function callPython(text, alertID) {
     }
     else {
       console.log("Request was a success! Output: ", result);
+      console.log("value inputPython: " + inputPython);
       // output = result.output.split(";");
       // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
-      output = result.output;
-      if(output.slice(0,5) == "<?xml"){
-        if (flag == "explain"){
-          parent = document.querySelector('#explText');
+      //output = result.output;
+      output = result.indexOf("<?xml");
+      if(output >-1){
+        if (output >-1){
+          parent = document.querySelector('#output');
           console.log("explain:", output);
           //Ensures newlines and tabs in output are displayed in div
           var pre = document.createElement("pre");
-          pre.appendChild(document.createTextNode(output));
+          pre.appendChild(document.createTextNode(result.slice(output)));
           if (parent.childNodes.length != 0) {
             parent.removeChild(parent.childNodes[0]);
           }
@@ -148,4 +151,153 @@ function removeDisclaimer(){
   console.log(document.getElementById("TranslateNav").className);
   document.getElementById("TranslateNav").setAttribute("class","nav-link active");
   console.log(document.getElementById("TranslateNav").className);
+}
+
+function addNonmanuals(elementID){
+  // Retrieves the text enterd into the input field
+  textElement = document.getElementById("mySiGML");
+  text = textElement.value;
+
+  if(text ==""){
+    alertMessage("error", 'You can only add nonmanuals once you have entered at least one gloss', 'alertPlayground');
+    return;
+  }
+
+  // Retrieves the indices of the start and end of the selected text
+  startSelect = textElement.selectionStart;
+  endSelect = textElement.selectionEnd;
+  console.log(startSelect + " " + endSelect);
+
+  // Checks that a selection was made
+  selectedGlosses = textElement.value.substr(startSelect, endSelect - startSelect);
+  if(selectedGlosses.length ==0){
+    alertMessage("error", 'Please use your mouse to select at least one gloss', 'alertPlayground');
+    return;
+  }
+
+  // Retrieves the opening tag of the selected nonmanual and creates the corresponding closing tag
+  openTag = document.getElementById(elementID).value;
+  closeTag = openTag.slice(0,1) + "/" + openTag.slice(1);
+  
+  // Adds the nonmanual tags to the selected glosses
+  insertion =  openTag + selectedGlosses + closeTag;
+  
+
+  textElement.value = text.slice(0,startSelect) + insertion + text.slice(endSelect); 
+ }
+
+function showNonmans(category){
+   
+  hiddenCategory = document.getElementById(category.value);
+  elements = document.getElementsByClassName("nonmanSelect");
+
+  for (let item of elements) {
+    item.style.display = "none";
+  }
+
+  hiddenCategory.style.display = "block";
+ }
+
+// Stores the autocomplete suggestions
+var signOptions;
+
+//Stores the sigml translations corresponding to the completed variable sentences
+var jsonAvailableSigns;
+  
+// Stores the dict of sentences with variables for the avatar
+function callbackSigns(response) {
+  jsonAvailableSigns = response;
+  signOptions = Object.keys(jsonAvailableSigns);
+  console.log(signOptions);
+}
+
+// Retrieves the dict of sentences with variables for the avatar
+$.ajax({
+ url: "newDict.json",
+ global: false,
+ success: function(data) {
+   console.log("hello");
+  callbackSigns(data);
+ },
+ error: function(xhr, error){
+  console.log("something is wrong: " + error);
+ }
+});
+
+ //Stores suggestions returned by autocomplete so user input can be checked against it
+ var autocompSugg = [];
+
+ // Defines the functions for autcomplete suggestions
+ $( function() {
+  // Defines the filter that searches the list of options for matches
+  function customFilter(array, terms) {
+    arrayOfTerms = terms.split(" ");
+    term = arrayOfTerms[arrayOfTerms.length - 1];
+    //Only selects the words that start with the term
+    var matcher = new RegExp("^" + term, "i");
+    array = $.grep(array, function (value) {
+      return matcher.test(value.label || value.value || value);
+    });
+    return array;
+  }
+
+  // Activates the jquery autocomplete function when the user gives input
+  $("#mySiGML").autocomplete({
+    appendTo: "#output",
+    multiple: true,
+    mustMatch: false,
+    //Sets the autocomplete suggestions
+    source: function (request, response){
+      textElement = document.getElementById("mySiGML");
+      autocompSugg = customFilter(signOptions, request.term);
+      response(autocompSugg);
+      console.log("response: " + response);
+    },
+    select: function( event, ui ){
+      if (ui.item != null){
+        console.log("selected: " + ui.item.value);
+      }
+    }
+  });
+
+  //Forces the width of the autcomplete menu to fit the input field's width
+  jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+    var ul = this.menu.element;
+    ul.outerWidth(this.element.outerWidth());
+  }
+});
+
+function makeClickable(elementID){
+  globalVar.playButtonClicked = false;
+  document.getElementById(elementID).setAttribute("class", "btn btn-primary");
+}
+
+function makeNonClickable(elementID){
+  globalVar.playButtonClicked = true;
+  document.getElementById(elementID).setAttribute("class", "no-click-button btn btn-primary");
+}
+
+function playSiGML(av=1){
+  makeClickable("pause");
+  makeClickable("resume");
+  makeNonClickable("play");
+  playText(document.getElementById("output").value,av);
+}
+
+function pause(){
+  makeNonClickable("play");
+  makeNonClickable("pause");
+  makeClickable("resume");
+}
+
+function resume(){
+  makeNonClickable("resume");
+  makeClickable("pause");
+}
+
+function stop(av=1){
+  makeNonClickable("resume");
+  makeNonClickable("pause");
+  makeClickable("play");
+  CWASA.stopSiGML(av);
 }

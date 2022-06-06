@@ -5,7 +5,7 @@
         <mouth_picture picture="enen" speed="0.2"/>
       </mouthing_tier>
       <head_tier>
-	      <head_movement movement="SL" amount="0.7"/>
+	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
 	      <eye_gaze movement="LE" amount="0.6"/>
@@ -28,7 +28,7 @@
  <hamgestural_sign gloss="EEN PAAR">
     <sign_nonmanual>
       <head_tier>
-	      <head_movement movement="SL" amount="0.7"/>
+	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <mouthing_tier>
 	      <mouth_gesture movement="C01" amount="0.4" speed="1.7"/>
@@ -57,7 +57,7 @@
         <mouth_picture picture="minyt@"/>
       </mouthing_tier>
       <head_tier>
-	      <head_movement movement="SL" amount="0.7"/>
+	      <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
 	      <eye_gaze movement="LE" amount="0.6"/>

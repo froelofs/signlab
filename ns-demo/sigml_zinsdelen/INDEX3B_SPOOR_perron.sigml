@@ -1,9 +1,10 @@
-
   <hamgestural_sign gloss="">
     <sign_nonmanual>
-      <facialexpr_tier>
-        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	      <eye_lids movement="BB" speed="0.8"/>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+<facialexpr_tier>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
@@ -13,10 +14,7 @@
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-        <head_par>
-          <head_movement movement="SR"/>
-          <head_movement movement="SR"/>
-        </head_par>
+          <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
@@ -34,7 +32,7 @@
     </sign_manual>
   </hamgestural_sign>
 
-  <hamgestural_sign gloss="SPOOR" timescale=".7" duration="1.2">
+  <hamgestural_sign gloss="VAN SPOOR" timescale=".7" duration="1.2">
         <sign_manual>
             <handconfig handshape="cee12" ceeopening="slack" thumbpos="opposed"/>
             <handconfig extfidir="oooorrd"/> second_exfidir="d"/>
@@ -63,10 +61,9 @@
             <facialexpr_tier>
                 <facial_expr_par>
                     <eye_lids movement="SB" amount="0.5"/>
-                    <eye_gaze direction="RD" />
+                    <eye_gaze direction="RD" amount="0.5"/>
                     <eye_brows movement="RB" />
                 </facial_expr_par>
-                    <eye_gaze direction="LU" amount="0.4" speed="0.5"/>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

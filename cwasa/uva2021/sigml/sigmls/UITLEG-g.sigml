@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sigml>
+  <hamgestural_sign gloss="UITLEG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L04" speed="0.6"/>
+      </mouthing_tier>
+      <body_tier>
+        <body_movement movement="ST"/>
+      </body_tier>
+      <facialexpr_tier>
+         <eye_lids movement="SB" speed="0.7"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
+      <handconfig extfidir="ui" second_extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="neck" side="front">
+        <location_hand digits="1" location="midjoint"/>
+      </location_bodyarm>
+      <location_bodyarm contact="close" location="neck" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <directedmotion direction="o" size="small" speed="2"/>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+</sigml>

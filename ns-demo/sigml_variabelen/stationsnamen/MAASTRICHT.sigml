@@ -1,12 +1,17 @@
     <hamgestural_sign gloss="NAAR" timescale="0.8" duration="0.9">
     <sign_nonmanual>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
       <mouthing_tier>
         <mouth_picture picture="xa:a:" speed="1.5"/>
       </mouthing_tier>
       <facialexpr_tier>
-        <eye_lids movement="SB"/>
-        <eye_gaze direction="LU" amount="0.3"/>
-        <eye_gaze direction="RD" amount="0.3"/>
+        <facial_expr_par>
+          <eye_lids movement="SB" amount="0.6"/>
+        </facial_expr_par>
+          <eye_gaze direction="LU" amount="0.3"/>
+          <eye_gaze direction="RD" amount="0.3"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
@@ -53,11 +58,14 @@
             </body_tier>
             <head_tier>
                 <head_movement movement="SR" speed="0.7"/>
-                <head_movement movement="SL" amount="0.01"/>
+                <head_movement movement="SL" amount="1.5" speed="0.5"/>
             </head_tier>
             <facialexpr_tier>
-                <eye_gaze movement="RD" amount="0.7" speed="0.5"/>
-                <eye_gaze movement="RU" amount="0.01"/>
+                <facial_expr_par>
+                  <eye_gaze movement="RD" amount="0.5" speed="0.7"/>
+                  <eye_gaze movement="RU" amount="0.01"/>
+                  <eye_gaze movement="LE" amount="0.6"/>
+                </facial_expr_par>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

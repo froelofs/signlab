@@ -1,11 +1,12 @@
- <hamgestural_sign gloss="NUL">
+ <hamgestural_sign gloss="NULZES">
     <sign_nonmanual>
         <mouthing_tier>
             <mouth_picture picture="u:" speed="0.9"/>
             <mouth_gesture movement="T01" speed="1.2"/>
+            <mouth_picture picture="zA:s"/>
         </mouthing_tier>
         <head_tier>
-	        <head_movement movement="SL" amount="0.7"/>
+	        <head_movement movement="SL" amount="1.5"/>
         </head_tier>
         <facialexpr_tier>
           <facial_expr_par>
@@ -15,7 +16,7 @@
         </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
-        <handconfig handshape="ceeall"/>
+        <handconfig handshape="ceeall" ceeopening="tight"/>
         <handconfig extfidir="u"/>
         <handconfig palmor="l"/>
         <location_bodyarm location="shoulders" side="right_at"/>
@@ -25,19 +26,12 @@
         <tgt_motion>
 	        <location_bodyarm location="shoulders" side="right_at"/>
         </tgt_motion>
-    </sign_manual>
-  </hamgestural_sign>
-
-  <hamgestural_sign gloss="">
-    <sign_nonmanual>
-      <mouthing_tier>
-        <mouth_picture picture="zEs"/>
-      </mouthing_tier>
-    </sign_nonmanual>
-    <sign_manual>
-      <handconfig handshape="fist" thumbpos="out"/>
-      <handconfig extfidir="ul"/>
-      <handconfig palmor="l"/>
-      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+        <tgt_motion>
+          <changeposture/>
+            <handconfig handshape="fist" thumbpos="out"/>
+            <handconfig extfidir="ul"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+        </tgt_motion>
     </sign_manual>
   </hamgestural_sign>

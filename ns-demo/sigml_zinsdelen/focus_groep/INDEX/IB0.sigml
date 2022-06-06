@@ -1,0 +1,33 @@
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+<facialexpr_tier>
+        <eye_lids movement="BB"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+          <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="RD" amount="0.6"/>
+        </facial_expr_par>
+       </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="od" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="chest" second_location="stomach" side="right_beside" second_side="right_beside"/>
+      <directedmotion direction="dr" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>

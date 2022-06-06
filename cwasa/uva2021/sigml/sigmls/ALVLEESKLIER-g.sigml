@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+    <hamgestural_sign gloss="ALVLEESKLIER">
+        <sign_manual both_hands="true" lr_symm="true">
+            <handconfig contactkind="tip" contactpair="13" handshape="finger2" mainbend="round" second_handshape="pinch12" thumbpos="opposed"/>
+            <split_handconfig>
+                <handconfig extfidir="d" palmor="l" second_extfidir="ol"/>
+                <handconfig extfidir="d" palmor="r"/>
+            </split_handconfig>
+            <split_location>
+                <location_hand contact="touch" digits="1" location="tip">
+                    <location_hand digits="1" location="tip"/>
+                </location_hand>
+                <location_bodyarm contact="touch" location="stomach" second_location="chest" side="left_beside">
+                    <location_hand location="pinkyside"/>
+                </location_bodyarm>
+            </split_location>
+            <split_motion>
+                <nomotion/>
+                <par_motion>
+                    <directedmotion curve="r" curve_size="big" direction="l" size="small"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2" second_handshape="pinch12" thumbpos="opposed"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+            <split_motion>
+                <nomotion/>
+                <par_motion>
+                    <directedmotion direction="l" size="small"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig contactkind="tip" contactpair="13" handshape="finger2" mainbend="round" second_handshape="pinch12" thumbpos="opposed"/>
+                    </tgt_motion>
+                </par_motion>
+            </split_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="Alvkler" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TB"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="ND"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="DN"/>
+                <eye_brows movement="DN"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+</sigml>

@@ -1,25 +1,24 @@
   <hamgestural_sign gloss="">
     <sign_nonmanual>
       <head_tier>
-	      <head_movement movement="SL" amount="0.7"/>
+        <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
-	      <eye_gaze movement="LE" amount="0.6"/>
-        <eye_brows movement="RB" amount="0.7" speed="1.2"/>
+        <eye_lids movement="BB"/>
       </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual holdover="true">
     </sign_manual>
   </hamgestural_sign>
   
-  <hamgestural_sign gloss="VAN">
+  <hamgestural_sign gloss="VAN" timescale="0.6" duration="1.1">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="fA:" speed="1.5"/>
         <mouth_gesture movement="L28" amount="0.8" speed="1.4"/>
       </mouthing_tier>
       <head_tier>
-        <head_movement movement="SL" amount="0.7"/>
+        <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <eye_gaze movement="LE" amount="0.6"/>

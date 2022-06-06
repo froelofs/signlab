@@ -1,0 +1,82 @@
+<hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
+        <eye_lids movement="BB"/>
+        <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="WANNEER">
+    <sign_nonmanual>
+        <head_tier>
+          <head_par>
+            <head_movement movement="NF" amount="0.4"/>
+            <head_movement movement="SL" amount="1.5"/>
+          </head_par>
+        </head_tier>
+      <mouthing_tier>
+        <mouth_picture picture="vAneeR"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="RB" speed="0.6"/>
+        <eye_lids movement="WB" speed="0.6"/>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facial_expr_par>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" second_handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u" second_palmor="u"/>
+      <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="ur" />
+        <fingerplay/>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+    <hamgestural_sign gloss="NOG GEEN IDEE">
+    <sign_nonmanual>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SL" amount="1.5"/>
+          <head_movement movement="SH"/>
+        </head_par>
+      </head_tier>
+      <mouthing_tier>
+        <mouth_gesture movement="L31" speed="0.8"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+      <facial_expr_par>
+        <eye_brows movement="RB" speed="0.6" amount="2"/>
+        <eye_lids movement="WB" speed="0.6"/>
+	    <eye_gaze movement="LE" amount="0.6"/>
+      </facial_expr_par>
+      </facialexpr_tier>
+      <shoulder_tier>
+        <shoulder_movement movement="UB"/>
+      </shoulder_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true" lr_symm="true">
+      <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out"/>
+      <handconfig extfidir="ol" second_extfidir="o"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm location="shoulders" second_location="chest" side="right_beside" second_side="right_at"/>
+      <par_motion >
+        <directedmotion curve="u" curve_size="small" direction="r" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="o" palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
