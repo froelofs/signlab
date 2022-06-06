@@ -1,0 +1,46 @@
+
+    <hamgestural_sign gloss="BREDA">
+        <sign_manual>
+            <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="hooked" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="ul"/>
+            <location_bodyarm contact="close" location="shouldertop" second_location="head" second_side="right_beside" side="right_at"/>
+            <rpt_motion repetition="fromstart_several">
+                <par_motion>
+                    <directedmotion direction="i"/>
+                    <tgt_motion>
+                        <changeposture/>
+                        <handconfig handshape="finger2345" second_handshape="finger2345" second_mainbend="hooked" second_thumbpos="out" thumbpos="opposed"/>
+                        <handconfig extfidir="il" palmor="d"/>
+                        <location_bodyarm contact="touch" location="neck" second_location="shouldertop" second_side="right_at" side="right_at">
+                            <location_hand digits="3" location="tip"/>
+                        </location_bodyarm>
+                    </tgt_motion>
+                </par_motion>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="breda" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR" speed="0.6"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_par>
+                    <head_movement movement="SH" speed="0.7"/>
+                    <head_movement movement="SL" amount="1.5"/>
+                </head_par>
+            </head_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+                    <eye_gaze movement="RD" amount="0.3"/>
+                    <eye_lids movement="TB" amount="0.15"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
+                </facial_expr_par>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

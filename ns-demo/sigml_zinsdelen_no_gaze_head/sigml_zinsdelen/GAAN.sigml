@@ -1,0 +1,28 @@
+  <hamgestural_sign gloss="NAAR">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="xa:a:" speed="1.5"/>
+      </mouthing_tier>
+      <head_tier>
+	      
+      </head_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="uu" second_extfidir="ull"/>
+      <handconfig palmor="drr"/>
+      <location_bodyarm contact="close" location="shoulders" side="right"/>
+      <par_motion>
+        <directedmotion direction="ur" speed="2"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+          <handconfig extfidir="uo" palmor="d" second_extfidir="du" second_palmor="d"/>
+          <location_bodyarm contact="close" location="shoulders" side="right_beside" second_location="chest" second_side="right_beside"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>

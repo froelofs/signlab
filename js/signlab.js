@@ -35,77 +35,36 @@ function changeDisplay(myRadio) {
 }
 
 ///Makes an ajax call to the python script (by way of a php wrapper)
-function callPython(text, alertID) {
+function callPython(inputPython, alertID) {
   showBusyState();
-  console.log("text: " + text);
-  //Adds a flag to the input if applicable
-  flags = flag.split(",");
-  flag = flags[0];
-  console.log("flag: " + flag);
-  if (flag != ""){
-    inputPython = flag + " " + text;
-  }
-  else{
-    inputPython = text;
-  }
+  console.log("text: " + inputPython);
   $.ajax({
-    // url : 'pythonCall.php',
-    //url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
-    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="U"' ,
+    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
     type : 'POST',
-    // data: {"input": inputPython},
-    //dataType: "json",
-    //dataType: "jsonp",
     crossDomain: true,
     success : onSuccess,
     error : onError,
   });
   function onSuccess(result) {
-    if (result.errorcode) {
-      console.log('Error '+result.errorcode+' occured on the server. Error message: '+result.error);
-      alertMessage("error", 'Oops, something went wrong', alertID);
+    console.log("Request was a success! Output: ", result);
+    console.log("value inputPython: " + inputPython);
+    output = result.indexOf("<?xml");
+    if(output >-1){
+      parent = document.querySelector('#output');
+      console.log("index xml opentag", output);
+      //Ensures newlines and tabs in output are displayed in div
+      var pre = document.createElement("pre");
+      pre.appendChild(document.createTextNode(result.slice(output)));
+      if (parent.childNodes.length != 0) {
+        parent.removeChild(parent.childNodes[0]);
+      }
+      parent.append(pre);
     }
-    else {
-      console.log("Request was a success! Output: ", result);
-      console.log("value inputPython: " + inputPython);
-      // output = result.output.split(";");
-      // if (output[0].slice(0,5) == "HamNo" || output[0].trim() == text){
-      //output = result.output;
-      output = result.indexOf("<?xml");
-      if(output >-1){
-        if (output >-1){
-          parent = document.querySelector('#output');
-          console.log("explain:", output);
-          //Ensures newlines and tabs in output are displayed in div
-          var pre = document.createElement("pre");
-          pre.appendChild(document.createTextNode(result.slice(output)));
-          if (parent.childNodes.length != 0) {
-            parent.removeChild(parent.childNodes[0]);
-          }
-          parent.append(pre);
-        }
-        else{
-          // console.log("0:", output[0]);
-          // console.log("1:" , output[1]);
-          // console.log("SiGML: ", output[2]);
-          // playText(output[2].trim(),1);
-          playText(output.trim());
-          // document.getElementById('output').value =  output[2].trim();
-          document.getElementById('output').value =  output.trim();
-          document.getElementById("replayButtonTut").setAttribute("name", output.trim());
-          document.getElementById("replayButtonTut").setAttribute("class", "btn btn-primary");
-        }
-      }
-      else{
-        console.log("Output has an unexpected format: ", output);
-        alertMessage("error", output, alertID);
-      }
-      if (flags.length == 2){
-      	flag = flags[1];
-      	callPython(text, alertID);
-      }
+    else{
+      console.log("Output has an unexpected format: ", output);
+      alertMessage("error", output, alertID);
+    }
     showBusyState(false);
-    }
   }
   function onError(_xhr, error) {
     console.log ('Something went wrong. Error message: '+error);
@@ -114,6 +73,24 @@ function callPython(text, alertID) {
   }
   function showBusyState(state) {
     $(document.body).toggleClass('busy', state===undefined?true:state);
+  }
+}
+
+//Test functie
+function testCallPython(inputPython, alertID) {
+  console.log("text: " + inputPython);
+  $.ajax({
+    url:  'https://fa1638352700.azurewebsites.net/api/sigmlTrigger?textValue="'+ inputPython + '"' ,
+    type : 'POST',
+    crossDomain: true,
+    success : onSuccess,
+    error : onError,
+  });
+  function onSuccess(result) {
+    console.log("Request was a success! Output: ", result);
+  }
+  function onError(_xhr, error) {
+    console.log ('Something went wrong. Error message: '+ error);
   }
 }
 
@@ -177,6 +154,12 @@ function addNonmanuals(elementID){
 
   // Retrieves the opening tag of the selected nonmanual and creates the corresponding closing tag
   openTag = document.getElementById(elementID).value;
+
+  // Makes sure a tag was selected
+  if(openTag.slice(0,6) == "Select"){
+    return;
+  }
+
   closeTag = openTag.slice(0,1) + "/" + openTag.slice(1);
   
   // Adds the nonmanual tags to the selected glosses
@@ -186,16 +169,22 @@ function addNonmanuals(elementID){
   textElement.value = text.slice(0,startSelect) + insertion + text.slice(endSelect); 
  }
 
+//  Sets the selected nonmanual category to visible and the others to invisible
 function showNonmans(category){
-   
-  hiddenCategory = document.getElementById(category.value);
   elements = document.getElementsByClassName("nonmanSelect");
 
+  // Loops over all the nonmanual selects and makes the invisible
   for (let item of elements) {
     item.style.display = "none";
   }
 
-  hiddenCategory.style.display = "block";
+  // Sets the the nonmanual select of the chosen category to visible
+  if(category != "noNonManuals"){
+    showCategory = document.getElementById(category);
+    showCategory.style.display = "block";
+  }
+  
+  
  }
 
 // Stores the autocomplete suggestions
@@ -208,7 +197,6 @@ var jsonAvailableSigns;
 function callbackSigns(response) {
   jsonAvailableSigns = response;
   signOptions = Object.keys(jsonAvailableSigns);
-  console.log(signOptions);
 }
 
 // Retrieves the dict of sentences with variables for the avatar
@@ -216,7 +204,6 @@ $.ajax({
  url: "newDict.json",
  global: false,
  success: function(data) {
-   console.log("hello");
   callbackSigns(data);
  },
  error: function(xhr, error){
@@ -243,7 +230,7 @@ $.ajax({
 
   // Activates the jquery autocomplete function when the user gives input
   $("#mySiGML").autocomplete({
-    appendTo: "#output",
+    appendTo: "#autocomp",
     multiple: true,
     mustMatch: false,
     //Sets the autocomplete suggestions
@@ -251,7 +238,6 @@ $.ajax({
       textElement = document.getElementById("mySiGML");
       autocompSugg = customFilter(signOptions, request.term);
       response(autocompSugg);
-      console.log("response: " + response);
     },
     select: function( event, ui ){
       if (ui.item != null){
@@ -268,24 +254,21 @@ $.ajax({
 });
 
 function makeClickable(elementID){
-  globalVar.playButtonClicked = false;
   document.getElementById(elementID).setAttribute("class", "btn btn-primary");
 }
 
 function makeNonClickable(elementID){
-  globalVar.playButtonClicked = true;
   document.getElementById(elementID).setAttribute("class", "no-click-button btn btn-primary");
 }
 
-function playSiGML(av=1){
+function playSiGML(av=0){
+  makeNonClickable("resume");
   makeClickable("pause");
-  makeClickable("resume");
-  makeNonClickable("play");
+  makeClickable("stop");
   playText(document.getElementById("output").value,av);
 }
 
 function pause(){
-  makeNonClickable("play");
   makeNonClickable("pause");
   makeClickable("resume");
 }
@@ -295,7 +278,7 @@ function resume(){
   makeClickable("pause");
 }
 
-function stop(av=1){
+function stop(av=0){
   makeNonClickable("resume");
   makeNonClickable("pause");
   makeClickable("play");

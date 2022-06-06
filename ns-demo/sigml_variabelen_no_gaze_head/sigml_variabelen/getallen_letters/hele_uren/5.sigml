@@ -1,0 +1,20 @@
+
+  <hamgestural_sign gloss="VIJF" timescale="0.6" duration="1">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vE_if"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="front" side="right_at"/>
+      <tgt_motion>
+        <rpt_motion repetition="fromstart">
+          <directedmotion direction="r" speed="1.9" size="small" fast="true"/>
+        </rpt_motion>
+      </tgt_motion> 
+    </sign_manual>
+  </hamgestural_sign>

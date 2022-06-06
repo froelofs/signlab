@@ -1,0 +1,99 @@
+  <hamgestural_sign gloss="" timescale="1" duration="1.06">
+    <sign_nonmanual>
+      <head_tier>
+        
+      </head_tier>
+    <facialexpr_tier>
+        <eye_lids movement="BB"/>
+        
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+
+   <hamgestural_sign gloss="STOPT NIET">
+        <sign_manual>
+            <handconfig handshape="flat" second_handshape="flat" thumbpos="in"/>
+            <handconfig extfidir="oulo"/>
+            <handconfig palmor="il"/>
+            <location_bodyarm location="shoulders" second_location="chest" side="right_at"/>
+            <rpt_motion repetition="continue_several">
+                <directedmotion curve="u" direction="o" size="small" speed="0.8"/>
+            </rpt_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="toptoptop" speed="1"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                 <head_par>
+                    <head_movement movement="SH" speed="0.7"/>
+                    
+                </head_par>
+            </head_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+	                
+                    <eye_gaze movement="DN"/>
+                </facial_expr_par>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+
+<hamgestural_sign gloss="" timescale="0.7" duration="1.1">
+        <sign_manual holdover="true">
+            <handconfig handshape="finger2" thumbpos="across"/>
+            <handconfig extfidir="ul" second_extfidir="ull"/>
+            <handconfig palmor="r"/>
+            <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="left_at" side="front"/>
+            <par_motion>
+                <directedmotion direction="l" fast="true" speed="5"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig extfidir="uur" palmor="l" second_extfidir="u"/>
+                    <location_bodyarm location="shouldertop" second_location="shouldertop" side="right_beside" second_side="right_at"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <head_tier>
+                <head_par>
+                    <head_movement movement="SH" speed="0.01"/>
+                    
+                </head_par>
+            </head_tier>
+            <mouthing_tier>
+                <mouth_picture picture="Nai" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+	                
+                    <eye_gaze movement="DN" amount="0.6"/>
+                </facial_expr_par>
+                <eye_brows movement="RB"/>
+                <eye_lids movement="SB"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+  </hamgestural_sign>
+
+<hamgestural_sign gloss="" timescale="1" duration="0.11">
+    <sign_nonmanual>
+      <head_tier>
+        
+      </head_tier>
+    <facialexpr_tier>
+        <eye_lids movement="BB"/>
+        
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>

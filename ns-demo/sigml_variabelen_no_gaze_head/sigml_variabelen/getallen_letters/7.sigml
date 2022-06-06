@@ -1,0 +1,14 @@
+  <hamgestural_sign gloss="ZEVEN">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="zev@"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+    </sign_manual>
+  </hamgestural_sign>

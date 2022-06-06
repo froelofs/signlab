@@ -1,0 +1,29 @@
+  <hamgestural_sign gloss="ARNHEM">
+        <sign_manual>
+            <handconfig handshape="flat" mainbend="bent" second_handshape="flat"/>
+            <handconfig extfidir="uo"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+            <par_motion>
+                <directedmotion curve="u" direction="uo"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig extfidir="o"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="a:rnE:m" speed="1.2"/>
+            </mouthing_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+                    <eye_gaze movement="DN" amount="0.3"/>
+                    
+                </facial_expr_par>
+            </facialexpr_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

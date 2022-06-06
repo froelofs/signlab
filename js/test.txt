@@ -1,0 +1,11 @@
+{
+    "textValue": "klaar"
+}
+
+curl --header "Content-Type: application/json" --request POST --data "{\"textValue": \"klaar\"}" https://fa1638352700.azurewebsites.net/api/sigmlTrigger
+
+>curl --header "Content-Type: application/json" --request POST -d @test.txt  https://fa1638352700.azurewebsites.net/api/sigmlTrigger
+
+curl -H "Content-Type: application/json" -X POST http://localhost/someapi -d "{\"Name\":\"Test Value\"}"
+
+curl -H "Content-Type: application/json" -X POST https://fa1638352700.azurewebsites.net/api/sigmlTrigger -d "{\"textValue\": \"klaar\"}"

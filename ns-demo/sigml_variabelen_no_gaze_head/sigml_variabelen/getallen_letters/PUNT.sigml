@@ -1,0 +1,16 @@
+  <hamgestural_sign gloss="PUNT" timescale="0.9" duration="0.8">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_gesture movement="L17"/>
+        <mouth_gesture movement="T04"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger23spread" mainbend="round" exempteddigits="23" thumbpos="across"/>
+      <handconfig extfidir="uod" second_exfidir="dd"/>
+      <handconfig palmor="l"/>
+        <location_bodyarm contact="close" location="shouldertop" second_location="chest" side="front" second_side="front" />
+      <directedmotion direction="o" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>

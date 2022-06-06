@@ -116,7 +116,7 @@
       <handconfig palmor="ul" second_palmor="u"/>
       <location_bodyarm contact="close" location="shoulders" second_location="shoulders" second_side="right_at"/>
       <par_motion>
-        <directedmotion curve="u" curve_size="small" direction="ur" />
+        <directedmotion direction="r" />
         <fingerplay/>
       </par_motion>
     </sign_manual>

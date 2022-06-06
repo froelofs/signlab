@@ -1,0 +1,99 @@
+ <hamgestural_sign gloss="TIJD">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="tej"/>
+      </mouthing_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="ol" palmor="d" second_extfidir="uo"/>
+        <handconfig extfidir="or" palmor="d"/>
+      </split_handconfig>
+      <handconstellation contact="close">
+        <location_hand location="wristback" side="dorsal"/>
+        <location_hand digits="2" location="nail" side="palmar"/>
+      </handconstellation>
+      <rpt_motion repetition="fromstart">
+        <tgt_motion>
+          <par_motion>
+            <directedmotion direction="i" fast="true" size="small"/>
+            <tgt_motion fast="true">
+              <changeposture/>
+              <handconfig extfidir="ol" second_extfidir="o"/>
+            </tgt_motion>
+          </par_motion>
+          <handconstellation contact="touch">
+            <location_hand location="wristback" side="dorsal"/>
+            <location_hand digits="2" location="nail" side="palmar"/>
+          </handconstellation>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="NOG NIET">
+    <sign_nonmanual>
+      <head_tier>
+          <head_movement movement="SH"/>
+      </head_tier>
+      <mouthing_tier>
+        <mouth_picture picture="nOni"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="dl"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="ul"/>
+        </tgt_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="DUIDELIJK">
+    <sign_nonmanual>
+      <head_tier>
+          <head_movement movement="SH"/>
+      </head_tier>
+      <mouthing_tier>
+        <mouth_picture picture="d9YelI"/>
+      </mouthing_tier>
+      <facialexpr_tier>
+	      
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual both_hands="true">
+      <handconfig handshape="pinchall"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+        <split_motion>
+            <par_motion>
+                <directedmotion curve="u" direction="ur" size="medium"/>
+                    <tgt_motion>
+                        <changeposture/>
+                            <handconfig handshape="finger2345" thumbpos="out"/>
+                            <handconfig extfidir="u"/>
+                    </tgt_motion>
+            </par_motion>
+            <par_motion>
+                <directedmotion curve="u" direction="ul" size="medium"/>
+                    <tgt_motion>
+                        <changeposture/>
+                            <handconfig handshape="finger2345" thumbpos="out"/>
+                            <handconfig extfidir="u"/>
+                    </tgt_motion>
+            </par_motion>
+        </split_motion>
+    </sign_manual>
+  </hamgestural_sign>

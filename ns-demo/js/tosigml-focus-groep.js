@@ -232,19 +232,19 @@ $.getJSON("json/hele_uren.json", function(data_var){
   console.log("Could not get SiGML tijd JSON file");
 });
 
-$.getJSON("json/variables.json", function(data_var){
+$.getJSON("json/focus_groep/variables.json", function(data_var){
   callbackVar(data_var);
 }).fail(function() {
   console.log("Could not get SiGML variable JSON file");
 });
 
-$.getJSON("json/split_sentences_Nederlands.json", function(data_sent_NL){
+$.getJSON("json/focus_groep/split_sentences_Nederlands.json", function(data_sent_NL){
   callbackSent_NL(data_sent_NL);
 }).fail(function() {
   console.log("Could not get split SiGML sentence NL JSON file");
 });
 
-$.getJSON("json/split_sentences_English.json", function(data_sent_EN){
+$.getJSON("json/focus_groep/split_sentences_English.json", function(data_sent_EN){
   callbackSent_EN(data_sent_EN);
 }).fail(function() {
   console.log("Could not get split SiGML sentence EN JSON file");
@@ -384,7 +384,7 @@ async function getSiGML(sentenceArray, av){
     globalVar.glossArrayColor[av] = globalVar.glossArray[av];
     document.getElementById('outputLong').innerHTML = globalVar.glossArray[av];
   }
-  
+  // update current avatar
   globalVar.globalAv = av;
   playText(tempStrings[av], av);
 }

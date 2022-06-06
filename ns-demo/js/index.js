@@ -1,6 +1,11 @@
-// Global variable for the language (default: English)
+/**
+ * Alle stappen VOORDAT er op play wordt gedrukt. Dus aanmaken van alle dropdown menu's, kleuren van keywords, etc.
+ */
+
+
+// Globale variabelen zodat je ze ook in andere javascript files kan gebruiken
 var globalVar={
-  lang: "Nederlands",
+  lang: "English",
   trainType: "trainType",
   platformNr: "platformNr",
   departTime: "departTime",
@@ -10,8 +15,8 @@ var globalVar={
   interStation3: "interStation3",
   interStation4: "interStation4",
   endStation: "endStation",
-  currentSentence: "Dear passengers, the trainType to endStation from departTime is not departing.",
-  currentSentenceColored: "Dear passengers, the trainType to endStation from departTime is not departing.",
+  currentSentence: "",
+  currentSentenceColored: "",
   urlName: "sentences_English",
   sigmlText: '',
   playButtonClicked: false,
@@ -34,7 +39,7 @@ var endStationTemp;
 
 var oldStationInt;
 
-// Inter en end array moeten verschillende stations bevatten anders worden ze op elkaars plek ingevuld (kleine bug)
+// Interstation array en endstation array moeten verschillende stations bevatten anders worden ze op elkaars plek ingevuld
 var interStationsArray = ["-", "Zwolle", "Arnhem", "Deventer", "Breda"]
 var endStationsArray = ["Almelo", "Nijmegen", "Enschede", "Maastricht", "Schiedam", "Utrecht Centraal"]
 
@@ -49,19 +54,32 @@ interStationBox4 = document.getElementById('interStationBox4')
 endStationBox = document.getElementById('endStationBox')
 
 var departTimeInput = document.getElementById('departTimeInput');
-// departTimeInput = departTimeInput.value;
 var departTimeInputChange;
 
-// Call startUp() once
+// Roep startUp() 1x aan in het begin
 startUp(globalVar.currentSentence, false);
 
-
+// Verander de depart time direct als deze in de zin wordt aangepast
 $(departTimeInput).on("change", function(){
   departTimeInputChange = departTimeInput.value;
   replaceText(globalVar.currentSentence, departTimeInputChange, /\d{1,2}\:\d{2}/, globalVar.departTime);
   globalVar.playing ? makePlayNonClickable() : -1;
 })
 
+/**
+ * Weergeven van de gekozen zin in het curren sentence blok
+ * @param {*} currentSentence 
+ */
+function showSentence(currentSentence){
+  document.getElementById('currSentence').innerHTML = currentSentence;
+}
+
+/**
+ * Update de globale variabelen. Doe dit maar 1x aan het begin (vandaar de train_n etc.)
+ * @param {*} name 
+ * @param {*} oldValue 
+ * @returns 
+ */
 function updateGlobalVariables(name, oldValue){
     if(name === "trainType" && train_n===1){
       globalVar.trainType = trainTemp;
@@ -92,14 +110,13 @@ function updateGlobalVariables(name, oldValue){
 }
 
 /**
- * Checks whether the input sentence contains a variable and needs additional input from the user
+ * Functie wordt aangeroepen als er een dropdown menu verandert (zie index.html). Functie verandert de huidige waarde met een nieuwe, incl. de oranje kleur
  * @param {*} currentSentence 
  * @param {*} newValue 
  * @param {*} oldValue 
  * @param {*} name 
  */
  function replaceText(currentSentence, newValue, oldValue, name){
-   console.log(globalVar.playing);
   globalVar.playing ? makePlayNonClickable() : -1;
 
   // Krijgt globale vars mee vanuit index.html
@@ -120,7 +137,7 @@ function updateGlobalVariables(name, oldValue){
       globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\d{2}\:\d{2}/, departTimeInputChange);
     }
   }
-  // Add invisible numbers to the intermediate station names such that their position is recognized
+  // Add invisible numbers to the intermediate station names to ensure that their position within the sentence is recognized (especially important when two interstations have the same station name)
   else if(name.match(/interStation\d{1}/)){
     var stationInt;
 
@@ -159,12 +176,13 @@ function updateGlobalVariables(name, oldValue){
 
   // Remove space before invisible numbers
   globalVar.currentSentenceColored = globalVar.currentSentenceColored.replace(/\s(\<[^\>]*\>\<[^\>]*\>\d{1})/, "$1");
-  document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored; // => alleen voor de show
+  showSentence(globalVar.currentSentenceColored)
 }
 
 /**
- * Changes the varBox names and creates dropdown menu's, depending on the chosen language
- * @param {*} language 
+ * Maak dropdown menu's (sentenceoptions en variabelen), afhankelijk van de array inhoud. En maak de labels voor de menu's
+ * @param {*} currentSentence 
+ * @param {*} changeSent 
  */
  function startUp(currentSentence, changeSent) {
   train_n=1;
@@ -175,7 +193,6 @@ function updateGlobalVariables(name, oldValue){
   globalVar.urlName = "sentences_" + globalVar.lang;
 
   if(changeSent){
-    document.getElementById('currSentence').innerHTML = currentSentence;
     resetBoxes(currentSentence);
     colorKeywords(currentSentence);
   } else {
@@ -190,10 +207,10 @@ function updateGlobalVariables(name, oldValue){
     createDropdown(interStationsArray, 'interStation4Options');
     createDropdown(endStationsArray, 'endStationOptions');
 
-    document.getElementById('currSentence').innerHTML = globalVar.currentSentence;
     resetBoxes(globalVar.currentSentence);
     colorKeywords(globalVar.currentSentence);
 
+    // Set default values as titles in dropdown menus
     document.querySelector('button[data-id="sentenceOptions"]').title = globalVar.currentSentence;
     document.querySelector('button[data-id="endStationOptions"]').title = endStationsArray[0];
     $('.selectpicker').selectpicker('refresh');
@@ -201,7 +218,7 @@ function updateGlobalVariables(name, oldValue){
     console.log("Could not get JSON file");
   });
   }
-  // Save initial dropdown menu values temporarily
+    // Save initial dropdown values temporarily
     trainTemp =  document.getElementById('trainTypeOptions').value;
     platformTemp =  document.getElementById('platformNrOptions').value;
     departTemp =  document.getElementById('departTimeInput').value;
@@ -209,7 +226,7 @@ function updateGlobalVariables(name, oldValue){
     endStationTemp =  document.getElementById('endStationOptions').value;
   
   if (globalVar.lang == "Nederlands"){
-    var waitElementsArray = ["enkele minuten", "ongeveer 5 minuten", "ongeveer 35 minuten", "ongeveer anderhalf uur", "een nog onbekende tijd"];
+    var waitElementsArray = ["over enkele minuten", "over ongeveer 5 minuten", "over ongeveer 35 minuten", "over ongeveer anderhalf uur", "over een nog onbekende tijd"];
 
     document.getElementById('trainType').innerHTML = 'Treintype: ';
     document.getElementById('platform').innerHTML = 'Spoornummer: ';
@@ -228,7 +245,7 @@ function updateGlobalVariables(name, oldValue){
   }
   else {
     console.log('lang', globalVar.lang)
-    var waitElementsArray = ["a few minutes", "approximately 5 minutes", "approximately 35 minutes", "approximately 1.5 hours", "an unknown timeframe"];
+    var waitElementsArray = ["in a few minutes", "in approximately 5 minutes", "in approximately 35 minutes", "in approximately 1.5 hours", "in an unknown time"];
 
     document.getElementById('trainType').innerHTML = 'Train type: ';
     document.getElementById('platform').innerHTML = 'Platform number: ';
@@ -236,7 +253,7 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('waitTime').innerHTML = 'Waiting time: ';
     document.getElementById('speedLabel').innerHTML = 'Speed: ';
     document.getElementById('endStation').innerHTML = 'End station: ';
-    document.getElementById('interStation1').innerHTML = 'Intermediate station 1 (optional): ';
+    document.getElementById('interStation1').innerHTML = 'Intermediate station 1: ';
     document.getElementById('interStation2').innerHTML = 'Intermediate station 2 (optional): ';
     document.getElementById('interStation3').innerHTML = 'Intermediate station 3 (optional): ';
     document.getElementById('interStation4').innerHTML = 'Intermediate station 4 (optional): ';
@@ -245,8 +262,6 @@ function updateGlobalVariables(name, oldValue){
     document.getElementById('currSentenceLabel').innerHTML = '<b><u>Current sentence: </u></b>';
     document.getElementById('variablesLabel').innerHTML = '<b> 3. </b> Set variable values ';
   }
-    
-    
 }
 
 /**
@@ -254,7 +269,6 @@ function updateGlobalVariables(name, oldValue){
  * @param {*} text 
  */
 function displayVarBox(text){
-  
   text.includes(globalVar.trainType) ? trainTypeBox.style.display = "block" : -1;
   text.includes(globalVar.platformNr) ? platformBox.style.display = "block" : -1;
   text.includes(globalVar.departTime) ? departTimeBox.style.display = "block" : -1;
@@ -266,10 +280,8 @@ function displayVarBox(text){
   text.includes(globalVar.endStation) ? endStationBox.style.display = "block" : -1;
 }
 
-
-
 /**
- * 
+ * Reset de globale variabelen naar de default waarden, zodat deze aan het begin weer herkend kunnen worden als vars
  * @param {*} language 
  */
 function resetGlobalVariables(){
@@ -298,11 +310,10 @@ function resetGlobalVariables(){
 
 
 /**
- * Activated when language toggle is clicked, globalVar is changed and startUp() function is called again
+ * Activated when language toggle is clicked, globalVar is updated and startUp() function is called again
  * @param {*} language 
  */
 function changeLanguage(language){
-  // Update global language
   globalVar.lang = language;
   resetGlobalVariables();
   startUp(globalVar.currentSentence, false);
@@ -319,14 +330,21 @@ function changeLanguage(language){
   resetGlobalVariables();
   startUp(currentSentence, true);
 }
-  
+
+/**
+ * Reset the variable boxes when a sentence is changed
+ * @param {} currentSentence 
+ */
 function resetBoxes(currentSentence){
   makeVarBoxInvisible();
   displayVarBox(currentSentence);
 }
 
+/**
+ * Maak de variabelen een oranje kleur door het plaatsen van een <span> en style in het betreffende zinsdeel
+ * @param {*} currentSentence 
+ */
 function colorKeywords(currentSentence){
-  // Color keywords
   if(currentSentence.includes(globalVar.trainType)){
     currentSentence = currentSentence.replace(globalVar.trainType, '<span style="color: orange;">' + document.getElementById('trainTypeOptions').value + '</span>');
   } if (currentSentence.includes(globalVar.platformNr)){
@@ -343,8 +361,9 @@ function colorKeywords(currentSentence){
   currentSentence.includes(globalVar.interStation3) ? currentSentence = currentSentence.replaceAll(globalVar.interStation3, '<span style="color: orange;">' + globalVar.interStation3 + '</span>') : -1;
   currentSentence.includes(globalVar.interStation4) ? currentSentence = currentSentence.replaceAll(globalVar.interStation4, '<span style="color: orange;">' + globalVar.interStation4 + '</span>') : -1;
   
+  // Update global var and show sentence
   globalVar.currentSentenceColored = currentSentence;
-  document.getElementById('currSentence').innerHTML = globalVar.currentSentenceColored;
+  showSentence(currentSentence);
  
   // Reset default box values
   $("select[name=interStation1]").val("-");
@@ -359,7 +378,7 @@ function colorKeywords(currentSentence){
 }
 
 /**
- * Creates dropdown menus
+ * Create dropdown menus
  * @param {*} elements 
  * @param {*} selectType 
  */
@@ -376,7 +395,7 @@ function createDropdown(elements, id){
 }
 
 /**
- * Password function first page
+ * Password function first page (inactive)
  * @param {} input 
  */
 function compare(input){
@@ -414,6 +433,9 @@ function makePlayClickable(){
   document.getElementById("play").setAttribute("class", "btn btn-primary");
 }
 
+/**
+ * Disable play button
+ */
 function makePlayNonClickable(){
   globalVar.playButtonClicked = true;
   document.getElementById("play").setAttribute("class", "no-click-button btn btn-primary");
