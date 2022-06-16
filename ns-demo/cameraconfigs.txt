@@ -1,0 +1,20 @@
+cwaclientcfg.json
+"initCamera":       [ 0, 0.23, 3.24, 5, 18, 30, -1, -1 ]
+
+1 -> verder naar links of rechts (x-as)
+2 -> verder naar onder/boven
+3 -> in/uitzoomen
+4 -> camera angle hoek links/rechts
+5 -> onder/boven aanzicht
+6 -> rechtop/ondersteboven
+7 -> ?
+8 -> ?
+
+From allcsa.js:
+Target (cor) [X,Y],  CamLoc [R,theta,phi], FOV, Rotation Limits [l,r];
+Target Z=0,  CamLoc theta from +Z in XZ plane, phi from XZ towards +Y;
+Lengths (X,Y,R) in metres, angles (theta,phi,FOV,l,r) in degrees.
+
+
+old camera angle [ 0, 0.43, 1.94, 5, 18, 30, -1, -1 ]
+new [ 0, 0.43, 1.94, 18, 18, 30, -1, -1]

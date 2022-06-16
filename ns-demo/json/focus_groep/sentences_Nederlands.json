@@ -1,0 +1,7 @@
+{
+    "Hallo, de treinType naar eindStation van vertrekTijd rijdt niet.": "sigml_zinsdelen/LEEG.sigml",
+    "De treinType naar tussenStation1, tussenStation2, tussenStation3, tussenStation4 en eindStation van vertrekTijd vertrekt over wachtTijd van spoor spoorNr.": "sigml_zinsdelen/LEEG.sigml",
+    "Herhaling. De treinType naar eindStation van vertrekTijd rijdt via een andere route.": "sigml_zinsdelen/LEEG.sigml",
+    "Hallo, de treinType naar eindStation stopt niet op tussengelegen stations tussenStation1, tussenStation2, tussenStation3, tussenStation4.": "sigml_zinsdelen/LEEG.sigml",
+    "Hallo, de treinType naar eindStation vertrekt van spoor spoorNr.": "sigml_zinsdelen/LEEG.sigml"
+}

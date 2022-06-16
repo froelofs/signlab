@@ -25,11 +25,15 @@
                 <body_movement movement="ST"/>
             </body_tier>
             <head_tier>
-                <head_movement movement="TR" speed="0.6"/>
+                <head_movement movement="TR" speed="0.6" amount="0.4"/>
                 <head_movement movement="TL" amount="0.01"/>
+                <head_movement movement="SL" amount="1.5" speed="0.3"/>
             </head_tier>
             <facialexpr_tier>
-                <eye_lids movement="WB"/>
+                <facial_expr_par>
+                    <eye_lids movement="WB" amount="0.6"/>
+                    <eye_gaze movement="LE" amount="0.6"/>
+                </facial_expr_par>
             </facialexpr_tier>
         </sign_nonmanual>
     </hamgestural_sign>

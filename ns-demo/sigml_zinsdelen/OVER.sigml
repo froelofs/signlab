@@ -1,0 +1,26 @@
+  <hamgestural_sign gloss="OVER">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ov@"/>
+      </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="l"/>
+      <handconfig palmor="l" second_palmor="dl"/>
+      <location_bodyarm contact="close" location="chest" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion curve="u" curve_size="small" direction="o" size="small"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig palmor="l" second_palmor="ul"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>

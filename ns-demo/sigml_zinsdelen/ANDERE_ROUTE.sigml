@@ -1,0 +1,60 @@
+  <hamgestural_sign gloss="EEN ANDERE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="AdYrY"/>
+      </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" thumbpos="out"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="od"/>
+      <location_bodyarm location="shoulders" side="right_at"/>
+      <rpt_motion repetition="fromstart_several">
+        <par_motion>
+          <directedmotion direction="l" speed="1.5" size="small"/>
+        </par_motion>
+      </rpt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+  
+  <hamgestural_sign gloss="ROUTE">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="ruut@"/>
+      </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_gaze direction="DN" amount="0.6"/>
+        <eye_gaze direction="RD" amount="0.5"/>
+        <eye_gaze direction="RU" amount="0.3"/>
+      </facialexpr_tier>
+      <eye_gaze movement="LE" amount="0.6"/>
+    </sign_nonmanual>
+    <sign_manual>
+    <split_handconfig>
+        <handconfig handshape="finger2" thumbpos="across"/>
+        <handconfig handshape="finger2" thumbpos="across"/>
+    </split_handconfig>
+    <split_handconfig>
+        <handconfig extfidir="ooudlr" palmor="d"/>
+        <handconfig extfidir="oour" palmor="d"/>
+    </split_handconfig>
+      <location_bodyarm contact="close" location="chest"/>
+      <par_motion>
+        <directedmotion curve="r" curve_size="middle" slow="true" direction="u"/>
+        <tgt_motion>
+          <changeposture/>
+            <handconfig extfidir="ooul" palmor="d"/>
+            <location_bodyarm contact="close" location="head" side="right_at"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>

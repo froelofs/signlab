@@ -1,0 +1,29 @@
+
+  <hamgestural_sign gloss="VIERENVIJFTIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vir@nvE_iftIx" speed="2"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="across"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="u"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
+      <tgt_motion>
+        <changeposture/>
+        <handconfig handshape="finger2345" thumbpos="out"/>
+        <handconfig extfidir="ul" palmor="l"/>
+        <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      </tgt_motion>
+      <par_motion>
+        <directedmotion direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ur"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+

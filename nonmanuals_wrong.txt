@@ -1,0 +1,25 @@
+ST_  SL | SR | SB : SHRUG, SO EXECUTES TWICE
+<BT_SI> : SIGH, SO EXECUTES TWICE
+<BT_HE> NO MOVEMENT SEEN (NEITHER ON ONCE)
+<BT_ST> NO MOVEMENT SEEN (NEITHER ON ONCE)
+<HT_NO> ONDERBROKEN (EXECUTES TWICE)
+<HT_SH> ONDERBROKEN (EXECUTES TWICE)
+<HT_PF> EXECUTES TWICE
+<HT_LI> UNCLEAR WHAT IT'S SUPPOSED TO DO AND NO MOVEMENT
+<ET_AD> NOTHING SEEN
+<ET_FR> <ET_HD> <ET_HI> <ET_HC> <ET_NO> <ET_RO> NOTHING SEEN
+<FT_WI> : looks twitchy
+<FT_BB>: repeats (but meant to)
+repetitive: MT_D01, MT_D02, MT_D03, MT_D04, MT_D05, MT_D06, MT_D07, MT_D08, MT_D09, MT_J01, MT_J02, MT_J03, MT_J04,
+MT_L01, MT_L02, MT_L03, MT_L04, MT_L05, MT_L06, MT_L07, MT_L08, MT_L09, MT_L10, MT_L11, MT_L12, MT_L13, MT_L14, MT_L15, MT_L16, 
+MT_L17, MT_L18, MT_L19, MT_L20, MT_L21, MT_L22, MT_L23, MT_L24, MT_L25, MT_L26, MT_L27, MT_L28, MT_L29, MT_L30, MT_L31,
+MT_L32, MT_L33, MT_L34, MT_C01, MT_C02, MT_C03, MT_C04, MT_C05, MT_C06, MT_C07, MT_C08, MT_C10, MT_C11, MT_C12, MT_C13
+MT_C09: three cheek movements, so can't be double
+MT_T01, MT_T02, MT_T03, MT_T04, MT_T05, MT_T06, MT_T08, MT_T10, MT_T11, MT_T13, MT_T14, MT_T17
+MT_T07: herhaling ziet er beter uit dan de eerste
+MT_T09: one tongue poke the second time
+MT_T12: bij herhaling tong verder naar buiten
+MT_T15: eerste keer tong verder naar buiten
+MT_T16: tweede keer ziet er net iets anders uit dan de eerste keer
+
+EM_SADNESS: derde keer extremer, wenkbrauwen worden vasteghouden en mond herhaalt, wordt 3 keer uitgevoerd ook al zit het maar op 2 gebaren..

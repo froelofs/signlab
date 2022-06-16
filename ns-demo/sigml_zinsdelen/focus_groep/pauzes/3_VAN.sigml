@@ -1,0 +1,33 @@
+  <hamgestural_sign gloss="" timescale="1" duration="0.03">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_lids movement="BB"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+    
+  <hamgestural_sign gloss="VAN" timescale="0.6" duration="1.1">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="fA:" speed="1.5"/>
+        <mouth_gesture movement="L28" amount="0.8" speed="1.4"/>
+      </mouthing_tier>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" second_handshape="flat" second_thumbpos="halfout" thumbpos="out"/>
+      <handconfig extfidir="il" second_extfidir="uull"/>
+      <handconfig palmor="r" second_palmor="dr"/>
+      <location_bodyarm contact="touch" location="shoulders" side="front" second_location="chest" second_side="front"/>
+    </sign_manual>
+  </hamgestural_sign>

@@ -1,10 +1,7 @@
-  <hamgestural_sign gloss="DE">
+  <hamgestural_sign gloss="DE" timescale="0.8" duration="0.9">
     <sign_nonmanual>
       <head_tier>
-        <head_par>
-          <head_movement movement="SR"/>
-          <head_movement movement="SR"/>
-        </head_par>
+          <head_movement movement="SL" amount="1.5"/>
       </head_tier>
       <facialexpr_tier>
         <facial_expr_par>
@@ -15,9 +12,8 @@
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
-      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig extfidir="o" second_extfidir="o"/>
       <handconfig palmor="d"/>
-      <location_bodyarm contact="close" location="shoulders" side="right_beside" second_location="neck" second_side="right_beside"/>
-      <directedmotion direction="dr" size="small"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
     </sign_manual>
   </hamgestural_sign>

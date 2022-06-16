@@ -1,0 +1,96 @@
+  <hamgestural_sign gloss="NAAR" timescale="0.7" duration="0.9">
+    <sign_nonmanual>
+        <head_tier>
+	        <head_movement movement="SL" amount="1.5"/>
+        </head_tier>
+        <mouthing_tier>
+            <mouth_picture picture="xa:a:" speed="1.5"/>
+        </mouthing_tier>
+        <facialexpr_tier>
+          <facial_expr_par>
+            <eye_lids movement="SB" amount="0.6"/>
+          </facial_expr_par>
+            <eye_gaze direction="LU" amount="0.3" speed="0.6"/>
+            <eye_gaze direction="RD" amount="0.4" speed="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2" thumbpos="across"/>
+      <handconfig extfidir="ul" second_extfidir="ull"/>
+      <handconfig palmor="drr"/>
+      <location_bodyarm contact="close" location="shoulders" side="right"/>
+      <par_motion>
+        <directedmotion direction="ur" speed="2"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig handshape="finger2" second_handshape="finger2" second_thumbpos="across" thumbpos="across"/>
+          <handconfig extfidir="uu" palmor="dl" second_extfidir="uur" second_palmor="ull"/>
+          <location_bodyarm contact="close" location="head" side="front" second_location="neck" second_side="right_at"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>
+  
+   
+    <hamgestural_sign gloss="UTRECHT">
+        <sign_manual>
+            <handconfig handshape="fist" thumbpos="across"/>
+            <handconfig extfidir="u"/>
+            <handconfig palmor="l"/>
+            <location_bodyarm contact="close" location="head" second_location="forehead" second_side="right_at" side="right_at"/>
+            <par_motion>
+                <directedmotion direction="l"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="fist" thumbpos="across"/>
+                    <handconfig extfidir="u" palmor="l" second_palmor="ul"/>
+                    <location_bodyarm contact="touch" location="forehead" side="right_beside">
+                        <location_hand digits="3" location="midjoint"/>
+                    </location_bodyarm>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="u:trEg" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="TL" amount="0.6"/>
+            </body_tier>
+            <head_tier>
+                <head_movement movement="SL" amount="1.5" speed="0.6"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_gaze movement="RU"/>
+                <eye_gaze movement="LE" amount="0.6"/>
+                <eye_lids movement="CB" amount="0.5" speed="1.2"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>
+    
+    <hamgestural_sign gloss="CENTRAAL">
+        <sign_manual>
+            <handconfig handshape="flat" second_handshape="finger2345" second_mainbend="round" second_thumbpos="out" thumbpos="opposed"/>
+            <handconfig extfidir="o" second_extfidir="ol"/>
+            <handconfig palmor="d"/>
+            <location_bodyarm location="shouldertop" second_location="head"/>
+            <directedmotion direction="d"/>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="santrA:l" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <shoulder_tier>
+                <shoulder_movement movement="UR" speed="0.6"/>
+            </shoulder_tier>
+            <head_tier>
+                <head_movement movement="SL" amount="1.5" speed="0.6"/>
+            </head_tier>
+            <facialexpr_tier>
+                <eye_lids movement="SB" amount="0.2"/>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

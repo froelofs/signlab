@@ -1,0 +1,18 @@
+{
+    "Hello,": "sigml_zinsdelen/BESTE_REIZIGERS.sigml",
+    "Hello, the": "sigml_zinsdelen/BESTE_REIZIGERS_INDEX3A.sigml",
+    "to": "sigml_zinsdelen/LEEG.sigml",
+    "to ": "sigml_zinsdelen/LEEG.sigml",
+    "of": "sigml_zinsdelen/VAN.sigml",
+    "from": "sigml_zinsdelen/VAN.sigml",
+    " is not departing": "sigml_zinsdelen/INDEX3A_RIJDEN_NIET_trein.sigml",
+    "and": "sigml_zinsdelen/LEEG.sigml",
+    "departs in": "sigml_zinsdelen/VERTREKKEN.sigml",
+    "departs in an unknown time from platform": "sigml_zinsdelen/INDEX3B_SPOOR_perron.sigml",
+    "from platform": "sigml_zinsdelen/INDEX3B_SPOOR_perron.sigml",
+    "Repetition The": "sigml_zinsdelen/INDEX3A.sigml",
+    "The": "sigml_zinsdelen/INDEX3A.sigml",
+    " runs through another route": "sigml_zinsdelen/INDEX3A_RIJDEN_trein_ANDERE_ROUTE.sigml",
+    " does not stop at intermediate stations": "sigml_zinsdelen/STATIONS_NIET_STOPPEN_meerdere.sigml",
+    "departs from platform": "sigml_zinsdelen/VERTREKKEN_INDEX3B_SPOOR_perron.sigml"
+}

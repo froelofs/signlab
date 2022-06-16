@@ -1,0 +1,69 @@
+  <hamgestural_sign gloss="" timescale="1" duration="0.53">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+<facialexpr_tier>
+        <eye_lids movement="BB"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+  
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+          <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="RD" amount="0.6"/>
+        </facial_expr_par>
+       </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
+      <directedmotion direction="dr" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="RIJDT NIET" timescale="0.9" duration="1.2">
+    <sign_nonmanual>
+      <mouthing_tier>
+            <mouth_picture picture="Nai" speed="1"/>
+            <mouth_gesture movement="L31" amount="0.6" speed="0.8"/>
+        </mouthing_tier>
+      <head_tier>
+        <head_par>
+          <head_movement movement="SH" amount="0.6" speed="0.1"/>
+          <head_movement movement="SL" amount="1.5"/>
+        </head_par>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="flat" mainbend="round" bend2="hooked" bend3="dblhooked" bend4="dblhooked" bend5="dblhooked" thumbenclosed="false"/>
+      <handconfig extfidir="u"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="head" side="right_at"/>
+      <par_motion>
+        <directedmotion direction="dl" size="large"/>
+        <directedmotion direction="dl" size="large"/>
+      </par_motion>
+      <par_motion>
+        <directedmotion direction="u" size="medium"/>
+        <directedmotion direction="u" size="small"/>
+      </par_motion>
+      <par_motion>
+        <directedmotion direction="dr" size="large"/>
+        <directedmotion direction="dr" size="large"/>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>

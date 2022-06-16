@@ -1,0 +1,21 @@
+  <hamgestural_sign gloss="VIJFTIG">
+    <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="vE_iftIx" speed="1.2"/>
+      </mouthing_tier>
+
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="finger2345" thumbpos="out"/>
+      <handconfig extfidir="ul"/>
+      <handconfig palmor="l"/>
+      <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
+      <par_motion>
+        <directedmotion direction="r"/>
+        <tgt_motion>
+          <changeposture/>
+          <handconfig extfidir="ur"/>
+        </tgt_motion>
+      </par_motion>
+    </sign_manual>
+  </hamgestural_sign>

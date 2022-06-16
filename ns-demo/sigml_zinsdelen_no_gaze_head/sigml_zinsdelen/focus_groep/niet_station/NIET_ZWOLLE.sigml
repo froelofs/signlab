@@ -1,0 +1,40 @@
+    <hamgestural_sign gloss="ZWOLLE">
+        <sign_manual>
+            <handconfig handshape="finger23spread" thumbpos="across"/>
+            <handconfig extfidir="u" second_extfidir="ui"/>
+            <handconfig palmor="l" second_palmor="ul"/>
+            <location_bodyarm contact="touch" location="underchin">
+                <location_hand digits="2" location="tip"/>
+            </location_bodyarm>
+            <par_motion>
+                <directedmotion direction="o" fast="true"/>
+                <tgt_motion>
+                    <changeposture/>
+                    <handconfig handshape="finger23spread" thumbpos="across"/>
+                    <handconfig extfidir="u" second_extfidir="o"/>
+                </tgt_motion>
+            </par_motion>
+        </sign_manual>
+        <sign_nonmanual>
+            <mouthing_tier>
+                <mouth_picture picture="zwO:l" speed="1.2"/>
+            </mouthing_tier>
+            <body_tier>
+                <body_movement movement="ST"/>
+            </body_tier>
+            <head_tier>
+                <head_par>
+                    <head_movement movement="NU"/>
+                    
+                    <head_movement movement="SH" speed="0.7"/>
+                </head_par>
+            </head_tier>
+            <facialexpr_tier>
+                <facial_expr_par>
+                    <eye_gaze movement="DN"/>
+                    
+                    <eye_lids movement="SB" amount="0.6"/>
+                </facial_expr_par>
+            </facialexpr_tier>
+        </sign_nonmanual>
+    </hamgestural_sign>

@@ -1,20 +1,14 @@
-
-  <hamgestural_sign gloss="">
-    <sign_nonmanual>
-      <facialexpr_tier>
-        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	      <eye_lids movement="BB" speed="0.8"/>
-      </facialexpr_tier>
-    </sign_nonmanual>
-    <sign_manual holdover="true">
-    </sign_manual>
-  </hamgestural_sign>
-  
   <hamgestural_sign gloss="OVER">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="ov@"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
@@ -36,6 +30,12 @@
       <mouthing_tier>
         <mouth_picture picture="ONve"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" thumbpos="out"/>
@@ -51,6 +51,12 @@
       <mouthing_tier>
         <mouth_picture picture="vE_if@ndERtIx"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" thumbpos="out"/>
@@ -59,15 +65,15 @@
       <location_bodyarm location="shoulders" second_location="shoulders" side="right_at"/>
       <tgt_motion>
         <changeposture/>
-        <handconfig bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
-        <handconfig extfidir="ul" palmor="l" second_extfidir="u"/>
+        <handconfig mainbend="round" exempteddigits="234" bend5="dblhooked" handshape="finger2345" thumbpos="across"/>
+        <handconfig extfidir="uul" palmor="l" second_extfidir="u"/>
         <location_bodyarm location="shoulders" second_location="shoulders" second_side="right_at"/>
       </tgt_motion>
       <par_motion>
         <directedmotion direction="r"/>
         <tgt_motion>
           <changeposture/>
-          <handconfig extfidir="or"/>
+          <handconfig extfidir="ur"/>
         </tgt_motion>
       </par_motion>
     </sign_manual>
@@ -78,6 +84,12 @@
       <mouthing_tier>
         <mouth_picture picture="minyt@"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>

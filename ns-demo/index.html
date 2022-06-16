@@ -55,13 +55,14 @@
 
 <div id="pwdAlert"></div>
 
-<div id="checkPage">
+<!-- Old password check -->
+<!-- <div id="checkPage">
   <div style="display: flex; justify-content: center; align-items: center; height: 100%; text-align: center; color: white;">
    <label for="pwd" style="display: inline-block; text-align: center;">Password: </label>
    <input type="password" id="pwd" style="display: inline-block; margin-right: 5px; margin-left: 5px;" onkeydown="if(event.keyCode == 13){event.preventDefault();compare(document.getElementById('pwd').value);}">
    <input type="submit" onclick="compare(document.getElementById('pwd').value);" style="display: inline-block;">
   </div>
-</div>
+</div> -->
 
 <!-- Navigation-->
 <div id="nav-placeholder"></div>
@@ -74,18 +75,19 @@
   <div class="container-fluid" id="avatarTranslator" style="width: 100%;">
     <!-- Challenge Row-->
     <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-      <div class="col-12" style="font-size: larger; background-color: rgb(241, 205, 205);">WORK IN PROGRESS, PLEASE DO NOT SHARE</div>
+      <!--<div class="col-12" style="font-size: larger; background-color: rgb(241, 205, 205);">WORK IN PROGRESS, PLEASE DO NOT SHARE</div>-->
       <br><br>
       <!-- Column for info -->
       <div class="col-12 col-md-5">
                 <!-- CWA signing avatar panel 0 -->
                 <!--================================================================-->
                 <!-- <div class="CWASAPanel av0" align="center" ></div> -->
-                  
+                <div class="smallAvatarWindow">
                 <span class="CWASAAvatar av0" id="avatar"></span>
                     <!--<input class="av0 subtitles col-mb-5" id="outputSentence" value="" type="text" readonly="readonly"></input>-->
                     <input class="av0 subtitlesRep col-mb-5" id="repetitionBar" value="HERHALING" type="text" readonly="readonly" style="background-color: tomato; display: none;"></input>
-                    <input class="av0 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>
+                    <div class="av0 subtitlesLong col-mb-5" id="outputLong" style="display:inline-block"></div>
+                    <!--<input class="av0 txtGloss subtitles col-mb-5" id="outputGloss" value="" type="text" readonly="readonly"></input>-->
                     <br>
                     <input type="button" class="btn btn-primary" id="play" value="Play" onclick='makePlayNonClickable(); getSentenceArray(document.getElementById("currSentence").innerText, "alertMainTran");'/>
                     <input type="button" class="btn btn-primary" value="Stop" onclick='CWASA.stopSiGML(); makePlayClickable();' />
@@ -103,6 +105,7 @@
                     <input id="outputGloss" class="txtGloss av0" value="-" type="text">
                     <br> -->
                 <!--================================================================-->
+              </div>
       </div>
 
             <!-- Column for input -->
@@ -116,12 +119,11 @@
             <label id="selectExplain" for="inputLanguageForm" class="col-sm col-form-label"></label>
               <div class="col-sm">
                 <select id="inputLanguageForm" class="form-select" onchange="changeLanguage(this.value);" style="margin-bottom: 0px; max-width: 200px;">
-                  <option value="English">English</option>
-                  <option selected value="Nederlands">Nederlands</option>
+                  <option selected value="English">English</option>
+                  <option value="Nederlands">Nederlands</option>
                 </select>
               </div>
           </div>
-                    
                    
           <hr>
           <div class="mb-3 row align-items-start no-gutters">

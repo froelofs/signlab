@@ -1,0 +1,90 @@
+    <hamgestural_sign gloss="" timescale="1" duration="1.06">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+    <facialexpr_tier>
+        <eye_lids movement="BB"/>
+        <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>
+  
+  <hamgestural_sign gloss="">
+    <sign_nonmanual>
+      <head_tier>
+          <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+         <eye_lids movement="SB" />
+         <eye_gaze direction="RD" amount="0.6"/>
+        </facial_expr_par>
+       </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <handconfig handshape="fist" specialfingers="2" second_mainbend="bent" thumbpos="across"/>
+      <handconfig extfidir="o" second_extfidir="uo"/>
+      <handconfig palmor="d"/>
+      <location_bodyarm contact="close" location="shoulders" side="right_beside"/>
+      <directedmotion direction="dr" size="small"/>
+    </sign_manual>
+  </hamgestural_sign>
+
+  <hamgestural_sign gloss="VERTREKT">
+  <sign_nonmanual>
+      <mouthing_tier>
+        <mouth_picture picture="p"/>
+      </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+        <facial_expr_par>
+	        <eye_gaze movement="AD" speed="0.7"/>
+          <eye_gaze movement="LE" amount="0.6"/>
+        </facial_expr_par>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual>
+      <split_handconfig>
+        <handconfig handshape="flat" second_handshape="flat"/>
+        <handconfig handshape="flat"/>
+      </split_handconfig>
+      <split_handconfig>
+        <handconfig extfidir="dduo" palmor="dl"/>
+        <handconfig extfidir="ildr" palmor="di" second_extfidir="our"/>
+      </split_handconfig>
+      <location_bodyarm location="belowstomach" side="right_beside"/>
+	        <tgt_motion>
+	          <par_motion>
+		          <directedmotion direction="u" size="medium" speed="1"/>
+	        <tgt_motion>
+      <changeposture/>
+        <handconstellation contact="close">
+          <location_hand location="palm"/>
+	        <location_hand location="wristback"/>
+        </handconstellation>
+            	<handconfig handshape="flat"/>
+	            <handconfig extfidir="ool" second_extfidir="uuo" />
+	        </tgt_motion>
+	          </par_motion>
+	        </tgt_motion>
+    </sign_manual>
+  </hamgestural_sign>
+
+    <hamgestural_sign gloss="" timescale="1" duration="0.11">
+    <sign_nonmanual>
+      <head_tier>
+        <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+    <facialexpr_tier>
+        <eye_lids movement="BB"/>
+        <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
+    </sign_nonmanual>
+    <sign_manual holdover="true">
+    </sign_manual>
+  </hamgestural_sign>

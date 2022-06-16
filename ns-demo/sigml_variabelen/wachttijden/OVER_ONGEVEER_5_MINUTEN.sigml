@@ -1,20 +1,14 @@
-
-  <hamgestural_sign gloss="">
-    <sign_nonmanual>
-      <facialexpr_tier>
-        <eye_brows movement="RB" amount="0.7" speed="0.8"/>
-	      <eye_lids movement="BB" speed="0.8"/>
-      </facialexpr_tier>
-    </sign_nonmanual>
-    <sign_manual holdover="true">
-    </sign_manual>
-  </hamgestural_sign>
-  
   <hamgestural_sign gloss="OVER">
     <sign_nonmanual>
       <mouthing_tier>
         <mouth_picture picture="ov@"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
@@ -36,6 +30,10 @@
       <mouthing_tier>
         <mouth_picture picture="ONve"/>
       </mouthing_tier>
+      <head_tier>
+      </head_tier>
+      <facialexpr_tier>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" thumbpos="out"/>
@@ -51,6 +49,12 @@
       <mouthing_tier>
         <mouth_picture picture="vE_if"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2345" thumbpos="out"/>
@@ -65,6 +69,12 @@
       <mouthing_tier>
         <mouth_picture picture="minyt@"/>
       </mouthing_tier>
+      <head_tier>
+	      <head_movement movement="SL" amount="1.5"/>
+      </head_tier>
+      <facialexpr_tier>
+	      <eye_gaze movement="LE" amount="0.6"/>
+      </facialexpr_tier>
     </sign_nonmanual>
     <sign_manual>
       <handconfig handshape="finger2" thumbpos="across"/>
