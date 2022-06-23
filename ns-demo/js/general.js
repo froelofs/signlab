@@ -179,7 +179,7 @@ $('.timepicker').timepicker({
    return time;
   }
 
- 
+
   $(function(){
     // creates navbar in JS
     var bar = '';
@@ -195,13 +195,13 @@ $('.timepicker').timepicker({
     bar += '</button>';
     bar += '<div class="collapse navbar-collapse" id="navbarResponsive">';
     bar += '<ul class="navbar-nav ml-auto" role="tablist">';
-    bar += '<li class="nav-item"><a class="nav-link" href="index.html" id="AboutNav">Welcome</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="grammar.html" id="GrammarNav">Sign Linguistics</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="translate.html" id="TranslateNav">Avatar Translation</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="media.html" id="MediaNav">Media</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../index.html" id="AboutNav">Welcome</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../grammar.html" id="GrammarNav">Sign Linguistics</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../translate.html" id="TranslateNav">Avatar Translation</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../people.html" id="PeopleNav">People</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../publications.html" id="PublicationsNav">Publications</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../projects.html" id="ProjectsNav">Projects</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="../media.html" id="MediaNav">Media</a></li>';
     // bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
     bar += '</ul>';
     bar += '</div>';
