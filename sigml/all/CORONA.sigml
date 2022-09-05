@@ -2,10 +2,11 @@
 <sigml>
     <hamgestural_sign gloss="CORONA">
         <sign_manual both_hands="true" lr_symm="true">
-            <handconfig bend1="bent" handshape="flat" second_handshape="flat" second_thumbpos="out" thumbpos="out"/>
-            <handconfig extfidir="ol" second_extfidir="d"/>
-            <handconfig palmor="l" second_palmor="dl"/>
-            <location_bodyarm approx_location="true" contact="close" location="chest" side="right_at">
+            <handconfig bend1="bent" handshape="flat" second_handshape="flat"
+              thumbpos="out" second_thumbpos="out" extfidir="ol"
+              second_extfidir="d" palmor="l" second_palmor="dl"/>
+            <location_bodyarm approx_location="true" contact="close"
+              location="chest" side="right_at">
                 <location_hand digits="5" location="tip"/>
             </location_bodyarm>
             <wristmotion motion="nodding"/>
