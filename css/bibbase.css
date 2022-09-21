@@ -1,0 +1,337 @@
+  #bibtable {
+    border-collapse: collapse;
+  }
+  #bibentry {
+    background-color: lightyellow;
+    border: 2px dotted lightgrey;
+    vertical-align: text-top;
+  }
+  #biblink {
+    vertical-align: text-top;
+    text-align: right;
+  }
+  #year {
+    font-weight: normal;
+  }
+  #author {
+    font-weight: normal;
+  }
+  #title {
+    text-decoration: none;
+  }
+  #booktitle {
+    font-style: italic;
+  }
+  #journal {
+    font-style: italic;
+  }
+  #type {
+    font-style: italic;
+  }
+
+  #doi {
+    font-style: normal;
+    text-decoration: none;
+  }
+
+  A.doi {
+    text-decoration: none;
+  }
+
+#publicationForm {
+  background: #ECEDEF;  /* change background color for selection form */
+  padding: 15px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-top: 15px;
+  border-radius: 10px;  /* rounded corners */
+}
+
+label {
+  color: #495057;
+}
+
+div.keywords {
+	text-align: left; /* change alignment of keywords */
+	padding-left: 0em; /* change left indentation of keywords */
+	padding-right: 3em;
+	/* display: inline-block; */
+}
+
+div.filter-header {
+  color:#1751D8;
+}
+
+div.selection {
+    /*background-color:#D3D3D3;*/
+    border: solid 1px #D3D3D3;
+    border-radius: 3px;
+    display:table;
+    padding:0px;
+    margin:1px;
+    width:8em;
+    height:2em;
+    text-align:center;
+    vertical-align:middle;
+	} 
+div[activated=y] {
+	background-color: #FFDC00;
+}
+.selection p {
+    display:table-cell; 
+    text-align:center;
+    vertical-align:middle;
+    font-size:80%;
+} 
+
+
+.bibbase_paper[visible=n] {
+	display:none;
+}
+
+.bibbase_paper {
+  background: #ECEDEF;  /* change background color for papers */
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-top: 15px;
+  border-radius: 10px;  /* rounded corners */
+}
+
+
+.bibbase_group_whole[visible=n] {
+	display:none;
+}
+
+.bibbase_group_count {
+  display:none;
+}
+
+.bibbase_paper_title {
+  color:#6c757d;        /*change color of paper titles, now dark gray, old color was orange #bd5d38 */ 
+}
+
+.bibbase_paper_title a {
+	font-weight: bold; 
+}
+
+.dontprint ul {
+	padding-left:0px;
+	margin-left:0px;
+}
+
+#bibbase_header {
+	display:none;
+}
+
+.bibbase_amazon {
+	display:none;
+}
+
+span.selection {
+	font-size:80%;
+    /*background-color:#D3D3D3;*/
+    border: 3px #767676 solid;
+    border-radius: 8px;
+    display:inline-block;
+    padding-left:1em;
+    padding-right:1em;
+    margin:3px;
+    text-align:center;
+    line-height: 2em;
+    cursor: pointer;
+} 
+
+span[activated=y] {
+	background-color: #FFDC00; /* change background color of selected dropdown item */
+}
+
+span[activated=n]:hover {
+  background-color: #ECEDEF; /* change background color of hovered dropdown item */
+}
+
+span.dropdown-item {
+  cursor: pointer;
+}
+
+div.homelinks {
+	margin-left: 1em;
+	text-align: center;
+	display: inline-block;
+}
+
+div.homelink {
+	float:left;
+	display: block;
+	text-align: center;
+    width: 11em;
+	margin:5px 2px;
+	padding: 0px;
+}
+
+div.logolinks {
+  width:100%;
+  margin:auto;
+}
+
+div.logolink {
+/*    border: 1px solid red; */
+    float:left;
+    text-align:center;
+    width: 8em;
+    line-height:7em;
+    height: 7em;
+    margin: 2px;
+}
+
+div.logolink img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+}
+
+
+ul.menulist {
+	border: solid 2px #D91852;
+	padding: 3px;
+}
+	
+li.menuelement {
+	float: left;
+    display: block;
+    text-align: center;
+    padding: 14px;
+    color: #1751D8;
+    background-color: none;
+    border: solid 3px white;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+li.menuelement:hover {
+    background-color: #18D97F;
+}
+
+li.menuelement[activated=y] {
+    border: solid #18D97F 3px;
+}
+
+li.menuelement[activated=n] {
+    border: solid white 3px;
+}
+
+
+ul.menulist {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+
+.btn-group {
+  padding-top: 30px;
+}
+
+
+span.bibbase_icon_text {
+	display:inline-block;
+}
+
+img.bibbase_icon {
+    width: 20px;
+    max-height: 16px;
+    vertical-align: text-top;
+    /*display:inline-block;*/
+    display:none; /* when working offline make bibbase icon invisible, as this does not work when viewing the file offline */
+    filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: grayscale(100%); /* Current draft standard */
+    -webkit-filter: grayscale(100%); /* New WebKit */
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); 
+    -o-filter: grayscale(100%);
+    filter: gray; /* IE6+ */
+}
+
+img.bibbase_icon:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+br.bibbase_paper_content {
+    display: block;
+}
+
+.bibbase_group_body {
+	margin-left:0px;
+}
+
+.bibbase_group_whole i.fa.fa-angle-down.bibbase_group_head_icon {
+	display:none;
+}
+
+.bibbase_group {
+  /* same as h4 in resume.min.css except for font-family*/
+  font-size:110%;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#343a40
+}
+
+.bibbase_group_whole .bibbase_group_whole .bibbase_group {
+	color: #585858;
+	font-size:90%;
+  width: 4.8em;
+  float: left;
+}
+
+.bibbase_group_body {
+	margin-left: 0em;
+}
+
+.bibbase_group_body .bibbase_group_body {
+  margin-left: 5em;
+}
+
+.bibbase_group_whole {
+  clear: both;
+}
+
+.bibbase_group_whole {
+  margin-top: 20px;
+}
+
+.bibbase_group_whole .bibbase_group_whole {
+  margin-top: 3px;
+}
+
+.bibbase_paper_title a {
+	pointer-events: none; 
+	cursor: default; 
+}
+
+.bibbase.well {
+  padding: 5px;
+  border-radius: 10px;
+  background: #F5F5F5;
+}
+
+
+
+/* Code van Thom om header van publication types aan te passen:
+
+#group_article > .bibbase_group >span:first-of-type {
+    display: none;
+}
+
+#group_article > .bibbase_group >span.bibbase_group_count:before {
+    display: inline;
+    content: 'Articles';
+}
+
+*/
+
+
+
+
