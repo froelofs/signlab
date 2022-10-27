@@ -188,10 +188,10 @@ $('.timepicker').timepicker({
     // bar += 'SignLab Amsterdam';
     bar += '</a>';
     bar += '<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">';
-    bar += 'Menu';
     bar += '<i class="fas fa-bars"></i>';
+    bar += ' Menu';
     bar += '</button>';
-    bar += '<div class="collapse navbar-collapse" id="navbarResponsive">';
+    bar += '<div class="collapse text-right navbar-collapse" style="margin-right:1%" id="navbarResponsive">';
     bar += '<ul class="navbar-nav ml-auto" role="tablist">';
     bar += '<li class="nav-item"><a class="nav-link" href="index.html" id="AboutNav">Welcome</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="grammar.html" id="GrammarNav">Theoretical Contributions</a></li>'; // aanpassen
