@@ -194,12 +194,13 @@ $('.timepicker').timepicker({
     bar += '<div class="collapse text-right navbar-collapse" style="margin-right:1%" id="navbarResponsive">';
     bar += '<ul class="navbar-nav ml-auto" role="tablist">';
     bar += '<li class="nav-item"><a class="nav-link" href="index.html" id="AboutNav">Welcome</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="grammar.html" id="GrammarNav">Theoretical Contributions</a></li>'; // aanpassen
-    bar += '<li class="nav-item"><a class="nav-link" href="translate.html" id="TranslateNav">Applications</a></li>'; // aanpassen
+    bar += '<li class="nav-item"><a class="nav-link" href="grammar.html" id="GrammarNav">Theoretical Contributions</a></li>'; 
+    bar += '<li class="nav-item"><a class="nav-link" href="translate.html" id="TranslateNav">Applications</a></li>'; 
     bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="media.html" id="MediaNav">Media</a></li>';
+    // bar += '<li class="nav-item"><a class="nav-link" href="signopsis.html" id="SignopsisNav">Signopsis</a></li>'; // invoegen
     // bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
     bar += '</ul>';
     bar += '</div>';
