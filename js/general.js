@@ -200,7 +200,7 @@ $('.timepicker').timepicker({
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="media.html" id="MediaNav">Media</a></li>';
-    // bar += '<li class="nav-item"><a class="nav-link" href="signopsis.html" id="SignopsisNav">Signopsis</a></li>'; // invoegen
+    bar += '<li class="nav-item"><a class="nav-link" href="signopsis.html" id="SignopsisNav">Signopsis</a></li>'; // invoegen
     // bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
     bar += '</ul>';
     bar += '</div>';
