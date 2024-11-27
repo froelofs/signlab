@@ -58,97 +58,141 @@
 <div id="nav-placeholder"></div>
 
 
+
 <!--================================================================-->
 
-<!-- Translate -->
-
+<!-- Project info section -->
 <section class="projects-section bg-light fadeIn" id="Overview">
-  <div class="container-fluid" id="disclaimerAvatar">
 
-        <!-- Challenge Row first section-->
+    <div class="container-fluid">
+
         <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-            <!-- Column for text -->
+
+          <!-- <div class="col-6 col-md order-2"> -->
             <div class="col-12 col-md order-2">
-
-              <div class="project-text pb-1 w-100 my-auto text-left no-top-padding textDIV">
-                  <h5>Text-to-sign translation using animated avatars</h5>
-                  <p class="mb-4">
-                    We are developing tools to translate text into sign language using animated avatars. Such tools have several potential applications. They could support communication between deaf and hearing people in situations where human sign language interpreters cannot be employed, they could give sign language users easier access to written and spoken information, and they could help people in learning sign language.
-                  </p>
-                  <!-- <h5>Cautionary note</h5> -->
-                  <p>
-                    We should emphasise that, to support face-to-face interaction between deaf and hearing people, a qualified human sign language interpreter should, whenever available, always be preferred over a machine translation system. Still, it is worth investigating the extent to which a machine translation system making use of avatar technology can be of help in situations in which a human interpreter cannot be employed or for purposes other than supporting face-to-face interaction, such as providing access to information or providing support in learning sign language.
-                 </p>
-                 <hr class="d-none d-lg-block mb-0 ml-0" />
-            </div>
-          </div>
-
-          <!-- Column for picture -->
-
-          <div class="col-12 col-md-5 order-1 order-md-12 avatarGIF ml-md-5">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe src="https://www.youtube.com/embed/_uk4fL7yXwQ?rel=0&amp;showinfo=0&amp;loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
+                <div class="project-text pb-1 w-100 my-auto text-left no-top-padding textDIV">
 
 
-        <!-- Challenge Row NS section-->
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-            <!-- Column for text -->
-            <div class="col-12 col-md order-2">
+                    <h5>General scope and methods</h5>
 
-              <div class="project-text pb-1 w-100 my-auto text-left no-top-padding textDIV">
-                <h5>A case study: a sign language avatar for railway announcements</h5>
-                <p class="mb-4">
-                  Public transport organisations, such as Dutch railway operator Nederlandse Spoorwegen (NS), generally communicate important messages through spoken announcements in the train or station. As a result, Deaf people miss crucial information. Because of varying levels of reading proficiency, textual information is not always a solution. Moreover, video footage is not scalable and will not yield satisfactory results when individual video parts need an update. Virtual sign language avatars can provide consistent, anonymous and scalable translations. For the development of a comprehensible and fluent sign language avatar, collaboration between experts in language technology, avatar technology and sign language has been fundamental. Click on the button below or on the image of the avatar to see a demo of this tool.
-                </p>
-                <div class="mb-4">
-                  <!-- <button type="button" class="btn btn-info" onclick="removeDisclaimer(); startPose();">Go to demo</button> -->
-                  <a class="btn btn-primary" href="ns-demo/index.html" target="_blank" role="button">Go to railway announcements demo</a>
+                    <p class="mb-4">
+                      We investigate how signs and signed sentences are structured and interpreted across sign languages,
+                      and how new signs and structures emerge and evolve over time. We investigate Sign Language of the Netherlands,
+                      but also many other sign languages, including Filipino Sign Language, Catalan Sign Language, and Russian Sign Language.
+                    </p>
+                      
+                    <p>
+                      We make use of traditional methods to collect and analyze data (video recording and manual annotation),
+                      but also develop new methods making use of computer vision and machine learning techniques.
+                    </p>
+
+                    <p>
+                      Based on the patterns we find in the data, we develop theoretical models of how
+                      signed sentences are structured and how they are interpreted. These models make precise predictions, which are tested
+                      on further data, for instance from other sign languages. This allows us to refine our theoretical models further and further,
+                      and gain a better understanding of how sign languages, and human languages in general, work.
+                    </p>
+                    <!-- <p class="mb-4">
+                      Comparative studies on languages have revealed striking differences as well as interesting similarities
+                      between different languages and language families. Traditionally, however, these studies have focused
+                      on spoken languages. Once we include sign languages, new research questions emerge.
+                    </p>
+                    <p>
+                      First of all, we need to ask whether language models that have been developed on the basis of
+                      spoken language data can also be applied to sign languages. The general picture that emerges 
+                      is that many of these models are in fact applicable to visual-gestural languages. While studies
+                      that test the cross-modal applicability of theoretical models often focus on a single sign language, 
+                      it is also important to include, in a second step, comparisons across different sign languages. 
+                      On the one hand, we want to know whether typological classifications and generalizations that
+                      have been established on the basis of spoken language samples also hold for sign languages 
+                      despite the different language modality. In case we find modality-specific patterns, we need 
+                      to investigate whether these can be accounted for in a theoretical model. On the other hand, 
+                      we also want to know in how far sign languages differ from each other. And even more importantly: 
+                      do they differ along the same lines as spoken languages do?
+                    </p> -->
+                    <hr class="d-none d-lg-block mb-5 ml-0" />
+
+                    <h5 class="mb-4">Some specific focus areas</h5>
+
+                    <h6><b>Questions</b></h6>
+                    <!-- <h5 class="mt-3">Grammaticalization</h5> -->
+                    <p>
+                      One of our current focus areas concerns the way in which questions are expressed in sign languages.
+                      It is known that signers often convey that they are asking a question by means of non-manual markers,
+                      for instance by raising their eyebrows. But little is known to date about the full range of non-manual
+                      markers that are used to express questions, and how exactly they differ in terms of discourse function.
+                      For instance, some non-manual markers might be used to express a neutral question (e.g., Have you met Susan before?)
+                      while others might be used to express biased questions (e.g., Haven't you met Susan before?).
+                      We are investigating how different kinds of questions are expressed across sign languages.
+                    </p>
+
+                    <h6><b>Grammaticalization</b></h6>
+                    <!-- <h5 class="mt-3">Grammaticalization</h5> -->
+                    <p>
+                      Grammaticalization is a process of language change, whereby lexical elements take on a grammatical function – think, for instance, of the English verb ‘to go’, which turned into a future tense marker (‘She is going to succeed’). Our research indicates that comparable phenomena exist in sign languages, and that many of the attested changes are actually modality-independent. In addition, however, sign languages have the unique potential to also grammaticalize manual and non-manual co-speech gestures, such as pointing and headshakes.
+                    </p>
+
+
+                    <!-- <h5 class="mt-3">Agreement</h5> -->
+                    <h6><b>Agreement</b></h6>
+                    <p>
+                      There is a heated debate in the literature on whether the spatial modulation of certain verbs can be described in terms of agreement. Clearly the use of space comes with modality-specific properties (e.g., the marker of a third-person subject on the verb is not stable, unlike English, where third person is always marked by the suffix -s: ‘She shout-s’). We have taken a position in this debate by arguing that (at least in German Sign Language) the spatial modulation can be accounted for in modality-independent ways, and should thus be classified as an instance of agreement.
+                    </p>
+
+                    <!-- <h5 class="mt-3">Reduplication</h5> -->
+                    <h6><b>Reduplication</b></h6>
+                    <p>
+                      Reduplication is a morphological process whereby a word or part of a word is repeated to mark a change in meaning. Across spoken languages, reduplication is commonly used to realize plurals or certain aspectual meaning (e.g., habituality) – and the same has been found to hold in many unrelated sign languages. Reduplication is interesting, as it is often iconic in both spoken and signed languages, in that the repetition signals a multitude of objects (plural) or a multitude of events (aspect). We are interested in the similarities and differences of various reduplication processes across the two modalities.
+                    </p>
+                    <hr class="d-none d-lg-block mb-0 ml-0" />
+
+                    <!-- <h5 class="mt-3">Negation</h5>
+                    <p class="text-black mb-3">
+                    [Under construction]
+                    </p>
+
+
+                    <h5 class="mt-3">Complex sentences</h5>
+                    <p class="text-black mb-3">
+                    [Under construction]
+                    </p> -->
+
                 </div>
-                <hr class="d-none d-lg-block mb-0 ml-0" />
             </div>
-          </div>
-
-          <!-- Column for picture -->
-
+            <!-- Column for GIF -->
+          <!-- <div class="col-6 col-md-5  order-1 order-md-12 ml-md-5"> -->
           <div class="col-12 col-md-5 order-1 order-md-12 avatarGIF ml-md-5">
-            <a href="ns-demo/index.html" target="_blank"><img src="images/railway_demo.png" class="img-fluid" alt="A screenshot of the signing avatar that leads to the railway announcements demo."></a>
+            <!-- <div class="project-text pb-1 w-100 my-auto text-left"> -->
+
+
+                <!-- <p class="mb-5"> -->
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.youtube.com/embed/yFLb2I7t-JQ?rel=0&amp;showinfo=0&amp;loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                <!-- </p> -->
+
+                <!-- <p class="mb-5"> -->
+                  <div class="embed-responsive embed-responsive-16by9 mt-5">
+                    <iframe src="https://www.youtube.com/embed/9lXGwsv1WuE?start=100&amp;rel=0&amp;showinfo=0&amp;loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                <!-- </p> -->
+
+
+                <!-- <p class="mb-5"> -->
+                  <div class="embed-responsive embed-responsive-16by9 mt-5">
+                    <iframe src="https://www.youtube.com/embed/bwFD7zbb8UI?rel=0&amp;showinfo=0&amp;loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                <!-- </p> -->
+            <!-- </div> -->
           </div>
         </div>
 
-
-        <!-- Challenge Row healthcare section-->
-        <div class="row align-items-start no-gutters mb-4 mb-lg-5">
-            <!-- Column for text -->
-            <div class="col-12 col-md order-2">
-
-              <div class="project-text pb-1 w-100 my-auto text-left no-top-padding textDIV">
-                <h5>A case study: text-to-sign translation for COVID-19 healthcare</h5>
-                <p class="mb-4">
-                  It is challenging for healthcare professionals to communicate with Deaf patients <b><a href="https://doi.org/10.1016/S0140-6736(11)61143-4" target="_blank">(Felllinger, Holzinger and Pollard, 2012)</a></b>, even more so in times of COVID-19 <b><a href="https://doi.org/10.1001/jamaoto.2020.1705" target="_blank">(Mckee, Moran and Zazove, 2020)</a></b>. Sign language interpreters cannot always enter hospitals and clinics, facemasks make lipreading impossible <b><a href="https://doi.org/10.1136/bmj.m2372" target="_blank">(Grote and Izagaren,2020)</a></b> and interpreting via videorelay is not always viable. Building on the <b><a href="https://vh.cmp.uea.ac.uk/index.php/JASigning" target="_blank">JASigning avatar engine</a></b>, we have developed a tool which translates sentences that are frequently used in the diagnosis and treatment of COVID-19 from Dutch into Sign Language of the Netherlands (NGT). Click on the button below or on the image of the avatar to see a demo of this tool.
-                </p>
-                <div class="mb-4">
-                  <!-- <button type="button" class="btn btn-info" onclick="removeDisclaimer(); startPose();">Go to demo</button> -->
-                  <a class="btn btn-primary" href="healthcare-demo.html" target="_blank" role="button">Go to healthcare demo</a>
-                </div>
-               <hr class="d-none d-lg-block mb-0 ml-0" />
-            </div>
-          </div>
-
-          <!-- Column for picture -->
-
-          <div class="col-12 col-md-5 order-1 order-md-12 avatarGIF ml-md-5">
-            <a href="healthcare-demo.html" target="_blank"><img src="images/healthcare_demo.png" class="img-fluid" alt="A screenshot of the signing avatar that leads to the healthcare demo."></a>
-          </div>
-        </div>
 
     </div>
 
 </section>
 
-<!--================================================================-->
+
 <!-- Footer-->
 <footer class="footer bg-white small text-center text-black-50">
   <div style="line-height:150%;">
@@ -158,8 +202,8 @@
   </div>
 </footer>
 
-</div>
 
+</div>
 
 <!-- Javascripts -->
 
@@ -201,6 +245,12 @@
 <script language="javascript" type="text/javascript" src="js/general.js"></script>
 <!-- script specific to main page -->
 <script language="javascript" type="text/javascript" src="js/signlab.js"></script>
+<!-- These variables are defined so that the dicts from the ZonMw project can be used -->
+<script type="text/javascript">
+  var sentPath;
+  var vidPath;
+  var varPath;
+</script>
 </div>
 </body>
 </html>
