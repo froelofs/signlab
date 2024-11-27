@@ -178,14 +178,12 @@ $('.timepicker').timepicker({
    return time;
   }
 
-  $(function(){
-    // creates navbar in JS
+  $(function () {
     var bar = '';
     bar += '<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">';
     bar += '<div class="container-fluid" style="width: 83%; margin-top: 0px;">';
     bar += '<a class="navbar-brand" href="index.html">';
     bar += '<img src="images/Xbreed_logo_tr.png" height="25">';
-    // bar += 'SignLab Amsterdam';
     bar += '</a>';
     bar += '<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">';
     bar += '<i class="fas fa-bars"></i>';
@@ -194,14 +192,22 @@ $('.timepicker').timepicker({
     bar += '<div class="collapse text-right navbar-collapse" style="margin-right:1%" id="navbarResponsive">';
     bar += '<ul class="navbar-nav ml-auto" role="tablist">';
     bar += '<li class="nav-item"><a class="nav-link" href="index.html" id="AboutNav">Welcome</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="grammar.html" id="GrammarNav">Theoretical Contributions</a></li>'; 
-    bar += '<li class="nav-item"><a class="nav-link" href="translate.html" id="TranslateNav">Applications</a></li>'; 
+    // Research dropdown
+    bar += '<li class="nav-item dropdown">';
+    bar += '<a class="nav-link dropdown-toggle" href="#" id="ResearchNav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>';
+    bar += '<div class="dropdown-menu" aria-labelledby="ResearchNav">';
+    bar += '<a class="dropdown-item" href="research-overview.html" id="OverviewNav">Overview</a>';
+    bar += '<a class="dropdown-item" href="research-methods.html" id="MethodsNav">New Methods</a>';
+    bar += '<a class="dropdown-item" href="research-datasets.html" id="DatasetsNav">Datasets</a>';
+    bar += '<a class="dropdown-item" href="research-theory.html" id="TheoryNav">Theory</a>';
+    bar += '<a class="dropdown-item" href="research-applications.html" id="ApplicationsNav">Applications</a>';
+    bar += '</div>';
+    bar += '</li>';
     bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="publications.html" id="PublicationsNav">Publications</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="projects.html" id="ProjectsNav">Projects</a></li>';
     bar += '<li class="nav-item"><a class="nav-link" href="media.html" id="MediaNav">Media</a></li>';
-    bar += '<li class="nav-item"><a class="nav-link" href="signopsis.html" id="SignopsisNav">Signopsis</a></li>'; // invoegen
-    // bar += '<li class="nav-item"><a class="nav-link" href="playground.html" id="PlaygroundNav">SiGML Playground</a></li>';
+    bar += '<li class="nav-item"><a class="nav-link" href="signopsis.html" id="SignopsisNav">Signopsis</a></li>';
     bar += '</ul>';
     bar += '</div>';
     bar += '</div>';
@@ -209,48 +215,50 @@ $('.timepicker').timepicker({
 
     $("#nav-placeholder").html(bar);
 
-    // gets current page to add active tag
+    // Add hover functionality for dropdowns
+    $(".nav-item.dropdown").hover(
+        function () {
+            $(this).addClass("show");
+            $(this).find(".dropdown-menu").addClass("show");
+        },
+        function () {
+            $(this).removeClass("show");
+            $(this).find(".dropdown-menu").removeClass("show");
+        }
+    );
+
+    // Highlight active page
     var id = getPage();
     console.log("navbar id", id);
     $("#" + id).addClass("active");
-  });
+});
 
-// Checks which page the user is on and returns navbar ID
-function getPage(){
-  allTabs = ['AboutNav', 'GrammarNav', 'TranslateNav', 'TranslateNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav', 'MediaNav', 'SignopsisNav', 'PlaygroundNav'];
-  sections = ['About', 'Grammar', 'Translate', 'Translator', 'People', 'Publications', 'Projects', 'Media', 'Signopsis', 'Playground'];
-  for (j = 0; j < sections.length; j++) {
-    if (document.getElementById(sections[j])) {
-      return allTabs[j];
+// Function to determine the active page
+function getPage() {
+    const allTabs = ['AboutNav', 'ResearchNav', 'PeopleNav', 'PublicationsNav', 'ProjectsNav', 'MediaNav', 'SignopsisNav', 'PlaygroundNav'];
+    const sections = [
+        'About',
+        ['Overview', 'Methods', 'Datasets', 'Theory', 'Applications'], // Research dropdown sections
+        'People',
+        'Publications',
+        'Projects',
+        'Media',
+        'Signopsis',
+        'Playground'
+    ];
+
+    for (let j = 0; j < sections.length; j++) {
+        if (Array.isArray(sections[j])) {
+            // Check dropdown sections
+            for (let k = 0; k < sections[j].length; k++) {
+                if (document.getElementById(sections[j][k])) {
+                    $("#" + allTabs[j]).addClass("active");
+                    $("#" + sections[j][k] + "Nav").addClass("active");
+                    return allTabs[j];
+                }
+            }
+        } else if (document.getElementById(sections[j])) {
+            return allTabs[j];
+        }
     }
-  }
 }
-
-
-  function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // if (tabName == 'Translate') {
-    //   startPose();
-    // }
-
-    // Get current tab and hide it
-    tabcontent = document.getElementsByClassName("fadeIn");
-    for (i = 0; i < tabcontent.length; i++) {
-      if (tabcontent[i].className.includes("undisplayed") == false){
-       tabcontent[i].className += " undisplayed";
-      }
-    }
-
-    // Get all elements with class="nav-link" and remove the class "active"
-    tablinks = document.getElementsByClassName("nav-link");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    newTab = document.getElementById(tabName);
-    newTab.className = newTab.className.replace(" undisplayed", "");
-    evt.currentTarget.className += " active";
-  }
