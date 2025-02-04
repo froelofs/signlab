@@ -180,6 +180,8 @@ $('.timepicker').timepicker({
 
   $(function () {
     var bar = '';
+    var hoverTimeout;
+
     bar += '<nav class="navbar navbar-shrink navbar-expand-lg navbar-light fixed-top" id="mainNav">';
     bar += '<div class="container-fluid" style="width: 83%; margin-top: 0px;">';
     bar += '<a class="navbar-brand" href="index.html">';
@@ -217,15 +219,19 @@ $('.timepicker').timepicker({
 
     // Add hover functionality for dropdowns
     $(".nav-item.dropdown").hover(
-        function () {
-            $(this).addClass("show");
-            $(this).find(".dropdown-menu").addClass("show");
-        },
-        function () {
-            $(this).removeClass("show");
-            $(this).find(".dropdown-menu").removeClass("show");
-        }
-    );
+      function () {
+          clearTimeout(hoverTimeout);
+          $(this).addClass("show");
+          $(this).find(".dropdown-menu").addClass("show");
+      },
+      function () {
+          var that = $(this);
+          hoverTimeout = setTimeout(function () {
+              that.removeClass("show");
+              that.find(".dropdown-menu").removeClass("show");
+          }, 200);  // 200ms delay before hiding
+      }
+  );
 
     // Highlight active page
     var id = getPage();
