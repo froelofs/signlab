@@ -7739,8 +7739,9 @@ button.bg-black:focus {
   .sticky-top {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: var(--navbar-height, 72px); /* fallback to 56px */
     z-index: 1020;
+    background-color: #f8f9fa;
   }
 }
 
