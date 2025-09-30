@@ -220,10 +220,10 @@ $(function () {
   bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
     // Nederlands dropdown
   bar += '<li class="nav-item dropdown">';
-  bar += '<a class="nav-link dropdown-toggle" href="#" id="NederlandsNav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nederlands</a>';
+  bar += '<a class="nav-link dropdown-toggle" href="#" id="NederlandsNav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doe mee!</a>';
   bar += '<div class="dropdown-menu" aria-labelledby="NederlandsNav">';
   bar += '<a class="dropdown-item" href="evenementen.html" id="EvenementenNav">Evenementen</a>';
-  bar += '<a class="dropdown-item" href="onderzoek.html" id="OnderzoekNav">Onderzoek</a>';
+  bar += '<a class="dropdown-item" href="onderzoek.html" id="OnderzoekNav">Samenvattingen in NGT</a>';
   bar += '</div>';
   bar += '</li>';
   bar += '</ul>';
