@@ -10525,17 +10525,40 @@ body {
 .projects-section .project-text {
   padding: 3rem;
   font-size: 90%;
+  flex-grow: 1;
 }
 @media (min-width: 992px) {
   .projects-section .project-text {
     padding: 5rem;
+    flex-grow: 1;
   }
   .projects-section .project-text hr {
     border-color: #64a19d;
     border-width: 0.25rem;
     width: 70%;
+    flex-grow: 1;
   }
 }
+
+/* Signopsis fix */
+.textDIV{
+  padding:0px !important;
+}
+
+.row.equalize [class*="col-"] {
+  display: flex;            
+}
+.project {
+  display: flex;
+  flex-direction: column;   
+  width: 100%;
+  min-height: 100%;
+}
+.project .embed-responsive { 
+  margin-top: auto; 
+  min-height: 0;
+}
+/* Signopsis fix */
 
 .signup-section {
   padding: 10rem 0;
