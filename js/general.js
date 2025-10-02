@@ -203,8 +203,8 @@ $(function () {
   bar += '<a class="dropdown-item" href="research-datasets.html" id="DatasetsNav">Datasets</a>';
   bar += '<a class="dropdown-item" href="research-theory.html" id="TheoryNav">Theory</a>';
   bar += '<a class="dropdown-item" href="research-applications.html" id="ApplicationsNav">Applications</a>';
-  bar += '<a class="dropdown-item" href="publications.html" id="PublicationsNav">Publications</a>';
-  bar += '<a class="dropdown-item" href="projects.html" id="ProjectsNav">Projects</a>';
+  bar += '<a class="dropdown-item" href="research-publications.html" id="PublicationsNav">Publications</a>';
+  bar += '<a class="dropdown-item" href="research-projects.html" id="ProjectsNav">Projects</a>';
   bar += '</div>';
   bar += '</li>';
   // bar += '<li class="nav-item"><a class="nav-link" href="news.html" id="NewsNav">News</a></li>';
@@ -213,8 +213,8 @@ $(function () {
   bar += '<a class="nav-link dropdown-toggle" href="#" id="OutreachNav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outreach</a>';
   bar += '<div class="dropdown-menu" aria-labelledby="OutreachNav">';
   bar += '<a class="dropdown-item" href="outreach-events.html" id="EventsNav">Outreach Events</a>';
-  bar += '<a class="dropdown-item" href="media.html" id="MediaNav">Media</a>';
-  bar += '<a class="dropdown-item" href="signopsis.html" id="SignopsisNav">Signopsis</a>';
+  bar += '<a class="dropdown-item" href="outreach-media.html" id="MediaNav">Media</a>';
+  bar += '<a class="dropdown-item" href="outreach-signopsis.html" id="SignopsisNav">Signopsis</a>';
   bar += '</div>';
   bar += '</li>';
   bar += '<li class="nav-item"><a class="nav-link" href="people.html" id="PeopleNav">People</a></li>';
@@ -222,8 +222,8 @@ $(function () {
   bar += '<li class="nav-item dropdown">';
   bar += "<a class='nav-link dropdown-toggle' href='#' id='NederlandsNav' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Voor NGT'ers</a>";
   bar += '<div class="dropdown-menu" aria-labelledby="NederlandsNav">';
-  bar += '<a class="dropdown-item" href="evenementen.html" id="EvenementenNav">Doe mee!</a>';
-  bar += '<a class="dropdown-item" href="onderzoek.html" id="OnderzoekNav">Samenvattingen in NGT</a>';
+  bar += '<a class="dropdown-item" href="voor-ngt-evenementen.html" id="EvenementenNav">Doe mee!</a>';
+  bar += '<a class="dropdown-item" href="voor-ngt-onderzoek.html" id="OnderzoekNav">Samenvattingen in NGT</a>';
   bar += '</div>';
   bar += '</li>';
   bar += '</ul>';
