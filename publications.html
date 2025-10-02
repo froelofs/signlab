@@ -1,316 +1,283 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>SignLab Amsterdam</title>
+    <title>SignLab Amsterdam</title>
 
-<meta http-equiv="Access-Control-Allow-Origin" content="*">
-<meta http-equiv="Access-Control-Allow-Methods" content="GET">
-<meta http-equiv="Access-Control-Allow-Methods" content="POST">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Access-Control-Allow-Methods" content="GET">
+    <meta http-equiv="Access-Control-Allow-Methods" content="POST">
 
-<!-- Meta tag to make the website responsive to different types of devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Meta tag to make the website responsive to different types of devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Icon -->
-<link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="images/hand-icon.png" />
 
-<!-- =============================================== -->
-<!-- Fonts -->
+    <!-- =============================================== -->
+    <!-- Fonts -->
 
-<!-- Fonts for grayscale theme -->
-<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-<!-- =============================================== -->
-<!-- CSS files -->
+    <!-- Fonts for grayscale theme -->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <!-- =============================================== -->
+    <!-- CSS files -->
 
-<!-- CSS for Jquery autocomplete and tooltips -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
-<!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<!-- Timepicker css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
-<!-- CSS for question circle -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<!-- CSS file for bootstrap grayscale theme -->
-<link rel="stylesheet" href="css/grayscalestyles.css">
-<!-- CSS file for flag icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css">
-<!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
-<link rel="stylesheet" href="css/cwasa-reduced.css">
-<!-- CSS file for bootstrap icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- CSS for Jquery autocomplete and tooltips -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></link>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Timepicker css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+    <!-- CSS for question circle -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- CSS file for bootstrap grayscale theme -->
+    <link rel="stylesheet" href="css/grayscalestyles.css">
+    <!-- CSS file for flag icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css">
+    <!-- CSS file for avatar panel and controls, taken from the UEA website but reduced in order to avoid clashes with bootstrap css -->
+    <link rel="stylesheet" href="css/cwasa-reduced.css">
+    <!-- CSS file for bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-<!-- Custom style for bibbase -->
-<link href="css/bibbase.css" rel="stylesheet">
+    <!-- Custom style for bibbase -->
+    <link href="css/bibbase.css" rel="stylesheet">
 
-<!-- Scripts for filtering bibbase publication list -->
+    <!-- Scripts for filtering bibbase publication list -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      // the following function calls updatePubList() whenever the user searches, selects a category, or resets the pubForm
+      //
+      $(document).ready(function() {
+        // whenever a selection element changes, update the pubList
+        $('select').change(function() {
+          updatePubList();
+        });
+        // whenever the reset button is clicked, reset the selection elements and update pubList
+        $('#pubFormReset').click(function() {
+          document.getElementById("publicationForm").reset();
+          updatePubList();
+        });
+        // whenever text is entered in the search box, update pubList
+        $('#searchPubs').keyup(function() {
+          updatePubList();
+        });
+      });
 
-<script type="text/javascript" language="JavaScript">
-
-  // the following function calls updatePubList() whenever the user searches, selects a category, or resets the pubForm
-  //
-  $(document).ready(function() {
-    // whenever a selection element changes, update the pubList
-    $('select').change(function() {
-      updatePubList();
-    });
-    // whenever the reset button is clicked, reset the selection elements and update pubList
-    $('#pubFormReset').click(function() {
-      document.getElementById("publicationForm").reset();
-      updatePubList();
-    });
-    // whenever text is entered in the search box, update pubList
-    $('#searchPubs').keyup(function() {
-      updatePubList();
-    });
-  });
-
-  // the following function updates the pubList based on the currently selected options
-  //
-  function updatePubList() {
-    // collect an array of keywords to be matched, start with an empty array
-    var keywordArray = [];
-    // add keywords in the search field
-    keywordArray.push($('#searchPubs').val());
-    console.log(keywordArray);
-    // add keywords from the selection elements
-    $("select").each(function(index,selector) {
-      keywordArray.push($(selector).val());
-    });
-    // make all bibbase papers invisible
-    $(".bibbase_paper").each(function(index,bibPaper) {
-      $(bibPaper).attr("visible", "n");
-    });
-    // make bibbase papers visible if they match a keyword in each element of the keywordArray
-    // in more detail: for all bibPapers of class bibbase_paper
-    $(".bibbase_paper").each(function(index,bibPaper) {
-      // declare a variable match and set it to 0
-      var match = 0;
-      // then for all keywordStrings in keywordArray
-      $(keywordArray).each(function(index, keywordString) {
-        // set match to 0
-        match = 0;
-        // split the keywordString into an array of separate keywords, and then for all keywords in the array:
-        keywordString.split(/\s*\/\s*/).forEach(function(keyword) {
-          // get rid of white spaces
-          keyword = keyword.trim();
-          // and if there is a match with the bibPaper
-          if ($(bibPaper).text().toLowerCase().includes(keyword.toLowerCase())) {
-            // set match to 1
-            match = 1;
+      // the following function updates the pubList based on the currently selected options
+      //
+      function updatePubList() {
+        // collect an array of keywords to be matched, start with an empty array
+        var keywordArray = [];
+        // add keywords in the search field
+        keywordArray.push($('#searchPubs').val());
+        console.log(keywordArray);
+        // add keywords from the selection elements
+        $("select").each(function(index,selector) {
+          keywordArray.push($(selector).val());
+        });
+        // make all bibbase papers invisible
+        $(".bibbase_paper").each(function(index,bibPaper) {
+          $(bibPaper).attr("visible", "n");
+        });
+        // make bibbase papers visible if they match a keyword in each element of the keywordArray
+        // in more detail: for all bibPapers of class bibbase_paper
+        $(".bibbase_paper").each(function(index,bibPaper) {
+          // declare a variable match and set it to 0
+          var match = 0;
+          // then for all keywordStrings in keywordArray
+          $(keywordArray).each(function(index, keywordString) {
+            // set match to 0
+            match = 0;
+            // split the keywordString into an array of separate keywords, and then for all keywords in the array:
+            keywordString.split(/\s*\/\s*/).forEach(function(keyword) {
+              // get rid of white spaces
+              keyword = keyword.trim();
+              // and if there is a match with the bibPaper
+              if ($(bibPaper).text().toLowerCase().includes(keyword.toLowerCase())) {
+                // set match to 1
+                match = 1;
+              }
+            });
+            // if match equals 0 after going through a keywordString of the keywordArray, break out of the .each loop
+            if (match==0) {
+              return false;
+            }
+          });
+          // if after looping through all keywordStrings match equals 1, make the bibPaper visible
+          if (match==1) {
+            $(bibPaper).attr("visible","y");
           }
         });
-        // if match equals 0 after going through a keywordString of the keywordArray, break out of the .each loop
-        if (match==0) {
-          return false;
+        // make all bibbase groups invisible
+        $(".bibbase_group_whole").each(function(index, group) {
+          $(group).attr("visible", "n");
+        });
+        // make bibbase groups visible only when they contain papers that are visible
+        $(".bibbase_group_whole").each(function(index, group) {
+          $(group).find(".bibbase_paper").each(function(index, paper) {
+            if ($(paper).attr("visible")!="n") {
+              $(group).attr("visible", "y");
+            }
+          });
+        });
+      }
+
+      // The following code counts and displays the number of publications of each category
+      //
+      $(document).ready(function() {
+        // collect all pubSelect elements
+        var selectElements = document.getElementsByClassName("pubSelect");
+        // for all pubSelect elements
+        for (var i = 0; i < selectElements.length; i++) {
+          // collection all option elements
+          var optionElements = selectElements[i].options;
+          // for all option elements
+          for (var j = 0; j < optionElements.length; j++) {
+            var opt = optionElements[j];
+            var num = countPubs(opt.value);
+            if (opt.value != "") {
+              opt.innerHTML = opt.innerHTML + ' (' + num + ')';
+            }
+          }
         }
       });
-      // if after looping through all keywordStrings match equals 1, make the bibPaper visible
-      if (match==1) {
-        $(bibPaper).attr("visible","y");
-      }
-    });
-    // make all bibbase groups invisible
-    $(".bibbase_group_whole").each(function(index, group) {
-      $(group).attr("visible", "n");
-    });
-    // make bibbase groups visible only when they contain papers that are visible
-    $(".bibbase_group_whole").each(function(index, group) {
-      $(group).find(".bibbase_paper").each(function(index, paper) {
-        if ($(paper).attr("visible")!="n") {
-          $(group).attr("visible", "y");
+
+      // The following function counts the number of publications matching a given keywordString
+      //
+      function countPubs(keywordString) {
+        // initialize counter to 0
+        var counter = 0;
+        // construct a keyword array from the input string
+        var keywordArray = keywordString.split(/\s*\/\s*/);
+        // collect papers
+        var papers = document.getElementsByClassName("bibbase_paper");
+        // for every paper
+        console.log(papers.length);
+        console.log($(".bibbase_paper").length);
+        for (var i = 0; i < papers.length; i++) {
+          // for every keyword in the keywordArray
+          for (var j = 0; j < keywordArray.length; j++) {
+            //and if there is a match with the paper
+            if (papers[i].textContent.toLowerCase().includes(keywordArray[j].trim().toLowerCase())) {
+              // add 1 to counter and stop looping through the keyword array to avoid multiple counts of a single paper
+              counter = counter + 1;
+              break;
+            }
+          }
         }
-      });
-    });
-  }
-
-  // The following code counts and displays the number of publications of each category
-  //
-  $(document).ready(function() {
-    // collect all pubSelect elements
-    var selectElements = document.getElementsByClassName("pubSelect");
-    // for all pubSelect elements
-    for (var i = 0; i < selectElements.length; i++) {
-      // collection all option elements
-      var optionElements = selectElements[i].options;
-      // for all option elements
-      for (var j = 0; j < optionElements.length; j++) {
-        var opt = optionElements[j];
-        var num = countPubs(opt.value);
-        if (opt.value != "") {
-          opt.innerHTML = opt.innerHTML + ' (' + num + ')';
-        }
+        return counter;  // for some reason that I don't understand each bibbase_paper appears twice, so we have to divide by 2 here
       }
-    }
-  });
+    </script>
 
-  // The following function counts the number of publications matching a given keywordString
-  //
-  function countPubs(keywordString) {
-    // initialize counter to 0
-    var counter = 0;
-    // construct a keyword array from the input string
-    var keywordArray = keywordString.split(/\s*\/\s*/);
-    // collect papers
-    var papers = document.getElementsByClassName("bibbase_paper");
-    // for every paper
-    console.log(papers.length);
-    console.log($(".bibbase_paper").length);
-    for (var i = 0; i < papers.length; i++) {
-      // for every keyword in the keywordArray
-      for (var j = 0; j < keywordArray.length; j++) {
-        //and if there is a match with the paper
-        if (papers[i].textContent.toLowerCase().includes(keywordArray[j].trim().toLowerCase())) {
-          // add 1 to counter and stop looping through the keyword array to avoid multiple counts of a single paper
-          counter = counter + 1;
-          break;
-        }
-      }
-    }
-    return counter;  // for some reason that I don't understand each bibbase_paper appears twice, so we have to divide by 2 here
-  }
-</script>
+  </head>
 
 
-</head>
+  <body id="page-top" >
+
+    <div id="page-container" class="bg-light">
+      <div id="content-wrap">
+        <!--================================================================-->
 
 
-<body id="page-top" >
-
-<div id="page-container" class="bg-light">
-<div id="content-wrap">
-<!--================================================================-->
+        <!-- Navigation-->
+        <div id="nav-placeholder"></div>
 
 
-<!-- Navigation-->
-<div id="nav-placeholder"></div>
+        <!--================================================================-->
 
+        <!-- Publications section -->
+        <section class="projects-section bg-light fadeIn" id="Publications">
+          <div class="container-fluid">
 
-<!--================================================================-->
-
-<!-- Publications section -->
-<section class="projects-section bg-light fadeIn" id="Publications">
-<div class="container-fluid">
-  <div class="row no-gutters mb-4 mb-lg-5 text-left">
-    <div class="col-12 col-md-10">
-      <div style="display:block;">
-
-
-        <form id="publicationForm">
-          <div class="form-row align-items-end" style="padding-bottom: 10px; padding-top: 10px;">
-
-            <div class="col">
-              <label for="searchPubs">Search</label>
-              <input id="searchPubs" class="form-control" placeholder="Search..."></input>
+            <!-- Title -->
+            <div class="row align-items-start mb-1">
+              <div class="col-12 col-md order-2">
+                <div class="project-text text-left pb-1 w-100 my-auto no-top-padding textDIV">
+                  <h2 class="section-heading mb-5 mt-5">Publications</h2>
+                </div>
+              </div>
             </div>
 
-            <div class="col">
-              <label for="selectPublicationType">Publication type</label>
-              <select id="selectPublicationType" class="form-control pubSelect">
-                <option value="">All</div></option>
-                <option value="book{">Books</option>
-                <option value="article{">Journal articles</option>
-                <option value="inproceedings{">Conference papers</option>
-                <option value="incollection{">Book chapters</option>
-                <option value="phdthesis">PhD theses</option>
-                <option value="mastersthesis">Master theses</option>
-                <option value="bachelorsthesis">Bachelor theses</option>
-                <option value="manuscript/handout/slides/technical report/misc">Other</option>
-              </select>
+            <div class="row no-gutters mb-4 mb-lg-5 text-left">
+              <div class="col-12 col-md-10">
+                <div style="display:block;">
+
+                  <form id="publicationForm">
+                    <div class="form-row align-items-end" style="padding-bottom: 10px; padding-top: 10px;">
+
+                      <div class="col">
+                        <label for="searchPubs">Search</label>
+                        <input id="searchPubs" class="form-control" placeholder="Search..."></input>
+                      </div>
+
+                      <div class="col">
+                        <label for="selectPublicationType">Publication type</label>
+                        <select id="selectPublicationType" class="form-control pubSelect">
+                          <option value="">All</div></option>
+                          <option value="book{">Books</option>
+                          <option value="article{">Journal articles</option>
+                          <option value="inproceedings{">Conference papers</option>
+                          <option value="incollection{">Book chapters</option>
+                          <option value="phdthesis">PhD theses</option>
+                          <option value="mastersthesis">Master theses</option>
+                          <option value="bachelorsthesis">Bachelor theses</option>
+                          <option value="manuscript/handout/slides/technical report/misc">Other</option>
+                        </select>
+                      </div>
+
+                      <div class="col">
+                        <button id="pubFormReset" type="reset" class="btn btn-primary">Reset</button>
+                      </div>
+
+                  </form>
+                </div>
+
+                <script src="https://bibbase.org/show?bib=www.signlab-amsterdam.nl/bib/signlab.bib&theme=simple&commas=true&group0=year&fullnames=1&jsonp=1"></script>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <!-- <div class="col">
-              <label for="selectDiscipline">Discipline</label>
-              <select id="selectDiscipline" class="form-control pubSelect">
-                <option value=""><b>All</b></option>
-                <option value="Theoretical linguistics"><b>Theoretical linguistics</b></option>
-                <option value="Experimental linguistics/experiment"><b>Experimental linguistics</b></option>
-                <option value="Philosophical logic"><b>Philosophical logic</b></option>
-                <option value="Artificial intelligence"><b>Artificial intelligence</b></option>
-              </select>
-            </div> -->
 
-            <div class="col">
-              <button id="pubFormReset" type="reset" class="btn btn-primary">Reset</button>
-            </div>
+        <!-- Footer-->
+        <footer class="footer bg-white small text-center text-black-50">
+          <div style="line-height:150%;">
+            <br>
+            <i class="bi bi-envelope"></i>: signlab@uva.nl
+          </div>
+        </footer>
 
-        </form>
+
       </div>
 
-        <script src="https://bibbase.org/show?bib=www.signlab-amsterdam.nl/bib/signlab.bib&theme=simple&commas=true&group0=year&fullnames=1&jsonp=1"></script>
-      </div>
+      <!-- Javascripts -->
 
+      <!-- Jquery JS is loaded in the beginning, see above -->
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript" src="js/popper.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <!-- Grayscale theme JS-->
+      <script type="text/javascript" src="js/grayscalescript.js"></script>
+      <!-- Javascript for smooth scrolling-->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- script for timepicker -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+
+
+      <!-- =============================================== -->
+
+      <!-- script for shared functions across all pages -->
+      <script language="javascript" type="text/javascript" src="js/general.js"></script>
     </div>
-</div>
-
-
-
-</section>
-
-
-<!-- Footer-->
-<footer class="footer bg-white small text-center text-black-50">
-  <div style="line-height:150%;">
-    <br>
-    <i class="bi bi-envelope"></i>: signlab@uva.nl
-  </div>
-</footer>
-
-
-</div>
-
-<!-- Javascripts -->
-
-<!-- Jquery JS is loaded in the beginning, see above -->
-
-<!-- jQuery -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-
-<!-- jquery ui -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script type="text/javascript">
-//Solves naming conflicts between jquery ui and bootstrap
-  $.widget.bridge('uitooltip', $.ui.tooltip);
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
-<!-- Grayscale theme JS-->
-<script type="text/javascript" src="js/grayscalescript.js"></script>
-<!-- Javascript for smooth scrolling-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<!-- script for timepicker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
-<!-- script for generating avatar animations -->
-<script type="text/javascript" src="cwasa/uva2021/cwa/allcsa.js"> </script>
-
-
-<!-- =============================================== -->
-
-<!-- script for communication with and set up of the avatar -->
-<script language="javascript" type="text/javascript" src="js/avatar.js"></script>
-<!-- script for shared functions across all pages -->
-<script language="javascript" type="text/javascript" src="js/general.js"></script>
-<!-- script specific to main page -->
-<script language="javascript" type="text/javascript" src="js/signlab.js"></script>
-<!-- These variables are defined so that the dicts from the ZonMw project can be used -->
-<script type="text/javascript">
-  var sentPath;
-  var vidPath;
-  var varPath;
-</script>
-</div>
-</body>
+  </body>
 </html>
